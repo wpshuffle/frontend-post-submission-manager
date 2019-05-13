@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please' );
 
 /*
   Plugin Name: Frontend Post Submission Manager
-  Description: A plugin to submit and manager WordPress posts from frontend with or without logging in
+  Description: A plugin to submit and manage WordPress posts from frontend with or without logging in
   Version:     1.0.0
   Author:      WP Happy Coders
   Author URI:  http://wphappycoders.com
@@ -29,8 +29,8 @@ include(FPSM_PATH . '/includes/classes/class-frontend-post-submission-manager.ph
  * @since  1.0.0
  * return Frontend_Post_Submission_Manager
  */
-function initialize_fpsm() {
+function fpsm_initialize() {
     return Frontend_Post_Submission_Manager::instance();
 }
 
-$GLOBALS['fpsm'] = initialize_fpsm();
+$GLOBALS['fpsm'] = fpsm_initialize();

@@ -117,10 +117,15 @@ if ( !class_exists( 'Frontend_Post_Submission_Manager' ) ) {
         }
 
         function define_constants() {
+            global $wpdb;
             defined( 'FPSM_VERSION' ) or define( 'FPSM_VERSION', $this->version );
+            defined( 'FPSM_FORM_TABLE' ) or define( 'FPSM_FORM_TABLE', $wpdb->prefix . 'fpsm_forms' );
         }
 
         function includes() {
+            include(FPSM_PATH . '/includes/classes/class-fpsm-init.php');
+            include(FPSM_PATH . '/includes/classes/class-fpsm-activation.php');
+
 
             //include all the admin related classes
             if ( $this->is_request( 'admin' ) ) {
