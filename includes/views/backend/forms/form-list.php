@@ -1,12 +1,65 @@
 <?php
-defined('ABSPATH') or die('No script kiddies please!!');
+defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
 ?>
 <div class="wrap fpsm-wrap">
     <div class="fpsm-header fpsm-clearfix">
-        <h1 class="fpsm-floatLeft"><?php _e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
-        <h2 class="fpsm-floatRight"><?php _e('Form Lists', 'frontend-post-submission-manager'); ?></h2>
+        <h1 class="fpsm-floatLeft"><?php _e( 'Frontend Post Submission Manager', 'frontend-post-submission-manager' ); ?></h1>
+        <h2 class="fpsm-floatRight"><?php _e( 'Form Lists', 'frontend-post-submission-manager' ); ?></h2>
     </div>
-    <div class="fpsm-form-add-wrap">
-        <a href="<?php echo admin_url('admin.php?page=fpsm&action=add-form'); ?>"></a>
+    <div class="fpsm-form-wrap">
+        <div class="fpsm-add-wrap">
+            <a href="<?php echo admin_url( 'admin.php?page=fpsm-add-new-form' ); ?>"><input type="button" class="fpsm-button-primary" value="<?php _e( 'Add New Form', 'frontened-post-submission-manager' ); ?>"/></a>
+        </div>
     </div>
+    <table class="wp-list-table widefat fixed fpsm-form-lists-table">
+        <thead>
+            <tr>
+                <th><?php _e( 'Form Title', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Alias', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Shortcode', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Status', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Action', 'frontend-post-submission-manager' ); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            global $wpdb;
+            $form_table = FPSM_FORM_TABLE;
+            $form_rows = $wpdb->get_results( "select * from $form_table order by form_title asc" );
+            if ( !empty( $form_rows ) ) {
+                foreach ( $form_rows as $form_row ) {
+                    ?>
+                    <tr>
+                        <td><?php echo $form_row->form_title; ?></td>
+                        <td><?php echo $form_row->form_alias; ?></td>
+                        <td><input type="text" readonly="readonly" value='<?php echo '[std alias="' . $form_row->form_alias . '"]'; ?>' onfocus="this.select()"/></td>
+                        <td><?php echo (!empty( $form_row->form_status )) ? __( 'Active', 'frontend-post-submission-manager' ) : __( 'Inactive', 'frontend-post-submission-manager' ); ?></td>
+                        <td>
+                            <a class="fpsm-edit" href="<?php echo admin_url( 'admin.php?page=frontend-post-submission-manager&form_id=' . $form_row->form_id . '&action=edit_form' ); ?>" title="<?php _e( 'Edit Form', 'frontend-post-submission-manager' ); ?>"><?php _e( 'Edit', 'frontend-post-submission-manager' ); ?></a>
+                            <a class="fpsm-copy fpsm-form-copy" href="javascript:void(0);" data-form-id="<?php echo $form_row->form_id; ?>" title="<?php _e( 'Copy Form', 'frontend-post-submission-manager' ); ?>"><?php _e( 'Copy', 'frontend-post-submission-manager' ); ?></a>
+                            <a class="fpsm-preview" href="<?php echo site_url() . '?std_preview=true&form_alias=' . $form_row->form_alias . '&_wpnonce=' . wp_create_nonce( 'std_form_preview_nonce' ); ?>" target="_blank" title="<?php _e( 'Preview', 'frontend-post-submission-manager' ); ?>"><?php _e( 'Preview', 'frontend-post-submission-manager' ); ?></a>
+                            <a class="fpsm-delete fpsm-form-delete" href="javascript:void(0)" data-form-id="<?php echo $form_row->form_id; ?>" title="<?php _e( 'Delete Form', 'frontend-post-submission-manager' ); ?>"><?php _e( 'Delete', 'frontend-post-submission-manager' ); ?></a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                ?>
+                <tr>
+                    <td colspan="5"><?php _e( 'No forms added yet.', 'frontend-post-submission-manager' ); ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th><?php _e( 'Form Title', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Alias', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Shortcode', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Status', 'frontend-post-submission-manager' ); ?></th>
+                <th><?php _e( 'Action', 'frontend-post-submission-manager' ); ?></th>
+            </tr>
+        </tfoot>
+    </table>
 </div>

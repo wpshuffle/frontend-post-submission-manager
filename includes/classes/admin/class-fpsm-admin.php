@@ -20,7 +20,7 @@ if ( !class_exists( 'FPSM_Admin' ) ) {
         }
 
         function form_adder() {
-
+            include(FPSM_PATH . '/includes/views/backend/forms/form-add.php');
         }
 
     }

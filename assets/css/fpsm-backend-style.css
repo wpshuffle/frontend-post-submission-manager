@@ -232,3 +232,9 @@ input.fpsm-button-primary {
 .fpsm-export-wrap > form {
     display: inline-block;
 }
+h2.nav-tab-wrapper.wp-clearfix.fpsm-nav-wrap {
+    margin-bottom: 20px;
+}
+form.fpsm-form-wrap {
+    padding-left: 15px;
+}
