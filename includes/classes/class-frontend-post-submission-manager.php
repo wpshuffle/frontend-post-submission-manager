@@ -52,7 +52,7 @@ if ( !class_exists( 'Frontend_Post_Submission_Manager' ) ) {
          */
         public function __clone() {
             // Cloning instances of the class is forbidden.
-            _doing_it_wrong( __FUNCTION__, __( 'No script kiddies please!!', 'frontend-post-submission-manager' ), '1.6' );
+            _doing_it_wrong( __FUNCTION__, esc_html__( 'No script kiddies please!!', 'frontend-post-submission-manager' ), '1.6' );
         }
 
         /**
@@ -64,7 +64,7 @@ if ( !class_exists( 'Frontend_Post_Submission_Manager' ) ) {
          */
         public function __wakeup() {
             // Unserializing instances of the class is forbidden.
-            _doing_it_wrong( __FUNCTION__, __( 'No script kiddies please!!', 'frontend-post-submission-manager' ), '1.6' );
+            _doing_it_wrong( __FUNCTION__, esc_html__( 'No script kiddies please!!', 'frontend-post-submission-manager' ), '1.6' );
         }
 
         /**

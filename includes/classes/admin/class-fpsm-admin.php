@@ -10,9 +10,9 @@ if ( !class_exists( 'FPSM_Admin' ) ) {
         }
 
         function add_admin_menus() {
-            add_menu_page( __( 'Frontend Post Submission', 'frontend-post-submission-manager' ), __( 'Frontend Post Submission', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm', array( $this, 'form_lists' ), 'dashicons-format-aside' );
-            add_submenu_page( 'fpsm', __( 'All Forms', 'frontend-post-submission-manager' ), __( 'All Forms', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm', array( $this, 'form_lists' ) );
-            add_submenu_page( 'fpsm', __( 'Add New Form', 'frontend-post-submission-manager' ), __( 'Add New Form', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm-add-new-form', array( $this, 'form_adder' ) );
+            add_menu_page( esc_html__( 'Frontend Post Submission', 'frontend-post-submission-manager' ), esc_html__( 'Frontend Post Submission', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm', array( $this, 'form_lists' ), 'dashicons-format-aside' );
+            add_submenu_page( 'fpsm', esc_html__( 'All Forms', 'frontend-post-submission-manager' ), esc_html__( 'All Forms', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm', array( $this, 'form_lists' ) );
+            add_submenu_page( 'fpsm', esc_html__( 'Add New Form', 'frontend-post-submission-manager' ), esc_html__( 'Add New Form', 'frontend-post-submission-manager' ), 'manage_options', 'fpsm-add-new-form', array( $this, 'form_adder' ) );
         }
 
         function form_lists() {

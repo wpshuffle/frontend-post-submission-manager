@@ -1,14 +1,14 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
-if ( !class_exists( 'FPSM_Activation' ) ) {
+defined('ABSPATH') or die('No script kiddies please!!');
+if (!class_exists('FPSM_Activation')) {
 
     class FPSM_Activation {
 
         function __construct() {
             //All the activation related tasks are initialized here
 
-            register_activation_hook( FPSM_PATH . '/frontend-post-submission-manager.php', array( $this, 'activation_tasks' ) );
+            register_activation_hook(FPSM_PATH . '/frontend-post-submission-manager.php', array($this, 'activation_tasks'));
         }
 
         function activation_tasks() {
@@ -19,14 +19,14 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
             /**
              * Necessary Table Creation on activation
              */
-            if ( is_multisite() ) {
+            if (is_multisite()) {
                 global $wpdb;
                 $current_blog = $wpdb->blogid;
 
                 // Get all blogs in the network and activate plugin on each one
-                $blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
-                foreach ( $blog_ids as $blog_id ) {
-                    switch_to_blog( $blog_id );
+                $blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+                foreach ($blog_ids as $blog_id) {
+                    switch_to_blog($blog_id);
 
                     $charset_collate = $wpdb->get_charset_collate();
                     $form_table = $wpdb->prefix . 'fpsm_forms';
@@ -35,12 +35,14 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
 						form_title varchar(255),
 						form_alias varchar(255),
 						form_details longtext,
+                                                post_type varchar(255),
+                                                form_type varchar(255),
 						form_status mediumint(9) NOT NULL DEFAULT 1,
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";
 
                     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                    dbDelta( $form_table_sql );
+                    dbDelta($form_table_sql);
 
 
                     restore_current_blog();
@@ -59,7 +61,7 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";
                 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                dbDelta( $form_table_sql );
+                dbDelta($form_table_sql);
             }
         }
 
