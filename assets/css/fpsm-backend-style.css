@@ -238,3 +238,25 @@ h2.nav-tab-wrapper.wp-clearfix.fpsm-nav-wrap {
 form.fpsm-form-wrap {
     padding-left: 15px;
 }
+.fpsm-form-message {
+    position: fixed;
+    top: 20px;
+    left: 40%;
+    z-index: 999999;
+}
+p.fpsm-ajax {
+    background: #29B7FF;
+}
+.fpsm-form-message > p{
+    padding:10px;color:#fff;
+}
+p.fpsm-error {
+    background: #FF6969;
+}
+p.fpsm-info {
+    background: #27ae60;
+}
+p.fpsm-ajax .fpsm-ajax-loader {
+    margin-bottom: -4px;
+    margin-right: 5px;
+}

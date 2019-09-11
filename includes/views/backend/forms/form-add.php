@@ -7,7 +7,7 @@ global $fpsm_library_obj;
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
         <h2 class="fpsm-floatRight"><?php esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?></h2>
     </div>
-    <form class="fpsm-form-wrap">
+    <form class="fpsm-form">
         <div class="fpsm-field-wrap">
             <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
             <div class="fpsm-field">
@@ -56,7 +56,7 @@ global $fpsm_library_obj;
         <div class="fpsm-field-wrap">
             <label></label>
             <div class="fpsm-field">
-                <input type="submit" value="<?php esc_html_e('Add Form', 'subscribe-to-download'); ?>"/>
+                <input type="submit" value="<?php esc_html_e('Add Form', 'subscribe-to-download'); ?>" class="fpsm-primary-button"/>
             </div>
         </div>
     </form>
