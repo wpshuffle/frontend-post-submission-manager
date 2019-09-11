@@ -57,6 +57,8 @@ if (!class_exists('FPSM_Activation')) {
 						form_title varchar(255),
 						form_alias varchar(255),
 						form_details longtext,
+                                                post_type varchar(255),
+                                                form_type varchar(255),
 						form_status mediumint(9) NOT NULL DEFAULT 1,
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";

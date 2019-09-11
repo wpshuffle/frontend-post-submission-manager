@@ -35,7 +35,7 @@ global $fpsm_library_obj;
                     if (!empty($post_types)) {
                         foreach ($post_types as $post_type) {
                             ?>
-                            <option value="<?php echo $post_type; ?>"><?php echo esc_attr($post_type); ?></option>
+                            <option value="<?php echo esc_attr($post_type->name); ?>"><?php echo esc_html($post_type->label); ?></option>
 
                             <?php
                         }
