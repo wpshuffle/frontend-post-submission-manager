@@ -17,7 +17,16 @@ if (!class_exists('FPSM_Admin')) {
         }
 
         function form_lists() {
-            include(FPSM_PATH . '/includes/views/backend/forms/form-list.php');
+            if (isset($_GET['action'])) {
+                $action = $_GET['action'];
+                switch ($action) {
+                    case 'edit_form':
+                        include(FPSM_PATH . '/includes/views/backend/forms/form-edit.php');
+                        break;
+                }
+            } else {
+                include(FPSM_PATH . '/includes/views/backend/forms/form-list.php');
+            }
         }
 
         function form_adder() {

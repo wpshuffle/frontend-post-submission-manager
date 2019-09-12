@@ -10,8 +10,18 @@ if (!class_exists('FPSM_Admin_Enqueue')) {
         }
 
         function register_backend_assets() {
+            $translation_strings = array(
+                'ajax_message' => esc_html__('Please wait', 'subscribe-to-download'),
+                'upload_button_text' => esc_html__('Upload File', 'subscribe-to-download'),
+                'delete_form_confirm' => esc_html__('Are you sure you want to delete this form?', 'subscribe-to-download'),
+                'copy_form_confirm' => esc_html__('Are you sure you want to copy this form?', 'subscribe-to-download'),
+                'clipboad_copy_message' => esc_html__('Shortcode copied to clipboard.', 'subscribe-to-download'),
+            );
+            $js_obj = array('ajax_url' => admin_url('admin-ajax.php'), 'plugin_url' => FPSM_URL, 'ajax_nonce' => wp_create_nonce('fpsm_backend_ajax_nonce'), 'translation_strings' => $translation_strings);
             wp_enqueue_style('fpsm-backend-style', FPSM_URL . '/assets/css/fpsm-backend-style.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-backend-script', FPSM_URL . '/assets/js/fpsm-backend.js', array('jquery'), FPSM_VERSION);
+            wp_localize_script('fpsm-backend-script', 'fpsm_backend_obj', $js_obj);
         }
 
     }

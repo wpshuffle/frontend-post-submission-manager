@@ -29,7 +29,7 @@ global $fpsm_library_obj;
         <div class="fpsm-field-wrap">
             <label><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?></label>
             <div class="fpsm-field">
-                <select name="form_details[general][post_type]">
+                <select name="post_type">
                     <?php
                     $post_types = $fpsm_library_obj->get_registered_post_types();
                     if (!empty($post_types)) {

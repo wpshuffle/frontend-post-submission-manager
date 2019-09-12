@@ -1,7 +1,16 @@
-jQuery(document).ready(function($){
-     "use strict";
-     
-     /**
+jQuery(document).ready(function ($) {
+    "use strict";
+    /**
+     *
+     * @type object
+     */
+    var notice_timeout;
+
+    /**
+     * @type object
+     */
+    var translation_strings = fpsm_backend_obj.translation_strings;
+    /**
      * Generates required notice
      *
      * @param {string} info_text
@@ -18,7 +27,7 @@ jQuery(document).ready(function($){
                 var info_html = '<p class="fpsm-info">' + info_text + '</p>';
                 break;
             case 'ajax':
-                var info_html = '<p class="fpsm-ajax"><img src="' + fpsm_backend_obj.plugin_url + 'images/ajax-loader.gif" class="fpsm-ajax-loader"/>' + info_text + '</p>';
+                var info_html = '<p class="fpsm-ajax"><img src="' + fpsm_backend_obj.plugin_url + '/assets/images/ajax-loader.gif" class="fpsm-ajax-loader"/>' + info_text + '</p>';
             default:
                 break;
 
@@ -31,7 +40,7 @@ jQuery(document).ready(function($){
         }
 
     }
-    
+
     /**
      * Performs clipboard copy action
      * 
@@ -63,13 +72,34 @@ jQuery(document).ready(function($){
 
         return str;
     }
-     
-     $('body').on('submit','.fpsm-form',function(e){
+
+    $('body').on('submit', '.fpsm-form', function (e) {
         e.preventDefault();
         var form_data = $(this).serialize();
         $.ajax({
-            
+            type: 'post',
+            url: fpsm_backend_obj.ajax_url,
+            data: {
+                action: 'fpsm_form_add_action',
+                _wpnonce: fpsm_backend_obj.ajax_nonce,
+                form_data: form_data
+            },
+            beforeSend: function (xhr) {
+                fpsm_generate_info(translation_strings.ajax_message,'ajax');
+            },
+            success:function(res){
+                res = $.parseJSON(res);
+                if (res.status == 200) {
+                    fpsm_generate_info(res.message, 'info');
+                    if (res.redirect_url) {
+                        window.location = res.redirect_url;
+                        exit;
+                    }
+                } else {
+                    fpsm_generate_info(res.message, 'error');
+                }
+            }
         });
-        
-     });
+
+    });
 });

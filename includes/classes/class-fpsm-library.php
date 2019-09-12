@@ -302,6 +302,29 @@ if (!class_exists('FPSM_Library')) {
             return get_theme_support('post-formats');
         }
 
+        /**
+         * Check if alias has already been used or not
+         *
+         * @param string $form_alias
+         * @param int $form_id
+         *
+         * @since 1.0.0
+         */
+        function is_alias_available($form_alias, $form_id = 0) {
+            $form_table = FPSM_FORM_TABLE;
+            global $wpdb;
+            if (empty($form_id)) {
+                $alias_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $form_table WHERE form_alias like %s", $form_alias));
+            } else {
+                $alias_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $form_table WHERE form_alias like %s  AND form_id !=%d", $form_alias, $form_id));
+            }
+            if ($alias_count == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();
