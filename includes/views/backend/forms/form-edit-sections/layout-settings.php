@@ -1,3 +1,1 @@
-<div class="fpsm-form-section fpsm-display-none" data-section-ref="layout">
-    Form Layout Settings
-</div>
+<div class="fpsm-settings-each-section fpsm-display-none" data-tab="layout">Layout Settings</div>

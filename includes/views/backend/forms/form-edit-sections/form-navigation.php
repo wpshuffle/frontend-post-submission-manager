@@ -4,7 +4,7 @@
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="form"><span class="dashicons dashicons-feedback"></span><?php esc_html_e('Form Settings', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="layout"><span class="dashicons dashicons-layout"></span><?php esc_html_e('Layout Settings', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="notification"><span class="dashicons dashicons-email"></span><?php esc_html_e('Notification Settings', 'frontend-post-submission-manager'); ?></a></li>
-        <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="security"><span class="dashicons dashicons-email"></span><?php esc_html_e('Security Settings', 'frontend-post-submission-manager'); ?></a></li>
+        <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="security"><span class="dashicons dashicons-shield"></span><?php esc_html_e('Security Settings', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="custom"><span class="dashicons dashicons-admin-customizer"></span><?php esc_html_e('Customize', 'frontend-post-submission-manager'); ?></a></li>
                 <?php
                 /**

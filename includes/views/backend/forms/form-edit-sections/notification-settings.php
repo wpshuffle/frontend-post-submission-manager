@@ -1,3 +1,1 @@
-<div class="fpsm-form-section fpsm-display-none" data-section-ref="notifications">
-    Form Notification Settings
-</div>
+<div class="fpsm-settings-each-section fpsm-display-none" data-tab="notification">Notification Settings</div>

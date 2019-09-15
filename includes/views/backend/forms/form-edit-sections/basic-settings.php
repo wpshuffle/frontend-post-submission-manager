@@ -53,7 +53,6 @@
                     ?>
                 </select>
                 <p class="description"><?php esc_html_e('These are the post formats registered in your current active theme.', 'frontend-post-submission-manager'); ?></p>
-
             </div>
         </div>
         <?php

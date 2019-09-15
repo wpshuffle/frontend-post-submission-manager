@@ -124,7 +124,6 @@ if (!class_exists('FPSM_Library')) {
                 if ($term->parent != 0) {
                     $space .= str_repeat('&nbsp;', 2);
                     $parent_term = get_term_by('id', $term->parent, $term->taxonomy);
-                    // var_dump($space);
                     $space .= $this->check_parent($parent_term, $space);
                 }
             }
@@ -152,9 +151,6 @@ if (!class_exists('FPSM_Library')) {
                 if (!in_array($term->slug, $exclude_terms)) {
                     $space = $this->check_parent($term);
                     $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
-                    // var_dump($option_value);
-                    //  var_dump($checked_term);
-                    //  echo '<br/>';
 
                     $checked = (in_array($option_value, $checked_term)) ? 'checked="checked"' : '';
                     $form .= '<label class="ebd-checkbox-label">' . $space . '<input type="checkbox" name="' . $field_title . '[]"  value="' . $option_value . '" id="ebd-category-' . $option_value . '" ' . $checked . '/><label for="ebd-category-' . $option_value . '" >' . $term->name . '</label></label>';
@@ -323,6 +319,20 @@ if (!class_exists('FPSM_Library')) {
             } else {
                 return false;
             }
+        }
+
+        /**
+         * Returns form row by form id
+         *
+         * @param int $form_id
+         *
+         * @return array $form_row
+         */
+        function get_form_row_by_id($form_id) {
+            global $wpdb;
+            $form_table = FPSM_FORM_TABLE;
+            $form_row = $wpdb->get_row($wpdb->prepare("select * from $form_table where form_id = %d", $form_id));
+            return $form_row;
         }
 
     }

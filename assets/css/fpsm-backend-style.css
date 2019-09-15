@@ -261,3 +261,9 @@ p.fpsm-ajax .fpsm-ajax-loader {
     margin-right: 5px;
 }
 .fpsm-display-none{display:none;}
+form.fpsm-form-wrap {
+    padding-left: 15px;
+    float: right;
+    width: calc(100% - 400px);
+    padding: 20px;
+}

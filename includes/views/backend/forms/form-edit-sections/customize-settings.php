@@ -1,3 +1,1 @@
-<div class="fpsm-form-section fpsm-display-none" data-section-ref="customize">
-    Form customize Settings
-</div>
+<div class="fpsm-settings-each-section fpsm-display-none" data-tab="customize">Customize</div>

@@ -102,4 +102,57 @@ jQuery(document).ready(function ($) {
         });
 
     });
+    
+    /**
+     * Settings section show hide
+     */
+    $('body').on('click', '.fpsm-nav-item', function () {
+        var tab = $(this).data('tab');
+        $('.fpsm-nav-item').removeClass('fpsm-active-nav');
+        $(this).addClass('fpsm-active-nav');
+        $('.fpsm-settings-each-section').hide();
+        $('.fpsm-settings-each-section[data-tab="' + tab + '"]').show();
+
+    });
+    
+    $('body').on('submit', '.fpsm-edit-form', function (e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: 'post',
+            url: fpsm_backend_obj.ajax_url,
+            data: {
+                action: 'fpsm_form_edit_action',
+                _wpnonce: fpsm_backend_obj.ajax_nonce,
+                form_data: form_data
+            },
+            beforeSend: function (xhr) {
+                fpsm_generate_info(translation_strings.ajax_message,'ajax');
+            },
+            success:function(res){
+                res = $.parseJSON(res);
+                if (res.status == 200) {
+                    fpsm_generate_info(res.message, 'info');
+                    if (res.redirect_url) {
+                        window.location = res.redirect_url;
+                        exit;
+                    }
+                } else {
+                    fpsm_generate_info(res.message, 'error');
+                }
+            }
+        });
+
+    });
+    
+    /**
+     * Shortcode clipboard copy
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click', '.fpsm-clipboard-copy', function () {
+        var copy_element = $(this).parent().find('.fpsm-shortcode-preview').select();
+        fpsm_copyToClipboard(copy_element);
+        fpsm_generate_info(translation_strings.clipboad_copy_message, 'info');
+    });
 });
