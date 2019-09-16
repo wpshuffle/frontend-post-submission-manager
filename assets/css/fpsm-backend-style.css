@@ -1,16 +1,28 @@
-.fpsm-header {
-    background: #8a65ea;
-    padding: 30px 20px;
+:root{
+    --primary: #2f5b9f;
+    --secondary: #3ea8de
 }
-.fpsm-header h1,.fpsm-header h2 {
-    color: #fff;
+
+
+
+
+.fpsm-wrap{margin-top: 24px;}
+.fpsm-form-wrap{max-width: 1236px;}
+.fpsm-header {padding: 0;}
+.fpsm-header p{margin-top: 0;}
+.fpsm-header h1{font-size: 48px;}
+.fpsm-header h1,
+.fpsm-header h2 {color: rgba(0,0,0,.48);margin: 0}
+.fpsm-header h1{font-weight: lighter;}
+
+.fpsm-grid-wrap{
+    margin-top: 48px;
 }
-.fpsm-floatLeft {
-    float: left;
-}
-.fpsm-floatRight {
-    float: right;
-}
+
+.fpsm-title-wrap h2{display: flex;font-size: 24px;align-items: center;color: rgba(0,0,0,.68)}
+.fpsm-add-wrap{margin-left: auto}
+
+.fpsm-floatRight {font-size: 14px;display: inline-block;color: rgba(0,0,0,.48)}
 .fpsm-clearfix::after {
     content: "";
     clear: both;
@@ -210,16 +222,13 @@ p.fpsm-ajax .fpsm-ajax-loader {
 }
 input.fpsm-button-primary {
     background: #27ae60;
-    padding: 8px;
+    padding: 10px 18px;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #27ae60;
 }
-.fpsm-add-wrap {
-    padding: 20px 0;
-    text-align: right;
-}
+
 .fpsm-button-primary:hover {
     background: transparent;
     color: #27ae60;
@@ -267,3 +276,23 @@ form.fpsm-form-wrap {
     width: calc(100% - 400px);
     padding: 20px;
 }
+
+
+/*++++++++++++++++++++++++++++==========================+++++++++++++ Backend UI Styles++++++++++++=========*/
+.fpsm-wrap{
+    padding: 24px;
+    background-color: white;
+}
+
+.fpsm-form-lists-table tr th{
+    padding: 15px;
+    background-color: rgba(0,0,0,.1);
+    font-weight: 700;
+    color: rgba(0,0,0,.48) !important;
+}
+.fpsm-form-lists-table tr td{padding: 15px;}
+.fpsm-form-lists-table tfoot tr th{
+    background-color: rgba(0,0,0,.04);
+}
+
+.fpsm-form{margin-top: 34px;}

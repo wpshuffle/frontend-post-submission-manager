@@ -5,9 +5,10 @@ global $fpsm_library_obj;
 <div class="wrap fpsm-wrap">
     <div class="fpsm-header fpsm-clearfix">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
-        <h2 class="fpsm-floatRight"><?php esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?></h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
     </div>
     <form class="fpsm-form">
+        <h2 class="fpsm-floatRight"><?php esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?></h2>
         <div class="fpsm-field-wrap">
             <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
             <div class="fpsm-field">
