@@ -9,55 +9,57 @@ global $fpsm_library_obj;
     </div>
     <form class="fpsm-form">
         <h2 class="fpsm-floatRight"><?php esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?></h2>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
-            <div class="fpsm-field">
-                <input type="checkbox" name="form_status" value="1"/>
+        <div class="fpsm-form-element-wrap">
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="checkbox" name="form_status" value="1"/>
+                </div>
             </div>
-        </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></label>
-            <div class="fpsm-field">
-                <input type="text" name="form_title"/>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="form_title"/>
+                </div>
             </div>
-        </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e('Form Alias', 'frontend-post-submission-manager'); ?></label>
-            <div class="fpsm-field">
-                <input type="text" name="form_alias"/>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Form Alias', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="form_alias"/>
+                </div>
             </div>
-        </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?></label>
-            <div class="fpsm-field">
-                <select name="post_type">
-                    <?php
-                    $post_types = $fpsm_library_obj->get_registered_post_types();
-                    if (!empty($post_types)) {
-                        foreach ($post_types as $post_type) {
-                            ?>
-                            <option value="<?php echo esc_attr($post_type->name); ?>"><?php echo esc_html($post_type->label); ?></option>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <select name="post_type">
+                        <?php
+                        $post_types = $fpsm_library_obj->get_registered_post_types();
+                        if (!empty($post_types)) {
+                            foreach ($post_types as $post_type) {
+                                ?>
+                                <option value="<?php echo esc_attr($post_type->name); ?>"><?php echo esc_html($post_type->label); ?></option>
 
-                            <?php
+                                <?php
+                            }
                         }
-                    }
-                    ?>
-                </select>
+                        ?>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?></label>
-            <div class="fpsm-field">
-                <select name="form_type">
-                    <option value="login_require"><?php esc_html_e('Login require form', 'subscribe-to-download'); ?></option>
-                    <option value="guest"><?php esc_html_e('Guest form', 'subscribe-to-download'); ?></option>
-                </select>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <select name="form_type">
+                        <option value="login_require"><?php esc_html_e('Login require form', 'subscribe-to-download'); ?></option>
+                        <option value="guest"><?php esc_html_e('Guest form', 'subscribe-to-download'); ?></option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="fpsm-field-wrap">
-            <label></label>
-            <div class="fpsm-field">
-                <input type="submit" value="<?php esc_html_e('Add Form', 'subscribe-to-download'); ?>" class="fpsm-primary-button"/>
+            <div class="fpsm-field-wrap">
+                <label></label>
+                <div class="fpsm-field">
+                    <input type="submit" value="<?php esc_html_e('Add Form', 'subscribe-to-download'); ?>" class="fpsm-primary-button"/>
+                </div>
             </div>
         </div>
     </form>

@@ -41,11 +41,7 @@
     display: inline-block;
     width: calc(100% - 180px);
 }
-.fpsm-form-nav-wrap {
-    float: left;
-    background: #222;
-    width:20%;
-}
+
 .fpsm-settings-section-wrap {
     float: left;
     width: 80%;
@@ -68,21 +64,25 @@ ul.fpsm-form-nav li a span {
     margin-right: 10px;
 }
 ul.fpsm-form-nav li a {
-    border-bottom: 1px solid #fff;
-    border-right: 5px solid #222;
+    border-right: 5px solid transparent;
 }
 ul.fpsm-form-nav li:last-child a {
     border-bottom: none;
 }
 ul.fpsm-form-nav {
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 ul.fpsm-form-nav li {
     margin: 0;
 }
-ul.fpsm-form-nav li a:hover, ul.fpsm-form-nav li a.fpsm-active-nav {
-    border-right: 5px solid #8a66ea;
+ul.fpsm-form-nav li a{background-color: rgba(0,0,0,.08);color: rgba(0,0,0,.68);transition: all .3s ease;}
+ul.fpsm-form-nav li a:hover,
+ul.fpsm-form-nav li a.fpsm-active-nav {
+    border-right: 5px solid var(--secondary);
     background: #4c5156;
+    color: white;
 }
 ul.fpsm-form-nav li a:focus {
     box-shadow: none;
@@ -220,7 +220,7 @@ p.fpsm-ajax .fpsm-ajax-loader {
 .fpsm-form-lists-table a.fpsm-copy:hover:before {
     color: #0073aa;
 }
-input.fpsm-button-primary {
+.fpsm-button-primary {
     background: #27ae60;
     padding: 10px 18px;
     color: #fff;
@@ -244,9 +244,7 @@ input.fpsm-button-primary {
 h2.nav-tab-wrapper.wp-clearfix.fpsm-nav-wrap {
     margin-bottom: 20px;
 }
-form.fpsm-form-wrap {
-    padding-left: 15px;
-}
+
 .fpsm-form-message {
     position: fixed;
     top: 20px;
@@ -271,12 +269,50 @@ p.fpsm-ajax .fpsm-ajax-loader {
 }
 .fpsm-display-none{display:none;}
 form.fpsm-form-wrap {
-    padding-left: 15px;
-    float: right;
-    width: calc(100% - 400px);
     padding: 20px;
 }
 
+/*=========================== BTNs =============================*/
+.fpsm-primary-button{
+    background: #27ae60;
+    padding: 10px 18px;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #27ae60;
+    transition: all .3s ease;
+}
+
+.fpsm-primary-button:hover {
+    background: transparent;
+    color: #27ae60;
+}
+table.fixed{table-layout: auto !important;}
+/*=============================================== form elements ================*/
+input[type="text"]{
+    display: block;
+    width: 100%;
+    line-height: 38px;
+    padding: 0 14px;
+}
+
+.fpsm-shortcode-preview{
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(0,0,0,.08);
+    padding: 0 14px;
+    line-height: 38px;
+}
+.fpsm-clipboard-copy{display: inline-block;vertical-align: top;margin-top: 8px;color: #27ae60;margin-left: 10px;cursor: pointer}
+
+.fpsm-field select{
+    height: 38px;
+    line-height: 38px;
+    padding: 0 14px;
+}
+
+table.fpsm-form-lists-table{border-collapse: collapse;}
+table.fpsm-form-lists-table tbody tr{border-bottom: solid 1px rgba(0,0,0,.06)}
 
 /*++++++++++++++++++++++++++++==========================+++++++++++++ Backend UI Styles++++++++++++=========*/
 .fpsm-wrap{
@@ -296,3 +332,17 @@ form.fpsm-form-wrap {
 }
 
 .fpsm-form{margin-top: 34px;}
+.fpsm-form h2{margin-top: 0;font-size: 20px;margin-bottom: 34px;border-bottom: solid 1px rgba(0,0,0,.1);width: 100%;padding-bottom: 20px;}
+.fpsm-form-element-wrap{max-width: 700px;}
+
+.fpsm-shortcode-common{
+    width: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,.1);
+    padding: 0 10px;
+}
+
+.fpsm-field{width: auto}
+.fpsm-shortcode-common{max-width: 338px;}
