@@ -31,6 +31,17 @@ if (empty($form_row)) {
         </div>
         <?php
         /**
+         * Fires on start of the form sections
+         *
+         * @since 1.0.0
+         *
+         * @param array $form_row
+         *
+         */
+        do_action('fpsm_form_sections_start', $form_row);
+        ?>
+        <?php
+        /**
          * Basic Settings
          */
         include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/basic-settings.php');
@@ -64,6 +75,17 @@ if (empty($form_row)) {
          * Customize Settings
          */
         include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/customize-settings.php');
+        ?>
+        <?php
+        /**
+         * Fires on end of the form sections
+         *
+         * @since 1.0.0
+         *
+         * @param array $form_row
+         *
+         */
+        do_action('fpsm_form_sections_end', $form_row);
         ?>
         <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
     </form>
