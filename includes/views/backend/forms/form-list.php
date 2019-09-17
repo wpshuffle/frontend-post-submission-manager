@@ -2,17 +2,24 @@
 defined('ABSPATH') or die('No script kiddies please!!');
 ?>
 <div class="wrap fpsm-wrap">
-    <div class="fpsm-header fpsm-clearfix">
-        <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
-        <h2 class="fpsm-floatRight"><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?></h2>
+    <div class="fpsm-header">
+        <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?>
+        </h1>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+
     </div>
-    <div class="fpsm-form-wrap">
-        <div class="fpsm-add-wrap">
-            <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button" class="fpsm-button-primary" value="<?php esc_html_e('Add New Form', 'frontened-post-submission-manager'); ?>"/></a>
+
+    <div class="fpsm-grid-wrap">
+        <div class="fpsm-title-wrap">
+            <h2><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?>
+                <div class="fpsm-add-wrap">
+                    <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button" class="fpsm-button-primary" value="<?php esc_html_e('Add New Form', 'frontened-post-submission-manager'); ?>"/></a>
+                </div>
+            </h2>
+
         </div>
-    </div>
-    <table class="wp-list-table widefat fixed fpsm-form-lists-table">
-        <thead>
+        <table class="wp-list-table widefat fixed fpsm-form-lists-table">
+            <thead>
             <tr>
                 <th><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></th>
                 <th><?php esc_html_e('Alias', 'frontend-post-submission-manager'); ?></th>
@@ -22,8 +29,8 @@ defined('ABSPATH') or die('No script kiddies please!!');
                 <th><?php esc_html_e('Status', 'frontend-post-submission-manager'); ?></th>
                 <th><?php esc_html_e('Action', 'frontend-post-submission-manager'); ?></th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <?php
             global $wpdb;
             $form_table = FPSM_FORM_TABLE;
@@ -61,8 +68,8 @@ defined('ABSPATH') or die('No script kiddies please!!');
                 <?php
             }
             ?>
-        </tbody>
-        <tfoot>
+            </tbody>
+            <tfoot>
             <tr>
                 <th><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></th>
                 <th><?php esc_html_e('Alias', 'frontend-post-submission-manager'); ?></th>
@@ -72,6 +79,7 @@ defined('ABSPATH') or die('No script kiddies please!!');
                 <th><?php esc_html_e('Status', 'frontend-post-submission-manager'); ?></th>
                 <th><?php esc_html_e('Action', 'frontend-post-submission-manager'); ?></th>
             </tr>
-        </tfoot>
-    </table>
+            </tfoot>
+        </table>
+    </div>
 </div>
