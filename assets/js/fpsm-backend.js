@@ -155,4 +155,15 @@ jQuery(document).ready(function ($) {
         fpsm_copyToClipboard(copy_element);
         fpsm_generate_info(translation_strings.clipboad_copy_message, 'info');
     });
+    
+    /**
+     * Checkbox toggle button
+     */
+    $('.fpsm-field input[type="checkbox"]').each(function () {
+        if (!$(this).parent().hasClass('fpsm-checkbox-toggle') && !$(this).hasClass('fpsm-disable-checkbox-toggle')) {
+            var input_name = $(this).attr('name');
+            $(this).parent().addClass('fpsm-checkbox-toggle');
+            $('<label></label>').insertAfter($(this));
+        }
+    });
 });
