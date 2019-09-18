@@ -7,7 +7,7 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="checkbox" name="form_status" value="1" <?php echo (!empty($form_row->form_status)) ? 'checked="checked"' : ''; ?>/>
+                <input type="checkbox" name="form_status" value="1" <?php echo (!empty($form_row->form_status)) ? 'checked="checked"' : ''; ?>/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
