@@ -3,9 +3,7 @@
     --secondary: #3ea8de
 }
 
-.fpsm-header{display: flex;position: sticky; top:34px;background-color: white;padding: 0 0 28px 0}
-.fpsm-primary-button,
-.fpsm-button-primary{height: 44px;margin-left: auto;align-self: center}
+.fpsm-header{display: flex;position: sticky; top:34px;background-color: white;padding: 0 0 10px 0 !important;z-index: 999}
 .fpsm-wrap{margin-top: 24px;}
 .fpsm-form-wrap{max-width: 1236px;}
 .fpsm-header {padding: 0;}
@@ -20,7 +18,7 @@
 }
 
 .fpsm-title-wrap h2{display: flex;font-size: 24px;align-items: center;color: rgba(0,0,0,.68)}
-.fpsm-add-wrap{margin-left: auto}
+.fpsm-add-wrap{margin-left: auto;align-self: center}
 
 .fpsm-floatRight {font-size: 14px;display: inline-block;color: rgba(0,0,0,.48)}
 .fpsm-clearfix::after {
@@ -237,11 +235,29 @@ p.fpsm-ajax .fpsm-ajax-loader {
     cursor: pointer;
     border: 1px solid #27ae60;
     transition: all .3s ease;
+    text-decoration: none;
 }
 
 .fpsm-button-primary:hover {
     background: transparent;
     color: #27ae60;
+}
+
+.fpsm-button-primary.btn-preview{
+    background-color: #e2ad33;
+    border-color: #e2ad33;
+}
+.fpsm-button-primary.btn-preview:hover{
+    color: #e2ad33;
+    background-color: transparent;
+}
+.fpsm-button-primary.btn-cancel{
+    background-color: #FF6969;
+    border-color: #FF6969;
+}
+.fpsm-button-primary.btn-cancel:hover{
+    color: #FF6969;
+    background-color: transparent;
 }
 .fpsm-export-wrap{margin:20px 0;}
 .fpsm-export-wrap form select {

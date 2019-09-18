@@ -14,7 +14,12 @@ if (empty($form_row)) {
     <div class="fpsm-header fpsm-clearfix">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
 
-        <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
+        <div class="fpsm-add-wrap">
+            <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
+            <a href="#" class="fpsm-button-primary btn-preview">Preview</a>
+            <a href="#" class="fpsm-button-primary btn-cancel">Cancel</a>
+        </div>
+
 
     </div>
 
