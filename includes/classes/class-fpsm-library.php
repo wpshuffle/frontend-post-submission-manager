@@ -335,6 +335,18 @@ if (!class_exists('FPSM_Library')) {
             return $form_row;
         }
 
+        /**
+         * Returns the list of registered users
+         *
+         * @param array $args
+         * 
+         * @return array $users
+         */
+        function get_users($args = '') {
+            $users = get_users();
+            return $users;
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

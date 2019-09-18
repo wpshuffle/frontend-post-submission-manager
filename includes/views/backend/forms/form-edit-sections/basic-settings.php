@@ -40,6 +40,43 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
         </div>
     </div>
     <?php
+    if ($form_row->form_type == 'guest') {
+        ?>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Post Author', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <select name="form_details[basic][post_author]">
+                    <?php
+                    $user_args = array(
+                        'role' => array('administrator', 'editor', 'author', 'contributor'),
+                        'orderby' => 'user_login',
+                        'order' => 'ASC',
+                        'fields' => array('ID', 'user_login'),
+                        'number' => 100
+                    );
+                    /**
+                     * Filters user arguments while fetching the users
+                     *
+                     * @param array $user_args
+                     *
+                     * @since 1.0.0
+                     */
+                    $user_args = apply_filters('fpsm_user_list_args', $user_args);
+                    $users = $fpsm_library_obj->get_users($user_args);
+                    $selected_post_author = (!empty($basic_settings['post_author'])) ? intval($basic_settings['post_author']) : $fpsm_library_obj->get_first_author();
+                    if (!empty($users)) {
+                        foreach ($users as $user) {
+                            ?>
+                            <option value="<?php echo intval($user->ID); ?>"><?php echo esc_html($user->user_login); ?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+    <?php } ?>
+    <?php
     if (current_theme_supports('post-formats')) {
         ?>
         <div class="fpsm-field-wrap">
@@ -68,4 +105,17 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
         <?php
     }
     ?>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Redirection', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[basic][redirection]" value="1" <?php echo (!empty($basic_settings['redirection'])) ? 'checked="checked"' : ''; ?>/>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Redirection Type', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <label><input type="radio" name="form_details[basic][redirection_type]" value="url"/><?php esc_html_e('URL', 'frontend-post-submission-manager'); ?></label>
+            <label><input type="radio" name="form_details[basic][redirection_type]" value="published_post"/><?php esc_html_e('Published Post', 'frontend-post-submission-manager'); ?></label>
+        </div>
+    </div>
 </div>
