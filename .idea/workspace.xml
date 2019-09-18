@@ -4,7 +4,6 @@
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/basic-settings.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/basic-settings.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="409" column="1" lean-forward="true" selection-start-line="409" selection-start-column="1" selection-end-line="409" selection-end-column="1" />
+            <state relative-caret-position="237">
+              <caret line="354" column="25" lean-forward="false" selection-start-line="354" selection-start-column="25" selection-end-line="354" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -167,12 +166,12 @@
       <option name="presentableId" value="Default" />
       <updated>1568618264883</updated>
       <workItem from="1568618266059" duration="6070000" />
-      <workItem from="1568794471858" duration="4259000" />
+      <workItem from="1568794471858" duration="4587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10329000" />
+    <option name="totallyTimeSpent" value="10657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -322,8 +321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="409" column="1" lean-forward="true" selection-start-line="409" selection-start-column="1" selection-end-line="409" selection-end-column="1" />
+        <state relative-caret-position="237">
+          <caret line="354" column="25" lean-forward="false" selection-start-line="354" selection-start-column="25" selection-end-line="354" selection-end-column="25" />
           <folding />
         </state>
       </provider>

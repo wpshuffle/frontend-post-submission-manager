@@ -350,9 +350,9 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
 
 .fpsm-form-lists-table tr th{
     padding: 15px;
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,.04);
     font-weight: 700;
-    color: rgba(0,0,0,.48) !important;
+    color: rgba(0,0,0,.58) !important;
 }
 .fpsm-form-lists-table tr td{padding: 15px;}
 .fpsm-form-lists-table tfoot tr th{
