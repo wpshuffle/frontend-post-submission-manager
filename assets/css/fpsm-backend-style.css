@@ -3,9 +3,9 @@
     --secondary: #3ea8de
 }
 
-
-
-
+.fpsm-header{display: flex;position: sticky; top:34px;background-color: white;padding: 0 0 28px 0}
+.fpsm-primary-button,
+.fpsm-button-primary{height: 44px;margin-left: auto;align-self: center}
 .fpsm-wrap{margin-top: 24px;}
 .fpsm-form-wrap{max-width: 1236px;}
 .fpsm-header {padding: 0;}
