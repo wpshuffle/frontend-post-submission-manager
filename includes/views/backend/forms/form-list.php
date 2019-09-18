@@ -5,16 +5,16 @@ defined('ABSPATH') or die('No script kiddies please!!');
     <div class="fpsm-header">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?>
         </h1>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+        <div class="fpsm-add-wrap">
+            <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button" class="fpsm-button-primary" value="<?php esc_html_e('Add New Form', 'frontened-post-submission-manager'); ?>"/></a>
+        </div>
 
     </div>
 
     <div class="fpsm-grid-wrap">
         <div class="fpsm-title-wrap">
             <h2><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?>
-                <div class="fpsm-add-wrap">
-                    <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button" class="fpsm-button-primary" value="<?php esc_html_e('Add New Form', 'frontened-post-submission-manager'); ?>"/></a>
-                </div>
+
             </h2>
 
         </div>
