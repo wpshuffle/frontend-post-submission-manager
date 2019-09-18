@@ -166,4 +166,42 @@ jQuery(document).ready(function ($) {
             $('<label></label>').insertAfter($(this));
         }
     });
+    
+    /**
+     * Show hide toggle for Select and Radio
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('change', '.fpsm-toggle-trigger', function () {
+
+        var toggle_ref = $(this).val();
+        var toggle_class = $(this).data('toggle-class');
+        $('.' + toggle_class).hide();
+        $('.' + toggle_class + '[data-toggle-ref="' + toggle_ref + '"]').show();
+
+    });
+    
+    $('body').on('click', '.fpsm-checkbox-toggle-trigger', function () {
+        var toggle_class = $(this).data('toggle-class');
+        var toggle_type = ($(this).data('toggle-type')) ? $(this).data('toggle-type') : 'on';
+        switch (toggle_type) {
+            case 'on':
+                if ($(this).is(':checked')) {
+                    $('.' + toggle_class).show();
+                } else {
+                    $('.' + toggle_class).hide();
+                }
+                break;
+            case 'off':
+                if ($(this).is(':checked')) {
+                    $('.' + toggle_class).hide();
+                } else {
+                    $('.' + toggle_class).show();
+
+                }
+                break;
+        }
+
+    });
+
 });

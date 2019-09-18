@@ -7,7 +7,7 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Form Status', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-                <input type="checkbox" name="form_status" value="1" <?php echo (!empty($form_row->form_status)) ? 'checked="checked"' : ''; ?>/>
+            <input type="checkbox" name="form_status" value="1" <?php echo (!empty($form_row->form_status)) ? 'checked="checked"' : ''; ?>/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
@@ -108,14 +108,17 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Redirection', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="checkbox" name="form_details[basic][redirection]" value="1" <?php echo (!empty($basic_settings['redirection'])) ? 'checked="checked"' : ''; ?>/>
+            <input type="checkbox" name="form_details[basic][redirection]" value="1" <?php echo (!empty($basic_settings['redirection'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-redirection-type"/>
         </div>
     </div>
-    <div class="fpsm-field-wrap">
+    <div class="fpsm-field-wrap fpsm-redirection-type <?php echo (empty($basic_settings['redirection'])) ? 'fpsm-display-none' : ''; ?>">
         <label><?php esc_html_e('Redirection Type', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <label><input type="radio" name="form_details[basic][redirection_type]" value="url"/><?php esc_html_e('URL', 'frontend-post-submission-manager'); ?></label>
-            <label><input type="radio" name="form_details[basic][redirection_type]" value="published_post"/><?php esc_html_e('Published Post', 'frontend-post-submission-manager'); ?></label>
+            <?php
+            $checked_redirection_type = (!empty($basic_settings['redirection_type'])) ? $basic_settings['redirection_type'] : 'url';
+            ?>
+            <label><input type="radio" name="form_details[basic][redirection_type]" value="url" <?php checked($checked_redirection_type, 'url'); ?> class="fpsm-toggle-trigger"/><?php esc_html_e('URL', 'frontend-post-submission-manager'); ?></label>
+            <label><input type="radio" name="form_details[basic][redirection_type]" value="published_post" <?php checked($checked_redirection_type, 'published_post'); ?> class="fpsm-toggle-trigger"/><?php esc_html_e('Published Post', 'frontend-post-submission-manager'); ?></label>
         </div>
     </div>
 </div>
