@@ -146,7 +146,6 @@ p.fpsm-ajax .fpsm-ajax-loader {
 .fpsm-form-lists-table a.fpsm-delete,
 .fpsm-form-lists-table a.fpsm-preview,
 .fpsm-form-lists-table a.fpsm-copy {
-    height: 20px;
     display: inline-block;
     color: #fff;
     -ms-border-radius: 3px;
@@ -159,7 +158,8 @@ p.fpsm-ajax .fpsm-ajax-loader {
     width: 25px;
     height: 25px;
     position: relative;
-    background: #FF6969
+    border-radius: 50%;
+    text-align: center;
 }
 .fpsm-form-lists-table a.fpsm-edit:before,
 .fpsm-form-lists-table a.fpsm-delete:before,
@@ -170,8 +170,9 @@ p.fpsm-ajax .fpsm-ajax-loader {
     font-family: FontAwesome;
     font-size: 16px;
     color: #fff;
-    left: 6px;
+    left: 7px;
     top: 2px;
+    color: rgba(0,0,0,.48);
 }
 .fpsm-form-lists-table a.fpsm-edit:before {
     content: '\f040';
@@ -191,15 +192,15 @@ p.fpsm-ajax .fpsm-ajax-loader {
     left: 5px;
 }
 .fpsm-form-lists-table a.fpsm-edit {
-    background: #27ae60;
+    color: #27ae60;
     border: 1px solid #27ae60;
 }
 .fpsm-form-lists-table a.fpsm-preview {
-    background: #e2ad33;
+    color: #e2ad33;
     border: 1px solid #e2ad33;
 }
 .fpsm-form-lists-table a.fpsm-copy {
-    background: #0073aa;
+    color: #0073aa;
     border: 1px solid #0073aa;
 }
 .fpsm-form-lists-table a.fpsm-edit:hover,
@@ -208,25 +209,34 @@ p.fpsm-ajax .fpsm-ajax-loader {
 .fpsm-form-lists-table a.fpsm-copy:hover {
     background: transparent;
 }
-.fpsm-form-lists-table a.fpsm-edit:hover:before {
-    color: #27ae60;
+.fpsm-form-lists-table a.fpsm-edit:hover{
+    background-color: #27ae60;
 }
-.fpsm-form-lists-table a.fpsm-delete:hover:before {
-    color: #FF6969 !important;
+.fpsm-form-lists-table a.fpsm-delete:hover{
+    background-color: #FF6969 !important;
 }
-.fpsm-form-lists-table a.fpsm-preview:hover:before {
-    color: #e2ad33;
+.fpsm-form-lists-table a.fpsm-preview:hover{
+    background-color: #e2ad33;
 }
+.fpsm-form-lists-table a.fpsm-copy:hover{
+    background-color: #0073aa;
+}
+
+.fpsm-form-lists-table a.fpsm-edit:hover:before,
+.fpsm-form-lists-table a.fpsm-delete:hover:before,
+.fpsm-form-lists-table a.fpsm-preview:hover:before,
 .fpsm-form-lists-table a.fpsm-copy:hover:before {
-    color: #0073aa;
+    color:white;
 }
+
 .fpsm-button-primary {
     background: #27ae60;
-    padding: 10px 18px;
+    padding: 12px 18px;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
     border: 1px solid #27ae60;
+    transition: all .3s ease;
 }
 
 .fpsm-button-primary:hover {
@@ -299,11 +309,11 @@ input[type="text"]{
 .fpsm-shortcode-preview{
     display: inline-block;
     vertical-align: top;
-    background-color: rgba(0,0,0,.08);
+    background-color: rgba(0,0,0,.05);
     padding: 0 14px;
     line-height: 38px;
 }
-.fpsm-clipboard-copy{display: inline-block;vertical-align: top;margin-top: 8px;color: #27ae60;margin-left: 10px;cursor: pointer}
+.fpsm-clipboard-copy{display: inline-block;vertical-align: top;color: #27ae60;margin-left: 10px;cursor: pointer;line-height: 38px;background:#dbead7;margin-left: -3px;padding: 0 14px;}
 
 .fpsm-field select{
     height: 38px;
@@ -313,6 +323,7 @@ input[type="text"]{
 
 table.fpsm-form-lists-table{border-collapse: collapse;}
 table.fpsm-form-lists-table tbody tr{border-bottom: solid 1px rgba(0,0,0,.06)}
+table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
 
 /*++++++++++++++++++++++++++++==========================+++++++++++++ Backend UI Styles++++++++++++=========*/
 .fpsm-wrap{
