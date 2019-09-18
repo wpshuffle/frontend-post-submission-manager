@@ -106,19 +106,44 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     }
     ?>
     <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Required Error Message', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <textarea name="form_details[basic][required_error_message]"><?php echo (!empty($basic_settings['required_error_message'])) ? esc_html($basic_settings['required_error_message']) : ''; ?></textarea>
+            <p class="description"><?php esc_html_e('This message will be shown when any required fields are not filled.', 'frontend-post-submission-manager'); ?></p>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Form Success Message', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <textarea name="form_details[basic][form_success_message]"><?php echo (!empty($basic_settings['form_success_message'])) ? esc_html($basic_settings['form_success_message']) : ''; ?></textarea>
+            <p class="description"><?php esc_html_e('This message will be shown after successful form submission', 'frontend-post-submission-manager'); ?></p>
+        </div>
+    </div>
+
+    <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Redirection', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
             <input type="checkbox" name="form_details[basic][redirection]" value="1" <?php echo (!empty($basic_settings['redirection'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-redirection-type"/>
         </div>
     </div>
-    <div class="fpsm-field-wrap fpsm-redirection-type <?php echo (empty($basic_settings['redirection'])) ? 'fpsm-display-none' : ''; ?>">
-        <label><?php esc_html_e('Redirection Type', 'frontend-post-submission-manager'); ?></label>
-        <div class="fpsm-field">
-            <?php
-            $checked_redirection_type = (!empty($basic_settings['redirection_type'])) ? $basic_settings['redirection_type'] : 'url';
-            ?>
-            <label><input type="radio" name="form_details[basic][redirection_type]" value="url" <?php checked($checked_redirection_type, 'url'); ?> class="fpsm-toggle-trigger"/><?php esc_html_e('URL', 'frontend-post-submission-manager'); ?></label>
-            <label><input type="radio" name="form_details[basic][redirection_type]" value="published_post" <?php checked($checked_redirection_type, 'published_post'); ?> class="fpsm-toggle-trigger"/><?php esc_html_e('Published Post', 'frontend-post-submission-manager'); ?></label>
+    <div class="fpsm-redirection-type <?php echo (empty($basic_settings['redirection'])) ? 'fpsm-display-none' : ''; ?>" >
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Redirection Type', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <?php
+                $selected_redirection_type = (!empty($basic_settings['redirection_type'])) ? $basic_settings['redirection_type'] : 'url';
+                ?>
+                <select name="form_details[basic][redirection_type]" class="fpsm-toggle-trigger" data-toggle-class="fpsm-redirection-url">
+                    <option value="url" <?php selected($selected_redirection_type, 'url'); ?>><?php esc_html_e('URL', 'frontend-post-submission-manager'); ?></option>
+                    <option value="published_post" <?php selected($selected_redirection_type, 'published_post'); ?>><?php esc_html_e('Published Post', 'frontend-post-submission-manager'); ?></option>
+                </select>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap fpsm-redirection-url <?php echo ($selected_redirection_type != 'url') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="url">
+            <label><?php esc_html_e('Redirection URL', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[basic][redirection_url]" value="<?php echo (!empty($basic_settings['redirection_url'])) ? esc_url($basic_settings['redirection_url']) : ''; ?>"/>
+            </div>
         </div>
     </div>
 </div>
