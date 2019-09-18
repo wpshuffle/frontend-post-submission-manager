@@ -13,13 +13,16 @@ if (empty($form_row)) {
 <div class="wrap fpsm-wrap fpsm-clearfix">
     <div class="fpsm-header fpsm-clearfix">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-        <div class="fpsm-field-wrap fpsm-shortcode-common">
-            <label><?php esc_html_e('Shortcode', 'subscribe-to-download') ?></label>
-            <div class="fpsm-field">
-                <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
-                <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
-            </div>
+
+        <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
+
+    </div>
+
+    <div class="fpsm-field-wrap fpsm-shortcode-common">
+        <label><?php esc_html_e('Shortcode', 'subscribe-to-download') ?></label>
+        <div class="fpsm-field">
+            <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
+            <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
         </div>
     </div>
 
@@ -90,6 +93,6 @@ if (empty($form_row)) {
          */
         do_action('fpsm_form_sections_end', $form_row);
         ?>
-        <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
+
     </form>
 </div>
