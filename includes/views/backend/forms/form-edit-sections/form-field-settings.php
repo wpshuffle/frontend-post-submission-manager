@@ -1,3 +1,6 @@
+<?php
+$form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array();
+?>
 <div class="fpsm-settings-each-section fpsm-display-none" data-tab="form">
     <div class="fpsm-custom-field-add-form">
         <div class="fpsm-field-wrap">
@@ -53,5 +56,10 @@
             </div>
 
         </div>
+    </div>
+    <div class="fpsm-form-fields-wrap">
+        <?php
+        $form_fields = (!empty($form_settings['fields'])) ? $form_settings['fields'] : $fpsm_library_obj->get_default_fields();
+        ?>
     </div>
 </div>

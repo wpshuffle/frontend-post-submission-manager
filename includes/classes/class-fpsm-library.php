@@ -339,12 +339,27 @@ if (!class_exists('FPSM_Library')) {
          * Returns the list of registered users
          *
          * @param array $args
-         * 
+         *
          * @return array $users
          */
         function get_users($args = '') {
-            $users = get_users();
+            $users = get_users($args);
             return $users;
+        }
+
+        /**
+         * Returns the default field for frontend form         *
+         * @return array $default_fields
+         *
+         * @since 1.0.0         *
+         */
+        function get_default_fields() {
+            $default_fields = array('post_title' => array(),
+                'post_content' => array(),
+                'post_image' => array(),
+                'post_excerpt' => array()
+            );
+            return $default_fields;
         }
 
     }

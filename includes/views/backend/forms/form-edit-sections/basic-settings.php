@@ -1,6 +1,4 @@
 <?php
-$form_details = (!empty($form_row->form_details)) ? $form_row->form_details : '';
-$form_details = maybe_unserialize($form_details);
 $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : array();
 ?>
 <div class="fpsm-settings-each-section" data-tab="basic">
@@ -48,7 +46,7 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
                 <select name="form_details[basic][post_author]">
                     <?php
                     $user_args = array(
-                        'role' => array('administrator', 'editor', 'author', 'contributor'),
+                        'role__in' => array('administrator', 'author', 'editor', 'contributor'),
                         'orderby' => 'user_login',
                         'order' => 'ASC',
                         'fields' => array('ID', 'user_login'),
@@ -63,6 +61,7 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
                      */
                     $user_args = apply_filters('fpsm_user_list_args', $user_args);
                     $users = $fpsm_library_obj->get_users($user_args);
+                    var_dump($users);
                     $selected_post_author = (!empty($basic_settings['post_author'])) ? intval($basic_settings['post_author']) : $fpsm_library_obj->get_first_author();
                     if (!empty($users)) {
                         foreach ($users as $user) {

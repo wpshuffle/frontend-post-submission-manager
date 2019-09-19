@@ -9,6 +9,8 @@ $form_row = $fpsm_library_obj->get_form_row_by_id($form_id);
 if (empty($form_row)) {
     return;
 }
+$form_details = (!empty($form_row->form_details)) ? $form_row->form_details : '';
+$form_details = maybe_unserialize($form_details);
 ?>
 <div class="wrap fpsm-wrap fpsm-clearfix">
     <div class="fpsm-header fpsm-clearfix">
