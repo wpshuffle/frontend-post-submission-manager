@@ -353,13 +353,49 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0         *
          */
-        function get_default_fields() {
+        function get_default_fields($post_type = 'post', $form_type = 'login_require') {
             $default_fields = array('post_title' => array(),
                 'post_content' => array(),
                 'post_image' => array(),
                 'post_excerpt' => array()
             );
-            return $default_fields;
+            if ($form_type == 'guest') {
+                $default_fields['author_name'] = array();
+                $default_fields['author_email'] = array();
+            }
+            $taxonomies = get_object_taxonomies($post_type, 'objects');
+            if (!empty($taxonomies)) {
+                foreach ($taxonomies as $taxonomy => $taxonomy_details) {
+                    $key = '_taxonomy_' . $taxonomy;
+                    $default_fields[$key] = array();
+                }
+            }
+            /**
+             * Filter the default fields for form
+             * @param array $default_fields
+             *
+             * @since 1.0.0
+             */
+            return apply_filters('fpsm_default_fields', $default_fields);
+        }
+
+        /**
+         * Returns the respective file name for respective field type
+         *
+         * @param string $field_key
+         * @return string $field_file
+         *
+         * @since 1.0.0
+         */
+        function generate_field_file($field_key) {
+            if (strpos($field_key, '_taxonomy') === 0) {
+                $field_file = 'taxonomy.php';
+            } else if (strpos($field_key, '_custom_field') === 0) {
+                $field_file = 'custom_field.php';
+            } else {
+                $field_file = "$field_key.php";
+            }
+            return $field_file;
         }
 
     }

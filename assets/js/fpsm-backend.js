@@ -203,5 +203,14 @@ jQuery(document).ready(function ($) {
         }
 
     });
+    
+     $('body').on('click', '.fpsm-field-title', function () {
+        $(this).closest('.fpsm-each-form-field').find('.fpsm-field-body').slideToggle(500);
+        if ($(this).find('span.dashicons').hasClass('dashicons-arrow-up')) {
+            $(this).find('span.dashicons').removeClass('dashicons-arrow-up').addClass('dashicons-arrow-down');
+        } else {
+            $(this).find('span.dashicons').removeClass('dashicons-arrow-down').addClass('dashicons-arrow-up');
+        }
+    });
 
 });
