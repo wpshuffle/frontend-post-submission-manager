@@ -452,3 +452,13 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
     margin-right: 8px;
     
 }
+.fpsm-form-fields-wrap {
+    float: left;
+    width: 65%;
+    padding-right: 33px;
+    border-right: 1px solid #bbb;
+}
+.fpsm-custom-field-add-form {
+    width: 30%;
+    float: right;
+}
