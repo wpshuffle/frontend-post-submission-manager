@@ -16,5 +16,6 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
         }
         ?>
     </div>
+
     <?php include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/custom-field-add-form.php'); ?>
 </div>
