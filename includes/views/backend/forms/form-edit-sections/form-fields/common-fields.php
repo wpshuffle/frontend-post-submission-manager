@@ -1,10 +1,10 @@
 <div class="fpsm-field-wrap">
     <label><?php esc_html_e('Show on form', 'frontend-post-submission-manager'); ?></label>
     <div class="fpsm-field">
-        <input type="checkbox" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][show_on_form]" value="1" <?php echo (!empty($field_details['show_on_form'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref"/>
+        <input type="checkbox" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][show_on_form]" value="1" <?php echo (!empty($field_details['show_on_form'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref-<?php echo (!empty($taxonomy)) ? esc_attr($taxonomy) : esc_attr($field_key); ?>"/>
     </div>
 </div>
-<div class="fpsm-show-fields-ref <?php echo (empty($field_details['show_on_form'])) ? 'fpsm-display-none' : ''; ?>">
+<div class="fpsm-show-fields-ref-<?php echo (!empty($taxonomy)) ? esc_attr($taxonomy) : esc_attr($field_key); ?> <?php echo (empty($field_details['show_on_form'])) ? 'fpsm-display-none' : ''; ?>">
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Required', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">

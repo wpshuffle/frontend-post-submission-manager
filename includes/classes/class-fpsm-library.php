@@ -364,9 +364,13 @@ if (!class_exists('FPSM_Library')) {
                 $default_fields['author_email'] = array();
             }
             $taxonomies = get_object_taxonomies($post_type, 'objects');
+            if ($post_type == 'post') {
+                unset($taxonomies['post_format']);
+            }
+
             if (!empty($taxonomies)) {
                 foreach ($taxonomies as $taxonomy => $taxonomy_details) {
-                    $key = '_taxonomy_' . $taxonomy;
+                    $key = '_taxonomy|' . $taxonomy;
                     $default_fields[$key] = array();
                 }
             }
