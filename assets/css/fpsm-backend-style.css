@@ -462,3 +462,7 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
     width: 30%;
     float: right;
 }
+.fpsm-sortable-placeholder {
+    border: 2px dashed #bbb;
+    margin-bottom:20px;
+}

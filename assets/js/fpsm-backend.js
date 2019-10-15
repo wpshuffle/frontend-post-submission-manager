@@ -85,9 +85,9 @@ jQuery(document).ready(function ($) {
                 form_data: form_data
             },
             beforeSend: function (xhr) {
-                fpsm_generate_info(translation_strings.ajax_message,'ajax');
+                fpsm_generate_info(translation_strings.ajax_message, 'ajax');
             },
-            success:function(res){
+            success: function (res) {
                 res = $.parseJSON(res);
                 if (res.status == 200) {
                     fpsm_generate_info(res.message, 'info');
@@ -102,7 +102,7 @@ jQuery(document).ready(function ($) {
         });
 
     });
-    
+
     /**
      * Settings section show hide
      */
@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
         $('.fpsm-settings-each-section[data-tab="' + tab + '"]').show();
 
     });
-    
+
     $('body').on('submit', '.fpsm-edit-form', function (e) {
         e.preventDefault();
         var form_data = $(this).serialize();
@@ -127,9 +127,9 @@ jQuery(document).ready(function ($) {
                 form_data: form_data
             },
             beforeSend: function (xhr) {
-                fpsm_generate_info(translation_strings.ajax_message,'ajax');
+                fpsm_generate_info(translation_strings.ajax_message, 'ajax');
             },
-            success:function(res){
+            success: function (res) {
                 res = $.parseJSON(res);
                 if (res.status == 200) {
                     fpsm_generate_info(res.message, 'info');
@@ -144,7 +144,7 @@ jQuery(document).ready(function ($) {
         });
 
     });
-    
+
     /**
      * Shortcode clipboard copy
      * 
@@ -155,7 +155,7 @@ jQuery(document).ready(function ($) {
         fpsm_copyToClipboard(copy_element);
         fpsm_generate_info(translation_strings.clipboad_copy_message, 'info');
     });
-    
+
     /**
      * Checkbox toggle button
      */
@@ -166,7 +166,7 @@ jQuery(document).ready(function ($) {
             $('<label></label>').insertAfter($(this));
         }
     });
-    
+
     /**
      * Show hide toggle for Select and Radio
      * 
@@ -180,7 +180,7 @@ jQuery(document).ready(function ($) {
         $('.' + toggle_class + '[data-toggle-ref="' + toggle_ref + '"]').show();
 
     });
-    
+
     $('body').on('click', '.fpsm-checkbox-toggle-trigger', function () {
         var toggle_class = $(this).data('toggle-class');
         var toggle_type = ($(this).data('toggle-type')) ? $(this).data('toggle-type') : 'on';
@@ -203,8 +203,8 @@ jQuery(document).ready(function ($) {
         }
 
     });
-    
-     $('body').on('click', '.fpsm-field-title', function () {
+
+    $('body').on('click', '.fpsm-field-title', function () {
         $(this).closest('.fpsm-each-form-field').find('.fpsm-field-body').slideToggle(500);
         if ($(this).find('span.dashicons').hasClass('dashicons-arrow-up')) {
             $(this).find('span.dashicons').removeClass('dashicons-arrow-up').addClass('dashicons-arrow-down');
@@ -212,5 +212,50 @@ jQuery(document).ready(function ($) {
             $(this).find('span.dashicons').removeClass('dashicons-arrow-down').addClass('dashicons-arrow-up');
         }
     });
+
+    $('body').on('click', '.fpsm-form-save', function () {
+        var form = $(this).data('form');
+        $('.' + form).submit();
+    });
+
+    $('body').on('click', '.fpsm-form-delete', function () {
+        if (confirm(translation_strings.delete_form_confirm)) {
+            var selector = $(this);
+            var form_id = $(this).data('form-id');
+            $.ajax({
+                type: 'post',
+                url: fpsm_backend_obj.ajax_url,
+                data: {
+                    action: 'fpsm_form_delete_action',
+                    _wpnonce: fpsm_backend_obj.ajax_nonce,
+                    form_id: form_id
+                },
+                beforeSend: function (xhr) {
+                    fpsm_generate_info(translation_strings.ajax_message, 'ajax');
+                },
+                success: function (res) {
+                    res = $.parseJSON(res);
+                    if (res.status == 200) {
+                        selector.closest('tr').fadeOut(500);
+                        fpsm_generate_info(res.message, 'info');
+                    } else {
+                        fpsm_generate_info(res.message, 'error');
+                    }
+                }
+            });
+        }
+    });
+
+    $('.fpsm-sortable').sortable({
+        placeholder: "fpsm-sortable-placeholder",
+        forcePlaceholderSize: true
+    });
+    
+    /**
+     * Custom field adder
+     * 
+     * @since 1.0.0
+     */
+    
 
 });

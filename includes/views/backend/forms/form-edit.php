@@ -17,9 +17,9 @@ $form_details = maybe_unserialize($form_details);
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
 
         <div class="fpsm-add-wrap">
-            <input type="submit" value="<?php esc_attr_e('Save', 'frontend-post-submission-manager'); ?>" class="fpsm-button-primary"/>
-            <a href="#" class="fpsm-button-primary btn-preview">Preview</a>
-            <a href="#" class="fpsm-button-primary btn-cancel">Cancel</a>
+            <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e('Save', 'frontend-post-submission-manager'); ?></a>
+            <a href="#" class="fpsm-button-primary btn-preview"><?php esc_html_e('Preview', 'frontend-post-submission-manager'); ?></a>
+            <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Cancel', 'frontend-post-submission-manager'); ?></a>
         </div>
 
 
@@ -41,7 +41,7 @@ $form_details = maybe_unserialize($form_details);
     include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-navigation.php');
     ?>
     <form class="fpsm-form-wrap fpsm-edit-form">
-
+        <input type="hidden" name="form_id" value="<?php echo intval($form_id); ?>"/>
         <?php
         /**
          * Fires on start of the form sections

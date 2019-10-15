@@ -14,7 +14,7 @@
     <div class="fpsm-field-wrap fpsm-required-message <?php echo (empty($field_details['required'])) ? 'fpsm-display-none' : ''; ?>">
         <label><?php esc_html_e('Required Error Message', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][required_error_message]"/>
+            <input type="text" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][required_error_message]" value="<?php echo (!empty($field_details['required_error_message'])) ? esc_attr($field_details['required_error_message']) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
