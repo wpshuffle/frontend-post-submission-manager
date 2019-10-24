@@ -26,7 +26,7 @@ $form_details = maybe_unserialize($form_details);
     </div>
 
     <div class="fpsm-field-wrap fpsm-shortcode-common">
-        <label><?php esc_html_e('Shortcode', 'subscribe-to-download') ?></label>
+        <label><?php esc_html_e('Shortcode', 'frontend-post-submission-manager') ?></label>
         <div class="fpsm-field">
             <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
             <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>

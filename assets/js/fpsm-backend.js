@@ -256,6 +256,19 @@ jQuery(document).ready(function ($) {
      * 
      * @since 1.0.0
      */
+    $('body').on('click','.fpsm-custom-field-add-trigger',function(){
+       var custom_field_label = $('#fpsm-custom-field-label').val();
+       var custom_field_meta_key = $('#fpsm-custom-field-meta-key').val();
+       var custom_field_key = '_custom_field|'+custom_field_meta_key;
+       if(custom_field_label == '' || custom_field_key == ''){
+           fpsm_generate_info(translation_strings.custom_field_error, 'error');
+       }
+       var field_type = $('#fpsm-custom-field-type').val();
+       var data = {label:custom_field_label,field_key:custom_field_key};
+       var field_template = wp.template('custom-'+field_type);
+       $('.fpsm-form-fields-wrap').append(field_template(data))
+       
+    });
     
 
 });

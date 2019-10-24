@@ -466,3 +466,7 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
     border: 2px dashed #bbb;
     margin-bottom:20px;
 }
+a.fpsm-field-remove-trigger {
+    color: #222;
+    text-decoration: none;
+}
