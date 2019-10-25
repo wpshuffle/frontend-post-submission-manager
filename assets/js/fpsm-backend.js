@@ -73,6 +73,30 @@ jQuery(document).ready(function ($) {
         return str;
     }
 
+    /**
+     * Initialize checkbox as toggle switch
+     * 
+     * @since 1.0.0
+     */
+
+    function initialize_checkbox_toggle() {
+
+        $('.fpsm-field input[type="checkbox"]').each(function () {
+            if (!$(this).parent().hasClass('fpsm-checkbox-toggle') && !$(this).hasClass('fpsm-disable-checkbox-toggle')) {
+                var input_name = $(this).attr('name');
+                $(this).parent().addClass('fpsm-checkbox-toggle');
+                $('<label></label>').insertAfter($(this));
+            }
+        });
+    }
+    
+    /**
+     * Initialize checkbox as toggle on page load
+     * 
+     * @since 1.0.0
+     */
+    initialize_checkbox_toggle();
+
     $('body').on('submit', '.fpsm-form', function (e) {
         e.preventDefault();
         var form_data = $(this).serialize();
@@ -156,16 +180,7 @@ jQuery(document).ready(function ($) {
         fpsm_generate_info(translation_strings.clipboad_copy_message, 'info');
     });
 
-    /**
-     * Checkbox toggle button
-     */
-    $('.fpsm-field input[type="checkbox"]').each(function () {
-        if (!$(this).parent().hasClass('fpsm-checkbox-toggle') && !$(this).hasClass('fpsm-disable-checkbox-toggle')) {
-            var input_name = $(this).attr('name');
-            $(this).parent().addClass('fpsm-checkbox-toggle');
-            $('<label></label>').insertAfter($(this));
-        }
-    });
+
 
     /**
      * Show hide toggle for Select and Radio
@@ -188,14 +203,19 @@ jQuery(document).ready(function ($) {
             case 'on':
                 if ($(this).is(':checked')) {
                     $('.' + toggle_class).show();
+                    $('.' + toggle_class).removeClass('fpsm-display-none');
+                    
                 } else {
                     $('.' + toggle_class).hide();
+                    $('.' + toggle_class).addClass('fpsm-display-none');
                 }
                 break;
             case 'off':
                 if ($(this).is(':checked')) {
+                    $('.' + toggle_class).addClass('fpsm-display-none');
                     $('.' + toggle_class).hide();
                 } else {
+                    $('.' + toggle_class).removeClass('fpsm-display-none');
                     $('.' + toggle_class).show();
 
                 }
@@ -250,25 +270,40 @@ jQuery(document).ready(function ($) {
         placeholder: "fpsm-sortable-placeholder",
         forcePlaceholderSize: true
     });
-    
+
     /**
      * Custom field adder
      * 
      * @since 1.0.0
      */
-    $('body').on('click','.fpsm-custom-field-add-trigger',function(){
-       var custom_field_label = $('#fpsm-custom-field-label').val();
-       var custom_field_meta_key = $('#fpsm-custom-field-meta-key').val();
-       var custom_field_key = '_custom_field|'+custom_field_meta_key;
-       if(custom_field_label == '' || custom_field_key == ''){
-           fpsm_generate_info(translation_strings.custom_field_error, 'error');
-       }
-       var field_type = $('#fpsm-custom-field-type').val();
-       var data = {label:custom_field_label,field_key:custom_field_key};
-       var field_template = wp.template('custom-'+field_type);
-       $('.fpsm-form-fields-wrap').append(field_template(data))
-       
+    $('body').on('click', '.fpsm-custom-field-add-trigger', function () {
+        var custom_field_label = $('#fpsm-custom-field-label').val();
+        var custom_field_meta_key = $('#fpsm-custom-field-meta-key').val();
+        var custom_field_key = '_custom_field|' + custom_field_meta_key;
+        if (custom_field_label == '' || custom_field_meta_key == '') {
+            fpsm_generate_info(translation_strings.custom_field_error, 'error');
+        } else {
+            var field_type = $('#fpsm-custom-field-type').val();
+            var data = {label: custom_field_label, field_key: custom_field_key,meta_key:custom_field_meta_key};
+            var field_template = wp.template('custom-' + field_type);
+            $('.fpsm-form-fields-wrap').append(field_template(data));
+            initialize_checkbox_toggle();
+        }
+
+
     });
-    
+
+    /**
+     * Custeom field remover
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click', '.fpsm-field-remove-trigger', function () {
+        if (confirm(translation_strings.custom_field_delete_confirm)) {
+            $(this).closest('.fpsm-each-form-field').remove();
+
+        }
+    });
+
 
 });
