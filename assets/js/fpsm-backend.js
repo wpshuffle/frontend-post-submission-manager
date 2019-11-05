@@ -284,7 +284,7 @@ jQuery(document).ready(function ($) {
             fpsm_generate_info(translation_strings.custom_field_error, 'error');
         } else {
             var field_type = $('#fpsm-custom-field-type').val();
-            var data = {label: custom_field_label, field_key: custom_field_key,meta_key:custom_field_meta_key};
+            var data = {label: custom_field_label, field_key: custom_field_key,meta_key:custom_field_meta_key,field_type:field_type};
             var field_template = wp.template('custom-' + field_type);
             $('.fpsm-form-fields-wrap').append(field_template(data));
             initialize_checkbox_toggle();

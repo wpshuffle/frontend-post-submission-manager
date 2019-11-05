@@ -1,7 +1,8 @@
+<input type="hidden" name="form_details[form][fields][{{data.field_key}}][field_type]" value="{{data.field_type}}"/>
 <div class="fpsm-field-wrap">
     <label><?php esc_html_e('Show on form', 'frontend-post-submission-manager'); ?></label>
     <div class="fpsm-field">
-        <input type="checkbox" name="form_details[form][fields][{{data.field_key}}][show_on_form]" value="1"  lass="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref-{{data.meta_key}}"/>
+        <input type="checkbox" name="form_details[form][fields][{{data.field_key}}][show_on_form]" value="1"  class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref-{{data.meta_key}}"/>
     </div>
 </div>
 <div class="fpsm-show-fields-ref-{{data.meta_key}} fpsm-display-none">
