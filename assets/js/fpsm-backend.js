@@ -288,13 +288,15 @@ jQuery(document).ready(function ($) {
             var field_template = wp.template('custom-' + field_type);
             $('.fpsm-form-fields-wrap').append(field_template(data));
             initialize_checkbox_toggle();
+            $('#fpsm-custom-field-label').val('');
+            $('#fpsm-custom-field-meta-key').val('');
         }
 
 
     });
 
     /**
-     * Custeom field remover
+     * Custom field remover
      * 
      * @since 1.0.0
      */
