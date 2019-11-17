@@ -13,11 +13,13 @@
                         <div class="fpsm-each-dropdown">
                             <input type="text" name="form_details[form][fields][{{data.field_key}}][options][]" placeholder="<?php esc_html_e('Option 1', 'frontend-post-submission-manager'); ?>"/>
                             <input type="text" name="form_details[form][fields][{{data.field_key}}][values][]" placeholder="<?php esc_html_e('Value 1', 'frontend-post-submission-manager'); ?>"/>
+                            <label><input type="radio" name="form_details[form][fields][{{data.field_key}}][checked]" value=""/><?php esc_html_e('Checked', 'frontend-post-submission-manager'); ?></label>
                             <span class="dashicons dashicons-trash fpsm-delete-dropdown-trigger"></span>
                         </div>
                         <div class="fpsm-each-dropdown">
                             <input type="text" name="form_details[form][fields][{{data.field_key}}][options][]" placeholder="<?php esc_html_e('Option 2', 'frontend-post-submission-manager'); ?>"/>
                             <input type="text" name="form_details[form][fields][{{data.field_key}}][values][]" placeholder="<?php esc_html_e('Value 2', 'frontend-post-submission-manager'); ?>"/>
+                            <label><input type="radio" name="form_details[form][fields][{{data.field_key}}][checked]" value=""/><?php esc_html_e('Checked', 'frontend-post-submission-manager'); ?></label>
                             <span class="dashicons dashicons-trash fpsm-delete-dropdown-trigger"></span>
                         </div>
                     </div>
