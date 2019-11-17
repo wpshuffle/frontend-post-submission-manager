@@ -27,7 +27,7 @@
     display: table;
 }
 .fpsm-field-wrap {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .fpsm-field-wrap > label {
     display: inline-block;
@@ -469,4 +469,32 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
 a.fpsm-field-remove-trigger {
     color: #222;
     text-decoration: none;
+}
+.fpsm-each-dropdown input[type="text"] {
+    width: 45%;
+    display: inline-block;
+}
+.fpsm-each-dropdown {
+    box-shadow: 0 0 5px #ddd;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    background: #fff;
+}
+span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
+    margin-top: 3px;
+    cursor: pointer;
+    padding: 5px;
+}
+.fpsm-each-dropdown:before {
+    content: "\f545";
+    font-family: dashicons;
+    position: absolute;
+    left: -16px;
+    top: 30%;
+    color: #222;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: move;
+    font-size: 20px;
 }

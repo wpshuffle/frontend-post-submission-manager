@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-    
+
     /**
      * Initialize checkbox as toggle on page load
      * 
@@ -204,7 +204,7 @@ jQuery(document).ready(function ($) {
                 if ($(this).is(':checked')) {
                     $('.' + toggle_class).show();
                     $('.' + toggle_class).removeClass('fpsm-display-none');
-                    
+
                 } else {
                     $('.' + toggle_class).hide();
                     $('.' + toggle_class).addClass('fpsm-display-none');
@@ -284,12 +284,21 @@ jQuery(document).ready(function ($) {
             fpsm_generate_info(translation_strings.custom_field_error, 'error');
         } else {
             var field_type = $('#fpsm-custom-field-type').val();
-            var data = {label: custom_field_label, field_key: custom_field_key,meta_key:custom_field_meta_key,field_type:field_type};
+            var data = {label: custom_field_label, field_key: custom_field_key, meta_key: custom_field_meta_key, field_type: field_type};
             var field_template = wp.template('custom-' + field_type);
             $('.fpsm-form-fields-wrap').append(field_template(data));
             initialize_checkbox_toggle();
             $('#fpsm-custom-field-label').val('');
             $('#fpsm-custom-field-meta-key').val('');
+            $('body,html').animate({
+                scrollTop: $('.fpsm-each-form-field').last().offset().top + 100
+            }, 'slow');
+
+            $('.fpsm-sortable').sortable({
+                placeholder: "fpsm-sortable-placeholder",
+                forcePlaceholderSize: true
+            });
+
         }
 
 
@@ -303,6 +312,32 @@ jQuery(document).ready(function ($) {
     $('body').on('click', '.fpsm-field-remove-trigger', function () {
         if (confirm(translation_strings.custom_field_delete_confirm)) {
             $(this).closest('.fpsm-each-form-field').remove();
+
+        }
+    });
+
+    /**
+     * Select dropdown option adder
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click', '.fpsm-add-option-trigger', function () {
+        var selector = $(this);
+        var field_key = $(this).data('field-key');
+        var data = {field_key: field_key};
+        var option_template = wp.template('option');
+        selector.closest('.fpsm-field').find('.fpsm-dropdown-list-wrap').append(option_template(data));
+        selector.closest('.fpsm-field').find('.fpsm-each-dropdown').last().find('input[type="text"]').first().focus();
+    });
+
+    /**
+     * Option delete trigger
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click', '.fpsm-delete-dropdown-trigger', function () {
+        if (confirm(translation_strings.option_delete_confirm)) {
+            $(this).closest('.fpsm-each-dropdown').remove();
 
         }
     });

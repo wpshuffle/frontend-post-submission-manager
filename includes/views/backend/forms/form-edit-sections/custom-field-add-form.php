@@ -47,7 +47,6 @@
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label></label>
         <div class="fpsm-field">
             <input type="button" class="fpsm-button-secondary fpsm-custom-field-add-trigger" value="<?php esc_attr_e('Add', 'frontend-post-submission-manager'); ?>"/>
         </div>

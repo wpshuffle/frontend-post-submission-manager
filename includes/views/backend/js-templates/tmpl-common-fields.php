@@ -21,7 +21,7 @@
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Field Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[form][fields][{{data.field_key}}][field_label]"/>
+            <input type="text" name="form_details[form][fields][{{data.field_key}}][field_label]" value="{{data.label}}"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">

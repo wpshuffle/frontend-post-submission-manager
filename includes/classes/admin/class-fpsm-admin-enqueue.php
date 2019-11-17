@@ -18,6 +18,7 @@ if (!class_exists('FPSM_Admin_Enqueue')) {
                 'clipboad_copy_message' => esc_html__('Shortcode copied to clipboard.', 'frontend-post-submission-manager'),
                 'custom_field_error' => esc_html__('Label and Meta key both are required', 'frontend-post-submission-manager'),
                 'custom_field_delete_confirm' => esc_html__('Are you sure you want to delete this custom field?', 'frontend-post-submission-manager'),
+                'option_delete_confirm' => esc_html__('Are you sure you want to delete option?', 'frontend-post-submission-manager'),
             );
             $js_obj = array('ajax_url' => admin_url('admin-ajax.php'), 'plugin_url' => FPSM_URL, 'ajax_nonce' => wp_create_nonce('fpsm_backend_ajax_nonce'), 'translation_strings' => $translation_strings);
             wp_enqueue_style('fpsm-backend-style', FPSM_URL . '/assets/css/fpsm-backend-style.css', array(), FPSM_VERSION);
