@@ -1,11 +1,11 @@
 <div class="fpsm-field">
-    <div class="fpsm-dropdown-list-wrap fpsm-sortable">
+    <div class="fpsm-dropdown-list-wrap fpsm-sortable fpsm-field-{{data.field_type}}">
 
         <?php
         for ($i = 1; $i <= 2; $i++) {
             ?>
             <div class="fpsm-each-dropdown">
-                <# if(data.field_type == 'radio'){ #>
+                <# if(data.field_type== 'radio'){ #>
                 <label>
                     <input type="radio" name="form_details[form][fields][{{data.field_key}}][checked_radio]" class="fpsm-checked-radio-ref"/><?php esc_html_e('Checked', 'frontend-post-submission-manager'); ?>
                     <input type="hidden" name="form_details[form][fields][{{data.field_key}}][checked]" value="0" class="fpsm-checked-radio-val"/>

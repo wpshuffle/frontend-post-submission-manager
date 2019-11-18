@@ -498,3 +498,9 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
     cursor: move;
     font-size: 20px;
 }
+.fpsm-dropdown-list-wrap.fpsm-field-radio .fpsm-each-dropdown input[type="text"] {
+    width: 35%;
+}
+.fpsm-each-dropdown >label {
+    margin-right: 10px;
+}
