@@ -325,6 +325,7 @@ jQuery(document).ready(function ($) {
         var selector = $(this);
         var field_key = $(this).data('field-key');
         var data = {field_key: field_key};
+        var field_type = $(this).data('field-type');
         var option_template = wp.template('option');
         selector.closest('.fpsm-field').find('.fpsm-dropdown-list-wrap').append(option_template(data));
         selector.closest('.fpsm-field').find('.fpsm-each-dropdown').last().find('input[type="text"]').first().focus();
