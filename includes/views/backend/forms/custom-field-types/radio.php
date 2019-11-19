@@ -26,7 +26,7 @@
                 ?>
 
             </div>
-            <input type="button" class="button-secondary fpsm-add-option-trigger" value="<?php esc_html_e('Add Option', 'frontend-post-submission-manager'); ?>" data-field-key="<?php echo esc_attr($field_key); ?>"/>
+            <input type="button" class="button-secondary fpsm-add-option-trigger" value="<?php esc_html_e('Add Option', 'frontend-post-submission-manager'); ?>" data-field-key="<?php echo esc_attr($field_key); ?>" data-field-type="<?php echo esc_attr($field_type); ?>"/>
         </div>
     </div>
 </div>

@@ -10,6 +10,16 @@
                 <label><?php esc_html_e('Checkbox Lists', 'frontend-post-submission-manager'); ?></label>
                 <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-options-list.php'); ?>
             </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Save Format', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <select name="<?php echo esc_attr($field_name_prefix); ?>[save_format]">
+                        <option value="comma"><?php esc_html_e('Comma Separated', 'frontend-post-submission-manager'); ?></option>
+                        <option value="array"><?php esc_html_e('Array Format', 'frontend-post-submission-manager'); ?></option>
+                    </select>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>

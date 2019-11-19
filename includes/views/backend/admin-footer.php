@@ -1,19 +1,38 @@
 <div class="fpsm-form-message"></div>
-<script type="text/html" id="tmpl-custom-textfield">
-<?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-textfield.php'); ?>
-</script>
-<script type="text/html" id="tmpl-custom-textarea">
-<?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-textarea.php'); ?>
-</script>
-<script type="text/html" id="tmpl-custom-select">
-<?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-select.php'); ?>
-</script>
-<script type="text/html" id="tmpl-custom-checkbox">
-<?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-checkbox.php'); ?>
-</script>
-<script type="text/html" id="tmpl-custom-radio">
-<?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-radio.php'); ?>
-</script>
+<?php
+$custom_field_type_list = array(
+    'textfield' => esc_html__('Texfield', 'frontend-post-submission-manager'),
+    'textarea' => esc_html__('Textarea', 'frontend-post-submission-manager'),
+    'select' => esc_html__('Select Dropdown', 'frontend-post-submission-manager'),
+    'checkbox' => esc_html__('Checkbox', 'frontend-post-submission-manager'),
+    'radio' => esc_html__('Radio Button', 'frontend-post-submission-manager'),
+    'number' => esc_html__('Number', 'frontend-post-submission-manager'),
+    'email' => esc_html__('Email', 'frontend-post-submission-manager'),
+    'datepicker' => esc_html__('Datepicker', 'frontend-post-submission-manager'),
+    'file_uploader' => esc_html__('File Uploader', 'frontend-post-submission-manager'),
+);
+/**
+ * Filters custom field type list
+ *
+ * @param array $custom_field_type_list
+ *
+ * @since 1.0.0
+ */
+$custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_field_type_list);
+if (!empty($custom_field_type_list)) {
+    foreach ($custom_field_type_list as $custom_field_type => $custom_field_type_label) {
+        if (file_exists(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php')) {
+            $field_name_prefix = 'form_details[form][fields][{{data.field_key}}]';
+            ?>
+            <script type="text/html" id="tmpl-custom-<?php echo esc_attr($custom_field_type); ?>">
+            <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php'); ?>
+            </script>
+            <?php
+        }
+    }
+}
+?>
+
 <script type="text/html" id="tmpl-option">
     <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-option.php'); ?>
 </script>

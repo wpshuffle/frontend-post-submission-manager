@@ -6,12 +6,11 @@ global $fpsm_library_obj;
     <div class="fpsm-header fpsm-clearfix">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
         <div class="fpsm-add-wrap">
-        <input type="submit" value="<?php esc_html_e('Save Form', 'frontend-post-submission-manager'); ?>"
-               class="fpsm-primary-button"/>
+            <input type="button" value="<?php esc_html_e('Save Form', 'frontend-post-submission-manager'); ?>" class="fpsm-primary-button fpsm-form-save" data-form="fpsm-add-form"/>
             <a href="#" class="fpsm-button-primary btn-cancel">Cancel</a>
         </div>
     </div>
-    <form class="fpsm-form">
+    <form class="fpsm-form fpsm-add-form">
         <h2 class="fpsm-floatRight"><?php esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?></h2>
         <div class="fpsm-form-element-wrap">
             <div class="fpsm-field-wrap">
@@ -57,12 +56,6 @@ global $fpsm_library_obj;
                         <option value="login_require"><?php esc_html_e('Login require form', 'frontend-post-submission-manager'); ?></option>
                         <option value="guest"><?php esc_html_e('Guest form', 'frontend-post-submission-manager'); ?></option>
                     </select>
-                </div>
-            </div>
-            <div class="fpsm-field-wrap">
-                <label></label>
-                <div class="fpsm-field">
-
                 </div>
             </div>
         </div>
