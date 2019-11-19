@@ -7,7 +7,7 @@ global $fpsm_library_obj;
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
         <div class="fpsm-add-wrap">
             <input type="button" value="<?php esc_html_e('Save Form', 'frontend-post-submission-manager'); ?>" class="fpsm-primary-button fpsm-form-save" data-form="fpsm-add-form"/>
-            <a href="#" class="fpsm-button-primary btn-cancel">Cancel</a>
+            <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel">Cancel</a>
         </div>
     </div>
     <form class="fpsm-form fpsm-add-form">

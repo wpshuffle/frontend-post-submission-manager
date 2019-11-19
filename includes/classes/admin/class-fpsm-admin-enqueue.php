@@ -23,7 +23,7 @@ if (!class_exists('FPSM_Admin_Enqueue')) {
             $js_obj = array('ajax_url' => admin_url('admin-ajax.php'), 'plugin_url' => FPSM_URL, 'ajax_nonce' => wp_create_nonce('fpsm_backend_ajax_nonce'), 'translation_strings' => $translation_strings);
             wp_enqueue_style('fpsm-backend-style', FPSM_URL . '/assets/css/fpsm-backend-style.css', array(), FPSM_VERSION);
             wp_enqueue_style('fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
-            wp_enqueue_script('fpsm-backend-script', FPSM_URL . '/assets/js/fpsm-backend.js', array('jquery', 'wp-util'), FPSM_VERSION);
+            wp_enqueue_script('fpsm-backend-script', FPSM_URL . '/assets/js/fpsm-backend.js', array('jquery', 'wp-util', 'jquery-ui-sortable'), FPSM_VERSION);
             wp_localize_script('fpsm-backend-script', 'fpsm_backend_obj', $js_obj);
         }
 
