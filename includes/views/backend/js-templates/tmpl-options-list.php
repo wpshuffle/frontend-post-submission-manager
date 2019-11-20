@@ -1,5 +1,5 @@
 <div class="fpsm-field">
-    <div class="fpsm-dropdown-list-wrap fpsm-sortable fpsm-field-{{data.field_type}}">
+    <div class="fpsm-dropdown-list-wrap fpsm-field-{{data.field_type}}">
 
         <?php
         for ($i = 1; $i <= 2; $i++) {

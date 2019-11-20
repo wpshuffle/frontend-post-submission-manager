@@ -268,8 +268,13 @@ jQuery(document).ready(function ($) {
 
     $('.fpsm-sortable').sortable({
         placeholder: "fpsm-sortable-placeholder",
-        forcePlaceholderSize: true
+        forcePlaceholderSize: true,
+        handle: '.fpsm-field-head'
     });
+    $('.fpsm-dropdown-list-wrap').sortable({
+        placeholder: "fpsm-sortable-placeholder",
+        forcePlaceholderSize: true
+    })
 
     /**
      * Custom field adder
@@ -298,6 +303,11 @@ jQuery(document).ready(function ($) {
                 placeholder: "fpsm-sortable-placeholder",
                 forcePlaceholderSize: true
             });
+            $('.fpsm-dropdown-list-wrap').sortable({
+                placeholder: "fpsm-sortable-placeholder",
+                forcePlaceholderSize: true,
+                handle: '.fpsm-field-head'
+            })
 
         }
 
@@ -325,7 +335,7 @@ jQuery(document).ready(function ($) {
         var selector = $(this);
         var field_key = $(this).data('field-key');
         var field_type = $(this).data('field-type');
-        var data = {field_key: field_key,field_type:field_type};
+        var data = {field_key: field_key, field_type: field_type};
         var option_template = wp.template('option');
         selector.closest('.fpsm-field').find('.fpsm-dropdown-list-wrap').append(option_template(data));
         selector.closest('.fpsm-field').find('.fpsm-each-dropdown').last().find('input[type="text"]').first().focus();
