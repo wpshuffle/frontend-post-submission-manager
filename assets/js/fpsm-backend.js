@@ -352,6 +352,16 @@ jQuery(document).ready(function ($) {
 
         }
     });
+    
+    /**
+     * Radio button checked trigger
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click','.fpsm-checked-radio-ref',function(){
+        $(this).closest('.fpsm-dropdown-list-wrap').find('.fpsm-checked-radio-val').val(0);
+       $(this).next('input[type="hidden"]').val(1); 
+    });
 
 
 });

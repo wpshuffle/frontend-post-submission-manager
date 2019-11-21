@@ -11,7 +11,7 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
         foreach ($form_fields as $field_key => $field_details) {
             $field_file = $fpsm_library_obj->generate_field_file($field_key);
             if (file_exists(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/' . $field_file)) {
-                $field_name = "form_details[form][fields][$field_key]";
+                $field_name_prefix = "form_details[form][fields][$field_key]";
                 include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/' . $field_file);
             }
         }

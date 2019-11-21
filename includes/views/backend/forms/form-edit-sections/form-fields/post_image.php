@@ -8,20 +8,20 @@
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Upload Button Label', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="text" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][upload_button_label]" value="<?php echo (!empty($field_details['upload_button_label'])) ? esc_attr($field_details['upload_button_label']) : ''; ?>"/>
+                    <input type="text" name="<?php echo esc_attr($field_name_prefix);?>[upload_button_label]" value="<?php echo (!empty($field_details['upload_button_label'])) ? esc_attr($field_details['upload_button_label']) : ''; ?>"/>
                 </div>
             </div>
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Max Image Size', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="number" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][max_image_size]" value="<?php echo (!empty($field_details['max_image_size'])) ? intval($field_details['max_image_size']) : ''; ?>"/> <span class="description"><?php esc_html_e('in MB', 'frontend-post-submission-manager'); ?></span>
+                    <input type="number" name="<?php echo esc_attr($field_name_prefix);?>[max_image_size]" value="<?php echo (!empty($field_details['max_image_size'])) ? intval($field_details['max_image_size']) : ''; ?>"/> <span class="description"><?php esc_html_e('in MB', 'frontend-post-submission-manager'); ?></span>
                     <p class="description"><?php esc_html_e('Please enter the maximum size of the image which can be uploaded. Please leave blank if you don\'t want any image size restriction.', 'frontend-post-submission-manager'); ?></p>
                 </div>
             </div>
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Max Size Error Message', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="text" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][max_size_error_message]" value="<?php echo (!empty($field_details['max_size_error_message'])) ? esc_attr($field_details['max_size_error_message']) : ''; ?>"/>
+                    <input type="text" name="<?php echo esc_attr($field_name_prefix);?>[max_size_error_message]" value="<?php echo (!empty($field_details['max_size_error_message'])) ? esc_attr($field_details['max_size_error_message']) : ''; ?>"/>
                 </div>
             </div>
         </div>

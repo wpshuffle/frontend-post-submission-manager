@@ -8,7 +8,7 @@
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Characters Limit', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="number" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][characters_limit]" value="<?php echo (!empty($field_details['characters_limit'])) ? intval($field_details['characters_limit']) : ''; ?>"/>
+                    <input type="number" name="<?php echo esc_attr($field_name_prefix);?>[characters_limit]" value="<?php echo (!empty($field_details['characters_limit'])) ? intval($field_details['characters_limit']) : ''; ?>"/>
                 </div>
             </div>
             <div class="fpsm-field-wrap">
