@@ -125,6 +125,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
         function includes() {
             include(FPSM_PATH . '/includes/classes/class-fpsm-init.php');
             include(FPSM_PATH . '/includes/classes/class-fpsm-library.php');
+            include(FPSM_PATH . '/includes/classes/class-fpsm-shortcode.php');
 
 
             //include all the admin related classes

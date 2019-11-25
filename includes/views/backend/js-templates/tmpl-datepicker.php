@@ -9,7 +9,7 @@
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Date Format', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="form_details[form][fields][{{data.field_key}}][date_format]">
+                    <select name="<?php echo $field_name_prefix ?>[date_format]">
                         <?php
                         $fpsm_datepicker_formats = array(
                             array('format' => 'mm/dd/yy', 'label' => esc_html__('Default', 'frontend-post-submission-manager')),
@@ -32,7 +32,7 @@
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Save as string', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="checkbox" name="form_details[form][fields][{{data.field_key}}][string_format]" value="1"/>
+                    <input type="checkbox" name="<?php echo $field_name ?>[string_format]" value="1"/>
                     <p class="description"><?php esc_html_e('Please check this if you want to save the date as the raw string format.', 'frontend-post-submission-manager'); ?></p>
                 </div>
             </div>

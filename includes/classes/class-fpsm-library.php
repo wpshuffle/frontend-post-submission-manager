@@ -402,6 +402,39 @@ if (!class_exists('FPSM_Library')) {
             return $field_file;
         }
 
+        /**
+         * Gets the form row as per the alias
+         *
+         * @param string $alias
+         *
+         * @return object
+         *
+         * @since 1.0.0
+         */
+        function get_form_row_by_alias($alias) {
+            global $wpdb;
+            $form_table = FPSM_FORM_TABLE;
+            $form_row = $wpdb->get_row($wpdb->prepare("select * from $form_table where form_alias = %s", $alias));
+            return $form_row;
+        }
+
+        /**
+         * Generates field class from field key
+         *
+         * @param string $field_key
+         *
+         * @since 1.0.0
+         */
+        function generate_field_class($field_key) {
+            $field_class = str_replace('|', '-', $field_key);
+            $field_class = str_replace('_', '-', $field_class);
+            if ($field_class[0] == '-') {
+                $field_class = substr($field_class, 1, strlen($field_class));
+            }
+            $field_class = 'fpsm-' . $field_class;
+            return $field_class;
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

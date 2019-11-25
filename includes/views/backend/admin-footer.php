@@ -25,9 +25,10 @@ if (!empty($custom_field_type_list)) {
         $show_hide_toggle_class = '{{data.meta_key}}';
         $field_details['field_label'] = '{{data.label}}';
         $field_type = $custom_field_type;
+        $field_key = '{{data.field_key}}';
         ?>
         <script type="text/html" id="tmpl-custom-<?php echo esc_attr($custom_field_type); ?>">
-        <?php //include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php');          ?>
+        <?php //include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php');           ?>
         <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-custom-field-holder.php'); ?>
         </script>
         <?php

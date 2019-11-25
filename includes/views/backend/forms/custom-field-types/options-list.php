@@ -1,6 +1,9 @@
 <div class="fpsm-field">
     <div class="fpsm-dropdown-list-wrap fpsm-field-<?php echo esc_attr($field_type); ?>">
         <?php
+        if (isset($fpsm_library_obj)) {
+            //   $fpsm_library_obj->print_array($field_details);
+        }
         if (!empty($field_details['options'])) {
             $option_count = 0;
             foreach ($field_details['options'] as $option) {
@@ -9,7 +12,7 @@
                     <?php if ($field_type == 'radio') { ?>
                         <label>
                             <input type="radio" name="<?php echo esc_attr($field_name_prefix); ?>[checked_radio]" class="fpsm-checked-radio-ref" <?php checked($field_details['checked'][$option_count], 1); ?>/><?php esc_html_e('Checked', 'frontend-post-submission-manager'); ?>
-                            <input type="hidden" name="<?php echo esc_attr($field_name_prefix); ?>[checked]" value="<?php echo intval($field_details['checked'][$option_count]); ?>" class="fpsm-checked-radio-val"/>
+                            <input type="hidden" name="<?php echo esc_attr($field_name_prefix); ?>[checked][]" value="<?php echo intval($field_details['checked'][$option_count]); ?>" class="fpsm-checked-radio-val"/>
                         </label>
                     <?php } ?>
                     <input type="text" name="<?php echo esc_attr($field_name_prefix); ?>[options][]" placeholder="<?php esc_html_e('Option 1', 'frontend-post-submission-manager'); ?>" value="<?php echo esc_attr($option); ?>"/>
