@@ -13,6 +13,7 @@ $fpsm_library_obj->print_array($form_details);
     do_action('fpsm_form_start', $form_row);
     if (!empty($form_details['form']['fields'])) {
         foreach ($form_details['form']['fields'] as $field_key => $field_details) {
+            $fpsm_library_obj->print_array($field_details);
             $field_file = $fpsm_library_obj->generate_field_file($field_key);
             if (file_exists(FPSM_PATH . '/includes/views/frontend/form-fields/' . $field_file)) {
                 // If field is enabled from the backend
@@ -24,6 +25,11 @@ $fpsm_library_obj->print_array($form_details);
                         <div class="fpsm-field">
                             <?php
                             include(FPSM_PATH . '/includes/views/frontend/form-fields/' . $field_file);
+                            if (!empty($field_details['field_note'])) {
+                                ?>
+                                <div class="fpsm-field-note"><?php echo esc_html($field_details['field_note']); ?></div>
+                                <?php
+                            }
                             ?>
                         </div>
                     </div>

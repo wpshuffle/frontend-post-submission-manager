@@ -16,7 +16,7 @@ $show_hide_toggle_class = $taxonomy;
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Field Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="<?php echo esc_attr($field_name) ?>[field_type]" class="fpsm-toggle-trigger" data-toggle-class='fpsm-field-type-ref'>
+                    <select name="<?php echo esc_attr($field_name_prefix) ?>[field_type]" class="fpsm-toggle-trigger" data-toggle-class='fpsm-field-type-ref'>
                         <?php
                         $field_type = (!empty($field_details['field_type'])) ? $field_details['field_type'] : 'select';
                         ?>
@@ -35,7 +35,7 @@ $show_hide_toggle_class = $taxonomy;
             <div class="fpsm-field-wrap fpsm-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'checkbox'); ?> data-toggle-ref='checkbox'>
                 <label><?php esc_html_e('Display Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="<?php echo esc_attr($field_name) ?>[display_type]">
+                    <select name="<?php echo esc_attr($field_name_prefix) ?>[display_type]">
                         <?php
                         $display_type = (!empty($field_details['display_type'])) ? $field_details['display_type'] : 'inline';
                         ?>
@@ -50,7 +50,7 @@ $show_hide_toggle_class = $taxonomy;
                 <div class="fpsm-field-wrap fpsm-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'textfield'); ?> data-toggle-ref='textfield'>
                     <label><?php esc_html_e('Auto Complete', 'frontend-post-submission-manager'); ?></label>
                     <div class="fpsm-field">
-                        <input type="checkbox" name="<?php echo esc_attr($field_name); ?>[auto_complete]" value="1" <?php echo (!empty($field_details['auto_complete'])) ? 'checked="checked"' : ''; ?>/>
+                        <input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[auto_complete]" value="1" <?php echo (!empty($field_details['auto_complete'])) ? 'checked="checked"' : ''; ?>/>
                     </div>
                 </div>
                 <?php

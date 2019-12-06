@@ -305,9 +305,8 @@ jQuery(document).ready(function ($) {
             });
             $('.fpsm-dropdown-list-wrap').sortable({
                 placeholder: "fpsm-sortable-placeholder",
-                forcePlaceholderSize: true,
-                handle: '.fpsm-field-head'
-            })
+                forcePlaceholderSize: true
+            });
 
         }
 

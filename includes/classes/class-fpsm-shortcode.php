@@ -17,7 +17,11 @@ if (!class_exists('FPSM_Shortcode')) {
                 $fpsm_library_obj->print_array($form_row);
                 if (!empty($form_row)) {
                     $form_details = maybe_unserialize($form_row->form_details);
+                    ob_start();
                     include(FPSM_PATH . '/includes/views/frontend/form-html.php');
+                    $form_html = ob_get_contents();
+                    ob_end_clean();
+                    return $form_html;
                 } else {
                     return esc_html__('Form not available for this alias.', 'frontend-post-submission-manager');
                 }
