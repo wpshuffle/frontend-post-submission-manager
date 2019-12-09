@@ -14,7 +14,7 @@ if (!class_exists('FPSM_Shortcode')) {
                 global $fpsm_library_obj;
                 $alias = $atts['alias'];
                 $form_row = $fpsm_library_obj->get_form_row_by_alias($alias);
-                $fpsm_library_obj->print_array($form_row);
+                // $fpsm_library_obj->print_array($form_row);
                 if (!empty($form_row)) {
                     $form_details = maybe_unserialize($form_row->form_details);
                     ob_start();

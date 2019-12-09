@@ -361,6 +361,24 @@ jQuery(document).ready(function ($) {
         $(this).closest('.fpsm-dropdown-list-wrap').find('.fpsm-checked-radio-val').val(0);
        $(this).next('input[type="hidden"]').val(1); 
     });
+    
+    /**
+     * Editor change options toggle
+     * 
+     * @since 1.0.0
+     */
+    
+    $('body').on('change','.fpsm-editor-type',function(){
+       var media_editors = ['visual','rich'];
+       var editor_type = $(this).val();
+       if(media_editors.indexOf(editor_type) != -1){
+           $(this).closest('.fpsm-each-form-field').find('.fpsm-editor-type-ref').show();
+       }else{
+           $(this).closest('.fpsm-each-form-field').find('.fpsm-editor-type-ref').hide();
+       }
+    });
+    
+   
 
 
 });

@@ -8,18 +8,22 @@
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Editor Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="<?php echo esc_attr($field_name_prefix); ?>[editor_type]">
-                        <option value="simple"><?php esc_html_e('Simple Textarea', 'frontend-post-submission-manager'); ?></option>
-                        <option value="rich"><?php esc_html_e('Rich Text Editor', 'frontend-post-submission-manager'); ?></option>
-                        <option value="visual"><?php esc_html_e('Visual Text Editor', 'frontend-post-submission-manager'); ?></option>
-                        <option value="html"><?php esc_html_e('HTML Text Editor', 'frontend-post-submission-manager'); ?></option>
+                    <?php
+                    $editor_type = (!empty($field_details['editor_type'])) ? $field_details['editor_type'] : 'simple';
+                    ?>
+                    <select name="<?php echo esc_attr($field_name_prefix); ?>[editor_type]" class="fpsm-editor-type">
+                        <option value="simple" <?php selected($editor_type, 'simple'); ?>><?php esc_html_e('Simple Textarea', 'frontend-post-submission-manager'); ?></option>
+                        <option value="rich" <?php selected($editor_type, 'rich'); ?>><?php esc_html_e('Rich Text Editor', 'frontend-post-submission-manager'); ?></option>
+                        <option value="visual" <?php selected($editor_type, 'visual'); ?>><?php esc_html_e('Visual Text Editor', 'frontend-post-submission-manager'); ?></option>
+                        <option value="html" <?php selected($editor_type, 'html'); ?>><?php esc_html_e('HTML Text Editor', 'frontend-post-submission-manager'); ?></option>
                     </select>
                 </div>
             </div>
             <?php
+            $media_ref_editors = array('rich', 'visual');
             if ($form_row->form_type == 'login_require') {
                 ?>
-                <div class="fpsm-field-wrap">
+                <div class="fpsm-field-wrap fpsm-editor-type-ref <?php echo (!in_array($editor_type, $media_ref_editors)) ? 'fpsm-display-none' : '' ?>">
                     <label><?php esc_html_e('Media Upload', 'frontend-post-submission-manager'); ?></label>
                     <div class="fpsm-field">
                         <input type="checkbox" name="<?php echo $field_name_prefix; ?>[media_upload]" value="1"/>
@@ -27,11 +31,30 @@
                         <p class="description"><?php echo __(sprintf('Please note that media upload button only shows if logged in user role has the upload_files capabilities. Please check %s here %s for an easy reference.', '<a href="https://wordpress.org/support/article/roles-and-capabilities/#capability-vs-role-table" target="_blank">', '</a>'), 'frontend-post-submission-manager'); ?></p>
                     </div>
                 </div>
-            <?php } ?>
-            <div class="fpsm-field-wrap">
+                <?php
+            }
+            ?>
+            <div class="fpsm-field-wrap  fpsm-editor-type-ref <?php echo (!in_array($editor_type, $media_ref_editors)) ? 'fpsm-display-none' : '' ?>">
                 <label><?php esc_html_e('Custom Media Upload Button', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[custom_media_upload_button]"/>
+                    <input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[custom_media_upload_button]" <?php echo (!empty($field_details['custom_media_upload_button'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-custom-media-ref"/>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap fpsm-custom-media-ref <?php echo (empty($field_details['custom_media_upload_button'])) ? 'fpsm-display-none' : ''; ?>">
+                <label><?php esc_html_e('File Extensions', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <?php
+                    global $fpsm_library_obj;
+                    $mime_types = get_allowed_mime_types();
+                    $selected_mime_types = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : array();
+                    if (!empty($mime_types)) {
+                        foreach ($mime_types as $mime_type => $mime_type_label) {
+                            ?>
+                            <label class="fpsm-each-extension"><input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[file_extensions][]" value="<?php echo esc_attr($mime_type); ?>" class="fpsm-disable-checkbox-toggle" <?php echo (in_array($mime_type, $selected_mime_types)) ? 'checked="checked"' : ''; ?>/><span><?php echo esc_html($mime_type); ?></label>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <div class="fpsm-field-wrap">

@@ -435,6 +435,29 @@ if (!class_exists('FPSM_Library')) {
             return $field_class;
         }
 
+        function save_media_to_library() {
+            $filetype = wp_check_filetype($filename . '.' . $ext);
+            $mime_type = $filetype['type'];
+            $file_url = $upload_url . '/' . $filename . '.' . $ext;
+            $file_path = $uploadDirectory . $filename . '.' . $ext;
+            $attachment = array(
+                'post_mime_type' => $mime_type,
+                'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename . '.' . $ext)),
+                'post_content' => '',
+                'post_status' => 'inherit',
+                'guid' => $file_url
+            );
+            require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+            $attachment_id = wp_insert_attachment($attachment, $file_path);
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+            $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
+            $check = wp_update_attachment_metadata($attachment_id, $attachment_data);
+            $attachment_date = get_the_date("U", $attachment_id);
+            $attachment_code = md5($attachment_date);
+            $media_details = array('attachment_id' => $attachment_id, 'attachment_code' => $attachment_code);
+            return $media_details;
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

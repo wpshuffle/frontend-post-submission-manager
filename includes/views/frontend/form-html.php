@@ -13,11 +13,12 @@ $fpsm_library_obj->print_array($form_details);
     do_action('fpsm_form_start', $form_row);
     if (!empty($form_details['form']['fields'])) {
         foreach ($form_details['form']['fields'] as $field_key => $field_details) {
-            $fpsm_library_obj->print_array($field_details);
+
             $field_file = $fpsm_library_obj->generate_field_file($field_key);
             if (file_exists(FPSM_PATH . '/includes/views/frontend/form-fields/' . $field_file)) {
                 // If field is enabled from the backend
                 if (!empty($field_details['show_on_form'])) {
+                    $fpsm_library_obj->print_array($field_details);
                     $field_class = $fpsm_library_obj->generate_field_class($field_key);
                     ?>
                     <div class="fpsm-field-wrap <?php echo esc_attr($field_class); ?>">
