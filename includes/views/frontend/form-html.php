@@ -3,7 +3,7 @@ defined('ABSPATH') or die('No script kiddies please!!');
 
 $fpsm_library_obj->print_array($form_details);
 ?>
-<form method="post" class="fpsm-front-form">
+<form method="post" class="fpsm-front-form" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
     <?php
     /**
      * Fires at the start of form

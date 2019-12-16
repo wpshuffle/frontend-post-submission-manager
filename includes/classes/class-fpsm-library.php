@@ -181,7 +181,6 @@ if (!class_exists('FPSM_Library')) {
          * @return string
          */
         function print_option($terms, $exclude_terms = array(), $hierarchical = 1, $form = '', $field_title = '', $selected_term = '', $taxonomy_print = false) {
-            // $this->print_array($terms);
 
             foreach ($terms as $term) {
                 if (!in_array($term->slug, $exclude_terms)) {
@@ -196,11 +195,7 @@ if (!class_exists('FPSM_Library')) {
 
                         $selected = ($selected_term == $option_value) ? 'selected="selected"' : '';
                     }
-                    /*  var_dump($selected_term);
-                      var_dump($option_value);
-                      var_dump($selected);
-                     *
-                     */
+
                     $form .= '<option value="' . $option_value . '" ' . $selected . '>' . $space . $term->name . '</option>';
                 }
 
@@ -456,6 +451,21 @@ if (!class_exists('FPSM_Library')) {
             $attachment_code = md5($attachment_date);
             $media_details = array('attachment_id' => $attachment_id, 'attachment_code' => $attachment_code);
             return $media_details;
+        }
+
+        /**
+         * Generates random string
+         *
+         * @param int $length
+         * @return string
+         */
+        function generate_random_string($length = 7) {
+            $random_string = '';
+            $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+            for ($i = 1; $i <= $length; $i++) {
+                $random_string .= $string[rand(0, 61)];
+            }
+            return $random_string;
         }
 
     }

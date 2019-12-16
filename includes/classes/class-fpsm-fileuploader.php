@@ -184,12 +184,30 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
             }
 
             if ($this->file->save($uploadDirectory . $filename . '.' . $ext)) {
-                global $fpsm_library_obj;
-                $media_details = $fpsm_library_obj->save_media_to_library();
-                return array('success' => true,
-                    'url' => $upload_url . '/' . $filename . '.' . $ext,
-                    'attachment_id' => $media_details['attachment_id'],
-                    'attachment_code' => $media_details['attachment_code']);
+                $filetype = wp_check_filetype($filename . '.' . $ext);
+                $mime_type = $filetype['type'];
+                $file_url = $upload_url . '/' . $filename . '.' . $ext;
+                $file_path = $uploadDirectory . $filename . '.' . $ext;
+                $attachment = array(
+                    'post_mime_type' => $mime_type,
+                    'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename . '.' . $ext)),
+                    'post_content' => '',
+                    'post_status' => 'inherit',
+                    'guid' => $file_url
+                );
+                require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+                $attachment_id = wp_insert_attachment($attachment, $file_path);
+                require_once(ABSPATH . 'wp-admin/includes/image.php');
+                $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
+                $check = wp_update_attachment_metadata($attachment_id, $attachment_data);
+                $attachment_date = get_the_date("U", $attachment_id);
+                $attachment_code = md5($attachment_date);
+                $attachment_thumbnail = wp_get_attachment_image_src($attachment_id);
+                $media_details = array('media_id' => $attachment_id, 'media_key' => $attachment_code);
+                if ($attachment_thumbnail) {
+                    $media_details['media_url'] = $attachment_thumbnail[0];
+                }
+                return $media_details;
             } else {
                 return array('error' => esc_html__('Could not save uploaded file.The upload was cancelled, or server error encountered', 'frontend-post-submission-manager'));
             }

@@ -10,9 +10,11 @@ if (!class_exists('FPSM_Enqueue')) {
         }
 
         function register_frontend_assets() {
+            $js_obj = array('ajax_url' => admin_url('admin-ajax.php'), 'ajax_nonce' => wp_create_nonce('fpsm_ajax_nonce'));
             wp_enqueue_style('fpsm-style', FPSM_URL . '/assets/css/fpsm-frontend-style.css', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-fileuploader', FPSM_URL . '/assets/js/fpsm-fileuploader.js', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-script', FPSM_URL . '/assets/js/fpsm-frontend.js', array('jquery', 'fpsm-fileuploader'), FPSM_VERSION);
+            wp_localize_script('fpsm-script', 'fpsm_js_obj', $js_obj);
         }
 
     }
