@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
             var extensions_array = extensions.split('|');
             var sizeLimit = $(this).data('file-size-limit');
             sizeLimit = parseInt(sizeLimit) * 1000 * 1000;
-            var multiple_upload = ($(this).hasClass('fpsm-directory-gallery')) ? true : false;
+            var multiple_upload = $(this).data('multiple');
             var limit_flag = 0;
             var upload_limit = $(this).data('multiple-upload-limit');
             var uploader_label = $(this).data('upload-label');
@@ -55,27 +55,19 @@ jQuery(document).ready(function ($) {
                 onComplete: function (id, fileName, responseJSON) {
                    
                     if (responseJSON.success) {
-                        var extension_array = fileName.split('.');
-                        var extension = extension_array.pop();
-                        var preview_img = responseJSON.url;
-                        var preview_html = '<div class="fpsm-pro-prev-holder"><span class="fpsm-prev-name">' + fileName + '</span><img src="' + preview_img + '" /><span class="fpsm-pro-preview-remove" data-url="' + responseJSON.url + '" data-id="' + element_id + '" data-attachment-id="' + responseJSON.attachment_id + '" data-attachment-code="' + responseJSON.attachment_code + '"><span class="lnr lnr-cross"></span></span></div>';
-                        if (multiple_upload) {
-                            var url = responseJSON.url;
-                            var added_url = $('#' + attr_element_id).closest('.fpsm-each-frontend-field').find('.fpsm-uploaded-files').val();
-                            if (added_url == '') {
-                                added_url = responseJSON.attachment_id;
-                            } else {
-                                var added_url_array = added_url.split(',');
-                                added_url_array.push(responseJSON.attachment_id);
-                                added_url = added_url_array.join();
-                            }
-                            $('#' + attr_element_id).closest('.fpsm-each-frontend-field').find('.fpsm-uploaded-files').val(added_url);
-                            $('#' + attr_element_id).closest('.fpsm-each-frontend-field').find('.fpsm-file-preview').append(preview_html);
-                        } else {
-                            $('#' + attr_element_id).closest('.fpsm-each-frontend-field').find('.fpsm-uploaded-files').val(responseJSON.attachment_id);
-                            $('#' + attr_element_id).closest('.fpsm-each-frontend-field').find('.fpsm-file-preview').html(preview_html);
-                        }
-
+                       var file_preview_template = wp.template('upload-preview');
+                       var file_preview_html = file_preview_template(responseJSON);
+                       if(multiple_upload){
+                           var media_id = selector.next('.fpsm-media-id').val();
+                           var media_id_array = media_id.split(',');
+                           media_id_array.push(responseJSON.media_id);
+                           var media_id = media_id_array.join(',');
+                           selector.next('.fpsm-media-id').val(media_id);
+                           selector.next('.fpsm-file-preview-wrap').append(file_preview_html);
+                       }else{
+                           selector.next('.fpsm-media-id').val(responseJSON.media_id);
+                           selector.next('.fpsm-file-preview-wrap').html(file_preview_html);
+                       }
 
                     } else {
 

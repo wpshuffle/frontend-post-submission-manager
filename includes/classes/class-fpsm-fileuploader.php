@@ -179,7 +179,8 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
             if (!$replaceOldFile) {
                 /// don't overwrite previous files that were uploaded
                 while (file_exists($uploadDirectory . $filename . '.' . $ext)) {
-                    $filename .= rand(10, 99);
+                    global $fpsm_library_obj;
+                    $filename .= $fpsm_library_obj->generate_random_string();
                 }
             }
 
@@ -203,9 +204,11 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 $attachment_date = get_the_date("U", $attachment_id);
                 $attachment_code = md5($attachment_date);
                 $attachment_thumbnail = wp_get_attachment_image_src($attachment_id);
-                $media_details = array('media_id' => $attachment_id, 'media_key' => $attachment_code);
+                $media_details = array('media_id' => $attachment_id, 'media_key' => $attachment_code, 'media_name' => $filename, 'media_size' => $size);
                 if ($attachment_thumbnail) {
                     $media_details['media_url'] = $attachment_thumbnail[0];
+                } else {
+                    $media_details['media_url'] = FPSM_URL . '/assets/images/no-preview.jpg';
                 }
                 return $media_details;
             } else {
