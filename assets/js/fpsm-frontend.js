@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
     function initialize_uploaders() {
         $('.fpsm-file-uploader').each(function () {
             var form_alias = $(this).closest('form').data('alias');
-           var selector = $(this);
+            var selector = $(this);
             var attr_element_id = $(this).attr('id');
             var arr_element_id = attr_element_id.split('-');
             var uploader_name = arr_element_id[2];
@@ -19,20 +19,17 @@ jQuery(document).ready(function ($) {
             var upload_limit_message = $(this).data('multiple-upload-error-message');
             var extension_error_message = $(this).data('extension-error-message')
             var field_name = $(this).data('field-name');
-
-
-
             file_uploader_fields[uploader_name] = new qq.FileUploader({
                 element: document.getElementById(attr_element_id),
                 action: fpsm_js_obj.ajax_url,
                 params: {
                     action: 'fpsm_file_upload_action',
                     _wpnonce: fpsm_js_obj.ajax_nonce,
-                    form_alias:form_alias,
-                    field_name:field_name
+                    form_alias: form_alias,
+                    field_name: field_name
 
                 },
-                debug:true,
+                debug: true,
                 allowedExtensions: extensions_array,
                 sizeLimit: sizeLimit,
                 minSizeLimit: 50,
@@ -53,21 +50,21 @@ jQuery(document).ready(function ($) {
                 },
                 onProgress: function (id, fileName, loaded, total) {},
                 onComplete: function (id, fileName, responseJSON) {
-                   
+
                     if (responseJSON.success) {
-                       var file_preview_template = wp.template('upload-preview');
-                       var file_preview_html = file_preview_template(responseJSON);
-                       if(multiple_upload){
-                           var media_id = selector.next('.fpsm-media-id').val();
-                           var media_id_array = media_id.split(',');
-                           media_id_array.push(responseJSON.media_id);
-                           var media_id = media_id_array.join(',');
-                           selector.next('.fpsm-media-id').val(media_id);
-                           selector.next('.fpsm-file-preview-wrap').append(file_preview_html);
-                       }else{
-                           selector.next('.fpsm-media-id').val(responseJSON.media_id);
-                           selector.next('.fpsm-file-preview-wrap').html(file_preview_html);
-                       }
+                        var data = {media_url: responseJSON.media_url, media_id: responseJSON.media_id, media_name: responseJSON.media_name, media_key: responseJSON.media_key}
+                        var file_preview_template = wp.template('upload-preview');
+                        if (multiple_upload) {
+                            var media_id = selector.next('.fpsm-media-id').val();
+                            var media_id_array = media_id.split(',');
+                            media_id_array.push(responseJSON.media_id);
+                            var media_id = media_id_array.join(',');
+                            selector.next('.fpsm-media-id').val(media_id);
+                            selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').append(file_preview_template(responseJSON));
+                        } else {
+                            selector.next('.fpsm-media-id').val(responseJSON.media_id);
+                            selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').html(file_preview_template(responseJSON));
+                        }
 
                     } else {
 
@@ -92,5 +89,29 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+
+    $('body').on('click', '.fpsm-media-delete-button', function () {
+        var selector = $(this);
+        var media_id = $(this).data('media-id');
+        var media_key = $(this).data('media-key');
+        $.ajax({
+            type: 'post',
+            url: fpsm_js_obj.ajax_url,
+            data: {
+                _wpnonce: fpsm_js_obj.ajax_nonce,
+                media_id: media_id,
+                media_key: media_key,
+                action: 'fpsm_media_delete_action'
+            },
+            success: function (res) {
+                res = $.parseJSON(res);
+                if (res.status == 200) {
+                    selector.closest('.fpsm-file-preview-row').remove();
+                } else {
+                    alert(res.message);
+                }
+            }
+        });
+    });
     initialize_uploaders();
 });

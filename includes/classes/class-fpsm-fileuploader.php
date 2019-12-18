@@ -204,7 +204,9 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 $attachment_date = get_the_date("U", $attachment_id);
                 $attachment_code = md5($attachment_date);
                 $attachment_thumbnail = wp_get_attachment_image_src($attachment_id);
-                $media_details = array('media_id' => $attachment_id, 'media_key' => $attachment_code, 'media_name' => $filename, 'media_size' => $size);
+                global $fpsm_library_obj;
+                $attachment_size = $fpsm_library_obj->format_file_size($size);
+                $media_details = array('success' => true, 'media_id' => $attachment_id, 'media_key' => $attachment_code, 'media_name' => $filename, 'media_size' => $attachment_size);
                 if ($attachment_thumbnail) {
                     $media_details['media_url'] = $attachment_thumbnail[0];
                 } else {

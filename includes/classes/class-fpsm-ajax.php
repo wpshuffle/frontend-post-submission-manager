@@ -6,8 +6,17 @@ if (!class_exists('FPSM_Ajax')) {
     class FPSM_Ajax {
 
         function __construct() {
+            /**
+             * Custom Media Upload
+             */
             add_action('wp_ajax_fpsm_file_upload_action', array($this, 'file_upload_action'));
             add_action('wp_ajax_nopriv_fpsm_file_upload_action', array($this, 'file_upload_action'));
+
+            /**
+             * Custom Media Delete
+             */
+            add_action('wp_ajax_fpsm_media_delete_action', array($this, 'media_delete_action'));
+            add_action('wp_ajax_nopriv_fpsm_media_delete_action', array($this, 'media_delete_action'));
         }
 
         function file_upload_action() {
@@ -71,6 +80,31 @@ if (!class_exists('FPSM_Ajax')) {
 
         function permission_denied() {
             die('No script kiddies please!!');
+        }
+
+        function media_delete_action() {
+            if ($this->admin_ajax_nonce_verify()) {
+                $media_id = intval($_POST['media_id']);
+                $media_key = sanitize_text_field($_POST['media_key']);
+                $attachment_date = get_the_date("U", $media_id);
+                $attachment_code = md5($attachment_date);
+                if ($media_key != $attachment_code) {
+                    $response['status'] = 403;
+                    $response['messsage'] = esc_html__('Unauthorized access', 'frontend-post-submission-manager');
+                } else {
+                    $media_delete_check = wp_delete_attachment($media_id, true);
+                    if ($media_delete_check) {
+                        $response['status'] = 200;
+                        $response['messsage'] = esc_html__('Media deleted successfully.', 'frontend-post-submission-manager');
+                    } else {
+                        $response['status'] = 403;
+                        $response['messsage'] = esc_html__('Error occurred while deleting the media.', 'frontend-post-submission-manager');
+                    }
+                }
+                die(json_encode($response));
+            } else {
+                $this->permission_denied();
+            }
         }
 
     }
