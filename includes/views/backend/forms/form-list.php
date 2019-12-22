@@ -13,9 +13,7 @@ defined('ABSPATH') or die('No script kiddies please!!');
 
     <div class="fpsm-grid-wrap">
         <div class="fpsm-title-wrap">
-            <h2><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?>
-
-            </h2>
+            <h2><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?></h2>
 
         </div>
         <table class="wp-list-table widefat fixed fpsm-form-lists-table">
