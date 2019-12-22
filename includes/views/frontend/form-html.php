@@ -33,6 +33,7 @@ $fpsm_library_obj->print_array($form_details);
                             }
                             ?>
                         </div>
+                        <div class="fpsm-error"></div>
                     </div>
                     <?php
                 }

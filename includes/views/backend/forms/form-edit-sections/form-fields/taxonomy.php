@@ -54,8 +54,27 @@ $show_hide_toggle_class = $taxonomy;
                     </div>
                 </div>
                 <?php
-            }
-            ?>
+            } else {
+                ?>
+                <div class="fpsm-field-wrap">
+                    <label><?php esc_html_e('Parent Term', 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field">
+                        <select name="<?php echo esc_attr($field_name_prefix) ?>[parent_term]">
+                            <option value=""><?php _e('None', 'anonymous-post-pro'); ?></option>
+                            <?php
+                            $selected_parent_term = (!empty($field_details['parent_term'])) ? $field_details['parent_term'] : '';
+                            $terms = get_terms($taxonomy, array('hide_empty' => 0));
+                            $categoryHierarchy = array();
+                            $fpsm_library_obj->sort_terms_hierarchicaly($terms, $categoryHierarchy);
+                            if (count($categoryHierarchy) > 0) {
+                                $option = $fpsm_library_obj->print_option($categoryHierarchy, array(), 1, '', '', $selected_parent_term);
+                            }
+                            echo $fpsm_library_obj->sanitize_html($option);
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>

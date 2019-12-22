@@ -90,19 +90,29 @@ if (!class_exists('FPSM_Library')) {
         function sanitize_value($value = '', $sanitize_type = 'text') {
             switch ($sanitize_type) {
                 case 'html':
-                    $allowed_html = wp_kses_allowed_html('post');
-                    return wp_kses($value, $allowed_html);
+                    return $this->sanitize_html($value);
                     break;
                 case 'to_br':
                     return $this->sanitize_escaping_linebreaks($value);
-                    break;
-                case 'none':
-                    return $value;
                     break;
                 default:
                     return sanitize_text_field($value);
                     break;
             }
+        }
+
+        /**
+         *
+         * Sanitizes HTML
+         *
+         * @param string $value
+         *
+         * @since 1.0.0
+         */
+        function sanitize_html($value) {
+            $allowed_html = wp_kses_allowed_html('post');
+            $allowed_html['option'] = array('value' => array(), 'selected' => array());
+            return wp_kses($value, $allowed_html);
         }
 
         function sort_terms_hierarchicaly(Array &$cats, Array &$into, $parentId = 0) {
@@ -153,7 +163,7 @@ if (!class_exists('FPSM_Library')) {
                     $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
 
                     $checked = (in_array($option_value, $checked_term)) ? 'checked="checked"' : '';
-                    $form .= '<label class="ebd-checkbox-label">' . $space . '<input type="checkbox" name="' . $field_title . '[]"  value="' . $option_value . '" id="ebd-category-' . $option_value . '" ' . $checked . '/><label for="ebd-category-' . $option_value . '" >' . $term->name . '</label></label>';
+                    $form .= '<label class="fpsm-checkbox-label">' . $space . '<input type="checkbox" name="' . $field_title . '[]"  value="' . $option_value . '" id="fpsm-category-' . $option_value . '" ' . $checked . '/><label for="fpsm-category-' . $option_value . '" >' . $term->name . '</label></label>';
                 }
 
 

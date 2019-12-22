@@ -1,1 +1,1 @@
-Author Email
+<input type="email"  name="<?php echo esc_attr($field_key); ?>"/>

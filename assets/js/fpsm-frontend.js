@@ -27,7 +27,6 @@ jQuery(document).ready(function ($) {
                     _wpnonce: fpsm_js_obj.ajax_nonce,
                     form_alias: form_alias,
                     field_name: field_name
-
                 },
                 debug: true,
                 allowedExtensions: extensions_array,
@@ -35,15 +34,17 @@ jQuery(document).ready(function ($) {
                 minSizeLimit: 50,
                 uploadButtonText: $(this).data('label'),
                 onSubmit: function (id, fileName) {
-                    selector.closest('.fpsm-field').find('.fpsm-error').html('');
+                    selector.closest('.fpsm-field-wrap').find('.fpsm-error').html('');
                     if (multiple_upload == true && upload_limit != -1) {
-                        var limit_counter = selector.parent().find('.fpsm-multiple-upload-limit').val();
-                        limit_counter++;
-                        selector.parent().find('.fpsm-multiple-upload-limit').val(limit_counter);
-                        if (limit_counter > upload_limit) {
-                            upload_limit_message = (upload_limit_message != '') ? upload_limit_message : 'Maximum number of files allowed is ' + upload_limit;
-                            var test = selector.closest('.fpsm-field').find('.fpsm-error').html(upload_limit_message);
-                            selector.parent().find('.fpsm-multiple-upload-limit').val(upload_limit);
+                        var upload_count = selector.parent().find('.fpsm-upload-count').val();
+                        var current_upload_count = upload_count;
+                        upload_count++;
+                        selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
+                        if (upload_count > upload_limit) {
+                            upload_limit_message = (upload_limit_message) ? upload_limit_message : 'Maximum number of files allowed is ' + upload_limit;
+                            console.log(upload_limit_message);
+                            selector.closest('.fpsm-field-wrap').find('.fpsm-error').html(upload_limit_message);
+                            selector.closest('.fpsm-field').find('.fpsm-upload-count').val(current_upload_count);
                             return false;
                         }
                     }
@@ -55,7 +56,7 @@ jQuery(document).ready(function ($) {
                         var data = {media_url: responseJSON.media_url, media_id: responseJSON.media_id, media_name: responseJSON.media_name, media_key: responseJSON.media_key}
                         var file_preview_template = wp.template('upload-preview');
                         if (multiple_upload) {
-                            var media_id = selector.next('.fpsm-media-id').val();
+                            var media_id = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
                             var media_id_array = media_id.split(',');
                             media_id_array.push(responseJSON.media_id);
                             var media_id = media_id_array.join(',');
@@ -106,6 +107,9 @@ jQuery(document).ready(function ($) {
             success: function (res) {
                 res = $.parseJSON(res);
                 if (res.status == 200) {
+                    var upload_count = selector.closest('.fpsm-field').find('.fpsm-upload-count').val();
+                    upload_count--;
+                    selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
                     selector.closest('.fpsm-file-preview-row').remove();
                 } else {
                     alert(res.message);
