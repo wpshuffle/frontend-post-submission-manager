@@ -10,6 +10,7 @@ switch ($taxonomy_field_type) {
         include(FPSM_PATH . '/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php');
         break;
     case 'select':
+        include(FPSM_PATH . '/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-select.php');
         break;
     case 'textfield':
         break;

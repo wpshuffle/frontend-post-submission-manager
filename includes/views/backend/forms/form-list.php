@@ -22,7 +22,6 @@ defined('ABSPATH') or die('No script kiddies please!!');
             <thead>
                 <tr>
                     <th><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></th>
-                    <th><?php esc_html_e('Alias', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Shortcode', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?></th>
@@ -40,9 +39,8 @@ defined('ABSPATH') or die('No script kiddies please!!');
                         ?>
                         <tr>
                             <td><a href="<?php echo admin_url('admin.php?page=fpsm&form_id=' . intval($form_row->form_id) . '&action=edit_form'); ?>"><?php echo esc_html($form_row->form_title); ?></a></td>
-                            <td><?php echo esc_html($form_row->form_alias); ?></td>
                             <td>
-                                <span class="fpsm-shortcode-preview">[fpsm alias="subscription"]</span>
+                                <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_html(($form_row->form_alias)); ?>"]</span>
                                 <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
                             </td>
                             <td><?php echo esc_html($form_row->post_type); ?></td>
@@ -72,7 +70,6 @@ defined('ABSPATH') or die('No script kiddies please!!');
             <tfoot>
                 <tr>
                     <th><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?></th>
-                    <th><?php esc_html_e('Alias', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Shortcode', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?></th>
                     <th><?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?></th>
