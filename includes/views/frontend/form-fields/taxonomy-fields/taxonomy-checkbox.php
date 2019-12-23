@@ -1,15 +1,21 @@
 <?php
 
-$child_of = isset($field_details['parent_term']) ? esc_attr($field_details['parent_term']) : 0;
+$child_of = !empty($field_details['child_of']) ? $field_details['child_of'] : 0;
 $terms = get_terms($taxonomy, array('hide_empty' => 0, 'child_of' => $child_of));
-echo "<pre>";
-print_r($terms);
-echo "</pre>";
-$categoryHierarchy = array();
-$fpsm_library_obj->sort_terms_hierarchicaly($terms, $categoryHierarchy, $child_of);
+$terms_hierarchy = array();
+$fpsm_library_obj->sort_terms_hierarchicaly($terms, $terms_hierarchy, $child_of);
 $terms_exclude = !empty($field_details['exclude_terms']) ? explode(',', $field_details['exclude_terms']) : array();
-
-$option_count = 0;
-if (count($categoryHierarchy) > 0) {
-    $fpsm_library_obj->print_checkbox($categoryHierarchy, $terms_exclude, $taxonomy_details->hierarchical, '', $taxonomy);
+$display_type = $field_details['display_type'];
+$display_class = 'fpsm-' . $display_type . '-checkbox';
+$args = array('terms' => $terms_hierarchy,
+    'exclude' => $terms_exclude,
+    'hierarchical' => $taxonomy_details->hierarchical,
+    'html' => '',
+    'field_name' => $field_key,
+    'checked' => array(),
+    'class' => $display_class
+);
+if (count($terms_hierarchy) > 0) {
+    $checkbox_html = $fpsm_library_obj->print_terms_as_checkbox($args);
+    echo $fpsm_library_obj->sanitize_html($checkbox_html);
 }

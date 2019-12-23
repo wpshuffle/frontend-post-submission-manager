@@ -117,5 +117,13 @@ jQuery(document).ready(function ($) {
             }
         });
     });
+    
+    $('.fpsm-auto-complete-field').each(function(){
+       var available_tags = $(this).next('.fpsm-available-tags').val();
+       available_tags = available_tags.split(',');
+       $(this).autocomplete({
+          source:available_tags 
+       });
+    });
     initialize_uploaders();
 });

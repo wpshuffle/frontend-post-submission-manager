@@ -112,6 +112,7 @@ if (!class_exists('FPSM_Library')) {
         function sanitize_html($value) {
             $allowed_html = wp_kses_allowed_html('post');
             $allowed_html['option'] = array('value' => array(), 'selected' => array());
+            $allowed_html['input'] = array('value' => array(), 'type' => array(), 'class' => array());
             return wp_kses($value, $allowed_html);
         }
 
@@ -142,38 +143,46 @@ if (!class_exists('FPSM_Library')) {
         }
 
         /**
-         * Prints terms in checkbox with hierarchical format
+         * Prints terms as checkbox with hierarchical format
          *
          * @since 1.0.0
-         *
-         * @param array $terms
-         * @param array $exclude_terms
-         * @param int $hierarchical
-         * @param string $form
-         * @param string $field_title
-         * @param array $checked_term
-         * @return string
+         *         *
          */
-        function print_checkbox($terms, $exclude_terms = array(), $hierarchical = 1, $form = '', $field_title = '', $checked_term = array()) {
+        function print_terms_as_checkbox($args) {
 
-
+            $default_args = array('terms' => array(),
+                'exclude' => array(),
+                'hierarchical' => 1,
+                'html' => '',
+                'field_name' => '',
+                'checked_terms' => array(),
+                'class' => 'fpsm-inline-checkbox'
+            );
+            $args = array_merge($default_args, $args);
+            foreach ($args as $key => $val) {
+                $$key = $val;
+            }
             foreach ($terms as $term) {
-                if (!in_array($term->slug, $exclude_terms)) {
+                if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
-
-                    $checked = (in_array($option_value, $checked_term)) ? 'checked="checked"' : '';
-                    $form .= '<label class="fpsm-checkbox-label">' . $space . '<input type="checkbox" name="' . $field_title . '[]"  value="' . $option_value . '" id="fpsm-category-' . $option_value . '" ' . $checked . '/><label for="fpsm-category-' . $option_value . '" >' . $term->name . '</label></label>';
+                    $value = $term->term_id;
+                    $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
+                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '">' . $space . '<label><input type="checkbox" name="' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/>' . $term->name . '</label></div>';
                 }
 
-
                 if (!empty($term->children)) {
-
-                    $form .= $this->print_checkbox($term->children, $exclude_terms, $hierarchical, '', $field_title, $checked_term);
+                    $child_args = array('terms' => $term->children,
+                        'exclude' => $exclude,
+                        'hierarchical' => $hierarchical,
+                        'html' => '',
+                        'field_name' => $field_name,
+                        'checked_terms' => $checked_terms
+                    );
+                    $html .= $this->print_terms_as_checkbox($child_args);
                 }
             }
 
-            return $form;
+            return $html;
         }
 
         /**
@@ -181,42 +190,44 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          *
-         * @param array $terms
-         * @param array $exclude_terms
-         * @param int $hierarchical
-         * @param string $form
-         * @param string $field_title
-         * @param string $selected_term
-         * @param string $taxonomy_print
-         * @return string
          */
-        function print_option($terms, $exclude_terms = array(), $hierarchical = 1, $form = '', $field_title = '', $selected_term = '', $taxonomy_print = false) {
-
+        function print_terms_as_option($args) {
+            $default_args = array('terms' => array(),
+                'exclude' => array(),
+                'hierarchical' => 1,
+                'html' => '',
+                'selected_terms' => array()
+            );
+            $args = array_merge($default_args, $args);
+            foreach ($args as $key => $val) {
+                $$key = $val;
+            }
             foreach ($terms as $term) {
-                if (!in_array($term->slug, $exclude_terms)) {
+                if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
-                    if ($taxonomy_print) {
-                        $option_value = $option_value . '|' . $term->taxonomy;
-                    }
-                    if (is_array($selected_term)) {
-                        $selected = (in_array($option_value, $selected_term)) ? 'selected="selected"' : '';
+                    $value = $term->term_id;
+                    if (is_array($selected_terms)) {
+                        $selected = (in_array($value, $selected_terms)) ? 'selected="selected"' : '';
                     } else {
 
-                        $selected = ($selected_term == $option_value) ? 'selected="selected"' : '';
+                        $selected = ($selected_terms == $value) ? 'selected="selected"' : '';
                     }
 
-                    $form .= '<option value="' . $option_value . '" ' . $selected . '>' . $space . $term->name . '</option>';
+                    $html .= '<option value="' . $value . '" ' . $selected . '>' . $space . $term->name . '</option>';
                 }
 
 
                 if (!empty($term->children)) {
-
-                    $form .= $this->print_option($term->children, $exclude_terms, $hierarchical, '', $field_title, $selected_term, $taxonomy_print);
+                    $child_args = array('terms' => $term->children,
+                        'exclude' => $exclude,
+                        'hierarchical' => $hierarchical,
+                        'html' => '',
+                    );
+                    $html .= $this->print_terms_as_option($child_args);
                 }
             }
 
-            return $form;
+            return $html;
         }
 
         /**
