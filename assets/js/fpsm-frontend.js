@@ -125,5 +125,22 @@ jQuery(document).ready(function ($) {
           source:available_tags 
        });
     });
+    
+    $('body').on('keyup','.fpsm-auto-complete-field',function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+	if(keycode == '13'){
+		var tag = $(this).val();
+                var added_tags = $(this).parent().find('.fpsm-auto-complete-values').val();
+                console.log(added_tags);
+                added_tags = added_tags.split(',');
+                if(added_tags.indexOf(tag) != -1){
+                    added_tags.push(tag);
+                    added_tags = added_tags.join(',');
+                    $(this).next('.fpsm-auto-complete-values').val(added_tags);
+                    var tag_html = '<div class="fpsm-each-tag">'+tag+'<span class="fpsm-tag-remove-trigger">x</span></div>';
+                    $(this).prev('.fpsm-auto-complete-tags');
+                }
+	}
+    });
     initialize_uploaders();
 });
