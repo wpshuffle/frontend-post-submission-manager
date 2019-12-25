@@ -117,30 +117,48 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-    
-    $('.fpsm-auto-complete-field').each(function(){
-       var available_tags = $(this).next('.fpsm-available-tags').val();
-       available_tags = available_tags.split(',');
-       $(this).autocomplete({
-          source:available_tags 
-       });
+
+    $('.fpsm-auto-complete-field').each(function () {
+        var available_tags = $(this).next('.fpsm-available-tags').val();
+        available_tags = available_tags.split(',');
+        $(this).autocomplete({
+            source: available_tags
+        });
     });
-    
-    $('body').on('keyup','.fpsm-auto-complete-field',function(event){
+
+    $('body').on('keyup', '.fpsm-auto-complete-field', function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-	if(keycode == '13'){
-		var tag = $(this).val();
-                var added_tags = $(this).parent().find('.fpsm-auto-complete-values').val();
-                console.log(added_tags);
+        if (keycode == '13') {
+            var tag = $(this).val();
+            var added_tags = $(this).parent().find('.fpsm-auto-complete-values').val();
+            if(added_tags == ''){
+                added_tags = [];
+            }else{
                 added_tags = added_tags.split(',');
-                if(added_tags.indexOf(tag) != -1){
-                    added_tags.push(tag);
-                    added_tags = added_tags.join(',');
-                    $(this).next('.fpsm-auto-complete-values').val(added_tags);
-                    var tag_html = '<div class="fpsm-each-tag">'+tag+'<span class="fpsm-tag-remove-trigger">x</span></div>';
-                    $(this).prev('.fpsm-auto-complete-tags');
-                }
-	}
+            }
+            
+            if (added_tags.indexOf(tag) == -1) {
+                added_tags.push(tag);
+                added_tags = added_tags.join(',');
+                $(this).parent().find('.fpsm-auto-complete-values').val(added_tags);
+                var tag_html = '<div class="fpsm-each-tag"><span class="fpsm-tag-text">' + tag + '</span><span class="fpsm-tag-remove-trigger"><i class="fas fa-times-circle"></i></span></div>';
+                $(this).parent().find('.fpsm-auto-complete-tags').append(tag_html);
+                $(this).val('');
+                $(".ui-autocomplete").hide();
+            }
+        }
+    });
+
+    $('body').on('click', '.fpsm-tag-remove-trigger', function () {
+        var tag = $(this).parent().find('.fpsm-tag-text').html();
+        var added_tags = $(this).closest('.fpsm-field').find('.fpsm-auto-complete-values').val();
+        added_tags = added_tags.split(',');
+        var tag_index = added_tags.indexOf(tag)
+        added_tags.splice(tag_index, 1)
+        added_tags = added_tags.join(',');
+        $(this).closest('.fpsm-field').find('.fpsm-auto-complete-values').val(added_tags);
+        $(this).closest('.fpsm-each-tag').remove();
+
     });
     initialize_uploaders();
 });
