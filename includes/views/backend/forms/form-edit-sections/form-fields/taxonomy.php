@@ -25,7 +25,7 @@ $show_hide_toggle_class = $taxonomy;
                         <?php
                         if ($taxonomy_details->hierarchical == 0) {
                             ?>
-                            <option value="textfield"><?php esc_html_e('Textfield', 'frontend-post-submission-manager'); ?></option>
+                            <option value="textfield" <?php selected($field_type, 'textfield'); ?>><?php esc_html_e('Textfield', 'frontend-post-submission-manager'); ?></option>
                             <?php
                         }
                         ?>

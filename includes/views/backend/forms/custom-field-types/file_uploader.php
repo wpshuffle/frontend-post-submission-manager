@@ -8,7 +8,7 @@
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('File Extensions', 'frontend-post-submission-manager'); ?></label>
-        <div class="fpsm-field">
+        <div class="fpsm-field fpsm-extension-list">
             <?php
             global $fpsm_library_obj;
             $mime_types = get_allowed_mime_types();

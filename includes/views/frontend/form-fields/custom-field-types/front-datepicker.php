@@ -1,0 +1,1 @@
+<input type="text" class="fpsm-datepicker" data-date-format="<?php echo esc_attr($field_details['date_format']); ?>"/>

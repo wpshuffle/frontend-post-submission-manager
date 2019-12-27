@@ -504,3 +504,23 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
 .fpsm-each-dropdown >label {
     margin-right: 10px;
 }
+label.fpsm-each-extension {
+    display: inline-block;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+label.fpsm-each-extension span {
+    display: inline-block;
+    margin-left: 5px;
+}
+.fpsm-field.fpsm-extension-list {
+    max-width: calc(100% - 170px);
+}
+.fpsm-field.fpsm-extension-list {
+    background: #eee;
+    padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    max-width: 510px;
+}
