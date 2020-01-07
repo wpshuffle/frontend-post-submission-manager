@@ -524,3 +524,10 @@ label.fpsm-each-extension span {
     overflow-y: scroll;
     max-width: 510px;
 }
+.fpsm-form-fields-list {
+    margin-bottom: 50px;
+}
+h3.fpsm-form-settings-heading {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}

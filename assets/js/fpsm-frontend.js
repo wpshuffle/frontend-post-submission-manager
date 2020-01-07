@@ -130,6 +130,9 @@ jQuery(document).ready(function ($) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var tag = $(this).val();
+            if(tag == ''){
+                return;
+            }
             var added_tags = $(this).parent().find('.fpsm-auto-complete-values').val();
             if(added_tags == ''){
                 added_tags = [];
@@ -159,6 +162,10 @@ jQuery(document).ready(function ($) {
         $(this).closest('.fpsm-field').find('.fpsm-auto-complete-values').val(added_tags);
         $(this).closest('.fpsm-each-tag').remove();
 
+    });
+    
+    $('body').on('submit','.fpsm-front-form',function(e){
+        e.preventDefault();
     });
     initialize_uploaders();
 });
