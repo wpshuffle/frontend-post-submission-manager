@@ -2,70 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/no-preview.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/fpsm-fileuploader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/fpsm-frontend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-enqueue.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-fileuploader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-frontend-hooks.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-shortcode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/datepicker.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/email.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/file_uploader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/options-list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-custom-field-holder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-email.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-file_uploader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-number.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-textarea.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-textfield.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-author_email.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-author_name.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-custom_field.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-post_content.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-post_excerpt.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-post_image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-post_title.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/front-taxonomy.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-select.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-textfield.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/form-html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/js-templates.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/js-templates/file-upload-preview.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/views/frontend/wp_footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/fpsm-backend.js" afterPath="$PROJECT_DIR$/assets/js/fpsm-backend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/classes/class-fpsm-library.php" afterPath="$PROJECT_DIR$/includes/classes/class-fpsm-library.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/classes/class-frontend-post-submission-manager.php" afterPath="$PROJECT_DIR$/includes/classes/class-frontend-post-submission-manager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/admin-footer.php" afterPath="$PROJECT_DIR$/includes/views/backend/admin-footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/checkbox.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/checkbox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/number.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/number.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/radio.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/radio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/select.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/select.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/textarea.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/textarea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/textfield.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/custom-field-types/textfield.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-field-settings.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-field-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/author_email.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/author_email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/author_name.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/author_name.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_content.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_excerpt.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_excerpt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_image.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_title.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/post_title.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/layout-settings.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/layout-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-list.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-datepicker.php" afterPath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-datepicker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-file_uploader.php" afterPath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-file_uploader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-option.php" afterPath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-option.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-options-list.php" afterPath="$PROJECT_DIR$/includes/views/backend/js-templates/tmpl-options-list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,54 +13,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="569" column="1" lean-forward="true" selection-start-line="569" selection-start-column="1" selection-end-line="569" selection-end-column="1" />
+            <state relative-caret-position="135">
+              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-add.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <marker date="1578494886472" expanded="false" signature="637:708" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="643:706" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="4864:4904" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="4864:5421" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="4864:5442" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="4864:5459" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="4941:5003" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="5040:5102" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="5139:5201" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="5238:5297" ph="..." />
-                <marker date="1578494886472" expanded="false" signature="5334:5393" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -157,6 +52,7 @@
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-add.php" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
       </list>
     </option>
   </component>
@@ -222,24 +118,7 @@
               <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="form-edit-sections" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -277,12 +156,12 @@
       <workItem from="1568794471858" duration="6682000" />
       <workItem from="1574160507074" duration="1587000" />
       <workItem from="1574210433351" duration="12000" />
-      <workItem from="1578494830457" duration="98000" />
+      <workItem from="1578494830457" duration="2627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14449000" />
+    <option name="totallyTimeSpent" value="16978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -461,6 +340,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -524,6 +404,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -569,6 +450,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="562" column="1" lean-forward="true" selection-start-line="562" selection-start-column="1" selection-end-line="562" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -577,10 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="569" column="1" lean-forward="true" selection-start-line="569" selection-start-column="1" selection-end-line="569" selection-end-column="1" />
+        <state relative-caret-position="135">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -15,3 +15,74 @@ span.fpsm-tag-remove-trigger {
 .fpsm-auto-complete-tags {
     margin-top: 10px;
 }
+
+/* ========================= Global styling ============================ */
+.fpsm-front-form{max-width: 100% !important;width: 100% !important;}
+.fpsm-front-form .wp-editor-container button,
+.fpsm-front-form button:not(.toggle){background-color: transparent}
+.fpsm-field-wrap{margin-bottom: 24px;}
+.fpsm-field-note{font-size: 11px;font-style: italic;color: rgba(0,0,0,.48)}
+.qq-upload-button{height: 40px;background-color: rgba(0,0,0,.08);border-radius: 4px;line-height: 40px;font-size: 14px;text-transform: uppercase;font-weight: 600;padding: 0 15px;cursor: pointer;display: inline-block}
+input[type="file"]{
+    cursor: pointer;
+}
+
+.fpsm-file-preview-wrap{}
+.fpsm-file-preview-row{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.fpsm-file-preview-row span{white-space: nowrap;display: inline-block}
+.fpsm-file-preview-column{
+    margin-right: 10px;
+    overflow: hidden;
+}
+.fpsm-file-preview-column input.fpsm-media-delete-button{
+    padding: 0 8px;
+    line-height: 18px;
+    border-radius: 64px;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    cursor: pointer;
+}
+.fpsm-file-preview-column img{
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+}
+.fpsm-file-preview-column{font-size: 14px;font-style: italic;color: rgba(0,0,0,.48)}
+
+    /*============================= Template 1 ========================*/
+.fpsm-template-1{
+    background-color: #fff;
+    padding: 35px;
+}
+.fpsm-template-1 .fpsm-field-wrap label{
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fpsm-template-1 input[type="text"]{
+    border-radius: 2px;
+    background-color: rgba(0,0,0,.06);
+    border:solid 1px rgba(0,0,0,.08);
+    padding: 0 15px;
+    line-height: 40px;
+}
+.fpsm-template-1 input[type="text"]:focus{
+    border:solid 1px rgba(0,0,0,.14);
+}
+
+.fpsm-template-1 .qq-upload-button{
+    background-color: #0083f8;
+    padding: 5px 38px;
+    color: white;
+    line-height: 32px;
+}
+.fpsm-template-1 .qq-upload-list{display: none}
