@@ -527,3 +527,17 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
     border: none;
     cursor: pointer;
 }
+
+.fpsm-each-extension{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 16.66%;
+}
+
+.fpsm-each-extension input[type="checkbox"],
+.fpsm-each-extension input[type="radio"]{
+    height: 14px;
+    width: 14px;
+    min-width: 14px;
+}
