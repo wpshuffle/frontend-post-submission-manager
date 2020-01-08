@@ -1,8 +1,8 @@
 <div class="fpsm-each-form-field">
     <div class="fpsm-field-head fpsm-clearfix">
-        <h3><span class="dashicons dashicons-arrow-down"></span><?php esc_html_e('Author Email', 'frontend-post-submission-manager'); ?></h3>
+        <h3 class="fpsm-field-title"><span class="dashicons dashicons-arrow-down"></span><?php esc_html_e('Author Email', 'frontend-post-submission-manager'); ?></h3>
     </div>
     <div class="fpsm-field-body fpsm-display-none">
-
+        <?php include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php'); ?>
     </div>
 </div>

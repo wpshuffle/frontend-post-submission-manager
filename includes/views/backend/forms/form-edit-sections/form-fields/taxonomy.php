@@ -16,7 +16,7 @@ $show_hide_toggle_class = $taxonomy;
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Field Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="<?php echo esc_attr($field_name) ?>[field_type]" class="fpsm-toggle-trigger" data-toggle-class='fpsm-field-type-ref'>
+                    <select name="<?php echo esc_attr($field_name_prefix) ?>[field_type]" class="fpsm-toggle-trigger" data-toggle-class='fpsm-taxonomy-field-type-ref'>
                         <?php
                         $field_type = (!empty($field_details['field_type'])) ? $field_details['field_type'] : 'select';
                         ?>
@@ -25,17 +25,23 @@ $show_hide_toggle_class = $taxonomy;
                         <?php
                         if ($taxonomy_details->hierarchical == 0) {
                             ?>
-                            <option value="textfield"><?php esc_html_e('Textfield', 'frontend-post-submission-manager'); ?></option>
+                            <option value="textfield" <?php selected($field_type, 'textfield'); ?>><?php esc_html_e('Textfield', 'frontend-post-submission-manager'); ?></option>
                             <?php
                         }
                         ?>
                     </select>
                 </div>
             </div>
-            <div class="fpsm-field-wrap fpsm-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'checkbox'); ?> data-toggle-ref='checkbox'>
+            <div class="fpsm-field-wrap fpsm-taxonomy-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'select'); ?> data-toggle-ref="select">
+                <label><?php esc_html_e('First Option Label', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="<?php echo esc_attr($field_name_prefix) ?>[first_option_label]" value="<?php echo (!empty($field_details['first_option_label'])) ? esc_attr($field_details['first_option_label']) : ''; ?>"/>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap fpsm-taxonomy-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'checkbox'); ?> data-toggle-ref='checkbox'>
                 <label><?php esc_html_e('Display Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="<?php echo esc_attr($field_name) ?>[display_type]">
+                    <select name="<?php echo esc_attr($field_name_prefix) ?>[display_type]">
                         <?php
                         $display_type = (!empty($field_details['display_type'])) ? $field_details['display_type'] : 'inline';
                         ?>
@@ -47,15 +53,62 @@ $show_hide_toggle_class = $taxonomy;
             <?php
             if ($taxonomy_details->hierarchical == 0) {
                 ?>
-                <div class="fpsm-field-wrap fpsm-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'textfield'); ?> data-toggle-ref='textfield'>
+                <div class="fpsm-field-wrap fpsm-taxonomy-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'textfield'); ?> data-toggle-ref='textfield'>
                     <label><?php esc_html_e('Auto Complete', 'frontend-post-submission-manager'); ?></label>
                     <div class="fpsm-field">
-                        <input type="checkbox" name="<?php echo esc_attr($field_name); ?>[auto_complete]" value="1" <?php echo (!empty($field_details['auto_complete'])) ? 'checked="checked"' : ''; ?>/>
+                        <input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[auto_complete]" value="1" <?php echo (!empty($field_details['auto_complete'])) ? 'checked="checked"' : ''; ?>/>
                     </div>
                 </div>
                 <?php
-            }
-            ?>
+            } else {
+                ?>
+                <div class="fpsm-field-wrap">
+                    <label><?php esc_html_e(sprintf('Display Child %s of ', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field">
+                        <select name="<?php echo esc_attr($field_name_prefix) ?>[child_of]">
+                            <option value=""><?php _e('None', 'frontend-post-submission-manager'); ?></option>
+                            <?php
+                            $selected_child_of = (!empty($field_details['child_of'])) ? $field_details['child_of'] : '';
+                            $terms = get_terms($taxonomy, array('hide_empty' => 0));
+                            $terms_hierarchy = array();
+                            $fpsm_library_obj->sort_terms_hierarchicaly($terms, $terms_hierarchy);
+                            if (count($terms_hierarchy) > 0) {
+                                $args = array('terms' => $terms_hierarchy,
+                                    'hierarchical' => $taxonomy_details->hierarchical,
+                                    'selected_terms' => $selected_child_of
+                                );
+                                $option = $fpsm_library_obj->print_terms_as_option($args);
+                            }
+                            echo $fpsm_library_obj->sanitize_html($option);
+                            ?>
+                        </select>
+                    </div>
+                </div>
+
+            <?php } ?>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e(sprintf('Auto assign %s ', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <select name="<?php echo esc_attr($field_name_prefix) ?>[auto_assign][]" multiple="multiple">
+                        <option value=""><?php _e('None', 'frontend-post-submission-manager'); ?></option>
+                        <?php
+                        $selected_auto_assign = (!empty($field_details['auto_assign'])) ? $field_details['auto_assign'] : '';
+                        $terms = get_terms($taxonomy, array('hide_empty' => 0));
+                        $terms_hierarchy = array();
+                        $fpsm_library_obj->sort_terms_hierarchicaly($terms, $terms_hierarchy);
+                        if (count($terms_hierarchy) > 0) {
+                            $args = array('terms' => $terms_hierarchy,
+                                'hierarchical' => $taxonomy_details->hierarchical,
+                                'selected_terms' => $selected_auto_assign
+                            );
+                            $option = $fpsm_library_obj->print_terms_as_option($args);
+                        }
+                        echo $fpsm_library_obj->sanitize_html($option);
+                        ?>
+                    </select>
+                    <p class="description"><?php esc_html_e(sprintf('Please choose the %s that you want to assign explicitly. Please use control or command key to select multiple options.', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

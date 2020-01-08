@@ -541,3 +541,30 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
     width: 14px;
     min-width: 14px;
 }
+label.fpsm-each-extension {
+    display: inline-block;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+label.fpsm-each-extension span {
+    display: inline-block;
+    margin-left: 5px;
+}
+.fpsm-field.fpsm-extension-list {
+    max-width: calc(100% - 170px);
+}
+.fpsm-field.fpsm-extension-list {
+    background: #eee;
+    padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    max-width: 510px;
+}
+.fpsm-form-fields-list {
+    margin-bottom: 50px;
+}
+h3.fpsm-form-settings-heading {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}

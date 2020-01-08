@@ -31,7 +31,7 @@ $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_f
         <a href="javascript:void(0);" class="fpsm-field-remove-trigger"><span class="dashicons dashicons-trash"></span></a>
     </div>
     <div class="fpsm-field-body fpsm-display-none">
-        <input type="hidden" name="form_details[form][fields][<?php echo esc_attr($field_key); ?>][field_type]" value="<?php echo esc_attr($field_type); ?>"/>
+        <input type="hidden" name="<?php echo esc_attr($field_name_prefix); ?>[field_type]" value="<?php echo esc_attr($field_type); ?>"/>
         <?php
         if (file_exists(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php')) {
             include(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php');

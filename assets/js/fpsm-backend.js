@@ -268,8 +268,13 @@ jQuery(document).ready(function ($) {
 
     $('.fpsm-sortable').sortable({
         placeholder: "fpsm-sortable-placeholder",
-        forcePlaceholderSize: true
+        forcePlaceholderSize: true,
+        handle: '.fpsm-field-head'
     });
+    $('.fpsm-dropdown-list-wrap').sortable({
+        placeholder: "fpsm-sortable-placeholder",
+        forcePlaceholderSize: true
+    })
 
     /**
      * Custom field adder
@@ -295,6 +300,10 @@ jQuery(document).ready(function ($) {
             }, 'slow');
 
             $('.fpsm-sortable').sortable({
+                placeholder: "fpsm-sortable-placeholder",
+                forcePlaceholderSize: true
+            });
+            $('.fpsm-dropdown-list-wrap').sortable({
                 placeholder: "fpsm-sortable-placeholder",
                 forcePlaceholderSize: true
             });
@@ -325,7 +334,7 @@ jQuery(document).ready(function ($) {
         var selector = $(this);
         var field_key = $(this).data('field-key');
         var field_type = $(this).data('field-type');
-        var data = {field_key: field_key,field_type:field_type};
+        var data = {field_key: field_key, field_type: field_type};
         var option_template = wp.template('option');
         selector.closest('.fpsm-field').find('.fpsm-dropdown-list-wrap').append(option_template(data));
         selector.closest('.fpsm-field').find('.fpsm-each-dropdown').last().find('input[type="text"]').first().focus();
@@ -342,6 +351,34 @@ jQuery(document).ready(function ($) {
 
         }
     });
+    
+    /**
+     * Radio button checked trigger
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click','.fpsm-checked-radio-ref',function(){
+        $(this).closest('.fpsm-dropdown-list-wrap').find('.fpsm-checked-radio-val').val(0);
+       $(this).next('input[type="hidden"]').val(1); 
+    });
+    
+    /**
+     * Editor change options toggle
+     * 
+     * @since 1.0.0
+     */
+    
+    $('body').on('change','.fpsm-editor-type',function(){
+       var media_editors = ['visual','rich'];
+       var editor_type = $(this).val();
+       if(media_editors.indexOf(editor_type) != -1){
+           $(this).closest('.fpsm-each-form-field').find('.fpsm-editor-type-ref').show();
+       }else{
+           $(this).closest('.fpsm-each-form-field').find('.fpsm-editor-type-ref').hide();
+       }
+    });
+    
+   
 
 
 });

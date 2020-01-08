@@ -21,14 +21,17 @@ $custom_field_type_list = array(
 $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_field_type_list);
 if (!empty($custom_field_type_list)) {
     foreach ($custom_field_type_list as $custom_field_type => $custom_field_type_label) {
-        if (file_exists(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php')) {
-            $field_name_prefix = 'form_details[form][fields][{{data.field_key}}]';
-            ?>
-            <script type="text/html" id="tmpl-custom-<?php echo esc_attr($custom_field_type); ?>">
-            <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php'); ?>
-            </script>
-            <?php
-        }
+        $field_name_prefix = 'form_details[form][fields][{{data.field_key}}]';
+        $show_hide_toggle_class = '{{data.meta_key}}';
+        $field_details['field_label'] = '{{data.label}}';
+        $field_type = $custom_field_type;
+        $field_key = '{{data.field_key}}';
+        ?>
+        <script type="text/html" id="tmpl-custom-<?php echo esc_attr($custom_field_type); ?>">
+        <?php //include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-' . $custom_field_type . '.php');           ?>
+        <?php include(FPSM_PATH . '/includes/views/backend/js-templates/tmpl-custom-field-holder.php'); ?>
+        </script>
+        <?php
     }
 }
 ?>

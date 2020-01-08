@@ -90,19 +90,30 @@ if (!class_exists('FPSM_Library')) {
         function sanitize_value($value = '', $sanitize_type = 'text') {
             switch ($sanitize_type) {
                 case 'html':
-                    $allowed_html = wp_kses_allowed_html('post');
-                    return wp_kses($value, $allowed_html);
+                    return $this->sanitize_html($value);
                     break;
                 case 'to_br':
                     return $this->sanitize_escaping_linebreaks($value);
-                    break;
-                case 'none':
-                    return $value;
                     break;
                 default:
                     return sanitize_text_field($value);
                     break;
             }
+        }
+
+        /**
+         *
+         * Sanitizes HTML
+         *
+         * @param string $value
+         *
+         * @since 1.0.0
+         */
+        function sanitize_html($value) {
+            $allowed_html = wp_kses_allowed_html('post');
+            $allowed_html['option'] = array('value' => array(), 'selected' => array());
+            $allowed_html['input'] = array('value' => array(), 'type' => array(), 'class' => array());
+            return wp_kses($value, $allowed_html);
         }
 
         function sort_terms_hierarchicaly(Array &$cats, Array &$into, $parentId = 0) {
@@ -132,38 +143,46 @@ if (!class_exists('FPSM_Library')) {
         }
 
         /**
-         * Prints terms in checkbox with hierarchical format
+         * Prints terms as checkbox with hierarchical format
          *
          * @since 1.0.0
-         *
-         * @param array $terms
-         * @param array $exclude_terms
-         * @param int $hierarchical
-         * @param string $form
-         * @param string $field_title
-         * @param array $checked_term
-         * @return string
+         *         *
          */
-        function print_checkbox($terms, $exclude_terms = array(), $hierarchical = 1, $form = '', $field_title = '', $checked_term = array()) {
+        function print_terms_as_checkbox($args) {
 
-
+            $default_args = array('terms' => array(),
+                'exclude' => array(),
+                'hierarchical' => 1,
+                'html' => '',
+                'field_name' => '',
+                'checked_terms' => array(),
+                'class' => 'fpsm-inline-checkbox'
+            );
+            $args = array_merge($default_args, $args);
+            foreach ($args as $key => $val) {
+                $$key = $val;
+            }
             foreach ($terms as $term) {
-                if (!in_array($term->slug, $exclude_terms)) {
+                if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
-
-                    $checked = (in_array($option_value, $checked_term)) ? 'checked="checked"' : '';
-                    $form .= '<label class="ebd-checkbox-label">' . $space . '<input type="checkbox" name="' . $field_title . '[]"  value="' . $option_value . '" id="ebd-category-' . $option_value . '" ' . $checked . '/><label for="ebd-category-' . $option_value . '" >' . $term->name . '</label></label>';
+                    $value = $term->term_id;
+                    $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
+                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '">' . $space . '<label><input type="checkbox" name="' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/>' . $term->name . '</label></div>';
                 }
 
-
                 if (!empty($term->children)) {
-
-                    $form .= $this->print_checkbox($term->children, $exclude_terms, $hierarchical, '', $field_title, $checked_term);
+                    $child_args = array('terms' => $term->children,
+                        'exclude' => $exclude,
+                        'hierarchical' => $hierarchical,
+                        'html' => '',
+                        'field_name' => $field_name,
+                        'checked_terms' => $checked_terms
+                    );
+                    $html .= $this->print_terms_as_checkbox($child_args);
                 }
             }
 
-            return $form;
+            return $html;
         }
 
         /**
@@ -171,47 +190,44 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          *
-         * @param array $terms
-         * @param array $exclude_terms
-         * @param int $hierarchical
-         * @param string $form
-         * @param string $field_title
-         * @param string $selected_term
-         * @param string $taxonomy_print
-         * @return string
          */
-        function print_option($terms, $exclude_terms = array(), $hierarchical = 1, $form = '', $field_title = '', $selected_term = '', $taxonomy_print = false) {
-            // $this->print_array($terms);
-
+        function print_terms_as_option($args) {
+            $default_args = array('terms' => array(),
+                'exclude' => array(),
+                'hierarchical' => 1,
+                'html' => '',
+                'selected_terms' => array()
+            );
+            $args = array_merge($default_args, $args);
+            foreach ($args as $key => $val) {
+                $$key = $val;
+            }
             foreach ($terms as $term) {
-                if (!in_array($term->slug, $exclude_terms)) {
+                if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $option_value = ($hierarchical == 0) ? $term->name : $term->term_id;
-                    if ($taxonomy_print) {
-                        $option_value = $option_value . '|' . $term->taxonomy;
-                    }
-                    if (is_array($selected_term)) {
-                        $selected = (in_array($option_value, $selected_term)) ? 'selected="selected"' : '';
+                    $value = $term->term_id;
+                    if (is_array($selected_terms)) {
+                        $selected = (in_array($value, $selected_terms)) ? 'selected="selected"' : '';
                     } else {
 
-                        $selected = ($selected_term == $option_value) ? 'selected="selected"' : '';
+                        $selected = ($selected_terms == $value) ? 'selected="selected"' : '';
                     }
-                    /*  var_dump($selected_term);
-                      var_dump($option_value);
-                      var_dump($selected);
-                     *
-                     */
-                    $form .= '<option value="' . $option_value . '" ' . $selected . '>' . $space . $term->name . '</option>';
+
+                    $html .= '<option value="' . $value . '" ' . $selected . '>' . $space . $term->name . '</option>';
                 }
 
 
                 if (!empty($term->children)) {
-
-                    $form .= $this->print_option($term->children, $exclude_terms, $hierarchical, '', $field_title, $selected_term, $taxonomy_print);
+                    $child_args = array('terms' => $term->children,
+                        'exclude' => $exclude,
+                        'hierarchical' => $hierarchical,
+                        'html' => '',
+                    );
+                    $html .= $this->print_terms_as_option($child_args);
                 }
             }
 
-            return $form;
+            return $html;
         }
 
         /**
@@ -400,6 +416,101 @@ if (!class_exists('FPSM_Library')) {
                 $field_file = "$field_key.php";
             }
             return $field_file;
+        }
+
+        /**
+         * Gets the form row as per the alias
+         *
+         * @param string $alias
+         *
+         * @return object
+         *
+         * @since 1.0.0
+         */
+        function get_form_row_by_alias($alias) {
+            global $wpdb;
+            $form_table = FPSM_FORM_TABLE;
+            $form_row = $wpdb->get_row($wpdb->prepare("select * from $form_table where form_alias = %s", $alias));
+            return $form_row;
+        }
+
+        /**
+         * Generates field class from field key
+         *
+         * @param string $field_key
+         *
+         * @since 1.0.0
+         */
+        function generate_field_class($field_key) {
+            $field_class = str_replace('|', '-', $field_key);
+            $field_class = str_replace('_', '-', $field_class);
+            if ($field_class[0] == '-') {
+                $field_class = substr($field_class, 1, strlen($field_class));
+            }
+            $field_class = 'fpsm-' . $field_class;
+            return $field_class;
+        }
+
+        function save_media_to_library() {
+            $filetype = wp_check_filetype($filename . '.' . $ext);
+            $mime_type = $filetype['type'];
+            $file_url = $upload_url . '/' . $filename . '.' . $ext;
+            $file_path = $uploadDirectory . $filename . '.' . $ext;
+            $attachment = array(
+                'post_mime_type' => $mime_type,
+                'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename . '.' . $ext)),
+                'post_content' => '',
+                'post_status' => 'inherit',
+                'guid' => $file_url
+            );
+            require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+            $attachment_id = wp_insert_attachment($attachment, $file_path);
+            require_once(ABSPATH . 'wp-admin/includes/image.php');
+            $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
+            $check = wp_update_attachment_metadata($attachment_id, $attachment_data);
+            $attachment_date = get_the_date("U", $attachment_id);
+            $attachment_code = md5($attachment_date);
+            $media_details = array('attachment_id' => $attachment_id, 'attachment_code' => $attachment_code);
+            return $media_details;
+        }
+
+        /**
+         * Generates random string
+         *
+         * @param int $length
+         * @return string
+         */
+        function generate_random_string($length = 7) {
+            $random_string = '';
+            $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+            for ($i = 1; $i <= $length; $i++) {
+                $random_string .= $string[rand(0, 61)];
+            }
+            return $random_string;
+        }
+
+        /**
+         * Formats file size
+         *
+         * @param int $bytes
+         * @return string
+         */
+        function format_file_size($bytes) {
+            if ($bytes >= 1073741824) {
+                $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+            } elseif ($bytes >= 1048576) {
+                $bytes = number_format($bytes / 1048576, 2) . ' MB';
+            } elseif ($bytes >= 1024) {
+                $bytes = number_format($bytes / 1024, 2) . ' KB';
+            } elseif ($bytes > 1) {
+                $bytes = $bytes . ' bytes';
+            } elseif ($bytes == 1) {
+                $bytes = $bytes . ' byte';
+            } else {
+                $bytes = '0 bytes';
+            }
+
+            return $bytes;
         }
 
     }
