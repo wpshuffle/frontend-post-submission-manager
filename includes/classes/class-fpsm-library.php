@@ -167,7 +167,7 @@ if (!class_exists('FPSM_Library')) {
                     $space = $this->check_parent($term);
                     $value = $term->term_id;
                     $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
-                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '">' . $space . '<label><input type="checkbox" name="' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/>' . $term->name . '</label></div>';
+                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '">' . $space . '<input type="checkbox" name="' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/><label>' . $term->name . '</label></div>';
                 }
 
                 if (!empty($term->children)) {
