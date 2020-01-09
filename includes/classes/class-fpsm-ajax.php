@@ -17,6 +17,12 @@ if (!class_exists('FPSM_Ajax')) {
              */
             add_action('wp_ajax_fpsm_media_delete_action', array($this, 'media_delete_action'));
             add_action('wp_ajax_nopriv_fpsm_media_delete_action', array($this, 'media_delete_action'));
+
+            /**
+             *  Ajax Form Submission
+             */
+            add_action('wp_ajax_fpsm_form_process', array($this, 'ajax_form_process'));
+            add_action('wp_ajax_nopriv_fpsm_form_process', array($this, 'ajax_form_process'));
         }
 
         function file_upload_action() {
@@ -102,6 +108,19 @@ if (!class_exists('FPSM_Ajax')) {
                     }
                 }
                 die(json_encode($response));
+            } else {
+                $this->permission_denied();
+            }
+        }
+
+        function ajax_form_process() {
+            if ($this->admin_ajax_nonce_verify()) {
+                $form_data = $_POST['form_data'];
+                $form_data = stripslashes_deep($form_data);
+                parse_str($form_data, $form_data);
+                global $fpsm_library_obj;
+                $fpsm_library_obj->print_array($form_data);
+                die();
             } else {
                 $this->permission_denied();
             }
