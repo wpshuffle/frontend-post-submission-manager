@@ -1,4 +1,4 @@
-<div class="fpsm-custom-select">
+<div class="fpsm-select-field">
     <select name="<?php echo esc_attr($field_key); ?>">
         <?php
             if (!empty($field_details['options'])) {
