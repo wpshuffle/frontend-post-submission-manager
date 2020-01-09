@@ -114,16 +114,7 @@ if (!class_exists('FPSM_Ajax')) {
         }
 
         function ajax_form_process() {
-            if ($this->admin_ajax_nonce_verify()) {
-                $form_data = $_POST['form_data'];
-                $form_data = stripslashes_deep($form_data);
-                parse_str($form_data, $form_data);
-                global $fpsm_library_obj;
-                $fpsm_library_obj->print_array($form_data);
-                die();
-            } else {
-                $this->permission_denied();
-            }
+            include(FPSM_PATH . '/includes/cores/ajax-process-form.php');
         }
 
     }
