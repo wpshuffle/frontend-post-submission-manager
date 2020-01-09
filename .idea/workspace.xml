@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+            <state relative-caret-position="407">
+              <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -28,11 +28,39 @@
       <file leaf-file-name="front-checkbox.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="180">
+              <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="39" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
-                <element signature="e#136#526#0#HTML" expanded="true" />
+                <element signature="e#144#149#0#PHP" expanded="true" />
+                <element signature="e#415#420#0#PHP" expanded="true" />
+                <element signature="e#459#464#0#PHP" expanded="true" />
+                <element signature="e#525#530#0#PHP" expanded="true" />
+                <element signature="e#648#653#0#PHP" expanded="true" />
+                <element signature="e#685#690#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="taxonomy-checkbox.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="taxonomy-select.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-select.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding>
+                <element signature="e#14#19#0#PHP" expanded="true" />
+                <element signature="e#72#77#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,15 +93,10 @@
       <file leaf-file-name="front-radio.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
+            <state relative-caret-position="160">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="e#136#520#0#HTML" expanded="true" />
-                <element signature="e#199#204#0#PHP" expanded="true" />
-                <element signature="e#243#248#0#PHP" expanded="true" />
-                <element signature="e#309#314#0#PHP" expanded="true" />
-                <element signature="e#428#433#0#PHP" expanded="true" />
-                <element signature="e#465#470#0#PHP" expanded="true" />
+                <element signature="e#0#5#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,6 +119,7 @@
       <find>fpsm-primary-button</find>
       <find>fpsm-button-primary</find>
       <find>fpsm-file-preview-row</find>
+      <find>fpsm-file-preview-column</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,7 +138,9 @@
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
+        <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
+        <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php" />
       </list>
     </option>
   </component>
@@ -209,6 +235,15 @@
               <item name="form-fields" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="custom-field-types" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="form-fields" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="taxonomy-fields" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -248,12 +283,12 @@
       <workItem from="1574160507074" duration="1587000" />
       <workItem from="1574210433351" duration="12000" />
       <workItem from="1578494830457" duration="2724000" />
-      <workItem from="1578552167625" duration="8346000" />
+      <workItem from="1578552167625" duration="10494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25421000" />
+    <option name="totallyTimeSpent" value="27569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -501,30 +536,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-select.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#14#19#0#PHP" expanded="false" />
-            <element signature="n#select#0;n#!!top" expanded="false" />
-            <element signature="e#72#77#0#PHP" expanded="false" />
-            <element signature="e#293#298#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="160">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#136#520#0#HTML" expanded="true" />
-            <element signature="e#199#204#0#PHP" expanded="true" />
-            <element signature="e#243#248#0#PHP" expanded="true" />
-            <element signature="e#309#314#0#PHP" expanded="true" />
-            <element signature="e#428#433#0#PHP" expanded="true" />
-            <element signature="e#465#470#0#PHP" expanded="true" />
+            <element signature="e#0#5#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -549,21 +566,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php">
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="28" />
           <folding>
-            <element signature="e#0#5#0#PHP" expanded="true" />
-            <element signature="e#136#526#0#HTML" expanded="true" />
+            <element signature="n#div#0;n#!!top" expanded="true" />
+            <element signature="e#96#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-file_uploader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding>
+            <element signature="e#901#906#0#PHP" expanded="true" />
+            <element signature="e#988#993#0#PHP" expanded="true" />
+            <element signature="e#1078#1083#0#PHP" expanded="true" />
+            <element signature="e#1138#1143#0#PHP" expanded="true" />
+            <element signature="e#1197#1202#0#PHP" expanded="true" />
+            <element signature="e#1249#1254#0#PHP" expanded="true" />
+            <element signature="e#1320#1325#0#PHP" expanded="true" />
+            <element signature="e#1462#1467#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        <state relative-caret-position="407">
+          <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-select.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#14#19#0#PHP" expanded="true" />
+            <element signature="e#72#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
+            <element signature="e#144#149#0#PHP" expanded="true" />
+            <element signature="e#415#420#0#PHP" expanded="true" />
+            <element signature="e#459#464#0#PHP" expanded="true" />
+            <element signature="e#525#530#0#PHP" expanded="true" />
+            <element signature="e#648#653#0#PHP" expanded="true" />
+            <element signature="e#685#690#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

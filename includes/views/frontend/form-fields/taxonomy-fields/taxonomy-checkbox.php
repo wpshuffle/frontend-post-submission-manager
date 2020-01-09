@@ -1,3 +1,4 @@
+
 <?php
 
 $child_of = !empty($field_details['child_of']) ? $field_details['child_of'] : 0;
@@ -19,3 +20,4 @@ if (count($terms_hierarchy) > 0) {
     $checkbox_html = $fpsm_library_obj->print_terms_as_checkbox($args);
     echo $fpsm_library_obj->sanitize_html($checkbox_html);
 }
+
