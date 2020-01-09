@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+            <state relative-caret-position="164">
+              <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -27,9 +28,10 @@
       <file leaf-file-name="front-checkbox.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="220">
+              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
               <folding>
+                <element signature="e#0#5#0#PHP" expanded="true" />
                 <element signature="e#136#526#0#HTML" expanded="true" />
               </folding>
             </state>
@@ -39,7 +41,7 @@
       <file leaf-file-name="fpsm-frontend.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/fpsm-frontend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="198">
               <caret line="193" column="4" lean-forward="false" selection-start-line="193" selection-start-column="4" selection-end-line="195" selection-end-column="7" />
               <folding />
             </state>
@@ -50,10 +52,11 @@
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="30" />
               <folding>
-                <element signature="e#14#19#0#PHP" expanded="true" />
-                <element signature="n#select#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#!!top" expanded="true" />
+                <element signature="e#51#56#0#PHP" expanded="true" />
+                <element signature="n#select#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
+              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
               <folding>
                 <element signature="e#136#520#0#HTML" expanded="true" />
                 <element signature="e#199#204#0#PHP" expanded="true" />
@@ -110,6 +113,7 @@
         <option value="$PROJECT_DIR$/assets/js/fpsm-frontend.js" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php" />
+        <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
       </list>
     </option>
@@ -244,12 +248,12 @@
       <workItem from="1574160507074" duration="1587000" />
       <workItem from="1574210433351" duration="12000" />
       <workItem from="1578494830457" duration="2724000" />
-      <workItem from="1578552167625" duration="7733000" />
+      <workItem from="1578552167625" duration="8346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24808000" />
+    <option name="totallyTimeSpent" value="25421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -510,29 +514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/fpsm-frontend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="193" column="4" lean-forward="false" selection-start-line="193" selection-start-column="4" selection-end-line="195" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#19#0#PHP" expanded="true" />
-            <element signature="n#select#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-radio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="32" />
           <folding>
             <element signature="e#136#520#0#HTML" expanded="true" />
             <element signature="e#199#204#0#PHP" expanded="true" />
@@ -544,11 +529,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="true" />
+            <element signature="e#51#56#0#PHP" expanded="true" />
+            <element signature="n#select#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/fpsm-frontend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="193" column="4" lean-forward="false" selection-start-line="193" selection-start-column="4" selection-end-line="195" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-checkbox.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="220">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
           <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
             <element signature="e#136#526#0#HTML" expanded="true" />
           </folding>
         </state>
@@ -556,8 +562,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+        <state relative-caret-position="164">
+          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
           <folding />
         </state>
       </provider>

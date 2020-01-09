@@ -94,13 +94,13 @@ input[type="file"]{
 .fpsm-tag-remove-trigger{font-size: 11px;}
 .fpsm-each-tag{line-height: 4px;padding: 5px 8px;}
 
-.fpsm-custom-field-SelectDropdown .fpsm-field{
+.fpsm-custom-select{
     height: 42px;
     position: relative;
-    border:solid 1px rgba(0,0,0,.14);
+    /*border:solid 1px rgba(0,0,0,.14);*/
     cursor: pointer;
 }
-.fpsm-custom-field-SelectDropdown .fpsm-field:before{
+.fpsm-custom-select:before{
     content:'';
     position: absolute;
     top:18px;
@@ -109,7 +109,7 @@ input[type="file"]{
     border-width: 6px;
     border-color: rgba(0,0,0,.68) transparent transparent transparent;
 }
-.fpsm-custom-field-SelectDropdown .fpsm-field select{
+.fpsm-custom-select select{
     background-color: transparent;
     border: none;
     border-radius: 0;
@@ -122,6 +122,7 @@ input[type="file"]{
     -webkit-appearance: none;
     appearance:none;
     cursor: pointer;
+    border: none;
 }
 .fpsm-custom-field-Radio .fpsm-field{
     display: flex;
