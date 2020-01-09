@@ -127,17 +127,21 @@ input[type="file"]{
     display: flex;
     flex-wrap: wrap;
 }
+.fpsm-custom-field-checkboxSample .fpsm-field{
+    display: flex;
+    flex-wrap: wrap;
+}
 .fpsm-radio{margin-right: 20px;position: relative}
-.fpsm-radio input[type="radio"]{position: absolute;opacity: 0;z-index: 5;height: 100%;width: 100%}
-.fpsm-radio label{
+.fpsm-radio input[type="radio"]{position: absolute;opacity: 0;z-index: 5;height: 100%;width: 100%;cursor: pointer}
+.fpsm-front-form .fpsm-field-wrap .fpsm-radio label{
     position: relative;
     font-size: 14px;
-    font-weight: 400 !important;
+    font-weight: normal;
     padding-left: 24px;
 }
 .fpsm-radio label:before{
     position: absolute;
-    top:0;
+    top:2px;
     left: 0;
     content: '';
     height: 16px;
@@ -148,6 +152,33 @@ input[type="file"]{
 }
 .fpsm-radio input[type="radio"]:checked + label:before{
     border-color: #3ea8de;
+}
+
+.fpsm-checkbox{margin-right: 20px;position: relative}
+.fpsm-checkbox input[type="checkbox"]{position: absolute;opacity: 0;z-index: 5;height: 100%;width: 100%;cursor: pointer}
+.fpsm-front-form .fpsm-field-wrap .fpsm-checkbox label{
+    position: relative;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 24px;
+}
+.fpsm-checkbox label:before{
+    position: absolute;
+    top:2px;
+    left: 0;
+    content: '✓';
+    height: 16px;
+    width: 16px;
+    background-color: rgba(0,0,0,.18);
+    transition: all .3s ease;
+    border-radius: 2px;
+    color: rgba(0,0,0, 0.2);
+    text-align: center;
+    line-height: 16px;
+}
+.fpsm-checkbox input[type="checkbox"]:checked + label:before{
+    background-color: #3ea8de;
+    color: white;
 }
 
 
