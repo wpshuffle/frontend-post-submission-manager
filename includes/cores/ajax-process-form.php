@@ -15,9 +15,22 @@ if ($this->admin_ajax_nonce_verify()) {
     $form_details = maybe_unserialize($form_row->form_details);
     $fpsm_library_obj->print_array($form_details);
     $form_fields = $form_details['form']['fields'];
+    $error_flag = 0;
+    $error_details = array();
+    $response = array();
     if (!empty($form_fields)) {
         foreach ($form_details as $field_key => $field_details) {
-            
+            $required_message = (!empty($field_details['required_error_message'])) ? esc_html__($field_details['required_error_message']) : esc_html__('This field is requied', 'frontend-post-submission-manager');
+            if (!empty($field_details['required']) && empty($form_data[$field_key])) {
+                $error_flag = 1;
+                $error_details[$field_key] = $required_message;
+            } else {
+                switch ($field_key) {
+                    case 'post_title':
+
+                        break;
+                }
+            }
         }
     }
     die();
