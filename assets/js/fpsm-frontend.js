@@ -166,6 +166,28 @@ jQuery(document).ready(function ($) {
     
     $('body').on('submit','.fpsm-front-form',function(e){
         e.preventDefault();
+        var selector = $(this);
+        var form_data = selector.serialize();
+        $.ajax({
+           type:'post',
+           url:fpsm_js_obj.ajax_url,
+           data:{
+               action:'fpsm_form_process',
+               form_data:form_data,
+               _wpnonce:fpsm_js_obj.ajax_nonce
+           },
+            beforeSend: function (xhr) {
+                selector.find('fpsm-ajax-loader').show();
+            },
+            success: function (data, textStatus, jqXHR) {
+                data = $.parseJSON(data);
+                if(data.status == 200){
+                    
+                }else{
+                    
+                }
+            }
+        });
     });
     initialize_uploaders();
 
