@@ -194,4 +194,11 @@ jQuery(document).ready(function ($) {
     $('.fpsm-each-term-checkbox label').on('click', function () {
        $(this).toggleClass('checked');
     });
+    
+    $('.fpsm-datepicker').each(function(){
+       var date_format = $(this).data('date-format');
+       $(this).datepicker({
+           dateFormat:date_format
+       });
+    });
 });
