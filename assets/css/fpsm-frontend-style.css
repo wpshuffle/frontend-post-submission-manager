@@ -17,7 +17,7 @@ span.fpsm-tag-remove-trigger {
 }
 
 /* ========================= Global styling ============================ */
-.fpsm-front-form{max-width: 100% !important;width: 100% !important;}
+/*.fpsm-front-form{max-width: 100% !important;width: 100% !important;}*/
 .fpsm-front-form .wp-editor-container button,
 .fpsm-front-form button:not(.toggle){background-color: transparent}
 .fpsm-field-wrap{margin-bottom: 24px;}
@@ -30,11 +30,14 @@ input[type="file"]{
 .fpsm-file-preview-wrap{}
 .fpsm-file-preview-row{
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 15px;
     align-items: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,.04);
+    border-top:solid 1px rgba(0,0,0,.08);
 }
-.fpsm-file-preview-row span{white-space: nowrap;display: inline-block}
+.fpsm-file-preview-row:nth-child(1){border: none;}
+.fpsm-file-preview-row span{display: inline-block;flex: 1 1 auto;}
+.fpsm-file-preview-row span:last-child{text-align: right}
 .fpsm-file-preview-column{
     margin-right: 10px;
     overflow: hidden;
@@ -56,7 +59,42 @@ input[type="file"]{
 }
 .fpsm-file-preview-column{font-size: 14px;font-style: italic;color: rgba(0,0,0,.48)}
 
-    /*============================= Template 1 ========================*/
+.fpsm-front-form .fpsm-field-wrap .fpsm-each-term-checkbox label{
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    padding-left:24px;
+    cursor: pointer;
+}
+.fpsm-front-form .fpsm-field-wrap .fpsm-each-term-checkbox label.checked:before{
+    background-color: #3ea8de;
+    color: white;
+}
+.fpsm-front-form .fpsm-field-wrap .fpsm-each-term-checkbox label input[type="checkbox"]{
+    opacity: 0;
+    position: absolute;
+
+}
+.fpsm-front-form .fpsm-field-wrap .fpsm-each-term-checkbox label:before{
+    content:'✓';
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,.24);
+    color: rgba(0,0,0,.48);
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: all .3s ease;
+    text-align: center;
+    line-height: 16px;
+}
+
+.fpsm-tag-text{font-size: 12px;}
+.fpsm-tag-remove-trigger{font-size: 11px;}
+.fpsm-each-tag{line-height: 4px;padding: 5px 8px;}
+
+/*============================= Template 1 ========================*/
 .fpsm-template-1{
     background-color: #fff;
     padding: 35px;
@@ -68,14 +106,25 @@ input[type="file"]{
     margin-bottom: 8px;
 }
 
-.fpsm-template-1 input[type="text"]{
+.fpsm-template-1 input[type="text"],
+.fpsm-template-1 input[type="email"],
+.fpsm-template-1 textarea{
     border-radius: 2px;
-    background-color: rgba(0,0,0,.06);
+    background-color: rgba(0,0,0,.04);
     border:solid 1px rgba(0,0,0,.08);
     padding: 0 15px;
     line-height: 40px;
+    font-size: 14px;
 }
-.fpsm-template-1 input[type="text"]:focus{
+.fpsm-template-1 textarea{
+    line-height: 1.4;
+    padding: 15px;
+    height: 80px;
+    resize: none;
+}
+.fpsm-template-1 input[type="text"]:focus,
+.fpsm-template-1 input[type="email"]:focus,
+.fpsm-template-1 textarea:focus{
     border:solid 1px rgba(0,0,0,.14);
 }
 

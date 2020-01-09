@@ -168,4 +168,8 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
     });
     initialize_uploaders();
+
+    $('.fpsm-each-term-checkbox label').on('click', function () {
+       $(this).addClass('checked');
+    });
 });
