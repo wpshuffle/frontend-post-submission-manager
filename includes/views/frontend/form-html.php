@@ -6,6 +6,7 @@ if (isset($_GET['debug'])) {
 $form_template = (!empty($form_details['layout']['template'])) ? $form_details['layout']['template'] : 'template-1';
 ?>
 <form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr($form_template); ?>" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
+    <input type="hidden" name="form_alias" value="<?php echo esc_attr($form_row->form_alias); ?>"/>
     <?php
     /**
      * Fires at the start of form
