@@ -4,7 +4,6 @@
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-html.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-html.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,20 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="706" column="16" lean-forward="true" selection-start-line="706" selection-start-column="16" selection-end-line="706" selection-end-column="16" />
+            <state relative-caret-position="366">
+              <caret line="742" column="16" lean-forward="false" selection-start-line="742" selection-start-column="16" selection-end-line="742" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form-html.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form-html.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="561">
               <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
@@ -88,8 +87,8 @@
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/taxonomy-fields/taxonomy-checkbox.php" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-select.php" />
-        <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
         <option value="$PROJECT_DIR$/includes/views/frontend/form-html.php" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
       </list>
     </option>
   </component>
@@ -225,12 +224,12 @@
       <workItem from="1578494830457" duration="2724000" />
       <workItem from="1578552167625" duration="12337000" />
       <workItem from="1578619297570" duration="12000" />
-      <workItem from="1578834796619" duration="6026000" />
+      <workItem from="1578834796619" duration="6968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35450000" />
+    <option name="totallyTimeSpent" value="36392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -652,17 +651,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="706" column="16" lean-forward="true" selection-start-line="706" selection-start-column="16" selection-end-line="706" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="561">
           <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
@@ -680,6 +671,14 @@
             <element signature="e#2316#2321#0#PHP" expanded="true" />
             <element signature="e#2527#2532#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="742" column="16" lean-forward="false" selection-start-line="742" selection-start-column="16" selection-end-line="742" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

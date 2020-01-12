@@ -733,3 +733,13 @@ button.add_media{
     font-size: 14px;
     border:solid 1px rgba(0,0,0,.18);
 }
+
+.fpsm-template-7 .fpsm-field input[type="submit"]{
+    background-color: #7fd383;
+    font-size: 14px;
+}
+
+
+.fpsm-template-7 .qq-upload-button{
+    background-color: #7fd383;
+}
