@@ -45,7 +45,6 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
     }
     ?>
     <div class="fpsm-field-wrap">
-        <label></label>
         <div class="fpsm-field">
             <input type="submit" value="<?php echo (!empty($form_details['form']['submit_button_label'])) ? esc_attr($form_details['form']['submit_button_label']) : esc_html__('Submit', 'frontend-post-submission-manager'); ?>"/>
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader"/>
