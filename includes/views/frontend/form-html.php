@@ -23,8 +23,17 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
                 if (!empty($field_details['show_on_form'])) {
                     //  $fpsm_library_obj->print_array($field_details);
                     $field_class = $fpsm_library_obj->generate_field_class($field_key);
+                    if ($fpsm_library_obj->is_taxonomy_key($field_key)) {
+                        $field_type = $field_details['field_type'];
+                        $field_type_class = ' fpsm-taxonomy-' . $field_type;
+                    } else if ($fpsm_library_obj->is_custom_field_key($field_key)) {
+                        $field_type = $field_details['field_type'];
+                        $field_type_class = ' fpsm-custom-field-' . $field_type;
+                    } else {
+                        $field_type_class = '';
+                    }
                     ?>
-                    <div class="fpsm-field-wrap <?php echo esc_attr($field_class); ?>">
+                    <div class="fpsm-field-wrap<?php echo esc_attr($field_type_class); ?> <?php echo esc_attr($field_class); ?>">
                         <label><?php echo (!empty($field_details['field_label'])) ? esc_html($field_details['field_label']) : ''; ?></label>
                         <div class="fpsm-field">
                             <?php

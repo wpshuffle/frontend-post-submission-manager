@@ -442,8 +442,12 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          */
         function generate_field_class($field_key) {
-            $field_class = str_replace('|', '-', $field_key);
-            $field_class = str_replace('_', '-', $field_class);
+            if (strpos($field_key, '_taxonomy') === 0) {
+                $field_key = str_replace('_taxonomy|', '', $field_key);
+            } else if (strpos($field_key, '_custom_field') === 0) {
+                $field_key = str_replace('_custom_field|', '', $field_key);
+            }
+            $field_class = str_replace('_', '-', $field_key);
             if ($field_class[0] == '-') {
                 $field_class = substr($field_class, 1, strlen($field_class));
             }
@@ -511,6 +515,22 @@ if (!class_exists('FPSM_Library')) {
             }
 
             return $bytes;
+        }
+
+        function is_taxonomy_key($field_key) {
+            if (strpos($field_key, '_taxonomy') === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function is_custom_field_key($field_key) {
+            if (strpos($field_key, '_custom_field') === 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
     }
