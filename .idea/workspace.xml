@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" afterPath="$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="341" column="16" lean-forward="false" selection-start-line="341" selection-start-column="16" selection-end-line="341" selection-end-column="16" />
+            <state relative-caret-position="279">
+              <caret line="1103" column="22" lean-forward="true" selection-start-line="1103" selection-start-column="22" selection-end-line="1103" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -251,12 +251,12 @@
       <workItem from="1578552167625" duration="12337000" />
       <workItem from="1578619297570" duration="12000" />
       <workItem from="1578834796619" duration="7009000" />
-      <workItem from="1578897828897" duration="4236000" />
+      <workItem from="1578897828897" duration="6176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40669000" />
+    <option name="totallyTimeSpent" value="42609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -705,8 +705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="341" column="16" lean-forward="false" selection-start-line="341" selection-start-column="16" selection-end-line="341" selection-end-column="16" />
+        <state relative-caret-position="279">
+          <caret line="1103" column="22" lean-forward="true" selection-start-line="1103" selection-start-column="22" selection-end-line="1103" selection-end-column="22" />
           <folding />
         </state>
       </provider>
