@@ -702,24 +702,25 @@ button.add_media{
 .fpsm-template-7 .fpsm-field{
     position: relative;
 }
-/*.fpsm-template-7 .fpsm-field:before{*/
-    /*position: absolute;*/
-    /*top:1px;*/
-    /*left: 0;*/
-    /*content: '\f303';*/
-    /*height: 40px;*/
-    /*width: 40px;*/
-    /*background-color: rgba(0,0,0,.06);*/
-    /*color: rgba(0,0,0, 0.28);*/
-    /*text-align: center;*/
-    /*line-height: 40px;*/
-    /*font-family: 'Font Awesome\ 5 Free';*/
-    /*font-size: 12px;*/
-    /*font-weight: 900;!*for fixing*!*/
-/*}*/
-/*.fpsm-template-7 .fpsm-post-title .fpsm-field >input{*/
-    /*padding-left: 50px;*/
-/*}*/
+.fpsm-template-7 .fpsm-post-title .fpsm-field:before{
+    position: absolute;
+    top:1px;
+    left: 0;
+    content: '\f303';
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+}
+.fpsm-template-7 .fpsm-post-title .fpsm-field >input{
+    padding-left: 50px;
+}
 
 .fpsm-template-7 input[type="text"],
 .fpsm-template-7 input[type="email"],
@@ -742,4 +743,84 @@ button.add_media{
 
 .fpsm-template-7 .qq-upload-button{
     background-color: #7fd383;
+}
+
+.fpsm-template-7 .qq-uploader{
+    position: relative;
+    padding-left: 50px;
+}
+
+.fpsm-template-7 .qq-uploader:before{
+    position: absolute;
+    top:1px;
+    left: 0;
+    content: '\f1c5';
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 4px;
+}
+.fpsm-template-7 .fpsm-post-excerpt .fpsm-field > textarea{padding-left: 50px;}
+.fpsm-template-7 .fpsm-post-excerpt .fpsm-field:before{
+    position: absolute;
+    top:1px;
+    left: 0;
+    content: '\f303';
+    height: 100%;
+    width: 40px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+}
+
+.fpsm-template-7 .fpsm-author-name .fpsm-field:before{
+    position: absolute;
+    top:1px;
+    left: 0;
+    content: '\f007';
+    height: 100%;
+    width: 40px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+}
+.fpsm-template-7 .fpsm-author-name .fpsm-field >input{
+    padding-left: 50px;
+}
+
+.fpsm-template-7 .fpsm-author-email .fpsm-field:before{
+    position: absolute;
+    top:1px;
+    left: 0;
+    content: '\f0e0';
+    height: 100%;
+    width: 40px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+}
+.fpsm-template-7 .fpsm-author-email .fpsm-field >input{
+    padding-left: 50px;
 }
