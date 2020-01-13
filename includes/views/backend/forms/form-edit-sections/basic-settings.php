@@ -105,10 +105,10 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     }
     ?>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Required Error Message', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e('Validation Error Message', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <textarea name="form_details[basic][required_error_message]"><?php echo (!empty($basic_settings['required_error_message'])) ? esc_html($basic_settings['required_error_message']) : ''; ?></textarea>
-            <p class="description"><?php esc_html_e('This message will be shown when any required fields are not filled.', 'frontend-post-submission-manager'); ?></p>
+            <textarea name="form_details[basic][validation_error_message]"><?php echo (!empty($basic_settings['validation_error_message'])) ? esc_html($basic_settings['validation_error_message']) : ''; ?></textarea>
+            <p class="description"><?php esc_html_e('This message will be shown when any validation error occurs.', 'frontend-post-submission-manager'); ?></p>
         </div>
     </div>
     <div class="fpsm-field-wrap">

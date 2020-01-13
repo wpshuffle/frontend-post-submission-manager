@@ -177,9 +177,10 @@ jQuery(document).ready(function ($) {
                _wpnonce:fpsm_js_obj.ajax_nonce
            },
             beforeSend: function (xhr) {
-                selector.find('fpsm-ajax-loader').show();
+                selector.find('.fpsm-ajax-loader').show();
             },
             success: function (data, textStatus, jqXHR) {
+                 selector.find('.fpsm-ajax-loader').hide();
                 data = $.parseJSON(data);
                 if(data.status == 200){
                     
