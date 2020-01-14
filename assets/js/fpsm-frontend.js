@@ -90,6 +90,23 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+    /**
+     * Scrolls to the first error of the form
+     *
+     */
+    function scroll_to_error(form) {
+        form.find('.fpsm-error').each(function () {
+            var in_selector = $(this);
+            if (in_selector.html() != '') {
+                $('html,body').animate({
+                    scrollTop: in_selector.closest('.fpsm-field-wrap').offset().top - 100},
+                        'slow');
+                return false;
+            }
+            ;
+        });
+
+    }
 
     $('body').on('click', '.fpsm-media-delete-button', function () {
         var selector = $(this);
@@ -130,16 +147,16 @@ jQuery(document).ready(function ($) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var tag = $(this).val();
-            if(tag == ''){
+            if (tag == '') {
                 return;
             }
             var added_tags = $(this).parent().find('.fpsm-auto-complete-values').val();
-            if(added_tags == ''){
+            if (added_tags == '') {
                 added_tags = [];
-            }else{
+            } else {
                 added_tags = added_tags.split(',');
             }
-            
+
             if (added_tags.indexOf(tag) == -1) {
                 added_tags.push(tag);
                 added_tags = added_tags.join(',');
@@ -163,29 +180,39 @@ jQuery(document).ready(function ($) {
         $(this).closest('.fpsm-each-tag').remove();
 
     });
-    
-    $('body').on('submit','.fpsm-front-form',function(e){
+
+    $('body').on('submit', '.fpsm-front-form', function (e) {
         e.preventDefault();
         var selector = $(this);
         var form_data = selector.serialize();
         $.ajax({
-           type:'post',
-           url:fpsm_js_obj.ajax_url,
-           data:{
-               action:'fpsm_form_process',
-               form_data:form_data,
-               _wpnonce:fpsm_js_obj.ajax_nonce
-           },
+            type: 'post',
+            url: fpsm_js_obj.ajax_url,
+            data: {
+                action: 'fpsm_form_process',
+                form_data: form_data,
+                _wpnonce: fpsm_js_obj.ajax_nonce
+            },
             beforeSend: function (xhr) {
                 selector.find('.fpsm-ajax-loader').show();
             },
             success: function (data, textStatus, jqXHR) {
-                 selector.find('.fpsm-ajax-loader').hide();
+                selector.find('.fpsm-ajax-loader').hide();
                 data = $.parseJSON(data);
-                if(data.status == 200){
-                    
-                }else{
-                    
+                if (data.status == 200) {
+                    selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
+                } else {
+                    selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow');
+                    var error_details = data.error_details;
+                    for (field_key in error_details) {
+                        if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
+                            selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
+                        } else {
+                            selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
+                        }
+
+                    }
+                    scroll_to_error(selector);
                 }
             }
         });
@@ -193,13 +220,24 @@ jQuery(document).ready(function ($) {
     initialize_uploaders();
 
     $('.fpsm-each-term-checkbox label').on('click', function () {
-       $(this).toggleClass('checked');
+        $(this).toggleClass('checked');
     });
-    
-    $('.fpsm-front-datepicker').each(function(){
-       var date_format = $(this).data('date-format');
-       $(this).datepicker({
-           dateFormat:date_format
-       });
+
+    $('.fpsm-front-datepicker').each(function () {
+        var date_format = $(this).data('date-format');
+        $(this).datepicker({
+            dateFormat: date_format
+        });
+    });
+
+    /**
+     * Clear error
+     */
+    $('.fpsm-front-form input[type="text"], .fpsm-front-form textarea').keyup(function () {
+        $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
+    });
+    $('.fpsm-front-form input[type="checkbox"], .fpsm-front-form select,.fpsm-front-form input[type="radio"]').click(function () {
+
+        $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
 });

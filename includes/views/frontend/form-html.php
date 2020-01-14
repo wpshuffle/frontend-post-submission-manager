@@ -33,7 +33,7 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
                         $field_type_class = '';
                     }
                     ?>
-                    <div class="fpsm-field-wrap<?php echo esc_attr($field_type_class); ?> <?php echo esc_attr($field_class); ?>">
+                    <div class="fpsm-field-wrap<?php echo esc_attr($field_type_class); ?> <?php echo esc_attr($field_class); ?>" data-field-key="<?php echo esc_attr($field_key); ?>">
                         <label><?php echo (!empty($field_details['field_label'])) ? esc_html($field_details['field_label']) : ''; ?></label>
                         <div class="fpsm-field">
                             <?php
@@ -59,4 +59,5 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader"/>
         </div>
     </div>
+    <div class="fpsm-form-message fpsm-display-none"></div>
 </form>
