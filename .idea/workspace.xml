@@ -17,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="1103" column="22" lean-forward="true" selection-start-line="1103" selection-start-column="22" selection-end-line="1103" selection-end-column="22" />
+            <state relative-caret-position="199">
+              <caret line="1191" column="21" lean-forward="false" selection-start-line="1191" selection-start-column="21" selection-end-line="1191" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -27,7 +27,7 @@
       <file leaf-file-name="front-datepicker.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="20">
               <caret line="1" column="128" lean-forward="false" selection-start-line="1" selection-start-column="128" selection-end-line="1" selection-end-column="128" />
               <folding>
                 <element signature="e#102#107#0#PHP" expanded="true" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="form-html.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="840">
               <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
@@ -48,16 +48,11 @@
                 <element signature="e#465#470#0#PHP" expanded="true" />
                 <element signature="e#519#524#0#PHP" expanded="true" />
                 <element signature="e#1908#1913#0#PHP" expanded="true" />
+                <element signature="e#1979#1984#0#PHP" expanded="true" />
+                <element signature="e#2166#2171#0#PHP" expanded="true" />
+                <element signature="e#2450#2455#0#PHP" expanded="true" />
                 <element signature="e#2910#2915#0#PHP" expanded="true" />
                 <element signature="e#3121#3126#0#PHP" expanded="true" />
-                <marker date="1578904474331" expanded="true" signature="964:2778" ph="..." />
-                <marker date="1578904474331" expanded="true" signature="1082:2764" ph="..." />
-                <marker date="1578904474331" expanded="false" signature="1946:2720" ph="..." />
-                <marker date="1578904474331" expanded="true" signature="1984:2078" ph="..." />
-                <marker date="1578904474331" expanded="false" signature="2136:2638" ph="..." />
-                <marker date="1578904474331" expanded="true" signature="2171:2606" ph="..." />
-                <marker date="1578904474331" expanded="true" signature="2353:2576" ph="..." />
-                <marker date="1578904474331" expanded="true" signature="2455:2501" ph="..." />
               </folding>
             </state>
           </provider>
@@ -84,6 +79,7 @@
       <find>.fpsm-date-picker</find>
       <find>.fpsm-select-field</find>
       <find>.fpsm-custom-field-datepicker</find>
+      <find>fpsm-field-wrap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,7 +210,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -251,18 +247,20 @@
       <workItem from="1578552167625" duration="12337000" />
       <workItem from="1578619297570" duration="12000" />
       <workItem from="1578834796619" duration="7009000" />
-      <workItem from="1578897828897" duration="6176000" />
+      <workItem from="1578897828897" duration="6521000" />
+      <workItem from="1578962683586" duration="84000" />
+      <workItem from="1578983785847" duration="2382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42609000" />
+    <option name="totallyTimeSpent" value="45420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28120518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2898135" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -304,11 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-            <element signature="e#112#117#0#PHP" expanded="false" />
-            <element signature="e#337#342#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -316,7 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -331,9 +323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -341,9 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -359,11 +345,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-            <element signature="e#112#117#0#PHP" expanded="false" />
-            <element signature="e#337#342#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -371,7 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -379,9 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -396,9 +373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -603,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,11 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-            <element signature="e#112#117#0#PHP" expanded="false" />
-            <element signature="e#337#342#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,9 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding>
-            <element signature="e#50#55#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,13 +626,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="840">
           <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
@@ -679,23 +640,18 @@
             <element signature="e#465#470#0#PHP" expanded="true" />
             <element signature="e#519#524#0#PHP" expanded="true" />
             <element signature="e#1908#1913#0#PHP" expanded="true" />
+            <element signature="e#1979#1984#0#PHP" expanded="true" />
+            <element signature="e#2166#2171#0#PHP" expanded="true" />
+            <element signature="e#2450#2455#0#PHP" expanded="true" />
             <element signature="e#2910#2915#0#PHP" expanded="true" />
             <element signature="e#3121#3126#0#PHP" expanded="true" />
-            <marker date="1578904474331" expanded="true" signature="964:2778" ph="..." />
-            <marker date="1578904474331" expanded="true" signature="1082:2764" ph="..." />
-            <marker date="1578904474331" expanded="false" signature="1946:2720" ph="..." />
-            <marker date="1578904474331" expanded="true" signature="1984:2078" ph="..." />
-            <marker date="1578904474331" expanded="false" signature="2136:2638" ph="..." />
-            <marker date="1578904474331" expanded="true" signature="2171:2606" ph="..." />
-            <marker date="1578904474331" expanded="true" signature="2353:2576" ph="..." />
-            <marker date="1578904474331" expanded="true" signature="2455:2501" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-fields/custom-field-types/front-datepicker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
+        <state relative-caret-position="20">
           <caret line="1" column="128" lean-forward="false" selection-start-line="1" selection-start-column="128" selection-end-line="1" selection-end-column="128" />
           <folding>
             <element signature="e#102#107#0#PHP" expanded="true" />
@@ -705,8 +661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="1103" column="22" lean-forward="true" selection-start-line="1103" selection-start-column="22" selection-end-line="1103" selection-end-column="22" />
+        <state relative-caret-position="199">
+          <caret line="1191" column="21" lean-forward="false" selection-start-line="1191" selection-start-column="21" selection-end-line="1191" selection-end-column="21" />
           <folding />
         </state>
       </provider>

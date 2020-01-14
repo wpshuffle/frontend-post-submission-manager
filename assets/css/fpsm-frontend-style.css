@@ -1130,3 +1130,114 @@ button.add_media{
     border:none;
 }
 /*============================= Template 10 ========================*/
+
+
+/*============================= Template 11 ========================*/
+.fpsm-template-11{
+    background-color: #617283;
+    color: white;
+    padding: 20px;
+}
+
+.fpsm-template-11 .fpsm-field-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fpsm-template-11 .fpsm-field-wrap > div{
+    flex: 0 0 100%;
+}
+
+.fpsm-template-11 .fpsm-field-wrap label{
+    max-width: 150px;
+    flex: 0 0 150px;
+}
+.fpsm-template-11 .fpsm-field-wrap .fpsm-field{
+    flex: 0 0 calc(100% - 150px);
+}
+
+.fpsm-template-11 .fpsm-field-wrap{
+    background-color: rgba(255,255,255,.08);
+    margin-bottom: 20px;
+    padding: 24px;
+}
+
+.fpsm-template-11 input[type="text"],
+.fpsm-template-11 input[type="email"],
+.fpsm-template-11 input[type="number"],
+.fpsm-template-11 input[type="tel"],
+.fpsm-template-11 textarea{
+    padding: 0;
+    border-radius: 0;
+    background-color: rgba(255,255,255,.18);
+    border: none;
+    padding: 0 15px;
+    color: inherit;
+}
+.fpsm-template-11 textarea{
+    line-height: 1.4;
+    padding: 15px;
+    height: 80px;
+    resize: none;
+}
+.fpsm-template-11 input[type="text"]:focus,
+.fpsm-template-11 input[type="email"]:focus,
+.fpsm-template-11 textarea:focus{
+    border-color:rgba(0,0,0,.14);
+}
+
+.fpsm-template-11 .qq-upload-button{
+    background-color: #e2e5e8;
+    padding: 5px 24px;
+    color: rgba(0,0,0,.8);
+    border-radius: 0;
+}
+.fpsm-template-11 .qq-upload-list{display: none}
+.fpsm-template-11 .fpsm-custom-field-select .fpsm-field,
+.fpsm-template-11 .fpsm-taxonomy-select .fpsm-field{
+    border-radius: 0;
+    background-color: rgba(255,255,255,.18);
+    border:none;
+    color: inherit;
+}
+.fpsm-template-11 .fpsm-custom-field-select .fpsm-field .fpsm-select-field:before,
+.fpsm-template-11 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field:before{
+    border-color: white transparent transparent transparent;
+}
+.fpsm-template-11 .fpsm-custom-field-select .fpsm-field select,
+.fpsm-template-11 .fpsm-taxonomy-select .fpsm-field select{
+    color: inherit;
+}
+
+.fpsm-template-11 .fpsm-field input[type="submit"]{
+    background-color: #e2e5e8;
+    padding: 12px 24px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0,0,0,.8);
+    letter-spacing: 0;
+    border-radius: 0;
+}
+.fpsm-template-11 .fpsm-field input[type="submit"]:hover{
+    background-color: rgba(0,0,0,.8);
+    color: white;
+}
+
+.fpsm-template-11  .fpsm-each-tag{
+    border-radius: 0;
+    border:solid 1px white;
+    background-color: transparent;
+}
+
+.fpsm-template-11 .fpsm-field-note{
+    color: inherit;
+}
+.fpsm-template-11 .fpsm-custom-field-datepicker .fpsm-field:before{color: inherit}
+.fpsm-template-11 .fpsm-checkbox label:before{color: rgba(255,255,255,.24);background-color: rgba(255,255,255,.18)}
+.fpsm-template-11 .fpsm-radio label:before{border-color: rgba(255,255,255,.24);}
+
+.fpsm-template-11 button.add_media{
+    background-color: white;
+}
+
+/*============================= Template 11 ========================*/
