@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="1559" column="0" lean-forward="true" selection-start-line="1559" selection-start-column="0" selection-end-line="1559" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -79,6 +80,7 @@
       <find>.fpsm-select-field</find>
       <find>.fpsm-custom-field-datepicker</find>
       <find>fpsm-field-wrap</find>
+      <find>.fpsm-file-preview-column</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -248,12 +250,12 @@
       <workItem from="1578834796619" duration="7009000" />
       <workItem from="1578897828897" duration="6521000" />
       <workItem from="1578962683586" duration="84000" />
-      <workItem from="1578983785847" duration="5735000" />
+      <workItem from="1578983785847" duration="5825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48773000" />
+    <option name="totallyTimeSpent" value="48863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -660,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="1559" column="0" lean-forward="true" selection-start-line="1559" selection-start-column="0" selection-end-line="1559" selection-end-column="0" />
+        <state relative-caret-position="128">
+          <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
           <folding />
         </state>
       </provider>

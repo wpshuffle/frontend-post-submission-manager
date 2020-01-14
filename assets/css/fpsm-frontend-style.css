@@ -73,7 +73,7 @@ input[type="file"]{
     width: 38px;
     object-fit: cover;
 }
-.fpsm-file-preview-column{font-size: 14px;font-style: italic;color: rgba(0,0,0,.48)}
+.fpsm-file-preview-column{font-size: 13px;color: rgba(0,0,0,.48)}
 
 .fpsm-tag-text{font-size: 12px;}
 .fpsm-tag-remove-trigger{font-size: 11px;}
