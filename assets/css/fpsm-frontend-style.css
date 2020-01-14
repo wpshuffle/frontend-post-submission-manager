@@ -1498,3 +1498,70 @@ button.add_media{
       content: '\f0e0';
   }
 /*===================== Template 12 ===============================*/
+
+
+
+/*============================= Template 13 ========================*/
+.fpsm-template-13{
+    background-color: #efeded;
+    color: rgba(0,0,0,.8);
+    padding: 20px;
+}
+
+
+.fpsm-template-13 .fpsm-field-wrap{
+    background-color: rgba(255,255,255,.8);
+    margin-bottom: 20px;
+    padding: 24px;
+}
+
+
+.fpsm-template-13 .qq-upload-button{
+    background-color: #67cb75;
+    padding: 5px 24px;
+    color: white;
+    border-radius: 0;
+}
+.fpsm-template-13 .qq-upload-list{display: none}
+.fpsm-template-13 .fpsm-custom-field-select .fpsm-field,
+.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field{
+    color: inherit;
+}
+.fpsm-template-13 .fpsm-custom-field-select .fpsm-field select,
+.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field select{
+    color: inherit;
+}
+
+.fpsm-template-13 .fpsm-field input[type="submit"]{
+    background-color: #67cb75;
+    padding: 12px 24px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0;
+    border-radius: 0;
+}
+.fpsm-template-13 .fpsm-field input[type="submit"]:hover{
+    background-color: rgba(0,0,0,.8);
+    color: white;
+}
+
+.fpsm-template-13  .fpsm-each-tag{
+    border-radius: 0;
+    border:solid 1px white;
+    background-color: transparent;
+}
+
+.fpsm-template-13 .fpsm-field-note{
+    color: inherit;
+}
+.fpsm-template-13 .fpsm-custom-field-datepicker .fpsm-field:before{color: inherit}
+.fpsm-template-13 .fpsm-checkbox label:before{color: rgba(255,255,255,.24);background-color: rgba(255,255,255,.18)}
+.fpsm-template-13 .fpsm-radio label:before{border-color: rgba(255,255,255,.24);}
+
+.fpsm-template-13 button.add_media{
+    background-color: white;
+}
+
+/*============================= Template 13 ========================*/

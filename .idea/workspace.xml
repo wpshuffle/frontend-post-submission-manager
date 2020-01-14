@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="1258" column="14" lean-forward="false" selection-start-line="1258" selection-start-column="14" selection-end-line="1258" selection-end-column="14" />
+            <state relative-caret-position="158">
+              <caret line="1512" column="40" lean-forward="false" selection-start-line="1512" selection-start-column="40" selection-end-line="1512" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -39,7 +38,7 @@
       <file leaf-file-name="form-html.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="1100">
               <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
@@ -48,11 +47,11 @@
                 <element signature="e#465#470#0#PHP" expanded="true" />
                 <element signature="e#519#524#0#PHP" expanded="true" />
                 <element signature="e#1908#1913#0#PHP" expanded="true" />
-                <element signature="e#1979#1984#0#PHP" expanded="true" />
-                <element signature="e#2166#2171#0#PHP" expanded="true" />
-                <element signature="e#2450#2455#0#PHP" expanded="true" />
-                <element signature="e#2910#2915#0#PHP" expanded="true" />
-                <element signature="e#3121#3126#0#PHP" expanded="true" />
+                <marker date="1578990578862" expanded="true" signature="697:1946" ph="..." />
+                <marker date="1578990578862" expanded="true" signature="781:1946" ph="..." />
+                <marker date="1578990578862" expanded="true" signature="964:1946" ph="..." />
+                <marker date="1578990578862" expanded="true" signature="1082:1946" ph="..." />
+                <marker date="1578990578862" expanded="true" signature="3346:3351" ph="..." />
               </folding>
             </state>
           </provider>
@@ -249,12 +248,12 @@
       <workItem from="1578834796619" duration="7009000" />
       <workItem from="1578897828897" duration="6521000" />
       <workItem from="1578962683586" duration="84000" />
-      <workItem from="1578983785847" duration="4819000" />
+      <workItem from="1578983785847" duration="5629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47857000" />
+    <option name="totallyTimeSpent" value="48667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -631,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/frontend/form-html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
+        <state relative-caret-position="1100">
           <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
@@ -640,11 +639,11 @@
             <element signature="e#465#470#0#PHP" expanded="true" />
             <element signature="e#519#524#0#PHP" expanded="true" />
             <element signature="e#1908#1913#0#PHP" expanded="true" />
-            <element signature="e#1979#1984#0#PHP" expanded="true" />
-            <element signature="e#2166#2171#0#PHP" expanded="true" />
-            <element signature="e#2450#2455#0#PHP" expanded="true" />
-            <element signature="e#2910#2915#0#PHP" expanded="true" />
-            <element signature="e#3121#3126#0#PHP" expanded="true" />
+            <marker date="1578990578862" expanded="true" signature="697:1946" ph="..." />
+            <marker date="1578990578862" expanded="true" signature="781:1946" ph="..." />
+            <marker date="1578990578862" expanded="true" signature="964:1946" ph="..." />
+            <marker date="1578990578862" expanded="true" signature="1082:1946" ph="..." />
+            <marker date="1578990578862" expanded="true" signature="3346:3351" ph="..." />
           </folding>
         </state>
       </provider>
@@ -661,8 +660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="1258" column="14" lean-forward="false" selection-start-line="1258" selection-start-column="14" selection-end-line="1258" selection-end-column="14" />
+        <state relative-caret-position="158">
+          <caret line="1512" column="40" lean-forward="false" selection-start-line="1512" selection-start-column="40" selection-end-line="1512" selection-end-column="40" />
           <folding />
         </state>
       </provider>
