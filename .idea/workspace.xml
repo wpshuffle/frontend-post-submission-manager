@@ -17,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="1232" column="113" lean-forward="false" selection-start-line="1232" selection-start-column="113" selection-end-line="1232" selection-end-column="113" />
+            <state relative-caret-position="199">
+              <caret line="1191" column="21" lean-forward="false" selection-start-line="1191" selection-start-column="21" selection-end-line="1191" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -249,12 +249,12 @@
       <workItem from="1578834796619" duration="7009000" />
       <workItem from="1578897828897" duration="6521000" />
       <workItem from="1578962683586" duration="84000" />
-      <workItem from="1578983785847" duration="2206000" />
+      <workItem from="1578983785847" duration="2382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45244000" />
+    <option name="totallyTimeSpent" value="45420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -661,8 +661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="1232" column="113" lean-forward="false" selection-start-line="1232" selection-start-column="113" selection-end-line="1232" selection-end-column="113" />
+        <state relative-caret-position="199">
+          <caret line="1191" column="21" lean-forward="false" selection-start-line="1191" selection-start-column="21" selection-end-line="1191" selection-end-column="21" />
           <folding />
         </state>
       </provider>

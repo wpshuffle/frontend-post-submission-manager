@@ -1186,9 +1186,10 @@ button.add_media{
 }
 
 .fpsm-template-11 .qq-upload-button{
-    background-color: #7fd383;
+    background-color: #e2e5e8;
     padding: 5px 24px;
-    color: white;
+    color: rgba(0,0,0,.8);
+    border-radius: 0;
 }
 .fpsm-template-11 .qq-upload-list{display: none}
 .fpsm-template-11 .fpsm-custom-field-select .fpsm-field,
@@ -1208,16 +1209,18 @@ button.add_media{
 }
 
 .fpsm-template-11 .fpsm-field input[type="submit"]{
-    background-color: #7fd383;
+    background-color: #e2e5e8;
     padding: 12px 24px;
     line-height: 1.4;
     font-size: 14px;
     font-weight: 700;
-    color: white;
+    color: rgba(0,0,0,.8);
     letter-spacing: 0;
+    border-radius: 0;
 }
 .fpsm-template-11 .fpsm-field input[type="submit"]:hover{
     background-color: rgba(0,0,0,.8);
+    color: white;
 }
 
 .fpsm-template-11  .fpsm-each-tag{
