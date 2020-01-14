@@ -1241,3 +1241,260 @@ button.add_media{
 }
 
 /*============================= Template 11 ========================*/
+
+
+/*============================= Template 12 ========================*/
+.fpsm-template-12{
+    background-color: white;
+    overflow: hidden;
+}
+.fpsm-template-12 .fpsm-field-wrap > label{
+    font-size: 14px;
+    font-weight: 800;
+    display: inline-block;
+    width: auto;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: rgba(0,0,0,.8);
+    padding: 5px 12px;
+    color: white;
+}
+.fpsm-template-12 .fpsm-field-wrap > label:after{
+    width: 100%;
+    content: '';
+    position: absolute;
+    top:0;
+    left: -100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+}
+
+
+.fpsm-template-12 .fpsm-field{
+    position: relative;
+}
+.fpsm-template-12 .fpsm-post-title .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f303';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 50%;
+}
+.fpsm-template-12 .fpsm-post-title .fpsm-field >input{
+    padding-left: 50px;
+}
+
+.fpsm-template-12 input[type="text"],
+.fpsm-template-12 input[type="email"],
+.fpsm-template-12 input[type="number"],
+.fpsm-template-12 input[type="tel"],
+.fpsm-template-12 textarea{
+    background-color: transparent;
+    padding: 0 15px;
+    line-height: 40px;
+    font-size: 14px;
+    border:solid 2px rgba(0,0,0,.18);
+    border-radius: 68px;
+}
+
+.fpsm-template-12 input[type="text"]:focus,
+.fpsm-template-12 input[type="email"]:focus,
+.fpsm-template-12 input[type="number"]:focus,
+.fpsm-template-12 input[type="tel"]:focus,
+.fpsm-template-12 textarea:focus{
+    border-color:rgba(0,0,0,.14);
+}
+.fpsm-template-12 textarea{
+    border-radius: 8px;
+}
+.fpsm-template-12 .fpsm-field input[type="submit"]{
+    background-color: #3ec34d;
+    font-size: 14px;
+    border-radius: 68px;
+}
+
+
+.fpsm-template-12 .qq-upload-button{
+    background-color: #3ec34d;
+    border-radius: 68px;
+}
+
+.fpsm-template-12 .qq-uploader{
+    position: relative;
+    padding-left: 50px;
+}
+
+.fpsm-template-12 .qq-uploader:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f1c5';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 4px;
+    border-radius: 50%;
+}
+.fpsm-template-12 .fpsm-post-excerpt .fpsm-field > textarea{padding-left: 50px;}
+.fpsm-template-12 .fpsm-post-excerpt .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f303';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 50%;
+}
+
+.fpsm-template-12 .fpsm-author-name .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left:5px;
+    content: '\f007';
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+}
+.fpsm-template-12 .fpsm-author-name .fpsm-field >input{
+    padding-left: 50px;
+}
+
+.fpsm-template-12 .fpsm-author-email .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f0e0';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 50%;
+}
+.fpsm-template-12 .fpsm-author-email .fpsm-field >input{
+    padding-left: 50px;
+}
+
+.fpsm-template-12 .fpsm-taxonomy-textfield .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f02b';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 50%;
+}
+.fpsm-template-12 .fpsm-taxonomy-textfield .fpsm-field >input{
+    padding-left: 50px;
+}
+
+.fpsm-template-12 .fpsm-custom-field-datepicker .fpsm-field:before{
+    right: auto;
+    left: 5px;
+    top:5px;
+    background-color: rgba(0,0,0,.06);
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+}
+.fpsm-template-12 .fpsm-custom-field-datepicker .fpsm-field{max-width: 280px}
+.fpsm-template-12 .fpsm-custom-field-datepicker .fpsm-field .fpsm-date-picker >input{
+    padding-right: 0;
+    padding-left: 50px;
+}
+
+.fpsm-template-12 .fpsm-custom-field-select .fpsm-field,
+.fpsm-template-12 .fpsm-taxonomy-select .fpsm-field{
+    border-radius: 68px;
+    border:solid 2px rgba(0,0,0,.18);
+    background-color: transparent;
+    height: 45px;
+}
+.fpsm-template-12 .fpsm-custom-field-select .fpsm-select-field:after,
+.fpsm-template-12 .fpsm-taxonomy-select .fpsm-select-field:after{
+    content: '';
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.06);
+    position: absolute;
+    top:3px;
+    right: 3px;
+}
+
+.fpsm-template-12 .fpsm-custom-field-textfield .fpsm-field > input,
+.fpsm-template-12 .fpsm-custom-field-number .fpsm-field > input,
+.fpsm-template-12 .fpsm-custom-field-email .fpsm-field > input,
+.fpsm-template-12 .fpsm-custom-field-textarea .fpsm-field > textarea{padding-left: 50px;}
+
+.fpsm-template-12 .fpsm-custom-field-textfield .fpsm-field:before,
+.fpsm-template-12 .fpsm-custom-field-number .fpsm-field:before,
+.fpsm-template-12 .fpsm-custom-field-textarea .fpsm-field:before,
+.fpsm-template-12 .fpsm-custom-field-email .fpsm-field:before{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    content: '\f303';
+    height: 34px;
+    width: 34px;
+    background-color: rgba(0,0,0,.06);
+    color: rgba(0,0,0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 14px;
+    font-weight: 900;/*for fixing*/
+    color: rgba(0,0,0,.68);
+    border-radius: 50%;
+}
+.fpsm-template-12 .fpsm-custom-field-email .fpsm-field:before{
+      content: '\f0e0';
+  }
+/*===================== Template 12 ===============================*/
