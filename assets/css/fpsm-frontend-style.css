@@ -1557,8 +1557,6 @@ button.add_media{
     color: inherit;
 }
 .fpsm-template-13 .fpsm-custom-field-datepicker .fpsm-field:before{color: inherit}
-.fpsm-template-13 .fpsm-checkbox label:before{color: rgba(255,255,255,.24);background-color: rgba(255,255,255,.18)}
-.fpsm-template-13 .fpsm-radio label:before{border-color: rgba(255,255,255,.24);}
 
 .fpsm-template-13 button.add_media{
     background-color: white;
