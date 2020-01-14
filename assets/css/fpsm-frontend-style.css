@@ -1563,3 +1563,100 @@ button.add_media{
 }
 
 /*============================= Template 13 ========================*/
+
+
+/*============================= Template 13 ========================*/
+.fpsm-template-14{
+    background-color: #efeded;
+    color: rgba(0,0,0,.8);
+    padding: 20px;
+}
+
+
+.fpsm-template-14 .fpsm-field-wrap{
+    background-color: rgba(255,255,255,.8);
+    margin-bottom: 20px;
+    padding: 24px;
+}
+
+
+.fpsm-template-14 .qq-upload-button{
+    background-color: #3186d5;
+    padding: 5px 24px;
+    color: white;
+    border-radius: 68px;
+}
+.fpsm-template-14 .qq-upload-list{display: none}
+
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field{
+    color: inherit;
+    background-color: #403872;
+    border-radius: 68px;
+}
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field select,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field select{
+    color: white;
+}
+
+.fpsm-template-14 input[type="text"],
+.fpsm-template-14 input[type="email"],
+.fpsm-template-14 input[type="number"],
+.fpsm-template-14 input[type="tel"],
+.fpsm-template-14 textarea{
+    padding: 0;
+    border-radius: 68px;
+    background-color: #403872;
+    border: none;
+    padding: 0 15px;
+    color: white;
+}
+.fpsm-template-14 textarea{
+    line-height: 1.4;
+    padding: 15px;
+    height: 80px;
+    resize: none;
+    border-radius: 14px;
+}
+.fpsm-template-14 input[type="text"]:focus,
+.fpsm-template-14 input[type="email"]:focus,
+.fpsm-template-14 textarea:focus{
+    border-color:rgba(0,0,0,.14);
+}
+
+.fpsm-template-14 .fpsm-field input[type="submit"]{
+    background-color: #3186d5;
+    padding: 12px 24px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0;
+    border-radius: 68px;
+}
+.fpsm-template-14 .fpsm-field input[type="submit"]:hover{
+    background-color: rgba(0,0,0,.8);
+    color: white;
+}
+
+.fpsm-template-14  .fpsm-each-tag{
+    border-radius: 0;
+    border:solid 1px white;
+    background-color: transparent;
+}
+
+.fpsm-template-14 .fpsm-field-note{
+    color: inherit;
+}
+.fpsm-template-14 .fpsm-custom-field-datepicker .fpsm-field:before{color: white;z-index: 9}
+
+.fpsm-template-14 button.add_media{
+    background-color: white;
+}
+
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field .fpsm-select-field:before,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field:before{
+    border-color: white transparent transparent transparent;
+}
+
+/*============================= Template 14 ========================*/
