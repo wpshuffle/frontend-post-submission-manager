@@ -159,15 +159,17 @@ if (!class_exists('FPSM_Library')) {
                 'class' => 'fpsm-inline-checkbox'
             );
             $args = array_merge($default_args, $args);
+            $this->print_array($args);
             foreach ($args as $key => $val) {
                 $$key = $val;
             }
             foreach ($terms as $term) {
                 if (!in_array($term->slug, $exclude)) {
+                    echo $field_name;
                     $space = $this->check_parent($term);
                     $value = $term->term_id;
                     $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
-                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '"><div class="fpsm-checkbox">' . $space . '<input type="checkbox" name="' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/><label for="' . $field_name . '">' . $term->name . '</label></div></div>';
+                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '"><div class="fpsm-checkbox">' . $space . '<input type="checkbox" name="aaaa' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/><label for="' . $field_name . '">' . $term->name . '</label></div></div>';
                 }
 
                 if (!empty($term->children)) {
