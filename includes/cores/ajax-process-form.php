@@ -106,6 +106,7 @@ if ($this->admin_ajax_nonce_verify()) {
             if (!empty($insert_update_post_id)) {
                 // Lets assign taxonomy terms
                 if (!empty($taxonomy_lists)) {
+
                     foreach ($taxonomy_lists as $taxonomy_key) {
                         $taxonomy_settings = $form_details['form']['fields'][$taxonomy_key];
                         // If taxonomy is enabled in the form
@@ -117,13 +118,14 @@ if ($this->admin_ajax_nonce_verify()) {
                             } else {
                                 $post_assign_terms = $form_data[$taxonomy_key];
                             }
-                            wp_set_post_terms($insert_update_post_id, $post_assign_terms);
+                            var_dump($post_assign_terms);
+                            wp_set_post_terms($insert_update_post_id, $post_assign_terms, $taxonomy_name);
                         }
 
                         // If explicit auto assign of the terms is enabled
                         if (!empty($taxonomy_settings['auto_assign'])) {
                             $auto_assign_terms = implode(',', $taxonomy_settings['auto_assign']);
-                            wp_set_post_terms($insert_update_post_id, $auto_assign_terms, true);
+                            wp_set_post_terms($insert_update_post_id, $auto_assign_terms, $taxonomy_name, true);
                         }
                     }
                     $response['status'] = 200;

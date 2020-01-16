@@ -112,7 +112,16 @@ if (!class_exists('FPSM_Library')) {
         function sanitize_html($value) {
             $allowed_html = wp_kses_allowed_html('post');
             $allowed_html['option'] = array('value' => array(), 'selected' => array());
-            $allowed_html['input'] = array('value' => array(), 'type' => array(), 'class' => array());
+            $allowed_html['input'] = array('name' => array(), 'id' => array(), 'value' => array(), 'type' => array(), 'class' => array());
+
+            /**
+             * Filters allowed html for processing form data
+             *
+             * @param array $allowed_html
+             *
+             * @since 1.0.0
+             */
+            $allowed_html = apply_filters('fpsm_allowed_html', $allowed_html);
             return wp_kses($value, $allowed_html);
         }
 
@@ -159,17 +168,16 @@ if (!class_exists('FPSM_Library')) {
                 'class' => 'fpsm-inline-checkbox'
             );
             $args = array_merge($default_args, $args);
-            $this->print_array($args);
+            //  $this->print_array($args);
             foreach ($args as $key => $val) {
                 $$key = $val;
             }
             foreach ($terms as $term) {
                 if (!in_array($term->slug, $exclude)) {
-                    echo $field_name;
                     $space = $this->check_parent($term);
                     $value = $term->term_id;
                     $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
-                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '"><div class="fpsm-checkbox">' . $space . '<input type="checkbox" name="aaaa' . $field_name . '[]"  value="' . $value . '" id="fpsm-term-' . $value . '" ' . $checked . '/><label for="' . $field_name . '">' . $term->name . '</label></div></div>';
+                    $html .= '<div class="fpsm-each-term-checkbox ' . $class . '"><div class="fpsm-checkbox">' . $space . '<input type="checkbox" name="' . $field_name . '[]"   value="' . $value . '" ' . $checked . '/><label for="' . $field_name . '">' . $term->name . '</label></div></div>';
                 }
 
                 if (!empty($term->children)) {
@@ -178,7 +186,8 @@ if (!class_exists('FPSM_Library')) {
                         'hierarchical' => $hierarchical,
                         'html' => '',
                         'field_name' => $field_name,
-                        'checked_terms' => $checked_terms
+                        'checked_terms' => $checked_terms,
+                        'class' => $class
                     );
                     $html .= $this->print_terms_as_checkbox($child_args);
                 }
