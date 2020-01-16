@@ -184,6 +184,23 @@ jQuery(document).ready(function ($) {
     $('body').on('submit', '.fpsm-front-form', function (e) {
         e.preventDefault();
         var selector = $(this);
+        // If auto complete textfield is filled but auto complete is not done
+        selector.find('.fpsm-auto-complete-field').each(function () {
+            var filled_tag = $(this).val();
+            if (filled_tag != '') {
+                var auto_complete_value = $(this).closest('.fpsm-field').find('.fpsm-auto-complete-values').val();
+                if (auto_complete_value == '') {
+                    auto_complete_value = [];
+                } else {
+                    auto_complete_value = auto_complete_value.split(',');
+                }
+                if (auto_complete_value.indexOf(filled_tag) == -1) {
+                    auto_complete_value.push(filled_tag);
+                    auto_complete_value = auto_complete_value.join(',');
+                    $(this).parent().find('.fpsm-auto-complete-values').val(auto_complete_value);
+                }
+            }
+        });
         var form_data = selector.serialize();
         $.ajax({
             type: 'post',
@@ -240,4 +257,6 @@ jQuery(document).ready(function ($) {
 
         $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
+
+
 });

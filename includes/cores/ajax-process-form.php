@@ -110,15 +110,15 @@ if ($this->admin_ajax_nonce_verify()) {
                     foreach ($taxonomy_lists as $taxonomy_key) {
                         $taxonomy_settings = $form_details['form']['fields'][$taxonomy_key];
                         // If taxonomy is enabled in the form
-                        if (!empty($taxonomy_settings['show_on_form'])) {
-                            $taxonomy_array = explode('|', $taxonomy_key);
-                            $taxonomy_name = end($taxonomy_array);
+                        $taxonomy_array = explode('|', $taxonomy_key);
+                        $taxonomy_name = end($taxonomy_array);
+                        if (!empty($taxonomy_settings['show_on_form']) && !empty($form_data[$taxonomy_key])) {
+
                             if (is_array($form_data[$taxonomy_key])) {
                                 $post_assign_terms = implode(',', $form_data[$taxonomy_key]);
                             } else {
                                 $post_assign_terms = $form_data[$taxonomy_key];
                             }
-                            var_dump($post_assign_terms);
                             wp_set_post_terms($insert_update_post_id, $post_assign_terms, $taxonomy_name);
                         }
 
