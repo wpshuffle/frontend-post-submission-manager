@@ -1997,8 +1997,9 @@ button.add_media{
 }
 
 .fpsm-template-17 .fpsm-field input[type="submit"]{
-    background-color: #7fd383;
+    background-color: black;
     font-size: 14px;
+    line-height: 34px;
 }
 
 
