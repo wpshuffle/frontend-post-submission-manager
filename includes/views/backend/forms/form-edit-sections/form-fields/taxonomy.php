@@ -87,6 +87,13 @@ $show_hide_toggle_class = $taxonomy;
 
             <?php } ?>
             <div class="fpsm-field-wrap">
+                <label><?php esc_html_e(sprintf('Exclude %s', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="<?php echo esc_attr($field_name_prefix) ?>[exclude_terms]" value="<?php echo (!empty($field_details['exclude_terms'])) ? esc_attr($field_details['exclude_terms']) : ''; ?>"/>
+                    <p class="description"><?php esc_html_e(sprintf('Please enter the slug of the %s separated by comma(,) which you want to exclude from displaying.', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></p>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
                 <label><?php esc_html_e(sprintf('Auto assign %s ', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
                     <select name="<?php echo esc_attr($field_name_prefix) ?>[auto_assign][]" multiple="multiple">
