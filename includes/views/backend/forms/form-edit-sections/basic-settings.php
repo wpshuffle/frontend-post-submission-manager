@@ -61,7 +61,6 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
                      */
                     $user_args = apply_filters('fpsm_user_list_args', $user_args);
                     $users = $fpsm_library_obj->get_users($user_args);
-                    var_dump($users);
                     $selected_post_author = (!empty($basic_settings['post_author'])) ? intval($basic_settings['post_author']) : $fpsm_library_obj->get_first_author();
                     if (!empty($users)) {
                         foreach ($users as $user) {

@@ -42,6 +42,8 @@ $form_details = maybe_unserialize($form_details);
     ?>
     <form class="fpsm-form-wrap fpsm-edit-form">
         <input type="hidden" name="form_id" value="<?php echo intval($form_id); ?>"/>
+        <input type="hidden" name="post_type" value="<?php echo (!empty($form_row->post_type)) ? esc_attr($form_row->post_type) : 'post'; ?>"/>
+        <input type="hidden" name="form_type" value="<?php echo (!empty($form_row->form_type)) ? esc_attr($form_row->form_type) : 'login_require'; ?>"/>
         <?php
         /**
          * Fires on start of the form sections
