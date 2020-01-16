@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');
 
 .fpsm-display-none{display:none;}
 .fpsm-each-tag {
@@ -2220,9 +2221,9 @@ button.add_media{
 }
 
 .fpsm-template-18 .qq-upload-button{
-    background-color: #7fd383;
+    background-color: rgba(0,0,0,.08);
+    color: rgba(0,0,0,.68);
     padding: 5px 24px;
-    color: white;
 }
 .fpsm-template-18 .qq-upload-list{display: none}
 .fpsm-template-18 .fpsm-custom-field-select .fpsm-field,
@@ -2233,7 +2234,7 @@ button.add_media{
 }
 
 .fpsm-template-18 .fpsm-field input[type="submit"]{
-    background-color: #7fd383;
+    background-color: #697e92;
     padding: 12px 24px;
     line-height: 1.4;
     font-size: 14px;
@@ -2249,3 +2250,110 @@ button.add_media{
     border-radius: 0;
 }
 /*============================= Template 18 ========================*/
+
+
+
+/*============================= Template 19 ========================*/
+.fpsm-template-19{
+    background-color: #fff;
+    padding: 0;
+    font-family: 'Coming Soon', cursive;
+    background-image: url("../images/child-bg-1.png");
+    background-position: left bottom;
+    padding-bottom: 180px;
+    background-repeat: repeat-x;
+    color: #bc61b7;
+}
+
+.fpsm-template-19 .fpsm-field-wrap > label{
+    color: #bc61b7;
+}
+
+.fpsm-template-19 .fpsm-custom-field-file_uploader > label,
+.fpsm-template-19 .fpsm-custom-field-checkbox > label,
+.fpsm-template-19 .fpsm-post-image > label,
+.fpsm-template-19 .fpsm-custom-field-radio > label,
+.fpsm-template-19 .fpsm-post-content > label{
+    margin-bottom: 20px;
+}
+
+.fpsm-template-19 .fpsm-field-wrap{
+    padding: 24px;
+    margin-bottom: 0;
+    border-bottom: solid 1px rgba(0,0,0,.18);
+}
+
+.fpsm-template-19 .wp-editor-container{
+    border-width: 2px !important;
+}
+
+.fpsm-template-19 input[type="text"],
+.fpsm-template-19 input[type="email"],
+.fpsm-template-19 input[type="number"],
+.fpsm-template-19 input[type="tel"],
+.fpsm-template-19 textarea{
+    padding: 0;
+    border-radius: 6px;
+    background-color: #fbfcfc;
+    border-width: 1px;
+    padding: 0 15px;
+    border-color: rgba(0,0,0,.14);
+}
+.fpsm-template-19 textarea{
+    line-height: 1.4;
+    padding: 15px;
+    height: 80px;
+    resize: none;
+}
+.fpsm-template-19 input[type="text"]:focus,
+.fpsm-template-19 input[type="email"]:focus,
+.fpsm-template-19 textarea:focus{
+    border-color:rgba(0,0,0,.14);
+}
+
+.fpsm-template-19 .qq-upload-button{
+    background-color: #bc61b7;
+    color: white;
+    padding: 5px 24px;
+}
+
+.fpsm-template-19 .fpsm-select-field{
+    border-radius: 6px;
+    background-color: #fbfcfc;
+
+}
+.fpsm-template-19 .fpsm-select-field:before{
+    border-color: #bc61b7 transparent transparent transparent;
+
+}
+.fpsm-template-19 .fpsm-custom-field-datepicker .fpsm-field{color: inherit}
+.fpsm-template-19 .fpsm-custom-field-datepicker .fpsm-field:before{
+    color: inherit;
+    z-index: 9;
+}
+
+.fpsm-template-19 .qq-upload-list{display: none}
+.fpsm-template-19 .fpsm-custom-field-select .fpsm-field,
+.fpsm-template-19 .fpsm-taxonomy-select .fpsm-field{
+    border-radius: 6px;
+    background-color: transparent;
+    border-color: rgba(0,0,0,.14);
+}
+
+.fpsm-template-19 .fpsm-field input[type="submit"]{
+    background-color: #bc61b7;
+    padding: 12px 24px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0;
+}
+.fpsm-template-19 .fpsm-field input[type="submit"]:hover{
+    background-color: rgba(0,0,0,.8);
+}
+
+.fpsm-template-19  .fpsm-each-tag{
+    border-radius: 0;
+}
+/*============================= Template 19 ========================*/
