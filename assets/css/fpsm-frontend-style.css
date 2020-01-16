@@ -2209,7 +2209,7 @@ button.add_media{
 }
 .fpsm-template-18 textarea{
     line-height: 1.4;
-    padding: 0;
+    padding: 15px;
     height: 80px;
     resize: none;
 }
