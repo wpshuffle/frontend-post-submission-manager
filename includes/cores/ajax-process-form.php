@@ -38,13 +38,13 @@ if ($this->admin_ajax_nonce_verify()) {
                     if ($fpsm_library_obj->is_custom_field_key($field_key)) {
                         $field_recog_key = 'custom_field';
                     }
-                    switch ($field_key) {
+                    switch ($field_recog_key) {
                         case 'post_title':
                         case 'post_content':
                         case 'post_excerpt':
                             if (!empty($field_details['character_limit'])) {
                                 $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
-                                if ($field_value_length > $field_value_length) {
+                                if ($field_value_length > $field_details['character_limit']) {
                                     $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
                                     $error_flag = 1;
                                     $error_details[$field_key] = $character_limit_error_message;
@@ -52,12 +52,22 @@ if ($this->admin_ajax_nonce_verify()) {
                             }
                             break;
                         case 'custom_field':
-                            $custom_field_lists[] = $field_key;
+                            if (!empty($field_details['character_limit'])) {
+                                $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
+                                if ($field_value_length > $field_details['character_limit']) {
+                                    $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
+                                    $error_flag = 1;
+                                    $error_details[$field_key] = $character_limit_error_message;
+                                }
+                            } else {
+                                $custom_field_lists[] = $field_key;
+                            }
                             break;
                     }
                 }
             }
         }
+
         if ($error_flag == 1) {
             $response['status'] = 403;
             $response['error_details'] = $error_details;
@@ -128,6 +138,7 @@ if ($this->admin_ajax_nonce_verify()) {
                             wp_set_post_terms($insert_update_post_id, $auto_assign_terms, $taxonomy_name, true);
                         }
                     }
+
                     $response['status'] = 200;
                     $response['message'] = (!empty($form_details['form_success_message'])) ? esc_html($form_details['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
                     // If redirection is enabled
@@ -141,10 +152,10 @@ if ($this->admin_ajax_nonce_verify()) {
                             $response['redirect_url'] = $post_url;
                         }
                     }
-                } else {
-                    $response['status'] = 403;
-                    $response['message'] = esc_html__('There occurred some error.', 'frontend-post-submission-manager');
                 }
+            } else {
+                $response['status'] = 403;
+                $response['message'] = esc_html__('There occurred some error.', 'frontend-post-submission-manager');
             }
         }
     } else {

@@ -94,10 +94,10 @@ jQuery(document).ready(function ($) {
      * Scrolls to the first error of the form
      *
      */
-    function scroll_to_error(form) {
+    function fpsm_scroll_to_error(form) {
         form.find('.fpsm-error').each(function () {
             var in_selector = $(this);
-            if (in_selector.html() != '') {
+            if (in_selector.is(':visible') && in_selector.html() != '') {
                 $('html,body').animate({
                     scrollTop: in_selector.closest('.fpsm-field-wrap').offset().top - 100},
                         'slow');
@@ -106,6 +106,13 @@ jQuery(document).ready(function ($) {
             ;
         });
 
+    }
+    
+    /**
+     * Reset forms
+     */
+    function fpsm_reset_form(form){
+        form[0].reset();
     }
 
     $('body').on('click', '.fpsm-media-delete-button', function () {
@@ -212,24 +219,28 @@ jQuery(document).ready(function ($) {
             },
             beforeSend: function (xhr) {
                 selector.find('.fpsm-ajax-loader').show();
+                selector.find('.fpsm-form-message').slideToggle();
             },
             success: function (data, textStatus, jqXHR) {
                 selector.find('.fpsm-ajax-loader').hide();
                 data = $.parseJSON(data);
                 if (data.status == 200) {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
+                    fpsm_reset_form(selector);
                 } else {
-                    selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow');
-                    var error_details = data.error_details;
-                    for (field_key in error_details) {
-                        if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
-                            selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
-                        } else {
-                            selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
-                        }
+                    selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
+                        var error_details = data.error_details;
+                        for (field_key in error_details) {
+                            if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
+                                selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
+                            } else {
+                                selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
+                            }
 
-                    }
-                    scroll_to_error(selector);
+                        }
+                        fpsm_scroll_to_error(selector);
+                    });
+
                 }
             }
         });
