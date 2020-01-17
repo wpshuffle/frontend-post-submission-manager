@@ -138,19 +138,46 @@ if ($this->admin_ajax_nonce_verify()) {
                             wp_set_post_terms($insert_update_post_id, $auto_assign_terms, $taxonomy_name, true);
                         }
                     }
+                }
 
-                    $response['status'] = 200;
-                    $response['message'] = (!empty($form_details['form_success_message'])) ? esc_html($form_details['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
-                    // If redirection is enabled
-                    if (!empty($form_details['basic']['redirection'])) {
-                        if ($form_details['basic']['redirection_type'] == 'url') {
-                            if (!empty($form_details['basic']['redirection_url'])) {
-                                $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
-                            }
-                        } else {
-                            $post_url = get_the_permalink($insert_update_post_id);
-                            $response['redirect_url'] = $post_url;
+                //Lets work on custom fields here
+                if (!empty($custom_field_lists)) {
+                    foreach ($custom_field_lists as $custom_field_key) {
+                        $custom_field_value = $form_data[$custom_field_key];
+                        $custom_field_settings = $form_details['form']['fields'][$custom_field_key];
+                        $custom_field_array = explode('|', $custom_field_key);
+                        $custom_field_meta_key = end($custom_field_array);
+                        $custom_field_type = $custom_field_settings['field_type'];
+                        if ($custom_field_type == 'datepicker' && !empty($custom_field_settings['string_format'])) {
+                            $custom_field_value = strtotime($custom_field_value);
                         }
+                        if ($custom_field_type == 'checkbox' && is_array($custom_field_value)) {
+                            $custom_field_value = implode(',', $custom_field_value);
+                        }
+                        /**
+                         * Filters the custom field value before storing it in the database
+                         *
+                         * @param mixed $custom_field_value
+                         * @param string $custom_field_key
+                         * @param obj $form_row
+                         *
+                         * @since 1.0.0
+                         */
+                        $custom_field_value = apply_filters('fpsm_custom_field_value', $custom_field_value, $custom_field_key, $form_row);
+                        update_post_meta($insert_update_post_id, $custom_field_meta_key, $custom_field_value);
+                    }
+                }
+                $response['status'] = 200;
+                $response['message'] = (!empty($form_details['form_success_message'])) ? esc_html($form_details['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
+                // If redirection is enabled
+                if (!empty($form_details['basic']['redirection'])) {
+                    if ($form_details['basic']['redirection_type'] == 'url') {
+                        if (!empty($form_details['basic']['redirection_url'])) {
+                            $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
+                        }
+                    } else {
+                        $post_url = get_the_permalink($insert_update_post_id);
+                        $response['redirect_url'] = $post_url;
                     }
                 }
             } else {

@@ -107,11 +107,11 @@ jQuery(document).ready(function ($) {
         });
 
     }
-    
+
     /**
      * Reset forms
      */
-    function fpsm_reset_form(form){
+    function fpsm_reset_form(form) {
         form[0].reset();
     }
 
@@ -218,8 +218,8 @@ jQuery(document).ready(function ($) {
                 _wpnonce: fpsm_js_obj.ajax_nonce
             },
             beforeSend: function (xhr) {
-                selector.find('.fpsm-ajax-loader').show();
                 selector.find('.fpsm-form-message').slideToggle();
+                selector.find('.fpsm-ajax-loader').show();
             },
             success: function (data, textStatus, jqXHR) {
                 selector.find('.fpsm-ajax-loader').hide();
