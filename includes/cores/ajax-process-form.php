@@ -114,6 +114,12 @@ if ($this->admin_ajax_nonce_verify()) {
             $postarr = apply_filters('fpsm_insert_postdata', $postarr, $form_data, $form_row);
             $insert_update_post_id = wp_insert_post($postarr);
             if (!empty($insert_update_post_id)) {
+
+                //Lets assign the post image to the post
+                if (!empty($form_data['post_image'])) {
+                    set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                }
+
                 // Lets assign taxonomy terms
                 if (!empty($taxonomy_lists)) {
 

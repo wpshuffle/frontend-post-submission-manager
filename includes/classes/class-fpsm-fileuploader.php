@@ -131,6 +131,7 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
         private function toBytes($str) {
             $val = trim($str);
             $last = strtolower($str[strlen($str) - 1]);
+            $val = floatval($val);
             switch ($last) {
                 case 'g': $val *= 1024;
                 case 'm': $val *= 1024;

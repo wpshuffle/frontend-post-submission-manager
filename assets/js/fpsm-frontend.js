@@ -42,10 +42,14 @@ jQuery(document).ready(function ($) {
                         selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
                         if (upload_count > upload_limit) {
                             upload_limit_message = (upload_limit_message) ? upload_limit_message : 'Maximum number of files allowed is ' + upload_limit;
-                            console.log(upload_limit_message);
                             selector.closest('.fpsm-field-wrap').find('.fpsm-error').html(upload_limit_message);
                             selector.closest('.fpsm-field').find('.fpsm-upload-count').val(current_upload_count);
                             return false;
+                        }
+                    } else {
+                        // Just to delete the file that has been already uploaded
+                        if (selector.closest('.fpsm-field').find('.fpsm-media-delete-button').length > 0) {
+                            selector.closest('.fpsm-field').find('.fpsm-media-delete-button').click();
                         }
                     }
                 },
@@ -60,10 +64,10 @@ jQuery(document).ready(function ($) {
                             var media_id_array = media_id.split(',');
                             media_id_array.push(responseJSON.media_id);
                             var media_id = media_id_array.join(',');
-                            selector.next('.fpsm-media-id').val(media_id);
+                            selector.closest('.fpsm-field').find('.fpsm-media-id').val(media_id);
                             selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').append(file_preview_template(responseJSON));
                         } else {
-                            selector.next('.fpsm-media-id').val(responseJSON.media_id);
+                            selector.closest('.fpsm-field').find('.fpsm-media-id').val(responseJSON.media_id);
                             selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').html(file_preview_template(responseJSON));
                         }
 

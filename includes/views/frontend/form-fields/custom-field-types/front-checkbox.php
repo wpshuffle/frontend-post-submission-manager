@@ -8,7 +8,7 @@ $display_class = 'fpsm-checkbox-' . $display_type;
         foreach ($field_details['options'] as $option_count => $option) {
             ?>
             <div class="fpsm-checkbox">
-                <input type="checkbox" name="<?php echo esc_attr($field_key); ?>" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php echo (!empty($field_details['checked'][$option_count])) ? 'checked="checked"' : ''; ?>/>
+                <input type="checkbox" name="<?php echo esc_attr($field_key); ?>[]" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php echo (!empty($field_details['checked'][$option_count])) ? 'checked="checked"' : ''; ?>/>
                 <label for="<?php echo esc_attr($field_key); ?>"><?php echo esc_html($option); ?></label>
             </div>
             <?php
