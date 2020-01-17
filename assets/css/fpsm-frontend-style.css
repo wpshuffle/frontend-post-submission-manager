@@ -25,8 +25,17 @@ span.fpsm-tag-remove-trigger {
 .fpsm-front-form{
     font-family:'Nunito Sans', sans-serif;
 }
-.fpsm-front-form .wp-editor-container button,
-.fpsm-front-form button:not(.toggle){background-color: transparent}
+
+/*medial upload*/
+.media-frame{color: rgba(0,0,0,.8);}
+.media-frame button{font-weight: 300;}
+.media-frame button:hover{background-color: transparent}
+button.media-menu-item{color: rgba(0,0,0,.68);}
+.fpsm-front-form .wp-switch-editor{font-size: 14px;font-weight: 300;text-transform: none}
+.fpsm-front-form .wp-switch-editor:hover{background-color: rgba(0,0,0,.06);}
+.media-frame select{min-height: 8px !important;}
+.fpsm-front-form .mce-container button:hover{background-color: transparent}
+
 .fpsm-field-wrap{margin-bottom: 24px;}
 .fpsm-field-note{font-size: 11px;font-style: italic;color: rgba(0,0,0,.48)}
 .qq-upload-button{height: 40px;background-color: rgba(0,0,0,.08);border-radius: 4px;line-height: 40px;font-size: 14px;text-transform: uppercase;font-weight: 800;padding: 0 15px;cursor: pointer;display: inline-block}
