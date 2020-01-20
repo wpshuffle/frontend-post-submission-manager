@@ -157,9 +157,6 @@ if ($this->admin_ajax_nonce_verify()) {
                         if ($custom_field_type == 'datepicker' && !empty($custom_field_settings['string_format'])) {
                             $custom_field_value = strtotime($custom_field_value);
                         }
-                        if ($custom_field_type == 'checkbox' && is_array($custom_field_value)) {
-                            $custom_field_value = implode(',', $custom_field_value);
-                        }
                         /**
                          * Filters the custom field value before storing it in the database
                          *
