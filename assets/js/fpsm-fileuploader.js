@@ -544,6 +544,8 @@ qq.FileUploader = function(o){
         fileTemplate: '<li>' +
                 '<span class="qq-progress-bar"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
+                '<span class="qq-upload-size"></span>' +
+                '<a class="qq-upload-cancel" href="#">{cancelButtonText}</a>' +
                 '<span class="qq-upload-failed-text">{failUploadtext}</span>' +
             '</li>',        
         
