@@ -453,6 +453,11 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          */
         function generate_field_class($field_key) {
+            if ($this->is_custom_field_key($field_key)) {
+                $field_class_prefix = 'fpsm-meta-';
+            } else {
+                $field_class_prefix = 'fpsm-';
+            }
             if (strpos($field_key, '_taxonomy') === 0) {
                 $field_key = str_replace('_taxonomy|', '', $field_key);
             } else if (strpos($field_key, '_custom_field') === 0) {
@@ -462,7 +467,9 @@ if (!class_exists('FPSM_Library')) {
             if ($field_class[0] == '-') {
                 $field_class = substr($field_class, 1, strlen($field_class));
             }
-            $field_class = 'fpsm-' . $field_class;
+
+            $field_class = $field_class_prefix . $field_class;
+
             return $field_class;
         }
 
