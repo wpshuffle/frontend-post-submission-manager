@@ -127,6 +127,12 @@ span.fpsm-tag-remove-trigger {
     font-family:'Nunito Sans', sans-serif;
 }
 
+.fpsm-front-form .fpsm-field-wrap.fpsm-taxonomy-checkbox .fpsm-block-checkbox label{display: inline-block}
+.fpsm-front-form .fpsm-field-wrap.fpsm-taxonomy-checkbox .fpsm-block-checkbox:first-child{margin-top: 15px;}
+
+.fpsm-front-form .fpsm-field-wrap.fpsm-taxonomy-checkbox .fpsm-inline-checkbox label{display: inline-block}
+.fpsm-inline-checkbox{margin-top: 15px;display: inline-block !important;}
+
 /*medial upload*/
 .media-frame{color: rgba(0,0,0,.8);}
 .media-frame button{font-weight: 300;}
