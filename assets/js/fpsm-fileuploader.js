@@ -543,6 +543,7 @@ qq.FileUploader = function(o){
         // template for one item in file list
         fileTemplate: '<li>' +
                 '<span class="qq-progress-bar"></span>' +
+                '<span class="qq-upload-file"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
                 '<span class="qq-upload-size"></span>' +
                 '<a class="qq-upload-cancel" href="#">{cancelButtonText}</a>' +
