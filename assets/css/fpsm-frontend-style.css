@@ -2,6 +2,107 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');
 
+.ui-autocomplete.ui-menu{border: none;}
+.ui-autocomplete.ui-menu .ui-menu-item{
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+}
+
+.qq-upload-list{margin: 0;}
+.qq-upload-list li {
+    color: #FFFFFF;
+    /*height: 14px;*/
+    margin: 0 0 1px;
+    padding: 5px 15px;
+    overflow: hidden;
+    line-height: 15px;
+    font-size: 12px;
+    list-style: none;
+    /*+text-shadow:none;*/
+    -moz-text-shadow: none;
+    -webkit-text-shadow: none;
+    -o-text-shadow: none;
+    text-shadow: none;
+    border-radius: 60px;
+    position: relative;
+    background: #5DA30C;
+}
+.qq-upload-list li:before{
+    content: '';
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: rgba(255,255,255,.34);
+    border-radius: 60px;
+    animation: gradientShift 1s linear infinite;
+}
+.qq-upload-file,
+.qq-upload-spinner,
+.qq-upload-size,
+.qq-upload-cancel,
+.qq-upload-failed-text {
+    margin-right: 12px;
+    z-index: 250;
+    position: relative;
+    font-size: 12px;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    display: none !important;
+}
+.qq-upload-size,
+.qq-upload-cancel {
+    font-size: 12px;
+    font-weight: normal;
+}
+.qq-upload-failed-text {
+    display: none;
+}
+.qq-upload-fail .qq-upload-failed-text {
+    display: inline;
+}
+.qq-upload-list li.qq-upload-success {
+    background: #5DA30C;
+    color: #FFFFFF;
+}
+.qq-upload-list li.qq-upload-fail {
+    background: #AF0000;
+    color: #FFFFFF;
+}
+.qq-upload-button:hover {
+    background: #0F5BBB;
+}
+.qq-upload-button:active {
+    top: 2px;
+}
+.qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+    float: right;
+}
+.qq-upload-spinner {
+    display: none;
+}
+.qq-progress-bar {
+    width: 51%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+.qq-upload-cancel {
+    color: #800000;
+}
+.qq-upload-success .qq-progress-bar {
+    display: none;
+}
+
+
+
 .fpsm-display-none{display:none;}
 .fpsm-each-tag {
     display: inline-block;
@@ -35,9 +136,11 @@ button.media-menu-item{color: rgba(0,0,0,.68);}
 .fpsm-front-form .wp-switch-editor:hover{background-color: rgba(0,0,0,.06);}
 .media-frame select{min-height: 8px !important;}
 .fpsm-front-form .mce-container button:hover{background-color: transparent}
+.wp-editor-wrap button:not(.toggle){background-color: transparent !important;}
+
 
 .fpsm-field-wrap{margin-bottom: 24px;}
-.fpsm-field-note{font-size: 11px;font-style: italic;color: rgba(0,0,0,.48)}
+.fpsm-field-note{font-size: 13px;font-style: italic;color: rgba(0,0,0,.58);margin-top: 5px}
 .qq-upload-button{height: 40px;background-color: rgba(0,0,0,.08);border-radius: 4px;line-height: 40px;font-size: 14px;text-transform: uppercase;font-weight: 800;padding: 0 15px;cursor: pointer;display: inline-block}
 input[type="file"]{
     cursor: pointer;
@@ -282,7 +385,7 @@ input[type="file"]{
     height: 40px;
 
 }
-.fpsm-front-form .qq-upload-list{display: none}
+/*.fpsm-front-form .qq-upload-list{display: none}*/
 .fpsm-front-form .fpsm-custom-field-select .fpsm-field,
 .fpsm-front-form .fpsm-taxonomy-select .fpsm-field{
     border-radius: 2px;
@@ -347,7 +450,7 @@ button.add_media{
     color: white;
     line-height: 32px;
 }
-.fpsm-template-1 .qq-upload-list{display: none}
+
 .fpsm-template-1 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-1 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 2px;
@@ -403,7 +506,7 @@ button.add_media{
     line-height: 32px;
     border-radius: 68px;
 }
-.fpsm-template-2 .qq-upload-list{display: none}
+
 .fpsm-template-2 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-2 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 68px;
@@ -464,7 +567,7 @@ button.add_media{
     line-height: 32px;
     border-radius: 0;
 }
-.fpsm-template-3 .qq-upload-list{display: none}
+
 .fpsm-template-3 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-3 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -544,7 +647,7 @@ button.add_media{
     background-color: rgba(0,0,0,.8);
     color: white;
 }
-.fpsm-template-4 .qq-upload-list{display: none}
+
 .fpsm-template-4 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-4 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -612,7 +715,7 @@ button.add_media{
     background-color: rgba(0,0,0,.8);
     color: white;
 }
-.fpsm-template-5 .qq-upload-list{display: none}
+
 .fpsm-template-5 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-5 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -681,7 +784,7 @@ button.add_media{
 .fpsm-front-form .qq-upload-button:hover{
     background-color: rgba(0,0,0,.8);
 }
-.fpsm-template-6 .qq-upload-list{display: none}
+
 .fpsm-template-6 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-6 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 68px;
@@ -958,7 +1061,7 @@ button.add_media{
     color: white;
     line-height: 32px;
 }
-.fpsm-template-8 .qq-upload-list{display: none}
+
 .fpsm-template-8 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-8 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -1038,7 +1141,7 @@ button.add_media{
     color: white;
     line-height: 32px;
 }
-.fpsm-template-9 .qq-upload-list{display: none}
+
 .fpsm-template-9 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-9 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -1114,7 +1217,7 @@ button.add_media{
     padding: 5px 24px;
     color: white;
 }
-.fpsm-template-10 .qq-upload-list{display: none}
+
 .fpsm-template-10 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-10 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -1201,7 +1304,7 @@ button.add_media{
     color: rgba(0,0,0,.8);
     border-radius: 0;
 }
-.fpsm-template-11 .qq-upload-list{display: none}
+
 .fpsm-template-11 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-11 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -1532,7 +1635,7 @@ button.add_media{
     color: white;
     border-radius: 0;
 }
-.fpsm-template-13 .qq-upload-list{display: none}
+
 .fpsm-template-13 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-13 .fpsm-taxonomy-select .fpsm-field{
     color: inherit;
@@ -1596,7 +1699,6 @@ button.add_media{
     color: white;
     border-radius: 68px;
 }
-.fpsm-template-14 .qq-upload-list{display: none}
 
 .fpsm-template-14 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-14 .fpsm-taxonomy-select .fpsm-field{
@@ -1691,7 +1793,6 @@ button.add_media{
     padding: 5px 24px;
     color: white;
 }
-.fpsm-template-15 .qq-upload-list{display: none}
 
 .fpsm-template-15 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-15 .fpsm-taxonomy-select .fpsm-field{
@@ -2234,7 +2335,7 @@ button.add_media{
     color: rgba(0,0,0,.68);
     padding: 5px 24px;
 }
-.fpsm-template-18 .qq-upload-list{display: none}
+
 .fpsm-template-18 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-18 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 0;
@@ -2341,7 +2442,6 @@ button.add_media{
     z-index: 9;
 }
 
-.fpsm-template-19 .qq-upload-list{display: none}
 .fpsm-template-19 .fpsm-custom-field-select .fpsm-field,
 .fpsm-template-19 .fpsm-taxonomy-select .fpsm-field{
     border-radius: 6px;
