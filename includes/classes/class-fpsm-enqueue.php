@@ -18,6 +18,7 @@ if (!class_exists('FPSM_Enqueue')) {
             wp_enqueue_style('fpsm-style', FPSM_URL . '/assets/css/fpsm-frontend-style.css', array(), FPSM_VERSION);
             wp_enqueue_style('jquery-ui', FPSM_URL . '/assets/css/jquery-ui.min.css', array(), FPSM_VERSION);
             wp_enqueue_style('fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-frontend-custom-style.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fileuploader', FPSM_URL . '/assets/css/fileuploader.css', array(), FPSM_VERSION);
             wp_enqueue_style('fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-fileuploader', FPSM_URL . '/assets/js/fpsm-fileuploader.js', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-script', FPSM_URL . '/assets/js/fpsm-frontend.js', array('jquery', 'fpsm-fileuploader', 'wp-util', 'jquery-ui-autocomplete', 'jquery-ui-datepicker'), FPSM_VERSION);
