@@ -173,6 +173,8 @@ if ($this->admin_ajax_nonce_verify()) {
                         update_post_meta($insert_update_post_id, $custom_field_meta_key, $custom_field_value);
                     }
                 }
+                // Storing form alias for the reference
+                update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
                 $response['status'] = 200;
                 $response['message'] = (!empty($form_details['form_success_message'])) ? esc_html($form_details['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
                 // If redirection is enabled

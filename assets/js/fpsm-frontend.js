@@ -153,8 +153,8 @@ jQuery(document).ready(function ($) {
             source: available_tags
         });
     });
-
-    $('body').on('keyup', '.fpsm-auto-complete-field', function (event) {
+    
+    $('body').on('keypress', '.fpsm-auto-complete-field', function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var tag = $(this).val();
@@ -177,6 +177,9 @@ jQuery(document).ready(function ($) {
                 $(this).val('');
                 $(".ui-autocomplete").hide();
             }
+            event.stopPropagation();
+            return false;
+
         }
     });
 
@@ -272,6 +275,8 @@ jQuery(document).ready(function ($) {
 
         $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
+
+
 
 
 });
