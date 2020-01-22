@@ -192,7 +192,7 @@ input[type="file"]{
     width: 38px;
     object-fit: cover;
 }
-.fpsm-file-preview-column{font-size: 13px;color: rgba(0,0,0,.48)}
+.fpsm-file-preview-column{font-size: 13px;color: inherit}
 
 .fpsm-tag-text{font-size: 12px;}
 .fpsm-tag-remove-trigger{font-size: 11px;}
@@ -1365,6 +1365,8 @@ button.add_media{
 .fpsm-template-11 .wp-editor-wrap button.wp-switch-editor:focus{
     background-color: rgba(255,255,255,.8) !important;
 }
+
+.fpsm-template-11  .fpsm-file-preview-row{background-color: rgba(255,255,255,.14);}
 
 /*============================= Template 11 ========================*/
 
@@ -3096,5 +3098,7 @@ button.add_media{
 .fpsm-template-22 .fpsm-custom-field-datepicker .fpsm-field:before{color: inherit}
 .fpsm-template-22 .fpsm-checkbox label:before{color: rgba(255,255,255,.24);background-color: rgba(255,255,255,.18)}
 .fpsm-template-22 .fpsm-radio label:before{border-color: rgba(255,255,255,.24);}
+
+.fpsm-template-22  .fpsm-file-preview-row{background-color: rgba(255,255,255,.14);}
 
 /*===================== Template 22 ===============================*/
