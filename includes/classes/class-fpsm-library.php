@@ -551,6 +551,36 @@ if (!class_exists('FPSM_Library')) {
             }
         }
 
+        function get_meta_key_by_field_key($field_key) {
+            $field_key_array = explode('|', $field_key);
+            return end($field_key_array);
+        }
+
+        function get_attachment_filesize($attachment_id) {
+            $attahment_file = get_attached_file($attachment_id);
+            $bytes_filesize = filesize($attahment_file);
+            $formatted_filesize = $this->format_file_size($bytes_filesize);
+            return $formatted_filesize;
+        }
+
+        function format_filesize($bytes) {
+            if ($bytes >= 1073741824) {
+                $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+            } elseif ($bytes >= 1048576) {
+                $bytes = number_format($bytes / 1048576, 2) . ' MB';
+            } elseif ($bytes >= 1024) {
+                $bytes = number_format($bytes / 1024, 2) . ' KB';
+            } elseif ($bytes > 1) {
+                $bytes = $bytes . ' bytes';
+            } elseif ($bytes == 1) {
+                $bytes = $bytes . ' byte';
+            } else {
+                $bytes = '0 bytes';
+            }
+
+            return $bytes;
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

@@ -145,7 +145,6 @@ if ($this->admin_ajax_nonce_verify()) {
                         }
                     }
                 }
-
                 //Lets work on custom fields here
                 if (!empty($custom_field_lists)) {
                     foreach ($custom_field_lists as $custom_field_key) {

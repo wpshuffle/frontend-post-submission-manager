@@ -138,6 +138,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 include(FPSM_PATH . '/includes/classes/admin/class-fpsm-admin-enqueue.php');
                 include(FPSM_PATH . '/includes/classes/admin/class-fpsm-admin.php');
                 include(FPSM_PATH . '/includes/classes/admin/class-fpsm-ajax-admin.php');
+                include(FPSM_PATH . '/includes/classes/admin/class-fpsm-metabox.php');
             }
         }
 
