@@ -3111,6 +3111,14 @@ button.add_media{
 .fpsm-template-22 .wp-editor-wrap button.wp-switch-editor:active,
 .fpsm-template-22 .wp-editor-wrap button.wp-switch-editor:focus{
     background-color: rgba(255,255,255,.8) !important;
+
+}
+
+.fpsm-template-22 .wp-editor-wrap.tmce-active button.wp-switch-editor.switch-tmce{
+    color: white;
+}
+.fpsm-template-22 .wp-editor-wrap.html-active button.wp-switch-editor.switch-html{
+    color: white;
 }
 
 .fpsm-template-22 .fpsm-custom-field-datepicker .fpsm-field:before{color: inherit}
@@ -3121,6 +3129,12 @@ button.add_media{
 
 /*===================== Template 22 ===============================*/
 
+.fpsm-field-wrap .wp-editor-wrap.tmce-active button.wp-switch-editor.switch-tmce{
+    background-color: rgba(0,0,0,.14) !important;
+}
+.fpsm-field-wrap .wp-editor-wrap.html-active button.wp-switch-editor.switch-html{
+    background-color: rgba(0,0,0,.14) !important;
+}
 
 /*============================================== Max 1023px responsive mobile ======================================*/
 
