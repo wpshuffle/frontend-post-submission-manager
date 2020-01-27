@@ -354,6 +354,7 @@ input[type="number"],
     background-color: rgba(0,0,0,.05);
     padding: 0 14px;
     line-height: 38px;
+    white-space: nowrap;
 }
 .fpsm-clipboard-copy{display: inline-block;vertical-align: top;color: #27ae60;margin-left: 10px;cursor: pointer;line-height: 38px;background:#dbead7;margin-left: -3px;padding: 0 14px;}
 
@@ -398,7 +399,7 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
 }
 
 .fpsm-shortcode-common{max-width: 348px;}
-.fpsm-shortcode-common .fpsm-field{margin-left: auto}
+.fpsm-shortcode-common .fpsm-field{margin-left: auto;display: flex}
 
 .fpsm-checkbox-toggle{
     position: relative;
