@@ -393,6 +393,7 @@ jQuery(document).ready(function ($) {
         } else {
             $(this).closest('.fpsm-file-preview-wrap').find('.fpsm-fileuploader-value').val('');
         }
+        $(this).closest('.fpsm-file-preview-row').remove();
     });
 
 

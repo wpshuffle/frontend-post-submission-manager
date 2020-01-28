@@ -61,9 +61,14 @@ jQuery(document).ready(function ($) {
                         var file_preview_template = wp.template('upload-preview');
                         if (multiple_upload) {
                             var media_id = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
-                            var media_id_array = media_id.split(',');
-                            media_id_array.push(responseJSON.media_id);
-                            var media_id = media_id_array.join(',');
+                            if (media_id != '') {
+                                var media_id_array = media_id.split(',');
+                                media_id_array.push(responseJSON.media_id);
+                                var media_id = media_id_array.join(',');
+                            } else {
+                                media_id = responseJSON.media_id;
+                            }
+
                             selector.closest('.fpsm-field').find('.fpsm-media-id').val(media_id);
                             selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').append(file_preview_template(responseJSON));
                         } else {
@@ -135,9 +140,20 @@ jQuery(document).ready(function ($) {
             success: function (res) {
                 res = $.parseJSON(res);
                 if (res.status == 200) {
+                    media_id = media_id.toString();
                     var upload_count = selector.closest('.fpsm-field').find('.fpsm-upload-count').val();
                     upload_count--;
                     selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
+                    var pre_saved_value = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
+                    var pre_saved_value_array = pre_saved_value.split(',');
+                    if (pre_saved_value_array.length > 1) {
+                        console.log(pre_saved_value_array.indexOf(media_id));
+                        pre_saved_value_array.splice(pre_saved_value_array.indexOf(media_id), 1);
+                        pre_saved_value = pre_saved_value_array.join(',');
+                        selector.closest('.fpsm-field').find('.fpsm-media-id').val(pre_saved_value);
+                    } else {
+                        selector.closest('.fpsm-field').find('.fpsm-media-id').val('');
+                    }
                     selector.closest('.fpsm-file-preview-row').remove();
                 } else {
                     alert(res.message);
@@ -153,7 +169,7 @@ jQuery(document).ready(function ($) {
             source: available_tags
         });
     });
-    
+
     $('body').on('keypress', '.fpsm-auto-complete-field', function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
