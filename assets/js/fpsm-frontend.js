@@ -122,6 +122,10 @@ jQuery(document).ready(function ($) {
      */
     function fpsm_reset_form(form) {
         form[0].reset();
+        form.find('.fpsm-file-preview-wrap').html('');
+        form.find('.fpsm-media-id').val('');
+        form.find('.fpsm-upload-count').val(0);
+        form.find('.fpsm-error').html('').hide();
     }
 
     $('body').on('click', '.fpsm-media-delete-button', function () {
