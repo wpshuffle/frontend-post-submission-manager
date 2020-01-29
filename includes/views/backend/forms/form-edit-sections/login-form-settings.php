@@ -10,21 +10,21 @@ $login_form_settings = (!empty( $form_details['login'] )) ? $form_details['login
                 <?php
                 $selected_login_type = (!empty( $login_form_settings['login_type'] )) ? $login_form_settings['login_type'] : 'login_form';
                 ?>
-                <option value="login_form"><?php esc_html_e( 'Show Login Form', 'frontend-post-submission-manager' ); ?></option>
-                <option value="login_message"><?php esc_html_e( 'Show Login Message', 'frontend-post-submission-manager' ); ?></option>
-                <option value="login_page_redirect"><?php esc_html_e( 'Redirect to Login Page', 'frontend-post-submission-manager' ); ?></option>
+                <option value="login_form" <?php selected( $selected_login_type, 'login_form' ); ?>><?php esc_html_e( 'Show Login Form', 'frontend-post-submission-manager' ); ?></option>
+                <option value="login_message" <?php selected( $selected_login_type, 'login_message' ); ?>><?php esc_html_e( 'Show Login Message', 'frontend-post-submission-manager' ); ?></option>
+                <option value="login_page_redirect" <?php selected( $selected_login_type, 'login_page_redirect' ); ?>><?php esc_html_e( 'Redirect to Login Page', 'frontend-post-submission-manager' ); ?></option>
             </select>
         </div>
     </div>
     <div class="fpsm-login-type-ref <?php echo ($selected_login_type != 'login_form') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="login_form">
         <div class="fpsm-field-wrap">
-            <label><?php esc_html_e( 'Username Label', 'frontend-post-submission-manager' ); ?>></label>
+            <label><?php esc_html_e( 'Username Label', 'frontend-post-submission-manager' ); ?></label>
             <div class="fpsm-field">
                 <input type="text" name="form_details[login][username_label]" value="<?php echo (!empty( $login_form_settings['username_label'] )) ? esc_attr( $login_form_settings['username_label'] ) : ''; ?>"/>
             </div>
         </div>
         <div class="fpsm-field-wrap">
-            <label><?php esc_html_e( 'Password Label', 'frontend-post-submission-manager' ); ?>></label>
+            <label><?php esc_html_e( 'Password Label', 'frontend-post-submission-manager' ); ?></label>
             <div class="fpsm-field">
                 <input type="text" name="form_details[login][password_label]" value="<?php echo (!empty( $login_form_settings['password_label'] )) ? esc_attr( $login_form_settings['password_label'] ) : ''; ?>"/>
             </div>
@@ -32,11 +32,11 @@ $login_form_settings = (!empty( $form_details['login'] )) ? $form_details['login
         <div class="fpsm-field-wrap">
             <label><?php esc_html_e( 'Show Remember Me', 'frontend-post-submission-manager' ); ?></label>
             <div class="fpsm-field">
-                <input type="checkbox" name="form_details[login][show_remember_me]" value="1" class="fpsm-checkbox-toggle-trigger" data-toggle-ref="fpsm-remember-me-label" <?php echo (!empty( $login_form_settings['show_remember_me'] )) ? 'checked="checked"' : ''; ?>/>
+                <input type="checkbox" name="form_details[login][show_remember_me]" value="1" class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-remember-me-label" <?php echo (!empty( $login_form_settings['show_remember_me'] )) ? 'checked="checked"' : ''; ?>/>
             </div>
         </div>
         <div class="fpsm-field-wrap fpsm-remember-me-label <?php echo (empty( $login_form_settings['show_remember_me'] )) ? 'fpsm-display-none' : ''; ?>">
-            <label><?php esc_html_e( 'Remember Me Label', 'frontend-post-submission-manager' ); ?>></label>
+            <label><?php esc_html_e( 'Remember Me Label', 'frontend-post-submission-manager' ); ?></label>
             <div class="fpsm-field">
                 <input type="text" name="form_details[login][remember_me_label]" value="<?php echo (!empty( $login_form_settings['remember_me_label'] )) ? esc_attr( $login_form_settings['remember_me_label'] ) : ''; ?>"/>
             </div>
@@ -53,10 +53,35 @@ $login_form_settings = (!empty( $form_details['login'] )) ? $form_details['login
                 <input type="text" name="form_details[login][login_error_message]" value="<?php echo (!empty( $login_form_settings['login_error_message'] )) ? esc_attr( $login_form_settings['login_error_message'] ) : ''; ?>"/>
             </div>
         </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e( '', 'frontend-post-submission-manager' ); ?></label>
-            <div class="fpsm-field">
 
+    </div>
+    <div class="fpsm-login-type-ref <?php echo ($selected_login_type != 'login_message') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="login_message">
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Login Message', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <textarea name="form_details[login][login_message]"><?php echo (!empty( $login_form_settings['login_message'] )) ? $fpsm_library_obj->sanitize_html( $login_form_settings['login_message'] ) : ''; ?></textarea>
+
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Login Link Label', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[login][login_link_label]" value="<?php echo (!empty( $login_form_settings['login_link_label'] )) ? $fpsm_library_obj->sanitize_html( $login_form_settings['login_link_label'] ) : ''; ?>"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Login Link URL', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[login][login_link_url]" value="<?php echo (!empty( $login_form_settings['login_link_url'] )) ? esc_url( $login_form_settings['login_link_url'] ) : ''; ?>"/>
+            </div>
+        </div>
+    </div>
+    <div class="fpsm-login-type-ref <?php echo ($selected_login_type != 'login_page_redirect') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="login_page_redirect">
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Login Page URL', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[login][login_page_url]" value="<?php echo (!empty( $login_form_settings['login_page_url'] )) ? esc_url( $login_form_settings['login_page_url'] ) : ''; ?>"/>
+                <p class="description"><?php esc_html_e( 'Please enter the URL in which you want to redirect users when they are not logged in.', 'frontend-post-submission-manager' ); ?></p>
             </div>
         </div>
     </div>
