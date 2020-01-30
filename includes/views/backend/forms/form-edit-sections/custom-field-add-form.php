@@ -46,6 +46,35 @@
             </select>
         </div>
     </div>
+    <div class="fpsm-custom-field-btns-wrap">
+        <div class="fpsm-custom-fld-btn">
+            <i class="fas fa-edit"></i> Text Field
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="fas fa-expand"></i> Text Area
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="far fa-caret-square-down"></i> Select Box
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="far fa-check-square"></i> Check Box
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="far fa-dot-circle"></i> Radio
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="fas fa-sort"></i> Number
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="fas fa-envelope"></i> Email
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="far fa-calendar-alt"></i> Date Picker
+        </div>
+        <div class="fpsm-custom-fld-btn">
+            <i class="fas fa-paperclip"></i> Uploader
+        </div>
+    </div>
     <div class="fpsm-field-wrap">
         <div class="fpsm-field">
             <input type="button" class="fpsm-button-secondary fpsm-custom-field-add-trigger" value="<?php esc_attr_e('Add', 'frontend-post-submission-manager'); ?>"/>
