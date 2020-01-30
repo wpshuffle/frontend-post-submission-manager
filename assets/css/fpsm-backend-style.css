@@ -591,4 +591,8 @@ h3.fpsm-form-settings-heading {
     background-color: rgba(255,255,255,1);
     box-shadow: rgba(0,0,0,.08) 0 0 5px;
 }
+.fpsm-custom-fld-btn.btn-selected{
+    background-color: #27ae60;
+    color: white;
+}
 .fpsm-custom-fld-btn i{font-weight: 900;margin-right: 4px;}

@@ -53,7 +53,7 @@
         <div class="fpsm-custom-fld-btn">
             <i class="fas fa-expand"></i> Text Area
         </div>
-        <div class="fpsm-custom-fld-btn">
+        <div class="fpsm-custom-fld-btn btn-selected">
             <i class="far fa-caret-square-down"></i> Select Box
         </div>
         <div class="fpsm-custom-fld-btn">
