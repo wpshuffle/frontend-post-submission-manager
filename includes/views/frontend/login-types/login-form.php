@@ -1,4 +1,4 @@
-<div class="fpsm-login-form-wrapper fpsm-front-form fpsm-login-form-<?php echo esc_attr($form_template); ?>">
+<div class="fpsm-login-form-wrapper fpsm-login-form-<?php echo esc_attr($form_template); ?>">
     <?php
     $username_label = (!empty($login_settings['username_label'])) ? esc_attr($login_settings['username_label']) : __('Username', 'frontend-post-submission-manager');
     $password_label = (!empty($login_settings['password_label'])) ? esc_attr($login_settings['password_label']) : __('Password', 'frontend-post-submission-manager');
