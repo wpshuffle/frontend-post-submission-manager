@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');
+
+[class*="fpsm-login-form-template-"]{
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 28px;
+    box-shadow: rgba(0,0,0,.24) 0 0 24px;
+}
+
+[class*="fpsm-login-form-template-"] p{
+    margin: 0 0 20px 0;
+}
+[class*="fpsm-login-form-template-"] p:last-child{
+    margin-bottom: 0;
+}
+
+.fpsm-login-msg{
+    display: inline-block;
+    background-color:#f5e0e0;
+    color:#c43434;
+    padding: 8px 20px;
+    font-size: 14px;
+    border: solid 1px #e4a0a0;
+    border-radius: 3px;
+}
+
+[class*="fpsm-login-form-template-"] input[type="text"],
+[class*="fpsm-login-form-template-"] input[type="password"]{
+    border-radius: 2px;
+    background-color: rgba(0,0,0,.04);
+    border:solid 1px rgba(0,0,0,.08);
+    padding: 0 15px;
+    line-height: 40px;
+    font-size: 14px;
+    width: 100%;
+}
+[class*="fpsm-login-form-template-"] input[type="submit"]{
+    background-color: #0083f8;
+    padding: 5px 38px;
+    color: white;
+    border-radius: 2px;
+    line-height: 42px;
+    transition: all .3s ease;
+}
+
+[class*="fpsm-login-form-template-"] input[type="submit"]:hover{
+    background-color: rgba(0,0,0,.8);
+}
+
+[class*="fpsm-login-form-template-"] .login-remember label{
+    font-weight: 400;
+    color: rgba(0,0,0,.68);
+}
+
+[class*="fpsm-login-form-template-"] label{
+    font-size: 15px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 8px;
+}
