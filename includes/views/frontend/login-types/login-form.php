@@ -1,4 +1,4 @@
-<div class="fpsm-login-form-wrapper">
+<div class="fpsm-login-form-wrapper fpsm-login-form-<?php echo esc_attr($form_template); ?>">
     <?php
     $username_label = (!empty($login_settings['username_label'])) ? esc_attr($login_settings['username_label']) : __('Username', 'frontend-post-submission-manager');
     $password_label = (!empty($login_settings['password_label'])) ? esc_attr($login_settings['password_label']) : __('Password', 'frontend-post-submission-manager');
@@ -38,9 +38,9 @@
     wp_login_form($args);
     ?>
 </div>
-<!--<script>jQuery(document).ready(function ($) {
+<script>jQuery(document).ready(function ($) {
         if (window.location.href.indexOf('?') > -1) {
             history.pushState('', document.title, window.location.pathname);
         }
     });
-</script>-->
+</script>
