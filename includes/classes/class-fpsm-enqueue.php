@@ -16,7 +16,9 @@ if (!class_exists('FPSM_Enqueue')) {
                 'no_preview' => FPSM_URL . '/assets/images/no-preview.jpg'
             );
             wp_enqueue_style('fpsm-style', FPSM_URL . '/assets/css/fpsm-frontend-style.css', array(), FPSM_VERSION);
-            wp_enqueue_style('fpsm-login-style', FPSM_URL . '/assets/css/fpsm-login-form-style.css', array(), FPSM_VERSION);
+            if (!is_user_logged_in()) {
+                wp_enqueue_style('fpsm-login-style', FPSM_URL . '/assets/css/fpsm-login-form-style.css', array(), FPSM_VERSION);
+            }
             wp_enqueue_style('jquery-ui', FPSM_URL . '/assets/css/jquery-ui.min.css', array(), FPSM_VERSION);
             wp_enqueue_style('fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-frontend-custom-style.css', array(), FPSM_VERSION);
             wp_enqueue_style('fpsm-fileuploader', FPSM_URL . '/assets/css/fileuploader.css', array(), FPSM_VERSION);
