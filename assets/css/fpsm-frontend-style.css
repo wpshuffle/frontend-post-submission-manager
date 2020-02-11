@@ -357,6 +357,7 @@ input[type="file"]{
 .fpsm-front-form input[type="text"],
 .fpsm-front-form input[type="email"],
 .fpsm-front-form input[type="number"],
+.fpsm-front-form input[type="password"],
 .fpsm-front-form input[type="tel"],
 .fpsm-front-form textarea{
     border-radius: 2px;

@@ -316,6 +316,7 @@ form.fpsm-form-wrap {
     color: #27ae60;
 }
 table.fixed{table-layout: auto !important;}
+
 /*=============================================== form elements ================*/
 .fpsm-form-wrap input[type="text"],
 .fpsm-form-element-wrap input[type="text"],
