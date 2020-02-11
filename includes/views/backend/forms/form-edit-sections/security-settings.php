@@ -17,9 +17,9 @@
         <label><?php _e('Enable ReCaptcha in frontend form', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
             <?php
-            $frontend_captcha = (!empty($form_details['security']['frontend_captcha'])) ? 1 : 0;
+            $frontend_form_captcha = (!empty($form_details['security']['frontend_form_captcha'])) ? 1 : 0;
             ?>
-            <input type="checkbox" name="form_details[security][frontend_captcha]" value="1" <?php checked($frontend_captcha, true); ?>/>
+            <input type="checkbox" name="form_details[security][frontend_form_captcha]" value="1" <?php checked($frontend_form_captcha, true); ?>/>
             <p class="description"><?php _e('Please check to enable to reCaptcha in frontend form.', 'frontend-post-submission-manager'); ?></p>
         </div>
     </div>
@@ -28,9 +28,9 @@
             <label><?php _e('Enable ReCaptcha in login form', 'frontend-post-submission-manager'); ?></label>
             <div class="fpsm-field">
                 <?php
-                $login_captcha = (!empty($form_details['security']['login_captcha'])) ? 1 : 0;
+                $login_form_captcha = (!empty($form_details['security']['login_form_captcha'])) ? 1 : 0;
                 ?>
-                <input type="checkbox" name="form_details[security][login_captcha]" value="1" <?php checked($login_captcha, true); ?>/>
+                <input type="checkbox" name="form_details[security][login_form_captcha]" value="1" <?php checked($login_form_captcha, true); ?>/>
                 <p class="description"><?php _e('Please check to enable to reCaptcha in login form.', 'frontend-post-submission-manager'); ?></p>
             </div>
         </div>

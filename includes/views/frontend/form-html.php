@@ -52,6 +52,29 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
             }
         }
     }
+    /**
+     * Captcha
+     */
+//    echo "<pre>";
+//    print_r($form_details);
+//    echo "</pre>";
+    if (!empty($form_details['security']['frontend_form_captcha'])) {
+        $site_key = (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
+        if (!empty($site_key)) {
+            ?>
+
+            <div class="fpsm-field-wrap fpsm-captcha-field" data-field-key="captcha">
+                <label><?php echo (!empty($form_details['security']['captcha_label'])) ? esc_attr($form_details['security']['captcha_label']) : ''; ?></label>
+                <div class="ebd-field">
+                    <div data-field-key="security">
+                        <script type="text/javascript" src="//www.google.com/recaptcha/api.js"></script>
+                        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    }
     ?>
     <div class="fpsm-field-wrap fpsm-has-submit-btn">
         <div class="fpsm-field">

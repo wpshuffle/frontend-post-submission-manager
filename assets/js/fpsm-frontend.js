@@ -126,6 +126,9 @@ jQuery(document).ready(function ($) {
         form.find('.fpsm-media-id').val('');
         form.find('.fpsm-upload-count').val(0);
         form.find('.fpsm-error').html('').hide();
+        if (form.find('#g-recaptcha-response').length > 0) {
+            grecaptcha.reset();
+        }
     }
 
     $('body').on('click', '.fpsm-media-delete-button', function () {
@@ -264,6 +267,9 @@ jQuery(document).ready(function ($) {
                                 selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
                             }
 
+                        }
+                        if (selector.find('#g-recaptcha-response').length > 0) {
+                            grecaptcha.reset();
                         }
                         fpsm_scroll_to_error(selector);
                     });
