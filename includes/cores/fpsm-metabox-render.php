@@ -1,53 +1,54 @@
 <?php
-defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
-$fpsm_form_alias = get_post_meta( $post->ID, '_fpsm_form_alias', true );
-if ( !empty( $fpsm_form_alias ) ) {
+defined('ABSPATH') or die('No script kiddies please!!');
+$fpsm_form_alias = get_post_meta($post->ID, '_fpsm_form_alias', true);
+var_dump($fpsm_form_alias);
+if (!empty($fpsm_form_alias)) {
     global $fpsm_library_obj;
-    $form_row = $fpsm_library_obj->get_form_row_by_alias( $fpsm_form_alias );
-    if ( empty( $form_row ) ) {
+    $form_row = $fpsm_library_obj->get_form_row_by_alias($fpsm_form_alias);
+    if (empty($form_row)) {
         return;
     }
-    $form_details = maybe_unserialize( $form_row->form_details );
+    $form_details = maybe_unserialize($form_row->form_details);
 
     //if fields are empty
-    if ( empty( $form_details['form']['fields'] ) ) {
+    if (empty($form_details['form']['fields'])) {
         return;
     }
     $form_fields = $form_details['form']['fields'];
-    foreach ( $form_fields as $field_key => $field_details ) {
+    foreach ($form_fields as $field_key => $field_details) {
         // If field is enabled in the form
 
 
-        if ( $fpsm_library_obj->is_custom_field_key( $field_key ) ) {
-            if ( !empty( $field_details['show_on_form'] ) ) {
-                $custom_field_meta_key = $fpsm_library_obj->get_meta_key_by_field_key( $field_key );
-                $custom_field_value = get_post_meta( $post->ID, $custom_field_meta_key, true );
+        if ($fpsm_library_obj->is_custom_field_key($field_key)) {
+            if (!empty($field_details['show_on_form'])) {
+                $custom_field_meta_key = $fpsm_library_obj->get_meta_key_by_field_key($field_key);
+                $custom_field_value = get_post_meta($post->ID, $custom_field_meta_key, true);
                 ?>
                 <div class="fpsm-field-wrap">
-                    <label><?php echo esc_html( $field_details['field_label'] ); ?></label>
+                    <label><?php echo esc_html($field_details['field_label']); ?></label>
                     <div class="fpsm-field">
                         <?php
                         $custom_field_name = "fpsm_custom_fields[$custom_field_meta_key]";
                         $field_type = $field_details['field_type'];
-                        switch( $field_type ) {
+                        switch ($field_type) {
                             case 'textfield':
                                 ?>
-                                <input type="text" name="<?php echo esc_attr( $custom_field_name ); ?>" value="<?php echo esc_attr( $custom_field_value ); ?>"/>
+                                <input type="text" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                 <?php
                                 break;
                             case 'textarea':
                                 ?>
-                                <textarea name="<?php echo esc_attr( $custom_field_name ); ?>"><?php echo esc_html( $custom_field_value ); ?></textarea>
+                                <textarea name="<?php echo esc_attr($custom_field_name); ?>"><?php echo esc_html($custom_field_value); ?></textarea>
                                 <?php
                                 break;
                             case 'select':
                                 ?>
-                                <select name="<?php echo esc_attr( $custom_field_name ); ?>">
+                                <select name="<?php echo esc_attr($custom_field_name); ?>">
                                     <?php
-                                    if ( !empty( $field_details['options'] ) ) {
-                                        foreach ( $field_details['options'] as $option_count => $option ) {
+                                    if (!empty($field_details['options'])) {
+                                        foreach ($field_details['options'] as $option_count => $option) {
                                             ?>
-                                            <option value="<?php echo esc_attr( $field_details['values'][$option_count] ) ?>"><?php echo esc_html( $option ); ?></option>
+                                            <option value="<?php echo esc_attr($field_details['values'][$option_count]) ?>"><?php echo esc_html($option); ?></option>
                                             <?php
                                         }
                                     }
@@ -58,17 +59,17 @@ if ( !empty( $fpsm_form_alias ) ) {
                             case 'checkbox':
                                 $display_type = $field_details['display_type'];
                                 $display_class = 'fpsm-checkbox-' . $display_type;
-                                $custom_field_value = (empty( $custom_field_value )) ? array() : $custom_field_value;
+                                $custom_field_value = (empty($custom_field_value)) ? array() : $custom_field_value;
                                 ?>
-                                <div class="fpsm-checkbox-list-wrap <?php echo esc_attr( $display_class ); ?>">
+                                <div class="fpsm-checkbox-list-wrap <?php echo esc_attr($display_class); ?>">
                                     <?php
-                                    if ( !empty( $field_details['options'] ) ) {
-                                        foreach ( $field_details['options'] as $option_count => $option ) {
+                                    if (!empty($field_details['options'])) {
+                                        foreach ($field_details['options'] as $option_count => $option) {
                                             $attr_id = 'fpsm-' . $custom_field_meta_key . '-' . $option_count;
                                             ?>
                                             <div class="fpsm-checkbox">
-                                                <input class="fpsm-disable-checkbox-toggle" type="checkbox" name="<?php echo esc_attr( $custom_field_name ); ?>[]" value="<?php echo esc_attr( $field_details['values'][$option_count] ); ?>" <?php echo (in_array( $field_details['values'][$option_count], $custom_field_value )) ? 'checked="checked"' : ''; ?> id="<?php echo esc_attr( $attr_id ); ?>"/>
-                                                <label for="<?php echo esc_attr( $attr_id ); ?>"><?php echo esc_html( $option ); ?></label>
+                                                <input class="fpsm-disable-checkbox-toggle" type="checkbox" name="<?php echo esc_attr($custom_field_name); ?>[]" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php echo (in_array($field_details['values'][$option_count], $custom_field_value)) ? 'checked="checked"' : ''; ?> id="<?php echo esc_attr($attr_id); ?>"/>
+                                                <label for="<?php echo esc_attr($attr_id); ?>"><?php echo esc_html($option); ?></label>
                                             </div>
                                             <?php
                                         }
@@ -83,18 +84,18 @@ if ( !empty( $fpsm_form_alias ) ) {
                                 $display_type = $field_details['display_type'];
                                 $display_class = 'fpsm-radio-' . $display_type;
                                 ?>
-                                <div class="fpsm-checkbox-list-wrap <?php echo esc_attr( $display_class ); ?>">
+                                <div class="fpsm-checkbox-list-wrap <?php echo esc_attr($display_class); ?>">
                                     <?php
-                                    if ( !empty( $field_details['options'] ) ) {
+                                    if (!empty($field_details['options'])) {
                                         ?>
 
                                         <?php
-                                        foreach ( $field_details['options'] as $option_count => $option ) {
+                                        foreach ($field_details['options'] as $option_count => $option) {
                                             $attr_id = 'fpsm-' . $custom_field_meta_key . '-' . $option_count;
                                             ?>
                                             <div class="fpsm-radio">
-                                                <input type="radio" name="<?php echo esc_attr( $custom_field_name ); ?>" value="<?php echo esc_attr( $field_details['values'][$option_count] ); ?>" <?php checked( $custom_field_value, $field_details['values'][$option_count] ); ?> id="<?php echo esc_attr( $attr_id ); ?>"/>
-                                                <label for="<?php echo esc_attr( $attr_id ); ?>"><?php echo esc_html( $option ); ?></label>
+                                                <input type="radio" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php checked($custom_field_value, $field_details['values'][$option_count]); ?> id="<?php echo esc_attr($attr_id); ?>"/>
+                                                <label for="<?php echo esc_attr($attr_id); ?>"><?php echo esc_html($option); ?></label>
                                             </div>
                                             <?php
                                         }
@@ -108,18 +109,18 @@ if ( !empty( $fpsm_form_alias ) ) {
                                 break;
                             case 'number':
                                 ?>
-                                <input type="number" name="<?php echo esc_attr( $custom_field_name ); ?>" min="<?php echo esc_attr( $field_details['min_limit'] ); ?>" max="<?php echo esc_attr( $field_details['max_limit'] ); ?>" value="<?php echo esc_attr( $custom_field_value ); ?>"/>
+                                <input type="number" name="<?php echo esc_attr($custom_field_name); ?>" min="<?php echo esc_attr($field_details['min_limit']); ?>" max="<?php echo esc_attr($field_details['max_limit']); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                 <?php
                                 break;
                             case 'email':
                                 ?>
-                                <input type="email" name="<?php echo esc_attr( $custom_field_name ); ?>" value="<?php echo esc_attr( $custom_field_value ); ?>"/>
+                                <input type="email" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                 <?php
                                 break;
                             case 'datepicker':
                                 ?>
                                 <div class="fpsm-date-picker">
-                                    <input type="text" class="fpsm-front-datepicker" data-date-format="<?php echo esc_attr( $field_details['date_format'] ); ?>" value="<?php echo (empty( $field_details['string_format'] )) ? esc_attr( $custom_field_value ) : date( $field_details['date_format'], $custom_field_value ); ?>"/>
+                                    <input type="text" class="fpsm-front-datepicker" data-date-format="<?php echo esc_attr($field_details['date_format']); ?>" value="<?php echo (empty($field_details['string_format'])) ? esc_attr($custom_field_value) : date($field_details['date_format'], $custom_field_value); ?>"/>
                                 </div>
                                 <?php
                                 break;
@@ -127,22 +128,22 @@ if ( !empty( $fpsm_form_alias ) ) {
                                 ?>
                                 <div class="fpsm-file-preview-wrap">
                                     <?php
-                                    if ( !empty( $custom_field_value ) ) {
-                                        $media_ids = explode( ',', $custom_field_value );
-                                        foreach ( $media_ids as $media_id ) {
-                                            $media_thumbnail_url = wp_get_attachment_image_src( $media_id, 'thumbnail' );
+                                    if (!empty($custom_field_value)) {
+                                        $media_ids = explode(',', $custom_field_value);
+                                        foreach ($media_ids as $media_id) {
+                                            $media_thumbnail_url = wp_get_attachment_image_src($media_id, 'thumbnail');
                                             ?>
                                             <div class="fpsm-file-preview-row">
-                                                <span class="fpsm-file-preview-column"><img src="<?php echo esc_url( $media_thumbnail_url[0] ); ?>"/></span>
-                                                <span class="fpsm-file-preview-column"><?php echo get_the_title( $media_id ); ?></span>
-                                                <span class="fpsm-file-preview-column"><?php echo esc_html( $fpsm_library_obj->get_attachment_filesize( $media_id ) ); ?></span>
-                                                <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-remove-button" data-media-id='<?php echo intval( $media_id ); ?>' value="<?php esc_html_e( 'Remove', 'frontend-post-submission-manager' ); ?>"/></span>
+                                                <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($media_thumbnail_url[0]); ?>"/></span>
+                                                <span class="fpsm-file-preview-column"><?php echo get_the_title($media_id); ?></span>
+                                                <span class="fpsm-file-preview-column"><?php echo esc_html($fpsm_library_obj->get_attachment_filesize($media_id)); ?></span>
+                                                <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-remove-button" data-media-id='<?php echo intval($media_id); ?>' value="<?php esc_html_e('Remove', 'frontend-post-submission-manager'); ?>"/></span>
                                             </div>
                                             <?php
                                         }
                                     }
                                     ?>
-                                    <input type="hidden" name="<?php echo esc_attr( $custom_field_name ); ?>" value="<?php echo esc_attr( $custom_field_value ); ?>" class="fpsm-fileuploader-value"/>
+                                    <input type="hidden" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>" class="fpsm-fileuploader-value"/>
                                 </div>
                                 <?php
                                 break;
@@ -154,7 +155,7 @@ if ( !empty( $fpsm_form_alias ) ) {
             }
         }
     }
-    wp_nonce_field( 'fpsm_metabox_nonce', 'fpsm_metabox_nonce_field' );
+    wp_nonce_field('fpsm_metabox_nonce', 'fpsm_metabox_nonce_field');
 }
 ?>
 

@@ -5,7 +5,8 @@ if (!class_exists('FPSM_Shortcode')) {
     class FPSM_Shortcode {
 
         function __construct() {
-            add_shortcode('fpsm', array($this, 'output_shortcode'));
+            add_shortcode('fpsm', array($this, 'output_form_shortcode'));
+            add_shortcode('fpsm_dashboard', array($this, 'output_dashboard_shortcode'));
             add_action('wp_login_failed', array($this, 'login_failed'));
             add_filter('authenticate', array($this, 'verify_username_password'), 1, 3);
             add_action('login_form', array($this, 'login_extra_fields'));
@@ -14,7 +15,7 @@ if (!class_exists('FPSM_Shortcode')) {
             add_filter('authenticate', array($this, 'login_google_recaptcha_validation'), 10, 3);
         }
 
-        function output_shortcode($atts) {
+        function output_form_shortcode($atts) {
             if (!empty($atts['alias'])) {
                 global $fpsm_library_obj;
                 $alias = $atts['alias'];
@@ -26,6 +27,27 @@ if (!class_exists('FPSM_Shortcode')) {
                     $GLOBALS['fpsm_form_alias'] = $alias;
                     ob_start();
                     include(FPSM_PATH . '/includes/views/frontend/form-shortcode.php');
+                    $form_html = ob_get_contents();
+                    ob_end_clean();
+                    return $form_html;
+                } else {
+                    return esc_html__('Form not available for this alias.', 'frontend-post-submission-manager');
+                }
+            }
+        }
+
+        function output_dashboard_shortcode($atts) {
+            if (!empty($atts['alias'])) {
+                global $fpsm_library_obj;
+                $alias = $atts['alias'];
+                $form_row = $fpsm_library_obj->get_form_row_by_alias($alias);
+                // $fpsm_library_obj->print_array($form_row);
+                if (!empty($form_row)) {
+                    $form_details = maybe_unserialize($form_row->form_details);
+                    $GLOBALS['fpsm_form_details'] = $form_details;
+                    $GLOBALS['fpsm_form_alias'] = $alias;
+                    ob_start();
+                    include(FPSM_PATH . '/includes/views/frontend/dashboard-shortcode.php');
                     $form_html = ob_get_contents();
                     ob_end_clean();
                     return $form_html;

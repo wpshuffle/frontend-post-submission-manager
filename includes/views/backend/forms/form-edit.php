@@ -1,37 +1,46 @@
 <?php
-if ( empty( $_GET['form_id'] ) ) {
+if (empty($_GET['form_id'])) {
     return;
 }
-defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
+defined('ABSPATH') or die('No script kiddies please!!');
 global $fpsm_library_obj;
-$form_id = intval( $_GET['form_id'] );
-$form_row = $fpsm_library_obj->get_form_row_by_id( $form_id );
-if ( empty( $form_row ) ) {
+$form_id = intval($_GET['form_id']);
+$form_row = $fpsm_library_obj->get_form_row_by_id($form_id);
+if (empty($form_row)) {
     return;
 }
-$form_details = (!empty( $form_row->form_details )) ? $form_row->form_details : '';
-$form_details = maybe_unserialize( $form_details );
+$form_details = (!empty($form_row->form_details)) ? $form_row->form_details : '';
+$form_details = maybe_unserialize($form_details);
 ?>
 <div class="wrap fpsm-wrap fpsm-clearfix">
     <div class="fpsm-header fpsm-clearfix">
-        <h1 class="fpsm-floatLeft"><?php esc_html_e( 'Frontend Post Submission Manager', 'frontend-post-submission-manager' ); ?></h1>
+        <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
 
         <div class="fpsm-add-wrap">
-            <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e( 'Save', 'frontend-post-submission-manager' ); ?></a>
-            <a href="#" class="fpsm-button-primary btn-preview"><?php esc_html_e( 'Preview', 'frontend-post-submission-manager' ); ?></a>
-            <a href="<?php echo admin_url( 'admin.php?page=fpsm' ); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e( 'Cancel', 'frontend-post-submission-manager' ); ?></a>
+            <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e('Save', 'frontend-post-submission-manager'); ?></a>
+            <a href="#" class="fpsm-button-primary btn-preview"><?php esc_html_e('Preview', 'frontend-post-submission-manager'); ?></a>
+            <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Cancel', 'frontend-post-submission-manager'); ?></a>
         </div>
 
 
     </div>
 
     <div class="fpsm-field-wrap fpsm-shortcode-common">
-        <label><?php esc_html_e( 'Shortcode', 'frontend-post-submission-manager' ) ?></label>
+        <label><?php esc_html_e('Form Shortcode', 'frontend-post-submission-manager') ?></label>
         <div class="fpsm-field">
-            <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr( $form_row->form_alias ); ?>"]</span>
+            <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
             <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
         </div>
     </div>
+    <?php if ($form_row->form_type == 'login_require') { ?>
+        <div class="fpsm-field-wrap fpsm-shortcode-common">
+            <label><?php esc_html_e('Dashboard Shortcode', 'frontend-post-submission-manager') ?></label>
+            <div class="fpsm-field">
+                <span class="fpsm-shortcode-preview">[fpsm_dashboard alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
+                <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
+            </div>
+        </div>
+    <?php } ?>
 
 
     <?php
@@ -41,9 +50,9 @@ $form_details = maybe_unserialize( $form_details );
     include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-navigation.php');
     ?>
     <form class="fpsm-form-wrap fpsm-edit-form">
-        <input type="hidden" name="form_id" value="<?php echo intval( $form_id ); ?>"/>
-        <input type="hidden" name="post_type" value="<?php echo (!empty( $form_row->post_type )) ? esc_attr( $form_row->post_type ) : 'post'; ?>"/>
-        <input type="hidden" name="form_type" value="<?php echo (!empty( $form_row->form_type )) ? esc_attr( $form_row->form_type ) : 'login_require'; ?>"/>
+        <input type="hidden" name="form_id" value="<?php echo intval($form_id); ?>"/>
+        <input type="hidden" name="post_type" value="<?php echo (!empty($form_row->post_type)) ? esc_attr($form_row->post_type) : 'post'; ?>"/>
+        <input type="hidden" name="form_type" value="<?php echo (!empty($form_row->form_type)) ? esc_attr($form_row->form_type) : 'login_require'; ?>"/>
         <?php
         /**
          * Fires on start of the form sections
@@ -53,7 +62,7 @@ $form_details = maybe_unserialize( $form_details );
          * @param array $form_row
          *
          */
-        do_action( 'fpsm_form_sections_start', $form_row );
+        do_action('fpsm_form_sections_start', $form_row);
         ?>
         <?php
         /**
@@ -62,7 +71,7 @@ $form_details = maybe_unserialize( $form_details );
         include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/basic-settings.php');
         ?>
         <?php
-        if ( $form_row->form_type == 'login_require' ) {
+        if ($form_row->form_type == 'login_require') {
             /**
              * Login Form Settings
              */
@@ -108,7 +117,7 @@ $form_details = maybe_unserialize( $form_details );
          * @param array $form_row
          *
          */
-        do_action( 'fpsm_form_sections_end', $form_row );
+        do_action('fpsm_form_sections_end', $form_row);
         ?>
 
     </form>
