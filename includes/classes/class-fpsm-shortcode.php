@@ -1,5 +1,4 @@
 <?php
-
 defined('ABSPATH') or die('No script kiddies please!!');
 if (!class_exists('FPSM_Shortcode')) {
 
@@ -11,6 +10,8 @@ if (!class_exists('FPSM_Shortcode')) {
             add_filter('authenticate', array($this, 'verify_username_password'), 1, 3);
             add_action('login_form', array($this, 'login_extra_fields'));
             add_filter('login_form_middle', array($this, 'login_extra_fields'));
+            add_filter('login_form_middle', array($this, 'login_google_captcha'));
+            add_filter('authenticate', array($this, 'login_google_recaptcha_validation'), 10, 3);
         }
 
         function output_shortcode($atts) {
@@ -21,6 +22,8 @@ if (!class_exists('FPSM_Shortcode')) {
                 // $fpsm_library_obj->print_array($form_row);
                 if (!empty($form_row)) {
                     $form_details = maybe_unserialize($form_row->form_details);
+                    $GLOBALS['fpsm_form_details'] = $form_details;
+                    $GLOBALS['fpsm_form_alias'] = $alias;
                     ob_start();
                     include(FPSM_PATH . '/includes/views/frontend/form-shortcode.php');
                     $form_html = ob_get_contents();
@@ -77,6 +80,70 @@ if (!class_exists('FPSM_Shortcode')) {
 
         function is_login_page() {
             return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+        }
+
+        function login_google_captcha($login_form_buttom_html) {
+            /**
+             * Don't add this in default login page
+             */
+            if (!$this->is_login_page()) {
+                global $fpsm_form_details;
+                global $fpsm_form_alias;
+                if (!empty($fpsm_form_details['security']['login_form_captcha'])) {
+                    $site_key = (!empty($fpsm_form_details['security']['site_key'])) ? esc_attr($fpsm_form_details['security']['site_key']) : '';
+                    if (!empty($site_key)) {
+                        ob_start();
+                        ?>
+                        <div class="ebd-captcha-wrap">
+                            <label><?php echo (!empty($fpsm_form_details['security']['captcha_label'])) ? esc_attr($fpsm_form_details['security']['captcha_label']) : ''; ?></label>
+                            <div class="ebd-field">
+                                <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="fpsm_login_check" value="yes"/>
+                        <input type="hidden" name="fpsm_alias" value="<?php echo esc_attr($fpsm_form_alias); ?>"/>
+                        <?php
+                        $captcha_html = ob_get_contents();
+                        ob_end_clean();
+                        $login_form_buttom_html .= $captcha_html;
+                    }
+                }
+            }
+            return $login_form_buttom_html;
+        }
+
+        function login_google_recaptcha_validation($user, $username, $password) {
+
+            if (!empty($_REQUEST['fpsm_login_check']) && !empty($_REQUEST['fpsm_alias'])) {
+                global $fpsm_library_obj;
+                $fpsm_alias = sanitize_text_field($_REQUEST['fpsm_alias']);
+                $form_row = $fpsm_library_obj->get_form_row_by_alias($fpsm_alias);
+                $form_details = maybe_unserialize($form_row->form_details);
+
+                if (!empty($form_details['security']['login_form_captcha'])) {
+                    $captcha = sanitize_text_field($_REQUEST['g-recaptcha-response']);
+
+                    /* Check if captcha is filled */
+                    if (empty($captcha)) {
+                        wp_redirect(esc_url($_POST['redirect_to']) . '/?login=captcha_error');
+                        exit;
+                    } else {
+
+                        $secret_key = (!empty($form_details['security']['secret_key'])) ? $form_details['security']['secret_key'] : '';
+                        $captcha_response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $captcha);
+                        if (is_wp_error($captcha_response)) {
+                            wp_redirect(esc_url($_POST['redirect_to']) . '/?login=captcha_error');
+                            exit;
+                        } else {
+                            $captcha_response = json_decode($captcha_response['body']);
+                            if ($captcha_response->success == false) {
+                                wp_redirect(esc_url($_POST['redirect_to']) . '/?login=captcha_error');
+                                exit;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
     }

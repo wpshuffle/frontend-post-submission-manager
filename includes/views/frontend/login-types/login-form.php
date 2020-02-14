@@ -14,7 +14,7 @@
     } elseif ($login === "empty") {
         echo '<p class="fpsm-login-msg"><strong>ERROR:</strong> ' . esc_html($login_error_message) . '</p>';
     } elseif ($login === "captcha_error") {
-        $captcha_error_message = (!empty($fpsm_settings['captcha']['error_message'])) ? esc_attr($fpsm_settings['captcha']['error_message']) : __('Invalid Captcha', 'frontend-post-submission-manager');
+        $captcha_error_message = (!empty($form_details['security']['error_message'])) ? $form_details['security']['error_message'] : esc_html__('Invalid Captcha', 'frontend-post-submission-manager');
         echo '<p class="fpsm-login-msg"><strong>ERROR:</strong> ' . esc_html($captcha_error_message) . '</p>';
     }
     $args = array(
