@@ -112,7 +112,7 @@ if (!class_exists('FPSM_Library')) {
         function sanitize_html($value) {
             $allowed_html = wp_kses_allowed_html('post');
             $allowed_html['option'] = array('value' => array(), 'selected' => array());
-            $allowed_html['input'] = array('name' => array(), 'id' => array(), 'value' => array(), 'type' => array(), 'class' => array());
+            $allowed_html['input'] = array('name' => array(), 'id' => array(), 'value' => array(), 'type' => array(), 'class' => array(), 'checked' => array());
 
             /**
              * Filters allowed html for processing form data
@@ -168,7 +168,6 @@ if (!class_exists('FPSM_Library')) {
                 'class' => 'fpsm-inline-checkbox'
             );
             $args = array_merge($default_args, $args);
-            //  $this->print_array($args);
             foreach ($args as $key => $val) {
                 $$key = $val;
             }
@@ -563,22 +562,22 @@ if (!class_exists('FPSM_Library')) {
             return $formatted_filesize;
         }
 
-        function format_filesize($bytes) {
-            if ($bytes >= 1073741824) {
-                $bytes = number_format($bytes / 1073741824, 2) . ' GB';
-            } elseif ($bytes >= 1048576) {
-                $bytes = number_format($bytes / 1048576, 2) . ' MB';
-            } elseif ($bytes >= 1024) {
-                $bytes = number_format($bytes / 1024, 2) . ' KB';
-            } elseif ($bytes > 1) {
-                $bytes = $bytes . ' bytes';
-            } elseif ($bytes == 1) {
-                $bytes = $bytes . ' byte';
-            } else {
-                $bytes = '0 bytes';
+        /**
+         * Returns the post edit url
+         *
+         * @param int $post_id
+         */
+        function get_post_edit_url($post_id) {
+            $current_page_url = $this->get_current_page_url();
+            $_GET['action'] = 'edit_post';
+            $_GET['post_id'] = $post_id;
+            $query_string_array = array();
+            foreach ($_GET as $key => $val) {
+                $query_string_array[] = "$key=$val";
             }
-
-            return $bytes;
+            $query_string = implode('&', $query_string_array);
+            $post_edit_url = untrailingslashit($current_page_url) . '/?' . $query_string;
+            return $post_edit_url;
         }
 
     }

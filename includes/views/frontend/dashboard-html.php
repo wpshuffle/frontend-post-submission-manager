@@ -35,7 +35,16 @@ if (!empty($current_user_id)) {
                     <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
                     <div class="fpsm-dashboard-column"><?php echo get_post_status(); ?></div>
                     <div class="fpsm-dashboard-column"><?php echo get_the_modified_date('d-m-Y g:i a'); ?></div>
-                    <div class="fpsm-dashboard-column"></div>
+                    <div class="fpsm-dashboard-column">
+                        <?php
+                        $current_page_url = $fpsm_library_obj->get_current_page_url();
+                        $post_id = get_the_ID();
+                        $post_edit_url = $fpsm_library_obj->get_post_edit_url($post_id);
+                        ?>
+                        <a href="<?php echo esc_url($post_edit_url); ?>" title="<?php esc_html_e('Edit', 'frontend-post-submission-manager'); ?>"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>"><i class="far fa-trash-alt"></i></a>
+                        <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View', 'frontend-post-submission-manager'); ?>"><i class="far fa-eye"></i></a>
+                    </div>
                 </div>
                 <?php
             }

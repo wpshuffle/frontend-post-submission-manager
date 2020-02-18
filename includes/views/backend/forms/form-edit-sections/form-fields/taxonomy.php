@@ -38,6 +38,13 @@ $show_hide_toggle_class = $taxonomy;
                     <input type="text" name="<?php echo esc_attr($field_name_prefix) ?>[first_option_label]" value="<?php echo (!empty($field_details['first_option_label'])) ? esc_attr($field_details['first_option_label']) : ''; ?>"/>
                 </div>
             </div>
+            <div class="fpsm-field-wrap fpsm-taxonomy-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'select'); ?> data-toggle-ref="select">
+                <label><?php esc_html_e('Multiple', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="checkbox" name="<?php echo esc_attr($field_name_prefix) ?>[select_multiple]" value="1" <?php echo (!empty($field_details['select_multiple'])) ? 'checked="checked"' : ''; ?>/>
+                    <p class="description"><?php esc_html_e(sprintf('Please check if you want to enable mutiple %s selection', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></p>
+                </div>
+            </div>
             <div class="fpsm-field-wrap fpsm-taxonomy-field-type-ref" <?php echo $fpsm_library_obj->display_none($field_type, 'checkbox'); ?> data-toggle-ref='checkbox'>
                 <label><?php esc_html_e('Display Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
