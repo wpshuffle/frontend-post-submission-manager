@@ -396,7 +396,12 @@ jQuery(document).ready(function ($) {
         $(this).closest('.fpsm-file-preview-row').remove();
     });
 
-
+    $('.fpsm-front-datepicker').each(function () {
+        var date_format = $(this).data('date-format');
+        $(this).datepicker({
+            dateFormat: date_format
+        });
+    });
 
 
 });

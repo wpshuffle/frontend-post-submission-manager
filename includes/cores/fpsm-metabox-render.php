@@ -120,7 +120,7 @@ if (!empty($fpsm_form_alias)) {
                             case 'datepicker':
                                 ?>
                                 <div class="fpsm-date-picker">
-                                    <input type="text" class="fpsm-front-datepicker" data-date-format="<?php echo esc_attr($field_details['date_format']); ?>" value="<?php echo (empty($field_details['string_format'])) ? esc_attr($custom_field_value) : date($field_details['date_format'], $custom_field_value); ?>"/>
+                                    <input type="text" name="<?php echo esc_attr($custom_field_name); ?>" class="fpsm-front-datepicker" data-date-format="<?php echo esc_attr($field_details['date_format']); ?>" value="<?php echo (!empty($field_details['string_format']) && !empty($custom_field_value)) ? date('Y-m-d', $custom_field_value) : esc_attr($custom_field_value); ?>"/>
                                 </div>
                                 <?php
                                 break;

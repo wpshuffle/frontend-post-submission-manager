@@ -9,9 +9,15 @@ $display_class = 'fpsm-radio-' . $display_type;
 
         <?php
         foreach ($field_details['options'] as $option_count => $option) {
+            if (!empty($custom_field_saved_value)) {
+                $saved_checked = ($custom_field_saved_value == $field_details['values'][$option_count]) ? 'checked="checked"' : '';
+            }
+            if (empty($saved_checked)) {
+                $saved_checked = (!empty($field_details['checked'][$option_count])) ? 'checked="checked"' : '';
+            }
             ?>
             <div class="fpsm-radio">
-                <input type="radio" name="<?php echo esc_attr($field_key); ?>" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php echo (!empty($field_details['checked'][$option_count])) ? 'checked="checked"' : ''; ?>/>
+                <input type="radio" name="<?php echo esc_attr($field_key); ?>" value="<?php echo esc_attr($field_details['values'][$option_count]); ?>" <?php echo esc_attr($saved_checked); ?>/>
                 <label for="<?php echo esc_attr($field_key); ?>"><?php echo esc_html($option); ?></label>
             </div>
             <?php
