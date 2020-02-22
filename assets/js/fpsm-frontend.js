@@ -248,7 +248,8 @@ jQuery(document).ready(function ($) {
                 _wpnonce: fpsm_js_obj.ajax_nonce
             },
             beforeSend: function (xhr) {
-                selector.find('.fpsm-form-message').slideToggle();
+                selector.find('.fpsm-form-message').slideUp();
+                selector.find('.fpsm-error').slideUp();
                 selector.find('.fpsm-ajax-loader').show();
             },
             success: function (data, textStatus, jqXHR) {
@@ -256,7 +257,13 @@ jQuery(document).ready(function ($) {
                 data = $.parseJSON(data);
                 if (data.status == 200) {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
-                    fpsm_reset_form(selector);
+                    if (selector.find('.fpsm-edit-post-id').length == 0) {
+                        fpsm_reset_form(selector);
+                    } else {
+                        if (selector.find('#g-recaptcha-response').length > 0) {
+                            grecaptcha.reset();
+                        }
+                    }
                 } else {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
                         var error_details = data.error_details;
@@ -286,10 +293,21 @@ jQuery(document).ready(function ($) {
 
     $('.fpsm-front-datepicker').each(function () {
         var date_format = $(this).data('date-format');
+        var date_value = $(this).data('date-value');
         $(this).datepicker({
-            dateFormat: date_format
+            dateFormat: date_format,
         });
+        if(date_value!=''){
+            var date_value_break = date_value.split('-');
+            var year = parseInt(date_value_break[0]);
+            var month = parseInt(date_value_break[1])-1;
+            var day = parseInt(date_value_break[2]);
+            $(this).datepicker('setDate',new Date(year,month,day));
+        }
+        
+        
     });
+    
 
     /**
      * Clear error
