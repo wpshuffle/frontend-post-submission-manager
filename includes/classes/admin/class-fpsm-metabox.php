@@ -41,7 +41,9 @@ if ( !class_exists( 'FPSM_Metabox' ) ) {
             }
             global $fpsm_library_obj;
             $fpsm_custom_fields = $fpsm_library_obj->sanitize_array( $_POST['fpsm_custom_fields'] );
-            foreach ( $fpsm_custom_fields as $custom_field_key => $custom_field_value ) {
+            $fpsm_included_custom_fields = $fpsm_library_obj->sanitize_array( $_POST['fpsm_included_custom_fields'] );
+            foreach ( $fpsm_included_custom_fields as $custom_field_key ) {
+                $custom_field_value = (isset( $fpsm_custom_fields[$custom_field_key] )) ? $fpsm_custom_fields[$custom_field_key] : '';
                 update_post_meta( $post_id, $custom_field_key, $custom_field_value );
             }
         }
