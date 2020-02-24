@@ -569,10 +569,11 @@ if (!class_exists('FPSM_Library')) {
          */
         function get_post_edit_url($post_id) {
             $current_page_url = $this->get_current_page_url();
-            $_GET['action'] = 'edit_post';
-            $_GET['post_id'] = $post_id;
+            $get_param = $_GET;
+            $get_param['action'] = 'edit_post';
+            $get_param['post_id'] = $post_id;
             $query_string_array = array();
-            foreach ($_GET as $key => $val) {
+            foreach ($get_param as $key => $val) {
                 $query_string_array[] = "$key=$val";
             }
             $query_string = implode('&', $query_string_array);

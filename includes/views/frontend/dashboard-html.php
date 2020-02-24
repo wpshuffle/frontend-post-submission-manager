@@ -15,14 +15,16 @@ if (!empty($current_user_id)) {
         </div>
         <div class="fpsm-dashboard-body">
             <?php
+            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
             $dashboard_posts_args = array(
-                'posts_per_page' => 20,
+                'posts_per_page' => 2,
                 'orderby' => 'date',
                 'order' => 'desc',
                 'author' => $current_user_id,
                 'post_status' => array('publish', 'pending', 'draft'),
                 'meta_key' => '_fpsm_form_alias',
-                'meta_value' => $alias
+                'meta_value' => $alias,
+                'paged' => $paged
             );
             $dashboard_posts_query = new WP_Query($dashboard_posts_args);
 
@@ -52,5 +54,29 @@ if (!empty($current_user_id)) {
             }
             ?>
         </div>
+        <?php if ($dashboard_posts_query->max_num_pages > 1) { ?>
+            <div class="fpsm-pagination-wrap">
+                <?php
+                $big = 999999999; // need an unlikely integer
+                $translated = __('Page', 'frontend-post-submission-manager'); // Supply translatable string
+                $page_num_link = explode('?', esc_url(get_pagenum_link($big)));
+                if (!empty($_GET)) {
+                    $page_num_link = $page_num_link[0] . '?' . http_build_query($_GET);
+                } else {
+                    $page_num_link = $page_num_link[0];
+                }
+
+                echo paginate_links(array(
+                    'base' => str_replace($big, '%#%', $page_num_link),
+                    'format' => '?%#%',
+                    'current' => max(1, get_query_var('paged')),
+                    'total' => $dashboard_posts_query->max_num_pages,
+                    'before_page_number' => '<span class="screen-reader-text">' . $translated . ' </span>',
+                    'prev_text' => __('Previous', 'frontend-post-submission-manager'),
+                    'next_text' => __('Next', 'frontend-post-submission-manager'),
+                ));
+                ?>
+            </div>
+        <?php } ?>
     </div>
 <?php } ?>
