@@ -41,9 +41,9 @@ if (!empty($current_user_id)) {
                         $post_id = get_the_ID();
                         $post_edit_url = $fpsm_library_obj->get_post_edit_url($post_id);
                         ?>
-                        <a href="<?php echo esc_url($post_edit_url); ?>" title="<?php esc_html_e('Edit', 'frontend-post-submission-manager'); ?>"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>"><i class="far fa-trash-alt"></i></a>
-                        <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View', 'frontend-post-submission-manager'); ?>"><i class="far fa-eye"></i></a>
+                        <a href="<?php echo esc_url($post_edit_url); ?>" title="<?php esc_html_e('Edit', 'frontend-post-submission-manager'); ?>" class="fpsm-edit-post"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>" class="fpsm-delete-post"><i class="far fa-trash-alt"></i></a>
+                        <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View', 'frontend-post-submission-manager'); ?>" class="fpsm-view-post"><i class="far fa-eye"></i></a>
                     </div>
                 </div>
                 <?php
