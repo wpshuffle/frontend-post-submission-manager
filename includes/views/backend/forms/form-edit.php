@@ -76,6 +76,11 @@ $form_details = maybe_unserialize($form_details);
              * Login Form Settings
              */
             include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/login-form-settings.php');
+
+            /**
+             * Dashboard Settings
+             */
+            include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/dashboard-settings.php');
         }
         ?>
         <?php
