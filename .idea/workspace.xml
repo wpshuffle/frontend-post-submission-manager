@@ -4,7 +4,6 @@
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-login-form-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-login-form-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,21 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="2849" column="29" lean-forward="false" selection-start-line="2849" selection-start-column="22" selection-end-line="2849" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fpsm-login-form-style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/css/fpsm-login-form-style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="800" column="36" lean-forward="false" selection-start-line="800" selection-start-column="36" selection-end-line="800" selection-end-column="36" />
+            <state relative-caret-position="66">
+              <caret line="3249" column="43" lean-forward="false" selection-start-line="3249" selection-start-column="43" selection-end-line="3249" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -108,8 +97,8 @@
         <option value="$PROJECT_DIR$/includes/views/frontend/form-html.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/custom-field-add-form.php" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
-        <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-login-form-style.css" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
       </list>
     </option>
   </component>
@@ -274,18 +263,18 @@
       <workItem from="1580899294849" duration="2625000" />
       <workItem from="1580999524038" duration="3065000" />
       <workItem from="1581084280459" duration="19000" />
-      <workItem from="1582518359432" duration="5318000" />
+      <workItem from="1582518359432" duration="7801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91302000" />
+    <option name="totallyTimeSpent" value="93785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1527977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21377331" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,6 +640,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-login-form-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="803" column="21" lean-forward="true" selection-start-line="803" selection-start-column="21" selection-end-line="803" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/custom-field-add-form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -670,16 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="2849" column="29" lean-forward="false" selection-start-line="2849" selection-start-column="22" selection-end-line="2849" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-login-form-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="800" column="36" lean-forward="false" selection-start-line="800" selection-start-column="36" selection-end-line="800" selection-end-column="36" />
+        <state relative-caret-position="66">
+          <caret line="3249" column="43" lean-forward="false" selection-start-line="3249" selection-start-column="43" selection-end-line="3249" selection-end-column="43" />
           <folding />
         </state>
       </provider>

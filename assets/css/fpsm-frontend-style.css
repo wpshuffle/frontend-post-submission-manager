@@ -3215,3 +3215,83 @@ button.add_media{
     .fpsm-template-11 .fpsm-field-wrap,
     .fpsm-template-20 .fpsm-field-wrap{display: block}
 }
+
+
+/*================================ User Dashboard ============================================*/
+.fpsm-dashboard-row{
+    display: flex;
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.fpsm-dashboard-row > div{
+    flex: 1;
+    padding: 15px;
+}
+
+.fpsm-dashboard-header .fpsm-dashboard-row{
+    background-color: #f4f6fb;
+}
+
+.fpsm-dashboard-header > .fpsm-dashboard-row > div{
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.fpsm-dashboard-row .fpsm-dashboard-column{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0,0,0,.68);
+    line-height: 1.2;
+}
+
+.fpsm-dashboard-body > .fpsm-dashboard-row{
+    border-bottom: solid 1px rgba(0,0,0,.08);
+    transition: all .3s ease;
+}
+
+.fpsm-dashboard-column:last-child{
+    text-align: right;
+}
+
+.fpsm-dashboard-body .fpsm-dashboard-row:nth-child(even){
+    background-color: rgba(0,0,0,.02);
+}
+
+.fpsm-dashboard-body > .fpsm-dashboard-row:hover{
+    background-color: #f0fff4;
+}
+.fpsm-dashboard-column:last-child a{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 22px;
+    color: black;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+.fpsm-dashboard-column:last-child a i{
+    font-size: 11px;
+
+}
+
+.fpsm-dashboard-column:last-child a:hover{
+    background-color: rgba(0,0,0,.18);
+}
+
+.fpsm-dashboard-column:last-child a.fpsm-edit-post:hover{
+    background-color: #3ea8de;
+    color: white;
+}
+
+.fpsm-dashboard-column:last-child a.fpsm-delete-post:hover{
+    background-color: #c43434;
+    color: white;
+}
+
+.fpsm-dashboard-column:last-child a.fpsm-view-post:hover{
+    background-color: #c4a833;
+    color: white;
+}
