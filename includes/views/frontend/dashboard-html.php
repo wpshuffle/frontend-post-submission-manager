@@ -6,18 +6,19 @@ if (!empty($current_user_id)) {
     <div class="fpsm-dashboard-wrap">
         <div class="fpsm-dashboard-header">
             <div class="fpsm-dashboard-row">
-                <div class="fpsm-dashboard-column"><?php esc_html_e('SN', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php esc_html_e('Post Title', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php esc_html_e('Post Status', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php esc_html_e('Last Modified', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php esc_html_e('Action', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['post_title_label'])) ? esc_html($form_details['dashboard']['post_title_label']) : esc_html__('Post Title', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['post_status_label'])) ? esc_html($form_details['dashboard']['post_status_label']) : esc_html__('Post Status', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['action_label'])) ? esc_html($form_details['dashboard']['action_label']) : esc_html__('Action', 'frontend-post-submission-manager'); ?></div>
             </div>
         </div>
         <div class="fpsm-dashboard-body">
             <?php
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+            $posts_per_page = (!empty($form_details['dashboard']['posts_per_page'])) ? $form_details['dashboard']['posts_per_page'] : 20;
             $dashboard_posts_args = array(
-                'posts_per_page' => 2,
+                'posts_per_page' => $posts_per_page,
                 'orderby' => 'date',
                 'order' => 'desc',
                 'author' => $current_user_id,
@@ -45,7 +46,13 @@ if (!empty($current_user_id)) {
                             $post_edit_url = $fpsm_library_obj->get_post_edit_url($post_id);
                             ?>
                             <a href="<?php echo esc_url($post_edit_url); ?>" title="<?php esc_html_e('Edit', 'frontend-post-submission-manager'); ?>" class="fpsm-edit-post"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>" class="fpsm-delete-post"><i class="far fa-trash-alt"></i></a>
+                            <?php
+                            if (empty($form_details['dashboard']['disable_post_delete'])) {
+                                $post_delete_warning_message = (!empty($form_details['dashboard']['post_delete_warning_message'])) ? $form_details['dashboard']['post_delete_warning_message'] : esc_html__('Are you sure you want to delete this post?', 'frontend-post-submission-manager');
+                                $delete_key = md5(get_the_date('d-m-y H:i a'));
+                                ?>
+                                <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>" class="fpsm-delete-post" data-warning-message="<?php echo esc_attr($post_delete_warning_message); ?>" data-delete-key="<?php echo esc_attr($delete_key); ?>"><i class="far fa-trash-alt"></i></a>
+                            <?php } ?>
                             <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View', 'frontend-post-submission-manager'); ?>" class="fpsm-view-post"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
@@ -72,8 +79,8 @@ if (!empty($current_user_id)) {
                     'current' => max(1, get_query_var('paged')),
                     'total' => $dashboard_posts_query->max_num_pages,
                     'before_page_number' => '<span class="screen-reader-text">' . $translated . ' </span>',
-                    'prev_text' => __('Previous', 'frontend-post-submission-manager'),
-                    'next_text' => __('Next', 'frontend-post-submission-manager'),
+                    'prev_text' => (!empty($form_details['dashboard']['previous_page_label'])) ? esc_html($form_details['dashboard']['previous_page_label']) : esc_html__('Previous', 'frontend-post-submission-manager'),
+                    'next_text' => (!empty($form_details['dashboard']['next_page_label'])) ? esc_html($form_details['dashboard']['next_page_label']) : esc_html__('Next', 'frontend-post-submission-manager'),
                 ));
                 ?>
             </div>
