@@ -31,7 +31,7 @@ if (!empty($current_user_id)) {
                 $dashboard_posts_query->the_post();
                 ?>
                 <div class="fpsm-dashboard-row">
-                    <div class="fpsm-dashboard-column"><?php esc_html($sn); ?></div>
+                    <div class="fpsm-dashboard-column"><?php echo esc_html($sn); ?></div>
                     <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
                     <div class="fpsm-dashboard-column"><?php echo get_post_status(); ?></div>
                     <div class="fpsm-dashboard-column"><?php echo get_the_modified_date('d-m-Y g:i a'); ?></div>
