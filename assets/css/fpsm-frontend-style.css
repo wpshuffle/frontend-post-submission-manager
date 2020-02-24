@@ -3218,10 +3218,12 @@ button.add_media{
 
 
 /*================================ User Dashboard ============================================*/
+.fpsm-dashboard-wrap{
+    font-family: 'Nunito Sans', sans-serif;
+}
 .fpsm-dashboard-row{
     display: flex;
     width: 100%;
-    font-family: 'Nunito Sans', sans-serif;
 }
 .fpsm-dashboard-row > div{
     flex: 1;
@@ -3229,7 +3231,8 @@ button.add_media{
 }
 
 .fpsm-dashboard-header .fpsm-dashboard-row{
-    background-color: #f4f6fb;
+    background-color: #edf0f7;
+    border-bottom: solid 1px #dfe3ec;
 }
 
 .fpsm-dashboard-header > .fpsm-dashboard-row > div{
@@ -3295,3 +3298,22 @@ button.add_media{
     background-color: #c4a833;
     color: white;
 }
+
+.fpsm-pagination-wrap{margin-top: 20px;}
+.fpsm-pagination-wrap a,
+.fpsm-pagination-wrap span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none !important;
+    padding: 10px 12px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,.06);
+    margin-right: 0;
+    line-height: 1;
+
+}
+.fpsm-pagination-wrap a{color: #5850bb !important;}
+.fpsm-pagination-wrap span,
+.fpsm-pagination-wrap a:hover{background-color: #5850bb;color: white !important;}
