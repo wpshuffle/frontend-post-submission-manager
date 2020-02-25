@@ -581,6 +581,10 @@ if (!class_exists('FPSM_Library')) {
             return $post_edit_url;
         }
 
+        function default_admin_notification() {
+            return 'Hello';
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

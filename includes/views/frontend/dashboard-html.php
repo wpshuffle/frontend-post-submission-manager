@@ -51,7 +51,7 @@ if (!empty($current_user_id)) {
                                 $post_delete_warning_message = (!empty($form_details['dashboard']['post_delete_warning_message'])) ? $form_details['dashboard']['post_delete_warning_message'] : esc_html__('Are you sure you want to delete this post?', 'frontend-post-submission-manager');
                                 $delete_key = md5(get_the_date('d-m-y H:i a'));
                                 ?>
-                                <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>" class="fpsm-delete-post" data-warning-message="<?php echo esc_attr($post_delete_warning_message); ?>" data-delete-key="<?php echo esc_attr($delete_key); ?>"><i class="far fa-trash-alt"></i></a>
+                                <a href="javascript:void(0);" title="<?php esc_html_e('Delete', 'frontend-post-submission-manager'); ?>" class="fpsm-delete-post" data-warning-message="<?php echo esc_attr($post_delete_warning_message); ?>" data-delete-key="<?php echo esc_attr($delete_key); ?>" data-post-id="<?php the_ID(); ?>"><i class="far fa-trash-alt"></i></a>
                             <?php } ?>
                             <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View', 'frontend-post-submission-manager'); ?>" class="fpsm-view-post"><i class="far fa-eye"></i></a>
                         </div>
@@ -72,15 +72,16 @@ if (!empty($current_user_id)) {
                 } else {
                     $page_num_link = $page_num_link[0];
                 }
-
+                $previous_text = (!empty($form_details['dashboard']['previous_page_label'])) ? esc_html($form_details['dashboard']['previous_page_label']) : esc_html__('Previous', 'frontend-post-submission-manager');
+                $next_text = (!empty($form_details['dashboard']['next_page_label'])) ? esc_html($form_details['dashboard']['next_page_label']) : esc_html__('Next', 'frontend-post-submission-manager');
                 echo paginate_links(array(
                     'base' => str_replace($big, '%#%', $page_num_link),
                     'format' => '?%#%',
                     'current' => max(1, get_query_var('paged')),
                     'total' => $dashboard_posts_query->max_num_pages,
                     'before_page_number' => '<span class="screen-reader-text">' . $translated . ' </span>',
-                    'prev_text' => (!empty($form_details['dashboard']['previous_page_label'])) ? esc_html($form_details['dashboard']['previous_page_label']) : esc_html__('Previous', 'frontend-post-submission-manager'),
-                    'next_text' => (!empty($form_details['dashboard']['next_page_label'])) ? esc_html($form_details['dashboard']['next_page_label']) : esc_html__('Next', 'frontend-post-submission-manager'),
+                    'prev_text' => $previous_text,
+                    'next_text' => $next_text,
                 ));
                 ?>
             </div>

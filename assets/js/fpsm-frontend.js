@@ -297,17 +297,17 @@ jQuery(document).ready(function ($) {
         $(this).datepicker({
             dateFormat: date_format,
         });
-        if(date_value!=''){
+        if (date_value != '') {
             var date_value_break = date_value.split('-');
             var year = parseInt(date_value_break[0]);
-            var month = parseInt(date_value_break[1])-1;
+            var month = parseInt(date_value_break[1]) - 1;
             var day = parseInt(date_value_break[2]);
-            $(this).datepicker('setDate',new Date(year,month,day));
+            $(this).datepicker('setDate', new Date(year, month, day));
         }
-        
-        
+
+
     });
-    
+
 
     /**
      * Clear error
@@ -320,6 +320,40 @@ jQuery(document).ready(function ($) {
         $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
 
+    /**
+     * Delete Post
+     */
+    $('body').on('click', '.fpsm-delete-post', function () {
+        var selector = $(this);
+        var warning_message = $(this).data('warning-message');
+        if (confirm(warning_message)) {
+            var delete_key = $(this).data('delete-key');
+            var post_id = $(this).data('post-id');
+            $.ajax({
+                url: fpsm_js_obj.ajax_url,
+                type: 'post',
+                data: {
+                    action: 'fpsm_post_delete_action',
+                    _wpnonce: fpsm_js_obj.ajax_nonce,
+                    delete_key:delete_key,
+                    post_id:post_id
+                },
+                beforeSend: function (xhr) {
+                    selector.closest('.fpsm-dashboard-row').addClass('fpsm-delete-loading');
+                },
+                success: function (res) {
+                    res = $.parseJSON(res);
+                    if (res.status == 200) {
+                        selector.closest('.fpsm-dashboard-row').fadeOut(500, function () {
+                            $(this).remove();
+                        });
+                    }else{
+                        alert(res.message);
+                    }
+                }
+            });
+        }
+    });
 
 
 

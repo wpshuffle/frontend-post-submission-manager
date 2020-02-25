@@ -23,6 +23,12 @@ if (!class_exists('FPSM_Ajax')) {
              */
             add_action('wp_ajax_fpsm_form_process', array($this, 'ajax_form_process'));
             add_action('wp_ajax_nopriv_fpsm_form_process', array($this, 'ajax_form_process'));
+
+            /**
+             * Post Delete
+             */
+            add_action('wp_ajax_fpsm_post_delete_action', array($this, 'process_post_delete'));
+            add_action('wp_ajax_nopriv_fpsm_post_delete_action', array($this, 'permission_denied'));
         }
 
         function file_upload_action() {
@@ -115,6 +121,42 @@ if (!class_exists('FPSM_Ajax')) {
 
         function ajax_form_process() {
             include(FPSM_PATH . '/includes/cores/ajax-process-form.php');
+        }
+
+        /**
+         * Process post delete
+         */
+        function process_post_delete() {
+            if ($this->admin_ajax_nonce_verify()) {
+                $post_id = intval($_POST['post_id']);
+                $delete_key = sanitize_text_field($_POST['delete_key']);
+                $verify_delete_key = md5(get_the_date('d-m-y H:i a', $post_id));
+                if ($delete_key != $verify_delete_key) {
+                    $response['status'] = 403;
+                    $response['message'] = esc_html__('Unauthorized delete from delete key', 'frontend-post-submission-manager');
+                } else {
+                    $current_user_id = get_current_user_id();
+
+                    $post_author_user_id = get_post_field('post_author', $post_id);
+
+                    if ($current_user_id != $post_author_user_id) {
+                        $response['status'] = 403;
+                        $response['message'] = esc_html__('Unauthorized delete from user', 'frontend-post-submission-manager');
+                    } else {
+                        $delete_check = wp_trash_post($post_id);
+                        if ($delete_check) {
+                            $response['status'] = 200;
+                            $response['message'] = esc_html__('Post delete successfully.', 'frontend-post-submission-manager');
+                        } else {
+                            $response['status'] = 403;
+                            $response['message'] = esc_html__('There occurred some error.', 'frontend-post-submission-manager');
+                        }
+                    }
+                }
+                die(json_encode($response));
+            } else {
+                $this->permission_denied();
+            }
         }
 
     }
