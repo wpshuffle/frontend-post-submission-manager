@@ -372,7 +372,7 @@ input[type="number"],
 .fpsm-form-wrap textarea{
     height: 140px;
     resize: none;
-    line-height: 1;
+    line-height: 1.4;
     padding: 14px;
 }
 .fpsm-form-wrap select,
@@ -401,7 +401,7 @@ input[type="number"],
     white-space: nowrap;
     font-style: italic;
     font-size: 12px;
-    color: rgba(0,0,0,.48);
+    color: rgba(0,0,0,.8);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
@@ -651,4 +651,10 @@ h3.fpsm-form-settings-heading {
 p.description{
     margin: 5px 0;
     font-size: 12px;
+}
+
+.fpsm-custom-field-add-form .fpsm-field-wrap .fpsm-field{padding-left: 0;}
+input[type="checkbox"], input[type="radio"]{min-width: 4rem;}
+label{
+    cursor: text;
 }
