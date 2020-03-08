@@ -3268,7 +3268,7 @@ button.add_media{
     line-height: 22px;
     color: black;
     transition: all .3s ease;
-    text-shadow: none;
+    text-shadow: none !important;
 }
 .fpsm-dashboard-column:last-child a i{
     font-size: 11px;
