@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or die('No script kiddies please!!');
 if (defined('DOING_AJAX')) {
-    if (!empty($form_details['notification']['admin']['enable'])) {
+    if (!empty($form_details['notification']['admin']['enable']) && $post_id == 0) {
         $from_name = (!empty($form_details['notification']['admin']['from_name'])) ? $form_details['notification']['admin']['from_name'] : esc_html__('No Reply', 'frontend-post-submission-manager');
         $from_email = (!empty($form_details['notification']['admin']['from_email'])) ? $form_details['notification']['admin']['from_email'] : $fpsm_library_obj->default_from_email();
         $subject = (!empty($form_details['notification']['admin']['subject'])) ? $form_details['notification']['admin']['subject'] : $fpsm_library_obj->default_from_email();

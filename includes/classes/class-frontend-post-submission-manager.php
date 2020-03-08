@@ -130,6 +130,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
             include(FPSM_PATH . '/includes/classes/class-fpsm-enqueue.php');
             include(FPSM_PATH . '/includes/classes/class-fpsm-ajax.php');
             include(FPSM_PATH . '/includes/classes/class-fpsm-frontend-hooks.php');
+            include(FPSM_PATH . '/includes/classes/class-fpsm-notification.php');
 
 
             //include all the admin related classes
