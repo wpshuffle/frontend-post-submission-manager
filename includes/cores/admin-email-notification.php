@@ -17,10 +17,10 @@ if (defined('DOING_AJAX')) {
         $headers[] = "From: $from_name <$from_email>";
         if (is_array($admin_emails)) {
             foreach ($admin_emails as $admin_email) {
-                wp_mail($admin_email, $notification_subject, $notification_message, $headers);
+                wp_mail($admin_email, $subject, $notification_message, $headers);
             }
         } else {
-            wp_mail($admin_email, $notification_subject, $notification_message, $headers);
+            wp_mail($admin_emails, $subject, $notification_message, $headers);
         }
     }
 }
