@@ -36,8 +36,8 @@
       <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="400" column="24" lean-forward="true" selection-start-line="400" selection-start-column="24" selection-end-line="400" selection-end-column="24" />
+            <state relative-caret-position="508">
+              <caret line="658" column="16" lean-forward="false" selection-start-line="658" selection-start-column="16" selection-end-line="658" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -306,15 +306,16 @@
       <workItem from="1581084280459" duration="19000" />
       <workItem from="1582518359432" duration="8888000" />
       <workItem from="1582577103269" duration="6000" />
-      <workItem from="1583648603013" duration="7163000" />
+      <workItem from="1583648603013" duration="7464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102041000" />
+    <option name="totallyTimeSpent" value="102342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2733142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -728,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="400" column="24" lean-forward="true" selection-start-line="400" selection-start-column="24" selection-end-line="400" selection-end-column="24" />
+        <state relative-caret-position="508">
+          <caret line="658" column="16" lean-forward="false" selection-start-line="658" selection-start-column="16" selection-end-line="658" selection-end-column="16" />
           <folding />
         </state>
       </provider>

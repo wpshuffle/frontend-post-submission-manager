@@ -654,3 +654,7 @@ p.description{
 }
 
 .fpsm-custom-field-add-form .fpsm-field-wrap .fpsm-field{padding-left: 0;}
+input[type="checkbox"], input[type="radio"]{min-width: 4rem;}
+label{
+    cursor: text;
+}
