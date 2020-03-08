@@ -3237,9 +3237,11 @@ button.add_media{
 
 .fpsm-dashboard-header > .fpsm-dashboard-row > div{
     font-weight: 800;
-    font-size: 13px;
-    text-transform: uppercase;
+    font-size: 15px;
     line-height: 1.6;
+}
+.fpsm-dashboard-row .fpsm-dashboard-column:first-child{
+    max-width: 50px;
 }
 
 .fpsm-dashboard-row .fpsm-dashboard-column{
@@ -3258,13 +3260,6 @@ button.add_media{
     text-align: right;
 }
 
-.fpsm-dashboard-body .fpsm-dashboard-row:nth-child(even){
-    background-color: rgba(0,0,0,.02);
-}
-
-.fpsm-dashboard-body > .fpsm-dashboard-row:hover{
-    background-color: #f0fff4;
-}
 .fpsm-dashboard-column:last-child a{
     display: inline-block;
     height: 24px;
@@ -3281,22 +3276,19 @@ button.add_media{
 }
 
 .fpsm-dashboard-column:last-child a:hover{
-    background-color: rgba(0,0,0,.18);
+   color: rgba(0,0,0,.18);
 }
 
 .fpsm-dashboard-column:last-child a.fpsm-edit-post:hover{
-    background-color: #3ea8de;
-    color: white;
+    color: #3ea8de;
 }
 
 .fpsm-dashboard-column:last-child a.fpsm-delete-post:hover{
-    background-color: #c43434;
-    color: white;
+    color: #c43434;
 }
 
 .fpsm-dashboard-column:last-child a.fpsm-view-post:hover{
-    background-color: #c4a833;
-    color: white;
+    color: #c4a833;
 }
 
 .fpsm-pagination-wrap{margin-top: 20px;}
@@ -3312,8 +3304,26 @@ button.add_media{
     background-color: rgba(0,0,0,.06);
     margin-right: 0;
     line-height: 1;
-
 }
-.fpsm-pagination-wrap a{color: #5850bb !important;}
+.fpsm-pagination-wrap a{color: rgba(0,0,0,.68) !important;}
 .fpsm-pagination-wrap span,
-.fpsm-pagination-wrap a:hover{background-color: #5850bb;color: white !important;}
+.fpsm-pagination-wrap a:hover{background-color: rgba(0,0,0,.68);color: white !important;}
+
+.fpsm-status-draft,
+.fpsm-status-pending,
+.fpsm-status-publish{
+    display: inline-block;
+    line-height: 18px;
+    font-size: 11px;
+    background-color: #3ea8de;
+    border-radius: 48px;
+    padding: 0 10px;
+    color: white;
+    text-transform: capitalize;
+}
+.fpsm-status-pending{
+     background-color: #e39e59;
+ }
+.fpsm-status-publish{
+    background-color: #75d068;
+}
