@@ -3241,7 +3241,7 @@ button.add_media{
     line-height: 1.6;
 }
 .fpsm-dashboard-row .fpsm-dashboard-column:first-child{
-    max-width: 50px;
+    max-width: 70px;
 }
 
 .fpsm-dashboard-row .fpsm-dashboard-column{
@@ -3267,8 +3267,8 @@ button.add_media{
     text-align: center;
     line-height: 22px;
     color: black;
-    border-radius: 50%;
     transition: all .3s ease;
+    text-shadow: none;
 }
 .fpsm-dashboard-column:last-child a i{
     font-size: 11px;
