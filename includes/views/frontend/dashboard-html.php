@@ -37,8 +37,8 @@ if (!empty($current_user_id)) {
                     <div class="fpsm-dashboard-row">
                         <div class="fpsm-dashboard-column"><?php echo esc_html($sn++); ?></div>
                         <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
-                        <div class="fpsm-dashboard-column"><?php echo get_post_status(); ?></div>
-                        <div class="fpsm-dashboard-column"><?php echo get_the_modified_date('d-m-Y g:i a'); ?></div>
+                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?>"><?php echo esc_html(get_post_status()); ?></span></div>
+                        <div class="fpsm-dashboard-column"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
                         <div class="fpsm-dashboard-column">
                             <?php
                             $current_page_url = $fpsm_library_obj->get_current_page_url();
