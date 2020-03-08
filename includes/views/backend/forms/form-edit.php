@@ -25,24 +25,6 @@ $form_details = maybe_unserialize($form_details);
 
     </div>
 
-    <div class="fpsm-field-wrap fpsm-shortcode-common">
-        <label><?php esc_html_e('Form Shortcode', 'frontend-post-submission-manager') ?></label>
-        <div class="fpsm-field">
-            <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
-            <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
-        </div>
-    </div>
-    <?php if ($form_row->form_type == 'login_require') { ?>
-        <div class="fpsm-field-wrap fpsm-shortcode-common">
-            <label><?php esc_html_e('Dashboard Shortcode', 'frontend-post-submission-manager') ?></label>
-            <div class="fpsm-field">
-                <span class="fpsm-shortcode-preview">[fpsm_dashboard alias="<?php echo esc_attr($form_row->form_alias); ?>"]</span>
-                <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
-            </div>
-        </div>
-    <?php } ?>
-
-
     <?php
     /**
      * Form Navigation
