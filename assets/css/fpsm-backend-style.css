@@ -613,11 +613,9 @@ label.fpsm-each-extension span {
     max-width: calc(100% - 170px);
 }
 .fpsm-field.fpsm-extension-list {
-    background: #eee;
-    padding: 10px;
     height: 200px;
     overflow-y: scroll;
-    max-width: 510px;
+    max-width: 500px;
 }
 .fpsm-form-fields-list {
     margin-bottom: 50px;
@@ -661,8 +659,8 @@ p.description{
 
 .fpsm-custom-field-add-form .fpsm-field-wrap .fpsm-field{padding-left: 0;}
 
-.fpsm-field input[type="checkbox"],
-.fpsm-field input[type="radio"]{min-width: 4rem;}
+.fpsm-checkbox-toggle input[type="checkbox"],
+.fpsm-checkbox-toggle input[type="radio"]{min-width: 4rem;}
 label{
     cursor: text;
 }
