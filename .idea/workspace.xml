@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-add.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,21 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="409" column="62" lean-forward="false" selection-start-line="409" selection-start-column="62" selection-end-line="409" selection-end-column="62" />
+            <state relative-caret-position="116">
+              <caret line="406" column="1" lean-forward="true" selection-start-line="406" selection-start-column="1" selection-end-line="406" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="460" column="14" lean-forward="false" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="14" />
+            <state relative-caret-position="336">
+              <caret line="621" column="1" lean-forward="true" selection-start-line="621" selection-start-column="1" selection-end-line="621" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -64,10 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fpsm-button-primary</find>
-      <find>fpsm-file-preview-row</find>
-      <find>fpsm-file-preview-column</find>
-      <find>.fpsm-date-picker</find>
       <find>.fpsm-select-field</find>
       <find>.fpsm-custom-field-datepicker</find>
       <find>fpsm-field-wrap</find>
@@ -94,6 +89,10 @@
       <find>fpsm-error</find>
       <find>.fpsm-form-wrap</find>
       <find>.fpsm-checkbox</find>
+      <find>.fpsm-front-form .fpsm-custom-field-checkbox</find>
+      <find>.fpsm-custom-field-radio</find>
+      <find>.fpsm-front-form .fpsm-custom-field-radio</find>
+      <find>.fpsm-field.fpsm-extension-list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,8 +117,8 @@
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-navigation.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-add.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit.php" />
-        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
       </list>
     </option>
   </component>
@@ -131,8 +130,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -288,12 +288,12 @@
       <workItem from="1582577103269" duration="6000" />
       <workItem from="1583648603013" duration="8128000" />
       <workItem from="1583674996322" duration="15000" />
-      <workItem from="1583824609677" duration="3341000" />
+      <workItem from="1583824609677" duration="4114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106362000" />
+    <option name="totallyTimeSpent" value="107135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -678,18 +678,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="460" column="14" lean-forward="false" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="14" />
+        <state relative-caret-position="116">
+          <caret line="406" column="1" lean-forward="true" selection-start-line="406" selection-start-column="1" selection-end-line="406" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="409" column="62" lean-forward="false" selection-start-line="409" selection-start-column="62" selection-end-line="409" selection-end-column="62" />
+        <state relative-caret-position="336">
+          <caret line="621" column="1" lean-forward="true" selection-start-line="621" selection-start-column="1" selection-end-line="621" selection-end-column="1" />
           <folding />
         </state>
       </provider>
