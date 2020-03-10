@@ -25,7 +25,7 @@ if (!empty($edit_post) && has_post_thumbnail($post_id)) {
 <input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id" value="<?php echo (!empty($post_thumbnail_id)) ? intval($post_thumbnail_id) : ''; ?>"/>
 <div class="fpsm-file-preview-wrap">
     <?php
-    if (has_post_thumbnail($post_id)) {
+    if (!empty($edit_post) && has_post_thumbnail($post_id)) {
         ?>
         <div class="fpsm-file-preview-row">
             <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($post_thumbnail_url); ?>"></span>

@@ -17,7 +17,6 @@ jQuery(document).ready(function ($) {
             var upload_limit = $(this).data('multiple-upload-limit');
             var uploader_label = $(this).data('upload-label');
             var upload_limit_message = $(this).data('multiple-upload-error-message');
-            var extension_error_message = $(this).data('extension-error-message')
             var field_name = $(this).data('field-name');
             file_uploader_fields[uploader_name] = new qq.FileUploader({
                 element: document.getElementById(attr_element_id),
@@ -86,7 +85,7 @@ jQuery(document).ready(function ($) {
                 onCancel: function (id, fileName) {},
                 onError: function (id, fileName, xhr) {},
                 messages: {
-                    typeError: extension_error_message,
+                    typeError: "{file} has invalid extension. Only {extensions} are allowed.",
                     sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
                     minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
                     emptyError: "{file} is empty, please select files again without it.",
