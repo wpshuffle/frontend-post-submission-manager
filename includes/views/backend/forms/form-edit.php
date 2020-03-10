@@ -17,10 +17,11 @@ $form_details = maybe_unserialize($form_details);
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?></h1>
 
         <div class="fpsm-add-wrap">
+            <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e('Save', 'frontend-post-submission-manager'); ?></a>
             <a href="#" class="fpsm-button-primary btn-preview">
-                <i class="fas fa-eye"></i>
                 <?php esc_html_e('Preview', 'frontend-post-submission-manager'); ?>
             </a>
+            <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Cancel', 'frontend-post-submission-manager'); ?></a>
         </div>
 
 
@@ -109,8 +110,5 @@ $form_details = maybe_unserialize($form_details);
         ?>
 
     </form>
-    <div class="fpsm-add-wrap">
-        <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e('Save', 'frontend-post-submission-manager'); ?></a>
-        <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Cancel', 'frontend-post-submission-manager'); ?></a>
-    </div>
+
 </div>
