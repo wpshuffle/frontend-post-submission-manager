@@ -159,14 +159,7 @@ input[type="file"]{
     background-color: rgba(0,0,0,.04);
     border-top:solid 1px rgba(0,0,0,.08);
 }
-.fpsm-error{
-    padding: 0 5px;
-    background-color: #cf6857;
-    color: white;
-    font-size: 12px;
-    line-height: 18px;
 
-}
 .fpsm-file-preview-row:nth-child(1){border: none;}
 .fpsm-file-preview-row span{display: inline-block;flex: 1 1 auto;}
 .fpsm-file-preview-row span:last-child{text-align: right}
@@ -3220,6 +3213,7 @@ button.add_media{
 /*================================ User Dashboard ============================================*/
 .fpsm-dashboard-wrap{
     font-family: 'Nunito Sans', sans-serif;
+    background-color: white;
 }
 .fpsm-dashboard-row{
     display: flex;
@@ -3291,7 +3285,7 @@ button.add_media{
     color: #c4a833;
 }
 
-.fpsm-pagination-wrap{margin-top: 20px;}
+.fpsm-pagination-wrap{padding: 15px;}
 .fpsm-pagination-wrap a,
 .fpsm-pagination-wrap span{
     display: inline-block;
@@ -3326,4 +3320,14 @@ button.add_media{
  }
 .fpsm-status-publish{
     background-color: #75d068;
+}
+
+.fpsm-error{
+    margin-top: 4px;
+    background-color: #FF696928;
+    color: #FF6969;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
 }
