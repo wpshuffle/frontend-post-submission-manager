@@ -89,6 +89,17 @@ jQuery(document).ready(function ($) {
             }
         });
     }
+    
+    /**
+     * 
+     * Check if string has white space
+     * 
+     * @since 1.0.0
+     * 
+     */
+    function fpsm_hasWhiteSpace(s) {
+        return s.indexOf(' ') >= 0;
+    }
 
     /**
      * Initialize checkbox as toggle on page load
@@ -288,6 +299,10 @@ jQuery(document).ready(function ($) {
         if (custom_field_label == '' || custom_field_meta_key == '') {
             fpsm_generate_info(translation_strings.custom_field_error, 'error');
         } else {
+            if(fpsm_hasWhiteSpace(custom_field_meta_key)){
+                fpsm_generate_info(translation_strings.custom_field_space_error, 'error');
+                return;
+            }
             var field_type = $('#fpsm-custom-field-type').val();
             var data = {label: custom_field_label, field_key: custom_field_key, meta_key: custom_field_meta_key, field_type: field_type};
             var field_template = wp.template('custom-' + field_type);
