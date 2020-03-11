@@ -769,6 +769,15 @@ input[type="week"]{
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+    z-index: 4;
+}
+.ui-datepicker-header{
+    position: relative;
 }
 .ui-state-default{
     display: block;
@@ -785,7 +794,11 @@ input[type="week"]{
     background-color: navajowhite;
     color: black;
 }
-
+.ui-datepicker-prev,
+.ui-datepicker-next{
+    position: relative;
+    z-index: 5;
+}
 .ui-datepicker-prev{
     color: white;
     cursor: pointer;
