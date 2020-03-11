@@ -812,3 +812,5 @@ input[type="week"]{
 .ui-datepicker-next:hover{
     color: navajowhite;
 }
+
+.edit-post-layout__content #poststuff .inside{padding: 0;margin: 0;}
