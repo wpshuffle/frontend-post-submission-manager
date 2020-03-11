@@ -753,3 +753,49 @@ input[type="week"]{
     background-color: rgba(0,0,0,.01);
     max-width: 100%;
 }
+
+.ui-datepicker-header{
+    padding: 10px;
+    background-color: #007cba;
+    color: white;
+}
+.ui-datepicker-calendar{
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    box-shadow: rgba(0,0,0,.18) 0 0 18px;
+}
+.ui-datepicker-title{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.ui-state-default{
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.ui-state-default:hover{
+    background-color: rgba(0,0,0,.04);
+}
+
+.ui-state-highlight{
+    background-color: navajowhite;
+    color: black;
+}
+
+.ui-datepicker-prev{
+    color: white;
+    cursor: pointer;
+}
+.ui-datepicker-next{
+    float: right;
+    cursor: pointer;
+    color: white;
+}
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover{
+    color: navajowhite;
+}
