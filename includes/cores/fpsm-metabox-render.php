@@ -1,7 +1,6 @@
 <?php
 defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
 $fpsm_form_alias = get_post_meta( $post->ID, '_fpsm_form_alias', true );
-var_dump( $fpsm_form_alias );
 if ( !empty( $fpsm_form_alias ) ) {
     global $fpsm_library_obj;
     $form_row = $fpsm_library_obj->get_form_row_by_alias( $fpsm_form_alias );
@@ -156,6 +155,26 @@ if ( !empty( $fpsm_form_alias ) ) {
                 </div>
                 <?php
             }
+        } else if ( $field_key == 'author_name' && !empty( $field_details['show_on_form'] ) ) {
+            ?>
+            <div class="fpsm-field-wrap">
+                <label><?php echo esc_html( $field_details['field_label'] ); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="fpsm_author_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'fpsm_author_name', true ) ); ?>"/>
+                    <input type="hidden" name="fpsm_included_custom_fields[]" value="fpsm_author_name"/>
+                </div>
+            </div>
+            <?php
+        } else if ( $field_key == 'author_email' && !empty( $field_details['show_on_form'] ) ) {
+            ?>
+            <div class="fpsm-field-wrap">
+                <label><?php echo esc_html( $field_details['field_label'] ); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="fpsm_author_email" value="<?php echo esc_attr( get_post_meta( $post->ID, 'fpsm_author_email', true ) ); ?>"/>
+                    <input type="hidden" name="fpsm_included_custom_fields[]" value="fpsm_author_email"/>
+                </div>
+            </div>
+            <?php
         }
     }
     wp_nonce_field( 'fpsm_metabox_nonce', 'fpsm_metabox_nonce_field' );
