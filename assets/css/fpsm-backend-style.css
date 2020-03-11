@@ -366,6 +366,8 @@ table.fixed{table-layout: auto !important;}
 /*=============================================== form elements ================*/
 .fpsm-form-wrap input[type="text"],
 .fpsm-form-element-wrap input[type="text"],
+.fpsm-form-wrap input[type="email"],
+.fpsm-form-element-wrap input[type="email"],
 input[type="number"],
 .fpsm-form-wrap textarea{
     display: block;
@@ -601,7 +603,7 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
 }
 label.fpsm-each-extension {
     display: inline-block;
-    width: 220px;
+    width: 208px;
     margin-right: 20px;
     margin-bottom: 10px;
 }
@@ -674,4 +676,80 @@ label{
     top: auto;
     text-align: center;
     font-size: 16px;
+}
+
+/*Post Edit backend*/
+.edit-post-layout__content .fpsm-field select{width: 100%;}
+.edit-post-layout__content #poststuff .inside{margin-top: 24px;}
+.edit-post-layout__content .fpsm-field-wrap > label{max-width: 188px;}
+.edit-post-layout__content .fpsm-field-wrap{
+    border-bottom: solid 1px rgba(0,0,0,.1);
+    padding-bottom:0;
+    margin-bottom: 0;
+}
+.edit-post-layout__content .fpsm-checkbox,
+.edit-post-layout__content .fpsm-radio{margin-bottom: 10px;}
+.edit-post-layout__content .fpsm-checkbox:last-child,
+.edit-post-layout__content .fpsm-radio:last-child{margin-bottom: 0;}
+
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    line-height: 38px;
+    padding: 0 14px;
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 0;
+}
+
+.edit-post-layout__content .fpsm-field textarea{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    line-height: 1.4;
+    padding: 14px;
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 0;
+    height: 120px;
+    resize: none;
+}
+
+.edit-post-layout__content .fpsm-field select{
+    width: 100%;
+    max-width: 500px;
+    line-height: 38px;
+    padding: 0 14px;
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 0;
+}
+
+.edit-post-layout__content .fpsm-field-wrap{
+    display: flex;
+    width: 100%;
+}
+
+.edit-post-layout__content .fpsm-field-wrap > label{
+    background-color: rgba(0,0,0,.04);
+    padding: 20px;
+    margin: 0;
+    border-right: solid 1px rgba(0,0,0,.06);
+}
+
+.edit-post-layout__content .fpsm-field-wrap > .fpsm-field{
+    padding: 20px;
+    background-color: rgba(0,0,0,.01);
+    max-width: 100%;
 }
