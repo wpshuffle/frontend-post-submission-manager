@@ -25,7 +25,7 @@ $custom_field_type_list = array(
  */
 $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_field_type_list);
 ?>
-<div class="fpsm-each-form-field">
+<div class="fpsm-each-form-field" data-meta-key="<?php echo esc_attr($meta_key) ?>">
     <div class="fpsm-field-head fpsm-clearfix">
         <h3 class="fpsm-field-title"><span class="dashicons dashicons-arrow-down"></span><?php echo esc_html($field_label); ?><span class="fpsm-field-type-label"> - <?php echo esc_html($custom_field_type_list[$field_type]); ?></span></h3>
         <a href="javascript:void(0);" class="fpsm-field-remove-trigger"><span class="dashicons dashicons-trash"></span></a>
@@ -35,6 +35,7 @@ $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_f
         <?php
         if (file_exists(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php')) {
             include(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php');
+            include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php');
         }
         /**
          * Fires at the end of all the custom field option has been printed
