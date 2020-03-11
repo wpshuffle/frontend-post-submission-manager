@@ -814,3 +814,7 @@ input[type="week"]{
 }
 
 .edit-post-layout__content #poststuff .inside{padding: 0;margin: 0;}
+.ui-datepicker-week-end,
+.ui-datepicker-week-end a{
+    color: indianred;
+}
