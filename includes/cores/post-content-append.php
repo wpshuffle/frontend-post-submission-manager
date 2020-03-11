@@ -1,0 +1,101 @@
+<?php
+defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
+global $wp_query;
+if ( empty( $wp_query->queried_object_id ) ) {
+    return $content;
+}
+$post_id = $wp_query->queried_object_id;
+$form_alias = get_post_meta( $post_id, '_fpsm_form_alias', true );
+if ( empty( $form_alias ) ) {
+    return;
+}
+global $fpsm_library_obj;
+$form_row = $fpsm_library_obj->get_form_row_by_alias( $form_alias );
+$form_details = maybe_unserialize( $form_row->form_details );
+if ( empty( $form_details['form']['fields'] ) ) {
+    return $content;
+}
+if ( emtpy( $form_details['form']['fields'] ) ) {
+    return $content;
+}
+$form_fields = $form_details['form']['fields'];
+$append_flag = 0;
+ob_start();
+foreach ( $form_fields as $field_key => $field_details ) {
+    // If field is enabled in the form
+    if ( $fpsm_library_obj->is_custom_field_key( $field_key ) ) {
+        if ( !empty( $field_details['show_on_form'] ) && !empty( $field_details['post_detail_display'] ) && $field_details['display_position'] == $display_position_check ) {
+            $custom_field_meta_key = $fpsm_library_obj->get_meta_key_by_field_key( $field_key );
+            $custom_field_value = get_post_meta( $post->ID, $custom_field_meta_key, true );
+            if ( empty( $append_flag ) ) {
+                $append_flag = 1;
+            }
+            ?>
+            <div class="fpsm-each-display-field">
+                <label><?php echo esc_html( $field_details['display_label'] ); ?></label>
+                <div class="fpsm-display-value">
+                    <?php
+                    switch( $field_details['field_type'] ) {
+                        case 'textfield':
+                        case 'textarea':
+                        case 'select':
+                        case 'radio':
+                        case 'number':
+                        case 'datepicker':
+                            echo esc_html( $custom_field_value );
+                            break;
+                        case 'email':
+                            ?>
+                            <a href="mailto:<?php echo esc_attr( $custom_field_value ) ?>"><?php echo esc_html( $custom_field_value ); ?></a>
+                            <?php
+                            break;
+                        case 'checkbox':
+                            if ( is_array( $custom_field_value ) ) {
+                                foreach ( $custom_field_value as $c_value ) {
+                                    ?>
+                                    <span class="fpsm-each-checkbox-value"><?php echo esc_html( $c_value ); ?></span>
+                                    <?php
+                                }
+                            }
+
+                            break;
+                        case 'file_uploader':
+                            if ( !empty( $custom_field_value ) ) {
+                                $media_ids = explode( ',', $custom_field_value );
+                                foreach ( $media_ids as $media_id ) {
+                                    if ( wp_attachment_is_image( $media_id ) ) {
+                                        $image_display_size = $field_details['image_size'];
+                                        $display_image_url = $media_thumbnail_url = wp_get_attachment_image_src( $media_id, $image_display_size );
+                                        $media_url = wp_get_attachment_image_src( $media_id, 'full' );
+                                    } else {
+                                        $media_url = wp_get_attachment_url( $media_id );
+                                    }
+                                    if ( wp_attachment_is_image( $media_id ) ) {
+                                        ?>
+                                        <div class="fpsm-display-each-image">
+                                            <a href="<?php echo esc_url( $media_url ); ?>" <?php echo (!enpty( $field_details['open_in_new_tab'] )) ? 'target="_blank"' : ''; ?>><img src="<?php echo esc_url( $display_image_url[0] ); ?>" alt="<?php echo get_the_title( $media_id ); ?>"/></a>
+                                        </div>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <a href="<?php echo esc_url( $media_url ); ?>" <?php echo (!enpty( $field_details['open_in_new_tab'] )) ? 'target="_blank"' : ''; ?>><?php echo get_the_title( $media_id ); ?><</a>
+                                        <?php
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                    ?>
+                </div>
+            </div>
+            <?php
+        }
+    }
+}
+if ( $append_flag == 1 ) {
+    $append_content = ob_get_contents();
+} else {
+    $append_content = '';
+}
+ob_end_flush();
+
