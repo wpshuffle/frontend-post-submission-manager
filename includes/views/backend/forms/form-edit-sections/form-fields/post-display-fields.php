@@ -27,8 +27,10 @@
             </div>
         </div>
         <?php
-        if ( !empty( $field_details['field_type'] ) && $field_details['field_type'] == 'file_uploader' ) {
-            include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php');
+        if ( !empty( $field_details['field_type'] ) ) {
+            if ( $field_details['field_type'] == 'file_uploader' ) {
+                include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php');
+            }
         } else {
             ?>
             <# if(data.field_type == 'file_uploader'){ #>
