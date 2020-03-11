@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-    
+
     /**
      * 
      * Check if string has white space
@@ -99,6 +99,21 @@ jQuery(document).ready(function ($) {
      */
     function fpsm_hasWhiteSpace(s) {
         return s.indexOf(' ') >= 0;
+    }
+
+    /**
+     * Check if string has special characters
+     * 
+     * @since 1.0.0
+     */
+    function fpsm_has_special_characters(string) {
+        var format = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+        if (format.test(string)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -299,8 +314,12 @@ jQuery(document).ready(function ($) {
         if (custom_field_label == '' || custom_field_meta_key == '') {
             fpsm_generate_info(translation_strings.custom_field_error, 'error');
         } else {
-            if(fpsm_hasWhiteSpace(custom_field_meta_key)){
+            if (fpsm_hasWhiteSpace(custom_field_meta_key) || fpsm_has_special_characters(custom_field_meta_key)) {
                 fpsm_generate_info(translation_strings.custom_field_space_error, 'error');
+                return;
+            }
+            if ($('.fpsm-show-fields-ref-' + custom_field_meta_key).length > 0) {
+                fpsm_generate_info(translation_strings.custom_field_key_available_error, 'error');
                 return;
             }
             var field_type = $('#fpsm-custom-field-type').val();
@@ -311,9 +330,9 @@ jQuery(document).ready(function ($) {
             $('#fpsm-custom-field-label').val('');
             $('#fpsm-custom-field-meta-key').val('');
             $('body,html').animate({
-                scrollTop: $('.fpsm-each-form-field').last().offset().top + 100
+                scrollTop: $('.fpsm-form-fields-list .fpsm-each-form-field').last().offset().top + 100
             }, 'slow');
-
+            $('.fpsm-form-fields-list .fpsm-each-form-field h3.fpsm-field-title').last().click();
             $('.fpsm-sortable').sortable({
                 placeholder: "fpsm-sortable-placeholder",
                 forcePlaceholderSize: true
@@ -416,6 +435,14 @@ jQuery(document).ready(function ($) {
         $(this).datepicker({
             dateFormat: date_format
         });
+    });
+
+    $('body').on('click', '.fpsm-custom-field-type-trigger-btn', function () {
+        var field_type = $(this).data('field-type');
+        $('#fpsm-custom-field-type option').removeAttr('selected');
+        $('#fpsm-custom-field-type option[value="' + field_type + '"]').attr('selected', 'selected');
+        $('.fpsm-custom-field-type-trigger-btn').removeClass('btn-selected');
+        $(this).addClass('btn-selected');
     });
 
 
