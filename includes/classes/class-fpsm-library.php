@@ -603,7 +603,7 @@ Your post has been published in our %s website. Please find details below:
 Post Title: [post_title]
 
 You can view your post from below link:
-#post_link
+[post_link]
 
 Thank you', get_bloginfo( 'name' ) ), 'frontend-post-submission-manager' );
             return $default_publish_notification_message;
