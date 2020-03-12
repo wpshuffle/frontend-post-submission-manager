@@ -1,6 +1,11 @@
 var file_uploader_fields = {};
 
 jQuery(document).ready(function ($) {
+    "use strict";
+    /**
+     * @type object
+     */
+    var translation_strings = fpsm_js_obj.translation_strings;
     function initialize_uploaders() {
         $('.fpsm-file-uploader').each(function () {
             var form_alias = $(this).closest('form').data('alias');
@@ -334,8 +339,8 @@ jQuery(document).ready(function ($) {
                 data: {
                     action: 'fpsm_post_delete_action',
                     _wpnonce: fpsm_js_obj.ajax_nonce,
-                    delete_key:delete_key,
-                    post_id:post_id
+                    delete_key: delete_key,
+                    post_id: post_id
                 },
                 beforeSend: function (xhr) {
                     selector.closest('.fpsm-dashboard-row').addClass('fpsm-delete-loading');
@@ -346,14 +351,18 @@ jQuery(document).ready(function ($) {
                         selector.closest('.fpsm-dashboard-row').fadeOut(500, function () {
                             $(this).remove();
                         });
-                    }else{
+                    } else {
                         alert(res.message);
                     }
                 }
             });
         }
     });
-
+    $('.fpsm-front-form').areYouSure(
+            {
+                message: translation_strings.are_your_sure
+            }
+    );
 
 
 });

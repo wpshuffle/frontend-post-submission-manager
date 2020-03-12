@@ -449,6 +449,7 @@ jQuery(document).ready(function ($) {
         message: translation_strings.are_your_sure
       }
     );
+     
 
 
 });
