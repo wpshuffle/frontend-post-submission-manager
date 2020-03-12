@@ -444,6 +444,11 @@ jQuery(document).ready(function ($) {
         $('.fpsm-custom-field-type-trigger-btn').removeClass('btn-selected');
         $(this).addClass('btn-selected');
     });
+     $('.fpsm-edit-form').areYouSure(
+      {
+        message: translation_strings.are_your_sure
+      }
+    );
 
 
 });
