@@ -3330,3 +3330,33 @@ button.add_media{
     line-height: 18px;
     font-weight: 700;
 }
+
+
+/*Post details front design*/
+.fpsm-custom-fields-content-wrap{}
+.fpsm-each-display-field{margin-bottom: 20px;}
+.fpsm-each-display-field label{
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+.fpsm-display-value{font-size: 14px;}
+
+
+.fpsm-display-each-image{
+    display: inline-block;
+    height: 140px;
+    width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.fpsm-display-each-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
