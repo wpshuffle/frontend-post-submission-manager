@@ -409,7 +409,6 @@ input[type="number"],
     padding: 0 14px;
     line-height: 30px;
     white-space: nowrap;
-    font-style: italic;
     font-size: 12px;
     color: rgba(0,0,0,.8);
     border-top-left-radius: 3px;
@@ -628,9 +627,7 @@ h3.fpsm-form-settings-heading {
     border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
 }
-.fpsm-custom-field-btns-wrap{
-    margin-bottom: 25px;
-}
+
 .fpsm-custom-fld-btn{
     font-size: 12px;
     display: inline-block;
@@ -820,3 +817,39 @@ input[type="week"]{
 .ui-datepicker-week-end a{
     color: indianred;
 }
+
+.fpsm-file-preview-row{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,.04);
+    border-top:solid 1px rgba(0,0,0,.08);
+}
+
+.fpsm-file-preview-row:nth-child(1){border: none;}
+.fpsm-file-preview-row span{display: inline-block;flex: 1 1 auto;}
+.fpsm-file-preview-row span:last-child{text-align: right}
+.fpsm-file-preview-column{
+    margin-right: 10px;
+    overflow: hidden;
+    max-width: 238px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.fpsm-file-preview-column input.fpsm-media-remove-button{
+    padding: 0 8px;
+    line-height: 18px;
+    border-radius: 64px;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    cursor: pointer;
+    border:none;
+}
+.fpsm-file-preview-column img{
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+}
+.fpsm-file-preview-column{font-size: 13px;color: inherit}
