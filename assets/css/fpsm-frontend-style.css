@@ -11,33 +11,21 @@
 
 .qq-upload-list{margin: 0;}
 .qq-upload-list li {
-    color: #FFFFFF;
-    /*height: 14px;*/
-    margin: 0 0 1px;
-    padding: 5px 15px;
-    overflow: hidden;
-    line-height: 15px;
-    font-size: 12px;
-    list-style: none;
-    /*+text-shadow:none;*/
-    -moz-text-shadow: none;
-    -webkit-text-shadow: none;
-    -o-text-shadow: none;
-    text-shadow: none;
-    border-radius: 60px;
-    position: relative;
-    background: #5DA30C;
+    height: 20px !important;
+    line-height: 1.4 !important;
+    padding: 0 10px !important;
+    border-radius: 60px !important;
 }
-.qq-upload-list li:before{
-    content: '';
-    height: 100%;
-    width: 50%;
-    position: absolute;
-    left: 0;
-    top:0;
-    background-color: rgba(255,255,255,.34);
-    border-radius: 60px;
-}
+/*.qq-upload-list li:before{*/
+    /*content: '';*/
+    /*height: 100%;*/
+    /*width: 50%;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top:0;*/
+    /*background-color: rgba(255,255,255,.34);*/
+    /*border-radius: 60px;*/
+/*}*/
 .qq-upload-file,
 .qq-upload-spinner,
 .qq-upload-size,
@@ -49,7 +37,6 @@
     font-size: 12px;
     color: white;
     font-family: 'Nunito Sans', sans-serif;
-    display: none !important;
 }
 .qq-upload-size,
 .qq-upload-cancel {
