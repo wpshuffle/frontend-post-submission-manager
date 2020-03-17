@@ -707,7 +707,7 @@ qq.extend(qq.FileUploader.prototype, {
         }          
 		
 		// Update progress bar <span> tag
-		this._find(item, 'progressBar').style.width = 20 + '%';
+		this._find(item, 'progressBar').style.width = percent + '%';
         
         qq.setText(size, text);         
     },
@@ -716,12 +716,12 @@ qq.extend(qq.FileUploader.prototype, {
 
         // mark completed
         var item = this._getItemByFileId(id);                
-       // qq.remove(this._find(item, 'cancel'));
-       // qq.remove(this._find(item, 'spinner'));
-      //  qq.remove(item);
+        qq.remove(this._find(item, 'cancel'));
+        qq.remove(this._find(item, 'spinner'));
+        qq.remove(item);
         
         if (result.success){
-          //  qq.addClass(item, this._classes.success);    
+            qq.addClass(item, this._classes.success);    
         } else {
             qq.addClass(item, this._classes.fail);
         }         
