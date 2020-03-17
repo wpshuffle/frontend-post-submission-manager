@@ -17,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="3354" column="14" lean-forward="false" selection-start-line="3354" selection-start-column="14" selection-end-line="3354" selection-end-column="14" />
+            <state relative-caret-position="437">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -27,12 +27,10 @@
       <file leaf-file-name="fpsm-metabox-render.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/cores/fpsm-metabox-render.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-418">
+            <state relative-caret-position="480">
               <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
-                <element signature="e#995#10814#0#HTML" expanded="true" />
                 <element signature="e#1052#1057#0#PHP" expanded="true" />
-                <element signature="e#1135#10791#0#HTML" expanded="true" />
                 <element signature="e#1184#1189#0#PHP" expanded="true" />
                 <element signature="e#1465#1470#0#PHP" expanded="true" />
                 <element signature="e#1540#1545#0#PHP" expanded="true" />
@@ -41,14 +39,11 @@
                 <element signature="e#2036#2041#0#PHP" expanded="true" />
                 <element signature="e#2081#2086#0#PHP" expanded="true" />
                 <element signature="e#2338#2343#0#PHP" expanded="true" />
-                <element signature="e#2324#3032#0#HTML" expanded="true" />
                 <element signature="e#2420#2425#0#PHP" expanded="true" />
                 <element signature="e#2715#2720#0#PHP" expanded="true" />
                 <element signature="e#2780#2785#0#PHP" expanded="true" />
                 <element signature="e#3537#3542#0#PHP" expanded="true" />
-                <element signature="e#3501#4818#0#HTML" expanded="true" />
                 <element signature="e#3615#3620#0#PHP" expanded="true" />
-                <element signature="e#4006#4610#0#HTML" expanded="true" />
                 <element signature="e#4148#4153#0#PHP" expanded="true" />
                 <element signature="e#4202#4207#0#PHP" expanded="true" />
                 <element signature="e#4268#4273#0#PHP" expanded="true" />
@@ -57,10 +52,8 @@
                 <element signature="e#4519#4524#0#PHP" expanded="true" />
                 <element signature="e#5005#5010#0#PHP" expanded="true" />
                 <element signature="e#5274#5279#0#PHP" expanded="true" />
-                <element signature="e#5238#6655#0#HTML" expanded="true" />
                 <element signature="e#5352#5357#0#PHP" expanded="true" />
                 <element signature="e#5519#5524#0#PHP" expanded="true" />
-                <element signature="e#5833#6357#0#HTML" expanded="true" />
                 <element signature="e#5932#5937#0#PHP" expanded="true" />
                 <element signature="e#5984#5989#0#PHP" expanded="true" />
                 <element signature="e#6050#6055#0#PHP" expanded="true" />
@@ -73,16 +66,13 @@
                 <element signature="e#7040#7045#0#PHP" expanded="true" />
                 <element signature="e#7300#7305#0#PHP" expanded="true" />
                 <element signature="e#7352#7357#0#PHP" expanded="true" />
-                <element signature="e#7591#8689#0#HTML" expanded="true" />
                 <element signature="e#7658#7663#0#PHP" expanded="true" />
                 <element signature="e#7854#7859#0#PHP" expanded="true" />
                 <element signature="e#7947#7952#0#PHP" expanded="true" />
                 <element signature="e#8010#8015#0#PHP" expanded="true" />
                 <element signature="e#8257#8262#0#PHP" expanded="true" />
                 <element signature="e#8367#8372#0#PHP" expanded="true" />
-                <element signature="e#8884#10634#0#HTML" expanded="true" />
                 <element signature="e#8957#8962#0#PHP" expanded="true" />
-                <element signature="e#9409#10231#0#HTML" expanded="true" />
                 <element signature="e#9542#9547#0#PHP" expanded="true" />
                 <element signature="e#9687#9692#0#PHP" expanded="true" />
                 <element signature="e#9821#9826#0#PHP" expanded="true" />
@@ -90,13 +80,9 @@
                 <element signature="e#10104#10109#0#PHP" expanded="true" />
                 <element signature="e#10464#10469#0#PHP" expanded="true" />
                 <element signature="e#10516#10521#0#PHP" expanded="true" />
-                <element signature="e#10970#11422#0#HTML" expanded="true" />
                 <element signature="e#11023#11028#0#PHP" expanded="true" />
-                <element signature="e#11102#11403#0#HTML" expanded="true" />
                 <element signature="e#11197#11202#0#PHP" expanded="true" />
-                <element signature="e#11561#12016#0#HTML" expanded="true" />
                 <element signature="e#11614#11619#0#PHP" expanded="true" />
-                <element signature="e#11693#11997#0#HTML" expanded="true" />
                 <element signature="e#11789#11794#0#PHP" expanded="true" />
               </folding>
             </state>
@@ -106,17 +92,14 @@
       <file leaf-file-name="post-content-append.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/cores/post-content-append.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="580">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#1286#4632#0#HTML" expanded="true" />
                 <element signature="e#1347#1352#0#PHP" expanded="true" />
-                <element signature="e#1428#4613#0#HTML" expanded="true" />
                 <element signature="e#1481#1486#0#PHP" expanded="true" />
                 <element signature="e#2001#2006#0#PHP" expanded="true" />
                 <element signature="e#2046#2051#0#PHP" expanded="true" />
                 <element signature="e#2460#2465#0#PHP" expanded="true" />
-                <element signature="e#3645#4014#0#HTML" expanded="true" />
                 <element signature="e#3736#3741#0#PHP" expanded="true" />
                 <element signature="e#3775#3780#0#PHP" expanded="true" />
                 <element signature="e#3869#3874#0#PHP" expanded="true" />
@@ -132,7 +115,7 @@
       <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
+            <state relative-caret-position="8200">
               <caret line="410" column="24" lean-forward="false" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="24" />
               <folding>
                 <element signature="e#18483#18630#0" expanded="false" />
@@ -234,7 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,7 +246,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,25 +312,29 @@
       <workItem from="1583824609677" duration="8381000" />
       <workItem from="1583846452967" duration="13000" />
       <workItem from="1583922249375" duration="2899000" />
-      <workItem from="1583997744665" duration="2201000" />
+      <workItem from="1583997744665" duration="3303000" />
+      <workItem from="1584062558343" duration="12000" />
+      <workItem from="1584089973818" duration="479000" />
+      <workItem from="1584197004760" duration="8000" />
+      <workItem from="1584434787232" duration="657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116515000" />
+    <option name="totallyTimeSpent" value="118773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2934003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22668579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16276202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -668,9 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="e#374#379#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +728,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="8200">
           <caret line="410" column="24" lean-forward="false" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="24" />
           <folding>
             <element signature="e#18483#18630#0" expanded="false" />
@@ -757,12 +740,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/cores/fpsm-metabox-render.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
+        <state relative-caret-position="480">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#995#10814#0#HTML" expanded="true" />
             <element signature="e#1052#1057#0#PHP" expanded="true" />
-            <element signature="e#1135#10791#0#HTML" expanded="true" />
             <element signature="e#1184#1189#0#PHP" expanded="true" />
             <element signature="e#1465#1470#0#PHP" expanded="true" />
             <element signature="e#1540#1545#0#PHP" expanded="true" />
@@ -771,14 +752,11 @@
             <element signature="e#2036#2041#0#PHP" expanded="true" />
             <element signature="e#2081#2086#0#PHP" expanded="true" />
             <element signature="e#2338#2343#0#PHP" expanded="true" />
-            <element signature="e#2324#3032#0#HTML" expanded="true" />
             <element signature="e#2420#2425#0#PHP" expanded="true" />
             <element signature="e#2715#2720#0#PHP" expanded="true" />
             <element signature="e#2780#2785#0#PHP" expanded="true" />
             <element signature="e#3537#3542#0#PHP" expanded="true" />
-            <element signature="e#3501#4818#0#HTML" expanded="true" />
             <element signature="e#3615#3620#0#PHP" expanded="true" />
-            <element signature="e#4006#4610#0#HTML" expanded="true" />
             <element signature="e#4148#4153#0#PHP" expanded="true" />
             <element signature="e#4202#4207#0#PHP" expanded="true" />
             <element signature="e#4268#4273#0#PHP" expanded="true" />
@@ -787,10 +765,8 @@
             <element signature="e#4519#4524#0#PHP" expanded="true" />
             <element signature="e#5005#5010#0#PHP" expanded="true" />
             <element signature="e#5274#5279#0#PHP" expanded="true" />
-            <element signature="e#5238#6655#0#HTML" expanded="true" />
             <element signature="e#5352#5357#0#PHP" expanded="true" />
             <element signature="e#5519#5524#0#PHP" expanded="true" />
-            <element signature="e#5833#6357#0#HTML" expanded="true" />
             <element signature="e#5932#5937#0#PHP" expanded="true" />
             <element signature="e#5984#5989#0#PHP" expanded="true" />
             <element signature="e#6050#6055#0#PHP" expanded="true" />
@@ -803,16 +779,13 @@
             <element signature="e#7040#7045#0#PHP" expanded="true" />
             <element signature="e#7300#7305#0#PHP" expanded="true" />
             <element signature="e#7352#7357#0#PHP" expanded="true" />
-            <element signature="e#7591#8689#0#HTML" expanded="true" />
             <element signature="e#7658#7663#0#PHP" expanded="true" />
             <element signature="e#7854#7859#0#PHP" expanded="true" />
             <element signature="e#7947#7952#0#PHP" expanded="true" />
             <element signature="e#8010#8015#0#PHP" expanded="true" />
             <element signature="e#8257#8262#0#PHP" expanded="true" />
             <element signature="e#8367#8372#0#PHP" expanded="true" />
-            <element signature="e#8884#10634#0#HTML" expanded="true" />
             <element signature="e#8957#8962#0#PHP" expanded="true" />
-            <element signature="e#9409#10231#0#HTML" expanded="true" />
             <element signature="e#9542#9547#0#PHP" expanded="true" />
             <element signature="e#9687#9692#0#PHP" expanded="true" />
             <element signature="e#9821#9826#0#PHP" expanded="true" />
@@ -820,13 +793,9 @@
             <element signature="e#10104#10109#0#PHP" expanded="true" />
             <element signature="e#10464#10469#0#PHP" expanded="true" />
             <element signature="e#10516#10521#0#PHP" expanded="true" />
-            <element signature="e#10970#11422#0#HTML" expanded="true" />
             <element signature="e#11023#11028#0#PHP" expanded="true" />
-            <element signature="e#11102#11403#0#HTML" expanded="true" />
             <element signature="e#11197#11202#0#PHP" expanded="true" />
-            <element signature="e#11561#12016#0#HTML" expanded="true" />
             <element signature="e#11614#11619#0#PHP" expanded="true" />
-            <element signature="e#11693#11997#0#HTML" expanded="true" />
             <element signature="e#11789#11794#0#PHP" expanded="true" />
           </folding>
         </state>
@@ -834,17 +803,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/cores/post-content-append.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="580">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="e#1286#4632#0#HTML" expanded="true" />
             <element signature="e#1347#1352#0#PHP" expanded="true" />
-            <element signature="e#1428#4613#0#HTML" expanded="true" />
             <element signature="e#1481#1486#0#PHP" expanded="true" />
             <element signature="e#2001#2006#0#PHP" expanded="true" />
             <element signature="e#2046#2051#0#PHP" expanded="true" />
             <element signature="e#2460#2465#0#PHP" expanded="true" />
-            <element signature="e#3645#4014#0#HTML" expanded="true" />
             <element signature="e#3736#3741#0#PHP" expanded="true" />
             <element signature="e#3775#3780#0#PHP" expanded="true" />
             <element signature="e#3869#3874#0#PHP" expanded="true" />
@@ -858,8 +824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="3354" column="14" lean-forward="false" selection-start-line="3354" selection-start-column="14" selection-end-line="3354" selection-end-column="14" />
+        <state relative-caret-position="437">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>

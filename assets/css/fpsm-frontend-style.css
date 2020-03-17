@@ -101,7 +101,16 @@
     display: none;
 }
 
+select[multiple="multiple"]{
+    padding: 15px;
+    min-height: 80px;
+}
 
+.fpsm-multiple-select{
+    height: auto !important;
+    padding: 10px 0;
+}
+.fpsm-multiple-select:before{display: none}
 
 .fpsm-display-none{display:none;}
 .fpsm-each-tag {
