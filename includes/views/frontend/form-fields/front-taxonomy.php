@@ -7,10 +7,14 @@ $taxonomy_details = get_taxonomy($taxonomy);
 
 if (!empty($edit_post)) {
     $edit_post_terms = get_the_terms($edit_post, $taxonomy);
-    if ($taxonomy_details->hierarchical == 1) {
-        $edit_post_terms_id = array_column($edit_post_terms, 'term_id');
+    if (!empty($edit_post_terms)) {
+        if ($taxonomy_details->hierarchical == 1) {
+            $edit_post_terms_id = array_column($edit_post_terms, 'term_id');
+        } else {
+            $edit_post_terms_id = array_column($edit_post_terms, 'name');
+        }
     } else {
-        $edit_post_terms_id = array_column($edit_post_terms, 'name');
+        $edit_post_terms_id = array();
     }
 }
 switch ($taxonomy_field_type) {

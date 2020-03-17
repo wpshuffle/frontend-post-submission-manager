@@ -139,38 +139,57 @@ jQuery(document).ready(function ($) {
         var selector = $(this);
         var media_id = $(this).data('media-id');
         var media_key = $(this).data('media-key');
-        $.ajax({
-            type: 'post',
-            url: fpsm_js_obj.ajax_url,
-            data: {
-                _wpnonce: fpsm_js_obj.ajax_nonce,
-                media_id: media_id,
-                media_key: media_key,
-                action: 'fpsm_media_delete_action'
-            },
-            success: function (res) {
-                res = $.parseJSON(res);
-                if (res.status == 200) {
-                    media_id = media_id.toString();
-                    var upload_count = selector.closest('.fpsm-field').find('.fpsm-upload-count').val();
-                    upload_count--;
-                    selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
-                    var pre_saved_value = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
-                    var pre_saved_value_array = pre_saved_value.split(',');
-                    if (pre_saved_value_array.length > 1) {
-                        console.log(pre_saved_value_array.indexOf(media_id));
-                        pre_saved_value_array.splice(pre_saved_value_array.indexOf(media_id), 1);
-                        pre_saved_value = pre_saved_value_array.join(',');
-                        selector.closest('.fpsm-field').find('.fpsm-media-id').val(pre_saved_value);
+        var edit = $(this).data('edit');
+        if (edit == 'no') {
+            $.ajax({
+                type: 'post',
+                url: fpsm_js_obj.ajax_url,
+                data: {
+                    _wpnonce: fpsm_js_obj.ajax_nonce,
+                    media_id: media_id,
+                    media_key: media_key,
+                    action: 'fpsm_media_delete_action'
+                },
+                success: function (res) {
+                    res = $.parseJSON(res);
+                    if (res.status == 200) {
+                        media_id = media_id.toString();
+                        var upload_count = selector.closest('.fpsm-field').find('.fpsm-upload-count').val();
+                        upload_count--;
+                        selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
+                        var pre_saved_value = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
+                        var pre_saved_value_array = pre_saved_value.split(',');
+                        if (pre_saved_value_array.length > 1) {
+                            console.log(pre_saved_value_array.indexOf(media_id));
+                            pre_saved_value_array.splice(pre_saved_value_array.indexOf(media_id), 1);
+                            pre_saved_value = pre_saved_value_array.join(',');
+                            selector.closest('.fpsm-field').find('.fpsm-media-id').val(pre_saved_value);
+                        } else {
+                            selector.closest('.fpsm-field').find('.fpsm-media-id').val('');
+                        }
+                        selector.closest('.fpsm-file-preview-row').remove();
                     } else {
-                        selector.closest('.fpsm-field').find('.fpsm-media-id').val('');
+                        alert(res.message);
                     }
-                    selector.closest('.fpsm-file-preview-row').remove();
-                } else {
-                    alert(res.message);
                 }
+            });
+        } else {
+            media_id = media_id.toString();
+            var upload_count = selector.closest('.fpsm-field').find('.fpsm-upload-count').val();
+            upload_count--;
+            selector.closest('.fpsm-field').find('.fpsm-upload-count').val(upload_count);
+            var pre_saved_value = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
+            var pre_saved_value_array = pre_saved_value.split(',');
+            if (pre_saved_value_array.length > 1) {
+                console.log(pre_saved_value_array.indexOf(media_id));
+                pre_saved_value_array.splice(pre_saved_value_array.indexOf(media_id), 1);
+                pre_saved_value = pre_saved_value_array.join(',');
+                selector.closest('.fpsm-field').find('.fpsm-media-id').val(pre_saved_value);
+            } else {
+                selector.closest('.fpsm-field').find('.fpsm-media-id').val('');
             }
-        });
+            selector.closest('.fpsm-file-preview-row').remove();
+        }
     });
 
     $('.fpsm-auto-complete-field').each(function () {
@@ -271,7 +290,7 @@ jQuery(document).ready(function ($) {
                 } else {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
                         var error_details = data.error_details;
-                        for (field_key in error_details) {
+                        for (var field_key in error_details) {
                             if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
                                 selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
                             } else {

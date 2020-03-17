@@ -13,9 +13,10 @@ $uploader_label = (!empty($field_details['upload_button_label'])) ? $field_detai
 $multiple_upload = (!empty($field_details['multiple_upload'])) ? 'true' : 'false';
 $max_number_uploads = (!empty($field_details['max_number_uploads'])) ? $field_details['max_number_uploads'] : -1;
 $allowed_extensions = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : $default_allowed_extensions;
+$media_id_array = (!empty($custom_field_saved_value)) ? explode(',', $custom_field_saved_value) : array();
 ?>
 <div class="fpsm-file-uploader" id="fpms-file-uploader-<?php echo esc_attr($fpsm_library_obj->generate_random_string()); ?>" data-extensions="<?php echo esc_attr(implode('|', $allowed_extensions)); ?>" data-file-size-limit="<?php echo esc_attr($upload_file_size_limit); ?>" data-label="<?php echo esc_attr($uploader_label); ?>" data-field-name="<?php echo esc_attr($field_key); ?>" data-multiple='<?php echo esc_attr($multiple_upload); ?>' data-multiple-upload-limit="<?php echo esc_attr($max_number_uploads); ?>"></div>
-<input type="hidden" class="fpsm-upload-count" value="0"/>
+<input type="hidden" class="fpsm-upload-count" value="<?php echo count($media_id_array); ?>"/>
 <input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id"/>
 <div class="fpsm-file-preview-wrap">
     <?php
@@ -33,7 +34,7 @@ $allowed_extensions = (!empty($field_details['file_extensions'])) ? $field_detai
                 <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($thumbnail_url_obj[0]); ?>"></span>
                 <span class="fpsm-file-preview-column"><?php echo esc_html($image_title); ?></span>
                 <span class="fpsm-file-preview-column"><?php echo esc_html($thumbnail_file_size); ?></span>
-                <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-delete-button" data-media-id="<?php echo intval($thumbnail_id); ?>" data-media-key="<?php echo esc_attr($attachment_code); ?>" value="<?php esc_attr_e('Delete', 'frontend-post-submission-manager'); ?>"></span>
+                <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-delete-button" data-media-id="<?php echo intval($media_id); ?>" data-media-key="<?php echo esc_attr($attachment_code); ?>" value="<?php esc_attr_e('Delete', 'frontend-post-submission-manager'); ?>" data-edit="<?php echo (!empty($edit_post)) ? 'no' : 'no'; ?>"></span>
             </div>
             <?php
         }
