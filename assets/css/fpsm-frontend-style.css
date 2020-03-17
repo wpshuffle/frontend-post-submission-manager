@@ -37,7 +37,6 @@
     top:0;
     background-color: rgba(255,255,255,.34);
     border-radius: 60px;
-    animation: gradientShift 1s linear infinite;
 }
 .qq-upload-file,
 .qq-upload-spinner,
