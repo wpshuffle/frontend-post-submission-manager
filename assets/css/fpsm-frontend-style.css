@@ -394,15 +394,15 @@ input[type="file"]{
 
 }
 /*.fpsm-front-form .qq-upload-list{display: none}*/
-.fpsm-front-form .fpsm-custom-field-select .fpsm-field,
-.fpsm-front-form .fpsm-taxonomy-select .fpsm-field{
+.fpsm-front-form .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 2px;
     background-color: rgba(0,0,0,.04);
     border:solid 1px rgba(0,0,0,.08);
 }
 
-.fpsm-front-form .fpsm-taxonomy-select .fpsm-field select,
-.fpsm-front-form .fpsm-custom-field-select .fpsm-field select{position: relative;z-index: 4}
+.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select,
+.fpsm-front-form .fpsm-custom-field-select .fpsm-field .fpsm-select-field select{position: relative;z-index: 4}
 
 .fpsm-front-form .fpsm-field input[type="submit"]{
     background-color: #0083f8;
@@ -477,8 +477,8 @@ button.add_media{
     line-height: 32px;
 }
 
-.fpsm-template-1 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-1 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-1 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-1 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 2px;
     background-color: rgba(0,0,0,.04);
     border:solid 1px rgba(0,0,0,.08);
@@ -533,8 +533,8 @@ button.add_media{
     border-radius: 68px;
 }
 
-.fpsm-template-2 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-2 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-2 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-2 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 68px;
     background-color: white;
     border:solid 1px rgba(0,0,0,.08);
@@ -594,8 +594,8 @@ button.add_media{
     border-radius: 0;
 }
 
-.fpsm-template-3 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-3 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-3 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-3 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: white;
     border:solid 1px rgba(0,0,0,.08);
@@ -674,8 +674,8 @@ button.add_media{
     color: white;
 }
 
-.fpsm-template-4 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-4 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-4 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-4 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: white;
     border:solid 1px rgba(0,0,0,.08);
@@ -742,8 +742,8 @@ button.add_media{
     color: white;
 }
 
-.fpsm-template-5 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-5 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-5 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-5 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: transparent;
     border:solid 1px rgba(0,0,0,.2);
@@ -811,8 +811,8 @@ button.add_media{
     background-color: rgba(0,0,0,.8);
 }
 
-.fpsm-template-6 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-6 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-6 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-6 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 68px;
     background-color: #ebebec;
     border:none;
@@ -1029,8 +1029,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-7 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-7 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-7 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-7 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 2px;
     background-color: transparent;
     border:solid 1px rgba(0,0,0,.18);
@@ -1088,8 +1088,8 @@ button.add_media{
     line-height: 32px;
 }
 
-.fpsm-template-8 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-8 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-8 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-8 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: transparent;
     border:none;
@@ -1168,8 +1168,8 @@ button.add_media{
     line-height: 32px;
 }
 
-.fpsm-template-9 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-9 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-9 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-9 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: transparent;
     border-width: 2px;
@@ -1244,8 +1244,8 @@ button.add_media{
     color: white;
 }
 
-.fpsm-template-10 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-10 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-10 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-10 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: transparent;
     border-width: 2px;
@@ -1331,8 +1331,8 @@ button.add_media{
     border-radius: 0;
 }
 
-.fpsm-template-11 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-11 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-11 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-11 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: rgba(255,255,255,.18);
     border:none;
@@ -1597,8 +1597,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-12 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-12 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-12 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-12 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 68px;
     border:solid 2px rgba(0,0,0,.18);
     background-color: transparent;
@@ -1670,12 +1670,12 @@ button.add_media{
     border-radius: 0;
 }
 
-.fpsm-template-13 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-13 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     color: inherit;
 }
-.fpsm-template-13 .fpsm-custom-field-select .fpsm-field select,
-.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field select{
+.fpsm-template-13 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select,
+.fpsm-template-13 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select{
     color: inherit;
 }
 
@@ -1734,14 +1734,14 @@ button.add_media{
     border-radius: 68px;
 }
 
-.fpsm-template-14 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     color: inherit;
     background-color: #403872;
     border-radius: 68px;
 }
-.fpsm-template-14 .fpsm-custom-field-select .fpsm-field select,
-.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field select{
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select{
     color: white;
 }
 
@@ -1800,8 +1800,8 @@ button.add_media{
     background-color: white;
 }
 
-.fpsm-template-14 .fpsm-custom-field-select .fpsm-field .fpsm-select-field:before,
-.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field:before{
+.fpsm-template-14 .fpsm-custom-field-select .fpsm-field .fpsm-select-field .fpsm-select-field:before,
+.fpsm-template-14 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field .fpsm-select-field:before{
     border-color: white transparent transparent transparent;
 }
 
@@ -1828,15 +1828,15 @@ button.add_media{
     color: white;
 }
 
-.fpsm-template-15 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-15 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-15 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-15 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border: none;
     background-color: transparent;
     border-bottom: solid 1px rgba(0,0,0,.18);
 
 }
-.fpsm-template-15 .fpsm-custom-field-select .fpsm-field select,
-.fpsm-template-15 .fpsm-taxonomy-select .fpsm-field select{
+.fpsm-template-15 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select,
+.fpsm-template-15 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select{
     padding: 0;
 }
 
@@ -2054,8 +2054,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-16 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-16 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-16 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-16 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 2px;
     background-color: transparent;
     border:solid 1px rgba(0,0,0,.18);
@@ -2263,8 +2263,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-17 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-17 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-17 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-17 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     background-color: transparent;
     border:none;
     border-bottom:solid 1px rgba(0,0,0,.18);
@@ -2370,8 +2370,8 @@ button.add_media{
     padding: 5px 24px;
 }
 
-.fpsm-template-18 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-18 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-18 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-18 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: transparent;
     border-color: #697e92;
@@ -2476,8 +2476,8 @@ button.add_media{
     z-index: 9;
 }
 
-.fpsm-template-19 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-19 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-19 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-19 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 6px;
     background-color: transparent;
     border-color: rgba(0,0,0,.14);
@@ -2503,7 +2503,7 @@ button.add_media{
 
 
 
-/*============================= Template 19 ========================*/
+/*============================= Template 20 ========================*/
 .fpsm-template-20{
     background-image: url("../images/child-bg-2.png");
     background-size: 100%;
@@ -2572,8 +2572,8 @@ button.add_media{
     border-radius: 0;
 }
 
-.fpsm-template-20 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-20 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-20 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-20 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 0;
     background-color: #edf0e9;
     border:none;
@@ -2584,8 +2584,8 @@ button.add_media{
     border-color: #a4ae51 transparent transparent transparent;
     z-index: 9;
 }
-.fpsm-template-20 .fpsm-custom-field-select .fpsm-field select,
-.fpsm-template-20 .fpsm-taxonomy-select .fpsm-field select{
+.fpsm-template-20 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select,
+.fpsm-template-20 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select{
     color: inherit;
 }
 .fpsm-template-20 .fpsm-custom-field-datepicker .fpsm-field{color: inherit}
@@ -2801,8 +2801,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-21 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-21 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-21 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-21 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     border-radius: 2px;
     background-color: transparent;
     border:solid 1px rgba(0,0,0,.18);
@@ -3048,8 +3048,8 @@ button.add_media{
     padding-left: 50px;
 }
 
-.fpsm-template-22 .fpsm-custom-field-select .fpsm-field,
-.fpsm-template-22 .fpsm-taxonomy-select .fpsm-field{
+.fpsm-template-22 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-22 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
     background-color: rgba(255,255,255, 0.08);
     height: 45px;
     color: inherit;
