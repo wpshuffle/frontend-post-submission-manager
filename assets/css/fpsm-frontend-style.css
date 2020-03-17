@@ -11,11 +11,19 @@
 
 .qq-upload-list{margin: 0;}
 .qq-upload-list li {
-    height: 20px !important;
-    line-height: 1.4 !important;
+    height: 18px !important;
+    line-height: 1.2 !important;
     padding: 0 10px !important;
     border-radius: 60px !important;
+    display: flex;
+    align-items: center;
 }
+.qq-upload-list li > span,
+.qq-upload-list li > a{
+    flex: 1;
+}
+.qq-upload-list li > a:nth-last-child(2),
+.qq-upload-list li > span:nth-last-child(3){text-align: right}
 /*.qq-upload-list li:before{*/
     /*content: '';*/
     /*height: 100%;*/
@@ -49,14 +57,7 @@
 .qq-upload-fail .qq-upload-failed-text {
     display: inline;
 }
-.qq-upload-list li.qq-upload-success {
-    background: #5DA30C;
-    color: #FFFFFF;
-}
-.qq-upload-list li.qq-upload-fail {
-    background: #AF0000;
-    color: #FFFFFF;
-}
+
 .qq-upload-button:hover {
     background: #0F5BBB;
 }
