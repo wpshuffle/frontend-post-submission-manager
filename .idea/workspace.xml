@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fileuploader.css" afterPath="$PROJECT_DIR$/assets/css/fileuploader.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="397">
+              <caret line="3239" column="29" lean-forward="false" selection-start-line="3239" selection-start-column="29" selection-end-line="3239" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -28,8 +27,8 @@
       <file leaf-file-name="fileuploader.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fileuploader.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-642">
-              <caret line="71" column="205" lean-forward="false" selection-start-line="71" selection-start-column="205" selection-end-line="71" selection-end-column="205" />
+            <state relative-caret-position="240">
+              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -141,7 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tag</find>
       <find>radio</find>
       <find>.fpsm-file-preview-column</find>
       <find>11</find>
@@ -171,6 +169,7 @@
       <find>.fpsm-file-preview-row</find>
       <find>grad</find>
       <find>.qq-upload-button</find>
+      <find>.qq-upload-list li &gt; a</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -228,7 +227,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,7 +267,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,18 +337,20 @@
       <workItem from="1584062558343" duration="12000" />
       <workItem from="1584089973818" duration="479000" />
       <workItem from="1584197004760" duration="8000" />
-      <workItem from="1584434787232" duration="4224000" />
+      <workItem from="1584434787232" duration="4510000" />
+      <workItem from="1584500978760" duration="397000" />
+      <workItem from="1584604157082" duration="253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122340000" />
+    <option name="totallyTimeSpent" value="123276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22668579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23385939" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -684,44 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5120">
           <caret line="624" column="44" lean-forward="false" selection-start-line="624" selection-start-column="32" selection-end-line="624" selection-end-column="44" />
-          <folding>
-            <element signature="e#309#471#0#PHP" expanded="false" />
-            <element signature="e#628#712#0#PHP" expanded="false" />
-            <element signature="e#861#987#0#PHP" expanded="false" />
-            <element signature="e#1096#1185#0#PHP" expanded="false" />
-            <element signature="e#1394#2143#0#PHP" expanded="false" />
-            <element signature="e#2344#2828#0#PHP" expanded="false" />
-            <element signature="e#2977#3662#0#PHP" expanded="false" />
-            <element signature="e#3672#4178#0#PHP" expanded="false" />
-            <element signature="e#4188#4607#0#PHP" expanded="false" />
-            <element signature="e#4758#6454#0#PHP" expanded="false" />
-            <element signature="e#6595#8122#0#PHP" expanded="false" />
-            <element signature="e#8276#8407#0#PHP" expanded="false" />
-            <element signature="e#8630#8774#0#PHP" expanded="false" />
-            <element signature="e#8927#9548#0#PHP" expanded="false" />
-            <element signature="e#9728#9913#0#PHP" expanded="false" />
-            <element signature="e#10086#10263#0#PHP" expanded="false" />
-            <element signature="e#10400#10506#0#PHP" expanded="false" />
-            <element signature="e#10709#11363#0#PHP" expanded="false" />
-            <element signature="e#11524#11792#0#PHP" expanded="false" />
-            <element signature="e#11958#12070#0#PHP" expanded="false" />
-            <element signature="e#12255#13410#0#PHP" expanded="false" />
-            <element signature="e#13634#14032#0#PHP" expanded="false" />
-            <element signature="e#14227#14497#0#PHP" expanded="false" />
-            <element signature="e#14661#15513#0#PHP" expanded="false" />
-            <element signature="e#15523#16799#0#PHP" expanded="false" />
-            <element signature="e#16935#17271#0#PHP" expanded="false" />
-            <element signature="e#17400#18052#0#PHP" expanded="false" />
-            <element signature="e#18062#18267#0#PHP" expanded="false" />
-            <element signature="e#18277#18490#0#PHP" expanded="false" />
-            <element signature="e#18500#18663#0#PHP" expanded="false" />
-            <element signature="e#18673#18979#0#PHP" expanded="false" />
-            <element signature="e#19092#19686#0#PHP" expanded="false" />
-            <element signature="e#19696#20178#0#PHP" expanded="false" />
-            <element signature="e#20188#20616#0#PHP" expanded="false" />
-            <element signature="e#20626#21026#0#PHP" expanded="false" />
-            <marker date="1583923698298" expanded="true" signature="11102:11177" ph="SELECT COUNT... ${$form_table}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
           <caret line="57" column="102" lean-forward="false" selection-start-line="57" selection-start-column="102" selection-end-line="57" selection-end-column="102" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,16 +800,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fileuploader.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-642">
-          <caret line="71" column="205" lean-forward="false" selection-start-line="71" selection-start-column="205" selection-end-line="71" selection-end-column="205" />
+        <state relative-caret-position="240">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="397">
+          <caret line="3239" column="29" lean-forward="false" selection-start-line="3239" selection-start-column="29" selection-end-line="3239" selection-end-column="29" />
           <folding />
         </state>
       </provider>

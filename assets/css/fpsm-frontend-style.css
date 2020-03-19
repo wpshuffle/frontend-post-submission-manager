@@ -3233,6 +3233,13 @@ button.add_media{
     max-width: 70px;
 }
 
+.fpsm-dashboard-column a{
+    display: inline-block;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 .fpsm-dashboard-row .fpsm-dashboard-column{
     font-size: 15px;
     font-weight: 600;
