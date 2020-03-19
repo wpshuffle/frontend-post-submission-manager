@@ -49,7 +49,7 @@ if ($editor_type == 'simple') {
                 $max_number_uploads = (!empty($field_details['max_number_uploads'])) ? $field_details['max_number_uploads'] : -1;
                 $allowed_extensions = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : $default_allowed_extensions;
                 ?>
-                <div class="fpsm-custom-media-upload-button"
+                <div class="fpsm-file-uploader fpsm-custom-media-upload-button"
                      id="fpsm-file-uploader-<?php $fpsm_library_obj->generate_random_string(); ?>"
                      data-extensions="<?php echo esc_attr(implode('|', $allowed_extensions)); ?>"
                      data-file-size-limit="<?php echo esc_attr($upload_file_size_limit); ?>"
@@ -61,7 +61,7 @@ if ($editor_type == 'simple') {
                 <?php
             }
         } else {
-            if (!current_user_can('upload_files') && !empty($field_details['custom_media_upload_button'])) {
+            if ((!current_user_can('upload_files') || empty($field_details['media_upload'])) && !empty($field_details['custom_media_upload_button'])) {
                 $default_allowed_extensions = array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'JPG', 'JPEG', 'PNG', 'BMP');
                 /**
                  * Filters allowed extensions for image field type
@@ -77,7 +77,7 @@ if ($editor_type == 'simple') {
                 $max_number_uploads = (!empty($field_details['max_number_uploads'])) ? $field_details['max_number_uploads'] : -1;
                 $allowed_extensions = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : $default_allowed_extensions;
                 ?>
-                <div class="fpsm-custom-media-upload-button"
+                <div class="fpsm-file-uploader fpsm-custom-media-upload-button"
                      id="fpsm-file-uploader-<?php $fpsm_library_obj->generate_random_string(); ?>"
                      data-extensions="<?php echo esc_attr(implode('|', $allowed_extensions)); ?>"
                      data-file-size-limit="<?php echo esc_attr($upload_file_size_limit); ?>"

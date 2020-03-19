@@ -61,23 +61,30 @@ jQuery(document).ready(function ($) {
                 onComplete: function (id, fileName, responseJSON) {
 
                     if (responseJSON.success) {
-                        var data = {media_url: responseJSON.media_url, media_id: responseJSON.media_id, media_name: responseJSON.media_name, media_key: responseJSON.media_key}
-                        var file_preview_template = wp.template('upload-preview');
-                        if (multiple_upload) {
-                            var media_id = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
-                            if (media_id != '') {
-                                var media_id_array = media_id.split(',');
-                                media_id_array.push(responseJSON.media_id);
-                                var media_id = media_id_array.join(',');
-                            } else {
-                                media_id = responseJSON.media_id;
-                            }
-
-                            selector.closest('.fpsm-field').find('.fpsm-media-id').val(media_id);
-                            selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').append(file_preview_template(responseJSON));
+                        if (selector.hasClass('fpsm-custom-media-upload-button')) {
+                            var image_html = '<img class="alignnone size-thumbnail wp-image-'+responseJSON.media_id+'" src="http://localhost/plugin-development/wp-content/uploads/2020/03/picture-1-150x150.jpg" alt="'+responseJSON.media_name+'" width="150" height="150" />';
+                            tinyMCE.triggerSave();
+                            tinyMCE.activeEditor.execCommand('mceInsertContent', false, image_html);
                         } else {
-                            selector.closest('.fpsm-field').find('.fpsm-media-id').val(responseJSON.media_id);
-                            selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').html(file_preview_template(responseJSON));
+                            var data = {media_url: responseJSON.media_url, media_id: responseJSON.media_id, media_name: responseJSON.media_name, media_key: responseJSON.media_key}
+
+                            var file_preview_template = wp.template('upload-preview');
+                            if (multiple_upload) {
+                                var media_id = selector.closest('.fpsm-field').find('.fpsm-media-id').val();
+                                if (media_id != '') {
+                                    var media_id_array = media_id.split(',');
+                                    media_id_array.push(responseJSON.media_id);
+                                    var media_id = media_id_array.join(',');
+                                } else {
+                                    media_id = responseJSON.media_id;
+                                }
+
+                                selector.closest('.fpsm-field').find('.fpsm-media-id').val(media_id);
+                                selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').append(file_preview_template(responseJSON));
+                            } else {
+                                selector.closest('.fpsm-field').find('.fpsm-media-id').val(responseJSON.media_id);
+                                selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').html(file_preview_template(responseJSON));
+                            }
                         }
 
                     } else {

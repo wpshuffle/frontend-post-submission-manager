@@ -207,7 +207,18 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 $attachment_thumbnail = wp_get_attachment_image_src($attachment_id);
                 global $fpsm_library_obj;
                 $attachment_size = $fpsm_library_obj->format_file_size($size);
-                $media_details = array('success' => true, 'media_id' => $attachment_id, 'media_key' => $attachment_code, 'media_name' => $filename, 'media_size' => $attachment_size);
+                if (wp_attachment_is('audio')) {
+                    $media_type = 'audio';
+                } else if (wp_attachment_is('video')) {
+                    $media_type = 'video';
+                } else if (wp_attachment_is('image')) {
+                    $media_type = 'image';
+                } else {
+                    $media_type = 'others';
+                }
+
+                $is_image = wp_attachment_is_image($media_id);
+                $media_details = array('success' => true, 'media_id' => $attachment_id, 'media_key' => $attachment_code, 'media_name' => $filename, 'media_size' => $attachment_size, 'media_type' => $media_type);
                 if ($attachment_thumbnail) {
                     $media_details['media_url'] = $attachment_thumbnail[0];
                 } else {

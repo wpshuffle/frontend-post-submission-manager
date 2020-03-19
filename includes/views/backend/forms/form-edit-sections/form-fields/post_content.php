@@ -42,21 +42,29 @@
                         <p class="description"><?php esc_html_e('Please check this if you want to enable our custom media uploader which will allow the user roles who doesn\'t have the upload_files capabilities.', 'frontend-post-submission-manager'); ?></p>
                     </div>
                 </div>
-                <div class="fpsm-field-wrap fpsm-custom-media-ref <?php echo (empty($field_details['custom_media_upload_button'])) ? 'fpsm-display-none' : ''; ?>">
-                    <label><?php esc_html_e('File Extensions', 'frontend-post-submission-manager'); ?></label>
-                    <div class="fpsm-field fpsm-extension-list">
-                        <?php
-                        global $fpsm_library_obj;
-                        $mime_types = get_allowed_mime_types();
-                        $selected_mime_types = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : array();
-                        if (!empty($mime_types)) {
-                            foreach ($mime_types as $mime_type => $mime_type_label) {
-                                ?>
-                                <label class="fpsm-each-extension"><input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[file_extensions][]" value="<?php echo esc_attr($mime_type); ?>" class="fpsm-disable-checkbox-toggle" <?php echo (in_array($mime_type, $selected_mime_types)) ? 'checked="checked"' : ''; ?>/><span><?php echo esc_html($mime_type); ?></label>
-                                <?php
+                <div class="fpsm-custom-media-ref <?php echo (empty($field_details['custom_media_upload_button'])) ? 'fpsm-display-none' : ''; ?>">
+                    <div class="fpsm-field-wrap">
+                        <label><?php esc_html_e('Upload Button Label', 'frontend-post-submission-manager'); ?></label>
+                        <div class="fpsm-field">
+                            <input type="text" name="<?php echo esc_attr($field_name_prefix); ?>[upload_button_label]" value="<?php echo (!empty($field_details['upload_button_label'])) ? esc_attr($field_details['upload_button_label']) : ''; ?>"/>
+                        </div>
+                    </div>
+                    <div class="fpsm-field-wrap">
+                        <label><?php esc_html_e('File Extensions', 'frontend-post-submission-manager'); ?></label>
+                        <div class="fpsm-field fpsm-extension-list">
+                            <?php
+                            global $fpsm_library_obj;
+                            $mime_types = get_allowed_mime_types();
+                            $selected_mime_types = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : array();
+                            if (!empty($mime_types)) {
+                                foreach ($mime_types as $mime_type => $mime_type_label) {
+                                    ?>
+                                    <label class="fpsm-each-extension"><input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[file_extensions][]" value="<?php echo esc_attr($mime_type); ?>" class="fpsm-disable-checkbox-toggle" <?php echo (in_array($mime_type, $selected_mime_types)) ? 'checked="checked"' : ''; ?>/><span><?php echo esc_html($mime_type); ?></label>
+                                    <?php
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
                     </div>
                     <div class="fpsm-field-wrap">
                         <label><?php esc_html_e('Upload File Size Limit', 'frontend-post-submission-manager'); ?></label>
