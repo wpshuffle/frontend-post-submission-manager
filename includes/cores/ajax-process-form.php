@@ -119,7 +119,7 @@ if ($this->admin_ajax_nonce_verify()) {
                     die(json_encode($response));
                 }
             } else {
-                $post_author_id = $form_details['basic']['post_author'];
+                $post_author_id = intval($form_details['basic']['post_author']);
             }
             // Lets insert post into DB
             $postarr = array(
@@ -146,6 +146,11 @@ if ($this->admin_ajax_nonce_verify()) {
                 //Lets assign the post image to the post
                 if (!empty($form_data['post_image'])) {
                     set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                }
+
+                //Lets assign post format
+                if (!empty($form_details['basic']['post_format'])) {
+                    set_post_format($insert_update_post_id, $form_details['basic']['post_format']);
                 }
 
                 // Lets assign taxonomy terms

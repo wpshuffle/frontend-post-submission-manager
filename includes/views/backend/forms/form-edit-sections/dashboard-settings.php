@@ -8,7 +8,7 @@ $default_display_fields = array(
 );
 $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_settings['display_fields'] : $default_display_fields;
 ?>
-<div class="fpsm-settings-each-section" data-tab="dashboard">
+<div class="fpsm-settings-each-section" data-tab="dashboard" style="display:none;">
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('SN Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
