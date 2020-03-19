@@ -17,4 +17,19 @@ $layout_settings = (!empty($form_details['layout'])) ? $form_details['layout'] :
             </select>
         </div>
     </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Custom Fields Display Template', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <select name="form_details[layout][custom_field_display_template]">
+                <?php
+                $selected_template = (!empty($layout_settings['custom_field_display_template'])) ? $layout_settings['custom_field_display_template'] : 'template-1';
+                for ($i = 1; $i <= 6; $i++) {
+                    ?>
+                    <option value="template-<?php echo intval($i); ?>" <?php selected($selected_template, 'template-' . $i); ?>><?php esc_html_e(sprintf('Template %d', $i), 'frontend-post-submission-manager'); ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+        </div>
+    </div>
 </div>

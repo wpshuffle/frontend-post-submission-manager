@@ -93,8 +93,9 @@ foreach ($form_fields as $field_key => $field_details) {
     }
 }
 if ($append_flag == 1) {
+    $append_class = (!empty($form_details['layout']['custom_field_display_template'])) ? 'fpsm-custom-' . $form_details['layout']['custom_field_display_template'] : 'fpsm-custom-template-1';
     $append_content = ob_get_contents();
-    $append_content = '<div class="fpsm-custom-fields-content-wrap fpsm-append-' . $display_position_check . '">' . $append_content . '</div>';
+    $append_content = '<div class="fpsm-custom-fields-content-wrap fpsm-append-' . $display_position_check . ' ' . $append_class . '">' . $append_content . '</div>';
 }
 ob_end_clean();
 
