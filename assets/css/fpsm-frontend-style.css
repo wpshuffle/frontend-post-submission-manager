@@ -3238,6 +3238,7 @@ button.add_media{
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
+    text-decoration: none !important;
 }
 
 .fpsm-dashboard-row .fpsm-dashboard-column{

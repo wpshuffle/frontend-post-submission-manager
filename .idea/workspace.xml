@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="3239" column="29" lean-forward="false" selection-start-line="3239" selection-start-column="29" selection-end-line="3239" selection-end-column="29" />
+            <state relative-caret-position="407">
+              <caret line="3240" column="37" lean-forward="false" selection-start-line="3240" selection-start-column="37" selection-end-line="3240" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -339,12 +338,12 @@
       <workItem from="1584197004760" duration="8000" />
       <workItem from="1584434787232" duration="4510000" />
       <workItem from="1584500978760" duration="397000" />
-      <workItem from="1584604157082" duration="253000" />
+      <workItem from="1584604157082" duration="310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123276000" />
+    <option name="totallyTimeSpent" value="123333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -808,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="3239" column="29" lean-forward="false" selection-start-line="3239" selection-start-column="29" selection-end-line="3239" selection-end-column="29" />
+        <state relative-caret-position="407">
+          <caret line="3240" column="37" lean-forward="false" selection-start-line="3240" selection-start-column="37" selection-end-line="3240" selection-end-column="37" />
           <folding />
         </state>
       </provider>
