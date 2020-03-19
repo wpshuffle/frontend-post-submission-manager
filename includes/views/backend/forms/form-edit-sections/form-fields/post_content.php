@@ -58,7 +58,25 @@
                         }
                         ?>
                     </div>
+                    <div class="fpsm-field-wrap">
+                        <label><?php esc_html_e('Upload File Size Limit', 'frontend-post-submission-manager'); ?></label>
+                        <div class="fpsm-field">
+                            <input type="number" min="1" name="<?php echo esc_attr($field_name_prefix); ?>[upload_file_size_limit]" value="<?php echo (!empty($field_details['upload_file_size_limit'])) ? intval($field_details['upload_file_size_limit']) : ''; ?>"/>
+                            <p class="description"><?php esc_html_e('Please enter the max size of the file being uploaded in MB. Default is 5 MB.', 'frontend-post-submission-manager'); ?></p>
+                            <?php
+                            $max_upload_filesize = ini_get('upload_max_filesize');
+                            ?>
+                            <p class="description"><?php esc_html_e(sprintf("Please note that the number shouldn't exceed %s. If you want to allow more than %s then please update the value in your server's php.ini file.", $max_upload_filesize, $max_upload_filesize), 'frontend-post-submission-manager'); ?></p>
+                        </div>
+                    </div>
+                    <div class="fpsm-field-wrap">
+                        <label><?php esc_html_e('Upload File Size Error Message', 'frontend-post-submission-manager'); ?></label>
+                        <div class="fpsm-field">
+                            <input type="text" name="<?php echo esc_attr($field_name_prefix); ?>[upload_filesize_error_message]" value="<?php echo (!empty($field_details['upload_filesize_error_message'])) ? esc_attr($field_details['upload_filesize_error_message']) : ''; ?>"/>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Character Limit', 'frontend-post-submission-manager'); ?></label>

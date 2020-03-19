@@ -853,3 +853,6 @@ input[type="week"]{
     object-fit: cover;
 }
 .fpsm-file-preview-column{font-size: 13px;color: inherit}
+.fpsm-form-template-preview {
+    margin-top: 20px;
+}

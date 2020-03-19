@@ -18,7 +18,7 @@ $form_details = maybe_unserialize($form_details);
 
         <div class="fpsm-add-wrap">
             <a href="javascript:void(0);" class="fpsm-button-primary fpsm-form-save" data-form='fpsm-edit-form'><?php esc_html_e('Save', 'frontend-post-submission-manager'); ?></a>
-            <a href="#" class="fpsm-button-primary btn-preview">
+            <a href="<?php echo site_url() . '?fpsm_form_preview=true&fpsm_form_alias=' . esc_attr($form_row->form_alias) . '&_wpnonce=' . wp_create_nonce('fpsm_preview_nonce'); ?>" class="fpsm-button-primary btn-preview" target="_blank">
                 <?php esc_html_e('Preview', 'frontend-post-submission-manager'); ?>
             </a>
             <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Cancel', 'frontend-post-submission-manager'); ?></a>

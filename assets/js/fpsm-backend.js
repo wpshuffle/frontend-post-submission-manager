@@ -449,6 +449,12 @@ jQuery(document).ready(function ($) {
         message: translation_strings.are_your_sure
       }
     );
+    
+    $('body').on('change','.fpsm-form-template',function(){
+       var template = $(this).val();
+       $('.fpsm-form-template-preview-img').hide();
+       $('.fpsm-form-template-preview-img[data-template-id="'+template+'"]').show();
+    });
      
 
 

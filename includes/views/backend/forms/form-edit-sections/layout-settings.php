@@ -5,7 +5,7 @@ $layout_settings = (!empty($form_details['layout'])) ? $form_details['layout'] :
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Form Template', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <select name="form_details[layout][template]">
+            <select name="form_details[layout][template]" class="fpsm-form-template">
                 <?php
                 $selected_template = (!empty($layout_settings['template'])) ? $layout_settings['template'] : 'template-1';
                 for ($i = 1; $i <= 22; $i++) {
@@ -15,6 +15,15 @@ $layout_settings = (!empty($form_details['layout'])) ? $form_details['layout'] :
                 }
                 ?>
             </select>
+            <div class="fpsm-form-template-preview">
+                <?php
+                for ($i = 1; $i <= 22; $i++) {
+                    ?>
+                    <img src="<?php echo FPSM_URL . '/assets/images/form-template-previews/template-' . $i . '.jpg'; ?>" data-template-id="<?php echo 'template-' . $i; ?>" class="fpsm-form-template-preview-img <?php echo ($selected_template != 'template-' . $i) ? 'fpsm-display-none' : ''; ?>"/>
+                    <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
     <div class="fpsm-field-wrap">
