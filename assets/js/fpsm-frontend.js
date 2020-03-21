@@ -62,9 +62,22 @@ jQuery(document).ready(function ($) {
 
                     if (responseJSON.success) {
                         if (selector.hasClass('fpsm-custom-media-upload-button')) {
-                            var image_html = '<img class="alignnone size-thumbnail wp-image-'+responseJSON.media_id+'" src="http://localhost/plugin-development/wp-content/uploads/2020/03/picture-1-150x150.jpg" alt="'+responseJSON.media_name+'" width="150" height="150" />';
-                            tinyMCE.triggerSave();
-                            tinyMCE.activeEditor.execCommand('mceInsertContent', false, image_html);
+                            switch(responseJSON.media_type){
+                                case 'image':
+                                    var insert_content_html = '<img class="alignnone size-full wp-image-'+responseJSON.media_id+'" src="'+responseJSON.media_full_url+'" alt="'+responseJSON.media_name+'"/>';
+                                    break;
+                                case 'video':
+                                    var insert_content_html = '[video width="100%" height="500" '+responseJSON.media_extension+'="'+responseJSON.media_full_url+'"][/video]';
+                                    break;
+                                case 'audio':
+                                    var insert_content_html = '[audio '+responseJSON.media_extension+'="'+responseJSON.media_full_url+'"][/audio]';
+                                    break;
+                                case 'others':
+                                    var insert_content_html = '<a href="'+responseJSON.media_full_url+'">'+responseJSON.media_name+'</a>';
+                                    break;
+                            }
+                           // tinyMCE.get('fpsm_login_require_form').triggerSave();
+                            tinyMCE.get('fpsm_login_require_form').execCommand('mceInsertContent', false, insert_content_html);
                         } else {
                             var data = {media_url: responseJSON.media_url, media_id: responseJSON.media_id, media_name: responseJSON.media_name, media_key: responseJSON.media_key}
 
