@@ -455,6 +455,8 @@ jQuery(document).ready(function ($) {
        $('.fpsm-form-template-preview-img').hide();
        $('.fpsm-form-template-preview-img[data-template-id="'+template+'"]').show();
     });
+    
+    $('.fpsm-color-picker').wpColorPicker();
      
 
 

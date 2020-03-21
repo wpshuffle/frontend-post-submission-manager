@@ -29,7 +29,7 @@
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="layout"><span class="dashicons dashicons-layout"></span><?php esc_html_e('Layout', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="notification"><span class="dashicons dashicons-email"></span><?php esc_html_e('Notification', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="security"><span class="dashicons dashicons-shield"></span><?php esc_html_e('Security', 'frontend-post-submission-manager'); ?></a></li>
-        <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="custom"><span class="dashicons dashicons-admin-customizer"></span><?php esc_html_e('Customize', 'frontend-post-submission-manager'); ?></a></li>
+        <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="customize"><span class="dashicons dashicons-admin-customizer"></span><?php esc_html_e('Customize', 'frontend-post-submission-manager'); ?></a></li>
                 <?php
                 /**
                  * Fires while building the nav
