@@ -444,20 +444,46 @@ jQuery(document).ready(function ($) {
         $('.fpsm-custom-field-type-trigger-btn').removeClass('btn-selected');
         $(this).addClass('btn-selected');
     });
-     $('.fpsm-edit-form').areYouSure(
-      {
-        message: translation_strings.are_your_sure
-      }
+    $('.fpsm-edit-form').areYouSure(
+            {
+                message: translation_strings.are_your_sure
+            }
     );
-    
-    $('body').on('change','.fpsm-form-template',function(){
-       var template = $(this).val();
-       $('.fpsm-form-template-preview-img').hide();
-       $('.fpsm-form-template-preview-img[data-template-id="'+template+'"]').show();
+
+    $('body').on('change', '.fpsm-form-template', function () {
+        var template = $(this).val();
+        $('.fpsm-form-template-preview-img').hide();
+        $('.fpsm-form-template-preview-img[data-template-id="' + template + '"]').show();
     });
-    
+
     $('.fpsm-color-picker').wpColorPicker();
-     
+
+    /**
+     * Open Media Uploader
+     */
+    $('body').on('click', '.fpsm-media-uploader', function () {
+
+        var selector = $(this);
+
+        var image = wp.media({
+            title: 'Upload Image',
+            // mutiple: true if you want to upload multiple files at once
+            multiple: false
+        }).open()
+                .on('select', function (e) {
+                    // This will return the selected image from the Media Uploader, the result is an object
+                    var uploaded_image = image.state().get('selection').first();
+                    // We convert uploaded_image to a JSON object to make accessing it easier
+                    // Output to the console uploaded_image
+                    console.log(uploaded_image);
+                    var image_url = uploaded_image.toJSON().url;
+                    var image_id = uploaded_image.toJSON().id;
+                    // Let's assign the url value to the input field
+                    selector.parent().find('input[type="text"]').val(image_url);
+                    selector.parent().find('input[type="hidden"]').val(image_id);
+                    selector.parent().find('.fpsm-media-preview').html('<img src="' + uploaded_image.toJSON().sizes.thumbnail.url + '"/>');
+                });
+    });
 
 
 });
