@@ -123,7 +123,7 @@ jQuery(document).ready(function ($) {
      */
     initialize_checkbox_toggle();
 
-    $('body').on('submit', '.fpsm-form', function (e) {
+    $('body').on('submit', '.fpsm-add-form', function (e) {
         e.preventDefault();
         var form_data = $(this).serialize();
         $.ajax({
@@ -155,6 +155,8 @@ jQuery(document).ready(function ($) {
 
     /**
      * Settings section show hide
+     * 
+     * @since 1.0.0
      */
     $('body').on('click', '.fpsm-nav-item', function () {
         var tab = $(this).data('tab');
@@ -187,6 +189,38 @@ jQuery(document).ready(function ($) {
                         window.location = res.redirect_url;
                         exit;
                     }
+                } else {
+                    fpsm_generate_info(res.message, 'error');
+                }
+            }
+        });
+
+    });
+
+    /**
+     * Global Settings save
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('submit', '.fpsm-settings-form', function (e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: 'post',
+            url: fpsm_backend_obj.ajax_url,
+            data: {
+                action: 'fpsm_settings_save_action',
+                _wpnonce: fpsm_backend_obj.ajax_nonce,
+                form_data: form_data
+            },
+            beforeSend: function (xhr) {
+                fpsm_generate_info(translation_strings.ajax_message, 'ajax');
+            },
+            success: function (res) {
+                res = $.parseJSON(res);
+                if (res.status == 200) {
+                    fpsm_generate_info(res.message, 'info');
+
                 } else {
                     fpsm_generate_info(res.message, 'error');
                 }

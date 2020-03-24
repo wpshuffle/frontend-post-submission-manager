@@ -12,6 +12,8 @@ if ( !class_exists( 'FPSM_Ajax_Admin' ) ) {
             add_action( 'wp_ajax_nopriv_fpsm_form_edit_action', array( $this, 'permission_denied' ) );
             add_action( 'wp_ajax_fpsm_form_delete_action', array( $this, 'process_form_delete' ) );
             add_action( 'wp_ajax_nopriv_fpsm_form_delete_action', array( $this, 'permission_denied' ) );
+            add_action( 'wp_ajax_fpsm_settings_save_action', array( $this, 'save_global_settings' ) );
+            add_action( 'wp_ajax_nopriv_fpsm_settings_save_action', array( $this, 'permission_denied' ) );
         }
 
         function process_form_add() {
@@ -143,6 +145,27 @@ if ( !class_exists( 'FPSM_Ajax_Admin' ) ) {
                     $response['status'] = 403;
                     $response['message'] = esc_html__( 'Something went wrong. Please try again.', 'frontend-post-submission-manager' );
                 }
+                die( json_encode( $response ) );
+            } else {
+                $this->permission_denied();
+            }
+        }
+
+        /**
+         * Save global settings
+         *
+         * @since 1.0.0
+         */
+        function save_global_settings() {
+            if ( $this->admin_ajax_nonce_verify() ) {
+                global $fpsm_library_obj;
+                $form_data = stripslashes_deep( $_POST['form_data'] );
+                parse_str( $form_data, $form_data );
+                $form_data = $fpsm_library_obj->sanitize_array( $form_data );
+                $fpsm_settings = $form_data['fpsm_settings'];
+                update_option( 'fpsm_settings', $fpsm_settings );
+                $response['status'] = 200;
+                $response['message'] = esc_html__( 'Settings saved successfully', 'frontend-post-submission-manager' );
                 die( json_encode( $response ) );
             } else {
                 $this->permission_denied();
