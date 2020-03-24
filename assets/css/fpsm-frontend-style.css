@@ -3384,15 +3384,15 @@ button.add_media{
 .fpsm-custom-template-2 .fpsm-each-display-field > div{flex: 2;max-width: 100%}
 
 .fpsm-custom-template-3 .fpsm-each-display-field{display: flex;flex-wrap: wrap;margin-bottom: 0;}
-.fpsm-custom-template-3 .fpsm-each-display-field > label{flex: 1;max-width: 180px;font-size: 14px;padding: 15px;border:solid 1px rgba(0,0,0,.48);border-right: none;margin: 0;border-bottom:none;}
-.fpsm-custom-template-3 .fpsm-each-display-field > div{flex: 2;max-width: 100%;padding: 15px;border:solid 1px rgba(0,0,0,.48);border-bottom: none}
+.fpsm-custom-template-3 .fpsm-each-display-field > label{flex: 1;max-width: 180px;font-size: 14px;padding: 15px;border:solid 1px rgba(0,0,0,.48);border-right: none;margin: 0;border-bottom:none;border-left:0;border-right: 0;}
+.fpsm-custom-template-3 .fpsm-each-display-field > div{flex: 2;max-width: 100%;padding: 15px;border:solid 1px rgba(0,0,0,.48);border-bottom: none;border-right: 0;}
 .fpsm-custom-template-3 .fpsm-each-display-field:last-child{border-bottom:solid 1px rgba(0,0,0,.48);}
 
-.fpsm-custom-template-4 .fpsm-each-display-field{display: block;flex-wrap: wrap;margin-bottom: 0;border:solid 1px rgba(0,0,0,.48);border-bottom: none;padding: 15px;}
+.fpsm-custom-template-4 .fpsm-each-display-field{display: block;flex-wrap: wrap;margin-bottom: 0;border:solid 1px rgba(0,0,0,.48);border-bottom: none;padding: 15px;border-left:0;border-right: 0;}
 .fpsm-custom-template-4 .fpsm-each-display-field:last-child{border-bottom:solid 1px rgba(0,0,0,.48);}
 
 
-.fpsm-custom-template-5 .fpsm-each-display-field label{display: inline-block;padding: 5px 10px;background-color: rgba(0,0,0,.48);color:white;font-size: 12px;}
+.fpsm-custom-template-5 .fpsm-each-display-field label{display: inline-block;padding: 5px 10px;background-color: rgba(0,0,0,.48);color:white;font-size: 14px;}
 
 .fpsm-custom-template-6 .fpsm-each-display-field{display: flex;flex-wrap: wrap}
 .fpsm-custom-template-6 .fpsm-each-display-field > label{flex: 1;max-width: 150px;font-size: 14px;margin-right: 24px;}

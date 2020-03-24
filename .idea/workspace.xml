@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fileuploader.css" afterPath="$PROJECT_DIR$/assets/css/fileuploader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="3390" column="164" lean-forward="false" selection-start-line="3390" selection-start-column="164" selection-end-line="3390" selection-end-column="164" />
+            <state relative-caret-position="415">
+              <caret line="3393" column="0" lean-forward="true" selection-start-line="3393" selection-start-column="0" selection-end-line="3393" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,17 +118,16 @@
                 <element signature="e#4198#4203#0#PHP" expanded="true" />
                 <element signature="e#4234#4239#0#PHP" expanded="true" />
                 <element signature="e#4318#4323#0#PHP" expanded="true" />
-                <marker date="1584617226762" expanded="true" signature="4693:5092" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8200">
-              <caret line="410" column="24" lean-forward="false" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="24" />
+            <state relative-caret-position="555">
+              <caret line="859" column="50" lean-forward="false" selection-start-line="859" selection-start-column="50" selection-end-line="859" selection-end-column="50" />
               <folding>
                 <element signature="e#18483#18630#0" expanded="false" />
                 <element signature="e#18833#18958#0" expanded="false" />
@@ -142,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.fpsm-file-preview-column</find>
       <find>11</find>
       <find>.fpsm-field:b</find>
       <find>form.fpsm-form-wrap</find>
@@ -172,6 +170,7 @@
       <find>.qq-upload-button</find>
       <find>.qq-upload-list li &gt; a</find>
       <find>.qq-uploader</find>
+      <find>.fpsm-custom-template-4</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,11 +194,11 @@
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/form-navigation.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-add.php" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit.php" />
-        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
         <option value="$PROJECT_DIR$/includes/cores/fpsm-metabox-render.php" />
         <option value="$PROJECT_DIR$/includes/cores/post-content-append.php" />
         <option value="$PROJECT_DIR$/assets/css/fileuploader.css" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
       </list>
     </option>
   </component>
@@ -211,8 +210,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="1440" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -229,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,6 +269,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,25 +342,27 @@
       <workItem from="1584434787232" duration="4510000" />
       <workItem from="1584500978760" duration="397000" />
       <workItem from="1584604157082" duration="1824000" />
-      <workItem from="1584617212663" duration="1190000" />
+      <workItem from="1584617212663" duration="1276000" />
+      <workItem from="1584753878502" duration="41000" />
+      <workItem from="1585028383242" duration="388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126037000" />
+    <option name="totallyTimeSpent" value="126552000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2374462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1814301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26135218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -705,18 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8200">
-          <caret line="410" column="24" lean-forward="false" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="24" />
-          <folding>
-            <element signature="e#18483#18630#0" expanded="false" />
-            <element signature="e#18833#18958#0" expanded="false" />
-            <element signature="e#19251#19312#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/cores/post-content-append.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -734,7 +724,6 @@
             <element signature="e#4198#4203#0#PHP" expanded="true" />
             <element signature="e#4234#4239#0#PHP" expanded="true" />
             <element signature="e#4318#4323#0#PHP" expanded="true" />
-            <marker date="1584617226762" expanded="true" signature="4693:5092" ph="..." />
           </folding>
         </state>
       </provider>
@@ -749,8 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="3390" column="164" lean-forward="false" selection-start-line="3390" selection-start-column="164" selection-end-line="3390" selection-end-column="164" />
+        <state relative-caret-position="415">
+          <caret line="3393" column="0" lean-forward="true" selection-start-line="3393" selection-start-column="0" selection-end-line="3393" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -814,6 +803,18 @@
             <element signature="e#11197#11202#0#PHP" expanded="true" />
             <element signature="e#11614#11619#0#PHP" expanded="true" />
             <element signature="e#11789#11794#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="859" column="50" lean-forward="false" selection-start-line="859" selection-start-column="50" selection-end-line="859" selection-end-column="50" />
+          <folding>
+            <element signature="e#18483#18630#0" expanded="false" />
+            <element signature="e#18833#18958#0" expanded="false" />
+            <element signature="e#19251#19312#0" expanded="false" />
           </folding>
         </state>
       </provider>
