@@ -23,21 +23,49 @@
                 <input type="text" name="form_details[customize][form][background_color]" value="<?php echo (!empty( $form_details['customize']['form']['background_color'] )) ? esc_attr( $form_details['customize']['form']['background_color'] ) : ''; ?>" class="fpsm-color-picker"/>
             </div>
         </div>
-        <div class="fpsm-field-wrap fpsm-background-type-ref <?php echo ($selected_background_type != 'image') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="image">
-            <label><?php esc_html_e( 'Background Image', 'frontend-post-submission-manager' ); ?></label>
-            <div class="fpsm-field">
-                <input type="text" name="form_details[customize][form][background_image]" value="<?php echo (!empty( $form_details['customize']['form']['background_image'] )) ? esc_url( $form_details['customize']['form']['background_image'] ) : ''; ?>"/>
-                <input type="hidden" name="form_details[customize][form][background_image_id]" value="<?php echo (!empty( $form_details['customize']['form']['background_image_id'] )) ? intval( $form_details['customize']['form']['background_image_id'] ) : ''; ?>"/>
-                <input type="button" class="fpsm-media-uploader button-secondary" value="<?php esc_html_e( 'Upload Image', 'frontend-post-submission-manager' ); ?>"/>
-                <div class="fpsm-media-preview">
-                    <?php
-                    if ( !empty( $form_details['customize']['form']['background_image'] ) ) {
-                        $thumbnail_url = wp_get_attachment_image_src( $form_details['customize']['form']['background_image_id'], 'thumbnail' );
-                        ?>
-                        <img src="<?php echo esc_url( $thumbnail_url[0] ); ?>"/>
+        <div class="fpsm-background-type-ref <?php echo ($selected_background_type != 'image') ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="image">
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Background Image', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="form_details[customize][form][background_image]" value="<?php echo (!empty( $form_details['customize']['form']['background_image'] )) ? esc_url( $form_details['customize']['form']['background_image'] ) : ''; ?>"/>
+                    <input type="hidden" name="form_details[customize][form][background_image_id]" value="<?php echo (!empty( $form_details['customize']['form']['background_image_id'] )) ? intval( $form_details['customize']['form']['background_image_id'] ) : ''; ?>"/>
+                    <input type="button" class="fpsm-media-uploader button-secondary" value="<?php esc_html_e( 'Upload Image', 'frontend-post-submission-manager' ); ?>"/>
+                    <div class="fpsm-media-preview">
                         <?php
-                    }
-                    ?>
+                        if ( !empty( $form_details['customize']['form']['background_image'] ) ) {
+                            $thumbnail_url = wp_get_attachment_image_src( $form_details['customize']['form']['background_image_id'], 'thumbnail' );
+                            ?>
+                            <img src="<?php echo esc_url( $thumbnail_url[0] ); ?>"/>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Background Size', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <select name="form_details[customize][form][background_size]">
+                        <?php
+                        $selected_background_size = (!empty( $form_details['customize']['form']['background_size'] )) ? $form_details['customize']['form']['background_size'] : 'cover';
+                        ?>
+                        <option value="cover" <?php selected( $selected_background_size, 'cover' ); ?>><?php esc_html_e( 'Cover', 'frontend-post-submission-manager' ); ?></option>
+                        <option value="contain" <?php selected( $selected_background_size, 'contain' ); ?>><?php esc_html_e( 'Contain', 'frontend-post-submission-manager' ); ?></option>
+                        <option value="100%" <?php selected( $selected_background_size, '100%' ); ?>><?php esc_html_e( 'Full', 'frontend-post-submission-manager' ); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Background Repeat', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <select name="form_details[customize][form][background_repeat]">
+                        <?php
+                        $selected_background_repeat = (!empty( $form_details['customize']['form']['background_repeat'] )) ? $form_details['customize']['form']['background_repeat'] : 'repeat-x';
+                        ?>
+                        <option value="repeat-x" <?php selected( $selected_background_repeat, 'repeat-x' ); ?>><?php esc_html_e( 'Repeat X', 'frontend-post-submission-manager' ); ?></option>
+                        <option value="repeat-y" <?php selected( $selected_background_repeat, 'repeat-y' ); ?>><?php esc_html_e( 'Repeat Y', 'frontend-post-submission-manager' ); ?></option>
+                        <option value="no-repeat" <?php selected( $selected_background_repeat, 'no-repeat' ); ?>><?php esc_html_e( 'No Repeat', 'frontend-post-submission-manager' ); ?></option>
+                    </select>
                 </div>
             </div>
         </div>

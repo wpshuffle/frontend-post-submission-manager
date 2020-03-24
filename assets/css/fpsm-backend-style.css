@@ -858,3 +858,6 @@ input[type="week"]{
 }
 
 .fpsm-field .fpsm-media-uploader{margin-top: 15px;}
+.fpsm-media-preview {
+    margin-top: 10px;
+}

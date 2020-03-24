@@ -26,6 +26,7 @@ if ( !class_exists( 'FPSM_Admin_Enqueue' ) ) {
             );
             $js_obj = array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'plugin_url' => FPSM_URL, 'ajax_nonce' => wp_create_nonce( 'fpsm_backend_ajax_nonce' ), 'translation_strings' => $translation_strings );
             wp_enqueue_style( 'wp-color-picker' );
+            wp_enqueue_media();
             wp_enqueue_style( 'fpsm-backend-style', FPSM_URL . '/assets/css/fpsm-backend-style.css', array(), FPSM_VERSION );
             wp_enqueue_style( 'fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION );
             wp_enqueue_script( 'fpsm-are-you-sure-script', FPSM_URL . '/assets/js/jquery.are-you-sure.js', array( 'jquery' ), FPSM_VERSION );
