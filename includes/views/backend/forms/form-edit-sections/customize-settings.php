@@ -67,8 +67,9 @@
                 <div class="fpsm-field">
                     <select name="form_details[customize][form][background_repeat]">
                         <?php
-                        $selected_background_repeat = (!empty( $form_details['customize']['form']['background_repeat'] )) ? $form_details['customize']['form']['background_repeat'] : 'repeat-x';
+                        $selected_background_repeat = (!empty( $form_details['customize']['form']['background_repeat'] )) ? $form_details['customize']['form']['background_repeat'] : 'repeat';
                         ?>
+                        <option value="repeat" <?php selected( $selected_background_repeat, 'repeat' ); ?>><?php esc_html_e( 'Repeat', 'frontend-post-submission-manager' ); ?></option>
                         <option value="repeat-x" <?php selected( $selected_background_repeat, 'repeat-x' ); ?>><?php esc_html_e( 'Repeat X', 'frontend-post-submission-manager' ); ?></option>
                         <option value="repeat-y" <?php selected( $selected_background_repeat, 'repeat-y' ); ?>><?php esc_html_e( 'Repeat Y', 'frontend-post-submission-manager' ); ?></option>
                         <option value="no-repeat" <?php selected( $selected_background_repeat, 'no-repeat' ); ?>><?php esc_html_e( 'No Repeat', 'frontend-post-submission-manager' ); ?></option>
