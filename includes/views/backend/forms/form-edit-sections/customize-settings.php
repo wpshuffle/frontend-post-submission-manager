@@ -1,5 +1,12 @@
 <div class="fpsm-settings-each-section fpsm-display-none" data-tab="customize">
     <div class="fpsm-field-wrap">
+        <label><?php esc_html_e( 'Hide Form Title', 'frontend-post-submission-manager' ); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[customize][hide_form_title]" value="1" <?php echo (!empty( $form_details['customize']['hide_form_title'] )) ? 'checked="checked"' : ''; ?>/>
+            <p class="description"><?php esc_html_e( 'Please check if you want to hide form title in the form.', 'frontend-post-submission-manager' ); ?></p>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Customize Form Template', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
             <input type="checkbox" name="form_details[customize][form][enable]" value="1" <?php echo (!empty( $form_details['customize']['form']['enable'] )) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-custom-enable-ref"/>
