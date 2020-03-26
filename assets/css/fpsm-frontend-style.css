@@ -119,8 +119,21 @@ span.fpsm-tag-remove-trigger {
 
 /* ========================= Global styling ============================ */
 /*.fpsm-front-form{max-width: 100% !important;width: 100% !important;}*/
+
+.fpsm-ajax-loader{display:none;}
+.fpsm-preview-note {
+    padding: 10px;
+    font-style: italic;
+    font-size: 14px;
+}
+
 .fpsm-front-form{
     font-family:'Nunito Sans', sans-serif;
+}
+
+.fpsm-front-form .fpsm-field-note{
+    color: inherit;
+    opacity: 0.58;
 }
 
 .fpsm-front-form .fpsm-field-wrap.fpsm-taxonomy-checkbox .fpsm-block-checkbox label{display: inline-block}
@@ -218,7 +231,7 @@ input[type="file"]{
     border: none;
     font-family: inherit;
 }
-
+.fpsm-front-form > h2{margin: 0 0 20px 0 !important;font-size: 32px !important;letter-spacing: 0 !important;}
 .fpsm-radio{margin-right: 20px;position: relative}
 .fpsm-radio input[type="radio"]{position: absolute;opacity: 0;z-index: 5;height: 100%;width: 100%;cursor: pointer}
 .fpsm-front-form .fpsm-field-wrap .fpsm-radio label{
@@ -355,6 +368,9 @@ input[type="file"]{
     line-height: 40px;
     font-size: 14px;
     width: 100%;
+}
+.fpsm-front-form select{
+    color: inherit;
 }
 .fpsm-front-form textarea{
     line-height: 1.4;
@@ -3397,4 +3413,4 @@ button.add_media{
 .fpsm-custom-template-6 .fpsm-each-display-field{display: flex;flex-wrap: wrap}
 .fpsm-custom-template-6 .fpsm-each-display-field > label{flex: 1;max-width: 150px;font-size: 14px;margin-right: 24px;}
 .fpsm-custom-template-6 .fpsm-each-display-field > div{flex: 2;max-width: 100%}
-.fpsm-custom-template-6 .fpsm-each-display-field label{display: inline-block;padding: 5px 10px;background-color: rgba(0,0,0,.48);color:white;font-size: 12px;}
+.fpsm-custom-template-6 .fpsm-each-display-field label{display: inline-block;padding: 5px 10px;background-color: rgba(0,0,0,.48);color:white;font-size: 14px;}
