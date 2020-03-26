@@ -22,4 +22,13 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
             wp_add_inline_style( 'fpsm-custom-style', $background_repeat_css );
         }
     }
+
+    /**
+     * Text color
+     */
+    if ( !empty( $form_details['customize']['form']['text_color'] ) ) {
+        $text_color = esc_html( $form_details['customize']['form']['text_color'] );
+        $text_color_css = ".$form_alias_class{color:$text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $text_color_css );
+    }
 }
