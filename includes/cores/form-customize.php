@@ -71,4 +71,48 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         $fileuploader_hover_background_color = ".$form_alias_class  .qq-upload-button:hover {background-color:$button_hover_background_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $fileuploader_hover_background_color );
     }
+    /**
+     * Field Text Color
+     */
+    if ( !empty( $form_details['customize']['form']['field_text_color'] ) ) {
+        $field_text_color = esc_html( $form_details['customize']['form']['field_text_color'] );
+        $field_text_color_css = ".$form_alias_class.fpsm-front-form input[type='text'],
+                                .$form_alias_class.fpsm-front-form input[type='email'],
+                                .$form_alias_class.fpsm-front-form input[type='number'],
+                                .$form_alias_class.fpsm-front-form input[type='tel'],
+                                .$form_alias_class.fpsm-front-form textarea,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select,
+                                .$form_alias_class.fpsm-field .fpsm-select-field{color:$field_text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $field_text_color_css );
+    }
+    /**
+      /**
+     * Field background Color
+     */
+    if ( !empty( $form_details['customize']['form']['field_background_color'] ) ) {
+        $field_background_color = esc_html( $form_details['customize']['form']['field_background_color'] );
+        $field_background_color_css = ".$form_alias_class.fpsm-front-form input[type='text'],
+                                .$form_alias_class.fpsm-front-form input[type='email'],
+                                .$form_alias_class.fpsm-front-form input[type='number'],
+                                .$form_alias_class.fpsm-front-form input[type='tel'],
+                                .$form_alias_class.fpsm-front-form textarea,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select,
+                                .$form_alias_class.fpsm-field .fpsm-select-field{background-color:$field_background_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $field_background_color_css );
+    }
+    /**
+      /**
+     * Field Border Color
+     */
+    if ( !empty( $form_details['customize']['form']['field_border_color'] ) ) {
+        $field_border_color = esc_html( $form_details['customize']['form']['field_border_color'] );
+        $field_border_color_css = ".$form_alias_class.fpsm-front-form input[type='text'],
+                                .$form_alias_class.fpsm-front-form input[type='email'],
+                                .$form_alias_class.fpsm-front-form input[type='number'],
+                                .$form_alias_class.fpsm-front-form input[type='tel'],
+                                .$form_alias_class.fpsm-front-form textarea,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select,
+                                .$form_alias_class.fpsm-field .fpsm-select-field{border-color:$field_border_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $field_border_color_css );
+    }
 }
