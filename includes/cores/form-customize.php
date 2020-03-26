@@ -81,7 +81,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
                                 .$form_alias_class.fpsm-front-form input[type='number'],
                                 .$form_alias_class.fpsm-front-form input[type='tel'],
                                 .$form_alias_class.fpsm-front-form textarea,
-                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select select,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
                                 .$form_alias_class.fpsm-field .fpsm-select-field{color:$field_text_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $field_text_color_css );
     }
@@ -96,7 +96,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
                                 .$form_alias_class.fpsm-front-form input[type='number'],
                                 .$form_alias_class.fpsm-front-form input[type='tel'],
                                 .$form_alias_class.fpsm-front-form textarea,
-                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select select,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
                                 .$form_alias_class.fpsm-field .fpsm-select-field{background-color:$field_background_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $field_background_color_css );
     }
@@ -111,7 +111,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
                                 .$form_alias_class.fpsm-front-form input[type='number'],
                                 .$form_alias_class.fpsm-front-form input[type='tel'],
                                 .$form_alias_class.fpsm-front-form textarea,
-                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select select,
+                                .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
                                 .$form_alias_class.fpsm-field .fpsm-select-field{border-color:$field_border_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $field_border_color_css );
     }
