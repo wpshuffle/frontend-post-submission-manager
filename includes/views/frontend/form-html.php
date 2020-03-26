@@ -4,8 +4,9 @@ if ( isset( $_GET['debug'] ) ) {
     $fpsm_library_obj->print_array( $form_details );
 }
 $form_template = (!empty( $form_details['layout']['template'] )) ? $form_details['layout']['template'] : 'template-1';
+$form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 ?>
-<form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr( $form_template ); ?>" data-alias="<?php echo esc_attr( $form_row->form_alias ); ?>">
+<form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr( $form_template ); ?> <?php echo esc_attr( $form_alias_class ); ?>" data-alias="<?php echo esc_attr( $form_row->form_alias ); ?>">
     <h2 class="fpsm-form-title"><?php echo esc_html( $form_row->form_title ); ?></h2>
 
     <input type="hidden" name="form_alias" value="<?php echo esc_attr( $form_row->form_alias ); ?>"/>
