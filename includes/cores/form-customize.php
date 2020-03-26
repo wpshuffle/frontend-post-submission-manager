@@ -31,4 +31,44 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         $text_color_css = ".$form_alias_class{color:$text_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $text_color_css );
     }
+    /**
+     * Button Text Color
+     */
+    if ( !empty( $form_details['customize']['form']['button_text_color'] ) ) {
+        $button_text_color = esc_html( $form_details['customize']['form']['button_text_color'] );
+        $button_text_color_css = ".$form_alias_class  .fpsm-field input[type='submit'] {color:$button_text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $button_text_color_css );
+        $fileuploader_text_color = ".$form_alias_class  .qq-upload-button {color:$button_text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $fileuploader_text_color );
+    }
+    /**
+     * Button Background Color
+     */
+    if ( !empty( $form_details['customize']['form']['button_background_color'] ) ) {
+        $button_background_color = esc_html( $form_details['customize']['form']['button_background_color'] );
+        $button_background_color_css = ".$form_alias_class  .fpsm-field input[type='submit'] {background-color:$button_background_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $button_background_color_css );
+        $fileuploader_background_color = ".$form_alias_class  .qq-upload-button {background-color:$button_background_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $fileuploader_background_color );
+    }
+    /**
+     * Button Hover Text Color
+     */
+    if ( !empty( $form_details['customize']['form']['button_hover_text_color'] ) ) {
+        $button_hover_text_color = esc_html( $form_details['customize']['form']['button_hover_text_color'] );
+        $button_hover_text_color_css = ".$form_alias_class  .fpsm-field input[type='submit']:hover {color:$button_hover_text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $button_hover_text_color_css );
+        $fileuploader_hover_text_color = ".$form_alias_class  .qq-upload-button:hover {color:$button_hover_text_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $fileuploader_hover_text_color );
+    }
+    /**
+     * Button Background Color
+     */
+    if ( !empty( $form_details['customize']['form']['button_hover_background_color'] ) ) {
+        $button_hover_background_color = esc_html( $form_details['customize']['form']['button_hover_background_color'] );
+        $button_hover_background_color_css = ".$form_alias_class  .fpsm-field input[type='submit']:hover {background-color:$button_hover_background_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $button_hover_background_color_css );
+        $fileuploader_hover_background_color = ".$form_alias_class  .qq-upload-button:hover {background-color:$button_hover_background_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $fileuploader_hover_background_color );
+    }
 }

@@ -101,6 +101,30 @@
                 <input type="text" name="form_details[customize][form][field_background_color]" value="<?php echo (!empty( $form_details['customize']['form']['field_background_color'] )) ? esc_attr( $form_details['customize']['form']['field_background_color'] ) : ''; ?>" class="fpsm-color-picker"/>
             </div>
         </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Button Background Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][button_background_color]" value="<?php echo (!empty( $form_details['customize']['form']['button_background_color'] )) ? esc_attr( $form_details['customize']['form']['button_background_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Button Hover Background Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][button_hover_background_color]" value="<?php echo (!empty( $form_details['customize']['form']['button_hover_background_color'] )) ? esc_attr( $form_details['customize']['form']['button_hover_background_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Button Text Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][button_text_color]" value="<?php echo (!empty( $form_details['customize']['form']['button_text_color'] )) ? esc_attr( $form_details['customize']['form']['button_text_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Button Hover Text Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][button_hover_text_color]" value="<?php echo (!empty( $form_details['customize']['form']['button_hover_text_color'] )) ? esc_attr( $form_details['customize']['form']['button_hover_text_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Custom CSS', 'frontend-post-submission-manager' ); ?></label>
