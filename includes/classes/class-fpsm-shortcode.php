@@ -23,15 +23,16 @@ if ( !class_exists( 'FPSM_Shortcode' ) ) {
                 // $fpsm_library_obj->print_array($form_row);
                 if ( !empty( $form_row ) ) {
                     $form_details = maybe_unserialize( $form_row->form_details );
+                    if ( !empty( $form_details['customize']['form']['enable'] ) ) {
+                        wp_enqueue_style( 'fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-custom-style.css', array(), FPSM_VERSION );
+                    }
                     $GLOBALS['fpsm_form_details'] = $form_details;
                     $GLOBALS['fpsm_form_alias'] = $alias;
                     ob_start();
                     include(FPSM_PATH . '/includes/views/frontend/form-shortcode.php');
                     $form_html = ob_get_contents();
                     ob_end_clean();
-                    if ( !empty( $form_details['customize']['form']['enable'] ) ) {
-                        wp_enqueue_style( 'fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-custom-style.css', array(), FPSM_VERSION );
-                    }
+
                     return $form_html;
                 } else {
                     return esc_html__( 'Form not available for this alias.', 'frontend-post-submission-manager' );
