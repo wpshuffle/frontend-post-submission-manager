@@ -149,4 +149,30 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         $checkbox_checked_color_css = ".$form_alias_class .fpsm-checkbox input[type='checkbox']:checked + label::before{background-color:$checkbox_checked_color !important;}";
         wp_add_inline_style( 'fpsm-custom-style', $checkbox_checked_color_css );
     }
+
+    $label_background_templates = array( 'template-7', 'template-12', 'template-22' );
+    if ( in_array( $form_template, $label_background_templates ) ) {
+        /**
+         * Label Color
+         */
+        if ( !empty( $form_details['customize']['form']['label_color'] ) ) {
+            $label_color = esc_html( $form_details['customize']['form']['label_color'] );
+            $label_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label{color:$label_color !important;}";
+            wp_add_inline_style( 'fpsm-custom-style', $label_color_css );
+            $icon_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before{color:$label_color !important;}";
+            wp_add_inline_style( 'fpsm-custom-style', $icon_color_css );
+        }
+        /**
+         * Label Background Color
+         */
+        if ( !empty( $form_details['customize']['form']['label_background_color'] ) ) {
+            $label_background_color = esc_html( $form_details['customize']['form']['label_background_color'] );
+            $label_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label{background-color:$label_background_color !important;}";
+            wp_add_inline_style( 'fpsm-custom-style', $label_background_color_css );
+            $label_before_color = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label::before{border-color:$label_background_color transparent transparent transparent !important;}";
+            wp_add_inline_style( 'fpsm-custom-style', $label_before_color );
+            $icon_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before{background-color:$label_background_color !important;}";
+            wp_add_inline_style( 'fpsm-custom-style', $icon_background_color_css );
+        }
+    }
 }
