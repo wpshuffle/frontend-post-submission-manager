@@ -103,7 +103,6 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         wp_add_inline_style( 'fpsm-custom-style', $field_background_color_css );
     }
     /**
-      /**
      * Field Border Color
      */
     if ( !empty( $form_details['customize']['form']['field_border_color'] ) ) {
@@ -115,9 +114,23 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
                                 .$form_alias_class.fpsm-front-form textarea,
                                 .$form_alias_class.fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
                                 .fpsm-front-form .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
-                                .$form_alias_class.fpsm-field .fpsm-select-field,
-                                .$form_alias_class .fpsm-radio label::before,
-                                .$form_alias_class input[type='radio']:checked + label::before{border-color:$field_border_color;}";
+                                .$form_alias_class.fpsm-field .fpsm-select-field{border-color:$field_border_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $field_border_color_css );
+    }
+    /**
+     *  Radio Button Color
+     */
+    if ( !empty( $form_details['customize']['form']['radio_button_color'] ) ) {
+        $radio_button_color = esc_html( $form_details['customize']['form']['radio_button_color'] );
+        $radio_button_color_css = ".$form_alias_class .fpsm-radio label::before{border-color:$radio_button_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $radio_button_color_css );
+    }
+    /**
+     *  Radio Button Checked Color
+     */
+    if ( !empty( $form_details['customize']['form']['radio_button_checked_color'] ) ) {
+        $radio_button_checked_color = esc_html( $form_details['customize']['form']['radio_button_checked_color'] );
+        $radio_button_checked_color_css = ".$form_alias_class .fpsm-radio input[type='radio']:checked + label::before{border-color:$radio_button_checked_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $radio_button_checked_color_css );
     }
 }

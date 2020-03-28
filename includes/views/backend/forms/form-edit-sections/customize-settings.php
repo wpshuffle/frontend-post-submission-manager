@@ -125,6 +125,31 @@
                 <input type="text" name="form_details[customize][form][button_hover_text_color]" value="<?php echo (!empty( $form_details['customize']['form']['button_hover_text_color'] )) ? esc_attr( $form_details['customize']['form']['button_hover_text_color'] ) : ''; ?>" class="fpsm-color-picker"/>
             </div>
         </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Radio Button Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][radio_button_color]" value="<?php echo (!empty( $form_details['customize']['form']['radio_button_color'] )) ? esc_attr( $form_details['customize']['form']['radio_button_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Radio Button Checked Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][radio_button_checked_color]" value="<?php echo (!empty( $form_details['customize']['form']['radio_button_checked_color'] )) ? esc_attr( $form_details['customize']['form']['radio_button_checked_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Checkbox Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][checkbox_color]" value="<?php echo (!empty( $form_details['customize']['form']['checkbox_color'] )) ? esc_attr( $form_details['customize']['form']['checkbox_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e( 'Checkbox Checked Color', 'frontend-post-submission-manager' ); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[customize][form][checkbox_checked_color]" value="<?php echo (!empty( $form_details['customize']['form']['checkbox_checked_color'] )) ? esc_attr( $form_details['customize']['form']['checkbox_checked_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Custom CSS', 'frontend-post-submission-manager' ); ?></label>
