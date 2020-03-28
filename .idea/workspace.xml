@@ -17,8 +17,8 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="2" selection-end-column="82" />
+            <state relative-caret-position="301">
+              <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -154,7 +154,6 @@
       <find>fpsm-shortcode-common</find>
       <find>fpsm-title-header</find>
       <find>textarea</find>
-      <find>.fpsm-field-wrap &gt; label</find>
       <find>fpsm-pagination-wrap</find>
       <find>.fpsm-button-primary</find>
       <find>fpsm-primary-button</find>
@@ -180,6 +179,7 @@
       <find>fpsm-field-note</find>
       <find>.covid-table-body</find>
       <find>Coming</find>
+      <find>.fpsm-field-wrap &gt; label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -349,12 +349,12 @@
       <workItem from="1585187661173" duration="826000" />
       <workItem from="1585229290231" duration="3863000" />
       <workItem from="1585272452444" duration="340000" />
-      <workItem from="1585369703289" duration="4107000" />
+      <workItem from="1585369703289" duration="4862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136488000" />
+    <option name="totallyTimeSpent" value="137243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -815,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="2" selection-end-column="82" />
+        <state relative-caret-position="301">
+          <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
           <folding />
         </state>
       </provider>

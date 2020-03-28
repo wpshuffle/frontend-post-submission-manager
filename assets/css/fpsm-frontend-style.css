@@ -2,15 +2,15 @@
 /*@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap');*/
 /*@import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');*/
 
-.ui-autocomplete.ui-menu{border: none;}
-.ui-autocomplete.ui-menu .ui-menu-item{
+.fpsm-field-wrap .ui-autocomplete.ui-menu{border: none;}
+.fpsm-field-wrap .ui-autocomplete.ui-menu .ui-menu-item{
     padding: 10px;
     font-size: 14px;
     background-color: #f7f7f7;
 }
 
-.qq-upload-list{margin: 0;}
-.qq-upload-list li {
+.fpsm-field-wrap .qq-upload-list{margin: 0;}
+.fpsm-field-wrap .qq-upload-list li {
     height: 18px !important;
     line-height: 1.2 !important;
     padding: 0 10px !important;
@@ -18,12 +18,12 @@
     display: flex;
     align-items: center;
 }
-.qq-upload-list li > span,
-.qq-upload-list li > a{
+.fpsm-field-wrap .qq-upload-list li > span,
+.fpsm-field-wrap .qq-upload-list li > a{
     flex: 1;
 }
-.qq-upload-list li > a:nth-last-child(2),
-.qq-upload-list li > span:nth-last-child(3){text-align: right}
+.fpsm-field-wrap .qq-upload-list li > a:nth-last-child(2),
+.fpsm-field-wrap .qq-upload-list li > span:nth-last-child(3){text-align: right}
 /*.qq-upload-list li:before{*/
     /*content: '';*/
     /*height: 100%;*/
@@ -34,11 +34,11 @@
     /*background-color: rgba(255,255,255,.34);*/
     /*border-radius: 60px;*/
 /*}*/
-.qq-upload-file,
-.qq-upload-spinner,
-.qq-upload-size,
-.qq-upload-cancel,
-.qq-upload-failed-text {
+.fpsm-field-wrap .qq-upload-file,
+.fpsm-field-wrap .qq-upload-spinner,
+.fpsm-field-wrap .qq-upload-size,
+.fpsm-field-wrap .qq-upload-cancel,
+.fpsm-field-wrap .qq-upload-failed-text {
     margin-right: 12px;
     z-index: 250;
     position: relative;
@@ -47,31 +47,31 @@
     font-family: 'Nunito Sans', sans-serif;
     font-family: 'Nunito Sans';
 }
-.qq-upload-size,
-.qq-upload-cancel {
+.fpsm-field-wrap .qq-upload-size,
+.fpsm-field-wrap .qq-upload-cancel {
     font-size: 12px;
     font-weight: normal;
 }
-.qq-upload-failed-text {
+.fpsm-field-wrap .qq-upload-failed-text {
     display: none;
 }
-.qq-upload-fail .qq-upload-failed-text {
+.fpsm-field-wrap .qq-upload-fail .qq-upload-failed-text {
     display: inline;
 }
 
-.qq-upload-button:hover {
+.fpsm-field-wrap .qq-upload-button:hover {
     background: #0F5BBB;
 }
-.qq-upload-button:active {
+.fpsm-field-wrap .qq-upload-button:active {
     top: 2px;
 }
-.qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+.fpsm-field-wrap .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
     float: right;
 }
-.qq-upload-spinner {
+.fpsm-field-wrap .qq-upload-spinner {
     display: none;
 }
-.qq-progress-bar {
+.fpsm-field-wrap .qq-progress-bar {
     width: 51%;
     height: 100%;
     position: absolute;
@@ -82,14 +82,14 @@
     -khtml-border-radius: 3px;
     border-radius: 3px;
 }
-.qq-upload-cancel {
+.fpsm-field-wrap .qq-upload-cancel {
     color: #800000;
 }
-.qq-upload-success .qq-progress-bar {
+.fpsm-field-wrap .qq-upload-success .qq-progress-bar {
     display: none;
 }
 
-select[multiple="multiple"]{
+.fpsm-field-wrap select[multiple="multiple"]{
     padding: 15px;
     min-height: 80px;
 }
@@ -1412,6 +1412,7 @@ button.add_media{
 .fpsm-template-12{
     background-color: white;
     overflow: hidden;
+    color: black;
 }
 .fpsm-template-12 .fpsm-field-wrap > label{
     font-size: 14px;
@@ -1422,7 +1423,7 @@ button.add_media{
     position: relative;
     background-color: rgba(0,0,0,.8);
     padding: 5px 12px;
-    color: white;
+    color: inherit;
 }
 .fpsm-template-12 .fpsm-field-wrap > label:after{
     width: 100%;
@@ -2325,6 +2326,7 @@ button.add_media{
 .fpsm-template-18{
     background-color: #fff;
     padding: 0;
+    color: white;
 }
 
 .fpsm-template-18 .fpsm-field-wrap > label{
@@ -2336,7 +2338,7 @@ button.add_media{
     position: relative;
     background-color: #697e92;
     padding: 5px 12px;
-    color: white;
+    color: inherit;
 }
 
 .fpsm-template-18 .fpsm-custom-field-file_uploader > label,
@@ -2428,7 +2430,7 @@ button.add_media{
 }
 
 .fpsm-template-19 .fpsm-field-wrap > label{
-    color: #bc61b7;
+    color: inherit;
 }
 
 .fpsm-template-19 .fpsm-custom-field-file_uploader > label,
@@ -2884,7 +2886,7 @@ button.add_media{
     position: relative;
     background-color: rgba(255,255,255,.06);
     padding: 5px 12px;
-    color: white;
+    color: inherit;
 }
 
 .fpsm-template-22 .fpsm-field{
