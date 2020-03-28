@@ -167,7 +167,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
          */
         if ( !empty( $form_details['customize']['form']['label_background_color'] ) ) {
             $label_background_color = esc_html( $form_details['customize']['form']['label_background_color'] );
-            $label_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label{background-color:$label_background_color !important;}";
+            $label_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label{background-color:$label_background_color !important;} .$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label:after{background-color:$label_background_color !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $label_background_color_css );
             $label_before_color = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label::before{border-color:$label_background_color transparent transparent transparent !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $label_before_color );
