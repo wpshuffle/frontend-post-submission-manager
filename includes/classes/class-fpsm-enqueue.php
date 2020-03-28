@@ -23,6 +23,8 @@ if ( !class_exists( 'FPSM_Enqueue' ) ) {
             if ( !is_user_logged_in() ) {
                 wp_enqueue_style( 'fpsm-login-style', FPSM_URL . '/assets/css/fpsm-login-form-style.css', array(), FPSM_VERSION );
             }
+            wp_enqueue_style( 'nunito', 'https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap' );
+            wp_enqueue_style( 'coming-soon', 'https://fonts.googleapis.com/css?family=Coming+Soon&display=swap' );
             wp_enqueue_style( 'jquery-ui', FPSM_URL . '/assets/css/jquery-ui.min.css', array(), FPSM_VERSION );
             wp_enqueue_style( 'fpsm-fileuploader', FPSM_URL . '/assets/css/fileuploader.css', array(), FPSM_VERSION );
             wp_enqueue_style( 'fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION );
