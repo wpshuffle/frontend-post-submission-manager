@@ -133,4 +133,20 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         $radio_button_checked_color_css = ".$form_alias_class .fpsm-radio input[type='radio']:checked + label::before{border-color:$radio_button_checked_color;}";
         wp_add_inline_style( 'fpsm-custom-style', $radio_button_checked_color_css );
     }
+    /**
+     *  Checkbox Color
+     */
+    if ( !empty( $form_details['customize']['form']['checkbox_color'] ) ) {
+        $checkbox_color = esc_html( $form_details['customize']['form']['checkbox_color'] );
+        $checkbox_color_css = ".$form_alias_class .fpsm-checkbox label::before{border-color:$checkbox_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $checkbox_color_css );
+    }
+    /**
+     *  Checkbox Checked Color
+     */
+    if ( !empty( $form_details['customize']['form']['checkbox_checked_color'] ) ) {
+        $checkbox_checked_color = esc_html( $form_details['customize']['form']['checkbox_checked_color'] );
+        $checkbox_checked_color_css = ".$form_alias_class .fpsm-checkbox input[type='checkbox']:checked + label::before{border-color:$checkbox_checked_color;}";
+        wp_add_inline_style( 'fpsm-custom-style', $checkbox_checked_color_css );
+    }
 }
