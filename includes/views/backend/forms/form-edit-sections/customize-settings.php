@@ -1,3 +1,8 @@
+<?php
+defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
+$form_template = (!empty( $form_details['layout']['template'] )) ? $form_details['layout']['template'] : 'template-1';
+$label_background_templates = array( 'template-7', 'template-12', 'template-22' );
+?>
 <div class="fpsm-settings-each-section fpsm-display-none" data-tab="customize">
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Hide Form Title', 'frontend-post-submission-manager' ); ?></label>
@@ -81,6 +86,20 @@
             <label><?php esc_html_e( 'Text Color', 'frontend-post-submission-manager' ); ?></label>
             <div class="fpsm-field">
                 <input type="text" name="form_details[customize][form][text_color]" value="<?php echo (!empty( $form_details['customize']['form']['text_color'] )) ? esc_attr( $form_details['customize']['form']['text_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+            </div>
+        </div>
+        <div class="fpsm-label-background-ref <?php echo (!in_array( $form_template, $label_background_templates )) ? 'fpsm-display-none' : ''; ?>">
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Label Color', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="form_details[customize][form][label_color]" value="<?php echo (!empty( $form_details['customize']['form']['label_color'] )) ? esc_attr( $form_details['customize']['form']['label_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Label Background Color', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="form_details[customize][form][label_background_color]" value="<?php echo (!empty( $form_details['customize']['form']['label_background_color'] )) ? esc_attr( $form_details['customize']['form']['label_background_color'] ) : ''; ?>" class="fpsm-color-picker"/>
+                </div>
             </div>
         </div>
         <div class="fpsm-field-wrap">
