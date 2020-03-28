@@ -122,7 +122,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
      */
     if ( !empty( $form_details['customize']['form']['radio_button_color'] ) ) {
         $radio_button_color = esc_html( $form_details['customize']['form']['radio_button_color'] );
-        $radio_button_color_css = ".$form_alias_class .fpsm-radio label::before{border-color:$radio_button_color;}";
+        $radio_button_color_css = ".$form_alias_class .fpsm-radio label::before{border-color:$radio_button_color !important;}";
         wp_add_inline_style( 'fpsm-custom-style', $radio_button_color_css );
     }
     /**
@@ -130,7 +130,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
      */
     if ( !empty( $form_details['customize']['form']['radio_button_checked_color'] ) ) {
         $radio_button_checked_color = esc_html( $form_details['customize']['form']['radio_button_checked_color'] );
-        $radio_button_checked_color_css = ".$form_alias_class .fpsm-radio input[type='radio']:checked + label::before{border-color:$radio_button_checked_color;}";
+        $radio_button_checked_color_css = ".$form_alias_class .fpsm-radio input[type='radio']:checked + label::before{border-color:$radio_button_checked_color !important;}";
         wp_add_inline_style( 'fpsm-custom-style', $radio_button_checked_color_css );
     }
     /**
@@ -138,7 +138,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
      */
     if ( !empty( $form_details['customize']['form']['checkbox_color'] ) ) {
         $checkbox_color = esc_html( $form_details['customize']['form']['checkbox_color'] );
-        $checkbox_color_css = ".$form_alias_class .fpsm-checkbox label::before{border-color:$checkbox_color;}";
+        $checkbox_color_css = ".$form_alias_class .fpsm-checkbox label::before{background-color:$checkbox_color !important;}";
         wp_add_inline_style( 'fpsm-custom-style', $checkbox_color_css );
     }
     /**
@@ -146,7 +146,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
      */
     if ( !empty( $form_details['customize']['form']['checkbox_checked_color'] ) ) {
         $checkbox_checked_color = esc_html( $form_details['customize']['form']['checkbox_checked_color'] );
-        $checkbox_checked_color_css = ".$form_alias_class .fpsm-checkbox input[type='checkbox']:checked + label::before{border-color:$checkbox_checked_color;}";
+        $checkbox_checked_color_css = ".$form_alias_class .fpsm-checkbox input[type='checkbox']:checked + label::before{background-color:$checkbox_checked_color !important;}";
         wp_add_inline_style( 'fpsm-custom-style', $checkbox_checked_color_css );
     }
 }
