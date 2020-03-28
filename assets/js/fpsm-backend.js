@@ -488,7 +488,7 @@ jQuery(document).ready(function ($) {
         var template = $(this).val();
         $('.fpsm-form-template-preview-img').hide();
         $('.fpsm-form-template-preview-img[data-template-id="' + template + '"]').show();
-        if (template == 'template-7' || template == 'template-12' || template == 'template-22') {
+        if (template == 'template-7' || template == 'template-12' || template == 'template-18' || template == 'template-22') {
             $('.fpsm-label-background-ref').show();
         } else {
             $('.fpsm-label-background-ref').hide();

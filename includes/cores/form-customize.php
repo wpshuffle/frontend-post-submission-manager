@@ -150,7 +150,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         wp_add_inline_style( 'fpsm-custom-style', $checkbox_checked_color_css );
     }
 
-    $label_background_templates = array( 'template-7', 'template-12', 'template-22' );
+    $label_background_templates = array( 'template-7', 'template-12', 'template-18', 'template-22' );
     if ( in_array( $form_template, $label_background_templates ) ) {
         /**
          * Label Color

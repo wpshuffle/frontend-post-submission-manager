@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
 $form_template = (!empty( $form_details['layout']['template'] )) ? $form_details['layout']['template'] : 'template-1';
-$label_background_templates = array( 'template-7', 'template-12', 'template-22' );
+$label_background_templates = array( 'template-7', 'template-12', 'template-18', 'template-22' );
 ?>
 <div class="fpsm-settings-each-section fpsm-display-none" data-tab="customize">
     <div class="fpsm-field-wrap">
