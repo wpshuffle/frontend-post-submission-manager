@@ -159,7 +159,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
             $label_color = esc_html( $form_details['customize']['form']['label_color'] );
             $label_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label{color:$label_color !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $label_color_css );
-            $icon_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before{color:$label_color !important;}";
+            $icon_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before,.$form_alias_class.fpsm-$form_template .qq-uploader::before{color:$label_color !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $icon_color_css );
         }
         /**
@@ -171,7 +171,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
             wp_add_inline_style( 'fpsm-custom-style', $label_background_color_css );
             $label_before_color = ".$form_alias_class.fpsm-$form_template .fpsm-field-wrap > label::before{border-color:$label_background_color transparent transparent transparent !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $label_before_color );
-            $icon_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before{background-color:$label_background_color !important;}";
+            $icon_background_color_css = ".$form_alias_class.fpsm-$form_template .fpsm-field::before,.$form_alias_class.fpsm-$form_template .qq-uploader::before{background-color:$label_background_color !important;}";
             wp_add_inline_style( 'fpsm-custom-style', $icon_background_color_css );
         }
     }
