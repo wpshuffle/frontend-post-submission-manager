@@ -495,6 +495,12 @@ jQuery(document).ready(function ($) {
 
         }
     });
+    $('body').on('change', '.fpsm-custom-field-template-trigger', function () {
+        var template = $(this).val();
+        $('.fpsm-post-template-preview-img').hide();
+        $('.fpsm-post-template-preview-img[data-template-id="' + template + '"]').show();
+
+    });
 
     $('.fpsm-color-picker').wpColorPicker();
 
