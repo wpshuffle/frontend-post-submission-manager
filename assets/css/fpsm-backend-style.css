@@ -861,4 +861,6 @@ input[type="week"]{
 .fpsm-media-preview,.fpsm-post-template-preview {
     margin-top: 10px;
 }
- 
+ input.button-secondary.fpsm-alias-force-edit {
+    margin-top: 10px;
+}

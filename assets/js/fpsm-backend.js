@@ -531,6 +531,19 @@ jQuery(document).ready(function ($) {
                 });
     });
 
+    $('body').on('keyup', 'input[name="form_title"]', function () {
+        var form_title = $(this).val();
+        var form_alias = fpsm_title_to_alias(form_title);
+        if ($('input[name="form_alias"]').attr('readonly') != 'readonly') {
+            $('input[name="form_alias"]').val(form_alias);
+
+        }
+    });
+
+    $('body').on('click', '.fpsm-alias-force-edit', function () {
+        $(this).parent().find('input[type="text"]').removeAttr('readonly');
+    });
+
 
 
 

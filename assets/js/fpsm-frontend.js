@@ -398,11 +398,13 @@ jQuery(document).ready(function ($) {
             });
         }
     });
-    $('.fpsm-front-form').areYouSure(
-            {
-                message: translation_strings.are_your_sure
-            }
-    );
+    if (!fpsm_js_obj.fpsm_settings.disable_are_you_sure_js) {
+        $('.fpsm-front-form').areYouSure(
+                {
+                    message: translation_strings.are_your_sure
+                }
+        );
+    }
 
 
 });
