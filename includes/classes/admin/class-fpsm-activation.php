@@ -1,14 +1,14 @@
 <?php
 
-defined('ABSPATH') or die('No script kiddies please!!');
-if (!class_exists('FPSM_Activation')) {
+defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
+if ( !class_exists( 'FPSM_Activation' ) ) {
 
     class FPSM_Activation {
 
         function __construct() {
             //All the activation related tasks are initialized here
 
-            register_activation_hook(FPSM_PATH . '/frontend-post-submission-manager.php', array($this, 'activation_tasks'));
+            register_activation_hook( FPSM_PATH . '/frontend-post-submission-manager.php', array( $this, 'activation_tasks' ) );
         }
 
         function activation_tasks() {
@@ -19,14 +19,14 @@ if (!class_exists('FPSM_Activation')) {
             /**
              * Necessary Table Creation on activation
              */
-            if (is_multisite()) {
+            if ( is_multisite() ) {
                 global $wpdb;
                 $current_blog = $wpdb->blogid;
 
                 // Get all blogs in the network and activate plugin on each one
-                $blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
-                foreach ($blog_ids as $blog_id) {
-                    switch_to_blog($blog_id);
+                $blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
+                foreach ( $blog_ids as $blog_id ) {
+                    switch_to_blog( $blog_id );
 
                     $charset_collate = $wpdb->get_charset_collate();
                     $form_table = $wpdb->prefix . 'fpsm_forms';
@@ -42,8 +42,11 @@ if (!class_exists('FPSM_Activation')) {
 					  ) $charset_collate;";
 
                     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                    dbDelta($form_table_sql);
-
+                    dbDelta( $form_table_sql );
+                    $row_count = $wpdb->get_var( "SELECT count(*) from $form_table" );
+                    if ( $row_count == 0 ) {
+                        $this->insert_default_forms();
+                    }
 
                     restore_current_blog();
                 }
@@ -63,8 +66,52 @@ if (!class_exists('FPSM_Activation')) {
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";
                 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                dbDelta($form_table_sql);
+                dbDelta( $form_table_sql );
+                $row_count = $wpdb->get_var( "SELECT count(*) from $form_table" );
+                if ( $row_count == 0 ) {
+                    $this->insert_default_forms();
+                }
             }
+        }
+
+        function insert_default_forms() {
+            global $wpdb;
+            global $fpsm_library_obj;
+
+            $form_status = 1;
+            $post_type = 'post';
+
+            /**
+             * Login require default form
+             */
+            $form_title = esc_html__( 'Login Require Form', 'frontend-post-submission-manager' );
+            $form_alias = 'login_require_form';
+            $form_type = 'login_require';
+            $form_details = $fpsm_library_obj->get_default_form_details( $post_type, $form_type );
+
+            $insert_check = $wpdb->insert( FPSM_FORM_TABLE, array( 'form_title' => $form_title,
+                'form_alias' => $form_alias,
+                'form_details' => maybe_serialize( $form_details ),
+                'form_status' => $form_status,
+                'form_type' => $form_type,
+                'post_type' => $post_type
+                    ), array( '%s', '%s', '%s', '%d', '%s', '%s' )
+            );
+            /**
+             * Guest post default form
+             */
+            $form_title = esc_html__( 'Guest Post Form', 'frontend-post-submission-manager' );
+            $form_alias = 'guest_post_form';
+            $form_type = 'guest';
+            $form_details = $fpsm_library_obj->get_default_form_details( $post_type, $form_type );
+            $insert_check = $wpdb->insert( FPSM_FORM_TABLE, array( 'form_title' => $form_title,
+                'form_alias' => $form_alias,
+                'form_details' => maybe_serialize( $form_details ),
+                'form_status' => $form_status,
+                'form_type' => $form_type,
+                'post_type' => $post_type
+                    ), array( '%s', '%s', '%s', '%d', '%s', '%s' )
+            );
         }
 
     }

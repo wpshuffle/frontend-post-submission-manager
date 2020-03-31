@@ -1,6 +1,6 @@
 <?php
 
-defined('ABSPATH') or die('No script kiddies please');
+defined( 'ABSPATH' ) or die( 'No script kiddies please' );
 
 /*
   Plugin Name: Frontend Post Submission Manager
@@ -8,6 +8,7 @@ defined('ABSPATH') or die('No script kiddies please');
   Version:     1.0.0
   Author:      WP Shuffle
   Author URI:  http://wpshuffle.com
+  Plugin URI: http://wpshuffle.com/wordpress-plugins/frontend-post-submission-manager
   License:     GPL2
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
@@ -15,8 +16,8 @@ defined('ABSPATH') or die('No script kiddies please');
  */
 
 // Define FPSM_URL and FPSM_PATH
-defined('FPSM_URL') or define('FPSM_URL', untrailingslashit(plugin_dir_url(__FILE__)));
-defined('FPSM_PATH') or define('FPSM_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
+defined( 'FPSM_URL' ) or define( 'FPSM_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
+defined( 'FPSM_PATH' ) or define( 'FPSM_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
 
 

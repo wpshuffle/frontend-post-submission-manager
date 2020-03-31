@@ -34,10 +34,11 @@ if ( !class_exists( 'FPSM_Ajax_Admin' ) ) {
                 } else {
                     if ( $fpsm_library_obj->is_alias_available( $form_alias ) ) {
                         global $wpdb;
+                        $form_details = $fpsm_library_obj->get_default_form_details( $post_type, $form_type );
 
                         $insert_check = $wpdb->insert( FPSM_FORM_TABLE, array( 'form_title' => $form_title,
                             'form_alias' => $form_alias,
-                            'form_details' => '',
+                            'form_details' => maybe_serialize( $form_details ),
                             'form_status' => $form_status,
                             'form_type' => $form_type,
                             'post_type' => $post_type

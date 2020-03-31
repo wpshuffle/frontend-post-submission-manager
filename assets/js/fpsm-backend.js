@@ -521,7 +521,7 @@ jQuery(document).ready(function ($) {
                     var uploaded_image = image.state().get('selection').first();
                     // We convert uploaded_image to a JSON object to make accessing it easier
                     // Output to the console uploaded_image
-                    console.log(uploaded_image);
+                    // console.log(uploaded_image);
                     var image_url = uploaded_image.toJSON().url;
                     var image_id = uploaded_image.toJSON().id;
                     // Let's assign the url value to the input field

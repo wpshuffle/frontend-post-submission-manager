@@ -380,8 +380,8 @@ if ( !class_exists( 'FPSM_Library' ) ) {
          * @since 1.0.0         *
          */
         function get_default_fields( $post_type = 'post', $form_type = 'login_require' ) {
-            $default_fields = array( 'post_title' => array(),
-                'post_content' => array(),
+            $default_fields = array( 'post_title' => array( 'show_on_form' => 1, 'field_label' => esc_html__( 'Post Title', 'frontend-post-submission-manager' ) ),
+                'post_content' => array( 'show_on_form' => 1, 'field_label' => esc_html__( 'Post Content', 'frontend-post-submission-manager' ), 'editor_type' => 'simple' ),
                 'post_image' => array(),
                 'post_excerpt' => array()
             );
@@ -407,6 +407,22 @@ if ( !class_exists( 'FPSM_Library' ) ) {
              * @since 1.0.0
              */
             return apply_filters( 'fpsm_default_fields', $default_fields );
+        }
+
+        /**
+         *  Returns the default form details
+         *
+         * @param string $post_type
+         * @param string $form_type
+         *
+         * @return array
+         *
+         * @since 1.0.0
+         */
+        function get_default_form_details( $post_type = 'post', $form_type = 'login_require' ) {
+            $form_default_fields = $this->get_default_fields( $post_type, $form_type );
+            $form_details['form']['fields'] = $form_default_fields;
+            return $form_details;
         }
 
         /**
