@@ -865,3 +865,5 @@ label{
  input.button-secondary.fpsm-alias-force-edit {
     margin-top: 10px;
 }
+
+.fpsm-post-template-preview img{width: 100%;height: auto}

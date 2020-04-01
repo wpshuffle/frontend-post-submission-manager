@@ -359,6 +359,15 @@ input[type="file"]{
     margin-bottom: 8px;
 }
 
+.fpsm-has-submit-btn .fpsm-field{
+    display: flex;
+    align-items: center;
+}
+
+.fpsm-has-submit-btn .fpsm-field > img{
+    margin-left: 15px;
+}
+
 .fpsm-front-form input[type="text"],
 .fpsm-front-form input[type="email"],
 .fpsm-front-form input[type="number"],
@@ -413,6 +422,7 @@ input[type="file"]{
 
 .fpsm-front-form .fpsm-field input[type="submit"]{
     background-color: #0083f8;
+    border: none;
 }
 .fpsm-front-form .fpsm-field input[type="submit"]:hover{
     background-color: rgba(0,0,0,.8);
