@@ -217,19 +217,20 @@ p.fpsm-ajax .fpsm-ajax-loader {
 .fpsm-form-lists-table a.fpsm-copy:before {
     content: '';
     position: absolute;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     font-size: 16px;
     color: #fff;
     left: 7px;
     top: 2px;
     color: rgba(0,0,0,.48);
+    font-weight: 900;
 }
 .fpsm-form-lists-table a.fpsm-edit:before {
-    content: '\f040';
+    content: '\f303';
     left: 5px;
 }
 .fpsm-form-lists-table a.fpsm-delete:before {
-    content: '\f014';
+    content: '\f2ed';
     font-size: 14px;
 }
 .fpsm-form-lists-table a.fpsm-preview:before {
