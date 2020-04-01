@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/comingsoon/stylesheet.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/font-face/ComingSoon-Regular.svg" afterPath="$PROJECT_DIR$/assets/comingsoon/ComingSoon-Regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/font-face/ComingSoon-Regular.ttf" afterPath="$PROJECT_DIR$/assets/comingsoon/ComingSoon-Regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/font-face/ComingSoon-Regular.woff" afterPath="$PROJECT_DIR$/assets/comingsoon/ComingSoon-Regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/font-face/ComingSoon-Regular.woff2" afterPath="$PROJECT_DIR$/assets/comingsoon/ComingSoon-Regular.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-face/stylesheet.css" afterPath="$PROJECT_DIR$/assets/font-face/stylesheet.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +17,7 @@
       <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
+            <state relative-caret-position="2563">
               <caret line="467" column="37" lean-forward="false" selection-start-line="467" selection-start-column="37" selection-end-line="467" selection-end-column="37" />
               <folding />
             </state>
@@ -53,12 +47,12 @@
       <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="232" column="19" lean-forward="false" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
+            <state relative-caret-position="20">
+              <caret line="707" column="0" lean-forward="false" selection-start-line="707" selection-start-column="0" selection-end-line="707" selection-end-column="0" />
               <folding>
-                <element signature="e#18515#18662#0" expanded="false" />
-                <element signature="e#18865#18990#0" expanded="false" />
-                <element signature="e#19283#19344#0" expanded="false" />
+                <element signature="e#18687#18834#0" expanded="false" />
+                <element signature="e#19037#19162#0" expanded="false" />
+                <element signature="e#19455#19516#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -68,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fpsm-title-header</find>
       <find>textarea</find>
       <find>fpsm-pagination-wrap</find>
       <find>.fpsm-button-primary</find>
@@ -98,6 +91,7 @@
       <find>.fpsm-field-wrap &gt; label</find>
       <find>h2</find>
       <find>fpsm-form-title</find>
+      <find>.fpsm-form-lists-table</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -280,12 +274,12 @@
       <workItem from="1585369703289" duration="5081000" />
       <workItem from="1585406360844" duration="2126000" />
       <workItem from="1585469705100" duration="34000" />
-      <workItem from="1585734950078" duration="722000" />
+      <workItem from="1585734950078" duration="1251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140344000" />
+    <option name="totallyTimeSpent" value="140873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -298,7 +292,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13622603" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -663,7 +657,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
+        <state relative-caret-position="2563">
           <caret line="467" column="37" lean-forward="false" selection-start-line="467" selection-start-column="37" selection-end-line="467" selection-end-column="37" />
           <folding />
         </state>
@@ -671,12 +665,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="232" column="19" lean-forward="false" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
+        <state relative-caret-position="20">
+          <caret line="707" column="0" lean-forward="false" selection-start-line="707" selection-start-column="0" selection-end-line="707" selection-end-column="0" />
           <folding>
-            <element signature="e#18515#18662#0" expanded="false" />
-            <element signature="e#18865#18990#0" expanded="false" />
-            <element signature="e#19283#19344#0" expanded="false" />
+            <element signature="e#18687#18834#0" expanded="false" />
+            <element signature="e#19037#19162#0" expanded="false" />
+            <element signature="e#19455#19516#0" expanded="false" />
           </folding>
         </state>
       </provider>

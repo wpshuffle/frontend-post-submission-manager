@@ -371,7 +371,7 @@ table.fixed{table-layout: auto !important;}
 .fpsm-form-element-wrap input[type="text"],
 .fpsm-form-wrap input[type="email"],
 .fpsm-form-element-wrap input[type="email"],
-input[type="number"],
+.fpsm-form-wrap input[type="number"],
 .fpsm-form-wrap textarea{
     display: block;
     width: 100%;
@@ -693,19 +693,19 @@ label{
 .edit-post-layout__content .fpsm-radio:last-child{margin-bottom: 0;}
 
 
-input[type="date"],
-input[type="datetime-local"],
-input[type="datetime"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"]{
+.fpsm-field input[type="date"],
+.fpsm-field input[type="datetime-local"],
+.fpsm-field input[type="datetime"],
+.fpsm-field input[type="email"],
+.fpsm-field input[type="month"],
+.fpsm-field input[type="number"],
+.fpsm-field input[type="password"],
+.fpsm-field input[type="search"],
+.fpsm-field input[type="tel"],
+.fpsm-field input[type="text"],
+.fpsm-field input[type="time"],
+.fpsm-field input[type="url"],
+.fpsm-field input[type="week"]{
     display: block;
     width: 100%;
     max-width: 500px;
