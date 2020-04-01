@@ -9,7 +9,7 @@ if ( !empty( $form_details['notification']['admin']['enable'] ) ) {
     $notification_message = str_replace( '[post_title]', get_the_title( $insert_update_post_id ), $notification_message );
     $post_edit_link = get_edit_post_link( $insert_update_post_id );
     $notification_message = str_replace( '[post_admin_link]', '<a href="' . $post_edit_link . '">' . $post_edit_link . '</a>', $notification_message );
-    $admin_emails = (!empty( $form_details['notification']['admin']['notification_emails'] )) ? explode( ',', $form_details['notification']['admin']['enable'] ) : get_bloginfo( 'admin_email' );
+    $admin_emails = (!empty( $form_details['notification']['admin']['notification_emails'] )) ? explode( ',', $form_details['notification']['admin']['notification_emails'] ) : get_bloginfo( 'admin_email' );
     $headers = array();
     $charset = get_option( 'blog_charset' );
     $headers[] = 'Content-Type: text/html; charset=' . $charset;
