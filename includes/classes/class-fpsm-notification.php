@@ -65,40 +65,42 @@ if ( !class_exists( 'FPSM_Notification' ) ) {
         }
 
         function trigger_post_publish_notification( $post_id, $post ) {
-            $form_alias = get_post_meta( $post_id, '_fpsm_form_alias', true );
-            if ( empty( $form_alias ) ) {
-                return;
-            }
-            global $fpsm_library_obj;
-            $form_row = $fpsm_library_obj->get_form_row_by_alias( $form_alias );
-            $form_details = maybe_unserialize( $form_row->form_details );
-            if ( empty( $form_details['notification']['post_publish']['enable'] ) ) {
-                return;
-            }
-            if ( $form_row->form_type == 'login_require' ) {
-                $post_author_id = get_post_field( 'post_author', $post_id );
-                $notification_email = get_the_author_meta( 'user_email', $post_author_id );
-                $author_name = get_the_author_meta( 'display_name', $post_author_id );
-            } else {
-                $notification_email = get_post_meta( $post_id, 'fpsm_author_email', true );
-                if ( empty( $notification_email ) ) {
+            if ( !(defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+                $form_alias = get_post_meta( $post_id, '_fpsm_form_alias', true );
+                if ( empty( $form_alias ) ) {
                     return;
                 }
-                $author_name = get_post_meta( $post_id, 'fpsm_author_name', true );
+                global $fpsm_library_obj;
+                $form_row = $fpsm_library_obj->get_form_row_by_alias( $form_alias );
+                $form_details = maybe_unserialize( $form_row->form_details );
+                if ( empty( $form_details['notification']['post_publish']['enable'] ) ) {
+                    return;
+                }
+                if ( $form_row->form_type == 'login_require' ) {
+                    $post_author_id = get_post_field( 'post_author', $post_id );
+                    $notification_email = get_the_author_meta( 'user_email', $post_author_id );
+                    $author_name = get_the_author_meta( 'display_name', $post_author_id );
+                } else {
+                    $notification_email = get_post_meta( $post_id, 'fpsm_author_email', true );
+                    if ( empty( $notification_email ) ) {
+                        return;
+                    }
+                    $author_name = get_post_meta( $post_id, 'fpsm_author_name', true );
+                }
+                $post_link = get_permalink( $post_id );
+                $from_name = (!empty( $form_details['notification']['post_publish']['from_name'] )) ? $form_details['notification']['post_publish']['from_name'] : esc_html__( 'No Reply', 'frontend-post-submission-manager' );
+                $from_email = (!empty( $form_details['notification']['post_publish']['from_email'] )) ? $form_details['notification']['post_publish']['from_email'] : $fpsm_library_obj->default_from_email();
+                $subject = (!empty( $form_details['notification']['post_publish']['subject'] )) ? $form_details['notification']['post_publish']['subject'] : $fpsm_library_obj->default_from_email();
+                $notification_message = (!empty( $form_details['notification']['post_publish']['notification_message'] )) ? $form_details['notification']['post_publish']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks( $fpsm_library_obj->default_publish_notification() );
+                $notification_message = str_replace( '[post_title]', get_the_title( $post_id ), $notification_message );
+                $notification_message = str_replace( '[author_name]', $author_name, $notification_message );
+                $notification_message = str_replace( '[post_link]', $post_link, $notification_message );
+                $headers = array();
+                $charset = get_option( 'blog_charset' );
+                $headers[] = 'Content-Type: text/html; charset=' . $charset;
+                $headers[] = "From: $from_name <$from_email>";
+                wp_mail( $notification_email, $subject, $notification_message, $headers );
             }
-            $post_link = get_permalink( $post_id );
-            $from_name = (!empty( $form_details['notification']['post_publish']['from_name'] )) ? $form_details['notification']['post_publish']['from_name'] : esc_html__( 'No Reply', 'frontend-post-submission-manager' );
-            $from_email = (!empty( $form_details['notification']['post_publish']['from_email'] )) ? $form_details['notification']['post_publish']['from_email'] : $fpsm_library_obj->default_from_email();
-            $subject = (!empty( $form_details['notification']['post_publish']['subject'] )) ? $form_details['notification']['post_publish']['subject'] : $fpsm_library_obj->default_from_email();
-            $notification_message = (!empty( $form_details['notification']['post_publish']['notification_message'] )) ? $form_details['notification']['post_publish']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks( $fpsm_library_obj->default_publish_notification() );
-            $notification_message = str_replace( '[post_title]', get_the_title( $post_id ), $notification_message );
-            $notification_message = str_replace( '[author_name]', $author_name, $notification_message );
-            $notification_message = str_replace( '[post_link]', $post_link, $notification_message );
-            $headers = array();
-            $charset = get_option( 'blog_charset' );
-            $headers[] = 'Content-Type: text/html; charset=' . $charset;
-            $headers[] = "From: $from_name <$from_email>";
-            wp_mail( $notification_email, $subject, $notification_message, $headers );
         }
 
     }
