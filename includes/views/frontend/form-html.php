@@ -7,7 +7,7 @@ $form_template = (!empty( $form_details['layout']['template'] )) ? $form_details
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 ?>
 <form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr( $form_template ); ?> <?php echo esc_attr( $form_alias_class ); ?>" data-alias="<?php echo esc_attr( $form_row->form_alias ); ?>">
-    <h2 class="fpsm-form-title"><?php echo esc_html( $form_row->form_title ); ?></h2>
+    <?php if ( empty( $form_details['customize']['hide_form_title'] ) ) { ?><h2 class="fpsm-form-title"><?php echo esc_html( $form_row->form_title ); ?></h2><?php } ?>
 
     <input type="hidden" name="form_alias" value="<?php echo esc_attr( $form_row->form_alias ); ?>"/>
     <?php if ( !empty( $edit_post ) ) {

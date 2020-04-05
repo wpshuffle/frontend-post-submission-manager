@@ -35,6 +35,8 @@
                 <li><?php esc_html_e( 'Configure Post Format', 'frontend-post-submission-manager' ); ?></li>
                 <li><?php esc_html_e( 'Character Limit Configuration', 'frontend-post-submission-manager' ); ?></li>
                 <li><?php esc_html_e( 'Enable/disable Form Components', 'frontend-post-submission-manager' ); ?></li>
+                <li><?php esc_html_e( 'Ajax Form Submission', 'frontend-post-submission-manager' ); ?></li>
+                <li><?php esc_html_e( 'Developer Documentation Available', 'frontend-post-submission-manager' ); ?></li>
                 <li><?php esc_html_e( 'All device friendly and browser Compatibility', 'frontend-post-submission-manager' ); ?></li>
                 <li><?php esc_html_e( 'Dedicated Support', 'frontend-post-submission-manager' ); ?></li>
                 <li><?php esc_html_e( 'Translation Ready', 'frontend-post-submission-manager' ); ?></li>

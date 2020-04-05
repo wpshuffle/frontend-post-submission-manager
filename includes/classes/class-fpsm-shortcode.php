@@ -15,6 +15,42 @@ if ( !class_exists( 'FPSM_Shortcode' ) ) {
             add_filter( 'authenticate', array( $this, 'login_google_recaptcha_validation' ), 10, 3 );
         }
 
+        function register_frontend_assets() {
+            $fpsm_settings = get_option( 'fpsm_settings' );
+
+            $translation_strings = array(
+                'are_your_sure' => esc_html__( 'It looks like you have been editing something. If you leave before saving, your changes will be lost.', 'frontend-post-submission-manager' )
+            );
+            $js_obj = array(
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'ajax_nonce' => wp_create_nonce( 'fpsm_ajax_nonce' ),
+                'no_preview' => FPSM_URL . '/assets/images/no-preview.jpg',
+                'translation_strings' => $translation_strings,
+                'fpsm_settings' => $fpsm_settings
+            );
+            wp_enqueue_style( 'fpsm-style', FPSM_URL . '/assets/css/fpsm-frontend-style.css', array(), FPSM_VERSION );
+            if ( !is_user_logged_in() ) {
+                wp_enqueue_style( 'fpsm-login-style', FPSM_URL . '/assets/css/fpsm-login-form-style.css', array(), FPSM_VERSION );
+            }
+            wp_enqueue_style( 'fpsm-fonts', FPSM_URL . '/assets/font-face/stylesheet.css', array(), FPSM_VERSION );
+            if ( empty( $fpsm_settings['disable_jquery_ui_css'] ) ) {
+                wp_enqueue_style( 'jquery-ui', FPSM_URL . '/assets/css/jquery-ui.min.css', array(), FPSM_VERSION );
+            }
+            wp_enqueue_style( 'fpsm-fileuploader', FPSM_URL . '/assets/css/fileuploader.css', array(), FPSM_VERSION );
+            if ( empty( $fpsm_settings['disable_fontawesome'] ) ) {
+                wp_enqueue_style( 'fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION );
+            }
+            $js_dependencies = array( 'jquery', 'fpsm-fileuploader', 'wp-util', 'jquery-ui-autocomplete', 'jquery-ui-datepicker' );
+            wp_enqueue_script( 'fpsm-fileuploader', FPSM_URL . '/assets/js/fpsm-fileuploader.js', array(), FPSM_VERSION );
+            if ( empty( $fpsm_settings['disable_are_you_sure_js'] ) ) {
+                $js_dependencies[] = 'fpsm-are-you-sure-script';
+                wp_enqueue_script( 'fpsm-are-you-sure-script', FPSM_URL . '/assets/js/jquery.are-you-sure.js', array( 'jquery' ), FPSM_VERSION );
+            }
+            wp_enqueue_style( 'fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-custom-style.css', array(), FPSM_VERSION );
+            wp_enqueue_script( 'fpsm-script', FPSM_URL . '/assets/js/fpsm-frontend.js', $js_dependencies, FPSM_VERSION );
+            wp_localize_script( 'fpsm-script', 'fpsm_js_obj', $js_obj );
+        }
+
         function output_form_shortcode( $atts ) {
             if ( !empty( $atts['alias'] ) ) {
                 global $fpsm_library_obj;
@@ -23,9 +59,7 @@ if ( !class_exists( 'FPSM_Shortcode' ) ) {
                 // $fpsm_library_obj->print_array($form_row);
                 if ( !empty( $form_row ) ) {
                     $form_details = maybe_unserialize( $form_row->form_details );
-                    if ( !empty( $form_details['customize']['form']['enable'] ) ) {
-                        wp_enqueue_style( 'fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-custom-style.css', array(), FPSM_VERSION );
-                    }
+                    $this->register_frontend_assets();
                     $GLOBALS['fpsm_form_details'] = $form_details;
                     $GLOBALS['fpsm_form_alias'] = $alias;
                     ob_start();

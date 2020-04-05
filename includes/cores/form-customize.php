@@ -176,3 +176,7 @@ if ( !empty( $form_details['customize']['form']['enable'] ) ) {
         }
     }
 }
+if ( !empty( $form_details['customize']['custom_css'] ) ) {
+    $custom_css = $fpsm_library_obj->sanitize_html( $form_details['customize']['custom_css'] );
+    wp_add_inline_style( 'fpsm-custom-style', $custom_css );
+}
