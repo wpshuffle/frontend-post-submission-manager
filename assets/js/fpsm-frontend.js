@@ -303,6 +303,10 @@ jQuery(document).ready(function ($) {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
                     if (selector.find('.fpsm-edit-post-id').length == 0) {
                         fpsm_reset_form(selector);
+                        if (data.redirect_url) {
+                            window.location = data.redirect_url;
+                            exit;
+                        }
                     } else {
                         if (selector.find('#g-recaptcha-response').length > 0) {
                             grecaptcha.reset();
