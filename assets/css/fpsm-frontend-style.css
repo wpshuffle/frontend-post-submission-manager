@@ -1441,7 +1441,7 @@ button.add_media{
     position: relative;
     background-color: rgba(0,0,0,.8);
     padding: 5px 12px;
-    color: inherit;
+    color: white;
 }
 .fpsm-template-12 .fpsm-field-wrap > label:after{
     width: 100%;
