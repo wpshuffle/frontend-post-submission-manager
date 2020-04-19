@@ -1,3 +1,3 @@
 <?php
 
-//silence is golden asdfasdf
+//silence is golden
