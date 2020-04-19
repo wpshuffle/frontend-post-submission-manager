@@ -576,6 +576,7 @@ button.add_media{
     padding: 0;
 }
 
+.fpsm-front-form.fpsm-template-3 .fpsm-form-title{padding: 15px 25px !important;}
 
 .fpsm-template-3 .fpsm-field-wrap{
     padding: 28px;
@@ -1152,6 +1153,8 @@ button.add_media{
     padding: 0;
 }
 
+.fpsm-front-form.fpsm-template-9 .fpsm-form-title{padding: 15px 25px !important;}
+
 .fpsm-template-9 .fpsm-field-wrap{
     padding: 24px;
     margin-bottom: 0;
@@ -1224,6 +1227,8 @@ button.add_media{
     background-color: #fff;
     padding: 0;
 }
+
+.fpsm-front-form.fpsm-template-10 .fpsm-form-title{padding: 15px 25px !important;}
 
 .fpsm-template-10 .fpsm-field-wrap:nth-child(odd){
     background-color: #f5f5f5;
@@ -2346,6 +2351,8 @@ button.add_media{
     color: white;
 }
 
+.fpsm-front-form.fpsm-template-3 .fpsm-form-title{padding: 15px 25px !important;background-color: #697e92;}
+
 .fpsm-template-18 .fpsm-field-wrap > label{
     font-size: 14px;
     font-weight: 800;
@@ -2445,6 +2452,8 @@ button.add_media{
     background-repeat: repeat-x;
     color: #bc61b7;
 }
+
+.fpsm-front-form.fpsm-template-3 .fpsm-form-title{padding: 15px 25px !important;}
 
 .fpsm-template-19 .fpsm-field-wrap > label{
     color: inherit;
