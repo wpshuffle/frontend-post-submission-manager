@@ -68,6 +68,7 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
                 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
                 dbDelta( $form_table_sql );
                 $row_count = $wpdb->get_var( "SELECT count(*) from $form_table" );
+                die( $row_count );
                 if ( $row_count == 0 ) {
                     $this->insert_default_forms();
                 }
