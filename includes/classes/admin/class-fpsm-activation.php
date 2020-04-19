@@ -46,7 +46,7 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
                     $row_count = $wpdb->get_var( "SELECT count(*) from $form_table" );
                     die( $row_count );
                     if ( $row_count == 0 ) {
-                        $this->insert_default_forms();
+                        $this->insert_default_forms( $form_table );
                     }
 
                     restore_current_blog();
@@ -71,12 +71,12 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
                 $row_count = $wpdb->get_var( "SELECT count(*) from $form_table" );
                 die( $row_count );
                 if ( $row_count == 0 ) {
-                    $this->insert_default_forms();
+                    $this->insert_default_forms( $form_table );
                 }
             }
         }
 
-        function insert_default_forms() {
+        function insert_default_forms( $form_table ) {
             global $wpdb;
             global $fpsm_library_obj;
 
@@ -91,7 +91,7 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
             $form_type = 'login_require';
             $form_details = $fpsm_library_obj->get_default_form_details( $post_type, $form_type );
 
-            $insert_check = $wpdb->insert( FPSM_FORM_TABLE, array( 'form_title' => $form_title,
+            $insert_check = $wpdb->insert( $form_table, array( 'form_title' => $form_title,
                 'form_alias' => $form_alias,
                 'form_details' => maybe_serialize( $form_details ),
                 'form_status' => $form_status,
@@ -106,7 +106,7 @@ if ( !class_exists( 'FPSM_Activation' ) ) {
             $form_alias = 'guest_post_form';
             $form_type = 'guest';
             $form_details = $fpsm_library_obj->get_default_form_details( $post_type, $form_type );
-            $insert_check = $wpdb->insert( FPSM_FORM_TABLE, array( 'form_title' => $form_title,
+            $insert_check = $wpdb->insert( $form_table, array( 'form_title' => $form_title,
                 'form_alias' => $form_alias,
                 'form_details' => maybe_serialize( $form_details ),
                 'form_status' => $form_status,
