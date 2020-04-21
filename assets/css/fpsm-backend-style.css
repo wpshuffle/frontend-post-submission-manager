@@ -919,3 +919,6 @@ label{
     top:6px;
     left: 0;
 }
+#fpsm-custom-style-wrap {
+    max-width: 75%;
+}
