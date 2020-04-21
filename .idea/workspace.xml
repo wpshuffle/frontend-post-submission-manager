@@ -4,8 +4,6 @@
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php" afterPath="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="878" column="23" lean-forward="true" selection-start-line="878" selection-start-column="23" selection-end-line="878" selection-end-column="23" />
+            <state relative-caret-position="302">
+              <caret line="897" column="17" lean-forward="false" selection-start-line="897" selection-start-column="17" selection-end-line="897" selection-end-column="17" />
               <folding>
                 <element signature="e#18687#18834#0" expanded="false" />
                 <element signature="e#19037#19162#0" expanded="false" />
@@ -30,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customize-settings.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customize-settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+              <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
                 <element signature="e#416#421#0#PHP" expanded="true" />
@@ -369,8 +367,8 @@
         <option value="$PROJECT_DIR$/assets/font-face/stylesheet.css" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php" />
-        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
         <option value="$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
       </list>
     </option>
   </component>
@@ -568,12 +566,12 @@
       <workItem from="1586690137331" duration="499000" />
       <workItem from="1586868922876" duration="316000" />
       <workItem from="1587308646120" duration="731000" />
-      <workItem from="1587471767688" duration="2715000" />
+      <workItem from="1587471767688" duration="3232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148944000" />
+    <option name="totallyTimeSpent" value="149461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -1061,22 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="878" column="23" lean-forward="true" selection-start-line="878" selection-start-column="23" selection-end-line="878" selection-end-column="23" />
-          <folding>
-            <element signature="e#18687#18834#0" expanded="false" />
-            <element signature="e#19037#19162#0" expanded="false" />
-            <element signature="e#19455#19516#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
             <element signature="e#416#421#0#PHP" expanded="true" />
@@ -1206,6 +1192,18 @@
             <element signature="e#16332#16337#0#PHP" expanded="true" />
             <element signature="n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
             <element signature="e#16511#16516#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="897" column="17" lean-forward="false" selection-start-line="897" selection-start-column="17" selection-end-line="897" selection-end-column="17" />
+          <folding>
+            <element signature="e#18687#18834#0" expanded="false" />
+            <element signature="e#19037#19162#0" expanded="false" />
+            <element signature="e#19455#19516#0" expanded="false" />
           </folding>
         </state>
       </provider>
