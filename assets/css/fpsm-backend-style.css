@@ -867,3 +867,20 @@ label{
 }
 
 .fpsm-post-template-preview img{width: 100%;height: auto}
+
+.fpsm-customize-row{
+    border-radius: 4px;
+    padding: 28px;
+    background-color: rgba(255,255,255,.8);
+    margin-bottom: 20px;
+    box-shadow: rgba(0,0,0,.08) 0 0 14px;
+}
+
+.fpsm-customize-row h4{
+    margin: 0 0 26px 0;
+    font-size: 18px;
+}
+
+.fpsm-customize-row .fpsm-field-wrap{
+    margin-bottom: 15px;
+}
