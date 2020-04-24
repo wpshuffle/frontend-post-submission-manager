@@ -3478,3 +3478,18 @@ button.add_media{
 .fpsm-custom-template-6 .fpsm-each-display-field > label{flex: 1;max-width: 150px;font-size: 14px;margin-right: 24px;}
 .fpsm-custom-template-6 .fpsm-each-display-field > div{flex: 2;max-width: 100%}
 .fpsm-custom-template-6 .fpsm-each-display-field label{display: inline-block;padding: 5px 10px;background-color: rgba(0,0,0,.48);color:white;font-size: 14px;}
+
+.fpsm-page-title{
+    text-align: center;
+    padding: 120px 0 40px;
+    background-image: linear-gradient(to right, #35312d, #504336);
+    margin-bottom: 24px;
+
+}
+.fpsm-page-title h2{
+    color: white;
+    font-size: 44px;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1;
+}
