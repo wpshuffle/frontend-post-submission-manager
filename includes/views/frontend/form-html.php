@@ -1,18 +1,18 @@
 <?php
-defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
-if ( isset( $_GET['debug'] ) ) {
-    $fpsm_library_obj->print_array( $form_details );
+defined('ABSPATH') or die('No script kiddies please!!');
+if (isset($_GET['debug'])) {
+    $fpsm_library_obj->print_array($form_details);
 }
-$form_template = (!empty( $form_details['layout']['template'] )) ? $form_details['layout']['template'] : 'template-1';
+$form_template = (!empty($form_details['layout']['template'])) ? $form_details['layout']['template'] : 'template-1';
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 ?>
-<form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr( $form_template ); ?> <?php echo esc_attr( $form_alias_class ); ?>" data-alias="<?php echo esc_attr( $form_row->form_alias ); ?>">
-    <?php if ( empty( $form_details['customize']['hide_form_title'] ) ) { ?><h2 class="fpsm-form-title"><?php echo esc_html( $form_row->form_title ); ?></h2><?php } ?>
+<form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr($form_template); ?> <?php echo esc_attr($form_alias_class); ?>" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
+    <?php if (empty($form_details['customize']['hide_form_title'])) { ?><h2 class="fpsm-form-title"><?php echo esc_html($form_row->form_title); ?></h2><?php } ?>
 
-    <input type="hidden" name="form_alias" value="<?php echo esc_attr( $form_row->form_alias ); ?>"/>
-    <?php if ( !empty( $edit_post ) ) {
+    <input type="hidden" name="form_alias" value="<?php echo esc_attr($form_row->form_alias); ?>"/>
+    <?php if (!empty($edit_post)) {
         ?>
-        <input type="hidden" name="post_id" value="<?php echo intval( $edit_post->ID ); ?>" class="fpsm-edit-post-id"/>
+        <input type="hidden" name="post_id" value="<?php echo intval($edit_post->ID); ?>" class="fpsm-edit-post-id"/>
         <?php
     }
     ?>
@@ -22,34 +22,34 @@ $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
      *
      * @since 1.0.0
      */
-    do_action( 'fpsm_form_start', $form_row );
-    if ( !empty( $form_details['form']['fields'] ) ) {
-        foreach ( $form_details['form']['fields'] as $field_key => $field_details ) {
+    do_action('fpsm_form_start', $form_row);
+    if (!empty($form_details['form']['fields'])) {
+        foreach ($form_details['form']['fields'] as $field_key => $field_details) {
 
-            $field_file = $fpsm_library_obj->generate_field_file( $field_key );
-            if ( file_exists( FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file ) ) {
+            $field_file = $fpsm_library_obj->generate_field_file($field_key);
+            if (file_exists(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file)) {
                 // If field is enabled from the backend
-                if ( !empty( $field_details['show_on_form'] ) ) {
+                if (!empty($field_details['show_on_form'])) {
                     //  $fpsm_library_obj->print_array($field_details);
-                    $field_class = $fpsm_library_obj->generate_field_class( $field_key );
-                    if ( $fpsm_library_obj->is_taxonomy_key( $field_key ) ) {
+                    $field_class = $fpsm_library_obj->generate_field_class($field_key);
+                    if ($fpsm_library_obj->is_taxonomy_key($field_key)) {
                         $field_type = $field_details['field_type'];
                         $field_type_class = ' fpsm-taxonomy-' . $field_type;
-                    } else if ( $fpsm_library_obj->is_custom_field_key( $field_key ) ) {
+                    } else if ($fpsm_library_obj->is_custom_field_key($field_key)) {
                         $field_type = $field_details['field_type'];
                         $field_type_class = ' fpsm-custom-field-' . $field_type;
                     } else {
                         $field_type_class = '';
                     }
                     ?>
-                    <div class="fpsm-field-wrap<?php echo esc_attr( $field_type_class ); ?> <?php echo esc_attr( $field_class ); ?>" data-field-key="<?php echo esc_attr( $field_key ); ?>">
-                        <label><?php echo (!empty( $field_details['field_label'] )) ? esc_html( $field_details['field_label'] ) : ''; ?></label>
+                    <div class="fpsm-field-wrap<?php echo esc_attr($field_type_class); ?> <?php echo esc_attr($field_class); ?>" data-field-key="<?php echo esc_attr($field_key); ?>">
+                        <label><?php echo (!empty($field_details['field_label'])) ? esc_html($field_details['field_label']) : ''; ?></label>
                         <div class="fpsm-field">
                             <?php
                             include(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file);
-                            if ( !empty( $field_details['field_note'] ) ) {
+                            if (!empty($field_details['field_note'])) {
                                 ?>
-                                <div class="fpsm-field-note"><?php echo esc_html( $field_details['field_note'] ); ?></div>
+                                <div class="fpsm-field-note"><?php echo esc_html($field_details['field_note']); ?></div>
                                 <?php
                             }
                             ?>
@@ -67,27 +67,33 @@ $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 //    echo "<pre>";
 //    print_r($form_details);
 //    echo "</pre>";
-    if ( !empty( $form_details['security']['frontend_form_captcha'] ) ) {
-        $site_key = (!empty( $form_details['security']['site_key'] )) ? $form_details['security']['site_key'] : '';
-        if ( !empty( $site_key ) ) {
+    if (!empty($form_details['security']['frontend_form_captcha'])) {
+        $site_key = (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
+        if (!empty($site_key)) {
             ?>
 
             <div class="fpsm-field-wrap fpsm-captcha-field" data-field-key="captcha">
-                <label><?php echo (!empty( $form_details['security']['captcha_label'] )) ? esc_attr( $form_details['security']['captcha_label'] ) : ''; ?></label>
+                <label><?php echo (!empty($form_details['security']['captcha_label'])) ? esc_attr($form_details['security']['captcha_label']) : ''; ?></label>
                 <div class="ebd-field">
                     <div data-field-key="security">
                         <script type="text/javascript" src="//www.google.com/recaptcha/api.js"></script>
-                        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $site_key ); ?>"></div>
+                        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                     </div>
                 </div>
             </div>
             <?php
         }
     }
+    /**
+     * Fires at the end of form
+     *
+     * @since 1.0.0
+     */
+    do_action('fpsm_form_end', $form_row);
     ?>
     <div class="fpsm-field-wrap fpsm-has-submit-btn">
         <div class="fpsm-field">
-            <input type="submit" value="<?php echo (!empty( $form_details['form']['submit_button_label'] )) ? esc_attr( $form_details['form']['submit_button_label'] ) : esc_html__( 'Submit', 'frontend-post-submission-manager' ); ?>"/>
+            <input type="submit" value="<?php echo (!empty($form_details['form']['submit_button_label'])) ? esc_attr($form_details['form']['submit_button_label']) : esc_html__('Submit', 'frontend-post-submission-manager'); ?>"/>
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader"/>
         </div>
     </div>

@@ -9,44 +9,92 @@
     <div class="fpsm-block-wrap">
         <div class="fpsm-content-block">
             <h2><?php esc_html_e('Documentation', 'frontend-post-submission-manager'); ?></h2>
-            <p><?php esc_html_e('', 'frontend-post-submission-manager'); ?></p>
-            <p>You can create unlimited forms with <strong>drag and drop form builder</strong>, add unlimited <strong>custom fields</strong> with various field types support such as <strong>Textfield, Textarea, Radio Button, Checkbox, Datepicker, Fileuploader</strong> and many more.</p>
+            <p><?php esc_html_e('You can check our detailed documentation from below link.', 'frontend-post-submission-manager'); ?></p>
+            <p><a href="http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager" target="_blank">http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager</a></p>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e('Features', 'frontend-post-submission-manager'); ?></h2>
-            <ul class="fpsm-bullets">
-                <li><?php esc_html_e('Unlimited Forms with Drag and Drop form Builder', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Default Post Types and Custom Post Types Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Default Taxonomies and Custom Taxonomies Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Unlimited Custom Fields with various Field Types Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Custom Fields Frontend Display Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Custom Fields Display in Backend too', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('20+ Beautiful Pre Designed templates', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Frontend Post Management Dashboard', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Guest Post Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Secure Form Submission with Google Captcha Integrated ', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Admin and User Notification Configurations', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Layout Customization Options', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Frontend Form Preview', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Redirection option available after Successful submission', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Image and other files direct insertion into post content', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Configure Submited Post Status', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Configure Post Author', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Configure Post Format', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Character Limit Configuration', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Enable/disable Form Components', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Ajax Form Submission', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Developer Documentation Available', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('All device friendly and browser Compatibility', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Dedicated Support', 'frontend-post-submission-manager'); ?></li>
-                <li><?php esc_html_e('Translation Ready', 'frontend-post-submission-manager'); ?></li>
-
-            </ul>
+            <h2><?php esc_html_e('Developer Documentation', 'frontend-post-submission-manager'); ?></h2>
+            <p><?php esc_html_e('If you are developer and trying to add any functionality or customize our plugin through hooks then below are the list of actions and filters available in the plugin.', 'frontend-post-submission-manager'); ?></p>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e('About WP Shuffle', 'frontend-post-submission-manager'); ?></h2>
-            <p><?php esc_html_e('We are a bunch of WordPress Enthusiasts with an aim to develop the WordPress Themes and Plugins that adds a value to any WordPress site. Our mission is to create a WordPress product that is easy to use, highly customizable and offers innovative features that are useful for every another WordPress site.', 'frontend-post-submission-manager'); ?></p>
-            <p><?php esc_html_e('If talking about support, we value our customers more that we value our products so our qualified support team is always there to provide any assistance with our products.', 'frontend-post-submission-manager'); ?></p>
+            <h2><?php esc_html_e('Available Actions', 'frontend-post-submission-manager'); ?></h2>
+            <div class="fpsm-hooks-wrap">
+                <pre>
+/**
+* Fires on init hook
+*
+* @since 1.0.0
+*/
+do_action('fpsm_init');
+                </pre>
+                <pre>
+/**
+* Fires when the successful form submission is complete
+*
+* @param int $insert_update_post_id
+* @param array $form_row
+* @param string $action
+*/
+do_action( 'fpsm_form_submission_success', $insert_update_post_id, $form_row, $action );
+                </pre>
+                <pre>
+/**
+* Fires at the end of all the custom field option has been printed
+*
+* @param type string $field_key
+* @param type array $field_details
+*
+* @since 1.0.0
+*/
+do_action('fpsm_custom_field_admin_end', $field_key, $field_details);
+                </pre>
+                <pre>
+/**
+* Fires while building the nav
+*
+* @since 1.0.0
+*/
+do_action('fpsm_form_nav');
+                </pre>
+                <pre>
+/**
+* Fires on start of the form sections
+*
+* @since 1.0.0
+*
+* @param array $form_row
+*
+*/
+do_action('fpsm_form_sections_start', $form_row);
+                </pre>
+                <pre>
+/**
+* Fires on end of the form sections
+*
+* @since 1.0.0
+*
+* @param array $form_row
+*
+*/
+do_action('fpsm_form_sections_end', $form_row);
+                </pre>
+                <pre>
+/**
+* Fires at the start of form
+*
+* @since 1.0.0
+*/
+do_action( 'fpsm_form_start', $form_row );
+                </pre>
+                <pre>
+/**
+* Fires at the end of form
+*
+* @since 1.0.0
+*/
+do_action('fpsm_form_end', $form_row);
+                </pre>
+            </div>
         </div>
         <div class="fpsm-content-block">
             <h2><?php esc_html_e('Our Plugins', 'frontend-post-submission-manager'); ?></h2>
