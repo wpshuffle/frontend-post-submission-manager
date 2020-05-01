@@ -923,3 +923,12 @@ label{
 #fpsm-custom-style-wrap {
     max-width: 75%;
 }
+.fpsm-hooks-wrap pre {
+    background: #fff;
+    padding: 5px;
+    border-left: 5px solid #19b989;
+}
+.fpsm-hooks-wrap {
+    height: 300px;
+    overflow-y: scroll;
+}

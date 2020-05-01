@@ -97,13 +97,128 @@ do_action('fpsm_form_end', $form_row);
             </div>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e('Our Plugins', 'frontend-post-submission-manager'); ?></h2>
-            <a href="https://wpshuffle.com/wordpress-plugins">https://wpshuffle.com/wordpress-plugins/</a>
+            <h2><?php esc_html_e('Available Filters', 'frontend-post-submission-manager'); ?></h2>
+            <div class="fpsm-hooks-wrap">
+                <pre>
+/**
+* Filters allowed extensions for image field type
+*
+* @param array $allowed_extensions
+*
+* @since 1.0.0
+*/
+$default_allowed_extensions = apply_filters('fpsm_image_allowed_extensions', $default_allowed_extensions);
+                </pre>
+                <pre>
+/**
+* Filters allowed html for processing form data
+*
+* @param array $allowed_html
+*
+* @since 1.0.0
+*/
+$allowed_html = apply_filters( 'fpsm_allowed_html', $allowed_html );
+                </pre>
+                <pre>
+/**
+* Filter the default fields for form
+* @param array $default_fields
+*
+* @since 1.0.0
+*/
+return apply_filters( 'fpsm_default_fields', $default_fields );
+                </pre>
+                <pre>
+/**
+* Filters the post array before inserting the post into db
+*
+* @param array $postarr
+* @param array $form_data
+* @param obj $form_row
+*
+* @since 1.0.0
+*/
+$postarr = apply_filters( 'fpsm_insert_postdata', $postarr, $form_data, $form_row );
+                </pre>
+                <pre>
+/**
+* Filters the custom field value before storing it in the database
+*
+* @param mixed $custom_field_value
+* @param string $custom_field_key
+* @param obj $form_row
+*
+* @since 1.0.0
+*/
+$custom_field_value = apply_filters( 'fpsm_custom_field_value', $custom_field_value, $custom_field_key, $form_row );
+                </pre>
+                <pre>
+/**
+* Filters the form process response array
+*
+* @param array $response
+* @param array $form_data
+* @param obj $form_row
+*
+* @since 1.0.0
+*/
+$response = apply_filters( 'fpsm_form_response', $response, $form_data, $form_row );
+                </pre>
+                <pre>
+/**
+ * Filters custom field type list
+ *
+ * @param array $custom_field_type_list
+ *
+ * @since 1.0.0
+ */
+$custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_field_type_list);
+                </pre>
+                <pre>
+/**
+* Filters datepicker formats as an option
+*
+* @param array $fpsm_datepicker_formats
+*
+* @since 1.0.0
+*/
+$fpsm_datepicker_formats = apply_filters( 'fpsm_datepicker_formats', $fpsm_datepicker_formats );
+                </pre>
+                <pre>
+/**
+* Filters user arguments while fetching the users
+*
+* @param array $user_args
+*
+* @since 1.0.0
+*/
+$user_args = apply_filters( 'fpsm_user_list_args', $user_args );
+                </pre>
+                <pre>
+/**
+* Filters custom field type list
+*
+* @param array $custom_field_type_list
+*
+* @since 1.0.0
+*/
+$custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_field_type_list);
+                </pre>
+                <pre>
+/**
+ * Filters allowed extensions for image field type
+ *
+ * @param array $default_allowed_extensions
+ *
+ * @since 1.0.0
+ */
+$default_allowed_extensions = apply_filters('fpsm_image_allowed_extensions', $default_allowed_extensions);
+                </pre>
+            </div>
+            <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
+            <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
         </div>
-        <div class="fpsm-content-block">
-            <h2><?php esc_html_e('Our Themes', 'frontend-post-submission-manager'); ?></h2>
-            <a href="https://wpshuffle.com/wordpress-themes">https://wpshuffle.com/wordpress-themes/</a>
-        </div>
+
 
 
     </div>
