@@ -135,6 +135,8 @@ span.fpsm-tag-remove-trigger {
     margin-top: 10px;
 }
 
+.fpsm-file-preview-column input.fpsm-media-delete-button{border: none}
+
 /* ========================= Global styling ============================ */
 /*.fpsm-front-form{max-width: 100% !important;width: 100% !important;}*/
 
@@ -167,7 +169,7 @@ span.fpsm-tag-remove-trigger {
 .media-frame button{font-weight: 300;}
 .media-frame button:hover{background-color: transparent}
 button.media-menu-item{color: rgba(0,0,0,.68);}
-.fpsm-front-form .wp-switch-editor{font-size: 14px;font-weight: 300;text-transform: none}
+.fpsm-front-form .wp-switch-editor{font-size: 14px;font-weight: 300;text-transform: none;height: auto !important;}
 .fpsm-front-form .wp-switch-editor:hover{background-color: rgba(0,0,0,.06);}
 .media-frame select{min-height: 8px !important;}
 .fpsm-front-form .mce-container button:hover{background-color: transparent}
@@ -1328,6 +1330,10 @@ button.add_media{
     padding: 20px;
 }
 
+.fpsm-template-11 .fpsm-form-title{
+    color: inherit;
+}
+
 .fpsm-template-11 .fpsm-field-wrap{
     display: flex;
     flex-wrap: wrap;
@@ -2369,10 +2375,10 @@ button.add_media{
 .fpsm-template-18{
     background-color: #fff;
     padding: 0;
-    color: white;
+
 }
 
-.fpsm-front-form.fpsm-template-18 .fpsm-form-title{padding: 15px 25px !important;background-color: #697e92;}
+.fpsm-front-form.fpsm-template-18 .fpsm-form-title{padding: 15px 25px !important;background-color: #697e92;color: white}
 
 .fpsm-template-18 .fpsm-field-wrap > label{
     font-size: 14px;
@@ -2383,7 +2389,7 @@ button.add_media{
     position: relative;
     background-color: #697e92;
     padding: 5px 12px;
-    color: inherit;
+    color: white;
 }
 
 .fpsm-template-18 .fpsm-custom-field-file_uploader > label,
@@ -2474,7 +2480,7 @@ button.add_media{
     color: #bc61b7;
 }
 
-.fpsm-front-form.fpsm-template-19 .fpsm-form-title{padding: 15px 25px !important;}
+.fpsm-front-form.fpsm-template-19 .fpsm-form-title{padding: 15px 25px !important;color: inherit}
 
 .fpsm-template-19 .fpsm-field-wrap > label{
     color: inherit;

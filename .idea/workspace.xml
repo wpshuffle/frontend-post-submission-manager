@@ -4,7 +4,7 @@
     <list default="true" id="0a6c406a-28a9-4761-8f29-7f2f15225156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php" afterPath="$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/fpsm-rtl-frontend-style.css" afterPath="$PROJECT_DIR$/assets/css/fpsm-rtl-frontend-style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +18,7 @@
       <file leaf-file-name="fpsm-backend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
+            <state relative-caret-position="637">
               <caret line="678" column="18" lean-forward="false" selection-start-line="678" selection-start-column="18" selection-end-line="678" selection-end-column="18" />
               <folding>
                 <element signature="e#18706#18853#0" expanded="false" />
@@ -29,11 +29,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fpsm-frontend-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="3486" column="0" lean-forward="true" selection-start-line="3486" selection-start-column="0" selection-end-line="3486" selection-end-column="0" />
+            <state relative-caret-position="457">
+              <caret line="2482" column="95" lean-forward="false" selection-start-line="2482" selection-start-column="95" selection-end-line="2482" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fpsm-rtl-frontend-style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/fpsm-rtl-frontend-style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="94" column="35" lean-forward="false" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -42,10 +52,12 @@
       <file leaf-file-name="frontend-preview-template.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="40">
               <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
+                <marker date="1588341477004" expanded="false" signature="650:657" ph="..." />
+                <marker date="1588341477004" expanded="false" signature="650:665" ph="..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +66,8 @@
       <file leaf-file-name="customize-settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="211" column="17" lean-forward="false" selection-start-line="211" selection-start-column="17" selection-end-line="211" selection-end-column="17" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
                 <element signature="e#416#421#0#PHP" expanded="true" />
@@ -63,7 +75,6 @@
                 <element signature="e#765#770#0#PHP" expanded="true" />
                 <element signature="e#963#968#0#PHP" expanded="true" />
                 <marker date="1587734720500" expanded="false" signature="18571:18586" ph="..." />
-                <marker date="1587734720500" expanded="false" signature="18571:18597" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="35" selection-end-column="20" />
+              <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="35" selection-end-column="20" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="true" />
                 <element signature="e#416#421#0#PHP" expanded="true" />
@@ -157,9 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fpsm-error</find>
-      <find>.fpsm-form-wrap</find>
-      <find>.fpsm-checkbox</find>
       <find>.fpsm-front-form .fpsm-custom-field-checkbox</find>
       <find>.fpsm-custom-field-radio</find>
       <find>.fpsm-front-form .fpsm-custom-field-radio</find>
@@ -187,6 +195,9 @@
       <find>.fpsm-form-message</find>
       <find>fpsm-form-message</find>
       <find>.fpsm-preview-note</find>
+      <find>.wp-switch-editor</find>
+      <find>template-11</find>
+      <find>template-18</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,6 +233,7 @@
         <option value="$PROJECT_DIR$/assets/css/fpsm-backend-style.css" />
         <option value="$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php" />
         <option value="$PROJECT_DIR$/assets/css/fpsm-frontend-style.css" />
+        <option value="$PROJECT_DIR$/assets/css/fpsm-rtl-frontend-style.css" />
       </list>
     </option>
   </component>
@@ -233,9 +245,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="1524" />
+    <option name="y" value="151" />
+    <option name="width" value="1921" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -261,6 +274,17 @@
             <path>
               <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend-post-submission-manager" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="frontend-post-submission-manager" type="b2602c69:ProjectViewProjectNode" />
@@ -386,25 +410,27 @@
       <workItem from="1586868922876" duration="316000" />
       <workItem from="1587308646120" duration="731000" />
       <workItem from="1587471767688" duration="3380000" />
-      <workItem from="1587734707196" duration="3045000" />
+      <workItem from="1587734707196" duration="3282000" />
+      <workItem from="1587786411590" duration="8000" />
+      <workItem from="1588341466624" duration="3729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152654000" />
+    <option name="totallyTimeSpent" value="156628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16862327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17182498" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25126135" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25025228" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -427,13 +453,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -728,14 +747,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3420">
           <caret line="170" column="84" lean-forward="false" selection-start-line="170" selection-start-column="84" selection-end-line="170" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="35" selection-end-column="20" />
+          <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="35" selection-end-column="20" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
             <element signature="e#416#421#0#PHP" expanded="true" />
@@ -816,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/backend/forms/form-edit-sections/customize-settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="211" column="17" lean-forward="false" selection-start-line="211" selection-start-column="17" selection-end-line="211" selection-end-column="17" />
           <folding>
             <element signature="e#0#5#0#PHP" expanded="true" />
             <element signature="e#416#421#0#PHP" expanded="true" />
@@ -825,14 +843,25 @@
             <element signature="e#765#770#0#PHP" expanded="true" />
             <element signature="e#963#968#0#PHP" expanded="true" />
             <marker date="1587734720500" expanded="false" signature="18571:18586" ph="..." />
-            <marker date="1587734720500" expanded="false" signature="18571:18597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
+            <marker date="1588341477004" expanded="false" signature="650:657" ph="..." />
+            <marker date="1588341477004" expanded="false" signature="650:665" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/fpsm-backend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
+        <state relative-caret-position="637">
           <caret line="678" column="18" lean-forward="false" selection-start-line="678" selection-start-column="18" selection-end-line="678" selection-end-column="18" />
           <folding>
             <element signature="e#18706#18853#0" expanded="false" />
@@ -842,20 +871,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/views/frontend/frontend-preview-template.php">
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="457">
+          <caret line="2482" column="95" lean-forward="false" selection-start-line="2482" selection-start-column="95" selection-end-line="2482" selection-end-column="95" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-frontend-style.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/fpsm-rtl-frontend-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="3486" column="0" lean-forward="true" selection-start-line="3486" selection-start-column="0" selection-end-line="3486" selection-end-column="0" />
+        <state relative-caret-position="557">
+          <caret line="94" column="35" lean-forward="false" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
           <folding />
         </state>
       </provider>
