@@ -55,13 +55,14 @@
             <li><a href="#customize">Customize Settings</a></li>
             <li><a href="#shortcodes">Shortcodes</a></li>
             <li><a href="#global">Global Settings</a></li>
+            <li><a href="#developer">Developer Documentation</a></li>
 
 
         </ol>
 
         <hr>
 
-        <h3 id="nweform"><strong>Creating a new form</strong> - <a href="#toc">top</a></h3>
+        <h3 id="newform"><strong>Creating a new form</strong> - <a href="#toc">top</a></h3>
         <p>A new form can be created by clicking "Add New Form" submenu of Frontend Post Submission Menu available in the admin section. While creating a new form, you shall provide:</p>
         <ul>
             <li><strong>Form Status</strong>
@@ -206,6 +207,80 @@
         <p>And also you can choose custom fields frontend display styles for the custom fields added in the form and chosen to display in the frontend.</p>
 
         <a href="https://wpshuffle.com/wp-content/uploads/2020/05/layout-custom-fields-template.png"><img class="alignnone size-full wp-image-713" src="https://wpshuffle.com/wp-content/uploads/2020/05/layout-custom-fields-template.png" alt="" width="728" height="392" /></a>
+        <hr>
+        <h3 id="notification"><strong>Notification Settings</strong> - <a href="#top">top</a></h3>
+        <p>In this section, you can configure all the necessary notifications related with frontend post submission. You can configure:</p>
+        <ul>
+            <li><strong>Admin Notification </strong>- Here are the available options for admin notification.
+                <ul>
+                    <li><strong>Enable</strong> - You can either enable or disable admin notification</li>
+                    <li><strong>Notification emails</strong> - You can enter the email address separated by comma in which you want to receive the admin notifications. If left blank, the notification will be sent to the email of the site admin configured in your site's general settings.</li>
+                    <li><strong>Subject </strong>- This field is for entering the subject for admin notification email</li>
+                    <li><strong>From Name </strong>- This field is for entering the "From Name" for admin notification email. Please enter the value which won't resemble any real person's name such as "No Reply" else email may land in the spam.</li>
+                    <li><strong>From Email</strong> - This field is for entering the "From Email" for admin notification email. Please enter the value which won't resemble any real person's email such as "noreply@yoursiteurl.com" else email may land in the spam.</li>
+                    <li><strong>Message</strong> - In this field you can enter the message which you will receive in the admin notification email. You can use [post_title] and [post_admin_link] to replace submitted post title and post admin link in the admin notification email message.
+                        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/admin-notification.png"><img class="alignnone size-full wp-image-714" src="https://wpshuffle.com/wp-content/uploads/2020/05/admin-notification.png" alt="" width="787" height="692" /></a>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Post Publish Notification</strong>
+                <ul>
+                    <li><strong>Enable</strong> - You can either enable or disable post publish notification</li>
+                    <li><strong>Subject </strong>- This field is for entering the subject for post publish notification email</li>
+                    <li><strong>From Name </strong>- This field is for entering the "From Name" for post publish notification email. Please enter the value which won't resemble any real person's name such as "No Reply" else email may land in the spam.</li>
+                    <li><strong>From Email</strong> - This field is for entering the "From Email" for post publish notification email. Please enter the value which won't resemble any real person's email such as "noreply@yoursiteurl.com" else email may land in the spam.</li>
+                    <li><strong>Message</strong> - In this field you can enter the message which you will receive in the post publish notification email. You can use [author_name],[post_title] and [post_link] to replace submitted author name, post title and post link in the post publish notification email message.
+                        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/post-approve-notification.png"><img class="alignnone size-full wp-image-715" src="https://wpshuffle.com/wp-content/uploads/2020/05/post-approve-notification.png" alt="" width="763" height="561" /></a></li>
+                </ul>
+            </li>
+            <li><strong>Post Trash Notification</strong>
+                <ul>
+                    <li><strong>Enable</strong> - You can either enable or disable post reject notification</li>
+                    <li><strong>Subject </strong>- This field is for entering the subject for post reject notification email</li>
+                    <li><strong>From Name </strong>- This field is for entering the "From Name" for post reject notification email. Please enter the value which won't resemble any real person's name such as "No Reply" else email may land in the spam.</li>
+                    <li><strong>From Email</strong> - This field is for entering the "From Email" for post reject notification email. Please enter the value which won't resemble any real person's email such as "noreply@yoursiteurl.com" else email may land in the spam.</li>
+                    <li><strong>Message</strong> - In this field you can enter the message which you will receive in the post reject notification email. You can use [author_name],[post_title] to replace submitted author name, post title in the post reject notification email message.
+                        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/post-trash.png"><img class="alignnone size-full wp-image-716" src="https://wpshuffle.com/wp-content/uploads/2020/05/post-trash.png" alt="" width="802" height="578" /></a></li>
+                </ul>
+            </li>
+        </ul>
+        <hr/>
+        <h3 id="security"><strong>Security Settings</strong> - <a href="#top">top</a></h3>
+        <p>You can enable the google recaptcha V2 for both login form and post submission form. For enabling google reCaptcha, you will need reCaptcha site key and secret Key which can be get from <a href="https://www.google.com/recaptcha/admin" target="_blank" rel="nofollow noopener">here</a>.</p>
+
+        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/security-settings.png"><img class="alignnone size-full wp-image-717" src="https://wpshuffle.com/wp-content/uploads/2020/05/security-settings.png" alt="" width="952" height="652" /></a>
+        <hr>
+        <h3 id="customize"><strong>Customize Settings</strong> - <a href="#top">top</a></h3>
+        <p>If you couldn't find any templates that matches your theme then you can use our custom styling options which shall give you enormous capabilities to design the form as per your need. Here are the available options to customize any chosen form template.</p>
+        <ul>
+            <li><strong>Body Customize</strong> - Body text color, Background Type, Background Image, Background Color</li>
+            <li><strong>Text Field </strong>- Field Text Color, Field Border Color, Field Background Color</li>
+            <li><strong>Buttons </strong>- Button Background Color<strong>, </strong>Button Hover Background Color, Button Text Color, Button Hover Text Color</li>
+            <li><strong>Radio Button </strong>- Radio Button Color, Radio Button Checked Color</li>
+            <li><strong>Checkboxes </strong>- Checkbox Color, Checkbox Checked Color</li>
+        </ul>
+        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/customize-settings.png"><img class="alignnone size-large wp-image-718" src="https://wpshuffle.com/wp-content/uploads/2020/05/customize-settings-812x1024.png" alt="" width="640" height="807" /></a>
+        <hr>
+        <h3 id="global"><strong>Global Settings</strong> - <a href="#top">top</a></h3>
+        <p>In case you need to disable <strong>fontawesome</strong>, disable <strong>jQuery UI CSS</strong> or disable <strong>jQuery Are you Sure JS</strong> then you can disable them from our plugin's global settings page which can be accessed from settings submenu of our plugin's menu.</p>
+
+        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/global-settings.png"><img class="alignnone size-large wp-image-719" src="https://wpshuffle.com/wp-content/uploads/2020/05/global-settings-1024x512.png" alt="" width="640" height="320" /></a>
+        <hr>
+        <h3 id="shortcodes"><strong>Shortcodes</strong> - <a href="#top">top</a></h3>
+        <p>As soon as the form is created, it will generate two shortcodes if the form is "<strong>Login require</strong>" form and single shortcode when form is "<strong>Guest"</strong> form which you can view on the top of setting navigation menu of form as shown in below screenshot.</p>
+
+        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/shortcodes.png"><img class="alignnone size-large wp-image-720" src="https://wpshuffle.com/wp-content/uploads/2020/05/shortcodes-1024x485.png" alt="" width="640" height="303" /></a>
+
+        <p>Form Shortcode shall be [fpsm alias="alias_of_your_form"]</p>
+
+        <p>Frontend Dashboard Shortcode shall be [fpsm_dashboard alias="alias_of_your_form"]</p>
+        <hr/>
+        <h3 id="developer"><strong>Developer Documentation</strong> - <a href="#top">top</a></h3>
+        <p>In case you want to extend or modify any functionality in the plugin from outside the plugin using hooks and filters then we have added some necessary hooks and filters in the plugin which we have listed in detail inside the Help section of our plugin.</p>
+
+        <p>So if required then you can check all the available hooks and filter inside the help section of our plugin.</p>
+
+        <a href="https://wpshuffle.com/wp-content/uploads/2020/05/developer-documentation.png"><img class="alignnone size-large wp-image-721" src="https://wpshuffle.com/wp-content/uploads/2020/05/developer-documentation-1024x727.png" alt="" width="640" height="454" /></a>
         <hr>
         <p>Once again, thank you so much for purchasing this plugin. As we said at the beginning, We'd be glad to help you if you have any questions relating to this plugin. No guarantees, but we'll do our best to assist. If you have a more general question relating to the plugins on codecanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
 
