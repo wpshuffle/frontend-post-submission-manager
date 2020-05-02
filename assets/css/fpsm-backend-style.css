@@ -541,10 +541,7 @@ a.fpsm-field-remove-trigger {
     color: #222;
     text-decoration: none;
 }
-.fpsm-each-dropdown input[type="text"] {
-    width: 45%;
-    display: inline-block;
-}
+
 .fpsm-each-dropdown {
     box-shadow: 0 0 5px #ddd;
     padding: 10px 20px;
@@ -570,7 +567,8 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
     font-size: 20px;
 }
 .fpsm-dropdown-list-wrap.fpsm-field-radio .fpsm-each-dropdown input[type="text"] {
-    width: 35%;
+    width: 40%;
+    display: inline-block;
 }
 .fpsm-each-dropdown >label {
     margin-right: 10px;
@@ -931,4 +929,12 @@ label{
 .fpsm-hooks-wrap {
     height: 300px;
     overflow-y: scroll;
+}
+span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
+    position: absolute;
+    top: 25%;
+    right: -16px;
+}
+.fpsm-each-dropdown input[type="text"] {
+    margin-bottom: 10px;
 }
