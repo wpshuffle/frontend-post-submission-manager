@@ -808,3 +808,8 @@
     letter-spacing: 0;
 }
 /*========================================= Template 22 ==============================*/
+.fpsm-login-note {
+    margin-top: 10px;
+    font-style: italic;
+    padding: 5px;
+}

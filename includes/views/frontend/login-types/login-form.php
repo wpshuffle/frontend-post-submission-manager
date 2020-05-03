@@ -1,5 +1,10 @@
 <div class="fpsm-login-form-wrapper fpsm-login-form-<?php echo esc_attr($form_template); ?>">
     <?php
+    if (!empty($login_settings['login_form_title'])) {
+        ?>
+        <h3><?php echo esc_html($login_settings['login_form_title']); ?></h3>
+        <?php
+    }
     $username_label = (!empty($login_settings['username_label'])) ? esc_attr($login_settings['username_label']) : __('Username', 'frontend-post-submission-manager');
     $password_label = (!empty($login_settings['password_label'])) ? esc_attr($login_settings['password_label']) : __('Password', 'frontend-post-submission-manager');
     $login_button_label = (!empty($login_settings['login_button_label'])) ? esc_attr($login_settings['login_button_label']) : __('Login', 'frontend-post-submission-manager');
@@ -36,6 +41,11 @@
 
 // Calling the login form.
     wp_login_form($args);
+    if (!empty($login_settings['login_note'])) {
+        ?>
+        <div class="fpsm-login-note"><?php echo $fpsm_library_obj->sanitize_html($login_settings['login_note']); ?></div>
+        <?php
+    }
     ?>
 </div>
 <script>jQuery(document).ready(function ($) {
