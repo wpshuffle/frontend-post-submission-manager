@@ -11,6 +11,9 @@ if (empty($form_alias)) {
 }
 global $fpsm_library_obj;
 $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
+if (empty($form_row->form_details)) {
+    return $content;
+}
 $form_details = maybe_unserialize($form_row->form_details);
 if (empty($form_details['form']['fields'])) {
     return $content;
