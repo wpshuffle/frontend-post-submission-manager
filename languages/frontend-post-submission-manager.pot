@@ -1,0 +1,1637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Frontend Post Submission Manager\n"
+"POT-Creation-Date: 2020-05-04 03:34+0545\n"
+"PO-Revision-Date: 2020-05-04 03:34+0545\n"
+"Last-Translator: \n"
+"Language-Team: WP Shuffle\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ../../../../../plugin-development/wp-content/plugins/"
+"frontend-post-submission-manager\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/classes/admin/class-fpsm-activation.php:89
+#: includes/views/backend/forms/form-list.php:46
+msgid "Login Require Form"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-activation.php:105
+msgid "Guest Post Form"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:15
+msgid "Please wait"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:16
+msgid "Upload File"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:17
+msgid "Are you sure you want to delete this form?"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:18
+msgid "Are you sure you want to copy this form?"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:19
+msgid "Shortcode copied to clipboard."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:20
+msgid "Label and Meta key both are required"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:21
+msgid "Meta key cannot contain white space or special characters"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:22
+msgid "Meta key already assigned for one of the fields in the list"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:23
+msgid "Are you sure you want to delete this custom field?"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:24
+msgid "Are you sure you want to delete option?"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin-enqueue.php:25
+#: includes/classes/class-fpsm-shortcode.php:22
+msgid ""
+"It looks like you have been editing something. If you leave before saving, "
+"your changes will be lost."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:15
+#: includes/views/backend/forms/form-list.php:51
+msgid "Edit Form"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:17
+msgid "All forms"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:19
+msgid "Frontend Post Submission"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:20
+msgid "All Forms"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:21
+#: includes/views/backend/about.php:5
+#: includes/views/backend/forms/form-add.php:14
+#: includes/views/backend/forms/form-list.php:9
+#: includes/views/backend/help.php:5
+msgid "Add New Form"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:22
+msgid "Setting"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:22
+msgid "Settings"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:23
+msgid "Help"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-admin.php:24
+msgid "About"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:39
+#: includes/classes/admin/class-fpsm-ajax-admin.php:120
+msgid "Form title or Alias cannot be empty."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:56
+msgid "Form added successfully. Redirecting..."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:60
+msgid "Something went wrong. Please try again later."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:64
+#: includes/classes/admin/class-fpsm-ajax-admin.php:136
+msgid "Form alias already used. Please use some other alias."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:133
+msgid "Form updated successfully."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:157
+msgid "Form deleted successfully."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:160
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-ajax-admin.php:182
+msgid "Settings saved successfully"
+msgstr ""
+
+#: includes/classes/admin/class-fpsm-metabox.php:14
+#: includes/views/backend/about.php:3
+#: includes/views/backend/forms/form-add.php:7
+#: includes/views/backend/forms/form-edit.php:17
+#: includes/views/backend/forms/form-list.php:6
+#: includes/views/backend/help.php:3 includes/views/backend/settings.php:8
+msgid "Frontend Post Submission Manager"
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:105
+#: includes/views/frontend/dashboard-shortcode.php:14
+msgid "Unauthorized access"
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:110
+msgid "Media deleted successfully."
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:113
+msgid "Error occurred while deleting the media."
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:136
+msgid "Unauthorized delete from delete key"
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:144
+msgid "Unauthorized delete from user"
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:149
+msgid "Post delete successfully."
+msgstr ""
+
+#: includes/classes/class-fpsm-ajax.php:152
+#: includes/cores/ajax-process-form.php:237
+msgid "There occurred some error."
+msgstr ""
+
+#: includes/classes/class-fpsm-fileuploader.php:148
+msgid "Server error. Upload directory isn't writable."
+msgstr ""
+
+#: includes/classes/class-fpsm-fileuploader.php:152
+msgid "No files were uploaded."
+msgstr ""
+
+#: includes/classes/class-fpsm-fileuploader.php:158
+msgid "File is empty"
+msgstr ""
+
+#: includes/classes/class-fpsm-fileuploader.php:162
+msgid "File is too large"
+msgstr ""
+
+#: includes/classes/class-fpsm-fileuploader.php:235
+msgid ""
+"Could not save uploaded file.The upload was cancelled, or server error "
+"encountered"
+msgstr ""
+
+#: includes/classes/class-fpsm-library.php:383
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:5
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_title.php:3
+#: includes/views/frontend/dashboard-html.php:10
+msgid "Post Title"
+msgstr ""
+
+#: includes/classes/class-fpsm-library.php:384
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:3
+msgid "Post Content"
+msgstr ""
+
+#: includes/classes/class-fpsm-notification.php:45
+#: includes/classes/class-fpsm-notification.php:94
+#: includes/cores/admin-email-notification.php:5
+msgid "No Reply"
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:76
+#: includes/classes/class-fpsm-shortcode.php:98
+msgid "Form not available for this alias."
+msgstr ""
+
+#: includes/classes/class-frontend-post-submission-manager.php:55
+#: includes/classes/class-frontend-post-submission-manager.php:67
+msgid "No script kiddies please!!"
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:13
+msgid "No form found for this alias."
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:30
+msgid "This field is requied"
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:77
+msgid "This field is required"
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:87
+msgid "Captcha Validation failed."
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:102
+msgid "Form validation error occurred."
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:118
+#: includes/cores/ajax-process-form.php:242
+msgid "Invalid form submission"
+msgstr ""
+
+#: includes/cores/ajax-process-form.php:214
+msgid "Form submission successful."
+msgstr ""
+
+#: includes/cores/fpsm-metabox-render.php:15
+msgid "Frontend Form"
+msgstr ""
+
+#: includes/cores/fpsm-metabox-render.php:142
+msgid ""
+"Note: Date is showing up in the string format because you had enabled the "
+"string format option."
+msgstr ""
+
+#: includes/cores/fpsm-metabox-render.php:163
+msgid "Remove"
+msgstr ""
+
+#: includes/views/backend/about.php:11
+msgid "About Plugin"
+msgstr ""
+
+#: includes/views/backend/about.php:12
+msgid ""
+"As the name explains, <strong>Frontend Post Submission Manager</strong> is a "
+"premium WordPress plugin which facilitates with the functionality to receive "
+"Posts or Any other Post Types from frontend with or without logging in along "
+"with Frontend Post Management Dashboard."
+msgstr ""
+
+#: includes/views/backend/about.php:13
+msgid ""
+"You can create unlimited forms with <strong>drag and drop form builder</"
+"strong>, add unlimited <strong>custom fields</strong> with various field "
+"types support such as <strong>Textfield, Textarea, Radio Button, Checkbox, "
+"Datepicker, Fileuploader</strong> and many more."
+msgstr ""
+
+#: includes/views/backend/about.php:16
+msgid "Features"
+msgstr ""
+
+#: includes/views/backend/about.php:18
+msgid "Unlimited Forms with Drag and Drop form Builder"
+msgstr ""
+
+#: includes/views/backend/about.php:19
+msgid "Default Post Types and Custom Post Types Support"
+msgstr ""
+
+#: includes/views/backend/about.php:20
+msgid "Default Taxonomies and Custom Taxonomies Support"
+msgstr ""
+
+#: includes/views/backend/about.php:21
+msgid "Unlimited Custom Fields with various Field Types Support"
+msgstr ""
+
+#: includes/views/backend/about.php:22
+msgid "Custom Fields Frontend Display Support"
+msgstr ""
+
+#: includes/views/backend/about.php:23
+msgid "Custom Fields Display in Backend too"
+msgstr ""
+
+#: includes/views/backend/about.php:24
+msgid "20+ Beautiful Pre Designed templates"
+msgstr ""
+
+#: includes/views/backend/about.php:25
+msgid "Frontend Post Management Dashboard"
+msgstr ""
+
+#: includes/views/backend/about.php:26
+msgid "Guest Post Support"
+msgstr ""
+
+#: includes/views/backend/about.php:27
+msgid "Secure Form Submission with Google Captcha Integrated "
+msgstr ""
+
+#: includes/views/backend/about.php:28
+msgid "Admin and User Notification Configurations"
+msgstr ""
+
+#: includes/views/backend/about.php:29
+msgid "Layout Customization Options"
+msgstr ""
+
+#: includes/views/backend/about.php:30
+msgid "Frontend Form Preview"
+msgstr ""
+
+#: includes/views/backend/about.php:31
+msgid "Redirection option available after Successful submission"
+msgstr ""
+
+#: includes/views/backend/about.php:32
+msgid "Image and other files direct insertion into post content"
+msgstr ""
+
+#: includes/views/backend/about.php:33
+msgid "Configure Submited Post Status"
+msgstr ""
+
+#: includes/views/backend/about.php:34
+msgid "Configure Post Author"
+msgstr ""
+
+#: includes/views/backend/about.php:35
+msgid "Configure Post Format"
+msgstr ""
+
+#: includes/views/backend/about.php:36
+msgid "Character Limit Configuration"
+msgstr ""
+
+#: includes/views/backend/about.php:37
+msgid "Enable/disable Form Components"
+msgstr ""
+
+#: includes/views/backend/about.php:38
+msgid "Ajax Form Submission"
+msgstr ""
+
+#: includes/views/backend/about.php:39
+msgid "Developer Documentation Available"
+msgstr ""
+
+#: includes/views/backend/about.php:40
+msgid "All device friendly and browser Compatibility"
+msgstr ""
+
+#: includes/views/backend/about.php:41
+msgid "Dedicated Support"
+msgstr ""
+
+#: includes/views/backend/about.php:42
+msgid "Translation Ready"
+msgstr ""
+
+#: includes/views/backend/about.php:47
+msgid "About WP Shuffle"
+msgstr ""
+
+#: includes/views/backend/about.php:48
+msgid ""
+"We are a bunch of WordPress Enthusiasts with an aim to develop the WordPress "
+"Themes and Plugins that adds a value to any WordPress site. Our mission is "
+"to create a WordPress product that is easy to use, highly customizable and "
+"offers innovative features that are useful for every another WordPress site."
+msgstr ""
+
+#: includes/views/backend/about.php:49
+msgid ""
+"If talking about support, we value our customers more that we value our "
+"products so our qualified support team is always there to provide any "
+"assistance with our products."
+msgstr ""
+
+#: includes/views/backend/about.php:52
+msgid "Our Plugins"
+msgstr ""
+
+#: includes/views/backend/about.php:56
+msgid "Our Themes"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:4
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:22
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:9
+msgid "Texfield"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:5
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:23
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:10
+#: includes/views/backend/js-templates/tmpl-textarea.php:3
+msgid "Textarea"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:6
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:24
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:11
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:23
+#: includes/views/backend/js-templates/tmpl-select.php:3
+msgid "Select Dropdown"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:7
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:25
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:12
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:24
+#: includes/views/backend/js-templates/tmpl-checkbox.php:3
+msgid "Checkbox"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:8
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:26
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:181
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:13
+#: includes/views/backend/js-templates/tmpl-radio.php:3
+msgid "Radio Button"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:9
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:27
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:14
+#: includes/views/backend/js-templates/tmpl-number.php:3
+msgid "Number"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:10
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:28
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:15
+#: includes/views/backend/js-templates/tmpl-email.php:3
+msgid "Email"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:11
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:29
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:16
+#: includes/views/backend/js-templates/tmpl-datepicker.php:3
+msgid "Datepicker"
+msgstr ""
+
+#: includes/views/backend/admin-footer.php:12
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:30
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:17
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:3
+msgid "File Uploader"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/checkbox.php:5
+#: includes/views/backend/js-templates/tmpl-checkbox.php:10
+msgid "Checkbox Lists"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/checkbox.php:9
+#: includes/views/backend/forms/custom-field-types/radio.php:9
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:49
+msgid "Display Type"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/checkbox.php:15
+#: includes/views/backend/forms/custom-field-types/radio.php:15
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:55
+msgid "Inline"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/checkbox.php:16
+#: includes/views/backend/forms/custom-field-types/radio.php:16
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:56
+msgid "Block"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:4
+#: includes/views/backend/js-templates/tmpl-datepicker.php:10
+msgid "Date Format"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:10
+#: includes/views/backend/js-templates/tmpl-datepicker.php:15
+msgid "Default"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:11
+#: includes/views/backend/js-templates/tmpl-datepicker.php:16
+msgid "ISO 8601"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:12
+#: includes/views/backend/js-templates/tmpl-datepicker.php:17
+msgid "Short"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:13
+#: includes/views/backend/js-templates/tmpl-datepicker.php:18
+msgid "Medium"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:14
+#: includes/views/backend/js-templates/tmpl-datepicker.php:19
+msgid "DD, d MM, yy"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:15
+#: includes/views/backend/js-templates/tmpl-datepicker.php:20
+msgid "With text"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:35
+#: includes/views/backend/js-templates/tmpl-datepicker.php:33
+msgid "Save as string"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/datepicker.php:38
+#: includes/views/backend/js-templates/tmpl-datepicker.php:36
+msgid ""
+"Please check this if you want to save the date as the raw string format."
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:4
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:47
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:9
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:10
+msgid "Upload Button Label"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:10
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:53
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:16
+msgid "File Extensions"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:27
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:70
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:15
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:32
+msgid "Upload File Size Limit"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:30
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:73
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:18
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:35
+msgid ""
+"Please enter the max size of the file being uploaded in MB. Default is 5 MB."
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:38
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:81
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:43
+msgid "Upload File Size Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:44
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:49
+msgid "Multiple Upload"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:47
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:52
+msgid "Please check if you want to enable the multiple file upload."
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:52
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:57
+msgid "Allowed Number of Files"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:55
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:60
+msgid ""
+"Please enter the maximum number of files you want to allow for the upload. "
+"Please leave blank if you don't want to set any limitation."
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:59
+#: includes/views/backend/js-templates/tmpl-file_uploader.php:64
+msgid "Upload Limit Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/number.php:4
+#: includes/views/backend/js-templates/tmpl-number.php:10
+msgid "Min Limit"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/number.php:10
+#: includes/views/backend/js-templates/tmpl-number.php:16
+msgid "Max Limit"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/number.php:16
+#: includes/views/backend/js-templates/tmpl-number.php:22
+msgid "Limit Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/options-list.php:14
+#: includes/views/backend/js-templates/tmpl-option.php:4
+#: includes/views/backend/js-templates/tmpl-options-list.php:10
+msgid "Checked"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/options-list.php:18
+msgid "Option 1"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/options-list.php:19
+msgid "Value 1"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/options-list.php:28
+#: includes/views/backend/js-templates/tmpl-options-list.php:22
+msgid "Add Option"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/radio.php:5
+#: includes/views/backend/js-templates/tmpl-radio.php:10
+msgid "Radio Button Lists"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/select.php:5
+#: includes/views/backend/js-templates/tmpl-select.php:10
+msgid "Dropdown Lists"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/textarea.php:7
+#: includes/views/backend/forms/custom-field-types/textfield.php:4
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:90
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_title.php:9
+#: includes/views/backend/js-templates/tmpl-textarea.php:10
+#: includes/views/backend/js-templates/tmpl-textfield.php:10
+msgid "Character Limit"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/textarea.php:13
+#: includes/views/backend/forms/custom-field-types/textfield.php:10
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:96
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_excerpt.php:15
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_title.php:15
+#: includes/views/backend/js-templates/tmpl-textarea.php:16
+#: includes/views/backend/js-templates/tmpl-textfield.php:16
+msgid "Character Limit Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:9
+msgid "Save Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:17
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:6
+msgid "Form Status"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:23
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:12
+#: includes/views/backend/forms/form-list.php:22
+#: includes/views/backend/forms/form-list.php:70
+msgid "Form Title"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:29
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:18
+msgid "Form Alias"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:32
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:30
+msgid ""
+"Alias should be unique and shouldn't contain any special characters and "
+"please use _ instead of space."
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:37
+#: includes/views/backend/forms/form-list.php:24
+#: includes/views/backend/forms/form-list.php:72
+msgid "Post Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:55
+#: includes/views/backend/forms/form-list.php:25
+#: includes/views/backend/forms/form-list.php:73
+msgid "Form Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:58
+msgid "Login require form"
+msgstr ""
+
+#: includes/views/backend/forms/form-add.php:59
+msgid "Guest form"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:23
+msgid "Edit Anyway"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:32
+msgid ""
+"Alias cannot be modified once added because it is used as the reference for "
+"fetching all the details of the form."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:40
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:6
+#: includes/views/frontend/dashboard-html.php:11
+msgid "Post Status"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:59
+msgid "Post Author"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:96
+msgid "Post Format"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:102
+msgid "Standard"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:115
+msgid "These are the post formats registered in your current active theme."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:122
+msgid "Validation Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:125
+msgid "This message will be shown when any validation error occurs."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:129
+msgid "Form Success Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:132
+msgid "This message will be shown after successful form submission"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:137
+msgid "Redirection"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:144
+msgid "Redirection Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:150
+msgid "URL"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:151
+msgid "Published Post"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:156
+msgid "Redirection URL"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:2
+msgid "Custom Field"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:4
+msgid "Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:10
+msgid "Meta Key"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:13
+msgid ""
+"Please use plain text without any special characters for meta key and use "
+"underscore(_) instead of white space."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:17
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:17
+msgid "Field Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:8
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:8
+msgid "Hide Form Title"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:11
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:11
+msgid "Please check if you want to hide form title in the form."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:15
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:21
+msgid "Customize Form Template"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:18
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:24
+msgid "Please check if you want to customize the choose form template."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:24
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:43
+msgid "Background Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:29
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:51
+msgid "Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:30
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:52
+msgid "Image"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:35
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:57
+msgid "Background Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:49
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:71
+#: includes/views/frontend/form-fields/custom-field-types/front-file_uploader.php:12
+#: includes/views/frontend/form-fields/front-post_content.php:47
+#: includes/views/frontend/form-fields/front-post_content.php:76
+#: includes/views/frontend/form-fields/front-post_image.php:12
+msgid "Upload Image"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:63
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:85
+msgid "Background Size"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:69
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:91
+msgid "Cover"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:70
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:92
+msgid "Contain"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:71
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:93
+msgid "Full"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:76
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:98
+msgid "Background Repeat"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:82
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:104
+msgid "Repeat"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:83
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:105
+msgid "Repeat X"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:84
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:106
+msgid "Repeat Y"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:85
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:107
+msgid "No Repeat"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:91
+msgid "Text Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:98
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:117
+msgid "Label Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:104
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:123
+msgid "Label Background Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:111
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:132
+msgid "Field Text Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:117
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:138
+msgid "Field Border Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:123
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:144
+msgid "Field Background Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:129
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:155
+msgid "Button Background Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:135
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:161
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:141
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:167
+msgid "Button Text Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:147
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:173
+msgid "Button Hover Text Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:153
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:183
+msgid "Radio Button Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:159
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:189
+msgid "Radio Button Checked Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:165
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:199
+msgid "Checkbox Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:171
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:205
+msgid "Checkbox Checked Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings-bkp.php:179
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:15
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:32
+msgid "Styling Options"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:35
+msgid "Body Customize"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:37
+msgid "Body Text Color"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:66
+msgid "Background Image"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:115
+msgid "Field Labels"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:153
+msgid "Buttons"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/customize-settings.php:197
+msgid "Checkboxes"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:4
+#: includes/views/frontend/dashboard-html.php:9
+msgid "SN"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:7
+#: includes/views/frontend/dashboard-html.php:12
+msgid "Last Modified"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:13
+msgid "SN Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:19
+msgid "Post Title Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:25
+msgid "Post Status Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:31
+msgid "Last Modified Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:37
+msgid "Action Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:43
+msgid "Posts Per Page"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:49
+msgid "Next Page Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:55
+msgid "Previous Page Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:61
+msgid "Disable Post Delete"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/dashboard-settings.php:67
+msgid "Post Delete Warning Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-field-settings.php:7
+msgid "Form Fields"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-field-settings.php:25
+msgid "Other Settings"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-field-settings.php:27
+msgid "Submit Button Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/author_email.php:3
+msgid "Author Email"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/author_name.php:3
+msgid "Author Name"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:2
+#: includes/views/backend/js-templates/tmpl-common-fields.php:3
+msgid "Show on form"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:9
+#: includes/views/backend/js-templates/tmpl-common-fields.php:10
+msgid "Required"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:15
+#: includes/views/backend/js-templates/tmpl-common-fields.php:16
+msgid "Required Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:21
+#: includes/views/backend/js-templates/tmpl-common-fields.php:22
+msgid "Field Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:27
+#: includes/views/backend/js-templates/tmpl-common-fields.php:28
+msgid "Field Note"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/common-fields.php:30
+#: includes/views/backend/js-templates/tmpl-common-fields.php:31
+msgid ""
+"This note will show just below the field. Pleaes leave blank if you don't "
+"want to display the field note."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/custom_field.php:5
+msgid "Untitled Field"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:3
+msgid "Post Detail Display"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:6
+msgid ""
+"Please check if you want to display this field received value in the "
+"frontend post detail page."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:11
+msgid "Display Position"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:17
+msgid "After Content"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:18
+msgid "Before Content"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php:24
+msgid "Display Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php:2
+msgid "Open in new tab"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php:5
+msgid "Please check if you want to open the link in new tab."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php:9
+msgid "Image Size"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post-display-fileuploader-fields.php:23
+msgid ""
+"Please choose any desired image size from the list to display only if you "
+"are also receiving the images from this file uploader."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:9
+msgid "Editor Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:15
+msgid "Simple Textarea"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:16
+msgid "Rich Text Editor"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:17
+msgid "Visual Text Editor"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:18
+msgid "HTML Text Editor"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:27
+msgid "Media Upload"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:30
+msgid ""
+"Please check if you want to enable the direct media upload to the post "
+"content for logged in users."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:39
+msgid "Custom Media Upload Button"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:42
+msgid ""
+"Please check this if you want to enable our custom media uploader which will "
+"allow the user roles who doesn't have the upload_files capabilities."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_excerpt.php:3
+msgid "Post Excerpt"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_excerpt.php:9
+msgid "Characters Limit"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:3
+msgid "Post Image"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:26
+msgid "Max Size Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:28
+#: includes/views/backend/js-templates/tmpl-textfield.php:3
+msgid "Textfield"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:36
+msgid "First Option Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:42
+msgid "Multiple"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-fields/taxonomy.php:64
+msgid "Auto Complete"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:4
+msgid "Form Shortcode"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:12
+msgid "Dashboard Shortcode"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:23
+msgid "Basic"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:25
+msgid "Login"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:26
+msgid "Dashboard"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:28
+msgid "Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:29
+msgid "Layout"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:30
+msgid "Notification"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:31
+msgid "Security"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/form-navigation.php:32
+msgid "Customize"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/layout-settings.php:6
+msgid "Form Template"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/layout-settings.php:30
+msgid "Custom Fields Display Template"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:7
+msgid "Login Type"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:13
+msgid "Show Login Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:14
+msgid "Show Login Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:15
+msgid "Redirect to Login Page"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:21
+msgid "Login Form Title"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:27
+msgid "Username Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:33
+msgid "Password Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:39
+msgid "Show Remember Me"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:45
+msgid "Remember Me Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:51
+msgid "Login Button Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:57
+msgid "Login Note"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:63
+msgid "Login error message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:72
+msgid "Login Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:79
+msgid "Login Link Label"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:85
+msgid "Login Link URL"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:93
+msgid "Login Page URL"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/login-form-settings.php:96
+msgid ""
+"Please enter the URL in which you want to redirect users when they are not "
+"logged in."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:4
+msgid "Admin Notification"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:8
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:56
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:97
+msgid "Enable"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:15
+msgid "Notification Emails"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:18
+msgid ""
+"Please enter the emails in which you want to receive notifications separated "
+"by comma. If kept blank, it will go to admin email."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:22
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:63
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:104
+msgid "Subject"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:28
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:69
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:110
+msgid "From name"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:34
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:75
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:116
+msgid "From Email"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:40
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:81
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:122
+msgid "Message"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:43
+msgid ""
+"Please use [post_title],[post_admin_link] to replace it with the submitted "
+"post title and post admin link in the post submission admin notification "
+"email message."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:52
+msgid "Post Publish Notification"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:84
+msgid ""
+"Please use [author_name],[post_title],[post_link] to replace with the "
+"approved post's author name, post title and post frontend link in the post "
+"publish email message."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:93
+msgid "Post Trash Notification"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:125
+msgid ""
+"Please use [author_name] and [post_title] to replace with the rejected "
+"post's author name and post title in the email message."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit.php:20
+msgid "Save"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit.php:22
+#: includes/views/backend/forms/form-list.php:53
+msgid "Preview"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit.php:24
+msgid "Cancel"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:16
+msgid "Form Lists"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:23
+#: includes/views/backend/forms/form-list.php:71
+msgid "Shortcode"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:26
+#: includes/views/backend/forms/form-list.php:74
+msgid "Status"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:27
+#: includes/views/backend/forms/form-list.php:75
+#: includes/views/frontend/dashboard-html.php:13
+msgid "Action"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:46
+msgid "Guest Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:49
+msgid "Active"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:49
+msgid "Inactive"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:51
+#: includes/views/frontend/dashboard-html.php:48
+msgid "Edit"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:52
+msgid "Copy Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:52
+msgid "Copy"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:54
+msgid "Delete Form"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:54
+#: includes/views/frontend/dashboard-html.php:54
+#: includes/views/frontend/js-templates/file-upload-preview.php:5
+msgid "Delete"
+msgstr ""
+
+#: includes/views/backend/forms/form-list.php:62
+msgid "No forms added yet."
+msgstr ""
+
+#: includes/views/backend/help.php:11
+msgid "Documentation"
+msgstr ""
+
+#: includes/views/backend/help.php:12
+msgid "You can check our detailed documentation from below link."
+msgstr ""
+
+#: includes/views/backend/help.php:16
+msgid "Developer Documentation"
+msgstr ""
+
+#: includes/views/backend/help.php:17
+msgid ""
+"If you are developer and trying to add any functionality or customize our "
+"plugin through hooks then below are the list of actions and filters "
+"available in the plugin."
+msgstr ""
+
+#: includes/views/backend/help.php:20
+msgid "Available Actions"
+msgstr ""
+
+#: includes/views/backend/help.php:116
+msgid "Available Filters"
+msgstr ""
+
+#: includes/views/backend/help.php:234
+msgid ""
+"If you think there are any missing action or filters then please let us know "
+"from below link."
+msgstr ""
+
+#: includes/views/backend/js-templates/tmpl-checkbox.php:14
+msgid "Save Format"
+msgstr ""
+
+#: includes/views/backend/js-templates/tmpl-checkbox.php:17
+msgid "Comma Separated"
+msgstr ""
+
+#: includes/views/backend/js-templates/tmpl-checkbox.php:18
+msgid "Array Format"
+msgstr ""
+
+#: includes/views/backend/js-templates/tmpl-option.php:8
+#: includes/views/backend/js-templates/tmpl-options-list.php:14
+msgid "Option"
+msgstr ""
+
+#: includes/views/backend/js-templates/tmpl-option.php:9
+#: includes/views/backend/js-templates/tmpl-options-list.php:15
+msgid "Value"
+msgstr ""
+
+#: includes/views/backend/settings.php:10
+msgid "Save Settings"
+msgstr ""
+
+#: includes/views/backend/settings.php:15
+msgid "Global Settings"
+msgstr ""
+
+#: includes/views/backend/settings.php:18
+msgid "Disable Fontawesome"
+msgstr ""
+
+#: includes/views/backend/settings.php:21
+msgid ""
+"Please check if you want to disable fontawesome being loaded from our plugin."
+msgstr ""
+
+#: includes/views/backend/settings.php:25
+msgid "Disable jQuery UI CSS"
+msgstr ""
+
+#: includes/views/backend/settings.php:28
+msgid ""
+"Please check if you want to disable the jQuery UI css being used for "
+"datepicker."
+msgstr ""
+
+#: includes/views/backend/settings.php:32
+msgid "Disable \"Are you sure?\" JS"
+msgstr ""
+
+#: includes/views/backend/settings.php:35
+msgid ""
+"Please check if you want to disable \"Are you sure\" js which is being used "
+"to prevent user from leaving the browser without saving or submitting the "
+"form after entering or changing some data in the form."
+msgstr ""
+
+#: includes/views/frontend/dashboard-html.php:51
+msgid "Are you sure you want to delete this post?"
+msgstr ""
+
+#: includes/views/frontend/dashboard-html.php:56
+msgid "View"
+msgstr ""
+
+#: includes/views/frontend/dashboard-html.php:75
+msgid "Previous"
+msgstr ""
+
+#: includes/views/frontend/dashboard-html.php:76
+msgid "Next"
+msgstr ""
+
+#: includes/views/frontend/form-html.php:96
+msgid "Submit"
+msgstr ""
+
+#: includes/views/frontend/frontend-preview-template.php:11
+msgid "Form Preview"
+msgstr ""
+
+#: includes/views/frontend/frontend-preview-template.php:13
+msgid ""
+"Please note that this preview may differ when used in frontend as per your "
+"active theme's layout."
+msgstr ""
+
+#: includes/views/frontend/login-types/login-form.php:22
+msgid "Invalid Captcha"
+msgstr ""
