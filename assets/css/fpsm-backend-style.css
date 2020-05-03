@@ -865,7 +865,7 @@ label{
     margin-top: 10px;
 }
 
-.fpsm-post-template-preview img{width: 100%;height: auto}
+.fpsm-post-template-preview img{height: auto}
 
 .fpsm-customize-row{
     border-radius: 4px;
