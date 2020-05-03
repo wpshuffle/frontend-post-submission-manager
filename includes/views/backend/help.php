@@ -28,6 +28,22 @@
 do_action('fpsm_init');
                 </pre>
                 <pre>
+ /**
+* Fires on starting of form add ajax
+*
+* @since 1.0.0
+*/
+do_action('fpsm_before_form_add_ajax');
+                </pre>
+                <pre>
+ /**
+* Fires on starting of form edit ajax
+*
+* @since 1.0.0
+*/
+do_action('fpsm_before_form_edit_ajax');
+                </pre>
+                <pre>
 /**
 * Fires when the successful form submission is complete
 *
