@@ -4,6 +4,9 @@ if (!empty($field_details['auto_complete'])) {
     $terms = get_terms($taxonomy, array('hide_empty' => 0));
     $tags = array_column($terms, 'name');
     $tags = implode(',', $tags);
+    echo "<pre>";
+    print_r($tags);
+    echo "</pre>";
     ?>
 
     <input type="text" class="fpsm-auto-complete-field"/>
