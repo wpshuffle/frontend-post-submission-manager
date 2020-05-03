@@ -8,9 +8,6 @@ if (is_user_logged_in()) {
         $post_id = intval($_GET['post_id']);
         $author_id = get_post_field('post_author', $post_id);
         $edit_post = get_post($post_id);
-        echo "<pre>";
-        print_r($edit_post);
-        echo "</pre>";
         if ($current_user_id == $author_id) {
             include(FPSM_PATH . '/includes/views/frontend/form-html.php');
         } else {
