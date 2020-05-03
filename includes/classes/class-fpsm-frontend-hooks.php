@@ -1,23 +1,35 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
-if ( !class_exists( 'FPSM_Frontend_Hooks' ) ) {
+defined('ABSPATH') or die('No script kiddies please!!');
+if (!class_exists('FPSM_Frontend_Hooks')) {
 
     class FPSM_Frontend_Hooks {
 
         function __construct() {
-            add_action( 'wp_footer', array( $this, 'append_extra_html' ) );
-            add_action( 'the_content', array( $this, 'append_custom_fields_before' ), 10 );
-            add_action( 'the_content', array( $this, 'append_custom_fields_after' ), 11 );
-            add_action( 'template_redirect', array( $this, 'generate_form_preview' ) );
-            add_filter( 'body_class', array( $this, 'add_preview_class' ) );
+            add_action('wp_footer', array($this, 'append_extra_html'));
+            add_action('the_content', array($this, 'append_custom_fields_before'), 10);
+            add_action('the_content', array($this, 'append_custom_fields_after'), 11);
+            add_action('template_redirect', array($this, 'generate_form_preview'));
+            add_filter('body_class', array($this, 'add_preview_class'));
         }
 
         function append_extra_html() {
             include(FPSM_PATH . '/includes/views/frontend/wp_footer.php');
         }
 
-        function append_custom_fields_before( $content ) {
+        function register_frontend_assets() {
+
+            wp_enqueue_style('fpsm-style', FPSM_URL . '/assets/css/fpsm-frontend-style.css', array(), FPSM_VERSION);
+            if (is_rtl()) {
+                wp_enqueue_style('fpsm-rtl-style', FPSM_URL . '/assets/css/fpsm-rtl-frontend-style.css', array(), FPSM_VERSION);
+            }
+
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/NunitoSans/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/comingsoon/stylesheet.css', array(), FPSM_VERSION);
+        }
+
+        function append_custom_fields_before($content) {
+            $this->register_frontend_assets();
             $append_content = '';
             $display_position_check = 'before_content';
             include(FPSM_PATH . '/includes/cores/post-content-append.php');
@@ -25,7 +37,8 @@ if ( !class_exists( 'FPSM_Frontend_Hooks' ) ) {
             return $content;
         }
 
-        function append_custom_fields_after( $content ) {
+        function append_custom_fields_after($content) {
+            $this->register_frontend_assets();
             $append_content = '';
             $display_position_check = 'after_content';
             include(FPSM_PATH . '/includes/cores/post-content-append.php');
@@ -34,14 +47,14 @@ if ( !class_exists( 'FPSM_Frontend_Hooks' ) ) {
         }
 
         function generate_form_preview() {
-            if ( is_user_logged_in() && !empty( $_GET['fpsm_form_preview'] ) && !empty( $_GET['fpsm_form_alias'] ) && wp_verify_nonce( $_GET['_wpnonce'], 'fpsm_preview_nonce' ) ) {
+            if (is_user_logged_in() && !empty($_GET['fpsm_form_preview']) && !empty($_GET['fpsm_form_alias']) && wp_verify_nonce($_GET['_wpnonce'], 'fpsm_preview_nonce')) {
                 include(FPSM_PATH . '/includes/views/frontend/frontend-preview-template.php');
                 die();
             }
         }
 
-        function add_preview_class( $classes ) {
-            if ( isset( $_GET['fpsm_form_preview'] ) ) {
+        function add_preview_class($classes) {
+            if (isset($_GET['fpsm_form_preview'])) {
                 $classes[] = 'fpsm-preview-page';
             }
             return $classes;
