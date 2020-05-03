@@ -7,6 +7,15 @@ if (!empty($fpsm_form_alias)) {
     if (empty($form_row)) {
         return;
     }
+    if (empty($form_row->form_details)) {
+        return;
+    }
+    ?>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Frontend Form', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field"><a href="<?php echo admin_url('admin.php?page=fpsm&action=edit_form&form_id=' . $form_row->form_id); ?>" target="_blank"><?php echo esc_html($form_row->form_title); ?></a></div>
+    </div>
+    <?php
     $form_details = maybe_unserialize($form_row->form_details);
 
     //if fields are empty
