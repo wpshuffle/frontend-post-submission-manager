@@ -107,7 +107,7 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                 $form_data = $_POST['form_data'];
                 parse_str($form_data, $form_data);
                 global $fpsm_library_obj;
-                $sanitize_rule = array('notification_message' => 'to_br');
+                $sanitize_rule = array('notification_message' => 'to_br', 'login_note' => 'html');
                 $form_data = $fpsm_library_obj->sanitize_array($form_data, $sanitize_rule);
                 $form_id = $form_data['form_id'];
                 $form_title = $form_data['form_title'];
