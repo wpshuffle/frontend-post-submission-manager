@@ -149,6 +149,12 @@ if (!class_exists('FPSM_Ajax_Admin')) {
          */
         function process_form_delete() {
             if ($this->admin_ajax_nonce_verify()) {
+                /**
+                 * Fires on starting of form edit ajax
+                 *
+                 * @since 1.0.0
+                 */
+                do_action('fpsm_before_form_delete_ajax');
                 $form_id = intval($_POST['form_id']);
                 global $wpdb;
                 $delete_check = $wpdb->delete(FPSM_FORM_TABLE, array('form_id' => $form_id), array('%d'));
