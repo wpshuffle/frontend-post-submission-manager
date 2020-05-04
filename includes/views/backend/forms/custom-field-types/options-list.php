@@ -1,9 +1,6 @@
 <div class="fpsm-field">
     <div class="fpsm-dropdown-list-wrap fpsm-field-<?php echo esc_attr($field_type); ?>">
         <?php
-        if (isset($fpsm_library_obj)) {
-            //   $fpsm_library_obj->print_array($field_details);
-        }
         if (!empty($field_details['options'])) {
             $option_count = 0;
             foreach ($field_details['options'] as $option) {

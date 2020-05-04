@@ -1,8 +1,5 @@
 <?php
 defined('ABSPATH') or die('No script kiddies please!!');
-if (isset($_GET['debug'])) {
-    $fpsm_library_obj->print_array($form_details);
-}
 $form_template = (!empty($form_details['layout']['template'])) ? $form_details['layout']['template'] : 'template-1';
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 ?>
@@ -30,7 +27,6 @@ $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
             if (file_exists(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file)) {
                 // If field is enabled from the backend
                 if (!empty($field_details['show_on_form'])) {
-                    //  $fpsm_library_obj->print_array($field_details);
                     $field_class = $fpsm_library_obj->generate_field_class($field_key);
                     if ($fpsm_library_obj->is_taxonomy_key($field_key)) {
                         $field_type = $field_details['field_type'];

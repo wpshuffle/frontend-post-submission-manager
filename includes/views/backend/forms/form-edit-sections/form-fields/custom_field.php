@@ -1,7 +1,6 @@
 <?php
 $field_key_array = explode('|', $field_key);
 $meta_key = end($field_key_array);
-//$fpsm_library_obj->print_array($field_details);
 $field_label = (!empty($field_details['field_label'])) ? $field_details['field_label'] : esc_html__('Untitled Field', 'frontend-post-submission-manager');
 $show_hide_toggle_class = $meta_key;
 $field_type = $field_details['field_type'];

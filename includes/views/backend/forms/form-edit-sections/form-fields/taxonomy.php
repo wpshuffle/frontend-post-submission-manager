@@ -4,7 +4,6 @@ $taxonomy = end($field_key_array);
 $taxonomy_details = get_taxonomy($taxonomy);
 global $fpsm_library_obj;
 $show_hide_toggle_class = $taxonomy;
-//$fpsm_library_obj->print_array($taxonomy_details);
 ?>
 <div class="fpsm-each-form-field">
     <div class="fpsm-field-head fpsm-clearfix">
