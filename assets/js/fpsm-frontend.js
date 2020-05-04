@@ -360,10 +360,11 @@ jQuery(document).ready(function ($) {
     /**
      * Clear error
      */
-    $('.fpsm-front-form input[type="text"], .fpsm-front-form textarea').keyup(function () {
+
+    $('body').on('keyup', '.fpsm-front-form input[type="text"], .fpsm-front-form textarea', function () {
         $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
-    $('.fpsm-front-form input[type="checkbox"], .fpsm-front-form select,.fpsm-front-form input[type="radio"]').click(function () {
+    $('body').on('click', '.fpsm-front-form input[type="checkbox"], .fpsm-front-form select,.fpsm-front-form input[type="radio"]', function () {
 
         $(this).closest('.fpsm-field-wrap').find('.fpsm-error').slideUp('fast');
     });
