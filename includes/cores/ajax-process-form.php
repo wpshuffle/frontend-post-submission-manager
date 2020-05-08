@@ -127,7 +127,8 @@ if ($this->admin_ajax_nonce_verify()) {
                 'post_content' => $post_content,
                 'post_title' => $post_title,
                 'post_excerpt' => $post_excerpt,
-                'post_status' => $post_status
+                'post_status' => $post_status,
+                'post_type' => $post_type
             );
             /**
              * Filters the post array before inserting the post into db
