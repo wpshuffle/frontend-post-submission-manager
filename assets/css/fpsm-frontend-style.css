@@ -422,12 +422,14 @@ input[type="file"]{
     color: white;
     line-height: 32px;
     transition: all .3s ease;
+    cursor: pointer !important;
 }
 .fpsm-front-form .qq-upload-button input{
     width: 100%;
     height: 40px;
 
 }
+.fpsm-field input[type="submit"]{cursor: pointer !important;}
 /*.fpsm-front-form .qq-upload-list{display: none}*/
 .fpsm-front-form .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
 .fpsm-front-form .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
