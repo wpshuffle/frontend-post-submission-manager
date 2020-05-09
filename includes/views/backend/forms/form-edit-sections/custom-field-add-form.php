@@ -27,7 +27,8 @@
                     'number' => array('label' => esc_html__('Number', 'frontend-post-submission-manager'), 'icon' => 'fas fa-sort'),
                     'email' => array('label' => esc_html__('Email', 'frontend-post-submission-manager'), 'icon' => 'fas fa-envelope'),
                     'datepicker' => array('label' => esc_html__('Datepicker', 'frontend-post-submission-manager'), 'icon' => 'far fa-calendar-alt'),
-                    'file_uploader' => array('label' => esc_html__('File Uploader', 'frontend-post-submission-manager'), 'icon' => 'fas fa-paperclip')
+                    'file_uploader' => array('label' => esc_html__('File Uploader', 'frontend-post-submission-manager'), 'icon' => 'fas fa-paperclip'),
+                    'url_field' => array('label' => esc_html__('Url', 'frontend-post-submission-manager'), 'icon' => 'fas fa-globe-asia')
                 );
                 /**
                  * Filters custom field type list
