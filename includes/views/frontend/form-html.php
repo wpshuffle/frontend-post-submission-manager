@@ -70,7 +70,7 @@ $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 
             <div class="fpsm-field-wrap fpsm-captcha-field" data-field-key="captcha">
                 <label><?php echo (!empty($form_details['security']['captcha_label'])) ? esc_attr($form_details['security']['captcha_label']) : ''; ?></label>
-                <div class="ebd-field">
+                <div class="fpsm-field">
                     <div data-field-key="security">
                         <script type="text/javascript" src="//www.google.com/recaptcha/api.js"></script>
                         <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
