@@ -110,6 +110,28 @@ do_action( 'fpsm_form_start', $form_row );
 */
 do_action('fpsm_form_end', $form_row);
                 </pre>
+                <pre>
+/**
+* Fires just before displaying the login form
+*
+* @param obj $form_row
+* @param array $form_details
+*
+* @since 1.0.3
+*/
+do_action('fpsm_login_form_before', $form_row, $form_details);
+                </pre>
+                <pre>
+/**
+* Fires just after displaying the login form
+*
+* @param obj $form_row
+* @param array $form_details
+*
+* @since 1.0.3
+*/
+do_action('fpsm_login_form_after', $form_row, $form_details);
+                </pre>
             </div>
         </div>
         <div class="fpsm-content-block">

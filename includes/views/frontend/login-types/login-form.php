@@ -1,5 +1,14 @@
 <div class="fpsm-login-form-wrapper fpsm-login-form-<?php echo esc_attr($form_template); ?>">
     <?php
+    /**
+     * Fires just before displaying the login form
+     *
+     * @param obj $form_row
+     * @param array $form_details
+     *
+     * @since 1.0.3
+     */
+    do_action('fpsm_login_form_before', $form_row, $form_details);
     if (!empty($login_settings['login_form_title'])) {
         ?>
         <h3><?php echo esc_html($login_settings['login_form_title']); ?></h3>
@@ -46,6 +55,15 @@
         <div class="fpsm-login-note"><?php echo $fpsm_library_obj->sanitize_html($login_settings['login_note']); ?></div>
         <?php
     }
+    /**
+     * Fires just after displaying the login form
+     *
+     * @param obj $form_row
+     * @param array $form_details
+     *
+     * @since 1.0.3
+     */
+    do_action('fpsm_login_after_before', $form_row, $form_details);
     ?>
 </div>
 <script>jQuery(document).ready(function ($) {
