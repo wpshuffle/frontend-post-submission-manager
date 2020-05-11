@@ -938,3 +938,6 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
 .fpsm-each-dropdown input[type="text"] {
     margin-bottom: 10px;
 }
+div#fpsm-metabox .inside {
+    padding-top: 15px;
+}
