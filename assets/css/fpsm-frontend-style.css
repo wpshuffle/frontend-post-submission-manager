@@ -392,6 +392,7 @@ input[type="file"]{
 .fpsm-front-form input[type="number"],
 .fpsm-front-form input[type="password"],
 .fpsm-front-form input[type="tel"],
+.fpsm-front-form input[type="url"],
 .fpsm-front-form textarea{
     border-radius: 2px;
     background-color: rgba(0,0,0,.04);
@@ -497,6 +498,7 @@ button.add_media{
 .fpsm-template-1 input[type="email"],
 .fpsm-template-1 input[type="number"],
 .fpsm-template-1 input[type="tel"],
+.fpsm-template-1 input[type="url"],
 .fpsm-template-1 textarea{
     border-radius: 2px;
     background-color: rgba(0,0,0,.04);
@@ -551,6 +553,7 @@ button.add_media{
 .fpsm-template-2 input[type="email"],
 .fpsm-template-2 input[type="number"],
 .fpsm-template-2 input[type="tel"],
+.fpsm-template-2 input[type="url"],
 .fpsm-template-2 textarea{
     border-radius: 68px;
     background-color: white;
@@ -615,6 +618,7 @@ button.add_media{
 .fpsm-template-3 input[type="email"],
 .fpsm-template-3 input[type="number"],
 .fpsm-template-3 input[type="tel"],
+.fpsm-template-3 input[type="url"],
 .fpsm-template-3 textarea{
     border-radius: 0;
     background-color: white;
@@ -690,6 +694,7 @@ button.add_media{
 .fpsm-template-4 input[type="email"],
 .fpsm-template-4 input[type="number"],
 .fpsm-template-4 input[type="tel"],
+.fpsm-template-4 input[type="url"],
 .fpsm-template-4 textarea{
     border-radius: 0;
     background-color: white;
@@ -755,6 +760,7 @@ button.add_media{
 .fpsm-template-5 input[type="email"],
 .fpsm-template-5 input[type="number"],
 .fpsm-template-5 input[type="tel"],
+.fpsm-template-5 input[type="url"],
 .fpsm-template-5 textarea{
     border-radius: 0;
     background-color: transparent;
@@ -823,6 +829,7 @@ button.add_media{
 .fpsm-template-6 input[type="email"],
 .fpsm-template-6 input[type="number"],
 .fpsm-template-6 input[type="tel"],
+.fpsm-template-6 input[type="url"],
 .fpsm-template-6 textarea{
     border-radius: 68px;
     background-color: #ebebec;
@@ -949,6 +956,7 @@ button.add_media{
 .fpsm-template-7 input[type="email"],
 .fpsm-template-7 input[type="number"],
 .fpsm-template-7 input[type="tel"],
+.fpsm-template-7 input[type="url"],
 .fpsm-template-7 textarea{
     background-color: transparent;
     border:none;
@@ -1111,7 +1119,7 @@ button.add_media{
 .fpsm-template-8 input[type="text"],
 .fpsm-template-8 input[type="email"],
 .fpsm-template-8 input[type="number"],
-.fpsm-template-8 input[type="tel"],
+.fpsm-template-8 input[type="url"],
 .fpsm-template-8 textarea{
     padding: 0;
     border-radius: 0;
@@ -1194,6 +1202,7 @@ button.add_media{
 .fpsm-template-9 input[type="email"],
 .fpsm-template-9 input[type="number"],
 .fpsm-template-9 input[type="tel"],
+.fpsm-template-9 input[type="url"],
 .fpsm-template-9 textarea{
     padding: 0;
     border-radius: 0;
@@ -1273,6 +1282,7 @@ button.add_media{
 .fpsm-template-10 input[type="email"],
 .fpsm-template-10 input[type="number"],
 .fpsm-template-10 input[type="tel"],
+.fpsm-template-10 input[type="url"],
 .fpsm-template-10 textarea{
     padding: 0;
     border-radius: 0;
@@ -1362,6 +1372,7 @@ button.add_media{
 .fpsm-template-11 input[type="email"],
 .fpsm-template-11 input[type="number"],
 .fpsm-template-11 input[type="tel"],
+.fpsm-template-11 input[type="url"],
 .fpsm-template-11 textarea{
     padding: 0;
     border-radius: 0;
@@ -1515,6 +1526,7 @@ button.add_media{
 .fpsm-template-12 input[type="email"],
 .fpsm-template-12 input[type="number"],
 .fpsm-template-12 input[type="tel"],
+.fpsm-template-12 input[type="url"],
 .fpsm-template-12 textarea{
     background-color: transparent;
     padding: 0 15px;
@@ -1528,6 +1540,7 @@ button.add_media{
 .fpsm-template-12 input[type="email"]:focus,
 .fpsm-template-12 input[type="number"]:focus,
 .fpsm-template-12 input[type="tel"]:focus,
+.fpsm-template-12 input[type="url"]:focus,
 .fpsm-template-12 textarea:focus{
     border-color:rgba(0,0,0,.14);
 }
@@ -1819,6 +1832,7 @@ button.add_media{
 .fpsm-template-14 input[type="email"],
 .fpsm-template-14 input[type="number"],
 .fpsm-template-14 input[type="tel"],
+.fpsm-template-14 input[type="url"],
 .fpsm-template-14 textarea{
     padding: 0;
     border-radius: 68px;
@@ -1914,6 +1928,7 @@ button.add_media{
 .fpsm-template-15 input[type="email"],
 .fpsm-template-15 input[type="number"],
 .fpsm-template-15 input[type="tel"],
+.fpsm-template-15 input[type="url"],
 .fpsm-template-15 textarea{
     padding: 0 5px;
     background-color: transparent;
@@ -1994,6 +2009,7 @@ button.add_media{
 .fpsm-template-16 input[type="email"],
 .fpsm-template-16 input[type="number"],
 .fpsm-template-16 input[type="tel"],
+.fpsm-template-16 input[type="url"],
 .fpsm-template-16 textarea{
     background-color: transparent;
     border:none;
@@ -2201,6 +2217,7 @@ button.add_media{
 .fpsm-template-17 input[type="email"],
 .fpsm-template-17 input[type="number"],
 .fpsm-template-17 input[type="tel"],
+.fpsm-template-17 input[type="url"],
 .fpsm-template-17 textarea{
     background-color: transparent;
     border:none;
@@ -2416,6 +2433,7 @@ button.add_media{
 .fpsm-template-18 input[type="email"],
 .fpsm-template-18 input[type="number"],
 .fpsm-template-18 input[type="tel"],
+.fpsm-template-18 input[type="url"],
 .fpsm-template-18 textarea{
     padding: 0;
     border-radius: 0;
@@ -2510,6 +2528,7 @@ button.add_media{
 .fpsm-template-19 input[type="email"],
 .fpsm-template-19 input[type="number"],
 .fpsm-template-19 input[type="tel"],
+.fpsm-template-19 input[type="url"],
 .fpsm-template-19 textarea{
     padding: 0;
     border-radius: 6px;
@@ -2625,6 +2644,7 @@ button.add_media{
 .fpsm-template-20 input[type="email"],
 .fpsm-template-20 input[type="number"],
 .fpsm-template-20 input[type="tel"],
+.fpsm-template-20 input[type="url"],
 .fpsm-template-20 textarea{
     padding: 0;
     border-radius: 0;
@@ -2753,6 +2773,7 @@ button.add_media{
 .fpsm-template-21 input[type="email"],
 .fpsm-template-21 input[type="number"],
 .fpsm-template-21 input[type="tel"],
+.fpsm-template-21 input[type="url"],
 .fpsm-template-21 textarea{
     background-color: white;
     border:none;
@@ -2983,6 +3004,7 @@ button.add_media{
 .fpsm-template-22 input[type="email"],
 .fpsm-template-22 input[type="number"],
 .fpsm-template-22 input[type="tel"],
+.fpsm-template-22 input[type="url"],
 .fpsm-template-22 textarea{
     background-color: rgba(255,255,255, 0.08);
     padding: 0 15px;
@@ -2996,6 +3018,7 @@ button.add_media{
 .fpsm-template-22 input[type="email"]:focus,
 .fpsm-template-22 input[type="number"]:focus,
 .fpsm-template-22 input[type="tel"]:focus,
+.fpsm-template-22 input[type="url"]:focus,
 .fpsm-template-22 textarea:focus{
     border-color:rgba(255,255,255,.14);
 }
