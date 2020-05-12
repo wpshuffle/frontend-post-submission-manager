@@ -941,3 +941,14 @@ span.dashicons.dashicons-trash.fpsm-delete-dropdown-trigger {
 div#fpsm-metabox .inside {
     padding-top: 15px;
 }
+/*
+.inside .fpsm-radio > label {
+    margin-left: 30px;
+}
+.inside .fpsm-checkbox label {
+    margin-left: 23px;
+}
+.inside .fpsm-field select {
+    padding-right: 20px;
+}
+*/
