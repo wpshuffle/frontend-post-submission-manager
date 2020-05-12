@@ -22,7 +22,8 @@ if ( !class_exists( 'FPSM_Admin_Enqueue' ) ) {
                 'custom_field_key_available_error' => esc_html__( 'Meta key already assigned for one of the fields in the list', 'frontend-post-submission-manager' ),
                 'custom_field_delete_confirm' => esc_html__( 'Are you sure you want to delete this custom field?', 'frontend-post-submission-manager' ),
                 'option_delete_confirm' => esc_html__( 'Are you sure you want to delete option?', 'frontend-post-submission-manager' ),
-                'are_your_sure' => esc_html__( 'It looks like you have been editing something. If you leave before saving, your changes will be lost.', 'frontend-post-submission-manager' )
+                'are_your_sure' => esc_html__( 'It looks like you have been editing something. If you leave before saving, your changes will be lost.', 'frontend-post-submission-manager' ),
+                'copy_form_confirm' => esc_html__( 'Are you sure you want to copy this form?', 'frontend-post-submission-manager' )
             );
             $js_obj = array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'plugin_url' => FPSM_URL, 'ajax_nonce' => wp_create_nonce( 'fpsm_backend_ajax_nonce' ), 'translation_strings' => $translation_strings );
             wp_enqueue_style( 'wp-color-picker' );
