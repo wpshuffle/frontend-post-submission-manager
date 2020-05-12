@@ -948,6 +948,6 @@ div#fpsm-metabox .inside {
 .block-editor-page .inside .fpsm-checkbox label {
     margin-left: 23px;
 }
-.block-editor-page .inside .fpsm-field select {
+.inside .fpsm-field select {
     padding-right: 20px;
 }
