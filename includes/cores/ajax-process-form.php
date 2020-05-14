@@ -120,6 +120,8 @@ if ($this->admin_ajax_nonce_verify()) {
             } else {
                 $post_author_id = intval($form_details['basic']['post_author']);
             }
+            //Lets check the post status of the post for edited post
+            $post_status = (!empty($post_id)) ? get_post_status($post_id) : $post_status;
             // Lets insert post into DB
             $postarr = array(
                 'ID' => $post_id,
@@ -144,8 +146,12 @@ if ($this->admin_ajax_nonce_verify()) {
             if (!empty($insert_update_post_id)) {
 
                 //Lets assign the post image to the post
-                if (!empty($form_data['post_image'])) {
-                    set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                if (isset($form_data['post_image'])) {
+                    if (!empty($post_id) && empty($form_data['post_image'])) {
+                        delete_post_thumbnail($post_id);
+                    } else {
+                        set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                    }
                 }
 
                 //Lets assign post format

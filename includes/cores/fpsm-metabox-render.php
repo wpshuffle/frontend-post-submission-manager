@@ -59,7 +59,7 @@ if (!empty($fpsm_form_alias)) {
                                     if (!empty($field_details['options'])) {
                                         foreach ($field_details['options'] as $option_count => $option) {
                                             ?>
-                                            <option value="<?php echo esc_attr($field_details['values'][$option_count]) ?>"><?php echo esc_html($option); ?></option>
+                                            <option value="<?php echo esc_attr($field_details['values'][$option_count]) ?>" <?php echo ($custom_field_value == $field_details['values'][$option_count]) ? 'selected="selected"' : ''; ?>><?php echo esc_html($option); ?></option>
                                             <?php
                                         }
                                     }
