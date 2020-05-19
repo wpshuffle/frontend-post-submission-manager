@@ -13,17 +13,23 @@ $uploader_label = (!empty($field_details['upload_button_label'])) ? $field_detai
 $multiple_upload = (!empty($field_details['multiple_upload'])) ? 'true' : 'false';
 $max_number_uploads = (!empty($field_details['max_number_uploads'])) ? $field_details['max_number_uploads'] : -1;
 $allowed_extensions = (!empty($field_details['file_extensions'])) ? $field_details['file_extensions'] : $default_allowed_extensions;
+$file_extension_error_message = (!empty($field_details['file_extension_error_message'])) ? $field_details['file_extension_error_message'] : '';
 $media_id_array = (!empty($custom_field_saved_value)) ? explode(',', $custom_field_saved_value) : array();
+$upload_limit_error_message = $field_details['upload_limit_error_message'];
+$upload_filesize_error_message = $field_details['upload_filesize_error_message'];
 ?>
 <div
     class="fpsm-file-uploader"
     id="fpms-file-uploader-<?php echo esc_attr($fpsm_library_obj->generate_random_string()); ?>"
     data-extensions="<?php echo esc_attr(implode('|', $allowed_extensions)); ?>"
+    data-extensions-error-message="<?php echo esc_attr($file_extension_error_message); ?>"
     data-file-size-limit="<?php echo esc_attr($upload_file_size_limit); ?>"
+    data-upload-filesize-error-message="<?php echo esc_attr($upload_filesize_error_message); ?>"
     data-label="<?php echo esc_attr($uploader_label); ?>"
     data-field-name="<?php echo esc_attr($field_key); ?>"
     data-multiple='<?php echo esc_attr($multiple_upload); ?>'
-    data-multiple-upload-limit="<?php echo esc_attr($max_number_uploads); ?>">
+    data-multiple-upload-limit="<?php echo esc_attr($max_number_uploads); ?>"
+    data-multiple-upload-error-message = "<?php echo esc_attr($upload_limit_error_message); ?>">
 </div>
 <input type="hidden" class="fpsm-upload-count" value="<?php echo count($media_id_array); ?>"/>
 <input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id"/>

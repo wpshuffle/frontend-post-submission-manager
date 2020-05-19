@@ -14,8 +14,10 @@ jQuery(document).ready(function ($) {
             var arr_element_id = attr_element_id.split('-');
             var uploader_name = arr_element_id[2];
             var extensions = $(this).data('extensions');
+            var extensions_error = $(this).data('extensions-error-message');
             var extensions_array = extensions.split('|');
             var sizeLimit = $(this).data('file-size-limit');
+            var sizeLimit_error = $(this).data('upload-filesize-error-message');
             sizeLimit = parseInt(sizeLimit) * 1000 * 1000;
             var multiple_upload = $(this).data('multiple');
             var limit_flag = 0;
@@ -111,11 +113,11 @@ jQuery(document).ready(function ($) {
                 onCancel: function (id, fileName) {},
                 onError: function (id, fileName, xhr) {},
                 messages: {
-                    typeError: "{file} has invalid extension. Only {extensions} are allowed.",
-                    sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
-                    minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
-                    emptyError: "{file} is empty, please select files again without it.",
-                    onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."
+                    typeError: (extensions_error == '')?translation_strings.typeError:extensions_error,
+                    sizeError: (sizeLimit_error!='')?sizeLimit_error:translation_strings.sizeError,
+                    minSizeError: translation_strings.minSizeError,
+                    emptyError: translation_strings.emptyError,
+                    onLeave: translation_strings.onLeave,
                 },
                 showMessage: function (message) {
                     alert(message);

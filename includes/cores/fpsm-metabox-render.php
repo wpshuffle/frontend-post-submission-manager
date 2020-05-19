@@ -138,7 +138,7 @@ if (!empty($fpsm_form_alias)) {
                                         <?php
                                     } else {
                                         ?>
-                                        <input type="text" name="<?php echo esc_attr($custom_field_name); ?>"/>
+                                        <input type="text" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                         <p class="description"><?php esc_html_e('Note: Date is showing up in the string format because you had enabled the string format option.', 'frontend-post-submission-manager'); ?></p>
                                         <?php
                                     }

@@ -19,6 +19,9 @@ if (!class_exists('FPSM_Notification')) {
         }
 
         function trigger_post_reject_notifications($post_id) {
+            if (!is_admin()) {
+                return;
+            }
             $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
             if (empty($form_alias)) {
                 return;
