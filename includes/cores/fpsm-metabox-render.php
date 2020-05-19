@@ -173,7 +173,13 @@ if (!empty($fpsm_form_alias)) {
                             case 'url':
                                 ?>
                                 <input type="url" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_url($custom_field_value); ?>"/>
-                            <?php
+                                <?php
+                                break;
+                            case 'tel':
+                                ?>
+                                <input type="tel" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
+                                <?php
+                                break;
                         }
                         ?>
                     </div>

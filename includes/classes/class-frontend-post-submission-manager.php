@@ -15,7 +15,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          *
          * @var string
          */
-        public $version = '1.0.4';
+        public $version = '1.0.5';
 
         /**
          * The single instance of the class.
@@ -130,7 +130,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 'email' => array('label' => esc_html__('Email', 'frontend-post-submission-manager'), 'icon' => 'fas fa-envelope'),
                 'datepicker' => array('label' => esc_html__('Datepicker', 'frontend-post-submission-manager'), 'icon' => 'far fa-calendar-alt'),
                 'file_uploader' => array('label' => esc_html__('File Uploader', 'frontend-post-submission-manager'), 'icon' => 'fas fa-paperclip'),
-                'url' => array('label' => esc_html__('URL', 'frontend-post-submission-manager'), 'icon' => 'fas fa-globe-asia')
+                'url' => array('label' => esc_html__('URL', 'frontend-post-submission-manager'), 'icon' => 'fas fa-globe-asia'),
+                'tel' => array('label' => esc_html__('Tel', 'frontend-post-submission-manager'), 'icon' => 'fas fa-phone'),
             );
             /**
              * Filters custom field type list

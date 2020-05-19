@@ -252,6 +252,17 @@ $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_f
  */
 $default_allowed_extensions = apply_filters('fpsm_image_allowed_extensions', $default_allowed_extensions);
                 </pre>
+                <pre>
+/**
+* Filters custom field value html being printed
+*
+* @param mixed $custom_field_value
+* @param string $custom_field_meta_key
+*
+* @since 1.0.4
+*/
+$filterd_custom_field_value = apply_filters('fpsm_custom_field_html', $custom_field_value, $custom_field_meta_key);
+                </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
             <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>

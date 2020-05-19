@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Frontend Post Submission Manager\n"
-"POT-Creation-Date: 2020-05-15 03:48+0545\n"
+"POT-Creation-Date: 2020-05-20 03:31+0545\n"
 "PO-Revision-Date: 2020-05-15 03:50+0545\n"
 "Last-Translator: \n"
 "Language-Team: WP Shuffle\n"
@@ -231,14 +232,35 @@ msgstr ""
 msgid "Post Content"
 msgstr ""
 
-#: includes/classes/class-fpsm-notification.php:45
-#: includes/classes/class-fpsm-notification.php:95
+#: includes/classes/class-fpsm-notification.php:51
+#: includes/classes/class-fpsm-notification.php:101
 #: includes/cores/admin-email-notification.php:6
 msgid "No Reply"
 msgstr ""
 
-#: includes/classes/class-fpsm-shortcode.php:75
-#: includes/classes/class-fpsm-shortcode.php:96
+#: includes/classes/class-fpsm-shortcode.php:23
+msgid "{file} has invalid extension. Only {extensions} are allowed."
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:24
+msgid "{file} is too large, maximum file size is {sizeLimit}."
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:25
+msgid "{file} is too small, minimum file size is {minSizeLimit}."
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:26
+msgid "{file} is empty, please select files again without it."
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:27
+msgid ""
+"The files are being uploaded, if you leave now the upload will be cancelled."
+msgstr ""
+
+#: includes/classes/class-fpsm-shortcode.php:80
+#: includes/classes/class-fpsm-shortcode.php:101
 msgid "Form not available for this alias."
 msgstr ""
 
@@ -298,6 +320,10 @@ msgstr ""
 #: includes/views/backend/forms/form-edit-sections/basic-settings.php:150
 #: includes/views/backend/js-templates/tmpl-url.php:3
 msgid "URL"
+msgstr ""
+
+#: includes/classes/class-frontend-post-submission-manager.php:134
+msgid "Tel"
 msgstr ""
 
 #: includes/cores/ajax-process-form.php:13
@@ -577,49 +603,62 @@ msgid "File Extensions"
 msgstr ""
 
 #: includes/views/backend/forms/custom-field-types/file_uploader.php:27
-#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:70
 #: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:15
+msgid "File Extension Error Message"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:30
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:18
+msgid ""
+"Please use {file} and {extensions} to replace uploaded file name and allowed "
+"extension in the displayed message. For example: {file} has invalid "
+"extension. Only {extensions} are allowed."
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:34
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:70
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:22
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:32
 msgid "Upload File Size Limit"
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:30
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:37
 #: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:73
-#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:18
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:25
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:35
 msgid ""
 "Please enter the max size of the file being uploaded in MB. Default is 5 MB."
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:38
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:45
 #: includes/views/backend/forms/form-edit-sections/form-fields/post_content.php:81
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:43
 msgid "Upload File Size Error Message"
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:44
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:51
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:49
 msgid "Multiple Upload"
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:47
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:54
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:52
 msgid "Please check if you want to enable the multiple file upload."
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:52
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:59
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:57
 msgid "Allowed Number of Files"
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:55
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:62
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:60
 msgid ""
 "Please enter the maximum number of files you want to allow for the upload. "
 "Please leave blank if you don't want to set any limitation."
 msgstr ""
 
-#: includes/views/backend/forms/custom-field-types/file_uploader.php:59
+#: includes/views/backend/forms/custom-field-types/file_uploader.php:66
 #: includes/views/backend/js-templates/tmpl-file_uploader.php:64
 msgid "Upload Limit Error Message"
 msgstr ""
@@ -666,6 +705,23 @@ msgstr ""
 #: includes/views/backend/forms/custom-field-types/select.php:5
 #: includes/views/backend/js-templates/tmpl-select.php:10
 msgid "Dropdown Lists"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/tel.php:4
+msgid "Min Length"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/tel.php:10
+msgid "Max Length"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/tel.php:16
+msgid "Pattern"
+msgstr ""
+
+#: includes/views/backend/forms/custom-field-types/tel.php:19
+msgid ""
+"Please enter the pattern in which you want the telephone number to validate."
 msgstr ""
 
 #: includes/views/backend/forms/custom-field-types/textarea.php:6
@@ -1224,7 +1280,7 @@ msgstr ""
 msgid "Post Image"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:26
+#: includes/views/backend/forms/form-edit-sections/form-fields/post_image.php:33
 msgid "Max Size Error Message"
 msgstr ""
 
@@ -1534,7 +1590,7 @@ msgstr ""
 msgid "Available Filters"
 msgstr ""
 
-#: includes/views/backend/help.php:256
+#: includes/views/backend/help.php:267
 msgid ""
 "If you think there are any missing action or filters then please let us know "
 "from below link."

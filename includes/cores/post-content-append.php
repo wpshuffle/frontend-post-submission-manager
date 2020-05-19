@@ -100,6 +100,9 @@ foreach ($form_fields as $field_key => $field_details) {
                             case 'url':
                                 ?><a href="<?php echo esc_url($custom_field_value); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
                                 break;
+                            case 'tel':
+                                ?><a href="tel:<?php echo esc_url($custom_field_value); ?>"><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
+                                break;
                         }
                         ?>
                     </div>
