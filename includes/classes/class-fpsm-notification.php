@@ -22,6 +22,9 @@ if (!class_exists('FPSM_Notification')) {
             if (!is_admin()) {
                 return;
             }
+            if (defined('DOING_AJAX')) {
+                return;
+            }
             $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
             if (empty($form_alias)) {
                 return;
