@@ -32,7 +32,7 @@ $upload_filesize_error_message = $field_details['upload_filesize_error_message']
     data-multiple-upload-error-message = "<?php echo esc_attr($upload_limit_error_message); ?>">
 </div>
 <input type="hidden" class="fpsm-upload-count" value="<?php echo count($media_id_array); ?>"/>
-<input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id"/>
+<input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id" value="<?php echo esc_attr($custom_field_saved_value); ?>"/>
 <div class="fpsm-file-preview-wrap">
     <?php
     if (!empty($custom_field_saved_value)) {
