@@ -42,7 +42,7 @@ if (!empty($edit_post) && has_post_thumbnail($post_id)) {
             <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($post_thumbnail_url); ?>"></span>
             <span class="fpsm-file-preview-column"><?php echo esc_html($post_image_title); ?></span>
             <span class="fpsm-file-preview-column"><?php echo esc_html($post_thumbnail_file_size); ?></span>
-            <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-delete-button" data-media-id="<?php echo intval($post_thumbnail_id); ?>" data-media-key="<?php echo esc_attr($attachment_code); ?>" value="Delete"></span>
+            <span class="fpsm-file-preview-column"><input type="button" class="fpsm-media-delete-button" data-media-id="<?php echo intval($post_thumbnail_id); ?>" data-media-key="<?php echo esc_attr($attachment_code); ?>" value="<?php esc_attr_e('Delete', 'frontend-post-submission-manager'); ?>"></span>
         </div>
     <?php } ?>
 </div>
