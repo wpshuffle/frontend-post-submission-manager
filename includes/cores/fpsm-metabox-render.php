@@ -13,7 +13,7 @@ if (!empty($fpsm_form_alias)) {
     ?>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Frontend Form', 'frontend-post-submission-manager'); ?></label>
-        <div class="fpsm-field"><a href="<?php echo admin_url('admin.php?page=fpsm&action=edit_form&form_id=' . $form_row->form_id); ?>" target="_blank"><?php echo esc_html($form_row->form_title); ?></a></div>
+        <div class="fpsm-field"><a href="<?php echo admin_url('admin.php?page=fpsm&action=edit_form&form_id=' . $form_row->form_id); ?>" target="_blank" class="button-secondary"><?php echo esc_html($form_row->form_title); ?></a></div>
     </div>
     <?php
     $form_details = maybe_unserialize($form_row->form_details);
@@ -59,7 +59,7 @@ if (!empty($fpsm_form_alias)) {
                                     if (!empty($field_details['options'])) {
                                         foreach ($field_details['options'] as $option_count => $option) {
                                             ?>
-                                            <option value="<?php echo esc_attr($field_details['values'][$option_count]) ?>"><?php echo esc_html($option); ?></option>
+                                            <option value="<?php echo esc_attr($field_details['values'][$option_count]) ?>" <?php echo ($custom_field_value == $field_details['values'][$option_count]) ? 'selected="selected"' : ''; ?>><?php echo esc_html($option); ?></option>
                                             <?php
                                         }
                                     }
@@ -138,7 +138,7 @@ if (!empty($fpsm_form_alias)) {
                                         <?php
                                     } else {
                                         ?>
-                                        <input type="text" name="<?php echo esc_attr($custom_field_name); ?>"/>
+                                        <input type="text" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                         <p class="description"><?php esc_html_e('Note: Date is showing up in the string format because you had enabled the string format option.', 'frontend-post-submission-manager'); ?></p>
                                         <?php
                                     }
@@ -170,6 +170,16 @@ if (!empty($fpsm_form_alias)) {
                                 </div>
                                 <?php
                                 break;
+                            case 'url':
+                                ?>
+                                <input type="url" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_url($custom_field_value); ?>"/>
+                                <?php
+                                break;
+                            case 'tel':
+                                ?>
+                                <input type="tel" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
+                                <?php
+                                break;
                         }
                         ?>
                     </div>
@@ -181,7 +191,7 @@ if (!empty($fpsm_form_alias)) {
             <div class="fpsm-field-wrap">
                 <label><?php echo esc_html($field_details['field_label']); ?></label>
                 <div class="fpsm-field">
-                    <input type="text" name="fpsm_author_name" value="<?php echo esc_attr(get_post_meta($post->ID, 'fpsm_author_name', true)); ?>"/>
+                    <input type="text" name="fpsm_custom_fields[fpsm_author_name]" value="<?php echo esc_attr(get_post_meta($post->ID, 'fpsm_author_name', true)); ?>"/>
                     <input type="hidden" name="fpsm_included_custom_fields[]" value="fpsm_author_name"/>
                 </div>
             </div>
@@ -191,7 +201,7 @@ if (!empty($fpsm_form_alias)) {
             <div class="fpsm-field-wrap">
                 <label><?php echo esc_html($field_details['field_label']); ?></label>
                 <div class="fpsm-field">
-                    <input type="text" name="fpsm_author_email" value="<?php echo esc_attr(get_post_meta($post->ID, 'fpsm_author_email', true)); ?>"/>
+                    <input type="text" name="fpsm_custom_fields[fpsm_author_email]" value="<?php echo esc_attr(get_post_meta($post->ID, 'fpsm_author_email', true)); ?>"/>
                     <input type="hidden" name="fpsm_included_custom_fields[]" value="fpsm_author_email"/>
                 </div>
             </div>

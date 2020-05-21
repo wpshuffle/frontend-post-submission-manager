@@ -110,6 +110,28 @@ do_action( 'fpsm_form_start', $form_row );
 */
 do_action('fpsm_form_end', $form_row);
                 </pre>
+                <pre>
+/**
+* Fires just before displaying the login form
+*
+* @param obj $form_row
+* @param array $form_details
+*
+* @since 1.0.3
+*/
+do_action('fpsm_login_form_before', $form_row, $form_details);
+                </pre>
+                <pre>
+/**
+* Fires just after displaying the login form
+*
+* @param obj $form_row
+* @param array $form_details
+*
+* @since 1.0.3
+*/
+do_action('fpsm_login_form_after', $form_row, $form_details);
+                </pre>
             </div>
         </div>
         <div class="fpsm-content-block">
@@ -229,6 +251,17 @@ $custom_field_type_list = apply_filters('fpsm_custom_field_type_list', $custom_f
  * @since 1.0.0
  */
 $default_allowed_extensions = apply_filters('fpsm_image_allowed_extensions', $default_allowed_extensions);
+                </pre>
+                <pre>
+/**
+* Filters custom field value html being printed
+*
+* @param mixed $custom_field_value
+* @param string $custom_field_meta_key
+*
+* @since 1.0.4
+*/
+$filterd_custom_field_value = apply_filters('fpsm_custom_field_html', $custom_field_value, $custom_field_meta_key);
                 </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>

@@ -98,7 +98,7 @@ if ($this->admin_ajax_nonce_verify()) {
         if ($error_flag == 1) {
             $response['status'] = 403;
             $response['error_details'] = $error_details;
-            $response['message'] = (!empty($form_details['validation_error_message'])) ? esc_html($form_details['validation_error_message']) : esc_html__('Form validation error occurred.', 'frontend-post-submission-manager');
+            $response['message'] = (!empty($form_details['basic']['validation_error_message'])) ? esc_html($form_details['basic']['validation_error_message']) : esc_html__('Form validation error occurred.', 'frontend-post-submission-manager');
         } else {
             //Lets process the form
             $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
@@ -120,6 +120,8 @@ if ($this->admin_ajax_nonce_verify()) {
             } else {
                 $post_author_id = intval($form_details['basic']['post_author']);
             }
+            //Lets check the post status of the post for edited post
+            $post_status = (!empty($post_id)) ? get_post_status($post_id) : $post_status;
             // Lets insert post into DB
             $postarr = array(
                 'ID' => $post_id,
@@ -144,8 +146,12 @@ if ($this->admin_ajax_nonce_verify()) {
             if (!empty($insert_update_post_id)) {
 
                 //Lets assign the post image to the post
-                if (!empty($form_data['post_image'])) {
-                    set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                if (isset($form_data['post_image'])) {
+                    if (!empty($post_id) && empty($form_data['post_image'])) {
+                        delete_post_thumbnail($post_id);
+                    } else {
+                        set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+                    }
                 }
 
                 //Lets assign post format
@@ -211,7 +217,7 @@ if ($this->admin_ajax_nonce_verify()) {
                 // Storing form alias for the reference
                 update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
                 $response['status'] = 200;
-                $response['message'] = (!empty($form_details['form_success_message'])) ? esc_html($form_details['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
+                $response['message'] = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
                 // If redirection is enabled
                 if (!empty($form_details['basic']['redirection'])) {
                     if ($form_details['basic']['redirection_type'] == 'url') {

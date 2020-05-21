@@ -19,7 +19,12 @@ if (!class_exists('FPSM_Shortcode')) {
             $fpsm_settings = get_option('fpsm_settings');
 
             $translation_strings = array(
-                'are_your_sure' => esc_html__('It looks like you have been editing something. If you leave before saving, your changes will be lost.', 'frontend-post-submission-manager')
+                'are_your_sure' => esc_html__('It looks like you have been editing something. If you leave before saving, your changes will be lost.', 'frontend-post-submission-manager'),
+                'typeError' => esc_html__("{file} has invalid extension. Only {extensions} are allowed.", 'frontend-post-submission-manager'),
+                'sizeError' => esc_html__("{file} is too large, maximum file size is {sizeLimit}.", 'frontend-post-submission-manager'),
+                'minSizeError' => esc_html__("{file} is too small, minimum file size is {minSizeLimit}.", 'frontend-post-submission-manager'),
+                'emptyError' => esc_html__("{file} is empty, please select files again without it.", 'frontend-post-submission-manager'),
+                'onLeave' => esc_html__("The files are being uploaded, if you leave now the upload will be cancelled.", 'frontend-post-submission-manager')
             );
             $js_obj = array(
                 'ajax_url' => admin_url('admin-ajax.php'),
@@ -157,9 +162,9 @@ if (!class_exists('FPSM_Shortcode')) {
                     if (!empty($site_key)) {
                         ob_start();
                         ?>
-                        <div class="ebd-captcha-wrap">
+                        <div class="fpsm-captcha-wrap">
                             <label><?php echo (!empty($fpsm_form_details['security']['captcha_label'])) ? esc_attr($fpsm_form_details['security']['captcha_label']) : ''; ?></label>
-                            <div class="ebd-field">
+                            <div class="fpsm-field">
                                 <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                             </div>
                         </div>

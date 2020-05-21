@@ -544,7 +544,42 @@ jQuery(document).ready(function ($) {
         $(this).parent().find('input[type="text"]').removeAttr('readonly');
     });
 
-
+    /**
+     * Form Copy
+     * 
+     * @since 1.0.0
+     */
+    $('body').on('click', '.fpsm-form-copy', function () {
+        if (confirm(translation_strings.copy_form_confirm)) {
+            var selector = $(this);
+            var form_id = $(this).data('form-id');
+            $.ajax({
+                type: 'post',
+                url: fpsm_backend_obj.ajax_url,
+                data: {
+                    action: 'fpsm_form_copy_action',
+                    form_id: form_id,
+                    _wpnonce: fpsm_backend_obj.ajax_nonce,
+                },
+                beforeSend: function (xhr) {
+                    fpsm_generate_info(translation_strings.ajax_message, 'ajax');
+                },
+                success: function (res) {
+                    res = $.parseJSON(res);
+                    if (res.status == 200) {
+                        fpsm_generate_info(res.message, 'info');
+                        fpsm_generate_info(res.message, 'info');
+                        if (res.redirect_url) {
+                            window.location = res.redirect_url;
+                            exit;
+                        }
+                    } else {
+                        fpsm_generate_info(res.message, 'error');
+                    }
+                }
+            });
+        }
+    });
 
 
 });

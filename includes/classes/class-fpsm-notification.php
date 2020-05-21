@@ -19,6 +19,12 @@ if (!class_exists('FPSM_Notification')) {
         }
 
         function trigger_post_reject_notifications($post_id) {
+            if (!is_admin()) {
+                return;
+            }
+            if (defined('DOING_AJAX')) {
+                return;
+            }
             $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
             if (empty($form_alias)) {
                 return;
@@ -66,13 +72,14 @@ if (!class_exists('FPSM_Notification')) {
 
         function trigger_post_publish_notification($post_id, $post) {
             if (!(defined('REST_REQUEST') && REST_REQUEST )) {
+
                 $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
                 if (empty($form_alias)) {
                     return;
                 }
                 global $fpsm_library_obj;
                 $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
-                if (empty($form->form_details)) {
+                if (empty($form_row->form_details)) {
                     return;
                 }
                 $form_details = maybe_unserialize($form_row->form_details);

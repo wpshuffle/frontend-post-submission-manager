@@ -12,6 +12,13 @@
                 </div>
             </div>
             <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('File Extension Error Message', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="text" name="<?php echo esc_attr($field_name_prefix); ?>[file_extension_error_message]" value="<?php echo (!empty($field_details['file_extension_error_message'])) ? esc_attr($field_details['file_extension_error_message']) : ''; ?>"/>
+                    <p class="description"><?php esc_html_e('Please use {file} and {extensions} to replace uploaded file name and allowed extension in the displayed message. For example: {file} has invalid extension. Only {extensions} are allowed.', 'frontend-post-submission-manager'); ?></p>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Upload File Size Limit', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
                     <input type="number" min="1" name="<?php echo esc_attr($field_name_prefix); ?>[upload_file_size_limit]" value="<?php echo (!empty($field_details['upload_file_size_limit'])) ? intval($field_details['upload_file_size_limit']) : ''; ?>"/>

@@ -1,6 +1,7 @@
 <?php
 defined('ABSPATH') or die('No script kiddies please!!');
 $current_user_id = get_current_user_id();
+$post_statuses = get_post_statuses();
 if (!empty($current_user_id)) {
     ?>
     <div class="fpsm-dashboard-wrap">
@@ -37,7 +38,7 @@ if (!empty($current_user_id)) {
                     <div class="fpsm-dashboard-row">
                         <div class="fpsm-dashboard-column"><?php echo esc_html($sn++); ?></div>
                         <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
-                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?>"><?php echo esc_html(get_post_status()); ?></span></div>
+                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?>"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
                         <div class="fpsm-dashboard-column"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
                         <div class="fpsm-dashboard-column">
                             <?php
