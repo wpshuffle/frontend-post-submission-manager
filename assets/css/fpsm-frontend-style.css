@@ -62,7 +62,6 @@ div#fpsm-preview-wrap {
     font-size: 12px;
     color: white;
     font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Nunito Sans';
 }
 .fpsm-field-wrap .qq-upload-size,
 .fpsm-field-wrap .qq-upload-cancel {
@@ -149,7 +148,6 @@ span.fpsm-tag-remove-trigger {
 
 .fpsm-front-form{
     font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Nunito Sans';
 
 }
 
@@ -536,6 +534,11 @@ button.add_media{
 }
 .fpsm-template-1 .fpsm-field input[type="submit"]:hover{
     background-color: rgba(0,0,0,.8);
+}
+
+.fpsm-template-1 .qq-upload-list li{
+    background-color: #0083f8 !important;
+    /*background: #0083f8 -moz-linear-gradient(-45deg, rgba(45, 170, 60, 0), rgba(45, 170, 60, 0) 10%, rgba(146, 209, 0, 0.4) 30%, rgba(146, 209, 0, 0.4) 50%, rgba(45, 170, 60, 0) 50%, rgba(45, 170, 60, 0));*/
 }
 /*============================= Template 1 ========================*/
 
@@ -3501,3 +3504,4 @@ button.add_media{
     margin: 0;
     line-height: 1;
 }
+
