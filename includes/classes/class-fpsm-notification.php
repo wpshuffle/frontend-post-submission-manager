@@ -9,7 +9,7 @@ if (!class_exists('FPSM_Notification')) {
             add_action('fpsm_form_submission_success', array($this, 'trigger_admin_notification'), 10, 3);
             add_action('wp_trash_post', array($this, 'trigger_post_reject_notifications'));
             //add_action('init', array($this, 'post_publish_notification_helper'));
-            add_action('transition_post_status', array($this, 'trigger_post_publish_notification'), 10, 2);
+            add_action('transition_post_status', array($this, 'trigger_post_publish_notification'), 10, 3);
         }
 
         function trigger_admin_notification($insert_update_post_id, $form_row, $action) {
