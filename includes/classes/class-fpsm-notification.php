@@ -8,7 +8,8 @@ if (!class_exists('FPSM_Notification')) {
         function __construct() {
             add_action('fpsm_form_submission_success', array($this, 'trigger_admin_notification'), 10, 3);
             add_action('wp_trash_post', array($this, 'trigger_post_reject_notifications'));
-            add_action('init', array($this, 'post_publish_notification_helper'));
+            //add_action('init', array($this, 'post_publish_notification_helper'));
+            add_action('transition_post_status', array($this, 'trigger_post_publish_notification'), 10, 2);
         }
 
         function trigger_admin_notification($insert_update_post_id, $form_row, $action) {
@@ -66,12 +67,16 @@ if (!class_exists('FPSM_Notification')) {
             $post_types = $fpsm_library_obj->get_registered_post_types();
             foreach ($post_types as $post_type) {
                 $publish_action = 'publish_' . $post_type->name;
-                add_action($publish_action, array($this, 'trigger_post_publish_notification'), 10, 2);
+                add_action($publish_action, array($this, 'trigger_post_publish_notification'), 10, 3);
             }
         }
 
-        function trigger_post_publish_notification($post_id, $post) {
+        function trigger_post_publish_notification($new_status, $old_status, $post) {
             if (!(defined('REST_REQUEST') && REST_REQUEST )) {
+                if (!('publish' === $new_status && 'publish' !== $old_status)) {
+                    return;
+                }
+                $post_id = $post->ID;
 
                 $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
                 if (empty($form_alias)) {
