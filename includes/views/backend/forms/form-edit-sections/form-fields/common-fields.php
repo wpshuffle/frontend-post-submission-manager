@@ -26,7 +26,7 @@
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Field Note', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="<?php echo esc_attr($field_name_prefix); ?>[field_note]" value="<?php echo (!empty($field_details['field_note'])) ? esc_attr($field_details['field_note']) : ''; ?>"/>
+            <textarea name="<?php echo esc_attr($field_name_prefix); ?>[field_note]"><?php echo (!empty($field_details['field_note'])) ? $fpsm_library_obj->sanitize_html($field_details['field_note']) : ''; ?></textarea>
             <p class="description"><?php esc_html_e('This note will show just below the field. Pleaes leave blank if you don\'t want to display the field note.', 'frontend-post-submission-manager'); ?></p>
         </div>
     </div>

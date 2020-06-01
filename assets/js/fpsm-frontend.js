@@ -310,6 +310,10 @@ jQuery(document).ready(function ($) {
                             exit;
                         }
                     } else {
+                        if (data.redirect_url) {
+                            window.location = data.redirect_url;
+                            exit;
+                        }
                         if (selector.find('#g-recaptcha-response').length > 0) {
                             grecaptcha.reset();
                         }

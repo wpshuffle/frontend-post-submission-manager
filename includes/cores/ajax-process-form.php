@@ -218,15 +218,23 @@ if ($this->admin_ajax_nonce_verify()) {
                 update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
                 $response['status'] = 200;
                 $response['message'] = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
-                // If redirection is enabled
-                if (!empty($form_details['basic']['redirection'])) {
-                    if ($form_details['basic']['redirection_type'] == 'url') {
-                        if (!empty($form_details['basic']['redirection_url'])) {
-                            $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
+                // If redirection is enabled for post submission
+                if (empty($post_id)) {
+                    if (!empty($form_details['basic']['redirection'])) {
+                        if ($form_details['basic']['redirection_type'] == 'url') {
+                            if (!empty($form_details['basic']['redirection_url'])) {
+                                $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
+                            }
+                        } else {
+                            $post_url = get_the_permalink($insert_update_post_id);
+                            $response['redirect_url'] = $post_url;
                         }
-                    } else {
-                        $post_url = get_the_permalink($insert_update_post_id);
-                        $response['redirect_url'] = $post_url;
+                    }
+                } else {
+                    if (!empty($form_details['basic']['edit_redirection'])) {
+                        if (!empty($form_details['basic']['edit_redirection_url'])) {
+                            $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
+                        }
                     }
                 }
                 $action = (empty($post_id)) ? 'insert' : 'update';

@@ -45,7 +45,7 @@ $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
                             include(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file);
                             if (!empty($field_details['field_note'])) {
                                 ?>
-                                <div class="fpsm-field-note"><?php echo esc_html($field_details['field_note']); ?></div>
+                                <div class="fpsm-field-note"><?php echo $fpsm_library_obj->sanitize_html($field_details['field_note']); ?></div>
                                 <?php
                             }
                             ?>

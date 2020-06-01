@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Frontend Post Submission Manager\n"
-"POT-Creation-Date: 2020-05-20 03:31+0545\n"
+"POT-Creation-Date: 2020-06-02 02:53+0545\n"
 "PO-Revision-Date: 2020-05-15 03:50+0545\n"
 "Last-Translator: \n"
 "Language-Team: WP Shuffle\n"
@@ -117,45 +117,45 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:45
-#: includes/classes/admin/class-fpsm-ajax-admin.php:126
+#: includes/classes/admin/class-fpsm-ajax-admin.php:44
+#: includes/classes/admin/class-fpsm-ajax-admin.php:124
 msgid "Form title or Alias cannot be empty."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:62
+#: includes/classes/admin/class-fpsm-ajax-admin.php:61
 msgid "Form added successfully. Redirecting..."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:66
+#: includes/classes/admin/class-fpsm-ajax-admin.php:65
 msgid "Something went wrong. Please try again later."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:70
-#: includes/classes/admin/class-fpsm-ajax-admin.php:142
+#: includes/classes/admin/class-fpsm-ajax-admin.php:69
+#: includes/classes/admin/class-fpsm-ajax-admin.php:140
 msgid "Form alias already used. Please use some other alias."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:139
+#: includes/classes/admin/class-fpsm-ajax-admin.php:137
 msgid "Form updated successfully."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:169
+#: includes/classes/admin/class-fpsm-ajax-admin.php:167
 msgid "Form deleted successfully."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:172
+#: includes/classes/admin/class-fpsm-ajax-admin.php:170
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:194
+#: includes/classes/admin/class-fpsm-ajax-admin.php:192
 msgid "Settings saved successfully"
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:219
+#: includes/classes/admin/class-fpsm-ajax-admin.php:217
 msgid "Form copied successfully.Redirecting.."
 msgstr ""
 
-#: includes/classes/admin/class-fpsm-ajax-admin.php:223
+#: includes/classes/admin/class-fpsm-ajax-admin.php:221
 msgid "There occurred some error. Please try again later."
 msgstr ""
 
@@ -194,7 +194,7 @@ msgid "Post delete successfully."
 msgstr ""
 
 #: includes/classes/class-fpsm-ajax.php:152
-#: includes/cores/ajax-process-form.php:243
+#: includes/cores/ajax-process-form.php:251
 msgid "There occurred some error."
 msgstr ""
 
@@ -232,8 +232,8 @@ msgstr ""
 msgid "Post Content"
 msgstr ""
 
-#: includes/classes/class-fpsm-notification.php:51
-#: includes/classes/class-fpsm-notification.php:101
+#: includes/classes/class-fpsm-notification.php:52
+#: includes/classes/class-fpsm-notification.php:108
 #: includes/cores/admin-email-notification.php:6
 msgid "No Reply"
 msgstr ""
@@ -317,7 +317,7 @@ msgid "File Uploader"
 msgstr ""
 
 #: includes/classes/class-frontend-post-submission-manager.php:133
-#: includes/views/backend/forms/form-edit-sections/basic-settings.php:150
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:151
 #: includes/views/backend/js-templates/tmpl-url.php:3
 msgid "URL"
 msgstr ""
@@ -347,7 +347,7 @@ msgid "Form validation error occurred."
 msgstr ""
 
 #: includes/cores/ajax-process-form.php:117
-#: includes/cores/ajax-process-form.php:248
+#: includes/cores/ajax-process-form.php:256
 msgid "Invalid form submission"
 msgstr ""
 
@@ -842,19 +842,35 @@ msgid "This message will be shown after successful form submission"
 msgstr ""
 
 #: includes/views/backend/forms/form-edit-sections/basic-settings.php:137
-msgid "Redirection"
+msgid "Post Submit Redirection"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/basic-settings.php:144
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:140
+msgid "Please check if you want to enable redirection after post submission."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:145
 msgid "Redirection Type"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/basic-settings.php:151
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:152
 msgid "Published Post"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/basic-settings.php:156
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:157
 msgid "Redirection URL"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:165
+msgid "Post Edit Redirection"
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:168
+msgid "Please check if you want to enable redirection after post edit."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/basic-settings.php:172
+msgid "Edit Redirection URL"
 msgstr ""
 
 #: includes/views/backend/forms/form-edit-sections/custom-field-add-form.php:2
@@ -1424,8 +1440,8 @@ msgid "Admin Notification"
 msgstr ""
 
 #: includes/views/backend/forms/form-edit-sections/notification-settings.php:8
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:56
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:97
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:57
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:99
 msgid "Enable"
 msgstr ""
 
@@ -1440,52 +1456,73 @@ msgid ""
 msgstr ""
 
 #: includes/views/backend/forms/form-edit-sections/notification-settings.php:22
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:63
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:104
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:64
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:106
 msgid "Subject"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:28
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:69
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:110
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:25
+msgid ""
+"You can use [post_title] and [author_name] to replace it with submitted post "
+"title and author name in the subject while receiving the post admin "
+"notification."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:29
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:71
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:113
 msgid "From name"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:34
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:75
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:116
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:35
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:77
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:119
 msgid "From Email"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:40
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:81
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:122
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:41
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:83
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:125
 msgid "Message"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:43
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:44
 msgid ""
 "Please use [post_title],[post_admin_link] to replace it with the submitted "
 "post title and post admin link in the post submission admin notification "
 "email message."
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:52
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:53
 msgid "Post Publish Notification"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:84
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:67
+msgid ""
+"You can use [post_title] and [author_name] to replace it with submitted post "
+"title and author name in the subject while sending the post publish "
+"notification."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:86
 msgid ""
 "Please use [author_name],[post_title],[post_link] to replace with the "
 "approved post's author name, post title and post frontend link in the post "
 "publish email message."
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:93
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:95
 msgid "Post Trash Notification"
 msgstr ""
 
-#: includes/views/backend/forms/form-edit-sections/notification-settings.php:125
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:109
+msgid ""
+"You can use [post_title] and [author_name] to replace it with submitted post "
+"title and author name in the subject while sending the post trash "
+"notification."
+msgstr ""
+
+#: includes/views/backend/forms/form-edit-sections/notification-settings.php:128
 msgid ""
 "Please use [author_name] and [post_title] to replace with the rejected "
 "post's author name and post title in the email message."
