@@ -52,6 +52,8 @@ if (!class_exists('FPSM_Notification')) {
             $from_name = (!empty($form_details['notification']['post_trash']['from_name'])) ? $form_details['notification']['post_trash']['from_name'] : esc_html__('No Reply', 'frontend-post-submission-manager');
             $from_email = (!empty($form_details['notification']['post_trash']['from_email'])) ? $form_details['notification']['post_trash']['from_email'] : $fpsm_library_obj->default_from_email();
             $subject = (!empty($form_details['notification']['post_trash']['subject'])) ? $form_details['notification']['post_trash']['subject'] : $fpsm_library_obj->default_from_email();
+            $subject = str_replace('[post_title]', get_the_title($post_id), $subject);
+            $subject = str_replace('[author_name]', $author_name, $subject);
             $notification_message = (!empty($form_details['notification']['post_trash']['notification_message'])) ? $form_details['notification']['post_trash']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks($fpsm_library_obj->default_trash_notification());
             $notification_message = str_replace('[post_title]', get_the_title($post_id), $notification_message);
             $notification_message = str_replace('[author_name]', $author_name, $notification_message);
@@ -106,6 +108,8 @@ if (!class_exists('FPSM_Notification')) {
                 $from_name = (!empty($form_details['notification']['post_publish']['from_name'])) ? $form_details['notification']['post_publish']['from_name'] : esc_html__('No Reply', 'frontend-post-submission-manager');
                 $from_email = (!empty($form_details['notification']['post_publish']['from_email'])) ? $form_details['notification']['post_publish']['from_email'] : $fpsm_library_obj->default_from_email();
                 $subject = (!empty($form_details['notification']['post_publish']['subject'])) ? $form_details['notification']['post_publish']['subject'] : $fpsm_library_obj->default_from_email();
+                $subject = str_replace('[post_title]', get_the_title($post_id), $subject);
+                $subject = str_replace('[author_name]', $author_name, $subject);
                 $notification_message = (!empty($form_details['notification']['post_publish']['notification_message'])) ? $form_details['notification']['post_publish']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks($fpsm_library_obj->default_publish_notification());
                 $notification_message = str_replace('[post_title]', get_the_title($post_id), $notification_message);
                 $notification_message = str_replace('[author_name]', $author_name, $notification_message);
