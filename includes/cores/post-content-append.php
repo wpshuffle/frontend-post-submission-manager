@@ -103,6 +103,36 @@ foreach ($form_fields as $field_key => $field_details) {
                             case 'tel':
                                 ?><a href="tel:<?php echo esc_url($custom_field_value); ?>"><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
                                 break;
+                            case 'youtube':
+                                if (strpos('embed', $custom_field_value)) {
+                                    $youtube_embed_url = $custom_field_value;
+                                } else {
+                                    $url_array = explode('=', $custom_field_value);
+                                    $youtube_embed_url = 'https://www.youtube.com/embed/' . end($url_array);
+                                }
+                                $width = $field_details['embed_width'];
+                                $height = $field_details['embed_height'];
+                                ?>
+                                <iframe
+                                    class="fpsm-youtube-embed-iframe"
+                                    width="<?php echo esc_attr($width); ?>"
+                                    height="<?php echo esc_attr($height); ?>"
+                                    src="<?php echo esc_url($youtube_embed_url); ?>"
+                                    <?php
+                                    /**
+                                     * Fires inside the youtube embed iframe
+                                     *
+                                     * @param string $custom_field_meta_key
+                                     * @param array $form_row
+                                     *
+                                     * @since 1.0.8
+                                     */
+                                    do_action('fpsm_youtube_embed_extra', $custom_field_meta_key, $form_row);
+                                    ?>
+                                    allowfullscreen>
+                                </iframe>
+                                <?php
+                                break;
                         }
                         ?>
                     </div>

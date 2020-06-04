@@ -34,6 +34,9 @@
             if ($field_details['field_type'] == 'url') {
                 include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-url-fields.php');
             }
+            if ($field_details['field_type'] == 'youtube') {
+                include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-youtube-fields.php');
+            }
         } else {
             ?>
             <# if(data.field_type == 'file_uploader'){ #>
@@ -44,6 +47,11 @@
             <# if(data.field_type == 'url'){ #>
             <?php
             include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-url-fields.php');
+            ?>
+            <# } #>
+            <# if(data.field_type == 'youtube'){ #>
+            <?php
+            include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-youtube-fields.php');
             ?>
             <# } #>
             <?php

@@ -180,6 +180,25 @@ if (!empty($fpsm_form_alias)) {
                                 <input type="tel" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>"/>
                                 <?php
                                 break;
+                            case 'youtube':
+                                if (strpos('embed', $custom_field_value)) {
+                                    $youtube_embed_url = $custom_field_value;
+                                } else {
+                                    $url_array = explode('=', $custom_field_value);
+                                    $youtube_embed_url = 'https://www.youtube.com/embed/' . end($url_array);
+                                }
+                                $width = $field_details['embed_width'];
+                                $height = $field_details['embed_height'];
+                                ?>
+                                <iframe
+                                    class="fpsm-youtube-embed-iframe"
+                                    width="<?php echo esc_attr($width); ?>"
+                                    height="<?php echo esc_attr($height); ?>"
+                                    src="<?php echo esc_url($youtube_embed_url); ?>"
+                                    allowfullscreen>
+                                </iframe>
+                                <?php
+                                break;
                         }
                         ?>
                     </div>
