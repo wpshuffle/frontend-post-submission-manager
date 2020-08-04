@@ -215,7 +215,7 @@ if (!class_exists('FPSM_Library')) {
             foreach ($terms as $term) {
                 if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $value = ($hierarchical == 0) ? $term->name : $term->term_id;
+                    $value = (empty($hierarchical)) ? $term->name : $term->term_id;
                     if (is_array($selected_terms)) {
                         $selected = (in_array($value, $selected_terms)) ? 'selected="selected"' : '';
                     } else {
