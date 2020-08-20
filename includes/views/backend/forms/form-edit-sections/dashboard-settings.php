@@ -1,72 +1,79 @@
 <?php
-$dashboard_settings = (!empty($form_details['dashboard'])) ? $form_details['dashboard'] : array();
+$dashboard_settings = (!empty( $form_details['dashboard'] )) ? $form_details['dashboard'] : array();
 $default_display_fields = array(
-    'sn' => array('show_on_table' => 1, 'display_label' => esc_html__('SN', 'frontend-post-submission-manager')),
-    'post_title' => array('show_on_table' => 1, 'display_label' => esc_html__('Post Title', 'frontend-post-submission-manager')),
-    'post_status' => array('show_on_table' => 1, 'display_label' => esc_html__('Post Status', 'frontend-post-submission-manager')),
-    'last_modified' => array('show_on_table' => 1, 'display_label' => esc_html__('Last Modified', 'frontend-post-submission-manager')),
+    'sn' => array( 'show_on_table' => 1, 'display_label' => esc_html__( 'SN', 'frontend-post-submission-manager' ) ),
+    'post_title' => array( 'show_on_table' => 1, 'display_label' => esc_html__( 'Post Title', 'frontend-post-submission-manager' ) ),
+    'post_status' => array( 'show_on_table' => 1, 'display_label' => esc_html__( 'Post Status', 'frontend-post-submission-manager' ) ),
+    'last_modified' => array( 'show_on_table' => 1, 'display_label' => esc_html__( 'Last Modified', 'frontend-post-submission-manager' ) ),
 );
-$display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_settings['display_fields'] : $default_display_fields;
+$display_fields = (!empty( $dashboard_settings['display_fields'] )) ? $dashboard_settings['display_fields'] : $default_display_fields;
 ?>
 <div class="fpsm-settings-each-section" data-tab="dashboard" style="display:none;">
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('SN Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'SN Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][sn_label]" value="<?php echo (!empty($dashboard_settings['sn_label'])) ? esc_attr($dashboard_settings['sn_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][sn_label]" value="<?php echo (!empty( $dashboard_settings['sn_label'] )) ? esc_attr( $dashboard_settings['sn_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Post Title Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Post Title Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][post_title_label]" value="<?php echo (!empty($dashboard_settings['post_title_label'])) ? esc_attr($dashboard_settings['post_title_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][post_title_label]" value="<?php echo (!empty( $dashboard_settings['post_title_label'] )) ? esc_attr( $dashboard_settings['post_title_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Post Status Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Post Status Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][post_status_label]" value="<?php echo (!empty($dashboard_settings['post_status_label'])) ? esc_attr($dashboard_settings['post_status_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][post_status_label]" value="<?php echo (!empty( $dashboard_settings['post_status_label'] )) ? esc_attr( $dashboard_settings['post_status_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Last Modified Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Last Modified Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][last_modified_label]" value="<?php echo (!empty($dashboard_settings['last_modified_label'])) ? esc_attr($dashboard_settings['last_modified_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][last_modified_label]" value="<?php echo (!empty( $dashboard_settings['last_modified_label'] )) ? esc_attr( $dashboard_settings['last_modified_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Action Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Action Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][action_label]" value="<?php echo (!empty($dashboard_settings['action_label'])) ? esc_attr($dashboard_settings['action_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][action_label]" value="<?php echo (!empty( $dashboard_settings['action_label'] )) ? esc_attr( $dashboard_settings['action_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Posts Per Page', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Posts Per Page', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="number" name="form_details[dashboard][posts_per_page]" value="<?php echo (!empty($dashboard_settings['posts_per_page'])) ? intval($dashboard_settings['posts_per_page']) : 20 ?>"/>
+            <input type="number" name="form_details[dashboard][posts_per_page]" value="<?php echo (!empty( $dashboard_settings['posts_per_page'] )) ? intval( $dashboard_settings['posts_per_page'] ) : 20 ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Next Page Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Next Page Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][next_page_label]" value="<?php echo (!empty($dashboard_settings['next_page_label'])) ? esc_attr($dashboard_settings['next_page_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][next_page_label]" value="<?php echo (!empty( $dashboard_settings['next_page_label'] )) ? esc_attr( $dashboard_settings['next_page_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Previous Page Label', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Previous Page Label', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][previous_page_label]" value="<?php echo (!empty($dashboard_settings['previous_page_label'])) ? esc_attr($dashboard_settings['previous_page_label']) : ''; ?>"/>
+            <input type="text" name="form_details[dashboard][previous_page_label]" value="<?php echo (!empty( $dashboard_settings['previous_page_label'] )) ? esc_attr( $dashboard_settings['previous_page_label'] ) : ''; ?>"/>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Disable Post Delete', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Disable Post Edit', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="checkbox" name="form_details[dashboard][disable_post_delete]" value="1" <?php echo (!empty($dashboard_settings['disable_post_delete'])) ? 'checked="checked"' : ''; ?>/>
+            <input type="checkbox" name="form_details[dashboard][disable_post_edit]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_edit'] )) ? 'checked="checked"' : ''; ?>/>
+            <p class="description"><?php esc_html_e( 'Please check if you want to disable post edit for already published/approved posts.', 'frontend-post-submission-manager' ); ?></p>
         </div>
     </div>
     <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Post Delete Warning Message', 'frontend-post-submission-manager'); ?></label>
+        <label><?php esc_html_e( 'Disable Post Delete', 'frontend-post-submission-manager' ); ?></label>
         <div class="fpsm-field">
-            <input type="text" name="form_details[dashboard][post_delete_warning_message]" value="<?php echo (!empty($dashboard_settings['post_delete_warning_message'])) ? esc_attr($dashboard_settings['post_delete_warning_message']) : ''; ?>"/>
+            <input type="checkbox" name="form_details[dashboard][disable_post_delete]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_delete'] )) ? 'checked="checked"' : ''; ?>/>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e( 'Post Delete Warning Message', 'frontend-post-submission-manager' ); ?></label>
+        <div class="fpsm-field">
+            <input type="text" name="form_details[dashboard][post_delete_warning_message]" value="<?php echo (!empty( $dashboard_settings['post_delete_warning_message'] )) ? esc_attr( $dashboard_settings['post_delete_warning_message'] ) : ''; ?>"/>
         </div>
     </div>
 </div>
