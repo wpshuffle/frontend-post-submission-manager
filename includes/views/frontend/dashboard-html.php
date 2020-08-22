@@ -93,6 +93,10 @@ if ( !empty( $current_user_id ) ) {
                 ) );
                 ?>
             </div>
-        <?php } ?>
+        <?php
+        }
+        wp_reset_query();
+        wp_reset_postdata();
+        ?>
     </div>
 <?php } ?>
