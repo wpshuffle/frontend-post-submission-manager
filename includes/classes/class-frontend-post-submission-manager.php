@@ -133,6 +133,7 @@ if ( !class_exists( 'Frontend_Post_Submission_Manager' ) ) {
                 'url' => array( 'label' => esc_html__( 'URL', 'frontend-post-submission-manager' ), 'icon' => 'fas fa-globe-asia' ),
                 'tel' => array( 'label' => esc_html__( 'Tel', 'frontend-post-submission-manager' ), 'icon' => 'fas fa-phone' ),
                 'youtube' => array( 'label' => esc_html__( 'Youtube Embed', 'frontend-post-submission-manager' ), 'icon' => 'fab fa-youtube' ),
+                'hidden' => array( 'label' => esc_html( 'Hidden', 'frontend-post-submission-manager' ), 'icon' => 'far fa-minus-square' )
             );
             /**
              * Filters custom field type list

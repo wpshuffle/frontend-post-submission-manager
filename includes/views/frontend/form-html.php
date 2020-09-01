@@ -39,26 +39,33 @@ if ( !empty( $edit_post ) ) {
                         $field_type_class = ' fpsm-taxonomy-' . $field_type;
                     } else if ( $fpsm_library_obj->is_custom_field_key( $field_key ) ) {
                         $field_type = $field_details['field_type'];
+
                         $field_type_class = ' fpsm-custom-field-' . $field_type;
                     } else {
                         $field_type_class = '';
                     }
-                    ?>
-                    <div class="fpsm-field-wrap<?php echo esc_attr( $field_type_class ); ?> <?php echo esc_attr( $field_class ); ?>" data-field-key="<?php echo esc_attr( $field_key ); ?>">
-                        <label><?php echo (!empty( $field_details['field_label'] )) ? esc_html( $field_details['field_label'] ) : ''; ?></label>
-                        <div class="fpsm-field">
-                            <?php
-                            include(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file);
-                            if ( !empty( $field_details['field_note'] ) ) {
-                                ?>
-                                <div class="fpsm-field-note"><?php echo $fpsm_library_obj->sanitize_html( $field_details['field_note'] ); ?></div>
+                    $is_hidden = (!empty( $field_type ) && $field_type == 'hidden') ? true : false;
+                    if ( $is_hidden ) {
+                        include(FPSM_PATH . '/includes/views/frontend/form-fields/custom-field-types/front-hidden.php');
+                    } else {
+                        ?>
+
+                        <div class="fpsm-field-wrap<?php echo esc_attr( $field_type_class ); ?> <?php echo esc_attr( $field_class ); ?>" data-field-key="<?php echo esc_attr( $field_key ); ?>">
+                            <label><?php echo (!empty( $field_details['field_label'] )) ? esc_html( $field_details['field_label'] ) : ''; ?></label>
+                            <div class="fpsm-field">
                                 <?php
-                            }
-                            ?>
+                                include(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file);
+                                if ( !empty( $field_details['field_note'] ) ) {
+                                    ?>
+                                    <div class="fpsm-field-note"><?php echo $fpsm_library_obj->sanitize_html( $field_details['field_note'] ); ?></div>
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                            <div class="fpsm-error"></div>
                         </div>
-                        <div class="fpsm-error"></div>
-                    </div>
-                    <?php
+                        <?php
+                    }
                 }
             }
         }
