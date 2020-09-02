@@ -1015,3 +1015,13 @@ div#fpsm-metabox .inside {
 
 
 }
+div#fpsm-metabox .fpsm-custom-file_uploader {
+    max-width: 80%;
+}
+a.fpsm-file-view-button {
+    background: #2d85b1;
+    text-decoration: none;
+    padding: 5px 2px;
+    color: #fff;
+    margin-right: 10px;
+}
