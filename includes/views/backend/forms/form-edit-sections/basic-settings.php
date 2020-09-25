@@ -39,9 +39,10 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Post Status', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <select name="form_details[basic][post_status]">
+            <select name="form_details[basic][post_status]" class="fpsm-post-status">
                 <?php
-                $post_statuses = $fpsm_library_obj->get_all_post_statuses();
+                $post_statuses = get_post_statuses();
+                $post_statuses['dynamic'] = 'Dynamic';
                 $selected_post_status = (!empty($basic_settings['post_status'])) ? $basic_settings['post_status'] : 'draft';
                 foreach ($post_statuses as $post_status => $post_status_label) {
                     ?>

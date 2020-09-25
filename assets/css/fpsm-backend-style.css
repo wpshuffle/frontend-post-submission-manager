@@ -416,8 +416,8 @@ table.fixed{table-layout: auto !important;}
     border-bottom-left-radius: 3px;
 }
 .fpsm-clipboard-copy{display: inline-block;vertical-align: top;color: #27ae60;margin-left: 10px;cursor: pointer;line-height: 30px;background:#dbead7;margin-left: -3px;padding: 0 10px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;}
+                     border-top-right-radius: 3px;
+                     border-bottom-right-radius: 3px;}
 
 .fpsm-field select{
     height: 38px;
@@ -521,7 +521,7 @@ table.fpsm-form-lists-table thead tr th:last-child{width: 138px;}
 }
 .fpsm-field-head h3 span.dashicons{
     margin-right: 8px;
-    
+
 }
 .fpsm-form-fields-wrap {
     float: left;
@@ -861,7 +861,7 @@ label{
 .fpsm-media-preview,.fpsm-post-template-preview {
     margin-top: 10px;
 }
- input.button-secondary.fpsm-alias-force-edit {
+input.button-secondary.fpsm-alias-force-edit {
     margin-top: 10px;
 }
 
@@ -1024,4 +1024,12 @@ a.fpsm-file-view-button {
     padding: 5px 2px;
     color: #fff;
     margin-right: 10px;
+}
+@media only screen and (max-width: 1400px) {
+    .fpsm-form-wrap .fpsm-field,
+    .fpsm-field{
+        width: 100%;
+        max-width: 400px;
+        padding-left: 20px;
+    }
 }

@@ -28,6 +28,100 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                     <input type="text" name="form_details[form][submit_button_label]" value="<?php echo (!empty($form_settings['submit_button_label'])) ? esc_attr($form_settings['submit_button_label']) : ''; ?>"/>
                 </div>
             </div>
+            <div class="fpsm-dynamic-post-status-wrap">
+                <div class="fpsm-field-wrap">
+                    <h3 class="fpsm-form-settings-heading"><?php esc_html_e('Post Status Specific Submit Buttons', 'frontend-post-submission-manager'); ?></h3>
+                    <?php
+                    $post_statuses = get_post_statuses();
+                    foreach ($post_statuses as $post_status => $post_status_label) {
+                        $field_name_prefix = "form_details[form][post_status][$post_status]";
+                        $post_status_details = (!empty($form_details['form']['post_status'])) ? $form_details['form']['post_status'][$post_status] : array();
+                        ?>
+                        <div class="fpsm-each-form-field">
+                            <div class="fpsm-field-head fpsm-clearfix ui-sortable-handle">
+                                <h3 class="fpsm-field-title"><span class="dashicons dashicons-arrow-down"></span><?php echo esc_html($post_status_label); ?></h3>
+                            </div>
+                            <div class="fpsm-field-body fpsm-display-none">
+                                <div class="fpsm-field-wrap">
+                                    <label><?php esc_html_e('Enable', 'frontend-post-submission-manager'); ?></label>
+                                    <div class="fpsm-field">
+                                        <input
+                                            type="checkbox"
+                                            name="<?php echo esc_attr($field_name_prefix); ?>[enable]"
+                                            value="1"
+                                            <?php echo (!empty($post_status_details['enable'])) ? 'checked="checked"' : ''; ?>
+                                            class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref-<?php echo esc_attr($post_status); ?>"
+                                            />
+                                    </div>
+                                </div>
+                                <div class="fpsm-show-fields-ref-<?php echo esc_attr($post_status); ?> <?php echo (empty($post_status_details['enable'])) ? 'fpsm-display-none' : ''; ?>">
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Label', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input type="text" name="<?php echo esc_attr($field_name_prefix) ?>[label]" value="<?php echo (!empty($post_status_details['label'])) ? esc_attr($post_status_details['label']) : ''; ?>"/>
+                                        </div>
+                                    </div>
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Admin Email Notification', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input
+                                                type="checkbox"
+                                                name="<?php echo esc_attr($field_name_prefix); ?>[email_notification]"
+                                                value="1"
+                                                <?php echo (!empty($post_status_details['email_notification'])) ? 'checked="checked"' : ''; ?>
+                                                />
+                                            <p class="description"><?php esc_html_e('Please check if you want to send email notification when users submits with this post status button.', 'frontend-post-submission-manager'); ?></p>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    if ($post_status == 'draft') {
+                                        ?>
+                                        <div class="fpsm-field-wrap">
+                                            <label><?php esc_html_e('Disable Field Required Check', 'frontend-post-submission-manager'); ?></label>
+                                            <div class="fpsm-field">
+                                                <input
+                                                    type="checkbox"
+                                                    name="<?php echo esc_attr($field_name_prefix); ?>[disable_field_required_check]"
+                                                    value="1"
+                                                    <?php echo (!empty($post_status_details['disable_field_required_check'])) ? 'checked="checked"' : ''; ?>
+                                                    />
+                                                <p class="description"><?php esc_html_e('Please check if you want to disable the field required validation on draft save.', 'frontend-post-submission-manager'); ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="fpsm-field-wrap">
+                                            <label><?php esc_html_e('Auto Draft', 'frontend-post-submission-manager'); ?></label>
+                                            <div class="fpsm-field">
+                                                <input
+                                                    type="checkbox"
+                                                    name="<?php echo esc_attr($field_name_prefix); ?>[auto_draft]"
+                                                    value="1"
+                                                    class="fpsm-checkbox-toggle-trigger"
+                                                    data-toggle-class='fpsm-auto-draft-save-time'
+                                                    <?php echo (!empty($post_status_details['auto_draft'])) ? 'checked="checked"' : ''; ?>
+                                                    />
+                                                <p class="description"><?php esc_html_e('Please check if you want to enable the auto draft save.', 'frontend-post-submission-manager'); ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="fpsm-field-wrap fpsm-auto-draft-save-time <?php echo (empty($post_status_details['auto_draft_save_time'])) ? 'fpsm-display-none' : ''; ?>">
+                                            <label><?php esc_html_e('Auto Draft Save Time', 'frontend-post-submission-manager'); ?></label>
+                                            <div class="fpsm-field">
+                                                <input type="text"
+                                                       name="<?php echo esc_attr($field_name_prefix) ?>[auto_draft_save_time]"
+                                                       value="<?php echo (!empty($post_status_details['auto_draft_save_time'])) ? esc_attr($post_status_details['auto_draft_save_time']) : ''; ?>"/>
+                                                <p class="description"><?php esc_html_e('Please enter the time interval in seconds in which the draft shall be auto saved.', 'frontend-post-submission-manager'); ?></p>
+                                            </div>
+                                        </div>
+
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                </div>
+            </div>
         </div>
     </div>
 
