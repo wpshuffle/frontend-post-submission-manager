@@ -59,16 +59,50 @@ $display_fields = (!empty( $dashboard_settings['display_fields'] )) ? $dashboard
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Disable Post Edit', 'frontend-post-submission-manager' ); ?></label>
-        <div class="fpsm-field">
-            <input type="checkbox" name="form_details[dashboard][disable_post_edit]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_edit'] )) ? 'checked="checked"' : ''; ?>/>
-            <p class="description"><?php esc_html_e( 'Please check if you want to disable post edit for already published/approved posts.', 'frontend-post-submission-manager' ); ?></p>
+        <div class="fpsm-field fpsm-post-status-edit-disable">
+            <?php
+            $default_checked_status = (!empty( $dashboard_settings['disable_post_edit'] )) ? array( 'publish' ) : array();
+            $checked_disable_post_edit_status = (!empty( $dashboard_settings['disable_post_edit_status'] )) ? $dashboard_settings['disable_post_edit_status'] : $default_checked_status;
+            $post_statuses = get_post_statuses();
+            foreach ( $post_statuses as $post_status => $post_status_label ) {
+                ?>
+                <label class="fpsm-display-block">
+                    <input class="fpsm-disable-checkbox-toggle" type="checkbox" name="form_details[dashboard][disable_post_edit_status][]" value="<?php echo esc_attr( $post_status ); ?>" <?php echo (in_array( $post_status, $checked_disable_post_edit_status )) ? 'checked="checked"' : ''; ?>/>
+                    <span><?php echo esc_html( $post_status_label ); ?></span>
+                </label>
+                <?php
+            }
+            ?>
+            <?php /* <input type="checkbox" name="form_details[dashboard][disable_post_edit]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_edit'] )) ? 'checked="checked"' : ''; ?>/> */ ?>
+            <p class="description"><?php esc_html_e( 'Please check if you want to disable post edit for above post statuses.', 'frontend-post-submission-manager' ); ?></p>
         </div>
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Disable Post Delete', 'frontend-post-submission-manager' ); ?></label>
-        <div class="fpsm-field">
-            <input type="checkbox" name="form_details[dashboard][disable_post_delete]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_delete'] )) ? 'checked="checked"' : ''; ?>/>
+        <div class="fpsm-field fpsm-post-status-edit-disable">
+            <?php
+            $post_statuses = get_post_statuses();
+            $default_checked_status = (!empty( $dashboard_settings['disable_post_delete'] )) ? array_keys( $post_statuses ) : array();
+
+            $checked_disable_post_delete_status = (!empty( $dashboard_settings['disable_post_delete_status'] )) ? $dashboard_settings['disable_post_delete_status'] : $default_checked_status;
+            foreach ( $post_statuses as $post_status => $post_status_label ) {
+                ?>
+                <label class="fpsm-display-block">
+                    <input class="fpsm-disable-checkbox-toggle" type="checkbox" name="form_details[dashboard][disable_post_delete_status][]" value="<?php echo esc_attr( $post_status ); ?>" <?php echo (in_array( $post_status, $checked_disable_post_delete_status )) ? 'checked="checked"' : ''; ?>/>
+                    <span><?php echo esc_html( $post_status_label ); ?></span>
+                </label>
+                <?php
+            }
+            ?>
+            <p class="description"><?php esc_html_e( 'Please check if you want to disable post delete for above post statuses.', 'frontend-post-submission-manager' ); ?></p>
         </div>
+        <?php /*
+          <div>
+          <input type="checkbox" name="form_details[dashboard][disable_post_delete]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_delete'] )) ? 'checked="checked"' : ''; ?>
+          </div>
+         *
+         */
+        ?>
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e( 'Post Delete Warning Message', 'frontend-post-submission-manager' ); ?></label>

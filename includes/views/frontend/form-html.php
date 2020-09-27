@@ -102,7 +102,24 @@ if ( !empty( $edit_post ) ) {
     ?>
     <div class="fpsm-field-wrap fpsm-has-submit-btn">
         <div class="fpsm-field">
-            <input type="submit" value="<?php echo (!empty( $form_details['form']['submit_button_label'] )) ? esc_attr( $form_details['form']['submit_button_label'] ) : esc_html__( 'Submit', 'frontend-post-submission-manager' ); ?>"/>
+            <?php
+            $post_status = $form_details['basic']['post_status'];
+            if ( $post_status != 'dynamic' ) {
+                ?>
+                <input type="submit" value="<?php echo (!empty( $form_details['form']['submit_button_label'] )) ? esc_attr( $form_details['form']['submit_button_label'] ) : esc_html__( 'Submit', 'frontend-post-submission-manager' ); ?>"/>
+                <?php
+            } else {
+                $form_post_status_buttons = (!empty( $form_details['form']['post_status'] )) ? $form_details['form']['post_status'] : array( 'draft' => array( 'status' => 1, 'label' => esc_html__( 'Submit', 'frontend-post-submission-manager' ) ) );
+                foreach ( $form_post_status_buttons as $form_post_button_status => $form_post_button_details ) {
+                    ?>
+                    <input type="submit" value="<?php echo esc_attr( $form_post_button_details['label'] ) ?>" data-post-status="<?php echo esc_attr( $form_post_button_status ); ?>"/>
+                    <?php
+                }
+                ?>
+                <input type="hidden" name="dynamic_post_status" value="<?php ?>"/>
+                <?php
+            }
+            ?>
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader"/>
         </div>
     </div>

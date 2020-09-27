@@ -1033,3 +1033,17 @@ a.fpsm-file-view-button {
         padding-left: 20px;
     }
 }
+.fpsm-display-block{display:block !important;}
+.fpsm-field.fpsm-post-status-edit-disable label.fpsm-display-block {
+    margin-bottom: 5px;
+}
+.fpsm-field.fpsm-post-status-edit-disable label.fpsm-display-block span{
+    cursor: pointer;
+}
+.fpsm-custom-field-add-form .fpsm-field-wrap > label {
+    width: 100%;
+}
+.wrap.fpsm-wrap .description {
+    font-style: italic;
+    margin-top: 10px;
+}

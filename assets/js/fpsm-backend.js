@@ -82,8 +82,11 @@ jQuery(document).ready(function ($) {
     function initialize_checkbox_toggle() {
 
         $('.fpsm-field input[type="checkbox"]').each(function () {
-            if (!$(this).parent().hasClass('fpsm-checkbox-toggle') && !$(this).hasClass('fpsm-disable-checkbox-toggle')) {
+            if (!($(this).parent().hasClass('fpsm-checkbox-toggle')) && !($(this).hasClass('fpsm-disable-checkbox-toggle'))) {
                 var input_name = $(this).attr('name');
+                console.log(input_name);
+                console.log($(this).hasClass('fpsm-disable-checkbox-toggle'));
+
                 $(this).parent().addClass('fpsm-checkbox-toggle');
                 $('<label></label>').insertAfter($(this));
             }
