@@ -18,17 +18,33 @@ if (!empty($current_user_id)) {
             <?php
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
             $posts_per_page = (!empty($form_details['dashboard']['posts_per_page'])) ? $form_details['dashboard']['posts_per_page'] : 20;
+            $post_status_keys = array_keys($post_statuses);
             $dashboard_posts_args = array(
                 'post_type' => $form_row->post_type,
                 'posts_per_page' => $posts_per_page,
                 'orderby' => 'date',
                 'order' => 'desc',
                 'author' => $current_user_id,
-                'post_status' => array('publish', 'pending', 'draft'),
+                'post_status' => $post_statuses,
                 'meta_key' => '_fpsm_form_alias',
                 'meta_value' => $alias,
                 'paged' => $paged
             );
+            if (!empty($form_details['dashboard']['list_all_administrator'])) {
+                unset($dashboard_posts_args['author']);
+            }
+            echo "<pre>";
+            print_r($dashboard_posts_args);
+            echo "</pre>";
+            /**
+             * Filters the query args for fetching dashboard posts
+             *
+             * @param array $dashboard_posts_args
+             * @param mixed $form_row
+             *
+             * @since 1.1.1
+             */
+            $dashboard_posts_args = apply_filters('fpsm_dashboard_args', $dashboard_posts_args, $form_row);
             $dashboard_posts_query = new WP_Query($dashboard_posts_args);
 
             if ($dashboard_posts_query->have_posts()) {
@@ -39,7 +55,7 @@ if (!empty($current_user_id)) {
                     <div class="fpsm-dashboard-row">
                         <div class="fpsm-dashboard-column"><?php echo esc_html($sn++); ?></div>
                         <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
-                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?>"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
+                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
                         <div class="fpsm-dashboard-column"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
                         <div class="fpsm-dashboard-column">
                             <?php
@@ -48,15 +64,32 @@ if (!empty($current_user_id)) {
                             $post_edit_url = $fpsm_library_obj->get_post_edit_url($post_id);
                             $post_edit_flag = true;
                             $post_status = get_post_status();
-                            if (!empty($form_details['dashboard']['disable_post_edit']) && $post_status == 'publish') {
-                                $post_edit_flag = false;
+                            if (empty($form_details['dashboard']['disable_post_edit_status'])) {
+                                if (!empty($form_details['dashboard']['disable_post_edit'])) {
+                                    $disabled_post_edit_status = array('publish');
+                                } else {
+                                    $disabled_post_edit_status = array();
+                                }
+                            } else {
+                                $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
                             }
+                            $post_edit_flag = (in_array($post_status, $disabled_post_edit_status)) ? false : true;
+                            if (empty($form_details['dashboard']['disable_post_delete_status'])) {
+                                if (!empty($form_details['dashboard']['disable_post_delete'])) {
+                                    $disabled_post_delete_status = array('publish');
+                                } else {
+                                    $disabled_post_delete_status = array();
+                                }
+                            } else {
+                                $disabled_post_delete_status = $form_details['dashboard']['disable_post_delete_status'];
+                            }
+                            $post_delete_flag = (in_array($post_status, $disabled_post_delete_status)) ? false : true;
                             if ($post_edit_flag) {
                                 ?>
                                 <a href="<?php echo esc_url($post_edit_url); ?>" title="<?php esc_html_e('Edit', 'frontend-post-submission-manager'); ?>" class="fpsm-edit-post"><i class="fas fa-pencil-alt"></i></a>
                                 <?php
                             }
-                            if (empty($form_details['dashboard']['disable_post_delete'])) {
+                            if ($post_delete_flag) {
                                 $post_delete_warning_message = (!empty($form_details['dashboard']['post_delete_warning_message'])) ? $form_details['dashboard']['post_delete_warning_message'] : esc_html__('Are you sure you want to delete this post?', 'frontend-post-submission-manager');
                                 $delete_key = md5(get_the_date('d-m-y H:i a'));
                                 ?>

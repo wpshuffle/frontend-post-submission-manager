@@ -113,8 +113,8 @@ jQuery(document).ready(function ($) {
                 onCancel: function (id, fileName) {},
                 onError: function (id, fileName, xhr) {},
                 messages: {
-                    typeError: (extensions_error == '')?translation_strings.typeError:extensions_error,
-                    sizeError: (sizeLimit_error!='')?sizeLimit_error:translation_strings.sizeError,
+                    typeError: (extensions_error == '') ? translation_strings.typeError : extensions_error,
+                    sizeError: (sizeLimit_error != '') ? sizeLimit_error : translation_strings.sizeError,
                     minSizeError: translation_strings.minSizeError,
                     emptyError: translation_strings.emptyError,
                     onLeave: translation_strings.onLeave,
@@ -303,13 +303,15 @@ jQuery(document).ready(function ($) {
                 data = $.parseJSON(data);
                 if (data.status == 200) {
                     selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
-                    if (selector.find('.fpsm-edit-post-id').length == 0) {
+
+                    if (!data.draft_post_id) {
                         fpsm_reset_form(selector);
                         if (data.redirect_url) {
                             window.location = data.redirect_url;
                             exit;
                         }
                     } else {
+                        selector.find('.fpsm-edit-post-id').val(data.draft_post_id);
                         if (data.redirect_url) {
                             window.location = data.redirect_url;
                             exit;
@@ -416,6 +418,26 @@ jQuery(document).ready(function ($) {
                 }
         );
     }
+
+    /**
+     * Enter key form submit disable
+     */
+    $('.fpsm-front-form').each(function () {
+        if ($(this).find('input[type="submit"]').length > 1) {
+            $(this).on('keypress', ':input:not(textarea):not([type=submit])',
+                    function (event) {
+                        if (event.which == '13') {
+                            event.preventDefault();
+                        }
+                    });
+        }
+    });
+
+    $('body').on('click', '.fpsm-front-form input[type="submit"]', function () {
+        var dynamic_post_status = $(this).data('post-status');
+        $(this).closest('form').find('input[name="dynamic_post_status"]').val(dynamic_post_status);
+    });
+
 
 
 });

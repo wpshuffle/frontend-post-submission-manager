@@ -8,11 +8,13 @@ if ($this->admin_ajax_nonce_verify()) {
     global $fpsm_library_obj;
     $form_data = $fpsm_library_obj->sanitize_array($form_data, array('post_content' => 'html'));
     $form_alias = $form_data['form_alias'];
+
     $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
     if (empty($form_row)) {
         die(esc_html__('No form found for this alias.', 'frontend-post-submission-manager'));
     }
     $form_details = maybe_unserialize($form_row->form_details);
+    $dynamic_post_status = (!empty($form_data['dynamic_post_status'])) ? $form_data['dynamic_post_status'] : $form_details['basic']['post_status'];
     $form_fields = $form_details['form']['fields'];
     $error_flag = 0;
     $error_details = array();
@@ -20,6 +22,12 @@ if ($this->admin_ajax_nonce_verify()) {
     if (!empty($form_fields)) {
         $taxonomy_lists = array();
         $custom_field_lists = array();
+        $required_check = true;
+        if ($form_row->form_type == 'login_require' && $dynamic_post_status == 'draft') {
+            if (!empty($form_details['form']['post_status']['draft']['disable_field_required_check'])) {
+                $required_check = false;
+            }
+        }
         foreach ($form_fields as $field_key => $field_details) {
             if ($fpsm_library_obj->is_taxonomy_key($field_key)) {
                 $taxonomy_lists[] = $field_key;
@@ -28,7 +36,7 @@ if ($this->admin_ajax_nonce_verify()) {
             if (!empty($field_details['show_on_form'])) {
                 $required_message = (!empty($field_details['required_error_message'])) ? esc_html__($field_details['required_error_message']) : esc_html__('This field is requied', 'frontend-post-submission-manager');
                 // if the field is required
-                if (!empty($field_details['required']) && empty($form_data[$field_key])) {
+                if (!empty($field_details['required']) && empty($form_data[$field_key]) && $required_check) {
                     $error_flag = 1;
                     $error_details[$field_key] = $required_message;
                 } else {
@@ -43,7 +51,7 @@ if ($this->admin_ajax_nonce_verify()) {
                         case 'post_excerpt':
                         case 'author_name':
                         case 'author_email':
-                            if (!empty($field_details['character_limit'])) {
+                            if (!empty($field_details['character_limit']) && $required_check) {
                                 $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
                                 if ($field_value_length > $field_details['character_limit']) {
                                     $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
@@ -53,7 +61,7 @@ if ($this->admin_ajax_nonce_verify()) {
                             }
                             break;
                         case 'custom_field':
-                            if (!empty($field_details['character_limit'])) {
+                            if (!empty($field_details['character_limit']) && $required_check) {
                                 $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
                                 if ($field_value_length > $field_details['character_limit']) {
                                     $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
@@ -121,17 +129,32 @@ if ($this->admin_ajax_nonce_verify()) {
                 $post_author_id = intval($form_details['basic']['post_author']);
             }
             //Lets check the post status of the post for edited post
-            $post_status = (!empty($post_id)) ? get_post_status($post_id) : $post_status;
+            //$post_status = (!empty($post_id)) ? get_post_status($post_id) : $post_status;
+
+            /**
+             * Filters the post status before inserting/updating post
+             *
+             * @param string $dynamic_post_status
+             * @param mixed $form_row
+             * @param mixed $form_data
+             * @since 1.1.1
+             */
+            $post_status = apply_filters('fpsm_post_status', $dynamic_post_status, $form_row, $form_data);
             // Lets insert post into DB
             $postarr = array(
                 'ID' => $post_id,
                 'post_author' => $post_author_id,
                 'post_content' => $post_content,
-                'post_title' => $post_title,
+                'post_title' => (!empty($post_title)) ? $post_title : esc_html__('Untitled Post', 'frontend-post-submission-manager'),
                 'post_excerpt' => $post_excerpt,
                 'post_status' => $post_status,
                 'post_type' => $post_type
             );
+//            echo "<pre>";
+//            print_r($form_details['form']['post_status'][$dynamic_post_status]);
+//            echo "</pre>";
+//            die();
+
             /**
              * Filters the post array before inserting the post into db
              *
@@ -217,7 +240,12 @@ if ($this->admin_ajax_nonce_verify()) {
                 // Storing form alias for the reference
                 update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
                 $response['status'] = 200;
-                $response['message'] = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
+                if ($dynamic_post_status == 'draft' && !empty($form_details['form']['post_status'])) {
+                    $response['draft_post_id'] = $insert_update_post_id;
+                }
+                $default_success_message = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
+                $post_status_message = (!empty($form_details['form']['post_status'][$dynamic_post_status]['success_message'])) ? $form_details['form']['post_status'][$dynamic_post_status]['success_message'] : $default_success_message;
+                $response['message'] = $post_status_message;
                 // If redirection is enabled for post submission
                 if (empty($post_id)) {
                     if (!empty($form_details['basic']['redirection'])) {

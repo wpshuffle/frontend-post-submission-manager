@@ -17,6 +17,7 @@ div#fpsm-preview-wrap {
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+    margin-right:10px;
 }
 
 .fpsm-field-wrap .ui-autocomplete.ui-menu{border: none;}
@@ -3431,9 +3432,9 @@ button.add_media{
 .fpsm-pagination-wrap span,
 .fpsm-pagination-wrap a:hover{background-color: rgba(0,0,0,.68);color: white !important;}
 
-.fpsm-status-draft,
-.fpsm-status-pending,
-.fpsm-status-publish{
+span.fpsm-post-status.fpsm-status-draft,
+span.fpsm-post-status.fpsm-status-pending,
+span.fpsm-post-status.fpsm-status-publish{
     display: inline-block;
     line-height: 18px;
     font-size: 11px;
@@ -3528,3 +3529,13 @@ button.add_media{
     line-height: 1;
 }
 
+.fpsm-post-status {
+    display: inline-block;
+    line-height: 18px;
+    font-size: 11px;
+    background-color: #3e3737;
+    border-radius: 48px;
+    padding: 0 10px;
+    color: white;
+    text-transform: capitalize;
+}
