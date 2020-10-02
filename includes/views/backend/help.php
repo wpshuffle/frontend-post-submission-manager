@@ -286,6 +286,17 @@ $post_status = apply_filters('fpsm_post_status', $dynamic_post_status, $form_row
 */
             $dashboard_posts_args = apply_filters('fpsm_dashboard_args', $dashboard_posts_args, $form_row);
                 </pre>
+                <pre>
+/**
+* Filters the redirect time after form submission
+*
+* @param int
+*
+* @since 1.1.1
+*/
+$response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 5);
+                </pre>
+
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
             <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>

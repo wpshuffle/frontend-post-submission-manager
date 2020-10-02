@@ -4,8 +4,27 @@ $form_template = (!empty($form_details['layout']['template'])) ? $form_details['
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 if (!empty($edit_post)) {
     $post_status = get_post_status($edit_post->ID);
-    if (!empty($form_details['dashboard']['disable_post_edit']) && $post_status == 'publish') {
-        die(esc_html__('You are not allowed to edit already published post', 'frontend-post-submission-manager'));
+    $current_page_url = $fpsm_library_obj->get_current_page_url();
+    if (empty($form_details['dashboard']['disable_post_edit_status'])) {
+        if (!empty($form_details['dashboard']['disable_post_edit'])) {
+            $disabled_post_edit_status = array('publish');
+        } else {
+            $disabled_post_edit_status = array();
+        }
+    } else {
+        $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
+    }
+    $post_edit_flag = (in_array($post_status, $disabled_post_edit_status)) ? false : true;
+    if (!$post_edit_flag) {
+        ?>
+        <h2><?php esc_html_e('You are not allowed to edit already submitted post', 'frontend-post-submission-manager'); ?></h2>
+        <script>
+            setTimeout(function () {
+                window.location = '<?php echo esc_url($current_page_url); ?>';
+            }, 2000);
+        </script>
+        <?php
+        die();
     }
 }
 ?>
@@ -14,7 +33,7 @@ if (!empty($edit_post)) {
 
     <input type="hidden" name="form_alias" value="<?php echo esc_attr($form_row->form_alias); ?>"/>
     <input type="hidden" name="post_id" value="<?php echo (!empty($edit_post->ID)) ? intval($edit_post->ID) : 0; ?>" class="fpsm-edit-post-id"/>
-    <input type="hidden" name="previous_post_status" value="<?php echo (empty($edit_post->ID)) ? '' : get_post_status($edit_post->ID); ?>"/>
+    <input type="hidden" name="previous_post_status" value="<?php echo (empty($edit_post->ID)) ? '' : get_post_status($edit_post->ID); ?>" class="fpsm-previous-post-status"/>
     <?php
     if (isset($_GET['action']) && $_GET['action'] == 'edit_post' && is_user_logged_in()) {
         ?>
@@ -116,17 +135,31 @@ if (!empty($edit_post)) {
             foreach ($form_details['form']['post_status'] as $form_post_button_status => $form_post_button_details) {
                 if (!empty($form_post_button_details['enable'])) {
                     ?>
-                    <input type="submit" value="<?php echo (!empty($form_post_button_details['label'])) ? esc_attr($form_post_button_details['label']) : esc_attr__('Submit', 'frontend-post-submission-manager'); ?>" data-post-status="<?php echo esc_attr($form_post_button_status); ?>" class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?>"/>
-                    <?php
+                    <input
+                        type="submit"
+                        value="<?php echo (!empty($form_post_button_details['label'])) ? esc_attr($form_post_button_details['label']) : esc_attr__('Submit', 'frontend-post-submission-manager'); ?>"
+                        data-post-status="<?php echo esc_attr($form_post_button_status); ?>"
+                        class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>"
+                        <?php if (!empty($form_post_button_details['auto_draft'])) {
+                            ?>
+                            data-auto-save-time="<?php echo esc_attr($form_post_button_details['auto_draft_save_time']) ?>"
+                            data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>"
+                            <?php
+                        }
+                        ?>
+                        />
+                        <?php
+                    }
                 }
-            }
-            ?>
+                ?>
             <input type="hidden" name="dynamic_post_status" value="<?php echo esc_attr($default_post_status); ?>" class="fpsm-default-post-status"/>
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader"/>
         </div>
     </div>
     <div class="fpsm-form-message fpsm-display-none"></div>
-    <a class="fpsm-back-dashboard" href="<?php echo esc_url($fpsm_library_obj->get_current_page_url()); ?>"><?php esc_html_e('Back', 'frontend-post-submission-manager'); ?></a>
+    <?php if (!empty($form_details['form']['back_button_label']) && isset($_GET['action'], $_GET['post_id'])) { ?>
+        <a class="fpsm-back-dashboard" href="<?php echo esc_url($fpsm_library_obj->get_current_page_url()); ?>"><?php echo esc_html($form_details['form']['back_button_label']); ?></a>
+    <?php } ?>
 </form>
 <?php
 include(FPSM_PATH . '/includes/cores/form-customize.php');

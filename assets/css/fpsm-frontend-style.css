@@ -3444,10 +3444,10 @@ span.fpsm-post-status.fpsm-status-publish{
     color: white;
     text-transform: capitalize;
 }
-.fpsm-status-pending{
+span.fpsm-post-status.fpsm-status-pending{
      background-color: #e39e59;
  }
-.fpsm-status-publish{
+span.fpsm-post-status.fpsm-status-publish{
     background-color: #75d068;
 }
 

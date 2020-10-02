@@ -267,6 +267,7 @@ jQuery(document).ready(function ($) {
     $('body').on('submit', '.fpsm-front-form', function (e) {
         e.preventDefault();
         var selector = $(this);
+        var auto_save = ($(this).data('auto-save')) ? $(this).data('auto-save') : 'no';
         // If auto complete textfield is filled but auto complete is not done
         selector.find('.fpsm-auto-complete-field').each(function () {
             var filled_tag = $(this).val();
@@ -294,49 +295,70 @@ jQuery(document).ready(function ($) {
                 _wpnonce: fpsm_js_obj.ajax_nonce
             },
             beforeSend: function (xhr) {
-                selector.find('.fpsm-form-message').slideUp();
-                selector.find('.fpsm-error').slideUp();
-                selector.find('.fpsm-ajax-loader').show();
+                if (auto_save == 'no') {
+                    selector.find('.fpsm-form-message').slideUp();
+                    selector.find('.fpsm-error').slideUp();
+                    selector.find('.fpsm-ajax-loader').show();
+                }
             },
             success: function (data, textStatus, jqXHR) {
                 selector.find('.fpsm-ajax-loader').hide();
+                selector.data('auto-save', 'no');
                 data = $.parseJSON(data);
                 if (data.status == 200) {
-                    selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
-
+                    if (auto_save == 'no') {
+                        selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
+                    }
                     if (!data.draft_post_id) {
                         fpsm_reset_form(selector);
                         if (data.redirect_url) {
-                            window.location = data.redirect_url;
-                            exit;
+                            if (data.redirect_delay) {
+                                setTimeout(function () {
+                                    window.location = data.redirect_url;
+                                    exit;
+                                }, data.redirect_delay);
+                            } else {
+                                window.location = data.redirect_url;
+                                exit;
+                            }
+
                         }
                     } else {
                         selector.find('.fpsm-edit-post-id').val(data.draft_post_id);
                         if (data.redirect_url) {
-                            window.location = data.redirect_url;
-                            exit;
+                            if (data.redirect_delay) {
+                                setTimeout(function () {
+                                    window.location = data.redirect_url;
+                                    exit;
+                                }, data.redirect_delay);
+                            } else {
+                                window.location = data.redirect_url;
+                                exit;
+                            }
                         }
                         if (selector.find('#g-recaptcha-response').length > 0) {
                             grecaptcha.reset();
                         }
                     }
                 } else {
-                    selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
-                        var error_details = data.error_details;
-                        for (var field_key in error_details) {
-                            if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
-                                selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
-                            } else {
-                                selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
+                    if (auto_save == 'no') {
+                        selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
+                            var error_details = data.error_details;
+                            for (var field_key in error_details) {
+                                if (selector.find('[data-field-key="' + field_key + '"] .fpsm-error').length > 0) {
+                                    selector.find('[data-field-key="' + field_key + '"] .fpsm-error').html(error_details[field_key]).slideDown('slow');
+                                } else {
+                                    selector.find('[data-field-key="' + field_key + '"]').append('<div class="fpsm-error">' + error_details[field_key] + '</div>');
+                                }
+
                             }
+                            if (selector.find('#g-recaptcha-response').length > 0) {
+                                grecaptcha.reset();
+                            }
+                            fpsm_scroll_to_error(selector);
+                        });
 
-                        }
-                        if (selector.find('#g-recaptcha-response').length > 0) {
-                            grecaptcha.reset();
-                        }
-                        fpsm_scroll_to_error(selector);
-                    });
-
+                    }
                 }
             }
         });
@@ -438,6 +460,22 @@ jQuery(document).ready(function ($) {
         $(this).closest('form').find('input[name="dynamic_post_status"]').val(dynamic_post_status);
     });
 
+    $('.fpsm-auto-draft').each(function () {
+        var selector = $(this);
+        var time_interval = $(this).data('auto-save-time');
+        var post_status = $(this).closest('form').find('.fpsm-previous-post-status').val();
+        if (time_interval != '' && (post_status == '' || post_status == 'draft')) {
+            setInterval(function () {
+                if (selector.closest('form').hasClass('dirty')) {
+                    console.log('Auto save calling');
+                    if (selector.data('background-save') == 1) {
+                        selector.closest('form').data('auto-save', 'yes');
+                    }
+                    selector.click();
+                }
+            }, parseInt(time_interval) * 1000);
+        }
+    });
 
 
 });

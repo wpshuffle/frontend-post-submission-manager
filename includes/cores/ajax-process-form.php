@@ -264,6 +264,27 @@ if ($this->admin_ajax_nonce_verify()) {
                             $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
                         }
                     }
+                    if (empty($form_details['dashboard']['disable_post_edit_status'])) {
+                        if (!empty($form_details['dashboard']['disable_post_edit'])) {
+                            $disabled_post_edit_status = array('publish');
+                        } else {
+                            $disabled_post_edit_status = array();
+                        }
+                    } else {
+                        $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
+                    }
+                    $post_edit_flag = (in_array($dynamic_post_status, $disabled_post_edit_status)) ? false : true;
+                    if (!$post_edit_flag && !empty($form_data['dashboard_url'])) {
+                        $response['redirect_url'] = esc_url($form_data['dashboard_url']);
+                        /**
+                         * Filters the redirect time after form submission
+                         *
+                         * @param int
+                         *
+                         * @since 1.1.1
+                         */
+                        $response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 2000);
+                    }
                 }
                 $action = (empty($post_id)) ? 'insert' : 'update';
                 /**

@@ -25,7 +25,7 @@ if (!empty($current_user_id)) {
                 'orderby' => 'date',
                 'order' => 'desc',
                 'author' => $current_user_id,
-                'post_status' => $post_statuses,
+                'post_status' => $post_status_keys,
                 'meta_key' => '_fpsm_form_alias',
                 'meta_value' => $alias,
                 'paged' => $paged
@@ -33,9 +33,9 @@ if (!empty($current_user_id)) {
             if (!empty($form_details['dashboard']['list_all_administrator'])) {
                 unset($dashboard_posts_args['author']);
             }
-            echo "<pre>";
-            print_r($dashboard_posts_args);
-            echo "</pre>";
+//            echo "<pre>";
+//            print_r($dashboard_posts_args);
+//            echo "</pre>";
             /**
              * Filters the query args for fetching dashboard posts
              *
