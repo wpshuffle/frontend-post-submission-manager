@@ -1,17 +1,18 @@
 <?php
 
-defined('ABSPATH') or die('No script kiddies please!!');
-if (is_user_logged_in()) {
+defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
+if ( is_user_logged_in() ) {
     $current_user_id = get_current_user_id();
-
-    if (isset($_GET['action']) && $_GET['action'] == 'edit_post' && !empty($_GET['post_id'])) {
-        $post_id = intval($_GET['post_id']);
-        $author_id = get_post_field('post_author', $post_id);
-        $edit_post = get_post($post_id);
-        if ($current_user_id == $author_id) {
+    $user_meta = get_userdata( $current_user_id );
+    $user_roles = $user_meta->roles;
+    if ( isset( $_GET['action'] ) && $_GET['action'] == 'edit_post' && !empty( $_GET['post_id'] ) ) {
+        $post_id = intval( $_GET['post_id'] );
+        $author_id = get_post_field( 'post_author', $post_id );
+        $edit_post = get_post( $post_id );
+        if ( $current_user_id == $author_id || in_array( 'administrator', $user_roles ) ) {
             include(FPSM_PATH . '/includes/views/frontend/form-html.php');
         } else {
-            esc_html__('Unauthorized access', 'frontend-post-submission-manager');
+            echo esc_html__( 'Unauthorized access', 'frontend-post-submission-manager' );
         }
     } else {
         include(FPSM_PATH . '/includes/views/frontend/dashboard-html.php');
