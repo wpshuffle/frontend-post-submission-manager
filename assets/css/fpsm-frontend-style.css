@@ -43,14 +43,14 @@ div#fpsm-preview-wrap {
 .fpsm-field-wrap .qq-upload-list li > a:nth-last-child(2),
 .fpsm-field-wrap .qq-upload-list li > span:nth-last-child(3){text-align: right}
 /*.qq-upload-list li:before{*/
-    /*content: '';*/
-    /*height: 100%;*/
-    /*width: 50%;*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*top:0;*/
-    /*background-color: rgba(255,255,255,.34);*/
-    /*border-radius: 60px;*/
+/*content: '';*/
+/*height: 100%;*/
+/*width: 50%;*/
+/*position: absolute;*/
+/*left: 0;*/
+/*top:0;*/
+/*background-color: rgba(255,255,255,.34);*/
+/*border-radius: 60px;*/
 /*}*/
 .fpsm-field-wrap .qq-upload-file,
 .fpsm-field-wrap .qq-upload-spinner,
@@ -1729,8 +1729,8 @@ button.add_media{
     border-radius: 50%;
 }
 .fpsm-template-12 .fpsm-custom-field-email .fpsm-field:before{
-      content: '\f0e0';
-  }
+    content: '\f0e0';
+}
 /*===================== Template 12 ===============================*/
 
 
@@ -3399,7 +3399,7 @@ button.add_media{
 }
 
 .fpsm-dashboard-column:last-child a:hover{
-   color: rgba(0,0,0,.18);
+    color: rgba(0,0,0,.18);
 }
 
 .fpsm-dashboard-column:last-child a.fpsm-edit-post:hover{
@@ -3445,8 +3445,8 @@ span.fpsm-post-status.fpsm-status-publish{
     text-transform: capitalize;
 }
 span.fpsm-post-status.fpsm-status-pending{
-     background-color: #e39e59;
- }
+    background-color: #e39e59;
+}
 span.fpsm-post-status.fpsm-status-publish{
     background-color: #75d068;
 }
@@ -3538,4 +3538,16 @@ span.fpsm-post-status.fpsm-status-publish{
     padding: 0 10px;
     color: white;
     text-transform: capitalize;
+}
+.fpsm-post-not-found {
+    padding: 10px;
+}
+@media only screen and (max-width: 1000px) {
+    .fpsm-dashboard-wrap {
+        overflow:auto;
+    }
+    .fpsm-dashboard-header, .fpsm-dashboard-body, .fpsm-dashboard-row {
+        overflow-y:auto;
+        width:1000px;
+    }
 }

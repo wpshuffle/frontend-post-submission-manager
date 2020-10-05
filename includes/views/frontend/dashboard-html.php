@@ -103,9 +103,9 @@ if ( !empty( $current_user_id ) ) {
                     <?php
                 }
             } else {
-                if ( !empty( $dashboard_settings['post_not_found_message'] ) ) {
+                if ( !empty( $form_details['dashboard']['post_not_found_message'] ) ) {
                     ?>
-                    <div class="fpsm-post-not-found"><?php echo $this->output_converting_br( $dashboard_settings['post_not_found_message'] ); ?></div>
+                    <div class="fpsm-post-not-found"><?php echo $fpsm_library_obj->output_converting_br( $form_details['dashboard']['post_not_found_message'] ); ?></div>
                     <?php
                 }
             }
