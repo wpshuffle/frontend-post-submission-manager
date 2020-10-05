@@ -92,6 +92,48 @@
     </div>
     <div class="fpsm-each-form-field">
         <div class="fpsm-field-head fpsm-clearfix">
+            <h3 class="fpsm-field-title"><span class="dashicons dashicons-arrow-down"></span><?php esc_html_e('Post Submit Notification', 'frontend-post-submission-manager'); ?></h3>
+        </div>
+        <div class="fpsm-field-body fpsm-display-none">
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Enable', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input type="checkbox" name="form_details[notification][post_submit][enable]" value="1" class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-show-fields-ref-post-notification" <?php echo (!empty($form_details['notification']['post_submit']['enable'])) ? 'checked="checked"' : ''; ?>>
+                </div>
+            </div>
+            <div class="fpsm-show-fields-ref-post-notification <?php echo (empty($form_details['notification']['post_submit']['enable'])) ? 'fpsm-display-none' : ''; ?>">
+                <div class="fpsm-field-wrap">
+                    <label><?php esc_html_e('Subject', 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field fpsm-checkbox-toggle">
+                        <input type="text" name="form_details[notification][post_submit][subject]" value="<?php echo (!empty($form_details['notification']['post_submit']['subject'])) ? esc_attr($form_details['notification']['post_submit']['subject']) : '' ?>">
+                        <p class="description"><?php esc_html_e('You can use [post_title] and [author_name] to replace it with submitted post title and author name in the subject while sending the post submit notification.', 'frontend-post-submission-manager'); ?></p>
+                    </div>
+                </div>
+                <div class="fpsm-field-wrap fpsm-required-message ">
+                    <label><?php esc_html_e('From name', 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field">
+                        <input type="text" name="form_details[notification][post_submit][from_name]" value="<?php echo (!empty($form_details['notification']['post_submit']['from_name'])) ? esc_attr($form_details['notification']['post_submit']['from_name']) : ''; ?>">
+                    </div>
+                </div>
+                <div class="fpsm-field-wrap">
+                    <label><?php esc_html_e('From Email', 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field">
+                        <input type="text" name="form_details[notification][post_submit][from_email]" value="<?php echo (!empty($form_details['notification']['post_submit']['from_email'])) ? esc_attr($form_details['notification']['post_submit']['from_email']) : ''; ?>">
+                    </div>
+                </div>
+                <div class="fpsm-field-wrap">
+                    <label><?php esc_html_e('Message', 'frontend-post-submission-manager'); ?></label>
+                    <div class="fpsm-field">
+                        <textarea name="form_details[notification][post_submit][notification_message]"><?php echo (!empty($form_details['notification']['post_submit']['notification_message'])) ? $fpsm_library_obj->output_converting_br($form_details['notification']['post_publish']['notification_message']) : $fpsm_library_obj->default_submit_notification(); ?></textarea>
+                        <p class="description"><?php esc_html_e('Please use [author_name] & [post_title] to replace with the submitted post\'s author name and  post title in the post submit email message.', 'frontend-post-submission-manager'); ?></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="fpsm-each-form-field">
+        <div class="fpsm-field-head fpsm-clearfix">
             <h3 class="fpsm-field-title"><span class="dashicons dashicons-arrow-down"></span><?php esc_html_e('Post Trash Notification', 'frontend-post-submission-manager'); ?></h3>
         </div>
         <div class="fpsm-field-body fpsm-display-none">

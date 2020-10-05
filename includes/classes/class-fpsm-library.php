@@ -626,6 +626,19 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $default_publish_notification_message;
         }
 
+        function default_submit_notification() {
+            $default_publish_notification_message = esc_html__(sprintf('Hello There,
+
+Your post has been submitted in our %s website. Please find details below:
+
+Post Title: [post_title]
+
+We will review and get back to you shortly.
+
+Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
+            return $default_publish_notification_message;
+        }
+
         function default_trash_notification() {
             $default_trash_notification_message = esc_html__(sprintf('Hello There,
 

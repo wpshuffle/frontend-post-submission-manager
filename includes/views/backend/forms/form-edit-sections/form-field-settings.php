@@ -71,21 +71,34 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                             <p class="description"><?php esc_html_e('Please note that if not kept blank, this message will override the form success message from basic settings.', 'frontend-post-submission-manager'); ?></p>
                                         </div>
                                     </div>
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Disable Admin Notification', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input
+                                                type="checkbox"
+                                                name="<?php echo esc_attr($field_name_prefix); ?>[disable_admin_notification]"
+                                                value="1"
+                                                <?php echo (!empty($post_status_details['disable_admin_notification'])) ? 'checked="checked"' : ''; ?>
+                                                />
+                                            <p class="description"><?php esc_html_e('Please check if you want to disable admin email notification configured in the notification settings when users submits post with this post status button.', 'frontend-post-submission-manager'); ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Disable Post Submit Notification', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input
+                                                type="checkbox"
+                                                name="<?php echo esc_attr($field_name_prefix); ?>[disable_post_submit_notification]"
+                                                value="1"
+                                                <?php echo (!empty($post_status_details['disable_post_submit_notification'])) ? 'checked="checked"' : ''; ?>
+                                                />
+                                            <p class="description"><?php esc_html_e('Please check if you want to disable post submit email notification configured in the notification settings when users submits posts with this post status button', 'frontend-post-submission-manager'); ?></p>
+                                        </div>
+                                    </div>
                                     <?php
                                     if ($post_status == 'draft') {
                                         ?>
-                                        <div class="fpsm-field-wrap">
-                                            <label><?php esc_html_e('Disable Admin Notification', 'frontend-post-submission-manager'); ?></label>
-                                            <div class="fpsm-field">
-                                                <input
-                                                    type="checkbox"
-                                                    name="<?php echo esc_attr($field_name_prefix); ?>[disable_admin_notification]"
-                                                    value="1"
-                                                    <?php echo (!empty($post_status_details['disable_admin_notification'])) ? 'checked="checked"' : ''; ?>
-                                                    />
-                                                <p class="description"><?php esc_html_e('Please check if you want to disable admin email notification configured in the notification settings when users saves post as draft.', 'frontend-post-submission-manager'); ?></p>
-                                            </div>
-                                        </div>
+
                                         <div class="fpsm-field-wrap">
                                             <label><?php esc_html_e('Disable Field Required Check', 'frontend-post-submission-manager'); ?></label>
                                             <div class="fpsm-field">
