@@ -120,6 +120,9 @@ if ( $this->admin_ajax_nonce_verify() ) {
                 if ( is_user_logged_in() ) {
 
                     $post_author_id = get_current_user_id();
+                    if ( !empty( $post_id ) ) {
+                        $post_author_id = get_post_field( 'post_author', $post_id );
+                    }
                 } else {
                     // if  the form is login require form but users are not logged in
                     $response['status'] = 403;
@@ -151,9 +154,7 @@ if ( $this->admin_ajax_nonce_verify() ) {
                 'post_status' => $post_status,
                 'post_type' => $post_type
             );
-            if ( !empty( $post_id ) ) {
-                unset( $postarr['post_author'] );
-            }
+
 
 
             /**
