@@ -109,9 +109,14 @@ if ($this->admin_ajax_nonce_verify()) {
             $response['message'] = (!empty($form_details['basic']['validation_error_message'])) ? esc_html($form_details['basic']['validation_error_message']) : esc_html__('Form validation error occurred.', 'frontend-post-submission-manager');
         } else {
             //Lets process the form
+
             $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
             $post_title = (!empty($form_data['post_title'])) ? $form_data['post_title'] : '';
             $post_content = (!empty($form_data['post_content'])) ? $form_data['post_content'] : '';
+
+            if (!empty($post_id) && empty($post_content)) {
+                $post_content = get_post_field('post_content', $post_id);
+            }
             $post_type = $form_row->post_type;
             $post_excerpt = (!empty($form_data['post_excerpt'])) ? $form_data['post_excerpt'] : '';
             $post_status = $form_details['basic']['post_status'];
