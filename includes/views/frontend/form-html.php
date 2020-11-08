@@ -102,9 +102,6 @@ if (!empty($edit_post)) {
     /**
      * Captcha
      */
-//    echo "<pre>";
-//    print_r($form_details);
-//    echo "</pre>";
     if (!empty($form_details['security']['frontend_form_captcha'])) {
         $site_key = (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
         if (!empty($site_key)) {
@@ -140,10 +137,21 @@ if (!empty($edit_post)) {
             }
             foreach ($form_details['form']['post_status'] as $form_post_button_status => $form_post_button_details) {
                 if (!empty($form_post_button_details['enable'])) {
+                    $button_label = (!empty($form_post_button_details['label'])) ? $form_post_button_details['label'] : esc_attr__('Submit', 'frontend-post-submission-manager');
+                    /**
+                     * Filters the submit button label before printing
+                     *
+                     * @param string $button_label
+                     * @param string $form_post_button_status
+                     * @param array $form_post_button_details
+                     *
+                     * @since 1.2.1
+                     */
+                    $button_label = apply_filters('fpsm_submit_label', $button_label, $form_post_button_status, $form_post_button_details);
                     ?>
                     <input
                         type="submit"
-                        value="<?php echo (!empty($form_post_button_details['label'])) ? esc_attr($form_post_button_details['label']) : esc_attr__('Submit', 'frontend-post-submission-manager'); ?>"
+                        value="<?php echo esc_attr($button_label); ?>"
                         data-post-status="<?php echo esc_attr($form_post_button_status); ?>"
                         class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>"
                         <?php if (!empty($form_post_button_details['auto_draft'])) {

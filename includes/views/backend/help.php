@@ -306,6 +306,18 @@ $response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 5);
 */
 return apply_filters('fpsm_post_statuses', $post_status_array);
                 </pre>
+                <pre>
+/**
+* Filters the submit button label before printing
+*
+* @param string $button_label
+* @param string $form_post_button_status
+* @param array $form_post_button_details
+*
+* @since 1.2.1
+*/
+$button_label = apply_filters('fpsm_submit_label', $button_label, $form_post_button_status, $form_post_button_details);
+                </pre>
 
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
