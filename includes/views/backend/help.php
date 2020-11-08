@@ -296,6 +296,16 @@ $post_status = apply_filters('fpsm_post_status', $dynamic_post_status, $form_row
 */
 $response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 5);
                 </pre>
+                <pre>
+/**
+* Filter Post Status array
+*
+* @param array $post_status_array
+*
+* @since 1.2.1
+*/
+return apply_filters('fpsm_post_statuses', $post_status_array);
+                </pre>
 
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
