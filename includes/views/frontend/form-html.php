@@ -146,6 +146,11 @@ if (!empty($edit_post)) {
                             data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>"
                             <?php
                         }
+                        if (!empty($form_post_button_details['background_color'])) {
+                            ?>
+                            style="background-color: <?php echo esc_attr($form_post_button_details['background_color']); ?>"
+                            <?php
+                        }
                         ?>
                         />
                         <?php

@@ -65,6 +65,12 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                         </div>
                                     </div>
                                     <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Background Color', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input type="text" name="<?php echo esc_attr($field_name_prefix) ?>[background_color]" value="<?php echo (!empty($post_status_details['background_color'])) ? esc_attr($post_status_details['background_color']) : ''; ?>" class="fpsm-color-picker"/>
+                                        </div>
+                                    </div>
+                                    <div class="fpsm-field-wrap">
                                         <label><?php esc_html_e('Success Message', 'frontend-post-submission-manager'); ?></label>
                                         <div class="fpsm-field">
                                             <textarea name="<?php echo esc_attr($field_name_prefix) ?>[success_message]"><?php echo (!empty($post_status_details['success_message'])) ? wp_kses_post($post_status_details['success_message']) : ''; ?></textarea>
