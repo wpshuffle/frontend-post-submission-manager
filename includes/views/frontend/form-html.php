@@ -15,6 +15,12 @@ if (!empty($edit_post)) {
         $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
     }
     $post_edit_flag = (in_array($post_status, $disabled_post_edit_status)) ? false : true;
+    $user_meta = get_userdata($current_user_id);
+    $user_roles = $user_meta->roles;
+    if (!empty($form_details['dashboard']['list_all_administrator']) && in_array('administrator', $user_roles)) {
+        $post_edit_flag = true;
+    }
+
     if (!$post_edit_flag) {
         ?>
         <h2><?php esc_html_e('You are not allowed to edit already submitted post', 'frontend-post-submission-manager'); ?></h2>

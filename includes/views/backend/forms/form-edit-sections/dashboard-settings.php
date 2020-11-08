@@ -33,6 +33,16 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
             <input type="text" name="form_details[dashboard][last_modified_label]" value="<?php echo (!empty($dashboard_settings['last_modified_label'])) ? esc_attr($dashboard_settings['last_modified_label']) : ''; ?>"/>
         </div>
     </div>
+    <?php
+    if (function_exists('pvc_get_post_views')) {
+        ?>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Post Views Label', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[dashboard][post_views_label]" value="<?php echo (!empty($dashboard_settings['post_views_label'])) ? esc_attr($dashboard_settings['post_views_label']) : ''; ?>"/>
+            </div>
+        </div>
+    <?php } ?>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Action Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
