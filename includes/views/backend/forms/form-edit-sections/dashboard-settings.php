@@ -37,6 +37,12 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
     if (function_exists('pvc_get_post_views')) {
         ?>
         <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Enable Post Views', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="checkbox" name="form_details[dashboard][post_views]" value="1" <?php echo (!empty($dashboard_settings['post_views'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-post-views-ref"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap fpsm-post-views-ref <?php echo (empty($dashboard_settings['post_views'])) ? 'fpsm-display-none' : ''; ?>">
             <label><?php esc_html_e('Post Views Label', 'frontend-post-submission-manager'); ?></label>
             <div class="fpsm-field">
                 <input type="text" name="form_details[dashboard][post_views_label]" value="<?php echo (!empty($dashboard_settings['post_views_label'])) ? esc_attr($dashboard_settings['post_views_label']) : ''; ?>"/>

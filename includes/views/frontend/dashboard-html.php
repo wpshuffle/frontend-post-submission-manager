@@ -8,14 +8,14 @@ if (!empty($current_user_id)) {
     <div class="fpsm-dashboard-wrap">
         <div class="fpsm-dashboard-header">
             <div class="fpsm-dashboard-row">
-                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['post_title_label'])) ? esc_html($form_details['dashboard']['post_title_label']) : esc_html__('Post Title', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['post_status_label'])) ? esc_html($form_details['dashboard']['post_status_label']) : esc_html__('Post Status', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
-                <?php if (function_exists('pvc_get_post_views')) { ?>
-                    <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['post_views_label'])) ? esc_html($form_details['dashboard']['post_views_label']) : esc_html__('Post Views', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column fpsm-dashboard-post-title"><?php echo (!empty($form_details['dashboard']['post_title_label'])) ? esc_html($form_details['dashboard']['post_title_label']) : esc_html__('Post Title', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column fpsm-dashboard-post-status"><?php echo (!empty($form_details['dashboard']['post_status_label'])) ? esc_html($form_details['dashboard']['post_status_label']) : esc_html__('Post Status', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
+                <?php if (function_exists('pvc_get_post_views') && !empty($form_details['dashboard']['post_views'])) { ?>
+                    <div class="fpsm-dashboard-column fpsm-dashboard-post-views"><?php echo (!empty($form_details['dashboard']['post_views_label'])) ? esc_html($form_details['dashboard']['post_views_label']) : esc_html__('Post Views', 'frontend-post-submission-manager'); ?></div>
                 <?php } ?>
-                <div class="fpsm-dashboard-column"><?php echo (!empty($form_details['dashboard']['action_label'])) ? esc_html($form_details['dashboard']['action_label']) : esc_html__('Action', 'frontend-post-submission-manager'); ?></div>
+                <div class="fpsm-dashboard-column fpsm-dashboard-action"><?php echo (!empty($form_details['dashboard']['action_label'])) ? esc_html($form_details['dashboard']['action_label']) : esc_html__('Action', 'frontend-post-submission-manager'); ?></div>
             </div>
         </div>
         <div class="fpsm-dashboard-body">
@@ -60,14 +60,14 @@ if (!empty($current_user_id)) {
                     $dashboard_posts_query->the_post();
                     ?>
                     <div class="fpsm-dashboard-row">
-                        <div class="fpsm-dashboard-column"><?php echo esc_html($sn++); ?></div>
-                        <div class="fpsm-dashboard-column"><?php the_title(); ?></div>
-                        <div class="fpsm-dashboard-column"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
-                        <div class="fpsm-dashboard-column"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
-                        <?php if (function_exists('pvc_get_post_views')) { ?>
-                            <div class="fpsm-dashboard-column"><?php echo esc_html(pvc_get_post_views(get_the_ID())); ?></div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo esc_html($sn++); ?></div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-post-title"><?php the_title(); ?></div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-post-status"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
+                        <?php if (function_exists('pvc_get_post_views') && !empty($form_details['dashboard']['post_views'])) { ?>
+                            <div class="fpsm-dashboard-column fpsm-dashboard-post-views"><?php echo esc_html(pvc_get_post_views(get_the_ID())); ?></div>
                         <?php } ?>
-                        <div class="fpsm-dashboard-column">
+                        <div class="fpsm-dashboard-column fpsm-dashboard-action">
                             <?php
                             $current_page_url = $fpsm_library_obj->get_current_page_url();
                             $post_id = get_the_ID();
