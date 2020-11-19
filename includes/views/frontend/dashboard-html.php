@@ -61,8 +61,29 @@ if (!empty($current_user_id)) {
                     ?>
                     <div class="fpsm-dashboard-row">
                         <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo esc_html($sn++); ?></div>
-                        <div class="fpsm-dashboard-column fpsm-dashboard-post-title"><?php the_title(); ?></div>
-                        <div class="fpsm-dashboard-column fpsm-dashboard-post-status"><span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status"><?php echo esc_html($post_statuses[get_post_status()]); ?></span></div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-post-title">
+                            <?php
+                            if (!empty($form_details['dashboard']['list_all_administrator']) && in_array('administrator', $user_roles)) {
+                                ?>
+                                <a href="<?php echo admin_url('post.php?post=' . get_the_ID() . '&action=edit') ?>" target="_blank"><?php the_title(); ?></a>
+                                <?php
+                            } else {
+                                the_title();
+                            }
+                            ?>
+
+                        </div>
+                        <div class="fpsm-dashboard-column fpsm-dashboard-post-status">
+                            <span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status">
+                                <?php echo esc_html($post_statuses[get_post_status()]); ?>
+                            </span>
+                            <?php if (get_post_status() == 'future') {
+                                ?>
+                                <span class="fpsm-scheduled-date"><?php the_date('d-m-Y g:i a'); ?></span>
+                                <?php
+                            }
+                            ?>
+                        </div>
                         <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
                         <?php if (function_exists('pvc_get_post_views') && !empty($form_details['dashboard']['post_views'])) { ?>
                             <div class="fpsm-dashboard-column fpsm-dashboard-post-views"><?php echo esc_html(pvc_get_post_views(get_the_ID())); ?></div>

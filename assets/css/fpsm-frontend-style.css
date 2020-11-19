@@ -3559,3 +3559,11 @@ span.fpsm-post-status.fpsm-status-publish{
 .fpsm-dashboard-column.fpsm-dashboard-post-views {
     max-width: 100px;
 }
+span.fpsm-scheduled-date {
+    display: block;
+    margin-top: 10px;
+}
+.fpsm-dashboard-column.fpsm-dashboard-sn {
+    width: 40px !important;
+    line-height: 2.3 !important;
+}

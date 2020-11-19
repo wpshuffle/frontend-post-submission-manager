@@ -138,8 +138,9 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('List all posts for Administrator', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="checkbox" name="form_details[dashboard][list_all_administrator]" value="1" <?php echo (!empty($dashboard_settings['list_all_administrator'])) ? 'checked="checked"' : ''; ?>/>
+            <input type="checkbox" name="form_details[dashboard][list_all_administrator]" value="1" <?php echo (!empty($dashboard_settings['list_all_administrator'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-wrap" data-toggle-class="fpsm-link-in-backend"/>
             <p><?php esc_html_e('Please check if you want to list the post from all the authors when adminstrator is logged in.', 'frontend-post-submission-manager'); ?></p>
         </div>
     </div>
+
 </div>
