@@ -477,7 +477,7 @@ jQuery(document).ready(function ($) {
     $('body').on('click', '.fpsm-custom-field-type-trigger-btn', function () {
         var field_type = $(this).data('field-type');
         $('#fpsm-custom-field-type option').removeAttr('selected');
-        $('#fpsm-custom-field-type option[value="' + field_type + '"]').attr('selected', 'selected');
+        $('#fpsm-custom-field-type option[value="' + field_type + '"]').prop('selected', true);
         $('.fpsm-custom-field-type-trigger-btn').removeClass('btn-selected');
         $(this).addClass('btn-selected');
     });
