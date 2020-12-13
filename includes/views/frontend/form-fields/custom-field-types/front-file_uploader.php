@@ -45,7 +45,7 @@ $upload_filesize_error_message = $field_details['upload_filesize_error_message']
             $thumbnail_file = get_attached_file($media_id);
             $thumbnail_file_size = $fpsm_library_obj->format_file_size(filesize($thumbnail_file));
             ?>
-            <div class="fpsm-file-preview-row">
+            <div class="fpsm-file-preview-row" data-media-id="<?php echo esc_attr($media_id); ?>">
                 <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($thumbnail_url_obj[0]); ?>"></span>
                 <span class="fpsm-file-preview-column"><?php echo esc_html($image_title); ?></span>
                 <span class="fpsm-file-preview-column"><?php echo esc_html($thumbnail_file_size); ?></span>

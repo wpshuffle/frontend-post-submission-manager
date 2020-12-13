@@ -49,7 +49,7 @@ if (!class_exists('FPSM_Shortcode')) {
             if (empty($fpsm_settings['disable_fontawesome'])) {
                 wp_enqueue_style('fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
             }
-            $js_dependencies = array('jquery', 'fpsm-fileuploader', 'wp-util', 'jquery-ui-autocomplete', 'jquery-ui-datepicker');
+            $js_dependencies = array('jquery', 'fpsm-fileuploader', 'wp-util', 'jquery-ui-autocomplete', 'jquery-ui-datepicker', 'jquery-ui-sortable');
             wp_enqueue_script('fpsm-fileuploader', FPSM_URL . '/assets/js/fpsm-fileuploader.js', array(), FPSM_VERSION);
             if (empty($fpsm_settings['disable_are_you_sure_js'])) {
                 $js_dependencies[] = 'fpsm-are-you-sure-script';

@@ -10,6 +10,12 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
 ?>
 <div class="fpsm-settings-each-section" data-tab="dashboard" style="display:none;">
     <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Enable SN', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[dashboard][sn]" value="1" <?php echo (!empty($dashboard_settings['sn'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-sn-ref"/>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap fpsm-sn-ref <?php echo (empty($dashboard_settings['sn'])) ? 'fpsm-display-none' : ''; ?>">
         <label><?php esc_html_e('SN Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
             <input type="text" name="form_details[dashboard][sn_label]" value="<?php echo (!empty($dashboard_settings['sn_label'])) ? esc_attr($dashboard_settings['sn_label']) : ''; ?>"/>
@@ -28,6 +34,12 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
         </div>
     </div>
     <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Enable Last Modified', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[dashboard][last_modified]" value="1" <?php echo (!empty($dashboard_settings['last_modified'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-last-modified-ref"/>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap fpsm-last-modified-ref <?php echo (empty($dashboard_settings['last_modified'])) ? 'fpsm-display-none' : ''; ?>">
         <label><?php esc_html_e('Last Modified Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
             <input type="text" name="form_details[dashboard][last_modified_label]" value="<?php echo (!empty($dashboard_settings['last_modified_label'])) ? esc_attr($dashboard_settings['last_modified_label']) : ''; ?>"/>
@@ -138,9 +150,38 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('List all posts for Administrator', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
-            <input type="checkbox" name="form_details[dashboard][list_all_administrator]" value="1" <?php echo (!empty($dashboard_settings['list_all_administrator'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-wrap" data-toggle-class="fpsm-link-in-backend"/>
+            <input type="checkbox" name="form_details[dashboard][list_all_administrator]" value="1" <?php echo (!empty($dashboard_settings['list_all_administrator'])) ? 'checked="checked"' : ''; ?>/>
             <p><?php esc_html_e('Please check if you want to list the post from all the authors when adminstrator is logged in.', 'frontend-post-submission-manager'); ?></p>
         </div>
     </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Post Status Filter', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[dashboard][post_status_filter]" value="1" <?php echo (!empty($dashboard_settings['post_status_filter'])) ? 'checked="checked"' : ''; ?>/>
+            <p><?php esc_html_e('Please check if you want to display post status filter above the frontend dashboard posts list.', 'frontend-post-submission-manager'); ?></p>
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Post Search', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[dashboard][post_search]" value="1" <?php echo (!empty($dashboard_settings['post_search'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-post-search"/>
+            <p><?php esc_html_e('Please check if you want to display post search field above the frontend dashboard posts list.', 'frontend-post-submission-manager'); ?></p>
+        </div>
+    </div>
+    <div class="fpsm-post-search <?php echo (empty($dashboard_settings['post_search'])) ? 'fpsm-display-none' : ''; ?>">
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Search Field Placeholder', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[dashboard][search_field_placeholder]" value="<?php echo (!empty($dashboard_settings['search_field_placeholder'])) ? esc_attr($dashboard_settings['search_field_placeholder']) : ''; ?>"/>
+            </div>
+        </div>
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Search Submit Label', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="text" name="form_details[dashboard][search_submit_label]" value="<?php echo (!empty($dashboard_settings['search_submit_label'])) ? esc_attr($dashboard_settings['search_submit_label']) : ''; ?>"/>
+            </div>
+        </div>
+    </div>
+
 
 </div>

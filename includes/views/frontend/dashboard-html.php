@@ -6,12 +6,46 @@ $post_statuses = $fpsm_library_obj->get_post_statuses();
 if (!empty($current_user_id)) {
     ?>
     <div class="fpsm-dashboard-wrap">
+        <?php
+        if (!empty($form_details['dashboard']['post_status_filter']) || !empty($form_details['dashboard']['post_search'])) {
+            ?>
+            <form class="fpsm-posts-filter-head">
+                <?php
+                if (!empty($form_details['dashboard']['post_status_filter'])) {
+                    ?>
+                    <select name="post_status" class="fpsm-dashboard-post-status-filter">
+                        <option value=""><?php esc_html_e('All', 'frontend-post-submission-manager'); ?></option>
+                        <?php
+                        $selected_post_status = (!empty($_GET['post_status'])) ? $_GET['post_status'] : '';
+                        foreach ($post_statuses as $post_status_key => $post_status_label) {
+                            ?>
+                            <option value="<?php echo esc_attr($post_status_key); ?>" <?php selected($selected_post_status, $post_status_key); ?>><?php echo esc_html($post_status_label); ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                    <?php
+                }
+                if (!empty($form_details['dashboard']['post_search'])) {
+                    ?>
+                    <input type="search" name="keyword" value="<?php echo (!empty($_GET['keyword'])) ? esc_attr($_GET['keyword']) : ''; ?>" placeholder="<?php echo (!empty($form_details['dashboard']['search_field_placeholder'])) ? esc_attr($form_details['dashboard']['search_field_placeholder']) : ''; ?>"/>
+                    <input type="submit" value="<?php echo (!empty($form_details['dashboard']['search_submit_label'])) ? esc_attr($form_details['dashboard']['search_submit_label']) : __('Filter', 'frontend-post-submission-manager'); ?>"/>
+                    <?php
+                }
+                ?>
+            </form>
+        <?php }
+        ?>
         <div class="fpsm-dashboard-header">
             <div class="fpsm-dashboard-row">
-                <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
+                <?php if (!empty($form_details['dashboard']['sn'])) { ?>
+                    <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
+                <?php } ?>
                 <div class="fpsm-dashboard-column fpsm-dashboard-post-title"><?php echo (!empty($form_details['dashboard']['post_title_label'])) ? esc_html($form_details['dashboard']['post_title_label']) : esc_html__('Post Title', 'frontend-post-submission-manager'); ?></div>
                 <div class="fpsm-dashboard-column fpsm-dashboard-post-status"><?php echo (!empty($form_details['dashboard']['post_status_label'])) ? esc_html($form_details['dashboard']['post_status_label']) : esc_html__('Post Status', 'frontend-post-submission-manager'); ?></div>
-                <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
+                <?php if (!empty($form_details['dashboard']['last_modified'])) { ?>
+                    <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
+                <?php } ?>
                 <?php if (function_exists('pvc_get_post_views') && !empty($form_details['dashboard']['post_views'])) { ?>
                     <div class="fpsm-dashboard-column fpsm-dashboard-post-views"><?php echo (!empty($form_details['dashboard']['post_views_label'])) ? esc_html($form_details['dashboard']['post_views_label']) : esc_html__('Post Views', 'frontend-post-submission-manager'); ?></div>
                 <?php } ?>
@@ -35,14 +69,19 @@ if (!empty($current_user_id)) {
                 'meta_value' => $alias,
                 'paged' => $paged
             );
+            if (!empty($_GET['post_status'])) {
+                $post_status = sanitize_text_field($_GET['post_status']);
+                $dashboard_posts_args['post_status'] = $post_status;
+            }
+            if (!empty($_GET['keyword'])) {
+                $dashboard_posts_args['s'] = sanitize_text_field($_GET['keyword']);
+            }
             $user_meta = get_userdata($current_user_id);
             $user_roles = $user_meta->roles;
             if (!empty($form_details['dashboard']['list_all_administrator']) && in_array('administrator', $user_roles)) {
                 unset($dashboard_posts_args['author']);
             }
-//            echo "<pre>";
-//            print_r($dashboard_posts_args);
-//            echo "</pre>";
+
             /**
              * Filters the query args for fetching dashboard posts
              *
@@ -60,7 +99,9 @@ if (!empty($current_user_id)) {
                     $dashboard_posts_query->the_post();
                     ?>
                     <div class="fpsm-dashboard-row">
-                        <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo esc_html($sn++); ?></div>
+                        <?php if (!empty($form_details['dashboard']['sn'])) { ?>
+                            <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo esc_html($sn++); ?></div>
+                        <?php } ?>
                         <div class="fpsm-dashboard-column fpsm-dashboard-post-title">
                             <?php
                             if (!empty($form_details['dashboard']['list_all_administrator']) && in_array('administrator', $user_roles)) {
@@ -84,7 +125,9 @@ if (!empty($current_user_id)) {
                             }
                             ?>
                         </div>
-                        <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
+                        <?php if (!empty($form_details['dashboard']['last_modified'])) { ?>
+                            <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo esc_html(get_the_modified_date('d-m-Y g:i a')); ?></div>
+                        <?php } ?>
                         <?php if (function_exists('pvc_get_post_views') && !empty($form_details['dashboard']['post_views'])) { ?>
                             <div class="fpsm-dashboard-column fpsm-dashboard-post-views"><?php echo esc_html(pvc_get_post_views(get_the_ID())); ?></div>
                         <?php } ?>

@@ -477,5 +477,24 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('body').on('change', '.fpsm-dashboard-post-status-filter', function () {
+        $(this).closest('form').submit();
+    });
+
+    $('.fpsm-file-preview-wrap').sortable({
+        placeholder: "fpsm-sortable-placeholder",
+        forcePlaceholderSize: true,
+        stop: function (event, ui) {
+            var media_id_array = [];
+            ui.item.closest('.fpsm-file-preview-wrap').find('.fpsm-file-preview-row').each(function () {
+                var media_id = $(this).data('media-id');
+                media_id_array.push(media_id);
+                
+            });
+            var media_ids = media_id_array.join();
+            ui.item.closest('.fpsm-field').find('.fpsm-media-id').val(media_ids);
+        }
+    });
+
 
 });

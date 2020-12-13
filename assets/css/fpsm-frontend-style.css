@@ -3355,9 +3355,7 @@ button.add_media{
     font-size: 15px;
     line-height: 1.6;
 }
-.fpsm-dashboard-row .fpsm-dashboard-column:first-child{
-    max-width: 70px;
-}
+
 
 .fpsm-dashboard-column a{
     display: inline-block;
@@ -3552,7 +3550,6 @@ span.fpsm-post-status.fpsm-status-publish{
     }
 }
 .fpsm-dashboard-column.fpsm-dashboard-post-title {
-    max-width: 300px;
     overflow: hidden;
     padding: 20px;
 }
@@ -3566,4 +3563,28 @@ span.fpsm-scheduled-date {
 .fpsm-dashboard-column.fpsm-dashboard-sn {
     width: 40px !important;
     line-height: 2.3 !important;
+}
+.fpsm-dashboard-column.fpsm-dashboard-sn {
+    max-width: 70px;
+}
+.fpsm-dashboard-column.fpsm-dashboard-action {
+    max-width: 200px;
+}
+.fpsm-dashboard-column.fpsm-dashboard-post-status {
+    max-width: 170px;
+}
+form.fpsm-posts-filter-head {
+    padding: 10px 0;
+    text-align: right;
+}
+select.fpsm-dashboard-post-status-filter, form.fpsm-posts-filter-head input[type="search"],form.fpsm-posts-filter-head input[type="submit"]{
+    height: 30px;
+}
+form.fpsm-posts-filter-head input[type="submit"]{color:#fff;background:#3ea8de;cursor: pointer; }
+.fpsm-sortable-placeholder {
+    border: 2px dashed #bbb;
+    margin-bottom:20px;
+}
+.fpsm-file-preview-row {
+    cursor: move;
 }
