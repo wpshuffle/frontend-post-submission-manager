@@ -141,7 +141,7 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                             </div>
                                         </div>
                                         <div class="fpsm-field-wrap">
-                                            <label><?php esc_html_e('Backgroun Save', 'frontend-post-submission-manager'); ?></label>
+                                            <label><?php esc_html_e('Background Save', 'frontend-post-submission-manager'); ?></label>
                                             <div class="fpsm-field">
                                                 <input
                                                     type="checkbox"

@@ -698,6 +698,12 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return apply_filters('fpsm_post_statuses', $post_status_array);
         }
 
+        function get_total_author_posts($post_author_id, $post_type) {
+            global $wpdb;
+            $author_post_count = $wpdb->get_var("select count(*) from $wpdb->posts where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = $post_author_id");
+            return $author_post_count;
+        }
+
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

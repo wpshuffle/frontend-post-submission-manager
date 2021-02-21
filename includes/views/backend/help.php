@@ -318,7 +318,15 @@ return apply_filters('fpsm_post_statuses', $post_status_array);
 */
 $button_label = apply_filters('fpsm_submit_label', $button_label, $form_post_button_status, $form_post_button_details);
                 </pre>
-
+                <pre>
+/**
+* Filters author total number of posts fetched from DB
+*
+* @param int $author_total_posts
+* @param mixed $form_row
+*/
+$author_total_posts = apply_filters('fpsm_author_total_posts', $author_total_posts, $form_row);
+                </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?></p>
             <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
