@@ -121,6 +121,8 @@ $show_hide_toggle_class = $taxonomy;
                     </select>
                     <p class="description"><?php esc_html_e(sprintf('Please choose the %s that you want to assign explicitly. Please use control or command key to select multiple options.', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></p>
                 </div>
+                <?php include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/form-fields/post-display-fields.php'); ?>
+
             </div>
         </div>
     </div>
