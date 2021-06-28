@@ -196,13 +196,14 @@ $basic_settings = (!empty( $form_details['basic'] )) ? $form_details['basic'] : 
                 </div>
             </div>
         </div>
-        <div class="fpsm-field-wrap">
-            <label><?php esc_html_e( 'Fire save_post hook', 'frontend-post-submission-manager' ); ?></label>
-            <div class="fpsm-field">
-                <input type="checkbox" name="form_details[basic][fire_save_post]" value="1" <?php echo (!empty( $basic_settings['fire_save_post'] )) ? 'checked="checked"' : ''; ?>/>
-                <p class="description"><?php esc_html_e( 'Please check if you want to fire save_post hook on successful post submission.', 'frontend-post-submission-manager' ); ?></p>
-            </div>
-        </div>
+
 
     <?php } ?>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e( 'Fire save_post hook', 'frontend-post-submission-manager' ); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[basic][fire_save_post]" value="1" <?php echo (!empty( $basic_settings['fire_save_post'] )) ? 'checked="checked"' : ''; ?>/>
+            <p class="description"><?php esc_html_e( 'Please check if you want to fire save_post hook on successful post submission.', 'frontend-post-submission-manager' ); ?></p>
+        </div>
+    </div>
 </div>
