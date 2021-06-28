@@ -19,6 +19,13 @@
                     </select>
                 </div>
             </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e( 'Editor Height', 'frontend-post-submission-manager' ); ?></label>
+                <div class="fpsm-field">
+                    <input type="number" name="<?php echo esc_attr( $field_name_prefix ); ?>[editor_height]" value="<?php echo (!empty( $field_details['editor_height'] )) ? esc_attr( $field_details['editor_height'] ) : ''; ?>" min="1"/>
+                    <p class="description"><?php esc_html_e( 'Please enter the height of the editor in px if you want to increase or decrease the default height.', 'frontend-post-submission-manager' ); ?></p>
+                </div>
+            </div>
             <?php
             $media_ref_editors = array( 'rich', 'visual' );
             if ( $form_row->form_type == 'login_require' ) {
@@ -34,7 +41,9 @@
                 <?php
             }
             ?>
+
             <div class="fpsm-editor-type-ref <?php echo (!in_array( $editor_type, $media_ref_editors )) ? 'fpsm-display-none' : '' ?>">
+
                 <div class="fpsm-field-wrap">
                     <label><?php esc_html_e( 'Custom Media Upload Button', 'frontend-post-submission-manager' ); ?></label>
                     <div class="fpsm-field">

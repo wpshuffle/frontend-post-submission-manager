@@ -2,9 +2,10 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!!' );
 $editor_type = (!empty( $field_details['editor_type'] )) ? $field_details['editor_type'] : 'simple';
 $post_content = (!empty( $edit_post )) ? $edit_post->post_content : '';
+$editor_height = (!empty( $field_details['editor_height'] )) ? intval( $field_details['editor_height'] ) : '';
 if ( $editor_type == 'simple' ) {
     ?>
-    <textarea name="<?php echo esc_attr( $field_key ); ?>"><?php echo $fpsm_library_obj->sanitize_html( $post_content ); ?></textarea>
+    <textarea name="<?php echo esc_attr( $field_key ); ?>" <?php echo (!empty( $editor_height )) ? 'style="height:' . $editor_height . 'px"' : ''; ?>><?php echo $fpsm_library_obj->sanitize_html( $post_content ); ?></textarea>
     <?php
 } else {
     switch( $editor_type ) {
@@ -29,8 +30,18 @@ if ( $editor_type == 'simple' ) {
         'teeny' => $teeny,
         'wpautop' => true,
         'quicktags' => $show_quicktags,
+        'editor_height' => $editor_height,
         'editor_class' => apply_filters( 'fpsm_editor_class', 'fpsm-post-content-editor' )
     );
+    /**
+     * Filters Editor Settings
+     *
+     * @param array $editor_settings
+     * @param array $form_row
+     *
+     * @since 1.2.8
+     */
+    $editor_settings = apply_filters( 'fpsm_editor_settings', $editor_settings, $form_row );
     if ( $editor_type == 'visual' || $editor_type == 'rich' ) {
         if ( $form_row->form_type == 'guest' ) {
             if ( !empty( $field_details['custom_media_upload_button'] ) ) {
