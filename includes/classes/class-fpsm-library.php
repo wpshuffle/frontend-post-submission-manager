@@ -2,8 +2,8 @@
 
 defined('ABSPATH') or die('No script kiddies please!!');
 if (!class_exists('FPSM_Library')) {
-
-    class FPSM_Library {
+    class FPSM_Library
+    {
 
         /**
          * Returns all the publicly registered post types
@@ -12,7 +12,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_registered_post_types() {
+        public function get_registered_post_types()
+        {
             $post_types = get_post_types(array('public' => true), 'objects');
             return $post_types;
         }
@@ -24,7 +25,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_all_post_statuses() {
+        public function get_all_post_statuses()
+        {
             return get_post_statuses();
         }
 
@@ -35,7 +37,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function print_array($array) {
+        public function print_array($array)
+        {
             echo "<pre>";
             print_r($array);
             echo "</pre>";
@@ -46,7 +49,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function permission_denied() {
+        public function permission_denied()
+        {
             die('No script kiddies please!!');
         }
 
@@ -58,14 +62,14 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function sanitize_array($array = array(), $sanitize_rule = array()) {
+        public function sanitize_array($array = array(), $sanitize_rule = array())
+        {
             if (!is_array($array) || count($array) == 0) {
                 return array();
             }
 
             foreach ($array as $k => $v) {
                 if (!is_array($v)) {
-
                     $default_sanitize_rule = (is_numeric($k)) ? 'html' : 'text';
                     $sanitize_type = isset($sanitize_rule[$k]) ? $sanitize_rule[$k] : $default_sanitize_rule;
                     $array[$k] = $this->sanitize_value($v, $sanitize_type);
@@ -87,7 +91,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function sanitize_value($value = '', $sanitize_type = 'text') {
+        public function sanitize_value($value = '', $sanitize_type = 'text')
+        {
             switch ($sanitize_type) {
                 case 'html':
                     return $this->sanitize_html($value);
@@ -109,7 +114,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function sanitize_html($value) {
+        public function sanitize_html($value)
+        {
             $allowed_html = wp_kses_allowed_html('post');
             $allowed_html['option'] = array('value' => array(), 'selected' => array());
             $allowed_html['input'] = array('name' => array(), 'id' => array(), 'value' => array(), 'type' => array(), 'class' => array(), 'checked' => array());
@@ -125,7 +131,8 @@ if (!class_exists('FPSM_Library')) {
             return wp_kses($value, $allowed_html);
         }
 
-        function sort_terms_hierarchicaly(Array &$cats, Array &$into, $parentId = 0) {
+        public function sort_terms_hierarchicaly(array &$cats, array &$into, $parentId = 0)
+        {
             foreach ($cats as $i => $cat) {
                 if ($cat->parent == $parentId) {
                     $into[$cat->term_id] = $cat;
@@ -139,7 +146,8 @@ if (!class_exists('FPSM_Library')) {
             }
         }
 
-        function check_parent($term, $space = '') {
+        public function check_parent($term, $space = '')
+        {
             if (is_object($term)) {
                 if ($term->parent != 0) {
                     $space .= str_repeat('&nbsp;', 2);
@@ -157,8 +165,8 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          *         *
          */
-        function print_terms_as_checkbox($args) {
-
+        public function print_terms_as_checkbox($args)
+        {
             $default_args = array('terms' => array(),
                 'exclude' => array(),
                 'hierarchical' => 1,
@@ -174,7 +182,7 @@ if (!class_exists('FPSM_Library')) {
             foreach ($terms as $term) {
                 if (!in_array($term->slug, $exclude)) {
                     $space = $this->check_parent($term);
-                    $value = $term->term_id;
+                    $value =  (empty($hierarchical)) ? $term->name : $term->term_id;
                     $checked = (in_array($value, $checked_terms)) ? 'checked="checked"' : '';
                     $html .= '<div class="fpsm-each-term-checkbox ' . $class . '"><div class="fpsm-checkbox">' . $space . '<input type="checkbox" name="' . $field_name . '[]"   value="' . $value . '" ' . $checked . '/><label for="' . $field_name . '">' . $term->name . '</label></div></div>';
                 }
@@ -196,12 +204,13 @@ if (!class_exists('FPSM_Library')) {
         }
 
         /**
-         * Prints terms in checkbox with hierarchical format
+         * Prints terms in select option format with hierarchical format
          *
          * @since 1.0.0
          *
          */
-        function print_terms_as_option($args) {
+        public function print_terms_as_option($args)
+        {
             $default_args = array('terms' => array(),
                 'exclude' => array(),
                 'hierarchical' => 1,
@@ -219,7 +228,6 @@ if (!class_exists('FPSM_Library')) {
                     if (is_array($selected_terms)) {
                         $selected = (in_array($value, $selected_terms)) ? 'selected="selected"' : '';
                     } else {
-
                         $selected = ($selected_terms == $value) ? 'selected="selected"' : '';
                     }
 
@@ -248,7 +256,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return int
          */
-        function get_first_author() {
+        public function get_first_author()
+        {
             $users = get_users(array('number' => 1));
             return $users[0]->ID;
         }
@@ -263,7 +272,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return void
          */
-        function display_none($first_param, $second_param) {
+        public function display_none($first_param, $second_param)
+        {
             echo ($first_param != $second_param) ? 'style="display:none"' : '';
         }
 
@@ -274,7 +284,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_current_page_url() {
+        public function get_current_page_url()
+        {
             $pageURL = 'http';
             if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {
                 $pageURL .= "s";
@@ -297,7 +308,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return string $text
          */
-        function sanitize_escaping_linebreaks($text) {
+        public function sanitize_escaping_linebreaks($text)
+        {
             $text = $this->sanitize_html($text, true);
             $text = implode("<br \>", explode("\n", $text));
             return $text;
@@ -310,7 +322,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return string $text
          */
-        function output_converting_br($text) {
+        public function output_converting_br($text)
+        {
             $text = implode("\n", explode("<br \>", $text));
             $text = $this->sanitize_html($text, true);
             return $text;
@@ -323,7 +336,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_registered_post_formats() {
+        public function get_registered_post_formats()
+        {
             return get_theme_support('post-formats');
         }
 
@@ -335,7 +349,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function is_alias_available($form_alias, $form_id = 0) {
+        public function is_alias_available($form_alias, $form_id = 0)
+        {
             $form_table = FPSM_FORM_TABLE;
             global $wpdb;
             if (empty($form_id)) {
@@ -357,7 +372,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return array $form_row
          */
-        function get_form_row_by_id($form_id) {
+        public function get_form_row_by_id($form_id)
+        {
             global $wpdb;
             $form_table = FPSM_FORM_TABLE;
             $form_row = $wpdb->get_row($wpdb->prepare("select * from $form_table where form_id = %d", $form_id));
@@ -371,7 +387,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @return array $users
          */
-        function get_users($args = '') {
+        public function get_users($args = '')
+        {
             $users = get_users($args);
             return $users;
         }
@@ -382,7 +399,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0         *
          */
-        function get_default_fields($post_type = 'post', $form_type = 'login_require') {
+        public function get_default_fields($post_type = 'post', $form_type = 'login_require')
+        {
             $default_fields = array('post_title' => array('show_on_form' => 1, 'field_label' => esc_html__('Post Title', 'frontend-post-submission-manager')),
                 'post_content' => array('show_on_form' => 1, 'field_label' => esc_html__('Post Content', 'frontend-post-submission-manager'), 'editor_type' => 'simple'),
                 'post_image' => array(),
@@ -422,7 +440,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_default_form_details($post_type = 'post', $form_type = 'login_require') {
+        public function get_default_form_details($post_type = 'post', $form_type = 'login_require')
+        {
             $form_default_fields = $this->get_default_fields($post_type, $form_type);
             $form_details['form']['fields'] = $form_default_fields;
             return $form_details;
@@ -436,10 +455,11 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function generate_field_file($field_key) {
+        public function generate_field_file($field_key)
+        {
             if (strpos($field_key, '_taxonomy') === 0) {
                 $field_file = 'taxonomy.php';
-            } else if (strpos($field_key, '_custom_field') === 0) {
+            } elseif (strpos($field_key, '_custom_field') === 0) {
                 $field_file = 'custom_field.php';
             } else {
                 $field_file = "$field_key.php";
@@ -456,7 +476,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function get_form_row_by_alias($alias) {
+        public function get_form_row_by_alias($alias)
+        {
             global $wpdb;
             $form_table = FPSM_FORM_TABLE;
             $form_row = $wpdb->get_row($wpdb->prepare("select * from $form_table where form_alias = %s", $alias));
@@ -470,7 +491,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @since 1.0.0
          */
-        function generate_field_class($field_key) {
+        public function generate_field_class($field_key)
+        {
             if ($this->is_custom_field_key($field_key)) {
                 $field_class_prefix = 'fpsm-meta-';
             } else {
@@ -478,7 +500,7 @@ if (!class_exists('FPSM_Library')) {
             }
             if (strpos($field_key, '_taxonomy') === 0) {
                 $field_key = str_replace('_taxonomy|', '', $field_key);
-            } else if (strpos($field_key, '_custom_field') === 0) {
+            } elseif (strpos($field_key, '_custom_field') === 0) {
                 $field_key = str_replace('_custom_field|', '', $field_key);
             }
             $field_class = str_replace('_', '-', $field_key);
@@ -491,7 +513,8 @@ if (!class_exists('FPSM_Library')) {
             return $field_class;
         }
 
-        function save_media_to_library() {
+        public function save_media_to_library()
+        {
             $filetype = wp_check_filetype($filename . '.' . $ext);
             $mime_type = $filetype['type'];
             $file_url = $upload_url . '/' . $filename . '.' . $ext;
@@ -503,7 +526,7 @@ if (!class_exists('FPSM_Library')) {
                 'post_status' => 'inherit',
                 'guid' => $file_url
             );
-            require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+            require_once(ABSPATH . 'wp-admin/includes/admin.php');
             $attachment_id = wp_insert_attachment($attachment, $file_path);
             require_once(ABSPATH . 'wp-admin/includes/image.php');
             $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
@@ -520,7 +543,8 @@ if (!class_exists('FPSM_Library')) {
          * @param int $length
          * @return string
          */
-        function generate_random_string($length = 7) {
+        public function generate_random_string($length = 7)
+        {
             $random_string = '';
             $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
             for ($i = 1; $i <= $length; $i++) {
@@ -535,7 +559,8 @@ if (!class_exists('FPSM_Library')) {
          * @param int $bytes
          * @return string
          */
-        function format_file_size($bytes) {
+        public function format_file_size($bytes)
+        {
             if ($bytes >= 1073741824) {
                 $bytes = number_format($bytes / 1073741824, 2) . ' GB';
             } elseif ($bytes >= 1048576) {
@@ -553,7 +578,8 @@ if (!class_exists('FPSM_Library')) {
             return $bytes;
         }
 
-        function is_taxonomy_key($field_key) {
+        public function is_taxonomy_key($field_key)
+        {
             if (strpos($field_key, '_taxonomy') === 0) {
                 return true;
             } else {
@@ -561,7 +587,8 @@ if (!class_exists('FPSM_Library')) {
             }
         }
 
-        function is_custom_field_key($field_key) {
+        public function is_custom_field_key($field_key)
+        {
             if (strpos($field_key, '_custom_field') === 0) {
                 return true;
             } else {
@@ -569,12 +596,14 @@ if (!class_exists('FPSM_Library')) {
             }
         }
 
-        function get_meta_key_by_field_key($field_key) {
+        public function get_meta_key_by_field_key($field_key)
+        {
             $field_key_array = explode('|', $field_key);
             return end($field_key_array);
         }
 
-        function get_attachment_filesize($attachment_id) {
+        public function get_attachment_filesize($attachment_id)
+        {
             $attahment_file = get_attached_file($attachment_id);
             $bytes_filesize = filesize($attahment_file);
             $formatted_filesize = $this->format_file_size($bytes_filesize);
@@ -586,7 +615,8 @@ if (!class_exists('FPSM_Library')) {
          *
          * @param int $post_id
          */
-        function get_post_edit_url($post_id) {
+        public function get_post_edit_url($post_id)
+        {
             $current_page_url = $this->get_current_page_url();
             $get_param = $_GET;
             $get_param['action'] = 'edit_post';
@@ -600,7 +630,8 @@ if (!class_exists('FPSM_Library')) {
             return $post_edit_url;
         }
 
-        function default_admin_notification() {
+        public function default_admin_notification()
+        {
             $default_admin_notification_message = esc_html__(sprintf('Hello There,
 
 A new post has been submitted via Frontend Post Submission Manager plugin in your %s website. Please find details below:
@@ -614,7 +645,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $default_admin_notification_message;
         }
 
-        function default_publish_notification() {
+        public function default_publish_notification()
+        {
             $default_publish_notification_message = esc_html__(sprintf('Hello There,
 
 Your post has been published in our %s website. Please find details below:
@@ -628,7 +660,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $default_publish_notification_message;
         }
 
-        function default_submit_notification() {
+        public function default_submit_notification()
+        {
             $default_publish_notification_message = esc_html__(sprintf('Hello There,
 
 Your post has been submitted in our %s website. Please find details below:
@@ -641,7 +674,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $default_publish_notification_message;
         }
 
-        function default_trash_notification() {
+        public function default_trash_notification()
+        {
             $default_trash_notification_message = esc_html__(sprintf('Hello There,
 
 We are sorry to inform you that your post has been rejected in our %s website. Please find details below:
@@ -652,7 +686,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $default_trash_notification_message;
         }
 
-        function default_from_email() {
+        public function default_from_email()
+        {
             $domain_name = $_SERVER['HTTP_HOST'];
             return 'noreply@' . $domain_name;
         }
@@ -664,7 +699,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
          *
          * @since 1.1.1
          */
-        function get_user_IP() {
+        public function get_user_IP()
+        {
             $client = @$_SERVER['HTTP_CLIENT_IP'];
             $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
             $remote = $_SERVER['REMOTE_ADDR'];
@@ -680,7 +716,8 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return $ip;
         }
 
-        function get_post_statuses() {
+        public function get_post_statuses()
+        {
             $post_statuses = get_post_stati(array('show_in_admin_status_list' => true), 'object');
             $post_status_array = array();
             foreach ($post_statuses as $post_status => $post_status_obj) {
@@ -698,12 +735,12 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return apply_filters('fpsm_post_statuses', $post_status_array);
         }
 
-        function get_total_author_posts($post_author_id, $post_type) {
+        public function get_total_author_posts($post_author_id, $post_type)
+        {
             global $wpdb;
             $author_post_count = $wpdb->get_var("select count(*) from $wpdb->posts where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = $post_author_id");
             return $author_post_count;
         }
-
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();
