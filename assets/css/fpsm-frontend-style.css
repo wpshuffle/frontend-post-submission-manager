@@ -4257,7 +4257,9 @@ form.fpsm-posts-filter-head {
 select.fpsm-dashboard-post-status-filter,
 form.fpsm-posts-filter-head input[type="search"],
 form.fpsm-posts-filter-head input[type="submit"] {
-    height: 30px;
+    height: 35px;
+    font-family: inherit;
+    vertical-align: middle;
 }
 
 form.fpsm-posts-filter-head input[type="submit"] {
