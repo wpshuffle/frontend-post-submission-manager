@@ -532,6 +532,7 @@ table.fixed {
     color: rgba(0, 0, 0, .8);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+    min-width: 250px;
 }
 
 .fpsm-clipboard-copy {
@@ -1339,4 +1340,8 @@ a.fpsm-file-view-button {
 .wrap.fpsm-wrap .description {
     font-style: italic;
     margin-top: 10px;
+}
+
+.fpsm-shortcode-display {
+    margin-bottom: 5px;
 }
