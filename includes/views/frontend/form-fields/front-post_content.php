@@ -64,6 +64,7 @@ if ($editor_type == 'simple') {
 <div class="fpsm-file-uploader fpsm-custom-media-upload-button"
     id="fpsm-file-uploader-<?php echo esc_attr($fpsm_library_obj->generate_random_string()); ?>"
     data-extensions="<?php echo esc_attr(implode('|', $allowed_extensions)); ?>"
+    data-extensions-error-message="<?php echo esc_attr($file_extension_error_message); ?>" data-multiple='true'
     data-file-size-limit="<?php echo esc_attr($upload_file_size_limit); ?>"
     data-label="<?php echo esc_attr($uploader_label); ?>" data-field-name="<?php echo esc_attr($field_key); ?>"
     data-multiple='true' data-multiple-upload-limit="-1"
@@ -82,6 +83,7 @@ if ($editor_type == 'simple') {
                      * @since 1.0.0
                      */
                     $default_allowed_extensions = apply_filters('fpsm_image_allowed_extensions', $default_allowed_extensions);
+                    $file_extension_error_message = apply_filters('fpsm_pcu_extension_error_message', esc_html__('{file} has invalid extension. Only {extensions} are allowed', 'frontend-post-submission-manager'));
                     $upload_file_size_limit = (!empty($field_details['upload_file_size_limit'])) ? $field_details['upload_file_size_limit'] : 5;
                     $uploader_label = (!empty($field_details['upload_button_label'])) ? $field_details['upload_button_label'] : esc_html__('Upload Image', 'frontend-post-submission-manager');
                     $multiple_upload = (!empty($field_details['multiple_upload'])) ? 'true' : 'false';
