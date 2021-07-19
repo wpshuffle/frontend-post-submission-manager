@@ -7,8 +7,9 @@ defined('ABSPATH') or die('No script kiddies please!!');
             <?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?>
         </h1>
         <div class="fpsm-add-wrap">
-            <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button"
-                    class="fpsm-button-primary"
+            <a
+                href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input
+                    type="button" class="fpsm-button-primary"
                     value="<?php esc_html_e('Add New Form', 'frontened-post-submission-manager'); ?>" /></a>
         </div>
 
@@ -23,17 +24,23 @@ defined('ABSPATH') or die('No script kiddies please!!');
         <table class="wp-list-table widefat fixed fpsm-form-lists-table">
             <thead>
                 <tr>
-                    <th><?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Form Title', 'frontend-post-submission-manager'); ?>
                     </th>
-                    <th><?php esc_html_e('Shortcode', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Shortcode', 'frontend-post-submission-manager'); ?>
                     </th>
-                    <th><?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Post Type', 'frontend-post-submission-manager'); ?>
                     </th>
-                    <th><?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Form Type', 'frontend-post-submission-manager'); ?>
                     </th>
-                    <th><?php esc_html_e('Status', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Status', 'frontend-post-submission-manager'); ?>
                     </th>
-                    <th><?php esc_html_e('Action', 'frontend-post-submission-manager'); ?>
+                    <th>
+                        <?php esc_html_e('Action', 'frontend-post-submission-manager'); ?>
                     </th>
                 </tr>
             </thead>
@@ -51,15 +58,13 @@ defined('ABSPATH') or die('No script kiddies please!!');
                     </td>
                     <td>
                         <div class="fpsm-shortcode-display">
-                            <span class="fpsm-shortcode-preview">[fpsm
-                                alias="<?php echo esc_html(($form_row->form_alias)); ?>"]</span>
+                            <span class="fpsm-shortcode-preview">[fpsm alias="<?php echo esc_html(($form_row->form_alias)); ?>"]</span>
                             <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
                         </div>
                         <?php if ($form_row->form_type == 'login_require') {
                             ?>
                         <div class="fpsm-shortcode-display">
-                            <span class="fpsm-shortcode-preview">[fpsm_dashboard
-                                alias="<?php echo esc_html(($form_row->form_alias)); ?>"]</span>
+                            <span class="fpsm-shortcode-preview">[fpsm_dashboard alias="<?php echo esc_html(($form_row->form_alias)); ?>"]</span>
                             <span class="fpsm-clipboard-copy"><i class="fas fa-clipboard-list"></i></span>
                         </div>
                         <?php
