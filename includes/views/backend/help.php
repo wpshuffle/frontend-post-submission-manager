@@ -1,23 +1,34 @@
 <div class="wrap fpsm-wrap">
     <div class="fpsm-header fpsm-clearfix">
-        <h1 class="fpsm-floatLeft"><?php esc_html_e( 'Frontend Post Submission Manager', 'frontend-post-submission-manager' ); ?></h1>
+        <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?>
+        </h1>
         <div class="fpsm-add-wrap">
-            <a href="<?php echo admin_url( 'admin.php?page=fpsm-add-new-form' ); ?>"><input type="button" class="fpsm-button-primary" value="<?php echo esc_html_e( 'Add New Form', 'frontend-post-submission-manager' ); ?>"></a>
+            <a
+                href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input
+                    type="button" class="fpsm-button-primary"
+                    value="<?php echo esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?>"></a>
         </div>
     </div>
 
     <div class="fpsm-block-wrap">
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e( 'Documentation', 'frontend-post-submission-manager' ); ?></h2>
-            <p><?php esc_html_e( 'You can check our detailed documentation from below link.', 'frontend-post-submission-manager' ); ?></p>
-            <p><a href="http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager" target="_blank">http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager</a></p>
+            <h2><?php esc_html_e('Documentation', 'frontend-post-submission-manager'); ?>
+            </h2>
+            <p><?php esc_html_e('You can check our detailed documentation from below link.', 'frontend-post-submission-manager'); ?>
+            </p>
+            <p><a href="http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager"
+                    target="_blank">http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager</a>
+            </p>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e( 'Developer Documentation', 'frontend-post-submission-manager' ); ?></h2>
-            <p><?php esc_html_e( 'If you are developer and trying to add any functionality or customize our plugin through hooks then below are the list of actions and filters available in the plugin.', 'frontend-post-submission-manager' ); ?></p>
+            <h2><?php esc_html_e('Developer Documentation', 'frontend-post-submission-manager'); ?>
+            </h2>
+            <p><?php esc_html_e('If you are developer and trying to add any functionality or customize our plugin through hooks then below are the list of actions and filters available in the plugin.', 'frontend-post-submission-manager'); ?>
+            </p>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e( 'Available Actions', 'frontend-post-submission-manager' ); ?></h2>
+            <h2><?php esc_html_e('Available Actions', 'frontend-post-submission-manager'); ?>
+            </h2>
             <div class="fpsm-hooks-wrap">
                 <pre>
 /**
@@ -136,7 +147,8 @@ do_action('fpsm_login_form_after', $form_row, $form_details);
             </div>
         </div>
         <div class="fpsm-content-block">
-            <h2><?php esc_html_e( 'Available Filters', 'frontend-post-submission-manager' ); ?></h2>
+            <h2><?php esc_html_e('Available Filters', 'frontend-post-submission-manager'); ?>
+            </h2>
             <div class="fpsm-hooks-wrap">
                 <pre>
 /**
@@ -350,9 +362,23 @@ $author_total_posts = apply_filters('fpsm_author_total_posts', $author_total_pos
 */
 $last_modified_date = apply_filters( 'fpsm_last_modified_date', $last_modified_date );
                 </pre>
+                <pre>
+/**
+* Filters Post Notification
+*
+* @param string $notification_message
+* @param string $notification_type [post_publish, post_submit, admin, post_trash]
+* @param int $post_id
+*
+* @since 1.2.9
+*/
+$notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $post_id);
+                </pre>
             </div>
-            <p><?php esc_html_e( 'If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager' ); ?></p>
-            <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
+            <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
+            </p>
+            <a href="https://codecanyon.net/user/wpshuffle#contact"
+                target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
         </div>
 
 

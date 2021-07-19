@@ -20,6 +20,17 @@ if (!empty($form_details['notification']['admin']['enable'])) {
     $notification_message = str_replace('[post_title]', get_the_title($insert_update_post_id), $notification_message);
     $post_edit_link = get_edit_post_link($insert_update_post_id);
     $notification_message = str_replace('[post_admin_link]', '<a href="' . $post_edit_link . '">' . $post_edit_link . '</a>', $notification_message);
+    $notification_type = 'admin';
+    /**
+     * Filters Post Notification
+     *
+     * @param string $notification_message
+     * @param string $notification_type [post_publish, post_submit, admin, post_trash]
+     * @param int $post_id
+     *
+     * @since 1.2.9
+     */
+    $notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $post_id);
     $admin_emails = (!empty($form_details['notification']['admin']['notification_emails'])) ? explode(',', $form_details['notification']['admin']['notification_emails']) : get_bloginfo('admin_email');
     $headers = array();
     $charset = get_option('blog_charset');
@@ -33,5 +44,3 @@ if (!empty($form_details['notification']['admin']['enable'])) {
         wp_mail($admin_emails, $subject, $notification_message, $headers);
     }
 }
-
-
