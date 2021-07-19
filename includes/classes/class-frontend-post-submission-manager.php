@@ -8,14 +8,15 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
      *
      * @since 1.0.0
      */
-    class Frontend_Post_Submission_Manager {
+    class Frontend_Post_Submission_Manager
+    {
 
         /**
          * Plugin's current version.
          *
          * @var string
          */
-        public $version = '1.2.7';
+        public $version = '1.2.9';
 
         /**
          * The single instance of the class.
@@ -33,7 +34,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          * @static
          * @return Frontend_Post_Submission_Manager - Main instance.
          */
-        public static function instance() {
+        public static function instance()
+        {
             if (is_null(self::$_instance)) {
                 self::$_instance = new self();
             }
@@ -50,7 +52,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          * @access protected
          * @return void
          */
-        public function __clone() {
+        public function __clone()
+        {
             // Cloning instances of the class is forbidden.
             _doing_it_wrong(__FUNCTION__, esc_html__('No script kiddies please!!', 'frontend-post-submission-manager'), '1.6');
         }
@@ -62,7 +65,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          * @access protected
          * @return void
          */
-        public function __wakeup() {
+        public function __wakeup()
+        {
             // Unserializing instances of the class is forbidden.
             _doing_it_wrong(__FUNCTION__, esc_html__('No script kiddies please!!', 'frontend-post-submission-manager'), '1.6');
         }
@@ -76,13 +80,14 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          *
          * @return bool
          */
-        public function is_rest_api_request() {
+        public function is_rest_api_request()
+        {
             if (empty($_SERVER['REQUEST_URI'])) {
                 return false;
             }
 
             $rest_prefix = trailingslashit(rest_get_url_prefix());
-            $is_rest_api_request = ( false !== strpos($_SERVER['REQUEST_URI'], $rest_prefix) ); // phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            $is_rest_api_request = (false !== strpos($_SERVER['REQUEST_URI'], $rest_prefix)); // phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
             return $is_rest_api_request;
         }
@@ -93,7 +98,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          * @param  string $type admin, ajax, cron or frontend.
          * @return bool
          */
-        private function is_request($type) {
+        private function is_request($type)
+        {
             switch ($type) {
                 case 'admin':
                     return is_admin();
@@ -102,7 +108,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 case 'cron':
                     return defined('DOING_CRON');
                 case 'frontend':
-                    return (!is_admin() || defined('DOING_AJAX') ) && !defined('DOING_CRON') && !$this->is_rest_api_request();
+                    return (!is_admin() || defined('DOING_AJAX')) && !defined('DOING_CRON') && !$this->is_rest_api_request();
             }
         }
 
@@ -111,12 +117,14 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          *
          * @since 1.0.0
          */
-        function __construct() {
+        public function __construct()
+        {
             $this->define_constants();
             $this->includes();
         }
 
-        function define_constants() {
+        public function define_constants()
+        {
             global $wpdb;
             defined('FPSM_VERSION') or define('FPSM_VERSION', $this->version);
             defined('FPSM_FORM_TABLE') or define('FPSM_FORM_TABLE', $wpdb->prefix . 'fpsm_forms');
@@ -146,7 +154,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
             defined('FPSM_CUSTOM_FIELD_TYPE_LIST') or define('FPSM_CUSTOM_FIELD_TYPE_LIST', $custom_field_type_list);
         }
 
-        function includes() {
+        public function includes()
+        {
             include(FPSM_PATH . '/includes/classes/class-fpsm-init.php');
             include(FPSM_PATH . '/includes/classes/class-fpsm-library.php');
             include(FPSM_PATH . '/includes/classes/class-fpsm-shortcode.php');
@@ -165,7 +174,5 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 include(FPSM_PATH . '/includes/classes/admin/class-fpsm-metabox.php');
             }
         }
-
     }
-
 }
