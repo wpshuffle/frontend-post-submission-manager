@@ -133,6 +133,7 @@ if (!class_exists('FPSM_Shortcode')) {
 
                 }
             }
+            return $user;
         }
 
         function login_extra_fields($login_form_buttom_html) {
@@ -212,6 +213,7 @@ if (!class_exists('FPSM_Shortcode')) {
                     }
                 }
             }
+            return $user;
         }
 
     }

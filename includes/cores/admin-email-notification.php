@@ -18,7 +18,7 @@ if (!empty($form_details['notification']['admin']['enable'])) {
     $from_name = str_replace('[author_name]', $author_name, $from_name);
     $notification_message = (!empty($form_details['notification']['admin']['notification_message'])) ? $form_details['notification']['admin']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks($fpsm_library_obj->default_admin_notification());
     $notification_message = str_replace('[post_title]', get_the_title($insert_update_post_id), $notification_message);
-    $post_edit_link = get_edit_post_link($insert_update_post_id);
+    $post_edit_link = admin_url('post.php?post='.$insert_update_post_id.'&action=edit');
     $notification_message = str_replace('[post_admin_link]', '<a href="' . $post_edit_link . '">' . $post_edit_link . '</a>', $notification_message);
     $notification_type = 'admin';
     /**
