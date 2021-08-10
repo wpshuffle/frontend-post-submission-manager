@@ -372,7 +372,7 @@ $last_modified_date = apply_filters( 'fpsm_last_modified_date', $last_modified_d
 *
 * @since 1.2.9
 */
-$notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $post_id);
+$notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $insert_update_post_id);
                 </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>

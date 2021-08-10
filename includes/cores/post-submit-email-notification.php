@@ -32,7 +32,7 @@ if (!empty($form_details['notification']['post_submit']['enable'])) {
      *
      * @since 1.2.9
      */
-    $notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $post_id);
+    $notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $insert_update_post_id);
     $headers = array();
     $charset = get_option('blog_charset');
     $headers[] = 'Content-Type: text/html; charset=' . $charset;
