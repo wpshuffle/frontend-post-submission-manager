@@ -12,7 +12,13 @@ $custom_field_type_list = FPSM_CUSTOM_FIELD_TYPE_LIST;
         <a href="javascript:void(0);" class="fpsm-field-remove-trigger"><span class="dashicons dashicons-trash"></span></a>
     </div>
     <div class="fpsm-field-body fpsm-display-none">
-        <input type="hidden" name="<?php echo esc_attr($field_name_prefix); ?>[field_type]" value="<?php echo esc_attr($field_type); ?>"/>
+        <input type="hidden" name="<?php echo esc_attr($field_name_prefix); ?>[field_type]" value="<?php echo esc_attr($field_type); ?>" />
+        <div class="fpsm-field-wrap">
+            <label><?php esc_html_e('Meta Key', 'frontend-post-submission-manager'); ?></label>
+            <div class="fpsm-field">
+                <input type="text" value="<?php echo (!empty($meta_key)) ? esc_attr($meta_key) : ''; ?>" readonly onclick="this.select();"/>
+            </div>
+        </div>
         <?php
         if (file_exists(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php')) {
             include(FPSM_PATH . '/includes/views/backend/forms/custom-field-types/' . $field_type . '.php');
