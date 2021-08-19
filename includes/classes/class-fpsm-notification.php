@@ -6,10 +6,10 @@ if (!class_exists('FPSM_Notification')) {
     {
         public function __construct()
         {
-            add_action('fpsm_form_submission_success', array( $this, 'trigger_admin_notification' ), 10, 3);
-            add_action('wp_trash_post', array( $this, 'trigger_post_reject_notifications' ));
+            add_action('fpsm_form_submission_success', array($this, 'trigger_admin_notification'), 10, 3);
+            add_action('wp_trash_post', array($this, 'trigger_post_reject_notifications'));
             //add_action('init', array($this, 'post_publish_notification_helper'));
-            add_action('transition_post_status', array( $this, 'trigger_post_publish_notification' ), 10, 3);
+            add_action('transition_post_status', array($this, 'trigger_post_publish_notification'), 10, 3);
         }
 
         public function trigger_admin_notification($insert_update_post_id, $form_row, $action)
@@ -87,7 +87,7 @@ if (!class_exists('FPSM_Notification')) {
             $post_types = $fpsm_library_obj->get_registered_post_types();
             foreach ($post_types as $post_type) {
                 $publish_action = 'publish_' . $post_type->name;
-                add_action($publish_action, array( $this, 'trigger_post_publish_notification' ), 10, 3);
+                add_action($publish_action, array($this, 'trigger_post_publish_notification'), 10, 3);
             }
         }
 
@@ -132,7 +132,7 @@ if (!class_exists('FPSM_Notification')) {
                 $notification_message = (!empty($form_details['notification']['post_publish']['notification_message'])) ? $form_details['notification']['post_publish']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks($fpsm_library_obj->default_publish_notification());
                 $notification_message = str_replace('[post_title]', get_the_title($post_id), $notification_message);
                 $notification_message = str_replace('[author_name]', $author_name, $notification_message);
-                $notification_message = str_replace('[post_link]', $post_link, $notification_message);
+                $notification_message = str_replace('[post_link]', '<a href="' . $post_link . '">' . $post_link . '</a>', $notification_message);
                 $notification_type = 'post_publish';
                 /**
                  * Filters Post Notification

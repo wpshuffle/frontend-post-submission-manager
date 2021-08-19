@@ -300,7 +300,7 @@ if ($this->admin_ajax_nonce_verify()) {
                 // Storing form alias for the reference
                 update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
                 $response['status'] = 200;
-                if ($dynamic_post_status == 'draft' && !empty($form_details['form']['post_status'])) {
+                if (($dynamic_post_status == 'draft' && !empty($form_details['form']['post_status'])) || !empty($form_data['post_id'])) {
                     $response['draft_post_id'] = $insert_update_post_id;
                 }
                 $default_success_message = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');

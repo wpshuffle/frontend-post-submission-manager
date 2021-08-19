@@ -22,6 +22,8 @@ if (!empty($form_details['notification']['post_submit']['enable'])) {
     $subject = str_replace('[author_name]', $author_name, $subject);
     $notification_message = (!empty($form_details['notification']['post_submit']['notification_message'])) ? $form_details['notification']['post_submit']['notification_message'] : $fpsm_library_obj->sanitize_escaping_linebreaks($fpsm_library_obj->default_submit_notification());
     $notification_message = str_replace('[post_title]', get_the_title($insert_update_post_id), $notification_message);
+    $notification_message = str_replace('[author_name]', $author_name, $notification_message);
+
     $notification_type = 'post_submit';
     /**
      * Filters Post Notification
