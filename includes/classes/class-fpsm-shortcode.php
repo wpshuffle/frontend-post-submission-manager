@@ -47,7 +47,7 @@ if (!class_exists('FPSM_Shortcode')) {
             }
             wp_enqueue_style('fpsm-fileuploader', FPSM_URL . '/assets/css/fileuploader.css', array(), FPSM_VERSION);
             if (empty($fpsm_settings['disable_fontawesome'])) {
-                wp_enqueue_style('fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
+                wp_enqueue_style('fpsm-fontawesome', FPSM_URL . '/assets/fontawesome/css/all.min.css', array(), FPSM_VERSION);
             }
             $js_dependencies = array('jquery', 'fpsm-fileuploader', 'wp-util', 'jquery-ui-autocomplete', 'jquery-ui-datepicker', 'jquery-ui-sortable');
             wp_enqueue_script('fpsm-fileuploader', FPSM_URL . '/assets/js/fpsm-fileuploader.js', array(), FPSM_VERSION);

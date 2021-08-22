@@ -51,13 +51,15 @@ foreach ($form_fields as $field_key => $field_details) {
                         <?php
                         switch ($field_details['field_type']) {
                             case 'textfield':
-                            case 'textarea':
                             case 'select':
                             case 'radio':
                             case 'number':
                             case 'datepicker':
                             case 'hidden':
                                 echo $fpsm_library_obj->sanitize_html($filterd_custom_field_value);
+                                break;
+                            case 'textarea':
+                                echo nl2br($filterd_custom_field_value);
                                 break;
                             case 'email':
                         ?>
@@ -149,21 +151,22 @@ foreach ($form_fields as $field_key => $field_details) {
                     $taxonomy_array = explode('|', $field_key);
                     $taxonomy_name = end($taxonomy_array);
                     $terms = get_the_terms(get_the_ID(), $taxonomy_name);
-                    if (!empty($field_details['display_as_link'])) {
-                        $term_link_array = [];
-                        foreach ($terms as $term) {
-                            $term_link =  get_term_link($term);
-                            $target = (!empty($field_details['open_in_new_tab'])) ? ' target="_blank" ' : '';
-                            $term_link_array[] = '<a href="' . $term_link . '"' . $target . ' >' . $term->name . '</a>';
+                    if (!empty($terms)) {
+                        if (!empty($field_details['display_as_link'])) {
+                            $term_link_array = [];
+                            foreach ($terms as $term) {
+                                $term_link =  get_term_link($term);
+                                $target = (!empty($field_details['open_in_new_tab'])) ? ' target="_blank" ' : '';
+                                $term_link_array[] = '<a href="' . $term_link . '"' . $target . ' >' . $term->name . '</a>';
+                            }
+                            $term_links_html = implode(', ', $term_link_array);
+                            echo wp_kses_post($term_links_html);
+                        } else {
+                            $term_names = array_column($terms, 'name');
+                            $term_names_string = implode(', ', $term_names);
+                            echo esc_html($term_names_string);
                         }
-                        $term_links_html = implode(', ', $term_link_array);
-                        echo wp_kses_post($term_links_html);
-                    } else {
-                        $term_names = array_column($terms, 'name');
-                        $term_names_string = implode(', ', $term_names);
-                        echo esc_html($term_names_string);
                     }
-
                     ?>
                 </div>
             </div>

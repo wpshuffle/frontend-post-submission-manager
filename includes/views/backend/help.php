@@ -382,6 +382,17 @@ $last_modified_date = apply_filters( 'fpsm_last_modified_date', $last_modified_d
 */
 $notification_message = apply_filters('fpsm_notification_message', $notification_message, $notification_type, $insert_update_post_id);
                 </pre>
+                <pre>
+/**
+* Filters sanitize rule array before processing the form data
+* 
+* @param array $sanitize_rule_array
+* @param array $form_row
+* 
+* @since 1.3.2
+*/
+$sanitize_rule = apply_filters('fpsm_front_sanitize_rule', $sanitize_rule_array, $form_row);
+                </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>

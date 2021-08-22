@@ -2,22 +2,47 @@
 
 defined('ABSPATH') or die('No script kiddies please!!');
 if ($this->admin_ajax_nonce_verify()) {
+    global $fpsm_library_obj;
+
     $form_data = $_POST['form_data'];
     $form_data = stripslashes_deep($form_data);
     parse_str($form_data, $form_data);
-   
-   
-    global $fpsm_library_obj;
-    $form_data = $fpsm_library_obj->sanitize_array($form_data, array( 'post_content' => 'html' ));
-    $form_alias = $form_data['form_alias'];
+
+    $form_alias = sanitize_text_field($form_data['form_alias']);
 
     $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
     if (empty($form_row)) {
         die(esc_html__('No form found for this alias.', 'frontend-post-submission-manager'));
     }
     $form_details = maybe_unserialize($form_row->form_details);
-    $dynamic_post_status = (!empty($form_data['dynamic_post_status'])) ? $form_data['dynamic_post_status'] : $form_details['basic']['post_status'];
     $form_fields = $form_details['form']['fields'];
+    $sanitize_rule_array = array('post_content' => 'html');
+    if (!empty($form_fields)) {
+        foreach ($form_fields as $temp_field_key => $temp_field_details) {
+            if ($fpsm_library_obj->is_custom_field_key($temp_field_key)) {
+                if ($temp_field_details['field_type'] == 'textarea') {
+
+                    $sanitize_rule_array[$temp_field_key] = 'html';
+                }
+            }
+        }
+    }
+
+    /**
+     * Filters sanitize rule array before processing the form data
+     * 
+     * @param array $sanitize_rule_array
+     * @param array $form_row
+     * 
+     * @since 1.3.2
+     */
+    $sanitize_rule = apply_filters('fpsm_front_sanitize_rule', $sanitize_rule_array, $form_row);
+
+    $form_data = $fpsm_library_obj->sanitize_array($form_data, $sanitize_rule);
+
+
+    $dynamic_post_status = (!empty($form_data['dynamic_post_status'])) ? $form_data['dynamic_post_status'] : $form_details['basic']['post_status'];
+
     $error_flag = 0;
     $error_details = array();
     $response = array();
@@ -326,7 +351,7 @@ if ($this->admin_ajax_nonce_verify()) {
                     }
                     if (empty($form_details['dashboard']['disable_post_edit_status'])) {
                         if (!empty($form_details['dashboard']['disable_post_edit'])) {
-                            $disabled_post_edit_status = array( 'publish' );
+                            $disabled_post_edit_status = array('publish');
                         } else {
                             $disabled_post_edit_status = array();
                         }
