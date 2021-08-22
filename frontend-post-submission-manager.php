@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script kiddies please');
 /*
   Plugin Name: Frontend Post Submission Manager
   Description: A plugin to submit and manage WordPress posts from frontend with or without logging in
-  Version:     1.3.1
+  Version:     1.3.2
   Author:      WP Shuffle
   Author URI:  http://wpshuffle.com
   Plugin URI: http://wpshuffle.com/wordpress-plugins/frontend-post-submission-manager
@@ -31,9 +31,8 @@ include(FPSM_PATH . '/includes/classes/class-frontend-post-submission-manager.ph
  * @since  1.0.0
  * return Frontend_Post_Submission_Manager
  */
-function fpsm_initialize()
-{
-    return Frontend_Post_Submission_Manager::instance();
+function fpsm_initialize() {
+  return Frontend_Post_Submission_Manager::instance();
 }
 
 $GLOBALS['fpsm'] = fpsm_initialize();
