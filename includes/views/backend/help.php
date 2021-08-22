@@ -3,10 +3,7 @@
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Frontend Post Submission Manager', 'frontend-post-submission-manager'); ?>
         </h1>
         <div class="fpsm-add-wrap">
-            <a
-                href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input
-                    type="button" class="fpsm-button-primary"
-                    value="<?php echo esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?>"></a>
+            <a href="<?php echo admin_url('admin.php?page=fpsm-add-new-form'); ?>"><input type="button" class="fpsm-button-primary" value="<?php echo esc_html_e('Add New Form', 'frontend-post-submission-manager'); ?>"></a>
         </div>
     </div>
 
@@ -16,8 +13,7 @@
             </h2>
             <p><?php esc_html_e('You can check our detailed documentation from below link.', 'frontend-post-submission-manager'); ?>
             </p>
-            <p><a href="http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager"
-                    target="_blank">http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager</a>
+            <p><a href="http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager" target="_blank">http://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager</a>
             </p>
         </div>
         <div class="fpsm-content-block">
@@ -143,6 +139,18 @@ do_action('fpsm_login_form_before', $form_row, $form_details);
 */
 do_action('fpsm_login_form_after', $form_row, $form_details);
                 </pre>
+                <pre>
+/**
+* Triggers after displaying each field
+* 
+* @param string $field_key
+* @param mixed $field_details
+* @param mixed $form_row
+* 
+* @since 1.3.2
+*/
+do_action('fpsm_after_form_field', $field_key, $field_details, $form_row);
+                    </pre>
 
             </div>
         </div>
@@ -377,8 +385,7 @@ $notification_message = apply_filters('fpsm_notification_message', $notification
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
-            <a href="https://codecanyon.net/user/wpshuffle#contact"
-                target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
+            <a href="https://codecanyon.net/user/wpshuffle#contact" target="_blank">https://codecanyon.net/user/wpshuffle#contact</a>
         </div>
 
 

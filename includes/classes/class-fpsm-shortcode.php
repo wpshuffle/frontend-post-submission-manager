@@ -130,7 +130,6 @@ if (!class_exists('FPSM_Shortcode')) {
                     wp_redirect($login_page . "?login=empty");
                     exit;
                 } else {
-
                 }
             }
             return $user;
@@ -162,16 +161,16 @@ if (!class_exists('FPSM_Shortcode')) {
                     $site_key = (!empty($fpsm_form_details['security']['site_key'])) ? esc_attr($fpsm_form_details['security']['site_key']) : '';
                     if (!empty($site_key)) {
                         ob_start();
-                        ?>
+?>
                         <div class="fpsm-captcha-wrap">
                             <label><?php echo (!empty($fpsm_form_details['security']['captcha_label'])) ? esc_attr($fpsm_form_details['security']['captcha_label']) : ''; ?></label>
                             <div class="fpsm-field">
                                 <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
                             </div>
                         </div>
-                        <input type="hidden" name="fpsm_login_check" value="yes"/>
-                        <input type="hidden" name="fpsm_alias" value="<?php echo esc_attr($fpsm_form_alias); ?>"/>
-                        <?php
+                        <input type="hidden" name="fpsm_login_check" value="yes" />
+                        <input type="hidden" name="fpsm_alias" value="<?php echo esc_attr($fpsm_form_alias); ?>" />
+<?php
                         $captcha_html = ob_get_contents();
                         ob_end_clean();
                         $login_form_buttom_html .= $captcha_html;
@@ -215,7 +214,6 @@ if (!class_exists('FPSM_Shortcode')) {
             }
             return $user;
         }
-
     }
 
     new FPSM_Shortcode();
