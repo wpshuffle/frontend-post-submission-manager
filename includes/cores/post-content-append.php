@@ -95,14 +95,14 @@ foreach ($form_fields as $field_key => $field_details) {
                                         <?php
                                         } else {
                                         ?>
-                                            <a href="<?php echo esc_url($media_url); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo get_the_title($media_id); ?><< /a>
-                                        <?php
+                                            <a href="<?php echo esc_url($media_url); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo get_the_title($media_id); ?></a>
+                                <?php
                                         }
                                     }
                                 }
                                 break;
                             case 'url':
-                                        ?><a href="<?php echo esc_url($custom_field_value); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
+                                ?><a href="<?php echo esc_url($custom_field_value); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
                                                                                                                                                                                                                                                             break;
                                                                                                                                                                                                                                                         case 'tel':
                                                                                                                                                                                                                                                             ?><a href="tel:<?php echo esc_url($custom_field_value); ?>"><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
@@ -117,7 +117,7 @@ foreach ($form_fields as $field_key => $field_details) {
                                                                                                                                                                                                                                                                                                                                                                                                 $width = $field_details['embed_width'];
                                                                                                                                                                                                                                                                                                                                                                                                 $height = $field_details['embed_height'];
                                                                                                                                                                                                                                                                                                                                                                                                 ?>
-                                        <iframe class="fpsm-youtube-embed-iframe" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>" src="<?php echo esc_url($youtube_embed_url); ?>" <?php
+                                <iframe class="fpsm-youtube-embed-iframe" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>" src="<?php echo esc_url($youtube_embed_url); ?>" <?php
                                                                                                                                                                                                                                                                                                                                                                                                 /**
                                                                                                                                                                                                                                                                                                                                                                                                  * Fires inside the youtube embed iframe
                                                                                                                                                                                                                                                                                                                                                                                                  *
@@ -127,12 +127,12 @@ foreach ($form_fields as $field_key => $field_details) {
                                                                                                                                                                                                                                                                                                                                                                                                  * @since 1.0.8
                                                                                                                                                                                                                                                                                                                                                                                                  */
                                                                                                                                                                                                                                                                                                                                                                                                 do_action('fpsm_youtube_embed_extra', $custom_field_meta_key, $form_row);
-                                                                                                                                                                                                                        ?> allowfullscreen>
-                                        </iframe>
-                                <?php
+                                                                                                                                                                                                                ?> allowfullscreen>
+                                </iframe>
+                        <?php
                                                                                                                                                                                                                                                                                                                                                                                                 break;
                                                                                                                                                                                                                                                                                                                                                                                         }
-                                ?>
+                        ?>
                     </div>
                 </div>
             <?php
