@@ -223,7 +223,12 @@ if ($this->admin_ajax_nonce_verify()) {
              * @since 1.0.0
              */
             $postarr = apply_filters('fpsm_insert_postdata', $postarr, $form_data, $form_row);
-            $insert_update_post_id = wp_insert_post($postarr);
+            if (empty($post_id)) {
+                $insert_update_post_id = wp_insert_post($postarr);
+            } else {
+
+                $insert_update_post_id = wp_update_post($postarr);
+            }
 
             $update = (empty($post_id)) ? false : true;
             if (!empty($insert_update_post_id)) {
