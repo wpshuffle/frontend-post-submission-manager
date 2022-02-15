@@ -112,6 +112,14 @@ if ($this->admin_ajax_nonce_verify()) {
                                     $error_details[$field_key] = $character_limit_error_message;
                                 }
                             }
+                            if (!empty($field_details['min_character_limit']) && $required_check) {
+                                $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
+                                if ($field_value_length < $field_details['min_character_limit']) {
+                                    $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
+                                    $error_flag = 1;
+                                    $error_details[$field_key] = $character_limit_error_message;
+                                }
+                            }
                             break;
                         case 'custom_field':
                             if (!empty($field_details['character_limit']) && $required_check) {

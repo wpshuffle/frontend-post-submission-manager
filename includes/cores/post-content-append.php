@@ -45,7 +45,7 @@ foreach ($form_fields as $field_key => $field_details) {
             }
             if (!empty($custom_field_value)) {
 ?>
-                <div class="fpsm-each-display-field">
+                <div class="fpsm-each-display-field fpsm-<?php echo esc_attr($custom_field_meta_key); ?>">
                     <label><?php echo esc_html($field_details['display_label']); ?></label>
                     <div class="fpsm-display-value">
                         <?php
@@ -103,35 +103,35 @@ foreach ($form_fields as $field_key => $field_details) {
                                 break;
                             case 'url':
                                 ?><a href="<?php echo esc_url($custom_field_value); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
-                                                                                                                                                                                                                                                            break;
-                                                                                                                                                                                                                                                        case 'tel':
-                                                                                                                                                                                                                                                            ?><a href="tel:<?php echo esc_url($custom_field_value); ?>"><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
-                                                                                                                                                                                                                                                                                                                                                                                                break;
-                                                                                                                                                                                                                                                                                                                                                                                            case 'youtube':
-                                                                                                                                                                                                                                                                                                                                                                                                if (strpos('embed', $custom_field_value)) {
-                                                                                                                                                                                                                                                                                                                                                                                                    $youtube_embed_url = $custom_field_value;
-                                                                                                                                                                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                                                                                                                                                                    $url_array = explode('=', $custom_field_value);
-                                                                                                                                                                                                                                                                                                                                                                                                    $youtube_embed_url = 'https://www.youtube.com/embed/' . end($url_array);
-                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                $width = $field_details['embed_width'];
-                                                                                                                                                                                                                                                                                                                                                                                                $height = $field_details['embed_height'];
-                                                                                                                                                                                                                                                                                                                                                                                                ?>
+                                                                                                                                                                                                                                                    break;
+                                                                                                                                                                                                                                                case 'tel':
+                                                                                                                                                                                                                                                    ?><a href="tel:<?php echo esc_url($custom_field_value); ?>"><?php echo $fpsm_library_obj->sanitize_html($custom_field_value); ?></a><?php
+                                                                                                                                                                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                                                                                                                                                                    case 'youtube':
+                                                                                                                                                                                                                                                                                                                                                                                        if (strpos('embed', $custom_field_value)) {
+                                                                                                                                                                                                                                                                                                                                                                                            $youtube_embed_url = $custom_field_value;
+                                                                                                                                                                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                                                                                                                                                                            $url_array = explode('=', $custom_field_value);
+                                                                                                                                                                                                                                                                                                                                                                                            $youtube_embed_url = 'https://www.youtube.com/embed/' . end($url_array);
+                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                        $width = $field_details['embed_width'];
+                                                                                                                                                                                                                                                                                                                                                                                        $height = $field_details['embed_height'];
+                                                                                                                                                                                                                                                                                                                                                                                        ?>
                                 <iframe class="fpsm-youtube-embed-iframe" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>" src="<?php echo esc_url($youtube_embed_url); ?>" <?php
-                                                                                                                                                                                                                                                                                                                                                                                                /**
-                                                                                                                                                                                                                                                                                                                                                                                                 * Fires inside the youtube embed iframe
-                                                                                                                                                                                                                                                                                                                                                                                                 *
-                                                                                                                                                                                                                                                                                                                                                                                                 * @param string $custom_field_meta_key
-                                                                                                                                                                                                                                                                                                                                                                                                 * @param array $form_row
-                                                                                                                                                                                                                                                                                                                                                                                                 *
-                                                                                                                                                                                                                                                                                                                                                                                                 * @since 1.0.8
-                                                                                                                                                                                                                                                                                                                                                                                                 */
-                                                                                                                                                                                                                                                                                                                                                                                                do_action('fpsm_youtube_embed_extra', $custom_field_meta_key, $form_row);
+                                                                                                                                                                                                                                                                                                                                                                                        /**
+                                                                                                                                                                                                                                                                                                                                                                                         * Fires inside the youtube embed iframe
+                                                                                                                                                                                                                                                                                                                                                                                         *
+                                                                                                                                                                                                                                                                                                                                                                                         * @param string $custom_field_meta_key
+                                                                                                                                                                                                                                                                                                                                                                                         * @param array $form_row
+                                                                                                                                                                                                                                                                                                                                                                                         *
+                                                                                                                                                                                                                                                                                                                                                                                         * @since 1.0.8
+                                                                                                                                                                                                                                                                                                                                                                                         */
+                                                                                                                                                                                                                                                                                                                                                                                        do_action('fpsm_youtube_embed_extra', $custom_field_meta_key, $form_row);
                                                                                                                                                                                                                 ?> allowfullscreen>
                                 </iframe>
                         <?php
-                                                                                                                                                                                                                                                                                                                                                                                                break;
-                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                                                                                                                                                                }
                         ?>
                     </div>
                 </div>
@@ -143,15 +143,17 @@ foreach ($form_fields as $field_key => $field_details) {
             if (empty($append_flag)) {
                 $append_flag = 1;
             }
+            $taxonomy_array = explode('|', $field_key);
+            $taxonomy_name = end($taxonomy_array);
+            $terms = get_the_terms(get_the_ID(), $taxonomy_name);
+            if (!empty($terms)) {
             ?>
-            <div class="fpsm-each-display-field">
-                <label><?php echo esc_html($field_details['display_label']); ?></label>
-                <div class="fpsm-display-value">
-                    <?php
-                    $taxonomy_array = explode('|', $field_key);
-                    $taxonomy_name = end($taxonomy_array);
-                    $terms = get_the_terms(get_the_ID(), $taxonomy_name);
-                    if (!empty($terms)) {
+                <div class="fpsm-each-display-field fpsm-<?php echo esc_attr($taxonomy_name); ?>">
+                    <label><?php echo esc_html($field_details['display_label']); ?></label>
+                    <div class="fpsm-display-value">
+                        <?php
+
+
                         if (!empty($field_details['display_as_link'])) {
                             $term_link_array = [];
                             foreach ($terms as $term) {
@@ -166,18 +168,19 @@ foreach ($form_fields as $field_key => $field_details) {
                             $term_names_string = implode(', ', $term_names);
                             echo esc_html($term_names_string);
                         }
-                    }
-                    ?>
+
+                        ?>
+                    </div>
                 </div>
-            </div>
-        <?php
+            <?php
+            }
         }
     } else if ($field_key == 'post_title') {
         if (!empty($field_details['show_on_form']) && !empty($field_details['post_detail_display']) && $field_details['display_position'] == $display_position_check) {
             if (empty($append_flag)) {
                 $append_flag = 1;
             }
-        ?>
+            ?>
             <div class="fpsm-each-display-field">
                 <label><?php echo esc_html($field_details['display_label']); ?></label>
                 <div class="fpsm-display-value"><?php the_title(); ?></div>

@@ -47,13 +47,17 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                         global $wpdb;
                         $form_details = $fpsm_library_obj->get_default_form_details($post_type, $form_type);
 
-                        $insert_check = $wpdb->insert(FPSM_FORM_TABLE, array('form_title' => $form_title,
-                            'form_alias' => $form_alias,
-                            'form_details' => maybe_serialize($form_details),
-                            'form_status' => $form_status,
-                            'form_type' => $form_type,
-                            'post_type' => $post_type
-                                ), array('%s', '%s', '%s', '%d', '%s', '%s')
+                        $insert_check = $wpdb->insert(
+                            FPSM_FORM_TABLE,
+                            array(
+                                'form_title' => $form_title,
+                                'form_alias' => $form_alias,
+                                'form_details' => maybe_serialize($form_details),
+                                'form_status' => $form_status,
+                                'form_type' => $form_type,
+                                'post_type' => $post_type
+                            ),
+                            array('%s', '%s', '%s', '%d', '%s', '%s')
                         );
                         if ($insert_check) {
                             $form_id = $wpdb->insert_id;
@@ -111,7 +115,7 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                 $form_data = stripslashes_deep($_POST['form_data']);
                 parse_str($form_data, $form_data);
                 global $fpsm_library_obj;
-                $sanitize_rule = array('notification_message' => 'to_br', 'login_note' => 'html', 'field_note' => 'html', 'custom_css' => 'to_br', 'post_not_found_message' => 'to_br');
+                $sanitize_rule = array('field_label' => 'html', 'notification_message' => 'to_br', 'login_note' => 'html', 'field_note' => 'html', 'custom_css' => 'to_br', 'post_not_found_message' => 'to_br');
                 $form_data = $fpsm_library_obj->sanitize_array($form_data, $sanitize_rule);
                 $form_id = $form_data['form_id'];
                 $form_title = $form_data['form_title'];
@@ -126,12 +130,18 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                     if ($fpsm_library_obj->is_alias_available($form_alias, $form_id)) {
                         global $wpdb;
 
-                        $wpdb->update(FPSM_FORM_TABLE, array('form_title' => $form_title,
-                            'form_alias' => $form_alias,
-                            'post_type' => $post_type,
-                            'form_details' => maybe_serialize($form_data['form_details']),
-                            'form_status' => $form_status,
-                                ), array('form_id' => $form_id), array('%s', '%s', '%s', '%s', '%d'), array('%d')
+                        $wpdb->update(
+                            FPSM_FORM_TABLE,
+                            array(
+                                'form_title' => $form_title,
+                                'form_alias' => $form_alias,
+                                'post_type' => $post_type,
+                                'form_details' => maybe_serialize($form_data['form_details']),
+                                'form_status' => $form_status,
+                            ),
+                            array('form_id' => $form_id),
+                            array('%s', '%s', '%s', '%s', '%d'),
+                            array('%d')
                         );
 
                         $response['status'] = 200;
@@ -205,14 +215,17 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                 $form_row = $fpsm_library_obj->get_form_row_by_id($form_id);
                 $form_alias = $form_row->form_alias . '_' . $fpsm_library_obj->generate_random_string(4);
                 $copy_check = $wpdb->insert(
-                        FPSM_FORM_TABLE, array(
-                    'form_title' => $form_row->form_title . ' - Copy',
-                    'form_alias' => $form_alias,
-                    'form_details' => $form_row->form_details,
-                    'form_status' => $form_row->form_status,
-                    'post_type' => $form_row->post_type,
-                    'form_type' => $form_row->form_type
-                        ), array('%s', '%s', '%s', '%d', '%s', '%s'));
+                    FPSM_FORM_TABLE,
+                    array(
+                        'form_title' => $form_row->form_title . ' - Copy',
+                        'form_alias' => $form_alias,
+                        'form_details' => $form_row->form_details,
+                        'form_status' => $form_row->form_status,
+                        'post_type' => $form_row->post_type,
+                        'form_type' => $form_row->form_type
+                    ),
+                    array('%s', '%s', '%s', '%d', '%s', '%s')
+                );
                 if ($copy_check) {
                     $response['status'] = 200;
                     $response['message'] = esc_html__('Form copied successfully.Redirecting..', 'frontend-post-submission-manager');
@@ -227,7 +240,6 @@ if (!class_exists('FPSM_Ajax_Admin')) {
                 $this->permission_denied();
             }
         }
-
     }
 
     new FPSM_Ajax_Admin();

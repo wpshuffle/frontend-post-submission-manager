@@ -82,7 +82,7 @@ if (!empty($edit_post)) {
     ?>
 
                         <div class="fpsm-field-wrap<?php echo esc_attr($field_type_class); ?> <?php echo esc_attr($field_class); ?>" data-field-key="<?php echo esc_attr($field_key); ?>">
-                            <label><?php echo (!empty($field_details['field_label'])) ? esc_html($field_details['field_label']) : ''; ?></label>
+                            <label><?php echo (!empty($field_details['field_label'])) ? wp_kses_post($field_details['field_label']) : ''; ?></label>
                             <div class="fpsm-field">
                                 <?php
                                 include(FPSM_PATH . '/includes/views/frontend/form-fields/front-' . $field_file);
