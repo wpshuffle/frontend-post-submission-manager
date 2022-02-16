@@ -4318,3 +4318,10 @@ form.fpsm-posts-filter-head input[type="submit"] {
 .inside .fpsm-field textarea {
   width: 100%;
 }
+
+.qq-uploader.fpsm-wp-media-uploader-wrap {
+  margin-bottom: 10px;
+}
+form.fpsm-posts-filter-head input[type="search"] {
+  max-width: 200px;
+}

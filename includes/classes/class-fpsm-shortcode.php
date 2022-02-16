@@ -67,6 +67,9 @@ if (!class_exists('FPSM_Shortcode')) {
                 $form_row = $fpsm_library_obj->get_form_row_by_alias($alias);
                 if (!empty($form_row)) {
                     $form_details = maybe_unserialize($form_row->form_details);
+                    if (!empty($form_details['form']['fields']['post_image']['use_backend_media_uploader']) && is_user_logged_in()) {
+                        wp_enqueue_media();
+                    }
                     $this->register_frontend_assets();
                     $GLOBALS['fpsm_form_details'] = $form_details;
                     $GLOBALS['fpsm_form_alias'] = $alias;

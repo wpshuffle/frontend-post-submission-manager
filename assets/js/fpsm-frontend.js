@@ -497,5 +497,58 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    /**
+     * WP Media Uploader for Featured Image
+     */
+    var frame; // variable for the wp.media file_frame
+
+    // attach a click event (or whatever you want) to some element on your page
+    $('body').on('click', '.fpsm-wp-media-uploader', function (event) {
+        var selector = $(this);
+        var media_select_label = $(this).data('media-select-label');
+        var media_title = $(this).data('media-title');
+        var extension_error_message = $(this).data('extension-error');
+
+        event.preventDefault();
+
+        // If the media frame already exists, reopen it.
+        if (frame) {
+            frame.open();
+            return;
+        }
+
+        // Create a new media frame
+        frame = wp.media({
+            //  title: media_title,
+            button: {
+                //    text: media_select_label
+            },
+            multiple: false,
+            library: { type: 'image' }
+        });
+
+
+        // When an image is selected in the media frame...
+        frame.on('select', function () {
+
+            // Get media attachment details from the frame state
+            var attachment = frame.state().get('selection').first().toJSON();
+
+            if (attachment.type != 'image') {
+                alert(extension_error_message);
+                frame.open();
+            } else {
+                var data = { media_url: attachment.url, media_id: attachment.id, media_name: attachment.name, media_size: attachment.filesizeHumanReadable, hideDelete: 1 }
+                var file_preview_template = wp.template('upload-preview');
+                selector.closest('.fpsm-field').find('.fpsm-media-id').val(attachment.id);
+                selector.closest('.fpsm-field').find('.fpsm-file-preview-wrap').html(file_preview_template(data));
+            }
+        });
+
+        // Finally, open the modal on click
+        frame.open();
+    });
+
+
 
 });

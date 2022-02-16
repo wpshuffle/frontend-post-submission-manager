@@ -185,6 +185,28 @@ foreach ($form_fields as $field_key => $field_details) {
                 <label><?php echo esc_html($field_details['display_label']); ?></label>
                 <div class="fpsm-display-value"><?php the_title(); ?></div>
             </div>
+        <?php
+        }
+    } else if ($field_key == 'author_name' || $field_key == 'author_email') {
+        if (!empty($field_details['show_on_form']) && !empty($field_details['post_detail_display']) && $field_details['display_position'] == $display_position_check) {
+            if (empty($append_flag)) {
+                $append_flag = 1;
+            }
+
+            $custom_field_value = get_post_meta($post_id, 'fpsm_' . $field_key, true);
+        ?>
+            <div class="fpsm-each-display-field">
+                <label><?php echo esc_html($field_details['display_label']); ?></label>
+                <div class="fpsm-display-value">
+                    <?php if ($field_key == 'author_email') { ?>
+                        <a href="mailto:<?php echo esc_attr($custom_field_value); ?>">
+                            <?php echo esc_html($custom_field_value); ?>
+                        </a>
+                    <?php } else {
+                        echo esc_html($custom_field_value);
+                    } ?>
+                </div>
+            </div>
 <?php
         }
     }

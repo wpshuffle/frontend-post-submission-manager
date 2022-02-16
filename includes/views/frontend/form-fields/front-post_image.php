@@ -21,23 +21,27 @@ if (!empty($edit_post) && has_post_thumbnail($post_id)) {
     $post_thumbnail_file = get_attached_file($post_thumbnail_id);
     $post_thumbnail_file_size = $fpsm_library_obj->format_file_size(filesize($post_thumbnail_file));
 }
+$uploader_type = (!empty($field_details['uploader_type'])) ? $field_details['uploader_type'] : 'custom';
+if ($uploader_type == 'custom') {
 ?>
-<div class="fpsm-file-uploader"
-     id="fpms-file-uploader-<?php echo esc_attr($fpsm_library_obj->generate_random_string()); ?>"
-     data-extensions="<?php echo esc_attr(implode('|', $default_allowed_extensions)); ?>"
-     data-extensions-error-message="<?php echo esc_attr($file_extension_error_message); ?>"
-     data-file-size-limit="<?php echo intval($upload_file_size_limit); ?>"
-     data-upload-filesize-error-message="<?php echo esc_attr($upload_filesize_error_message); ?>"
-     data-label="<?php echo esc_attr($uploader_label); ?>"
-     data-field-name="<?php echo esc_attr($field_key); ?>"
-     >
-</div>
-<input type="hidden" class="fpsm-upload-count" value="<?php echo (!empty($post_thumbnail_id)) ? 1 : 0; ?>"/>
-<input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id" value="<?php echo (!empty($post_thumbnail_id)) ? intval($post_thumbnail_id) : ''; ?>"/>
+
+    <div class="fpsm-file-uploader" id="fpms-file-uploader-<?php echo esc_attr($fpsm_library_obj->generate_random_string()); ?>" data-extensions="<?php echo esc_attr(implode('|', $default_allowed_extensions)); ?>" data-extensions-error-message="<?php echo esc_attr($file_extension_error_message); ?>" data-file-size-limit="<?php echo intval($upload_file_size_limit); ?>" data-upload-filesize-error-message="<?php echo esc_attr($upload_filesize_error_message); ?>" data-label="<?php echo esc_attr($uploader_label); ?>" data-field-name="<?php echo esc_attr($field_key); ?>">
+    </div>
+<?php } else {
+?>
+    <div class="qq-uploader fpsm-wp-media-uploader-wrap">
+        <div class="qq-upload-button fpsm-wp-media-uploader" data-extension-error="<?php echo esc_attr($file_extension_error_message); ?>">
+            <?php echo esc_attr($uploader_label); ?>
+        </div>
+    </div>
+<?php
+} ?>
+<input type="hidden" class="fpsm-upload-count" value="<?php echo (!empty($post_thumbnail_id)) ? 1 : 0; ?>" />
+<input type="hidden" name="<?php echo esc_attr($field_key); ?>" class="fpsm-media-id" value="<?php echo (!empty($post_thumbnail_id)) ? intval($post_thumbnail_id) : ''; ?>" />
 <div class="fpsm-file-preview-wrap">
     <?php
     if (!empty($edit_post) && has_post_thumbnail($post_id)) {
-        ?>
+    ?>
         <div class="fpsm-file-preview-row">
             <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($post_thumbnail_url); ?>"></span>
             <span class="fpsm-file-preview-column"><?php echo esc_html($post_image_title); ?></span>
