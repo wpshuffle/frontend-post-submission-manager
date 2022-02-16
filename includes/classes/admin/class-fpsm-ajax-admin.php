@@ -193,6 +193,12 @@ if (!class_exists('FPSM_Ajax_Admin')) {
          */
         function save_global_settings() {
             if ($this->admin_ajax_nonce_verify()) {
+                /**
+                 * Fires on starting of global settings save ajax
+                 *
+                 * @since 1.0.0
+                 */
+                do_action('fpsm_before_global_settings_save_ajax');
                 global $fpsm_library_obj;
                 $form_data = stripslashes_deep($_POST['form_data']);
                 parse_str($form_data, $form_data);
@@ -209,6 +215,12 @@ if (!class_exists('FPSM_Ajax_Admin')) {
 
         function form_copy_action() {
             if ($this->admin_ajax_nonce_verify()) {
+                /**
+                 * Fires on starting of form copy ajax
+                 *
+                 * @since 1.0.0
+                 */
+                do_action('fpsm_before_form_copy_ajax');
                 $form_id = intval($_POST['form_id']);
                 global $wpdb;
                 global $fpsm_library_obj;
