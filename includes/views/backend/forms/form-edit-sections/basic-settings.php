@@ -106,7 +106,7 @@ $basic_settings = (!empty( $form_details['basic'] )) ? $form_details['basic'] : 
                     if ( is_array( $post_formats[0] ) ) {
                         foreach ( $post_formats[0] as $post_format ) {
                             ?>
-                            <option value="<?php echo esc_attr( $post_format ); ?>" ><?php echo ucfirst( esc_attr( $post_format ) ); ?></option>
+                            <option value="<?php echo esc_attr( $post_format ); ?>" <?php selected( $selected_post_format,$post_format);?>><?php echo ucfirst( esc_attr( $post_format ) ); ?></option>
                             <?php
                         }
                     }
