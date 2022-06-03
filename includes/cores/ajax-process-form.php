@@ -251,11 +251,15 @@ if ($this->admin_ajax_nonce_verify()) {
                     if (!empty($post_id) && empty($form_data['post_image'])) {
                         delete_post_thumbnail($post_id);
                     } else {
-                        set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
-                        $media_attachment_obj = get_post(intval($form_data['post_image']));
-                        if ($media_attachment_obj) {
-                            $attachment_path = get_attached_file(intval($form_data['post_image'])); // Full path
-                            wp_insert_attachment($media_attachment_obj, $attachment_path, $insert_update_post_id);
+                        if (!empty($form_data['post_image'])) {
+
+                            set_post_thumbnail($insert_update_post_id, intval($form_data['post_image']));
+
+                            $media_attachment_obj = get_post(intval($form_data['post_image']));
+                            if ($media_attachment_obj) {
+                                $attachment_path = get_attached_file(intval($form_data['post_image'])); // Full path
+                                wp_insert_attachment($media_attachment_obj, $attachment_path, $insert_update_post_id);
+                            }
                         }
                     }
                 }
