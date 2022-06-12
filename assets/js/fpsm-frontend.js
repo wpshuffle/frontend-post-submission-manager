@@ -34,12 +34,13 @@ jQuery(document).ready(function ($) {
                     form_alias: form_alias,
                     field_name: field_name
                 },
-                debug: true,
+                debug: false,
                 allowedExtensions: extensions_array,
                 sizeLimit: sizeLimit,
                 minSizeLimit: 50,
                 uploadButtonText: $(this).data('label'),
                 onSubmit: function (id, fileName) {
+
                     selector.closest('.fpsm-field-wrap').find('.fpsm-error').html('');
                     if (multiple_upload == true && upload_limit != -1) {
                         var upload_count = selector.parent().find('.fpsm-upload-count').val();
@@ -57,12 +58,16 @@ jQuery(document).ready(function ($) {
                         if (selector.closest('.fpsm-field').find('.fpsm-media-delete-button').length > 0) {
                             selector.closest('.fpsm-field').find('.fpsm-media-delete-button').click();
                         }
+
+
                     }
                 },
-                onProgress: function (id, fileName, loaded, total) { },
-                onComplete: function (id, fileName, responseJSON) {
+                onProgress: function (id, fileName, loaded, total) {
 
+                },
+                onComplete: function (id, fileName, responseJSON) {
                     if (responseJSON.success) {
+
                         if (selector.hasClass('fpsm-custom-media-upload-button')) {
                             switch (responseJSON.media_type) {
                                 case 'image':
@@ -267,6 +272,12 @@ jQuery(document).ready(function ($) {
 
     $('body').on('submit', '.fpsm-front-form', function (e) {
         e.preventDefault();
+
+        // Checking this to prevent form from submitting while file upload is on progress
+        if ($(this).find('.qq-upload-list li').length > 0) {
+            console.log('File upload is on progress');
+            return false;
+        }
         var selector = $(this);
         var auto_save = ($(this).data('auto-save')) ? $(this).data('auto-save') : 'no';
         // If auto complete textfield is filled but auto complete is not done
