@@ -151,6 +151,14 @@ do_action('fpsm_login_form_after', $form_row, $form_details);
 */
 do_action('fpsm_after_form_field', $field_key, $field_details, $form_row);
                     </pre>
+                <pre>
+/**
+ * Triggers before starting the ajax form process
+ * 
+ * @since 1.3.7
+ */
+do_action('fpsm_before_form_process');
+                    </pre>
 
             </div>
         </div>

@@ -2,6 +2,14 @@
 
 defined('ABSPATH') or die('No script kiddies please!!');
 if ($this->admin_ajax_nonce_verify()) {
+    /**
+     * Triggers before starting the ajax form process
+     * 
+     * @since 1.3.7
+     */
+    do_action('fpsm_before_form_process');
+
+    
     global $fpsm_library_obj;
 
     $form_data = $_POST['form_data'];
