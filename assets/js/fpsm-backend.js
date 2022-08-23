@@ -110,7 +110,7 @@ jQuery(document).ready(function ($) {
      * @since 1.0.0
      */
     function fpsm_has_special_characters(string) {
-        var format = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
+        var format = /[!@#$%^&*()+\=\[\]{};':"\\|,.<>\/?]+/;
 
         if (format.test(string)) {
             return true;
