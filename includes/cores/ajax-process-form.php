@@ -9,7 +9,7 @@ if ($this->admin_ajax_nonce_verify()) {
      */
     do_action('fpsm_before_form_process');
 
-    
+
     global $fpsm_library_obj;
 
     $form_data = $_POST['form_data'];
@@ -54,11 +54,12 @@ if ($this->admin_ajax_nonce_verify()) {
     $error_flag = 0;
     $error_details = array();
     $response = array();
+    $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
     if ($form_row->form_type == 'login_require' && !empty($form_details['basic']['limit_post_submission']) && !empty($form_details['basic']['allowed_number_posts'])) {
         //if the form is login require form and user is logged in
         if (is_user_logged_in()) {
             $post_author_id = get_current_user_id();
-            $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->post_type);
+            $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias,$post_id);
             /**
              * Filters author total number of posts fetched from DB
              *
@@ -178,7 +179,7 @@ if ($this->admin_ajax_nonce_verify()) {
         } else {
             //Lets process the form
 
-            $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
+
             $post_title = (!empty($form_data['post_title'])) ? $form_data['post_title'] : '';
             $post_content = (!empty($form_data['post_content'])) ? $form_data['post_content'] : '';
 
