@@ -412,6 +412,16 @@ $sanitize_rule = apply_filters('fpsm_front_sanitize_rule', $sanitize_rule_array,
 */
 $post_content = apply_filters('fpsm_wp_editor_post_content', $post_content, $form_row, $edit_flag);
                 </pre>
+                <pre>
+$post_types = $fpsm_library_obj->get_registered_post_types();
+/**
+* Filters post types list
+* 
+* @param mixed $post_types
+* @since 1.3.9
+*/
+$post_types = apply_filters('fpsm_post_types_list', $post_types);
+                </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
