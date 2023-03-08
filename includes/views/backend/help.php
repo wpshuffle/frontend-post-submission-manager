@@ -401,6 +401,17 @@ $notification_message = apply_filters('fpsm_notification_message', $notification
 */
 $sanitize_rule = apply_filters('fpsm_front_sanitize_rule', $sanitize_rule_array, $form_row);
                 </pre>
+                <pre>
+/**
+* Filters post content before displaying it in the post content field in the form
+* 
+* @param string $post_content
+* @param mix $form_row
+* @param bool $edit_flag
+* @since 1.3.9
+*/
+$post_content = apply_filters('fpsm_wp_editor_post_content', $post_content, $form_row, $edit_flag);
+                </pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
