@@ -95,7 +95,7 @@ foreach ($form_fields as $field_key => $field_details) {
                                         <?php
                                         } else {
                                         ?>
-                                            <a href="<?php echo esc_url($media_url); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo get_the_title($media_id); ?></a>
+                                            <a href="<?php echo esc_url($media_url); ?>" <?php echo (!empty($field_details['open_in_new_tab'])) ? 'target="_blank"' : ''; ?>><?php echo esc_html($fpsm_library_obj->get_filename_with_extension($media_id)); ?></a>
                                 <?php
                                         }
                                     }
