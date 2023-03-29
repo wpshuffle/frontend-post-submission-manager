@@ -24,7 +24,15 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          */
         public function get_all_post_statuses() {
-            return get_post_statuses();
+            /**
+             * Filters post statuses array fetched
+             * 
+             * @param array
+             * 
+             * @since 1.4.0
+             */
+            $post_statuses = apply_filters('fpsm_post_statuses', get_post_statuses());
+            return $post_statuses;
         }
 
         /**

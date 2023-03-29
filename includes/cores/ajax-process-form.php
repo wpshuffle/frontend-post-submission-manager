@@ -371,8 +371,13 @@ if ($this->admin_ajax_nonce_verify()) {
                     }
                 } else {
                     if (!empty($form_details['basic']['edit_redirection'])) {
-                        if (!empty($form_details['basic']['edit_redirection_url'])) {
-                            $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
+                        if ($form_details['basic']['edit_redirection_type'] == 'url') {
+                            if (!empty($form_details['basic']['edit_redirection_url'])) {
+                                $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
+                            }
+                        } else {
+                            $post_url = get_the_permalink($insert_update_post_id);
+                            $response['redirect_url'] = $post_url;
                         }
                     }
                     if (empty($form_details['dashboard']['disable_post_edit_status'])) {
