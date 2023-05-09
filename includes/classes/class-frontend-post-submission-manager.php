@@ -133,7 +133,10 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 'url' => array('label' => esc_html__('URL', 'frontend-post-submission-manager'), 'icon' => 'fas fa-globe-asia'),
                 'tel' => array('label' => esc_html__('Tel', 'frontend-post-submission-manager'), 'icon' => 'fas fa-phone'),
                 'youtube' => array('label' => esc_html__('Youtube Embed', 'frontend-post-submission-manager'), 'icon' => 'fab fa-youtube'),
-                'hidden' => array('label' => esc_html('Hidden', 'frontend-post-submission-manager'), 'icon' => 'far fa-minus-square')
+                'hidden' => array('label' => esc_html('Hidden', 'frontend-post-submission-manager'), 'icon' => 'far fa-minus-square'),
+                'html' => array('label' => esc_html('HTML', 'frontend-post-submission-manager'), 'icon' => 'far fa-code'),
+                'wp_editor' => array('label' => esc_html('WYSIWYG Editor', 'frontend-post-submission-manager'), 'icon' => 'fas fa-file-word'),
+                'slider' => array('label' => esc_html('Range Slider', 'frontend-post-submission-manager'), 'icon' => 'far fa-sliders-h')
             );
             /**
              * Filters custom field type list
