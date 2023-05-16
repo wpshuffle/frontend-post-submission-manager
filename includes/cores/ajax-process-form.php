@@ -59,7 +59,7 @@ if ($this->admin_ajax_nonce_verify()) {
         //if the form is login require form and user is logged in
         if (is_user_logged_in()) {
             $post_author_id = get_current_user_id();
-            $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias,$post_id);
+            $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias, $post_id);
             /**
              * Filters author total number of posts fetched from DB
              *
@@ -140,7 +140,18 @@ if ($this->admin_ajax_nonce_verify()) {
                                 } else {
                                     $custom_field_lists[] = $field_key;
                                 }
-                            } else {
+                            }
+                            if (!empty($field_details['min_character_limit']) && $required_check) {
+                                $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
+                                if ($field_value_length < $field_details['min_character_limit']) {
+                                    $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
+                                    $error_flag = 1;
+                                    $error_details[$field_key] = $character_limit_error_message;
+                                } else {
+                                    $custom_field_lists[] = $field_key;
+                                }
+                            }
+                            if (empty($error_flag)) {
                                 $custom_field_lists[] = $field_key;
                             }
                             break;

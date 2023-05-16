@@ -12,15 +12,17 @@ if ($editor_type == 'simple') {
         case 'rich':
             $teeny = false;
             $show_quicktags = true;
+            $tinymce = true;
             break;
         case 'visual':
             $teeny = false;
             $show_quicktags = false;
-            break;
+            $tinymce = true;
             break;
         case 'html':
             $teeny = true;
             $show_quicktags = true;
+            $tinymce = false;
             break;
     }
     $media_upload = (!empty($field_details['media_upload'])) ? true : false;
@@ -28,6 +30,7 @@ if ($editor_type == 'simple') {
         'textarea_name' => $field_key,
         'media_buttons' => $media_upload,
         'teeny' => $teeny,
+        'tinymce' => $tinymce,
         'wpautop' => true,
         'quicktags' => $show_quicktags,
         'editor_height' => $editor_height,
