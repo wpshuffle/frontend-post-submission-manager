@@ -10,10 +10,19 @@ if (!empty($fpsm_form_alias)) {
     if (empty($form_row->form_details)) {
         return;
     }
+    $fpsm_disable_metabox_update = get_post_meta($post->ID, 'fpsm_disable_metabox_update', true);
 ?>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Frontend Form', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field"><a href="<?php echo admin_url('admin.php?page=fpsm&action=edit_form&form_id=' . $form_row->form_id); ?>" target="_blank" class="button-secondary"><?php echo esc_html($form_row->form_title); ?></a></div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label for=""><?php esc_html_e('Disable Update', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="fpsm_disable_metabox_update" value="1" <?php checked($fpsm_disable_metabox_update, true); ?> />
+            <p class="description"><?php esc_html_e('Please check this if you want to disable the updating of the fields received from the form', 'frontend-post-submission-manager'); ?></p>
+        </div>
+
     </div>
     <?php
     $form_details = maybe_unserialize($form_row->form_details);
@@ -147,28 +156,34 @@ if (!empty($fpsm_form_alias)) {
                             <?php
                                 break;
                             case 'file_uploader':
+                                $uploader_label = (!empty($field_details['upload_button_label'])) ? $field_details['upload_button_label'] : esc_html__('Upload Image', 'frontend-post-submission-manager');
                             ?>
+                                <input type="button" class="fpsm-metabox-fileuploader button-secondary" value="<?php echo esc_attr($uploader_label); ?>" />
                                 <div class="fpsm-file-preview-wrap">
-                                    <?php
-                                    if (!empty($custom_field_value)) {
-                                        $media_ids = explode(',', $custom_field_value);
-                                        foreach ($media_ids as $media_id) {
-                                            $media_thumbnail_url = wp_get_attachment_image_src($media_id, 'thumbnail', true);
-                                            $media_url = wp_get_attachment_url($media_id);
-                                    ?>
-                                            <div class="fpsm-file-preview-row">
-                                                <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($media_thumbnail_url[0]); ?>" /></span>
-                                                <span class="fpsm-file-preview-column"><a href="<?php echo admin_url() . '/upload.php?item=' . $media_id; ?>" target="_blank"><?php echo get_the_title($media_id); ?></a></span>
-                                                <span class="fpsm-file-preview-column"><?php echo esc_html($fpsm_library_obj->get_attachment_filesize($media_id)); ?></span>
-                                                <span class="fpsm-file-preview-column">
-                                                    <a href="<?php echo esc_url($media_url); ?>" target="_blank" class="fpsm-file-view-button"><span class="dashicons dashicons-download"></span></a>
-                                                    <input type="button" class="fpsm-media-remove-button" data-media-id='<?php echo intval($media_id); ?>' value="<?php esc_html_e('Remove', 'frontend-post-submission-manager'); ?>" />
-                                                </span>
-                                            </div>
-                                    <?php
+                                    <div class="fpsm-uploaded-files-list">
+                                        <?php
+                                        if (!empty($custom_field_value)) {
+                                            $media_ids = explode(',', $custom_field_value);
+                                            foreach ($media_ids as $media_id) {
+                                                $media_thumbnail_url = wp_get_attachment_image_src($media_id, 'thumbnail', true);
+                                                $media_url = wp_get_attachment_url($media_id);
+                                        ?>
+                                                <div class="fpsm-file-preview-row">
+                                                    <span class="fpsm-file-preview-column"><img src="<?php echo esc_url($media_thumbnail_url[0]); ?>" /></span>
+                                                    <span class="fpsm-file-preview-column"><a href="<?php echo admin_url() . 'upload.php?item=' . $media_id; ?>" target="_blank"><?php echo get_the_title($media_id); ?></a></span>
+                                                    <span class="fpsm-file-preview-column"><?php echo esc_html($fpsm_library_obj->get_attachment_filesize($media_id)); ?></span>
+                                                    <span class="fpsm-file-preview-column">
+                                                        <a href="<?php echo esc_url($media_url); ?>" target="_blank" class="fpsm-file-view-button"><span class="dashicons dashicons-download"></span></a>
+                                                        <input type="button" class="fpsm-media-remove-button" data-media-id='<?php echo intval($media_id); ?>' value="<?php esc_html_e('Remove', 'frontend-post-submission-manager'); ?>" />
+                                                    </span>
+                                                </div>
+
+                                        <?php
+                                            }
                                         }
-                                    }
-                                    ?>
+                                        ?>
+                                    </div>
+
                                     <input type="hidden" name="<?php echo esc_attr($custom_field_name); ?>" value="<?php echo esc_attr($custom_field_value); ?>" class="fpsm-fileuploader-value" />
                                 </div>
                             <?php

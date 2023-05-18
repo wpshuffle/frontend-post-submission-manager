@@ -39,15 +39,21 @@ if (!class_exists('FPSM_Metabox')) {
             if (wp_is_post_revision($post_id)) {
                 return;
             }
-            global $fpsm_library_obj;
-            $fpsm_custom_fields = $fpsm_library_obj->sanitize_array($_POST['fpsm_custom_fields']);
-            $fpsm_included_custom_fields = $fpsm_library_obj->sanitize_array($_POST['fpsm_included_custom_fields']);
-            foreach ($fpsm_included_custom_fields as $custom_field_key) {
-                $custom_field_value = (isset($fpsm_custom_fields[$custom_field_key])) ? $fpsm_custom_fields[$custom_field_key] : '';
-                update_post_meta($post_id, $custom_field_key, $custom_field_value);
+            if (isset($_POST['fpsm_disable_metabox_update'])) {
+                update_post_meta($post_id, 'fpsm_disable_metabox_update', 1);
+            } else {
+                update_post_meta($post_id, 'fpsm_disable_metabox_update', 0);
+            }
+            if (empty($_POST['fpsm_disable_metabox_update'])) {
+                global $fpsm_library_obj;
+                $fpsm_custom_fields = $fpsm_library_obj->sanitize_array($_POST['fpsm_custom_fields']);
+                $fpsm_included_custom_fields = $fpsm_library_obj->sanitize_array($_POST['fpsm_included_custom_fields']);
+                foreach ($fpsm_included_custom_fields as $custom_field_key) {
+                    $custom_field_value = (isset($fpsm_custom_fields[$custom_field_key])) ? $fpsm_custom_fields[$custom_field_key] : '';
+                    update_post_meta($post_id, $custom_field_key, $custom_field_value);
+                }
             }
         }
-
     }
 
     new FPSM_Metabox();

@@ -1346,3 +1346,6 @@ a.fpsm-file-view-button {
 .rtl .fpsm-checkbox-toggle input[type="checkbox"] {
   right: 0;
 }
+input.fpsm-metabox-fileuploader.button-secondary {
+  margin-bottom: 10px;
+}
