@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') or die('No script kiddies please!!');
 $editor_type = (!empty($field_details['editor_type'])) ? $field_details['editor_type'] : 'rich';
-$post_content = (!empty($edit_post)) ? $edit_post->post_content : '';
+
 $editor_height = (!empty($field_details['editor_height'])) ? intval($field_details['editor_height']) : '';
 
 switch ($editor_type) {
@@ -44,13 +44,6 @@ $editor_settings = apply_filters('fpsm_editor_settings', $editor_settings, $form
 
 
 $edit_flag = (!empty($edit_post)) ? true : false;
-/**
- * Filters post content before displaying it in the post content field in the form
- * 
- * @param string $post_content
- * @param mix $form_row
- * @param bool $edit_flag
- * @since 1.3.9
- */
-$post_content = apply_filters('fpsm_wp_editor_post_content', $post_content, $form_row, $edit_flag);
+
+
 wp_editor($fpsm_library_obj->sanitize_html($custom_field_saved_value), 'fpsm-custom-wp_editor-' . $custom_field_meta_key, $editor_settings);

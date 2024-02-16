@@ -431,7 +431,17 @@ $post_types = apply_filters('fpsm_post_types_list', $post_types);
 */
 $post_statuses = apply_filters('fpsm_post_statuses', get_post_statuses());
                 </pre>
-
+                <pre>
+/**
+* Filters the args being sent on pagination for frontend dashboard posts
+* 
+* @args array $pagination_args
+* @args array $form_row
+* 
+* @since 1.4.1
+*/
+$pagination_args = apply_filters('fpsm_pagination_args', $pagination_args, $form_row);
+</pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>

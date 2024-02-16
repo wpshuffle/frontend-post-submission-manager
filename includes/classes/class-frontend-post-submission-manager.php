@@ -134,8 +134,8 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 'tel' => array('label' => esc_html__('Tel', 'frontend-post-submission-manager'), 'icon' => 'fas fa-phone'),
                 'youtube' => array('label' => esc_html__('Youtube Embed', 'frontend-post-submission-manager'), 'icon' => 'fab fa-youtube'),
                 'hidden' => array('label' => esc_html('Hidden', 'frontend-post-submission-manager'), 'icon' => 'far fa-minus-square'),
-                'wp_editor' => array('label' => esc_html('WYSIWYG Editor', 'frontend-post-submission-manager'), 'icon' => 'fas fa-file-word'),
-                'slider' => array('label' => esc_html('Range Slider', 'frontend-post-submission-manager'), 'icon' => 'far fa-sliders-h')
+                'wp_editor' => array('label' => esc_html('WYSIWYG Editor', 'frontend-post-submission-manager'), 'icon' => 'fas fa-file-word')
+
             );
             /**
              * Filters custom field type list

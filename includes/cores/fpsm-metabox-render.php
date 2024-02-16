@@ -210,10 +210,14 @@ if (!empty($fpsm_form_alias)) {
                             ?>
                                 <iframe class="fpsm-youtube-embed-iframe" width="<?php echo esc_attr($width); ?>" height="<?php echo esc_attr($height); ?>" src="<?php echo esc_url($youtube_embed_url); ?>" allowfullscreen>
                                 </iframe>
-                        <?php
+                            <?php
                                 break;
                             case 'wp_editor':
                                 $custom_field_saved_value = $custom_field_value;
+                                $field_key = $custom_field_name;
+                            ?>
+                                <input type="hidden" name="fpsm_sanitize_rule[<?php echo esc_attr($custom_field_meta_key); ?>]" value="html" />
+                        <?php
                                 include(FPSM_PATH . '/includes/views/frontend/form-fields/custom-field-types/front-wp_editor.php');
                                 break;
                         }

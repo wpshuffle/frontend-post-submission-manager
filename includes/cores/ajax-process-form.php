@@ -28,8 +28,7 @@ if ($this->admin_ajax_nonce_verify()) {
     if (!empty($form_fields)) {
         foreach ($form_fields as $temp_field_key => $temp_field_details) {
             if ($fpsm_library_obj->is_custom_field_key($temp_field_key)) {
-                if ($temp_field_details['field_type'] == 'textarea') {
-
+                if ($temp_field_details['field_type'] == 'textarea' || $temp_field_details['field_type'] == 'wp_editor') {
                     $sanitize_rule_array[$temp_field_key] = 'html';
                 }
             }
@@ -114,7 +113,9 @@ if ($this->admin_ajax_nonce_verify()) {
                         case 'author_name':
                         case 'author_email':
                             if (!empty($field_details['character_limit']) && $required_check) {
-                                $field_value_length = strlen(sanitize_text_field($form_data[$field_key]));
+                                $form_received_value = sanitize_text_field($form_data[$field_key]);
+                                $form_clean_received_value =  str_replace(array("\r", "\n", ' '), '', $form_received_value);
+                                $field_value_length = strlen($form_clean_received_value);
                                 if ($field_value_length > $field_details['character_limit']) {
                                     $character_limit_error_message = (!empty($field_details['character_limit_error_message'])) ? esc_html__($field_details['character_limit_error_message']) : esc_html__(sprintf('Max characters allowed is %d', $field_details['character_limit']), 'frontend-post-submission-manager');
                                     $error_flag = 1;

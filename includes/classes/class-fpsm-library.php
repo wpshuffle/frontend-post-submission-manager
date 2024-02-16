@@ -708,6 +708,17 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             // Output the filename and extension
             return $filename;
         }
+
+
+        function log_it($message) {
+            if (WP_DEBUG === true) {
+                if (is_array($message) || is_object($message)) {
+                    error_log(print_r($message, true));
+                } else {
+                    error_log($message);
+                }
+            }
+        }
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

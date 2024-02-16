@@ -9,8 +9,6 @@ defined('ABSPATH') or die('No script kiddies please');
   Author:      WP Shuffle
   Author URI:  http://wpshuffle.com
   Plugin URI: http://wpshuffle.com/wordpress-plugins/frontend-post-submission-manager
-  License:     GPL2
-  License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
   Text Domain: frontend-post-submission-manager
  */
