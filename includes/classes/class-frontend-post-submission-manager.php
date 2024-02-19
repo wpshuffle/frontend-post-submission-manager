@@ -15,7 +15,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          *
          * @var string
          */
-        public $version = '1.3.8';
+        public $version = '1.4.1';
 
         /**
          * The single instance of the class.
@@ -133,7 +133,9 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
                 'url' => array('label' => esc_html__('URL', 'frontend-post-submission-manager'), 'icon' => 'fas fa-globe-asia'),
                 'tel' => array('label' => esc_html__('Tel', 'frontend-post-submission-manager'), 'icon' => 'fas fa-phone'),
                 'youtube' => array('label' => esc_html__('Youtube Embed', 'frontend-post-submission-manager'), 'icon' => 'fab fa-youtube'),
-                'hidden' => array('label' => esc_html('Hidden', 'frontend-post-submission-manager'), 'icon' => 'far fa-minus-square')
+                'hidden' => array('label' => esc_html('Hidden', 'frontend-post-submission-manager'), 'icon' => 'far fa-minus-square'),
+                'wp_editor' => array('label' => esc_html('WYSIWYG Editor', 'frontend-post-submission-manager'), 'icon' => 'fas fa-file-word')
+
             );
             /**
              * Filters custom field type list

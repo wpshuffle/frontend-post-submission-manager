@@ -37,6 +37,7 @@
                     <label><?php esc_html_e('From Email', 'frontend-post-submission-manager'); ?></label>
                     <div class="fpsm-field">
                         <input type="text" name="form_details[notification][admin][from_email]" value="<?php echo (!empty($form_details['notification']['admin']['from_email'])) ? esc_attr($form_details['notification']['admin']['from_email']) : ''; ?>">
+                        <p class="description"><?php esc_html_e('You can use [author_email] as the form email to replace it with the post submitted author email. Please note that the form should contain Author Email field if the form is guest form.', 'frontend-post-submission-manager'); ?></p>
                     </div>
                 </div>
                 <div class="fpsm-field-wrap">

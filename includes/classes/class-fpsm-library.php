@@ -24,7 +24,15 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          */
         public function get_all_post_statuses() {
-            return get_post_statuses();
+            /**
+             * Filters post statuses array fetched
+             * 
+             * @param array
+             * 
+             * @since 1.4.0
+             */
+            $post_statuses = apply_filters('fpsm_post_statuses', get_post_statuses());
+            return $post_statuses;
         }
 
         /**
@@ -677,15 +685,39 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return apply_filters('fpsm_post_statuses', $post_status_array);
         }
 
-        public function get_total_author_posts($post_author_id, $form_alias,$post_id = 0) {
+        public function get_total_author_posts($post_author_id, $form_alias, $post_id = 0) {
             global $wpdb;
-            if(empty($post_id)){
-            $query = $wpdb->prepare("select count(*) from $wpdb->posts inner join $wpdb->postmeta on $wpdb->posts.ID = $wpdb->postmeta.post_id where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = %d and meta_key = '_fpsm_form_alias' and meta_value=%s", $post_author_id, $form_alias);
-            }else{
-                $query = $wpdb->prepare("select count(*) from $wpdb->posts inner join $wpdb->postmeta on $wpdb->posts.ID = $wpdb->postmeta.post_id where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = %d and meta_key = '_fpsm_form_alias' and meta_value=%s and ID!=%d", $post_author_id, $form_alias,$post_id);
+            if (empty($post_id)) {
+                $query = $wpdb->prepare("select count(*) from $wpdb->posts inner join $wpdb->postmeta on $wpdb->posts.ID = $wpdb->postmeta.post_id where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = %d and meta_key = '_fpsm_form_alias' and meta_value=%s", $post_author_id, $form_alias);
+            } else {
+                $query = $wpdb->prepare("select count(*) from $wpdb->posts inner join $wpdb->postmeta on $wpdb->posts.ID = $wpdb->postmeta.post_id where (post_status = 'publish' or post_status = 'draft' or post_status = 'pending' or post_status = 'future') and post_author = %d and meta_key = '_fpsm_form_alias' and meta_value=%s and ID!=%d", $post_author_id, $form_alias, $post_id);
             }
             $author_post_count = $wpdb->get_var($query);
             return $author_post_count;
+        }
+
+        function get_filename_with_extension($media_id) {
+            $attachment_metadata = wp_get_attachment_metadata($media_id);
+
+            // Get the file path of the attachment
+            $file_path = get_attached_file($media_id);
+
+            // Get the filename of the attachment
+            $filename = wp_basename($file_path);
+
+            // Output the filename and extension
+            return $filename;
+        }
+
+
+        function log_it($message) {
+            if (WP_DEBUG === true) {
+                if (is_array($message) || is_object($message)) {
+                    error_log(print_r($message, true));
+                } else {
+                    error_log($message);
+                }
+            }
         }
     }
 

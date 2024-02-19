@@ -5,12 +5,10 @@ defined('ABSPATH') or die('No script kiddies please');
 /*
   Plugin Name: Frontend Post Submission Manager
   Description: A plugin to submit and manage WordPress posts from frontend with or without logging in
-  Version:     1.3.8
+  Version:     1.4.1
   Author:      WP Shuffle
   Author URI:  http://wpshuffle.com
   Plugin URI: http://wpshuffle.com/wordpress-plugins/frontend-post-submission-manager
-  License:     GPL2
-  License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
   Text Domain: frontend-post-submission-manager
  */

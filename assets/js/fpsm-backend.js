@@ -67,8 +67,8 @@ jQuery(document).ready(function ($) {
         }
 
         str = str.replace(/[^a-z0-9 _]/g, '') // remove invalid chars
-                .replace(/\s+/g, '_') // collapse whitespace and replace by _
-                .replace(/_+/g, '_'); // collapse dashes
+            .replace(/\s+/g, '_') // collapse whitespace and replace by _
+            .replace(/_+/g, '_'); // collapse dashes
 
         return str;
     }
@@ -84,9 +84,6 @@ jQuery(document).ready(function ($) {
         $('.fpsm-field input[type="checkbox"]').each(function () {
             if (!($(this).parent().hasClass('fpsm-checkbox-toggle')) && !($(this).hasClass('fpsm-disable-checkbox-toggle'))) {
                 var input_name = $(this).attr('name');
-                console.log(input_name);
-                console.log($(this).hasClass('fpsm-disable-checkbox-toggle'));
-
                 $(this).parent().addClass('fpsm-checkbox-toggle');
                 $('<label></label>').insertAfter($(this));
             }
@@ -360,7 +357,7 @@ jQuery(document).ready(function ($) {
                 return;
             }
             var field_type = $('#fpsm-custom-field-type').val();
-            var data = {label: custom_field_label, field_key: custom_field_key, meta_key: custom_field_meta_key, field_type: field_type};
+            var data = { label: custom_field_label, field_key: custom_field_key, meta_key: custom_field_meta_key, field_type: field_type };
             var field_template = wp.template('custom-' + field_type);
             $('.fpsm-form-fields-wrap > .fpsm-form-fields-list > .fpsm-sortable').append(field_template(data));
             initialize_checkbox_toggle();
@@ -405,7 +402,7 @@ jQuery(document).ready(function ($) {
         var selector = $(this);
         var field_key = $(this).data('field-key');
         var field_type = $(this).data('field-type');
-        var data = {field_key: field_key, field_type: field_type};
+        var data = { field_key: field_key, field_type: field_type };
         var option_template = wp.template('option');
         selector.closest('.fpsm-field').find('.fpsm-dropdown-list-wrap').append(option_template(data));
         selector.closest('.fpsm-field').find('.fpsm-each-dropdown').last().find('input[type="text"]').first().focus();
@@ -482,9 +479,9 @@ jQuery(document).ready(function ($) {
         $(this).addClass('btn-selected');
     });
     $('.fpsm-edit-form').areYouSure(
-            {
-                message: translation_strings.are_your_sure
-            }
+        {
+            message: translation_strings.are_your_sure
+        }
     );
 
     $('body').on('change', '.fpsm-form-template', function () {
@@ -519,19 +516,67 @@ jQuery(document).ready(function ($) {
             // mutiple: true if you want to upload multiple files at once
             multiple: false
         }).open()
-                .on('select', function (e) {
-                    // This will return the selected image from the Media Uploader, the result is an object
-                    var uploaded_image = image.state().get('selection').first();
-                    // We convert uploaded_image to a JSON object to make accessing it easier
-                    // Output to the console uploaded_image
-                    // console.log(uploaded_image);
-                    var image_url = uploaded_image.toJSON().url;
-                    var image_id = uploaded_image.toJSON().id;
-                    // Let's assign the url value to the input field
-                    selector.parent().find('input[type="text"]').val(image_url);
-                    selector.parent().find('input[type="hidden"]').val(image_id);
-                    selector.parent().find('.fpsm-media-preview').html('<img src="' + uploaded_image.toJSON().sizes.thumbnail.url + '"/>');
-                });
+            .on('select', function (e) {
+                // This will return the selected image from the Media Uploader, the result is an object
+                var uploaded_image = image.state().get('selection').first();
+                // We convert uploaded_image to a JSON object to make accessing it easier
+                // Output to the console uploaded_image
+                // console.log(uploaded_image);
+                var image_url = uploaded_image.toJSON().url;
+                var image_id = uploaded_image.toJSON().id;
+                // Let's assign the url value to the input field
+                selector.parent().find('input[type="text"]').val(image_url);
+                selector.parent().find('input[type="hidden"]').val(image_id);
+                selector.parent().find('.fpsm-media-preview').html('<img src="' + uploaded_image.toJSON().sizes.thumbnail.url + '"/>');
+            });
+    });
+    /**
+     * Open Media Uploader
+     */
+    $('body').on('click', '.fpsm-metabox-fileuploader', function () {
+
+        var selector = $(this);
+
+        var image = wp.media({
+            title: 'Upload File',
+            // mutiple: true if you want to upload multiple files at once
+            multiple: false
+        }).open()
+            .on('select', function (e) {
+                // This will return the selected image from the Media Uploader, the result is an object
+                var uploaded_image = image.state().get('selection').first();
+                // We convert uploaded_image to a JSON object to make accessing it easier
+                // Output to the console uploaded_image
+
+                var uploaded_obj = uploaded_image.toJSON();
+                if (uploaded_obj.type == 'image') {
+                    if (uploaded_obj.sizes.thumbnail) {
+                        var media_icon = uploaded_obj.sizes.thumbnail.url;
+                    } else {
+                        var media_icon = uploaded_obj.sizes.full.url;
+                    }
+
+                } else {
+                    var media_icon = uploaded_obj.icon;
+
+                }
+                var media_id = uploaded_obj.id;
+                var media_edit_url = fpsm_backend_obj.admin_url + 'upload.php?item=' + media_id;
+                var media_url = uploaded_obj.url;
+                var media_name = uploaded_obj.name;
+                var media_size = uploaded_obj.filesizeHumanReadable;
+                var data = { media_id, media_icon, media_edit_url, media_url, media_name, media_size };
+                var preview_template = wp.template('fpsm-metabox-file-preview');
+                selector.parent().find('.fpsm-uploaded-files-list').append(preview_template(data));
+                var pre_saved_value = selector.parent().find('.fpsm-fileuploader-value').val();
+                if (pre_saved_value != '') {
+                    pre_saved_value = pre_saved_value + ',' + media_id;
+                } else {
+                    pre_saved_value = media_id;
+                }
+
+                selector.parent().find('.fpsm-fileuploader-value').val(pre_saved_value);
+            });
     });
 
     $('body').on('keyup', 'input[name="form_title"]', function () {

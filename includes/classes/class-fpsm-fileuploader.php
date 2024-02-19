@@ -41,7 +41,6 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 throw new Exception('Getting content length is not supported.');
             }
         }
-
     }
 
     /**
@@ -68,7 +67,6 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
         function getSize() {
             return $_FILES['qqfile']['size'];
         }
-
     }
 
     class FPSM_qqFileUploaders {
@@ -133,9 +131,12 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
             $last = strtolower($str[strlen($str) - 1]);
             $val = floatval($val);
             switch ($last) {
-                case 'g': $val *= 1024;
-                case 'm': $val *= 1024;
-                case 'k': $val *= 1024;
+                case 'g':
+                    $val *= 1024;
+                case 'm':
+                    $val *= 1024;
+                case 'k':
+                    $val *= 1024;
             }
             return $val;
         }
@@ -143,7 +144,7 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
         /**
          * Returns array('success'=>true) or array('error'=>'error message')
          */
-        function handleUpload($uploadDirectory, $replaceOldFile = FALSE, $upload_url) {
+        function handleUpload($uploadDirectory, $replaceOldFile, $upload_url) {
             if (!is_writable($uploadDirectory)) {
                 return array('error' => esc_html__("Server error. Upload directory isn't writable.", 'frontend-post-submission-manager'));
             }
@@ -195,7 +196,7 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                     'post_status' => 'inherit',
                     'guid' => $file_url
                 );
-                require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+                require_once(ABSPATH . 'wp-admin/includes/admin.php');
                 $attachment_id = wp_insert_attachment($attachment, $file_path);
                 require_once(ABSPATH . 'wp-admin/includes/image.php');
                 $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
@@ -216,7 +217,8 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 }
 
 
-                $media_details = array('success' => true,
+                $media_details = array(
+                    'success' => true,
                     'media_id' => $attachment_id,
                     'media_key' => $attachment_code,
                     'media_name' => $filename,
@@ -235,7 +237,5 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 return array('error' => esc_html__('Could not save uploaded file.The upload was cancelled, or server error encountered', 'frontend-post-submission-manager'));
             }
         }
-
     }
-
 }

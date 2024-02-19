@@ -401,6 +401,47 @@ $notification_message = apply_filters('fpsm_notification_message', $notification
 */
 $sanitize_rule = apply_filters('fpsm_front_sanitize_rule', $sanitize_rule_array, $form_row);
                 </pre>
+                <pre>
+/**
+* Filters post content before displaying it in the post content field in the form
+* 
+* @param string $post_content
+* @param mix $form_row
+* @param bool $edit_flag
+* @since 1.3.9
+*/
+$post_content = apply_filters('fpsm_wp_editor_post_content', $post_content, $form_row, $edit_flag);
+                </pre>
+                <pre>
+/**
+* Filters post types list
+* 
+* @param mixed $post_types
+* @since 1.3.9
+*/
+$post_types = apply_filters('fpsm_post_types_list', $post_types);
+                </pre>
+                <pre>
+/**
+* Filters post statuses array fetched
+* 
+* @param array
+* 
+* @since 1.4.0
+*/
+$post_statuses = apply_filters('fpsm_post_statuses', get_post_statuses());
+                </pre>
+                <pre>
+/**
+* Filters the args being sent on pagination for frontend dashboard posts
+* 
+* @args array $pagination_args
+* @args array $form_row
+* 
+* @since 1.4.1
+*/
+$pagination_args = apply_filters('fpsm_pagination_args', $pagination_args, $form_row);
+</pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
