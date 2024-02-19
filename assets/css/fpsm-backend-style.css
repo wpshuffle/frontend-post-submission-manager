@@ -1235,6 +1235,7 @@ div#fpsm-metabox .inside {
   .fpsm-header h1 {
     font-size: 34px;
   }
+ 
   .fpsm-grid-wrap {
     overflow-x: auto;
   }
@@ -1255,15 +1256,18 @@ div#fpsm-metabox .inside {
   table.fpsm-form-lists-table tbody tr td,
   table.fpsm-form-lists-table thead tr th {
     flex: 1;
-    max-width: 160px;
+    max-width: 100%;
     min-width: 160px;
     position: static !important;
   }
   table.fpsm-form-lists-table tbody tr td:nth-child(2),
   table.fpsm-form-lists-table thead tr th:nth-child(2) {
     min-width: 300px;
-    max-width: 300px;
+    max-width: 100%;
   }
+  table.fpsm-form-lists-table thead tr th:last-child {
+    width: 100%;
+}
   table.fpsm-form-lists-table tfoot {
     display: none;
   }
@@ -1296,6 +1300,15 @@ div#fpsm-metabox .inside {
   .fpsm-post-template-preview-img {
     max-width: 100%;
   }
+
+/* mobile backend new */
+.fpsm-wrap {
+  padding: 5px;
+}
+table.fpsm-form-lists-table tbody tr, table.fpsm-form-lists-table thead tr {
+flex-direction: column;
+}
+
 }
 
 div#fpsm-metabox .fpsm-custom-file_uploader {
