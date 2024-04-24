@@ -147,6 +147,7 @@ if (!empty($edit_post)) {
                 $default_submit_label = (!empty($form_details['form']['submit_button_label'])) ? $form_details['form']['submit_button_label'] : '';
                 $form_details['form']['post_status'][$default_post_status]['enable'] = 1;
                 $form_details['form']['post_status'][$default_post_status]['label'] = $default_submit_label;
+                $form_details['form']['post_status'][$default_post_status]['disable_button_for'] = [];
             }
             foreach ($form_details['form']['post_status'] as $form_post_button_status => $form_post_button_details) {
                 if (!empty($form_post_button_details['enable'])) {
@@ -164,17 +165,30 @@ if (!empty($edit_post)) {
 
                     $button_value = (!empty($_GET['action']) && !empty($_GET['post_id'])) ? $button_update_label : $button_label;
                     $button_value = apply_filters('fpsm_submit_label', $button_value, $form_post_button_status, $form_post_button_details);
-
+                    $disable_button = false;
+                    /**
+                     * Checking if the current user role is restricted from accessing this button
+                     */
+                    if (is_user_logged_in()) {
+                        $disable_button_roles = (!empty($form_post_button_details['disable_button_for'])) ? $form_post_button_details['disable_button_for'] : [];
+                        $user = wp_get_current_user();
+                        $user_role = $user->roles[0];
+                        if (in_array($user_role, $disable_button_roles)) {
+                            $disable_button = true;
+                        }
+                    }
+                    if (!$disable_button) {
             ?>
 
-                    <input type="submit" value="<?php echo esc_attr($button_value); ?>" data-post-status="<?php echo esc_attr($form_post_button_status); ?>" class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>" <?php if (!empty($form_post_button_details['auto_draft'])) {
-                                                                                                                                                                                                                                                                                                                                ?> data-auto-save-time="<?php echo esc_attr($form_post_button_details['auto_draft_save_time']) ?>" data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>" <?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    if (!empty($form_post_button_details['background_color'])) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ?>style="background-color: <?php echo esc_attr($form_post_button_details['background_color']); ?>" <?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } ?> />
+                        <input type="submit" value="<?php echo esc_attr($button_value); ?>" data-post-status="<?php echo esc_attr($form_post_button_status); ?>" class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>" <?php if (!empty($form_post_button_details['auto_draft'])) {
+                                                                                                                                                                                                                                                                                                                                    ?> data-auto-save-time="<?php echo esc_attr($form_post_button_details['auto_draft_save_time']) ?>" data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>" <?php
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        if (!empty($form_post_button_details['background_color'])) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ?>style="background-color: <?php echo esc_attr($form_post_button_details['background_color']); ?>" <?php
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } ?> />
 
             <?php
+                    }
                 }
             }
             ?>

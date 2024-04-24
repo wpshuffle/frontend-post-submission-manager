@@ -719,6 +719,15 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
                 }
             }
         }
+
+        function get_user_roles() {
+            global $wp_roles;
+
+            $all_roles = $wp_roles->roles;
+            $user_roles = apply_filters('editable_roles', $all_roles);
+
+            return $user_roles;
+        }
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

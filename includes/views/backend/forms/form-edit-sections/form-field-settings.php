@@ -103,6 +103,26 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Disable this button for', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <?php
+                                            $disable_button_for = (!empty($post_status_details['disable_button_for'])) ? $post_status_details['disable_button_for'] : [];
+                                            $user_roles = $fpsm_library_obj->get_user_roles();
+                                            if (!empty($user_roles)) {
+                                                foreach ($user_roles as $user_role_key => $user_role_details) {
+                                            ?>
+                                                    <label class="fpsm-display-block"><input class="fpsm-disable-checkbox-toggle" type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[disable_button_for][]" value="<?php echo esc_attr($user_role_key); ?>" <?php echo (in_array($user_role_key, $disable_button_for)) ? 'checked="checked"' : ''; ?> /><?php echo esc_html($user_role_details['name']) ?></label>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <p class="description">
+                                                <?php esc_html_e('Please check if you want to hide this button for specific user roles.', 'frontend-post-submission-manager'); ?>
+                                            </p>
+                                        </div>
+                                    </div>
                                     <?php
                                     if ($post_status == 'draft') {
                                     ?>
