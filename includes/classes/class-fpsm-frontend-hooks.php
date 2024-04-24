@@ -7,8 +7,9 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
 
         function __construct() {
             add_action('wp_footer', array($this, 'append_extra_html'));
-            add_action('the_content', array($this, 'append_custom_fields_before'), 10);
-            add_action('the_content', array($this, 'append_custom_fields_after'), 11);
+            add_filter('the_content', array($this, 'append_custom_fields_before'), 10);
+            add_filter('the_content', array($this, 'append_custom_fields_after'), 11);
+            add_filter('the_content', array($this, 'append_post_edit_button'), 100);
             add_action('template_redirect', array($this, 'generate_form_preview'));
             add_filter('body_class', array($this, 'add_preview_class'));
         }
@@ -60,6 +61,17 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
             return $classes;
         }
 
+        function append_post_edit_button($content) {
+            ob_start();
+            include(FPSM_PATH . '/includes/cores/edit-button-append.php');
+            $edit_button_markup = ob_get_contents();
+            ob_end_clean();
+            if (empty($edit_button_markup)) {
+                return $content;
+            } else {
+                return $content . $edit_button_markup;
+            }
+        }
     }
 
     new FPSM_Frontend_Hooks();

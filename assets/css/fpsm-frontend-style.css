@@ -4325,3 +4325,6 @@ form.fpsm-posts-filter-head input[type="submit"] {
 form.fpsm-posts-filter-head input[type="search"] {
   max-width: 200px;
 }
+a.fpsm-edit-post-button {
+  display: block;
+}
