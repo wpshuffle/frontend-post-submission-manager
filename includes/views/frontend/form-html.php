@@ -35,7 +35,7 @@ if (!empty($edit_post)) {
     }
 }
 ?>
-<form method="post" class="fpsm-front-form fpsm-<?php echo esc_attr($form_template); ?> <?php echo esc_attr($form_alias_class); ?>" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
+<form method="post" class="fpsm-front-form <?php echo ($post_edit_flag) ? 'fpsm-edit-form' : 'fpsm-add-form'; ?> fpsm-<?php echo esc_attr($form_template); ?> <?php echo esc_attr($form_alias_class); ?>" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
     <?php if (empty($form_details['customize']['hide_form_title'])) { ?>
         <h2 class="fpsm-form-title"><?php echo esc_html($form_row->form_title); ?>
         </h2><?php } ?>

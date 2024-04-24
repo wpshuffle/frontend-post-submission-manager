@@ -58,6 +58,9 @@ if ($this->admin_ajax_nonce_verify()) {
         //if the form is login require form and user is logged in
         if (is_user_logged_in()) {
             $post_author_id = get_current_user_id();
+            if (!empty($post_id)) {
+                $post_author_id = get_post_field('post_author', $post_id);
+            }
             $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias, $post_id);
             /**
              * Filters author total number of posts fetched from DB

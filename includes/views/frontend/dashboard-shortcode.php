@@ -19,7 +19,19 @@ if (is_user_logged_in()) {
         }
         $author_id = get_post_field('post_author', $post_id);
         $edit_post = get_post($post_id);
-        if ($current_user_id == $author_id || in_array('administrator', $user_roles)) {
+        $edit_flag = ($current_user_id == $author_id || in_array('administrator', $user_roles)) ? true : false;
+        /**
+         * fpsm_edit_flag
+         * 
+         * Filters edit flag varaible 
+         * 
+         * @param boolean $edit_flag
+         * @param array $form_row
+         * 
+         * @since 1.4.2
+         */
+        $edit_flag = apply_filters('fpsm_edit_flag', $edit_flag, $form_row);
+        if ($edit_flag) {
             include(FPSM_PATH . '/includes/views/frontend/form-html.php');
         } else {
             echo esc_html__('Unauthorized access', 'frontend-post-submission-manager');
