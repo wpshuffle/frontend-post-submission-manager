@@ -136,10 +136,22 @@ if (!class_exists('FPSM_Ajax')) {
                     $response['message'] = esc_html__('Unauthorized delete from delete key', 'frontend-post-submission-manager');
                 } else {
                     $current_user_id = get_current_user_id();
-
+                    $user_meta = get_userdata($current_user_id);
+                    $user_roles = $user_meta->roles;
                     $post_author_user_id = get_post_field('post_author', $post_id);
-
-                    if ($current_user_id != $post_author_user_id) {
+                    $delete_flag = ($current_user_id == $post_author_user_id || in_array('administrator', $user_roles)) ? true : false;
+                    /**
+                     * fpsm_delete_flag
+                     * 
+                     * Filters delete flag varaible 
+                     * 
+                     * @param boolean $delete_flag
+                     * @param array $form_row
+                     * 
+                     * @since 1.4.2
+                     */
+                    $delete_flag = apply_filters('fpsm_delete_flag', $delete_flag);
+                    if (!$delete_flag) {
                         $response['status'] = 403;
                         $response['message'] = esc_html__('Unauthorized delete from user', 'frontend-post-submission-manager');
                     } else {
@@ -158,7 +170,6 @@ if (!class_exists('FPSM_Ajax')) {
                 $this->permission_denied();
             }
         }
-
     }
 
     new FPSM_Ajax();
