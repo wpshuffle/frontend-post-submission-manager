@@ -146,7 +146,6 @@ if (!class_exists('FPSM_Ajax')) {
                      * Filters delete flag varaible 
                      * 
                      * @param boolean $delete_flag
-                     * @param array $form_row
                      * 
                      * @since 1.4.2
                      */

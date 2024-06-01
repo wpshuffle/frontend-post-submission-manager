@@ -442,6 +442,34 @@ $post_statuses = apply_filters('fpsm_post_statuses', get_post_statuses());
 */
 $pagination_args = apply_filters('fpsm_pagination_args', $pagination_args, $form_row);
 </pre>
+                <pre>
+/**
+* 
+* 
+* Filters edit flag varaible
+* This variable is true when current user matches with the user of the post that is being edited
+* Useful when you want to enable cross user editing of post
+*
+* @param boolean $edit_flag
+* @param array $form_row
+* 
+* @since 1.4.2
+*/
+$edit_flag = apply_filters('fpsm_edit_flag', $edit_flag, $form_row);
+</pre>
+                <pre>
+/**
+* fpsm_delete_flag
+* This variable is true when current user matches with the user of the post that is being deleted
+* Useful when you want to enable cross user deleting of post
+* Filters delete flag varaible 
+* 
+* @param boolean $delete_flag
+* 
+* @since 1.4.2
+*/
+$delete_flag = apply_filters('fpsm_delete_flag', $delete_flag);
+</pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
