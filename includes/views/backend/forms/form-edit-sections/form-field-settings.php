@@ -26,7 +26,7 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
         <div class="fpsm-form-other-settings">
 
             <?php
-            if ($form_row->form_type == 'login_require') {
+            if ($form_row->form_type == 'login_require' || $form_row->form_type == 'guest') {
             ?>
                 <h3 class="fpsm-form-settings-heading">
                     <?php esc_html_e('Post Status Specific Submit Buttons', 'frontend-post-submission-manager'); ?>
