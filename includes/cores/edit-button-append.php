@@ -12,6 +12,9 @@ if (empty($form_alias)) {
 }
 global $fpsm_library_obj;
 $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
+if (empty($form_row)) {
+    return;
+}
 if ($form_row->form_type != 'login_require') {
     return $content;
 }
