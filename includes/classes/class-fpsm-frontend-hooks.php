@@ -62,6 +62,15 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
         }
 
         function append_post_edit_button($content) {
+            global $wp_query;
+            if (empty($wp_query->queried_object_id)) {
+                return $content;
+            }
+            $post_id = $wp_query->queried_object_id;
+            $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
+            if (empty($form_alias)) {
+                return $content;
+            }
             ob_start();
             include(FPSM_PATH . '/includes/cores/edit-button-append.php');
             $edit_button_markup = ob_get_contents();
