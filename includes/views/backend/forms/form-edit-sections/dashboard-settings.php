@@ -21,10 +21,23 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
             <input type="text" name="form_details[dashboard][sn_label]" value="<?php echo (!empty($dashboard_settings['sn_label'])) ? esc_attr($dashboard_settings['sn_label']) : ''; ?>" />
         </div>
     </div>
+
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Post Title Label', 'frontend-post-submission-manager'); ?></label>
         <div class="fpsm-field">
             <input type="text" name="form_details[dashboard][post_title_label]" value="<?php echo (!empty($dashboard_settings['post_title_label'])) ? esc_attr($dashboard_settings['post_title_label']) : ''; ?>" />
+        </div>
+    </div>
+    <div class="fpsm-field-wrap">
+        <label><?php esc_html_e('Enable Post Image', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="checkbox" name="form_details[dashboard][post_image]" value="1" <?php echo (!empty($dashboard_settings['post_image'])) ? 'checked="checked"' : ''; ?> class="fpsm-checkbox-toggle-trigger" data-toggle-class="fpsm-post_image-ref" />
+        </div>
+    </div>
+    <div class="fpsm-field-wrap fpsm-post_image-ref <?php echo (empty($dashboard_settings['post_image'])) ? 'fpsm-display-none' : ''; ?>">
+        <label><?php esc_html_e('Post Image Label', 'frontend-post-submission-manager'); ?></label>
+        <div class="fpsm-field">
+            <input type="text" name="form_details[dashboard][post_image_label]" value="<?php echo (!empty($dashboard_settings['post_image_label'])) ? esc_attr($dashboard_settings['post_image_label']) : ''; ?>" />
         </div>
     </div>
     <div class="fpsm-field-wrap">

@@ -42,6 +42,9 @@ if (!empty($current_user_id)) {
                     <div class="fpsm-dashboard-column fpsm-dashboard-sn"><?php echo (!empty($form_details['dashboard']['sn_label'])) ? esc_html($form_details['dashboard']['sn_label']) : esc_html__('SN', 'frontend-post-submission-manager'); ?></div>
                 <?php } ?>
                 <div class="fpsm-dashboard-column fpsm-dashboard-post-title"><?php echo (!empty($form_details['dashboard']['post_title_label'])) ? esc_html($form_details['dashboard']['post_title_label']) : esc_html__('Post Title', 'frontend-post-submission-manager'); ?></div>
+                <?php if (!empty($form_details['dashboard']['post_image'])) { ?>
+                    <div class="fpsm-dashboard-column fpsm-dashboard-post_image"><?php echo (!empty($form_details['dashboard']['post_image_label'])) ? esc_html($form_details['dashboard']['post_image_label']) : esc_html__('Post Image', 'frontend-post-submission-manager'); ?></div>
+                <?php } ?>
                 <div class="fpsm-dashboard-column fpsm-dashboard-post-status"><?php echo (!empty($form_details['dashboard']['post_status_label'])) ? esc_html($form_details['dashboard']['post_status_label']) : esc_html__('Post Status', 'frontend-post-submission-manager'); ?></div>
                 <?php if (!empty($form_details['dashboard']['last_modified'])) { ?>
                     <div class="fpsm-dashboard-column fpsm-dashboard-last-modified"><?php echo (!empty($form_details['dashboard']['last_modified_label'])) ? esc_html($form_details['dashboard']['last_modified_label']) : esc_html__('Last Modified', 'frontend-post-submission-manager'); ?></div>
@@ -120,6 +123,17 @@ if (!empty($current_user_id)) {
                             ?>
 
                         </div>
+                        <?php if (!empty($form_details['dashboard']['post_image'])) {
+                        ?>
+                            <div class="fpsm-dashboard-column fpsm-dashboard-post_image">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    $post_image_size = apply_filters('fpsm_dashboard_post_image_size', 'thumbnail', $form_row);
+                                ?>
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" loading="lazy" />
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
                         <div class="fpsm-dashboard-column fpsm-dashboard-post-status">
                             <span class="fpsm-status-<?php echo esc_attr(get_post_status()); ?> fpsm-post-status">
                                 <?php echo esc_html($post_statuses[get_post_status()]); ?>
