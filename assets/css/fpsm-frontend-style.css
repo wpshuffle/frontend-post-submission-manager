@@ -4328,3 +4328,27 @@ form.fpsm-posts-filter-head input[type="search"] {
 a.fpsm-edit-post-button {
   display: block;
 }
+@media all and (max-width: 767px) {
+  .fpsm-dashboard-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fpsm-dashboard-header,
+  .fpsm-dashboard-body,
+  .fpsm-dashboard-row {
+    overflow-y: auto;
+    width: 100%;
+  }
+  .fpsm-dashboard-header .fpsm-dashboard-column.fpsm-dashboard-post-status {
+    display: none;
+  }
+  .fpsm-dashboard-header .fpsm-dashboard-column.fpsm-dashboard-post_image {
+    display: none;
+  }
+  .fpsm-dashboard-header .fpsm-dashboard-column.fpsm-dashboard-action {
+    display: none;
+  }
+  .fpsm-dashboard-header .fpsm-dashboard-column.fpsm-dashboard-last-modified {
+    display: none;
+  }
+}

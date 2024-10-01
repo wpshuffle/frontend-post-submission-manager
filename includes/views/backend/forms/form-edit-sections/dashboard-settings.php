@@ -139,13 +139,7 @@ $display_fields = (!empty($dashboard_settings['display_fields'])) ? $dashboard_s
             ?>
             <p class="description"><?php esc_html_e('Please check if you want to disable post delete for above post statuses.', 'frontend-post-submission-manager'); ?></p>
         </div>
-        <?php /*
-          <div>
-          <input type="checkbox" name="form_details[dashboard][disable_post_delete]" value="1" <?php echo (!empty( $dashboard_settings['disable_post_delete'] )) ? 'checked="checked"' : ''; ?>
-          </div>
-         *
-         */
-        ?>
+        
     </div>
     <div class="fpsm-field-wrap">
         <label><?php esc_html_e('Post Delete Warning Message', 'frontend-post-submission-manager'); ?></label>
