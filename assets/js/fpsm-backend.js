@@ -252,7 +252,12 @@ jQuery(document).ready(function ($) {
         var toggle_ref = $(this).val();
         var toggle_class = $(this).data('toggle-class');
         $('.' + toggle_class).hide();
-        $('.' + toggle_class + '[data-toggle-ref="' + toggle_ref + '"]').show();
+        $('.' + toggle_class).each(function () {
+            var toggle_refs = $(this).data('toggle-ref') ? $(this).data('toggle-ref').split('|') : [];
+            if (toggle_refs.includes(toggle_ref)) {
+                $(this).show();
+            }
+        });
 
     });
 

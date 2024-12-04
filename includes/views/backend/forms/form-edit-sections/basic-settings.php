@@ -206,9 +206,9 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Submission Limit Duration  Type', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <select name="form_details[basic][submission_limit_duration_type]">
+                    <select name="form_details[basic][submission_limit_duration_type]" class="fpsm-toggle-trigger" data-toggle-class="fpsm-limit-duration-ref">
                         <?php
-                        $selected_submission_limit_duration_type  = (!empty($basic_settings['submission_limit_duration_type'])) ? $basic_settings['submission_limit_duration_type'] : 'hour';
+                        $selected_submission_limit_duration_type  = (!empty($basic_settings['submission_limit_duration_type'])) ? $basic_settings['submission_limit_duration_type'] : '';
                         ?>
                         <option value=""><?php esc_html_e('None', 'frontend-post-submission-manager'); ?></option>
                         <option value="hour" <?php selected($selected_submission_limit_duration_type, 'hour'); ?>><?php esc_html_e('Hour', 'frontend-post-submission-manager'); ?></option>
@@ -216,7 +216,7 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
                     </select>
                 </div>
             </div>
-            <div class="fpsm-field-wrap">
+            <div class="fpsm-field-wrap fpsm-limit-duration-ref <?php echo (empty($basic_settings['submission_limit_duration_type'])) ? 'fpsm-display-none' : ''; ?>" data-toggle-ref="hour|day">
                 <label><?php esc_html_e('Submission Limit Duration', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
                     <input min="0" type="number" name="form_details[basic][submission_limit_duration]" value="<?php echo (!empty($basic_settings['submission_limit_duration'])) ? $basic_settings['submission_limit_duration'] : ''; ?>">
