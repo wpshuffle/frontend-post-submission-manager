@@ -126,7 +126,7 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                     <?php
                                     if ($post_status == 'draft') {
                                     ?>
-
+                                        
                                         <div class="fpsm-field-wrap">
                                             <label><?php esc_html_e('Disable Field Required Check', 'frontend-post-submission-manager'); ?></label>
                                             <div class="fpsm-field">

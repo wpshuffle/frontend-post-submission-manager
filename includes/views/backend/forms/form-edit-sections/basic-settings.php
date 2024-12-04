@@ -204,6 +204,25 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
                 </div>
             </div>
             <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Submission Limit Duration  Type', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <select name="form_details[basic][submission_limit_duration_type]">
+                        <?php
+                        $selected_submission_limit_duration_type  = (!empty($basic_settings['submission_limit_duration_type'])) ? $basic_settings['submission_limit_duration_type'] : 'hour';
+                        ?>
+                        <option value=""><?php esc_html_e('None', 'frontend-post-submission-manager'); ?></option>
+                        <option value="hour" <?php selected($selected_submission_limit_duration_type, 'hour'); ?>><?php esc_html_e('Hour', 'frontend-post-submission-manager'); ?></option>
+                        <option value="day" <?php selected($selected_submission_limit_duration_type, 'day'); ?>><?php esc_html_e('Day', 'frontend-post-submission-manager'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
+                <label><?php esc_html_e('Submission Limit Duration', 'frontend-post-submission-manager'); ?></label>
+                <div class="fpsm-field">
+                    <input min="0" type="number" name="form_details[basic][submission_limit_duration]" value="<?php echo (!empty($basic_settings['submission_limit_duration'])) ? $basic_settings['submission_limit_duration'] : ''; ?>">
+                </div>
+            </div>
+            <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Limit Message', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
                     <textarea name="form_details[basic][post_limit_message]"><?php echo (!empty($basic_settings['post_limit_message'])) ? esc_html($basic_settings['post_limit_message']) : ''; ?></textarea>
@@ -214,11 +233,4 @@ $basic_settings = (!empty($form_details['basic'])) ? $form_details['basic'] : ar
 
 
     <?php } ?>
-    <div class="fpsm-field-wrap">
-        <label><?php esc_html_e('Fire save_post hook', 'frontend-post-submission-manager'); ?></label>
-        <div class="fpsm-field">
-            <input type="checkbox" name="form_details[basic][fire_save_post]" value="1" <?php echo (!empty($basic_settings['fire_save_post'])) ? 'checked="checked"' : ''; ?> />
-            <p class="description"><?php esc_html_e('Please check if you want to fire save_post hook on successful post submission.', 'frontend-post-submission-manager'); ?></p>
-        </div>
-    </div>
 </div>

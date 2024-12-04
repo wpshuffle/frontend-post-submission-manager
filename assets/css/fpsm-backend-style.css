@@ -983,20 +983,20 @@ label {
   max-width: 100%;
 }
 
-.ui-datepicker-header {
+.wp-editor .ui-datepicker-header {
   padding: 10px;
   background-color: #007cba;
   color: white;
 }
 
-.ui-datepicker-calendar {
+.wp-editor .ui-datepicker-calendar {
   width: 100%;
   background-color: white;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.18) 0 0 18px;
 }
 
-.ui-datepicker-title {
+.wp-editor .ui-datepicker-title {
   font-size: 14px;
   font-weight: bold;
   text-align: center;
@@ -1008,45 +1008,45 @@ label {
   z-index: 4;
 }
 
-.ui-datepicker-header {
+.wp-editor .ui-datepicker-header {
   position: relative;
 }
 
-.ui-state-default {
+.wp-editor .ui-state-default {
   display: block;
   padding: 5px 10px;
   text-decoration: none;
   text-align: center;
 }
 
-.ui-state-default:hover {
+.wp-editor .ui-state-default:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-.ui-state-highlight {
+.wp-editor .ui-state-highlight {
   background-color: navajowhite;
   color: black;
 }
 
-.ui-datepicker-prev,
-.ui-datepicker-next {
+.wp-editor .ui-datepicker-prev,
+.wp-editor .ui-datepicker-next {
   position: relative;
   z-index: 5;
 }
 
-.ui-datepicker-prev {
+.wp-editor .ui-datepicker-prev {
   color: white;
   cursor: pointer;
 }
 
-.ui-datepicker-next {
+.wp-editor .ui-datepicker-next {
   float: right;
   cursor: pointer;
   color: white;
 }
 
-.ui-datepicker-prev:hover,
-.ui-datepicker-next:hover {
+.wp-editor .ui-datepicker-prev:hover,
+.wp-editor .ui-datepicker-next:hover {
   color: navajowhite;
 }
 
@@ -1055,8 +1055,8 @@ label {
   margin: 0;
 }
 
-.ui-datepicker-week-end,
-.ui-datepicker-week-end a {
+.wp-editor .ui-datepicker-week-end,
+.wp-editor .ui-datepicker-week-end a {
   color: indianred;
 }
 
@@ -1235,7 +1235,7 @@ div#fpsm-metabox .inside {
   .fpsm-header h1 {
     font-size: 34px;
   }
- 
+
   .fpsm-grid-wrap {
     overflow-x: auto;
   }
@@ -1267,7 +1267,7 @@ div#fpsm-metabox .inside {
   }
   table.fpsm-form-lists-table thead tr th:last-child {
     width: 100%;
-}
+  }
   table.fpsm-form-lists-table tfoot {
     display: none;
   }
@@ -1301,14 +1301,14 @@ div#fpsm-metabox .inside {
     max-width: 100%;
   }
 
-/* mobile backend new */
-.fpsm-wrap {
-  padding: 5px;
-}
-table.fpsm-form-lists-table tbody tr, table.fpsm-form-lists-table thead tr {
-flex-direction: column;
-}
-
+  /* mobile backend new */
+  .fpsm-wrap {
+    padding: 5px;
+  }
+  table.fpsm-form-lists-table tbody tr,
+  table.fpsm-form-lists-table thead tr {
+    flex-direction: column;
+  }
 }
 
 div#fpsm-metabox .fpsm-custom-file_uploader {

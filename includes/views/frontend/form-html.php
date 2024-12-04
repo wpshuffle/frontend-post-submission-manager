@@ -180,12 +180,20 @@ if (!empty($edit_post)) {
                     if (!$disable_button) {
             ?>
 
-                        <input type="submit" value="<?php echo esc_attr($button_value); ?>" data-post-status="<?php echo esc_attr($form_post_button_status); ?>" class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>" <?php if (!empty($form_post_button_details['auto_draft'])) {
-                                                                                                                                                                                                                                                                                                                                    ?> data-auto-save-time="<?php echo esc_attr($form_post_button_details['auto_draft_save_time']) ?>" data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>" <?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        if (!empty($form_post_button_details['background_color'])) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ?>style="background-color: <?php echo esc_attr($form_post_button_details['background_color']); ?>" <?php
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } ?> />
+                        <input
+                            type="submit"
+                            value="<?php echo esc_attr($button_value); ?>"
+                            data-post-status="<?php echo esc_attr($form_post_button_status); ?>"
+                            class="fpsm-submit-<?php echo esc_attr($form_post_button_status); ?> <?php echo (!empty($form_post_button_details['auto_draft'])) ? 'fpsm-auto-draft' : ''; ?>"
+                            <?php if (!empty($form_post_button_details['auto_draft'])) {
+                            ?> data-auto-save-time="<?php echo esc_attr($form_post_button_details['auto_draft_save_time']) ?>"
+                            data-background-save="<?php echo (!empty($form_post_button_details['background_save'])) ? 1 : 0 ?>"
+                            <?php
+                            }
+                            if (!empty($form_post_button_details['background_color'])) {
+                            ?>style="background-color: <?php echo esc_attr($form_post_button_details['background_color']); ?>"
+                            <?php
+                            } ?> />
 
             <?php
                     }
