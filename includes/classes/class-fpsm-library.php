@@ -728,6 +728,39 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
 
             return $user_roles;
         }
+        function get_user_post_count_by_period($time_period = null, $form_alias = null, $user_id = null) {
+            if (empty($user_id)) {
+                $user_id = get_current_user_id();
+            }
+
+            $time_start = wp_date('Y-m-d H:i:s', strtotime("-$time_period"));
+
+
+            $args = array(
+                'author'         => $user_id,
+                'post_status'    => ['publish', 'draft', 'pending', 'future'],
+                'date_query'     => array(
+                    array(
+                        'after'     => $time_start,
+                        'inclusive' => true,
+                    ),
+                ),
+                'meta_query'     => array(
+                    array(
+                        'key'     => '_fpsm_form_alias',
+                        'value'   => $form_alias,
+                        'compare' => '=',
+                    ),
+                ),
+                'fields'         => 'ids',
+                'posts_per_page' => -1,
+            );
+            
+            // Execute the query
+            $query = new WP_Query($args);
+            // Return the number of posts
+            return $query->found_posts;
+        }
     }
 
     $GLOBALS['fpsm_library_obj'] = new FPSM_Library();

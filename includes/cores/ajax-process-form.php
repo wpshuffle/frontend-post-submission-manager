@@ -54,14 +54,23 @@ if ($this->admin_ajax_nonce_verify()) {
     $error_details = array();
     $response = array();
     $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
-    if ($form_row->form_type == 'login_require' && !empty($form_details['basic']['limit_post_submission']) && !empty($form_details['basic']['allowed_number_posts'])) {
+    if ($form_row->form_type == 'login_require' && !empty($form_details['basic']['limit_post_submission']) && !empty($form_details['basic']['allowed_number_posts']) && empty($post_id)) {
         //if the form is login require form and user is logged in
         if (is_user_logged_in()) {
             $post_author_id = get_current_user_id();
             if (!empty($post_id)) {
                 $post_author_id = get_post_field('post_author', $post_id);
             }
-            $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias, $post_id);
+
+            if (!empty($form_details['basic']['submission_limit_duration_type'])) {
+                $submission_limit_duration_type = $form_details['basic']['submission_limit_duration_type'];
+                $submission_limit_duration = $form_details['basic']['submission_limit_duration'];
+                $time_duration = $submission_limit_duration . '  ' . $submission_limit_duration_type;
+                $author_total_posts = $fpsm_library_obj->get_user_post_count_by_period($time_duration, $form_alias, $post_author_id);
+            } else {
+                $author_total_posts = $fpsm_library_obj->get_total_author_posts($post_author_id, $form_row->form_alias, $post_id);
+            }
+
             /**
              * Filters author total number of posts fetched from DB
              *
