@@ -149,7 +149,9 @@ if (!empty($edit_post)) {
                 $form_details['form']['post_status'][$default_post_status]['label'] = $default_submit_label;
                 $form_details['form']['post_status'][$default_post_status]['disable_button_for'] = [];
             }
+
             foreach ($form_details['form']['post_status'] as $form_post_button_status => $form_post_button_details) {
+
                 if (!empty($form_post_button_details['enable'])) {
                     $button_label = (!empty($form_post_button_details['label'])) ? $form_post_button_details['label'] : esc_attr__('Submit', 'frontend-post-submission-manager');
                     $button_update_label = (!empty($form_post_button_details['update_label'])) ? $form_post_button_details['update_label'] : $button_label;
@@ -174,6 +176,12 @@ if (!empty($edit_post)) {
                         $user = wp_get_current_user();
                         $user_role = $user->roles[0];
                         if (in_array($user_role, $disable_button_roles)) {
+                            $disable_button = true;
+                        }
+                    }
+                    if (!empty($edit_post->ID)) {
+                        $post_status = get_post_status($edit_post->ID);
+                        if (!empty($post_status) && $post_status == 'publish' && !empty($form_post_button_details['hide_after_post_publish'])) {
                             $disable_button = true;
                         }
                     }

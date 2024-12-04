@@ -123,10 +123,20 @@ $form_settings = (!empty($form_details['form'])) ? $form_details['form'] : array
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="fpsm-field-wrap">
+                                        <label><?php esc_html_e('Hide after Post Publish', 'frontend-post-submission-manager'); ?></label>
+                                        <div class="fpsm-field">
+                                            <input type="checkbox" name="<?php echo esc_attr($field_name_prefix); ?>[hide_after_post_publish]" value="1" <?php echo (!empty($post_status_details['hide_after_post_publish'])) ? 'checked="checked"' : ''; ?> />
+                                            <p class="description">
+                                                <?php esc_html_e('Please check if you want to hide this submit button after post has been published.', 'frontend-post-submission-manager'); ?>
+                                            </p>
+                                        </div>
+                                    </div>
                                     <?php
                                     if ($post_status == 'draft') {
                                     ?>
-                                        
+
+
                                         <div class="fpsm-field-wrap">
                                             <label><?php esc_html_e('Disable Field Required Check', 'frontend-post-submission-manager'); ?></label>
                                             <div class="fpsm-field">
