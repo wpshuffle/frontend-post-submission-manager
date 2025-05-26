@@ -110,12 +110,26 @@ foreach ($form_fields as $field_key => $field_details) {
                             <?php
                                 break;
                             case 'youtube':
-                                if (strpos('embed', $custom_field_value)) {
+                                $url = $custom_field_value;
+                                /* if (strpos('embed', $custom_field_value)) {
                                     $youtube_embed_url = $custom_field_value;
                                 } else {
                                     $url_array = explode('=', $custom_field_value);
                                     $youtube_embed_url = 'https://www.youtube.com/embed/' . end($url_array);
+                                } */
+                                // Normal URL: https://www.youtube.com/watch?v=VIDEO_ID
+                                if (preg_match('/^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([^&]+)/', $url, $matches)) {
+                                    $video_id = $matches[1];
                                 }
+                                // Embed URL: https://www.youtube.com/embed/VIDEO_ID
+                                elseif (preg_match('/^https?:\/\/(?:www\.)?youtube\.com\/embed\/([^?&]+)/', $url, $matches)) {
+                                    $video_id =  $matches[1];
+                                }
+                                // Short URL: https://youtu.be/VIDEO_ID
+                                elseif (preg_match('/^https?:\/\/(?:www\.)?youtu\.be\/([^?&]+)/', $url, $matches)) {
+                                    $video_id =  $matches[1];
+                                }
+                                $youtube_embed_url = 'https://www.youtube.com/embed/' . $video_id;
                                 $width = $field_details['embed_width'];
                                 $height = $field_details['embed_height'];
                             ?>
