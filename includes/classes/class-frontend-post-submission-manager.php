@@ -15,7 +15,7 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
          *
          * @var string
          */
-        public $version = '1.4.5';
+        public $version = '1.4.6';
 
         /**
          * The single instance of the class.
@@ -120,7 +120,6 @@ if (!class_exists('Frontend_Post_Submission_Manager')) {
             global $wpdb;
             defined('FPSM_VERSION') or define('FPSM_VERSION', $this->version);
             defined('FPSM_FORM_TABLE') or define('FPSM_FORM_TABLE', $wpdb->prefix . 'fpsm_forms');
-            
         }
 
         public function includes() {

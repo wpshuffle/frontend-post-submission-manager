@@ -40,5 +40,9 @@ if (is_user_logged_in()) {
         include(FPSM_PATH . '/includes/views/frontend/dashboard-html.php');
     }
 } else {
-    include(FPSM_PATH . '/includes/views/frontend/login-html.php');
+    global $login_form_render;
+    if (empty($login_form_render)) {
+        include(FPSM_PATH . '/includes/views/frontend/login-html.php');
+        $GLOBALS['login_form_render'] = true;
+    }
 }

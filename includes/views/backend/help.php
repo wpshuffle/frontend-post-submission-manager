@@ -470,6 +470,18 @@ $edit_flag = apply_filters('fpsm_edit_flag', $edit_flag, $form_row);
 */
 $delete_flag = apply_filters('fpsm_delete_flag', $delete_flag);
 </pre>
+<pre>
+/**
+* fpsm_max_term_return
+* 
+* Filters the total number of terms to be loaded
+* 
+* @param array $taxonomy_details
+* 
+* @since 1.4.6
+*/
+$terms = get_terms($taxonomy, array('hide_empty' => 0, 'number' => apply_filters('fpsm_max_term_return', 200, $taxonomy_details)));
+</pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>
