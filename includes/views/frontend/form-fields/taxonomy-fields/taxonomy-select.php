@@ -1,5 +1,5 @@
 <div class="fpsm-select-field <?php echo (!empty($field_details['select_multiple'])) ? 'fpsm-multiple-select' : ''; ?>">
-    <select name="<?php echo esc_attr($field_key) ?><?php if (!empty($field_details['select_multiple'])) { ?>[]<?php } ?>" <?php if (!empty($field_details['select_multiple'])) { ?>multiple="multiple" <?php } ?> id="<?php echo esc_attr($field_id); ?>">
+    <select name="<?php echo esc_attr($field_key) ?><?php if (!empty($field_details['select_multiple'])) { ?>[]<?php } ?>" <?php if (!empty($field_details['select_multiple'])) { ?>multiple="multiple" <?php } ?>>
         <option value=""><?php echo (!empty($field_details['first_option_label'])) ? esc_html($field_details['first_option_label']) : esc_html__(sprintf('Choose %s', $taxonomy_details->label), 'frontend-post-submission-manager'); ?></option>
         <?php
         $args = array(
