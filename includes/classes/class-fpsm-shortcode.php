@@ -13,6 +13,7 @@ if (!class_exists('FPSM_Shortcode')) {
             add_filter('login_form_middle', array($this, 'login_extra_fields'));
             add_filter('login_form_middle', array($this, 'login_google_captcha'));
             add_filter('authenticate', array($this, 'login_google_recaptcha_validation'), 10, 3);
+            add_filter('login_form_middle', [$this, 'add_fpsm_flag_in_login_form']);
         }
 
         function register_frontend_assets() {
@@ -127,7 +128,7 @@ if (!class_exists('FPSM_Shortcode')) {
         }
 
         function verify_username_password($user, $username, $password) {
-            if (isset($_POST['requested_page'])) {
+            if (isset($_POST['requested_page']) && isset($_POST['fpsm_login_form'])) {
                 $login_page = esc_url($_POST['requested_page']);
                 if ($username == "" || $password == "") {
                     wp_redirect($login_page . "?login=empty");
@@ -216,6 +217,13 @@ if (!class_exists('FPSM_Shortcode')) {
                 }
             }
             return $user;
+        }
+
+        function add_fpsm_flag_in_login_form($content) {
+            if (! empty($GLOBALS['fpsm_login_form'])) {
+                $content .= '<input type="hidden" name="fpsm_login_form" value="1">';
+            }
+            return $content;
         }
     }
 

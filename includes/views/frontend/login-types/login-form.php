@@ -10,9 +10,9 @@
      */
     do_action('fpsm_login_form_before', $form_row, $form_details);
     if (!empty($login_settings['login_form_title'])) {
-        ?>
+    ?>
         <h3><?php echo esc_html($login_settings['login_form_title']); ?></h3>
-        <?php
+    <?php
     }
     $username_label = (!empty($login_settings['username_label'])) ? esc_attr($login_settings['username_label']) : __('Username', 'frontend-post-submission-manager');
     $password_label = (!empty($login_settings['password_label'])) ? esc_attr($login_settings['password_label']) : __('Password', 'frontend-post-submission-manager');
@@ -20,7 +20,7 @@
     $remember_me_label = (!empty($login_settings['remember_me_label'])) ? esc_attr($login_settings['remember_me_label']) : __('Remember', 'frontend-post-submission-manager');
     $login_error_message = (!empty($login_settings['login_error_message'])) ? esc_attr($login_settings['login_error_message']) : __('Invalid username or password.', 'frontend-post-submission-manager');
     global $user_login;
-    $login = (isset($_GET['login']) ) ? sanitize_text_field($_GET['login']) : 0;
+    $login = (isset($_GET['login'])) ? sanitize_text_field($_GET['login']) : 0;
 
     // In case of a login error.
     if ($login === "failed") {
@@ -48,12 +48,14 @@
         'value_remember' => false
     );
 
-// Calling the login form.
+    // Calling the login form.
+    $GLOBALS['fpsm_login_form'] = true;
     wp_login_form($args);
+    unset( $GLOBALS['fpsm_login_form'] );
     if (!empty($login_settings['login_note'])) {
-        ?>
+    ?>
         <div class="fpsm-login-note"><?php echo $fpsm_library_obj->sanitize_html($login_settings['login_note']); ?></div>
-        <?php
+    <?php
     }
     /**
      * Fires just after displaying the login form
@@ -66,7 +68,8 @@
     do_action('fpsm_login_after_before', $form_row, $form_details);
     ?>
 </div>
-<script>jQuery(document).ready(function ($) {
+<script>
+    jQuery(document).ready(function($) {
         if (window.location.href.indexOf('?') > -1) {
             history.pushState('', document.title, window.location.pathname);
         }
