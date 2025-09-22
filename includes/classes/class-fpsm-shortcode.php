@@ -120,7 +120,7 @@ if (!class_exists('FPSM_Shortcode')) {
         }
 
         function login_failed() {
-            if (isset($_POST['requested_page'])) {
+            if (isset($_POST['requested_page']) && isset($_POST['fpsm_login_form'])) {
                 $login_page = esc_url($_POST['requested_page']);
                 wp_redirect($login_page . '?login=failed');
                 exit;
