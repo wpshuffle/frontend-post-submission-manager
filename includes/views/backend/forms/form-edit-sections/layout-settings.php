@@ -8,7 +8,7 @@ $layout_settings = (!empty($form_details['layout'])) ? $form_details['layout'] :
             <select name="form_details[layout][template]" class="fpsm-form-template">
                 <?php
                 $selected_template = (!empty($layout_settings['template'])) ? $layout_settings['template'] : 'template-1';
-                for ($i = 1; $i <= 22; $i++) {
+                for ($i = 1; $i <= 40; $i++) {
                     ?>
                     <option value="template-<?php echo intval($i); ?>" <?php selected($selected_template, 'template-' . $i); ?>><?php esc_html_e(sprintf('Template %d', $i), 'frontend-post-submission-manager'); ?></option>
                     <?php
@@ -17,7 +17,7 @@ $layout_settings = (!empty($form_details['layout'])) ? $form_details['layout'] :
             </select>
             <div class="fpsm-form-template-preview">
                 <?php
-                for ($i = 1; $i <= 22; $i++) {
+                for ($i = 1; $i <= 40; $i++) {
                     ?>
                     <img src="<?php echo FPSM_URL . '/assets/images/form-template-previews/template-' . $i . '.jpg'; ?>" data-template-id="<?php echo 'template-' . $i; ?>" class="fpsm-form-template-preview-img <?php echo ($selected_template != 'template-' . $i) ? 'fpsm-display-none' : ''; ?>" loading="lazy"/>
                     <?php
