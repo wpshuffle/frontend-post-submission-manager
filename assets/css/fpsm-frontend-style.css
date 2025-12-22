@@ -3845,6 +3845,184 @@ button.add_media {
   background-color: rgba(0, 0, 0, 0.14) !important;
 }
 
+
+
+
+/* New Templates */
+
+.fpsm-front-form.fpsm-template-23 {
+    padding: 0;
+}
+.fpsm-template-23 .fspm-form-field-wrap {
+    padding: 50px;
+    border: 1px solid #000000;
+}
+.fpsm-template-23 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Helvetica';
+    padding: 30px 0 !important;
+}
+.fpsm-front-form.fpsm-template-23 .fpsm-field-wrap label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #888888;
+    display: block;
+    margin-bottom: 4px;
+}
+.fpsm-front-form.fpsm-template-23 input[type="text"], 
+.fpsm-front-form.fpsm-template-23 input[type="email"], 
+.fpsm-front-form.fpsm-template-23 input[type="number"], 
+.fpsm-front-form.fpsm-template-23 input[type="password"], 
+.fpsm-front-form.fpsm-template-23 input[type="tel"], 
+.fpsm-front-form.fpsm-template-23 input[type="url"], 
+.fpsm-front-form.fpsm-template-23 textarea {
+    border: 0.5px solid #333333;
+    background: none;
+}
+.fpsm-front-form.fpsm-template-23 .fpsm-field-note {
+    color: inherit;
+    opacity: 0.58;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+.fpsm-template-23.fpsm-front-form .fpsm-select-field select {
+   -webkit-appearance: none; /* For Chrome, Safari, Opera */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;
+    background: none;
+    border: 0.5px solid #333333;   
+}
+.fpsm-front-form.fpsm-template-23 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-template-23 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
+.fpsm-front-form.fpsm-template-24 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-template-24 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
+    border-radius: 2px;
+    background-color: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.08);
+}
+.fpsm-front-form.fpsm-template-23 .fpsm-field-wrap .fpsm-radio label,
+.fpsm-front-form.fpsm-template-23 .fpsm-field-wrap .fpsm-checkbox label  {
+    font-size: 14px;
+    font-weight: 500;
+}
+.fpsm-template-23 .fpsm-field,
+.fpsm-template-24 .fpsm-field {
+    position: relative;
+}
+.fpsm-template-23 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-23 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-24 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-24 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-24 .fpsm-post-title .fpsm-field:before,
+.fpsm-template-24 .fpsm-post-excerpt .fpsm-field:before {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0.28);
+    text-align: center;
+    line-height: 34px;
+    font-family: "Font Awesome\ 5 Free";
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.68);
+}
+.fpsm-template-23 .fpsm-author-name .fpsm-field:before {
+     content: "\f007";
+}
+.fpsm-template-23 .fpsm-author-email .fpsm-field:before {
+    content: "\f0e0";
+}
+.fpsm-template-23 .fpsm-field input[type="submit"] {
+    background-color: #2392FA;
+    padding: 20px 50px;
+    color: white;
+    border-radius: 2px;
+    line-height: 120%;
+    transition: all 0.3s ease;
+}
+
+/* Template 24 */
+
+.fpsm-front-form.fpsm-template-24 input[type="text"], 
+.fpsm-front-form.fpsm-template-24 input[type="email"], 
+.fpsm-front-form.fpsm-template-24 input[type="number"], 
+.fpsm-front-form.fpsm-template-24 input[type="password"], 
+.fpsm-front-form.fpsm-template-24 input[type="tel"], 
+.fpsm-front-form.fpsm-template-24 input[type="url"], 
+.fpsm-front-form.fpsm-template-24 textarea {
+    border: none;
+    border-bottom: 0.5px solid #333333;
+    background: none;
+    border-radius: 0px;
+    padding-left: 32px;
+}
+.fpsm-front-form.fpsm-template-24 .fpsm-field-wrap label {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #888888;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.fpsm-front-form.fpsm-template-24 .fpsm-checkbox label:before {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    content: "\f00c";
+    height: 24px;
+    width: 24px;
+    background-color: rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    /* color: rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    line-height: 24px;
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: 900;
+    font-size: 13px;
+}
+.fpsm-template-24 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-24 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-24 .fpsm-post-title .fpsm-field:before,
+.fpsm-template-24 .fpsm-post-excerpt .fpsm-field:before{
+    left: 0px;
+    right: unset;
+}
+.fpsm-front-form.fpsm-template-24 .fpsm-field-wrap .fpsm-checkbox label {
+    padding-left: 34px;
+}
+.fpsm-template-24 .fpsm-author-name .fpsm-field:before {
+     content: "\f007";
+}
+.fpsm-template-24 .fpsm-author-email .fpsm-field:before {
+    content: "\f0e0";
+}
+.fpsm-template-24 .fpsm-post-title .fpsm-field:before {
+    content: "\f303";
+}
+.fpsm-template-24 .fpsm-post-excerpt .fpsm-field:before {
+    content: "\f303";
+}
+.fpsm-template-24.fpsm-front-form .fpsm-select-field select {
+   -webkit-appearance: none; /* For Chrome, Safari, Opera */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;
+  border: none;
+    background: none;
+    border-bottom: 0.5px solid #333333;
+    padding-left: 32px;   
+}
+.fpsm-front-form.fpsm-template-24 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
+    border: none;
+}
+
 /*============================================== Max 1023px responsive mobile ======================================*/
 
 @media all and (max-width: 1023px) {
