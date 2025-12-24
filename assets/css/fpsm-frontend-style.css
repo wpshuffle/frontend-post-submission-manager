@@ -3864,7 +3864,8 @@ button.add_media {
     font-family: 'Helvetica';
     padding: 30px 0 !important;
 }
-.fpsm-front-form.fpsm-template-23 .fpsm-field-wrap label {
+.fpsm-front-form.fpsm-template-23 .fpsm-field-wrap label,
+.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -4017,11 +4018,145 @@ button.add_media {
   border: none;
     background: none;
     border-bottom: 0.5px solid #333333;
-    padding-left: 32px;   
 }
 .fpsm-front-form.fpsm-template-24 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
     border: none;
 }
+
+
+
+/* Template 26 */
+
+.fpsm-front-form.fpsm-template-26 input[type="text"], 
+.fpsm-front-form.fpsm-template-26 input[type="email"], 
+.fpsm-front-form.fpsm-template-26 input[type="number"], 
+.fpsm-front-form.fpsm-template-26 input[type="password"], 
+.fpsm-front-form.fpsm-template-26 input[type="tel"], 
+.fpsm-front-form.fpsm-template-26 input[type="url"], 
+.fpsm-front-form.fpsm-template-26 textarea {
+    border: 0.5px solid #BCBCBC;
+    background: #EFEFEF;
+    border-radius: 30px;
+}
+.fpsm-template-26.fpsm-front-form .fpsm-select-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #EFEFEF;
+    border: 0.5px solid #BCBCBC;
+    border-radius: 25px;
+}
+.fpsm-front-form.fpsm-template-26 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-template-26 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+    border: none;
+    background: none;
+}
+.fpsm-front-form.fpsm-template-26 .qq-upload-button{
+  border-radius: 25px;
+}
+.fpsm-front-form.fpsm-template-26 .fpsm-has-submit-btn .fpsm-field input[type="submit"] {
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+.fpsm-front-form.fpsm-template-26 .fpsm-select-field select {
+    padding: 0 15px;
+}
+
+.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label {
+    font-size: 18px;
+}
+
+.fpsm-front-form.fpsm-template-26 .fpsm-radio-inline .fpsm-radio,
+.fpsm-front-form.fpsm-template-26 .fpsm-checkbox-inline .fpsm-checkbox  {
+    margin-bottom: 0px;
+}
+.fpsm-front-form.fpsm-template-26 h2.fpsm-form-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    color: #000000;
+    line-height: 120%;
+    opacity: 53%;
+}
+.fpsm-front-form.fpsm-template-26 .fpsm-front-form {
+    border: 1px solid #797777;
+    border-radius: 10px;
+}
+
+/* Template 27 */
+
+.fpsm-front-form.fpsm-template-27 input[type="text"], 
+.fpsm-front-form.fpsm-template-27 input[type="email"], 
+.fpsm-front-form.fpsm-template-27 input[type="number"], 
+.fpsm-front-form.fpsm-template-27 input[type="password"], 
+.fpsm-front-form.fpsm-template-27 input[type="tel"], 
+.fpsm-front-form.fpsm-template-27 input[type="url"], 
+.fpsm-front-form.fpsm-template-27 textarea {
+    border: 0.5px solid #383737;
+    background: none;
+    border-radius: 10px;
+}
+.fpsm-template-27.fpsm-front-form .fpsm-select-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0.5px solid #383737;
+    border-radius: 10px;
+}
+
+.fpsm-front-form.fpsm-template-27 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-template-27 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+    border-radius: 2px;
+    background-color: transparent;
+    border: none;
+}
+.fpsm-template-27 .fpsm-field input[type="submit"] {
+    background-color: #616BFF;
+    padding: 20px 50px;
+    color: white;
+    border-radius: 2px;
+    line-height: 120%;
+    transition: all 0.3s ease;
+}
+.fpsm-template-27.fpsm-front-form .qq-upload-button{
+  background-color: #616BFF;
+}
+.fpsm-front-form.fpsm-template-27 .fpsm-field-wrap label, 
+.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #383737;
+    display: block;
+    margin-bottom: 4px;
+}
+.fpsm-front-form.fpsm-template-27 .fpsm-radio-inline .fpsm-radio,
+.fpsm-front-form.fpsm-template-27 .fpsm-checkbox-inline .fpsm-checkbox  {
+    margin-bottom: 0px;
+}
+.fpsm-front-form.fpsm-template-27 h2.fpsm-form-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    color: #383737;
+    line-height: 120%;
+}
+
+.fpsm-template-27.fpsm-front-form {
+    background: linear-gradient(153.11deg, #9ADCFD -11.84%, #8F95FA 43.61%, #F4BAEB 98.96%);
+    padding: 35px;
+}
+.fpsm-template-27 .fspm-form-wrapper {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.6); 
+    box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.25); 
+    backdrop-filter: blur(12px); /* Note: backdrop-filter has minimal browser support */ 
+    border-radius: 20px;
+}
+
+
 
 /*============================================== Max 1023px responsive mobile ======================================*/
 
