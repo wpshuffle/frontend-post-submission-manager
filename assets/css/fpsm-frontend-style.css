@@ -4125,7 +4125,8 @@ button.add_media {
   background-color: #616BFF;
 }
 .fpsm-front-form.fpsm-template-27 .fpsm-field-wrap label, 
-.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label {
+.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label,
+.fpsm-front-form.fpsm-template-28 .fpsm-field-wrap label {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -4154,6 +4155,50 @@ button.add_media {
     box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.25); 
     backdrop-filter: blur(12px); /* Note: backdrop-filter has minimal browser support */ 
     border-radius: 20px;
+}
+
+
+
+/* Template 28 */
+
+.fpsm-template-28 .fspm-form-field-wrap {
+    padding: 50px;
+    border: none;
+}
+.fpsm-template-23 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Helvetica';
+    padding: 30px 0 !important;
+}
+form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
+    background-color: #1D1D1D;
+}
+.fpsm-template-28 .fspm-form-field-wrap{
+  padding: 0;
+}
+.fpsm-template-28 .fpsm-field-wrap {
+    background: #2f2f2f;
+    padding: 20px 50px;
+    color: #fff;
+}
+.fpsm-front-form.fpsm-template-28 input[type="text"], 
+.fpsm-front-form.fpsm-template-28 input[type="email"], 
+.fpsm-front-form.fpsm-template-28 input[type="number"], 
+.fpsm-front-form.fpsm-template-28 input[type="password"], 
+.fpsm-front-form.fpsm-template-28 input[type="tel"], 
+.fpsm-front-form.fpsm-template-28 input[type="url"], 
+.fpsm-front-form.fpsm-template-28 textarea {
+    border: 0.5px solid #333333;
+    background: #4C4C4C;
+}
+.fpsm-template-28.fpsm-front-form .fpsm-select-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #4c4c4c;
+    border: 0.5px solid #333333;
 }
 
 
