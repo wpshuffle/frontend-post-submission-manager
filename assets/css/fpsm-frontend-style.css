@@ -4160,17 +4160,22 @@ button.add_media {
 
 
 /* Template 28 */
+ 
+.fpsm-front-form.fpsm-template-28 .fpsm-field-wrap label {
+    color: #fff;
+}
 
 .fpsm-template-28 .fspm-form-field-wrap {
     padding: 50px;
     border: none;
 }
-.fpsm-template-23 .fspm-title-wrap h2 {
+.fpsm-template-28 .fspm-title-wrap h2 {
     text-align: center;
     font-size: 50px;
     font-weight: bold;
     font-family: 'Helvetica';
     padding: 30px 0 !important;
+    color: #fff;
 }
 form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     background-color: #1D1D1D;
