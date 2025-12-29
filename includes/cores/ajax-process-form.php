@@ -202,7 +202,23 @@ if ($this->admin_ajax_nonce_verify()) {
             $response['message'] = (!empty($form_details['basic']['validation_error_message'])) ? esc_html($form_details['basic']['validation_error_message']) : esc_html__('Form validation error occurred.', 'frontend-post-submission-manager');
         } else {
             //Lets process the form
-
+            //Lets process the form
+            if (is_user_logged_in()) {
+                $post_id = (!empty($form_data['post_id'])) ? intval($form_data['post_id']) : 0;
+                if (!empty($post_id)) {
+                    if (!current_user_can('edit_post', $post_id)) {
+                        $response['status'] = 403;
+                        $response['message'] = esc_html__('Unauthorized', 'frontend-post-submission-manager-lite');
+                        die(json_encode($response));
+                    }
+                }
+            } else {
+                if (!empty($form_data['post_id'])) {
+                    $response['status'] = 403;
+                    $response['message'] = esc_html__('Unauthorized', 'frontend-post-submission-manager-lite');
+                    die(json_encode($response));
+                }
+            }
 
             $post_title = (!empty($form_data['post_title'])) ? $form_data['post_title'] : '';
             $post_content = (!empty($form_data['post_content'])) ? $form_data['post_content'] : '';
@@ -354,7 +370,7 @@ if ($this->admin_ajax_nonce_verify()) {
                          *
                          * @since 1.0.0
                          */
-                        $custom_field_value = apply_filters('fpsm_custom_field_value', $custom_field_value, $custom_field_key, $form_row);
+                        $custom_field_value = apply_filters('fpsm_custom_field_value', $custom_field_value, $custom_field_key, $form_row, $insert_update_post_id);
                         update_post_meta($insert_update_post_id, $custom_field_meta_key, $custom_field_value);
                         if ($custom_field_type == 'file_uploader') {
 

@@ -169,7 +169,8 @@ jQuery(document).ready(function ($) {
         var media_id = $(this).data('media-id');
         var media_key = $(this).data('media-key');
         var edit = $(this).data('edit');
-        if (edit == 'no') {
+        console.log(edit);
+        if (edit && edit == 'no' && media_key!='') {
             $.ajax({
                 type: 'post',
                 url: fpsm_js_obj.ajax_url,

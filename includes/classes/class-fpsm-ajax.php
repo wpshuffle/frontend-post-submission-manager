@@ -95,12 +95,16 @@ if (!class_exists('FPSM_Ajax')) {
         }
 
         function media_delete_action() {
-            if ($this->admin_ajax_nonce_verify()) {
+            if ($this->admin_ajax_nonce_verify() && is_user_logged_in()) {
                 $media_id = intval($_POST['media_id']);
-                $media_key = sanitize_text_field($_POST['media_key']);
-                $attachment_date = get_the_date("U", $media_id);
-                $attachment_code = md5($attachment_date);
-                if ($media_key != $attachment_code) {
+                $current_user_id = get_current_user_id();
+                $media_author_id = (int) get_post_field('post_author', $media_id);
+                if (empty($media_author_id)) {
+                    $response['status'] = 403;
+                    $response['message'] = esc_html__('Unauthorized deletion of the media.', 'frontend-post-submission-manager-lite');
+                    die(json_encode($response));
+                }
+                if ($media_author_id !== $current_user_id) {
                     $response['status'] = 403;
                     $response['messsage'] = esc_html__('Unauthorized access', 'frontend-post-submission-manager');
                 } else {
