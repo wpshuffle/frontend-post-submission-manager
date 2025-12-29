@@ -283,19 +283,30 @@ if (!class_exists('FPSM_Library')) {
          * @since 1.0.0
          */
         public function get_current_page_url() {
-            $pageURL = 'http';
-            if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {
-                $pageURL .= "s";
+
+            // Detect scheme reliably
+            $is_https = false;
+
+            if (
+                (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+                || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+                || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+            ) {
+                $is_https = true;
             }
-            $pageURL .= "://";
-            if ($_SERVER["SERVER_PORT"] != "80") {
-                $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-            } else {
-                $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-            }
-            $pageURL = explode('?', $pageURL);
-            $pageURL = $pageURL[0];
-            return $pageURL;
+
+            $scheme = $is_https ? 'https' : 'http';
+
+            // Prefer HTTP_HOST (respects proxy & virtual hosts)
+            $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'];
+
+            // Build URL
+            $url = $scheme . '://' . $host . $_SERVER['REQUEST_URI'];
+
+            // Remove query string
+            $url = strtok($url, '?');
+
+            return $url;
         }
 
         /**
@@ -755,7 +766,7 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
                 'fields'         => 'ids',
                 'posts_per_page' => -1,
             );
-            
+
             // Execute the query
             $query = new WP_Query($args);
             // Return the number of posts

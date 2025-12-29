@@ -202,7 +202,11 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 $attachment_data = wp_generate_attachment_metadata($attachment_id, $file_path);
                 $check = wp_update_attachment_metadata($attachment_id, $attachment_data);
                 $attachment_date = get_the_date("U", $attachment_id);
-                $attachment_code = md5($attachment_date);
+                if (is_user_logged_in()) {
+                    $attachment_code = md5($attachment_date);
+                } else {
+                    $attachment_code = '';
+                }
                 $attachment_thumbnail = wp_get_attachment_image_src($attachment_id);
                 global $fpsm_library_obj;
                 $attachment_size = $fpsm_library_obj->format_file_size($size);
