@@ -4465,6 +4465,16 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 
 /* Template-31 */
 
+.fpsm-template-31 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: 'Helvetica';
+    color: #687EDC;
+    padding: 30px 50px 0px !important;
+    margin-bottom: 70px !important;
+}
+
 .fpsm-front-form.fpsm-template-31 input[type="text"], 
 .fpsm-front-form.fpsm-template-31 input[type="email"], 
 .fpsm-front-form.fpsm-template-31 input[type="number"], 
@@ -4473,7 +4483,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 .fpsm-front-form.fpsm-template-31 input[type="url"], 
 .fpsm-front-form.fpsm-template-31 textarea {
     border: none;
-    border-bottom: 0.5px solid #333333;
+    border-bottom: 0.5px solid #7085F9;
     background: none;
     border-radius: 0px;
     padding-left: 32px;
@@ -4532,7 +4542,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
   appearance: none;
   border: none;
     background: none;
-    border-bottom: 0.5px solid #333333;
+    border-bottom: 0.5px solid #7085F9;
 }
 .fpsm-front-form.fpsm-template-31 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
     border: none;
@@ -4541,6 +4551,248 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 .fpsm-front-form.fpsm-template-31 .fpsm-checkbox-inline .fpsm-checkbox {
     margin-bottom: 0px;
 }
+.fpsm-front-form.fpsm-template-31 .fpsm-field input[type="submit"] {
+    background-color: #7085F9;
+    border: none;
+}
+.fpsm-front-form.fpsm-template-31 .qq-upload-button {
+    background-color: #7085F9;
+}
+
+.fpsm-front-form.fpsm-template-31 .fspm-form-wrapper {
+    max-width: 75%;
+    margin: auto;
+}
+form.fpsm-front-form.fpsm-template-31{
+  position: relative;
+}
+form.fpsm-front-form.fpsm-template-31:after {
+    content: '';
+    position: absolute;
+    height: 280px;
+    width: 234px;
+    background: url("../images/image-bottom-right.png");
+    background-repeat: no-repeat;
+    z-index: 999;
+    right: 0;
+    bottom: 0;
+}
+form.fpsm-front-form.fpsm-template-31:before {
+    content: '';
+    position: absolute;
+    height: 647px;
+    width: 211px;
+    background: url("../images/image-bottom-left.png");
+    background-repeat: no-repeat;
+    z-index:0;
+    left: 0;
+    bottom: 0;
+}
+form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
+    position: relative;
+    z-index: 99;
+}
+
+/* template-32 */
+
+.fpsm-front-form.fpsm-template-32 input[type="text"], 
+.fpsm-front-form.fpsm-template-32 input[type="email"], 
+.fpsm-front-form.fpsm-template-32 input[type="number"], 
+.fpsm-front-form.fpsm-template-32 input[type="password"], 
+.fpsm-front-form.fpsm-template-32 input[type="tel"], 
+.fpsm-front-form.fpsm-template-32 input[type="url"], 
+.fpsm-front-form.fpsm-template-32 textarea {
+    border: 0.5px solid #383737;
+    background: none;
+    border-radius: 10px;
+}
+.fpsm-template-32.fpsm-front-form .fpsm-select-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0.5px solid #383737;
+    border-radius: 10px;
+}
+
+.fpsm-front-form.fpsm-template-32 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-template-32 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+    border-radius: 2px;
+    background-color: transparent;
+    border: none;
+}
+.fpsm-template-32 .fpsm-field input[type="submit"] {
+    background-color: #FF9B39;
+    padding: 20px 50px;
+    color: white;
+    border-radius: 2px;
+    line-height: 120%;
+    transition: all 0.3s ease;
+}
+.fpsm-template-32.fpsm-front-form .qq-upload-button{
+  background-color: #FF9B39;
+}
+.fpsm-front-form.fpsm-template-32 .fpsm-field-wrap label {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #383737;
+    display: block;
+    margin-bottom: 4px;
+}
+.fpsm-front-form.fpsm-template-32 .fpsm-radio-inline .fpsm-radio,
+.fpsm-front-form.fpsm-template-32 .fpsm-checkbox-inline .fpsm-checkbox  {
+    margin-bottom: 0px;
+}
+.fpsm-front-form.fpsm-template-32 h2.fpsm-form-title {
+    font-family: "Style Script", cursive;
+    font-size: 50px;
+    color: #383737;
+    line-height: 120%;
+}
+
+.fpsm-template-32.fpsm-front-form {
+    background: linear-gradient(162.19deg, #3A3937 14.25%, #FF9B39 156.83%);
+    padding: 35px;
+}
+.fpsm-template-32 .fspm-form-wrapper {
+    padding: 50px;
+    background: #E8E8E8;
+    box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    width: 74%;
+    margin: 100px auto;
+}
+form.fpsm-front-form.fpsm-template-32{
+  position: relative;
+}
+form.fpsm-front-form.fpsm-template-32:after {
+    content: '';
+    position: absolute;
+    height: 1055px;
+    width: 307px;
+    background: url("../images/temp-32-bg-right.png");
+    background-repeat: no-repeat;
+    z-index: 999;
+    right: 0;
+    bottom: 0;
+}
+form.fpsm-front-form.fpsm-template-32:before {
+    content: '';
+    position: absolute;
+    height: 560px;
+    width: 655px;
+    background: url("../images/temp-32-bg-left.png");
+    background-repeat: no-repeat;
+    z-index:0;
+    left: 0;
+    bottom: 0;
+}
+
+/* Template 33 */
+
+.fpsm-template-33 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    color: #687EDC;
+    padding: 20px 50px !important;
+    margin-bottom: 70px !important;
+}
+.fpsm-template-33 .fspm-form-field-wrap {
+    padding: 0px 50px;
+}
+
+.fpsm-front-form.fpsm-template-33 input[type="text"], 
+.fpsm-front-form.fpsm-template-33 input[type="email"], 
+.fpsm-front-form.fpsm-template-33 input[type="number"], 
+.fpsm-front-form.fpsm-template-33 input[type="password"], 
+.fpsm-front-form.fpsm-template-33 input[type="tel"], 
+.fpsm-front-form.fpsm-template-33 input[type="url"], 
+.fpsm-front-form.fpsm-template-33 textarea {
+    border: none;
+    border-bottom: 0.5px solid #333333;
+    background: none;
+    border-radius: 0px;
+    padding-left: 32px;
+}
+.fpsm-front-form.fpsm-template-33 .fpsm-field-wrap label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #888888;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.fpsm-front-form.fpsm-template-33 .fpsm-checkbox label:before {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    content: "\f00c";
+    height: 24px;
+    width: 24px;
+    background-color: rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    /* color: rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    line-height: 24px;
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: 900;
+    font-size: 13px;
+}
+.fpsm-template-33 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-33 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-33 .fpsm-post-title .fpsm-field:before,
+.fpsm-template-33 .fpsm-post-excerpt .fpsm-field:before{
+    left: 0px;
+    right: unset;
+}
+.fpsm-front-form.fpsm-template-33 .fpsm-field-wrap .fpsm-checkbox label {
+    padding-left: 34px;
+}
+.fpsm-template-33 .fpsm-author-name .fpsm-field:before {
+     content: "\f007";
+}
+.fpsm-template-33 .fpsm-author-email .fpsm-field:before {
+    content: "\f0e0";
+}
+.fpsm-template-33 .fpsm-post-title .fpsm-field:before {
+    content: "\f303";
+}
+.fpsm-template-33 .fpsm-post-excerpt .fpsm-field:before {
+    content: "\f303";
+}
+.fpsm-template-24.fpsm-front-form .fpsm-select-field select {
+   -webkit-appearance: none; /* For Chrome, Safari, Opera */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;
+  border: none;
+    background: none;
+    border-bottom: 0.5px solid #333333;
+}
+.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
+    border: none;
+}
+.fpsm-front-form.fpsm-template-33 .fpsm-radio-inline .fpsm-radio,
+.fpsm-front-form.fpsm-template-33 .fpsm-checkbox-inline .fpsm-checkbox {
+    margin-bottom: 0px;
+}
+.fpsm-front-form.fpsm-template-33 .fpsm-field input[type="submit"] {
+    background-color: #7085F9;
+    border: none;
+}
+.fpsm-front-form.fpsm-template-33 .qq-upload-button {
+    background-color: #7085F9;
+}
+
+form.fpsm-front-form.fpsm-template-33{
+  position: relative;
+}
+
 
 
 
