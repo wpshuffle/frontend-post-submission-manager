@@ -29,6 +29,12 @@ if (!class_exists('FPSM_Ajax')) {
              */
             add_action('wp_ajax_fpsm_post_delete_action', array($this, 'process_post_delete'));
             add_action('wp_ajax_nopriv_fpsm_post_delete_action', array($this, 'permission_denied'));
+
+            /**
+             * PayPal capture
+             */
+            add_action('wp_ajax_fpsm_paypal_capture', array($this, 'process_paypal_capture'));
+            add_action('wp_ajax_nopriv_fpsm_paypal_capture', array($this, 'process_paypal_capture'));
         }
 
         function file_upload_action() {
@@ -165,6 +171,91 @@ if (!class_exists('FPSM_Ajax')) {
                     }
                 }
                 die(json_encode($response));
+            } else {
+                $this->permission_denied();
+            }
+        }
+
+        /**
+         * Capture PayPal payment and update post/payment records
+         */
+        function process_paypal_capture() {
+            if ($this->admin_ajax_nonce_verify()) {
+                $order_id = sanitize_text_field($_POST['order_id']);
+                $post_id = intval($_POST['post_id']);
+                if (empty($order_id) || empty($post_id)) {
+                    wp_send_json(array('status' => 403, 'message' => esc_html__('Invalid payment request.', 'frontend-post-submission-manager')));
+                }
+                $form_alias = get_post_meta($post_id, '_fpsm_form_alias', true);
+                if (empty($form_alias)) {
+                    wp_send_json(array('status' => 403, 'message' => esc_html__('Form reference missing for this post.', 'frontend-post-submission-manager')));
+                }
+                global $fpsm_library_obj;
+                global $fpsm_paypal_obj;
+                $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
+                if (empty($form_row)) {
+                    wp_send_json(array('status' => 403, 'message' => esc_html__('Form not found for this post.', 'frontend-post-submission-manager')));
+                }
+                $capture = $fpsm_paypal_obj->capture_order($order_id);
+                if (empty($capture['success'])) {
+                    wp_send_json(array('status' => 403, 'message' => esc_html__('PayPal capture failed. Please try again.', 'frontend-post-submission-manager')));
+                }
+                $capture_data = $capture['data'];
+                $status = (!empty($capture_data['status'])) ? $capture_data['status'] : '';
+                if ($status !== 'COMPLETED') {
+                    wp_send_json(array('status' => 403, 'message' => esc_html__('Payment not completed.', 'frontend-post-submission-manager')));
+                }
+                $purchase_unit = (!empty($capture_data['purchase_units'][0])) ? $capture_data['purchase_units'][0] : array();
+                $payments = (!empty($purchase_unit['payments']['captures'][0])) ? $purchase_unit['payments']['captures'][0] : array();
+                $capture_id = (!empty($payments['id'])) ? $payments['id'] : '';
+                $payer = (!empty($capture_data['payer'])) ? $capture_data['payer'] : array();
+                $payer_email = (!empty($payer['email_address'])) ? $payer['email_address'] : '';
+                $payer_id = (!empty($payer['payer_id'])) ? $payer['payer_id'] : '';
+                $amount = (!empty($payments['amount']['value'])) ? $payments['amount']['value'] : '';
+                $currency = (!empty($payments['amount']['currency_code'])) ? $payments['amount']['currency_code'] : '';
+                $meta = wp_json_encode($capture_data);
+                $fpsm_paypal_obj->upsert_payment(array(
+                    'post_id' => $post_id,
+                    'form_alias' => $form_alias,
+                    'amount' => $amount,
+                    'currency' => $currency,
+                    'status' => 'completed',
+                    'paypal_order_id' => $order_id,
+                    'paypal_capture_id' => $capture_id,
+                    'payer_email' => $payer_email,
+                    'payer_id' => $payer_id,
+                    'meta' => $meta
+                ));
+                update_post_meta($post_id, '_fpsm_payment_status', 'completed');
+                update_post_meta($post_id, '_fpsm_payment_capture_id', $capture_id);
+                $form_details = maybe_unserialize($form_row->form_details);
+                $stored_payment_status = get_post_meta($post_id, '_fpsm_payment_post_status', true);
+                $post_payment_status = (!empty($stored_payment_status)) ? $stored_payment_status : ((!empty($form_details['payment']['post_payment_status'])) ? $form_details['payment']['post_payment_status'] : get_post_status($post_id));
+                $current_status = get_post_status($post_id);
+                if ($post_payment_status != $current_status) {
+                    wp_update_post(array(
+                        'ID' => $post_id,
+                        'post_status' => $post_payment_status
+                    ));
+                }
+                // Trigger default success hooks/notifications now that payment is complete
+                $origin_action = get_post_meta($post_id, '_fpsm_payment_origin_action', true);
+                $action = (!empty($origin_action)) ? $origin_action : 'insert';
+                do_action('fpsm_form_submission_success', $post_id, $form_row, $action);
+
+                $response = array(
+                    'status' => 200,
+                    'message' => esc_html__('Payment completed successfully.', 'frontend-post-submission-manager')
+                );
+                // Reuse success redirection if configured
+                if (!empty($form_details['basic']['redirection'])) {
+                    if ($form_details['basic']['redirection_type'] == 'url' && !empty($form_details['basic']['redirection_url'])) {
+                        $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
+                    } else {
+                        $response['redirect_url'] = get_the_permalink($post_id);
+                    }
+                }
+                wp_send_json($response);
             } else {
                 $this->permission_denied();
             }

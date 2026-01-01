@@ -28,6 +28,7 @@
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="form"><span class="dashicons dashicons-feedback"></span><?php esc_html_e('Form', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="layout"><span class="dashicons dashicons-layout"></span><?php esc_html_e('Layout', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="notification"><span class="dashicons dashicons-email"></span><?php esc_html_e('Notification', 'frontend-post-submission-manager'); ?></a></li>
+        <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="payment"><span class="dashicons dashicons-cart"></span><?php esc_html_e('Payment', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="security"><span class="dashicons dashicons-shield"></span><?php esc_html_e('Security', 'frontend-post-submission-manager'); ?></a></li>
         <li><a href="javascript:void(0);" class="fpsm-nav-item" data-tab="customize"><span class="dashicons dashicons-admin-customizer"></span><?php esc_html_e('Customize', 'frontend-post-submission-manager'); ?></a></li>
                 <?php

@@ -87,6 +87,12 @@ $form_details = maybe_unserialize($form_details);
         ?>
         <?php
         /**
+         * Payment Settings
+         */
+        include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/payment-settings.php');
+        ?>
+        <?php
+        /**
          * Security Settings
          */
         include(FPSM_PATH . '/includes/views/backend/forms/form-edit-sections/security-settings.php');

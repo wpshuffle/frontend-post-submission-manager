@@ -30,6 +30,7 @@ if (!class_exists('FPSM_Activation')) {
 
                     $charset_collate = $wpdb->get_charset_collate();
                     $form_table = $wpdb->prefix . 'fpsm_forms';
+                    $payment_table = $wpdb->prefix . 'fpsm_payments';
                     $form_table_sql = "CREATE TABLE $form_table (
 						form_id mediumint(9) NOT NULL AUTO_INCREMENT,
 						form_title varchar(255),
@@ -40,9 +41,27 @@ if (!class_exists('FPSM_Activation')) {
 						form_status mediumint(9) NOT NULL DEFAULT 1,
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";
+                    $payment_table_sql = "CREATE TABLE $payment_table (
+                        payment_id mediumint(9) NOT NULL AUTO_INCREMENT,
+                        post_id bigint(20) NOT NULL,
+                        form_alias varchar(255),
+                        amount decimal(10,2),
+                        currency varchar(10),
+                        status varchar(30),
+                        paypal_order_id varchar(100),
+                        paypal_capture_id varchar(100),
+                        payer_email varchar(255),
+                        payer_id varchar(255),
+                        meta longtext,
+                        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+                        updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                        PRIMARY KEY (payment_id),
+                        KEY post_id (post_id)
+                    ) $charset_collate;";
 
                     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
                     dbDelta($form_table_sql);
+                    dbDelta($payment_table_sql);
                     $row_count = $wpdb->get_var("SELECT count(*) from $form_table");
                     if ($row_count == 0) {
                         $this->insert_default_forms($form_table);
@@ -55,6 +74,7 @@ if (!class_exists('FPSM_Activation')) {
 
                 $charset_collate = $wpdb->get_charset_collate();
                 $form_table = FPSM_FORM_TABLE;
+                $payment_table = $wpdb->prefix . 'fpsm_payments';
                 $form_table_sql = "CREATE TABLE $form_table (
 						form_id mediumint(9) NOT NULL AUTO_INCREMENT,
 						form_title varchar(255),
@@ -65,8 +85,26 @@ if (!class_exists('FPSM_Activation')) {
 						form_status mediumint(9) NOT NULL DEFAULT 1,
 						PRIMARY KEY form_id (form_id)
 					  ) $charset_collate;";
+                $payment_table_sql = "CREATE TABLE $payment_table (
+                        payment_id mediumint(9) NOT NULL AUTO_INCREMENT,
+                        post_id bigint(20) NOT NULL,
+                        form_alias varchar(255),
+                        amount decimal(10,2),
+                        currency varchar(10),
+                        status varchar(30),
+                        paypal_order_id varchar(100),
+                        paypal_capture_id varchar(100),
+                        payer_email varchar(255),
+                        payer_id varchar(255),
+                        meta longtext,
+                        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+                        updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                        PRIMARY KEY (payment_id),
+                        KEY post_id (post_id)
+                    ) $charset_collate;";
                 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
                 dbDelta($form_table_sql);
+                dbDelta($payment_table_sql);
                 $row_count = $wpdb->get_var("SELECT count(*) from $form_table");
                 if ($row_count == 0) {
                     $this->insert_default_forms($form_table);

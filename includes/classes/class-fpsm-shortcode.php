@@ -25,7 +25,8 @@ if (!class_exists('FPSM_Shortcode')) {
                 'sizeError' => esc_html__("{file} is too large, maximum file size is {sizeLimit}.", 'frontend-post-submission-manager'),
                 'minSizeError' => esc_html__("{file} is too small, minimum file size is {minSizeLimit}.", 'frontend-post-submission-manager'),
                 'emptyError' => esc_html__("{file} is empty, please select files again without it.", 'frontend-post-submission-manager'),
-                'onLeave' => esc_html__("The files are being uploaded, if you leave now the upload will be cancelled.", 'frontend-post-submission-manager')
+                'onLeave' => esc_html__("The files are being uploaded, if you leave now the upload will be cancelled.", 'frontend-post-submission-manager'),
+                'paypal_error' => esc_html__('Unable to load PayPal at the moment. Please try again.', 'frontend-post-submission-manager')
             );
             $js_obj = array(
                 'ajax_url' => admin_url('admin-ajax.php'),

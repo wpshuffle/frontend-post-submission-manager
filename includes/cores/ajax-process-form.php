@@ -11,6 +11,7 @@ if ($this->admin_ajax_nonce_verify()) {
 
 
     global $fpsm_library_obj;
+    global $fpsm_paypal_obj;
 
     $form_data = $_POST['form_data'];
     $form_data = stripslashes_deep($form_data);
@@ -49,6 +50,18 @@ if ($this->admin_ajax_nonce_verify()) {
 
 
     $dynamic_post_status = (!empty($form_data['dynamic_post_status'])) ? $form_data['dynamic_post_status'] : $form_details['basic']['post_status'];
+
+    // Payment settings
+    $payment_settings = (!empty($form_details['payment'])) ? $form_details['payment'] : array();
+    $payment_amount = (!empty($payment_settings['amount'])) ? floatval($payment_settings['amount']) : 0;
+    $payment_currency = (!empty($payment_settings['currency'])) ? $payment_settings['currency'] : '';
+    $payment_pre_status = (!empty($payment_settings['pre_payment_status'])) ? $payment_settings['pre_payment_status'] : 'draft';
+    $payment_post_status = (!empty($payment_settings['post_payment_status'])) ? $payment_settings['post_payment_status'] : $dynamic_post_status;
+    $existing_payment_status = (!empty($post_id)) ? get_post_meta($post_id, '_fpsm_payment_status', true) : '';
+    $payment_required = (!empty($payment_settings['enable']) && $payment_amount > 0 && $existing_payment_status !== 'completed') ? true : false;
+    if ($payment_required) {
+        $dynamic_post_status = $payment_pre_status;
+    }
 
     $error_flag = 0;
     $error_details = array();
@@ -374,67 +387,113 @@ if ($this->admin_ajax_nonce_verify()) {
                 }
                 // Storing form alias for the reference
                 update_post_meta($insert_update_post_id, '_fpsm_form_alias', $form_alias);
-                $response['status'] = 200;
-                if (($dynamic_post_status == 'draft' && !empty($form_details['form']['post_status'])) || !empty($form_data['post_id'])) {
-                    $response['draft_post_id'] = $insert_update_post_id;
-                }
-                $default_success_message = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
-                $post_status_message = (!empty($form_details['form']['post_status'][$dynamic_post_status]['success_message'])) ? $form_details['form']['post_status'][$dynamic_post_status]['success_message'] : $default_success_message;
-                $response['message'] = $post_status_message;
-                // If redirection is enabled for post submission
-                if (empty($post_id)) {
-                    if (!empty($form_details['basic']['redirection'])) {
-                        if ($form_details['basic']['redirection_type'] == 'url') {
-                            if (!empty($form_details['basic']['redirection_url'])) {
-                                $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
-                            }
+                if ($payment_required) {
+                    $paypal_settings = $fpsm_paypal_obj->get_settings();
+                    if (empty($paypal_settings['client_id']) || empty($paypal_settings['secret'])) {
+                        $response['status'] = 403;
+                        $response['message'] = esc_html__('PayPal credentials are missing. Please contact site admin.', 'frontend-post-submission-manager');
+                    } else {
+                        $order = $fpsm_paypal_obj->create_order(array(
+                            'amount' => $payment_amount,
+                            'currency' => (!empty($payment_currency)) ? $payment_currency : $paypal_settings['currency'],
+                            'description' => get_the_title($insert_update_post_id)
+                        ));
+                        if (empty($order['success'])) {
+                            $response['status'] = 403;
+                            $response['message'] = esc_html__('Unable to start payment. Please try again later.', 'frontend-post-submission-manager');
                         } else {
-                            $post_url = get_the_permalink($insert_update_post_id);
-                            $response['redirect_url'] = $post_url;
+                            update_post_meta($insert_update_post_id, '_fpsm_payment_status', 'pending');
+                            update_post_meta($insert_update_post_id, '_fpsm_paypal_order_id', $order['order_id']);
+                            update_post_meta($insert_update_post_id, '_fpsm_payment_amount', $payment_amount);
+                            update_post_meta($insert_update_post_id, '_fpsm_payment_currency', (!empty($payment_currency)) ? $payment_currency : $paypal_settings['currency']);
+                            update_post_meta($insert_update_post_id, '_fpsm_payment_post_status', $payment_post_status);
+                            update_post_meta($insert_update_post_id, '_fpsm_payment_origin_action', (empty($post_id) ? 'insert' : 'update'));
+                            $fpsm_paypal_obj->upsert_payment(array(
+                                'post_id' => $insert_update_post_id,
+                                'form_alias' => $form_alias,
+                                'amount' => $payment_amount,
+                                'currency' => (!empty($payment_currency)) ? $payment_currency : $paypal_settings['currency'],
+                                'status' => 'pending',
+                                'paypal_order_id' => $order['order_id'],
+                                'meta' => (!empty($order['raw'])) ? wp_json_encode($order['raw']) : ''
+                            ));
+                            $response['status'] = 200;
+                            $response['payment_required'] = 1;
+                            $response['payment'] = array(
+                                'order_id' => $order['order_id'],
+                                'amount' => $payment_amount,
+                                'currency' => (!empty($payment_currency)) ? $payment_currency : $paypal_settings['currency'],
+                                'client_id' => $paypal_settings['client_id'],
+                                'mode' => $paypal_settings['mode'],
+                                'post_id' => $insert_update_post_id
+                            );
+                            $response['message'] = esc_html__('Please complete the payment to finish your submission.', 'frontend-post-submission-manager');
+                            $response['draft_post_id'] = $insert_update_post_id;
                         }
                     }
                 } else {
-                    if (!empty($form_details['basic']['edit_redirection'])) {
-                        if ($form_details['basic']['edit_redirection_type'] == 'url') {
-                            if (!empty($form_details['basic']['edit_redirection_url'])) {
-                                $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
-                            }
-                        } else {
-                            $post_url = get_the_permalink($insert_update_post_id);
-                            $response['redirect_url'] = $post_url;
-                        }
+                    $response['status'] = 200;
+                    if (($dynamic_post_status == 'draft' && !empty($form_details['form']['post_status'])) || !empty($form_data['post_id'])) {
+                        $response['draft_post_id'] = $insert_update_post_id;
                     }
-                    if (empty($form_details['dashboard']['disable_post_edit_status'])) {
-                        if (!empty($form_details['dashboard']['disable_post_edit'])) {
-                            $disabled_post_edit_status = array('publish');
-                        } else {
-                            $disabled_post_edit_status = array();
+                    $default_success_message = (!empty($form_details['basic']['form_success_message'])) ? esc_html($form_details['basic']['form_success_message']) : esc_html__('Form submission successful.', 'frontend-post-submission-manager');
+                    $post_status_message = (!empty($form_details['form']['post_status'][$dynamic_post_status]['success_message'])) ? $form_details['form']['post_status'][$dynamic_post_status]['success_message'] : $default_success_message;
+                    $response['message'] = $post_status_message;
+                    // If redirection is enabled for post submission
+                    if (empty($post_id)) {
+                        if (!empty($form_details['basic']['redirection'])) {
+                            if ($form_details['basic']['redirection_type'] == 'url') {
+                                if (!empty($form_details['basic']['redirection_url'])) {
+                                    $response['redirect_url'] = esc_url($form_details['basic']['redirection_url']);
+                                }
+                            } else {
+                                $post_url = get_the_permalink($insert_update_post_id);
+                                $response['redirect_url'] = $post_url;
+                            }
                         }
                     } else {
-                        $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
+                        if (!empty($form_details['basic']['edit_redirection'])) {
+                            if ($form_details['basic']['edit_redirection_type'] == 'url') {
+                                if (!empty($form_details['basic']['edit_redirection_url'])) {
+                                    $response['redirect_url'] = esc_url($form_details['basic']['edit_redirection_url']);
+                                }
+                            } else {
+                                $post_url = get_the_permalink($insert_update_post_id);
+                                $response['redirect_url'] = $post_url;
+                            }
+                        }
+                        if (empty($form_details['dashboard']['disable_post_edit_status'])) {
+                            if (!empty($form_details['dashboard']['disable_post_edit'])) {
+                                $disabled_post_edit_status = array('publish');
+                            } else {
+                                $disabled_post_edit_status = array();
+                            }
+                        } else {
+                            $disabled_post_edit_status = $form_details['dashboard']['disable_post_edit_status'];
+                        }
+                        $post_edit_flag = (in_array($dynamic_post_status, $disabled_post_edit_status)) ? false : true;
+                        if (!$post_edit_flag && !empty($form_data['dashboard_url'])) {
+                            $response['redirect_url'] = esc_url($form_data['dashboard_url']);
+                            /**
+                             * Filters the redirect time after form submission
+                             *
+                             * @param int
+                             *
+                             * @since 1.1.1
+                             */
+                            $response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 2000);
+                        }
                     }
-                    $post_edit_flag = (in_array($dynamic_post_status, $disabled_post_edit_status)) ? false : true;
-                    if (!$post_edit_flag && !empty($form_data['dashboard_url'])) {
-                        $response['redirect_url'] = esc_url($form_data['dashboard_url']);
-                        /**
-                         * Filters the redirect time after form submission
-                         *
-                         * @param int
-                         *
-                         * @since 1.1.1
-                         */
-                        $response['redirect_delay'] = apply_filters('fpsm_redirect_wait', 2000);
-                    }
+                    $action = (empty($post_id)) ? 'insert' : 'update';
+                    /**
+                     * Fires when the successful form submission is complete
+                     *
+                     * @param int $insert_update_post_id
+                     * @param array $form_row
+                     * @param string $action
+                     */
+                    do_action('fpsm_form_submission_success', $insert_update_post_id, $form_row, $action);
                 }
-                $action = (empty($post_id)) ? 'insert' : 'update';
-                /**
-                 * Fires when the successful form submission is complete
-                 *
-                 * @param int $insert_update_post_id
-                 * @param array $form_row
-                 * @param string $action
-                 */
-                do_action('fpsm_form_submission_success', $insert_update_post_id, $form_row, $action);
             } else {
                 $response['status'] = 403;
                 $response['message'] = esc_html__('There occurred some error.', 'frontend-post-submission-manager');
