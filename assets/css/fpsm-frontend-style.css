@@ -3850,6 +3850,13 @@ button.add_media {
 
 /* New Templates */
 
+
+.fpsm-bg-pattern {
+  display: none;
+}
+
+/* Template-23 */
+
 .fpsm-front-form.fpsm-template-23 {
     padding: 0;
 }
@@ -4033,6 +4040,92 @@ button.add_media {
 .fpsm-front-form.fpsm-template-24 .fpsm-radio-inline .fpsm-radio,
 .fpsm-front-form.fpsm-template-24 .fpsm-checkbox-inline .fpsm-checkbox {
     margin-bottom: 0px;
+}
+
+/* Template 25 */
+.fpsm-template-25 {
+  background-color: white;
+}
+
+.fpsm-template-25 .fpsm-field-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fpsm-template-25 .fpsm-field-wrap>div {
+  flex: 0 0 100%;
+}
+
+.fpsm-template-25 .fpsm-field-wrap label {
+  max-width: 150px;
+  flex: 0 0 150px;
+}
+
+.fpsm-template-25 .fpsm-field-wrap .fpsm-field {
+  flex: 0 0 calc(100% - 150px);
+}
+
+.fpsm-template-25 input[type="text"],
+.fpsm-template-25 input[type="email"],
+.fpsm-template-25 input[type="number"],
+.fpsm-template-25 input[type="tel"],
+.fpsm-template-25 input[type="url"],
+.fpsm-template-25 textarea {
+  border-radius: 25px;
+  background-color: white;
+  border: solid 1px rgba(0, 0, 0, 0.28);
+  padding: 0 15px;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+.fpsm-template-25 textarea {
+  line-height: 1.4;
+  padding: 15px;
+  height: 80px;
+  resize: none;
+  border-radius: 25px;
+}
+
+.fpsm-template-25 input[type="text"]:focus,
+.fpsm-template-25 input[type="email"]:focus,
+.fpsm-template-25 textarea:focus {
+  border: solid 1px rgba(0, 0, 0, 0.14);
+}
+
+.fpsm-template-25 .qq-upload-button {
+  background-color: #f2f2f3;
+  padding: 5px 24px;
+  color: rgba(0, 0, 0, 0.48);
+  line-height: 32px;
+  border-radius: 0;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.fpsm-front-form .qq-upload-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.fpsm-template-25 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-template-25 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+  border-radius: 25px;
+  background-color: white;
+  border: solid 1px rgba(0, 0, 0, 0.28);
+}
+
+.fpsm-template-25 .fpsm-field input[type="submit"] {
+  background-color: #ef7272;
+  padding: 10px 24px;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.fpsm-template-25 .fpsm-field input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -4272,16 +4365,17 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     height: 100%;
 }
 .fpsm-template-29 .fspm-title-wrap {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/template-29-bg.png");
-    background-size: 100%;
-    width: 100%;
-    height: 300px;
-    position: relative;
-    border-radius: 30px 30px 0px 0px;
-    padding: 0 !important;
-    object-fit: cover;
-    object-position: 20% 40%;
-    margin-bottom: 50px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/template-29-bg.png");
+  background-size: 100%;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  border-radius: 30px 30px 0px 0px;
+  padding: 0 !important;
+  object-fit: cover;
+  object-position: 20% 40%;
+  margin-bottom: 50px;
+  background-size: cover;
 }
 .fpsm-front-form.fpsm-template-29 input[type="text"], 
 .fpsm-front-form.fpsm-template-29 input[type="email"], 
@@ -4474,6 +4568,12 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
     padding: 30px 50px 0px !important;
     margin-bottom: 70px !important;
 }
+.fpsm-front-form.fpsm-template-31 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select,
+.fpsm-front-form.fpsm-template-31 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select {
+  position: relative;
+  z-index: 4;
+  border-bottom: 0.5px solid #7085F9;
+}
 
 .fpsm-front-form.fpsm-template-31 input[type="text"], 
 .fpsm-front-form.fpsm-template-31 input[type="email"], 
@@ -4566,7 +4666,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 form.fpsm-front-form.fpsm-template-31{
   position: relative;
 }
-form.fpsm-front-form.fpsm-template-31:after {
+/* form.fpsm-front-form.fpsm-template-31:after {
     content: '';
     position: absolute;
     height: 280px;
@@ -4587,13 +4687,65 @@ form.fpsm-front-form.fpsm-template-31:before {
     z-index:0;
     left: 0;
     bottom: 0;
-}
+} */
 form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
     position: relative;
     z-index: 99;
 }
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern {
+  display: block;
+}
+
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-2 {
+  position: absolute;
+  background: url("../images/image-bottom-right.png");
+  min-width: 215px;
+  min-height: 280px;
+  max-height: 280px;
+  max-width: 500px;
+  height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  bottom: 0;
+  background-size: 100% 100%;
+  right: 0;
+}
+
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-1 {
+  background: url("../images/image-bottom-left.png");
+  position: absolute;
+  min-width: 211px;
+  min-height: 500px;
+  max-height: 606px;
+  max-width: 211px;
+  height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  bottom: 0;
+  background-size: 100% 100%;
+  left: 0;
+}
+form.fpsm-front-form.fpsm-template-31 .fspm-title-wrap {
+  position: relative;
+  z-index: 1;
+}
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
+  background: url("../images/image-top-right.png");
+  position: absolute;
+  min-width: 330px;
+  min-height: 300px;
+  max-height: 360px;
+  max-width: 360px;
+  height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  top: 0;
+  background-size: 100% 100%;
+  right: 0;
+}
 
 /* template-32 */
+.fpsm-title-icon {
+  display: none;
+}
+
 
 .fpsm-front-form.fpsm-template-32 input[type="text"], 
 .fpsm-front-form.fpsm-template-32 input[type="email"], 
@@ -4622,18 +4774,20 @@ form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
     border: none;
 }
 .fpsm-template-32 .fpsm-field input[type="submit"] {
-    background-color: #FF9B39;
-    padding: 20px 50px;
-    color: white;
-    border-radius: 2px;
-    line-height: 120%;
-    transition: all 0.3s ease;
+  font-family: 'Playlist';
+  background-color: #FF9B39;
+  padding: 20px 50px;
+  color: white;
+  border-radius: 2px;
+  line-height: 120%;
+  transition: all 0.3s ease;
 }
 .fpsm-template-32.fpsm-front-form .qq-upload-button{
+  font-family: 'Playlist';
   background-color: #FF9B39;
 }
 .fpsm-front-form.fpsm-template-32 .fpsm-field-wrap label {
-    font-family: "Lobster Two", sans-serif;
+    font-family: 'Lobster Two';
     font-size: 16px;
     font-weight: 600;
     color: #383737;
@@ -4644,8 +4798,9 @@ form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
 .fpsm-front-form.fpsm-template-32 .fpsm-checkbox-inline .fpsm-checkbox  {
     margin-bottom: 0px;
 }
+
 .fpsm-front-form.fpsm-template-32 h2.fpsm-form-title {
-    font-family: "Style Script", cursive;
+    font-family: 'Playlist';
     font-size: 50px;
     color: #383737;
     line-height: 120%;
@@ -4667,7 +4822,7 @@ form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
 form.fpsm-front-form.fpsm-template-32{
   position: relative;
 }
-form.fpsm-front-form.fpsm-template-32:after {
+/* form.fpsm-front-form.fpsm-template-32:after {
     content: '';
     position: absolute;
     height: 1055px;
@@ -4688,9 +4843,41 @@ form.fpsm-front-form.fpsm-template-32:before {
     z-index:0;
     left: 0;
     bottom: 0;
+} */
+
+
+form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
+  display: block;
+}
+form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-2 {
+  position: absolute;
+  background: url("../images/temp-32-bg-right.png");
+  min-width: 345px;
+  min-height: 327px;
+  max-height: 639px;
+  max-width: 500px;
+  height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  bottom: 20%;
+  background-size: 100% 100%;
+  right: 0;
+}
+form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
+  background: url("../images/temp-32-bg-left.png");
+  position: absolute;
+  min-width: 345px;
+  min-height: 327px;
+  max-height: 400px;
+  max-width: 500px;
+  height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  bottom: 0;
+  background-size: 100% 100%;
+  left: 0;
 }
 
 /* Template 33 */
+
 
 .fpsm-template-33 .fspm-title-wrap h2 {
     text-align: center;
@@ -4793,6 +4980,303 @@ form.fpsm-front-form.fpsm-template-33{
   position: relative;
 }
 
+/* Template 34 */
+
+form.fpsm-front-form.fpsm-template-34 .fspm-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form.fpsm-front-form.fpsm-template-34 .fpsm-title-icon .fpsm-icon {
+  background: url("../images/temp-34-icon.png");
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 45px;
+}
+form.fpsm-front-form.fpsm-template-34 .fpsm-title-icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  border: 1px solid #C3BDBD;
+  box-shadow: 0px 1px 18px 8px rgba(255, 255, 255, 0.25);
+  border-radius: 22px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
+  border-color: #AFAFAF transparent transparent transparent;
+}
+
+.fpsm-front-form.fpsm-template-34 {
+  background-color: #08070C;
+}
+.fpsm-front-form.fpsm-template-34 {
+  padding: 0;
+}
+
+.fpsm-template-34 .fspm-form-field-wrap {
+  padding: 50px;
+  border: 1px solid #000000;
+}
+.fpsm-template-34 .fspm-title-wrap h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Helvetica';
+  padding: 30px 0 0 !important;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.fpsm-front-form.fpsm-template-34 .fpsm-field-wrap label,
+.fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label,
+.fpsm-front-form.fpsm-template-31 .fpsm-field-wrap label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888888;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.fpsm-front-form.fpsm-template-34 input[type="text"],
+.fpsm-front-form.fpsm-template-34 input[type="email"],
+.fpsm-front-form.fpsm-template-34 input[type="number"],
+.fpsm-front-form.fpsm-template-34 input[type="password"],
+.fpsm-front-form.fpsm-template-34 input[type="tel"],
+.fpsm-front-form.fpsm-template-34 input[type="url"],
+.fpsm-front-form.fpsm-template-34 textarea {
+  border: 0.5px solid #fff;
+  background: #242328;
+}
+
+.fpsm-front-form.fpsm-template-34 .fpsm-field-note {
+  color: inherit;
+  opacity: 0.58;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.fpsm-template-34.fpsm-front-form .fpsm-select-field select {
+  -webkit-appearance: none;
+  /* For Chrome, Safari, Opera */
+  -moz-appearance: none;
+  /* For Firefox */
+  appearance: none;
+  background: none;
+  border: 0.5px solid #333333;
+}
+
+.fpsm-front-form.fpsm-template-34 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
+.fpsm-front-form.fpsm-template-34 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+  border-radius: 2px;
+  border: 0.5px solid #fff;
+    background: #242328;
+}
+
+.fpsm-front-form.fpsm-template-34 .fpsm-field-wrap .fpsm-radio label,
+.fpsm-front-form.fpsm-template-34 .fpsm-field-wrap .fpsm-checkbox label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fpsm-template-34 .fpsm-field,
+.fpsm-template-24 .fpsm-field,
+.fpsm-template-31 .fpsm-field {
+  position: relative;
+}
+
+.fpsm-template-34 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-34 .fpsm-author-email .fpsm-field:before {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.28);
+  text-align: center;
+  line-height: 34px;
+  font-family: "Font Awesome\ 5 Free";
+  font-size: 14px;
+  font-weight: 900;
+  color: #AFAFAF;
+}
+.fpsm-front-form.fpsm-template-34 select {
+  color: #D7D7D7;
+}
+
+.fpsm-template-34 .fpsm-author-name .fpsm-field:before {
+  content: "\f007";
+}
+
+.fpsm-template-34 .fpsm-author-email .fpsm-field:before {
+  content: "\f0e0";
+}
+
+.fpsm-template-34 .fpsm-field input[type="submit"] {
+  background-color: #e8e8e8;
+  padding: 20px 50px;
+  color: #3F3C3C;
+  border-radius: 2px;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+.fpsm-template-34 .fpsm-checkbox label:before {
+  background-color: rgb(255 255 255 / 18%);
+  color: rgba(0, 0, 0, 0.2);
+}
+.fpsm-template-34 .fpsm-radio label:before {
+  background-color: rgb(255 255 255 / 18%);
+  color: rgba(0, 0, 0, 0.2);
+}
+.fpsm-front-form.fpsm-template-34 .qq-upload-button{
+  background-color: #e8e8e8;
+    color: #3F3C3C;
+}
+
+
+/* Template 35 */
+
+.fpsm-front-form.fpsm-template-35 .fspm-form-wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.fpsm-front-form.fpsm-template-35 .fspm-title-wrap {
+  background: url("../images/temp-35-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(200vh - 140px);
+}
+
+.fpsm-template-35 .fspm-title-wrap h2 {
+  text-align: center;
+  font-size: 56px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  padding: 20px 50px !important;
+  margin-bottom: 70px !important;
+}
+
+.fpsm-template-35 .fspm-form-field-wrap {
+  padding: 30px 50px;
+  background: #fff;
+}
+
+.fpsm-front-form.fpsm-template-35 input[type="text"],
+.fpsm-front-form.fpsm-template-35 input[type="email"],
+.fpsm-front-form.fpsm-template-35 input[type="number"],
+.fpsm-front-form.fpsm-template-35 input[type="password"],
+.fpsm-front-form.fpsm-template-35 input[type="tel"],
+.fpsm-front-form.fpsm-template-35 input[type="url"],
+.fpsm-front-form.fpsm-template-35 textarea {
+  border: none;
+  border-bottom: 0.5px solid #333333;
+  background: none;
+  border-radius: 0px;
+  padding-left: 32px;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-field-wrap label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888888;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-checkbox label:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  content: "\f00c";
+  height: 16px;
+  width: 16px;
+  background-color: rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  /* color: rgba(0, 0, 0, 0.2); */
+  text-align: center;
+  line-height: 18px;
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  font-size: 10px;
+}
+
+.fpsm-template-35 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-35 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-35 .fpsm-post-title .fpsm-field:before,
+.fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
+  left: 0px;
+  right: unset;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox label {
+  padding-left: 34px;
+}
+
+.fpsm-template-35 .fpsm-author-name .fpsm-field:before {
+  content: "\f007";
+}
+
+.fpsm-template-35 .fpsm-author-email .fpsm-field:before {
+  content: "\f0e0";
+}
+
+.fpsm-template-35 .fpsm-post-title .fpsm-field:before {
+  content: "\f303";
+}
+
+.fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
+  content: "\f303";
+}
+.fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox-list-wrap label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.fpsm-template-24.fpsm-front-form .fpsm-select-field select {
+  -webkit-appearance: none;
+  /* For Chrome, Safari, Opera */
+  -moz-appearance: none;
+  /* For Firefox */
+  appearance: none;
+  border: none;
+  background: none;
+  border-bottom: 0.5px solid #333333;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+  border: none;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-radio-inline .fpsm-radio,
+.fpsm-front-form.fpsm-template-35 .fpsm-checkbox-inline .fpsm-checkbox {
+  margin-bottom: 0px;
+}
+
+.fpsm-front-form.fpsm-template-35 .fpsm-field input[type="submit"] {
+  background-color: #7085F9;
+  border: none;
+}
+
+.fpsm-front-form.fpsm-template-35 .qq-upload-button {
+  background-color: #7085F9;
+}
+
+
+form.fpsm-front-form.fpsm-template-35 {
+  background: linear-gradient(147.06deg, #EC8892 -10.71%, #F8D868 104.48%);
+  padding: 35px;
+}
 
 
 
@@ -4833,6 +5317,10 @@ form.fpsm-front-form.fpsm-template-33{
   .fpsm-template-20 .fpsm-field-wrap {
     display: block;
   }
+    .fpsm-template-23 .fspm-form-field-wrap {
+      padding: 30px 10px;
+      border: 1px solid #000000;
+    }
 }
 
 /*============================================== Max 767px responsive mobile ======================================*/
@@ -4871,6 +5359,94 @@ form.fpsm-front-form.fpsm-template-33{
   .fpsm-template-20 .fpsm-field-wrap {
     display: block;
   }
+.fpsm-front-form.fpsm-template-35 .fspm-title-wrap {
+
+  object-fit: contain;
+  min-height: 430px;
+  height: auto;
+}
+.fpsm-front-form.fpsm-template-35 .fspm-form-wrapper {
+  flex-direction: column;
+}
+.fpsm-template-32 .fspm-form-wrapper {
+  padding: 50px 20px;
+  background: #E8E8E8;
+  box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  width: 100%;
+  margin: 40px auto;
+}
+.fpsm-front-form.fpsm-template-23 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-24 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-25 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-26 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-27 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-28 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-29 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-30 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-31 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-32 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-33 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-34 h2.fpsm-form-title,
+.fpsm-front-form.fpsm-template-35 h2.fpsm-form-title{
+  font-size: 32px;
+}
+.fpsm-template-31 .fspm-title-wrap h2 {
+  padding: 30px 20px 0px !important;
+}
+.fpsm-front-form.fpsm-template-31 .fspm-form-wrapper {
+  max-width: 100%;
+  margin: auto;
+}
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-2 {
+  min-width: 200px;
+  min-height: 240px;
+  max-height: 240px;
+  max-width: 200px;
+}
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-1 {
+  min-width: 170px;
+  min-height: 410px;
+  max-height: 500px;
+  max-width: 170px;
+}
+form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
+  background: url(../images/image-top-right.png);
+  position: absolute;
+  min-width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  max-width: 200px;
+}
+.fpsm-template-25 .fpsm-field-wrap label {
+  max-width: 150px;
+  flex: 0 0 25px;
+}
+.fpsm-template-25 .fpsm-field-wrap {
+  flex-direction: column;
+}
+.fpsm-template-27 .fspm-form-wrapper {
+  padding: 50px 20px;
+}
+.fpsm-template-28 .fpsm-field-wrap {
+  padding: 10px 15px;
+}
+.fpsm-template-30 .fpsm-field-wrap {
+  padding: 15px 10px;
+  gap: 8px;
+}
+.fpsm-template-30 .fspm-form-field-wrap {
+  padding: 20px 10px;
+  border: none;
+}
+.fpsm-template-30 .fspm-title-wrap h2 {
+  padding: 30px 10px 0px !important;
+}
+.fpsm-template-34 .fspm-form-field-wrap {
+  padding: 20px 10px;
+  border: 1px solid #000000;
+}
 }
 
 /*================================ User Dashboard ============================================*/

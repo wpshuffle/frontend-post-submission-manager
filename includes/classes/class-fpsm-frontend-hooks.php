@@ -27,6 +27,8 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
 
             wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/NunitoSans/stylesheet.css', array(), FPSM_VERSION);
             wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/comingsoon/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/lobstertwo/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/playlist/stylesheet.css', array(), FPSM_VERSION);
         }
 
         function append_custom_fields_before($content) {
