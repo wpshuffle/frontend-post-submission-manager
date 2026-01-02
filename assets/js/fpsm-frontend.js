@@ -53,7 +53,11 @@ jQuery(document).ready(function ($) {
                             buttonHolder.removeClass('fpsm-loading');
                             if (res.status == 200) {
                                 form.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(res.message).slideDown('slow');
-                                messageHolder.html(res.message);
+                                // Clear and hide PayPal UI after a successful capture
+                                messageHolder.html('').slideUp();
+                                buttonHolder.html('');
+                                paypalWrap.addClass('fpsm-display-none');
+                                fpsm_reset_form(form);
                                 if (res.redirect_url) {
                                     if (res.redirect_delay) {
                                         setTimeout(function () {
