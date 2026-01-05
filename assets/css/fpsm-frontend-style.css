@@ -5198,6 +5198,9 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   padding: 30px 50px;
   background: #fff;
 }
+.fpsm-template-35 .fpsm-field-wrap {
+    position: relative;
+}
 
 .fpsm-front-form.fpsm-template-35 input[type="text"],
 .fpsm-front-form.fpsm-template-35 input[type="email"],
@@ -5210,7 +5213,11 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   border-bottom: 0.5px solid #333333;
   background: none;
   border-radius: 0px;
-  padding-left: 32px;
+  padding-left: 20px;
+}
+.fpsm-front-form.fpsm-template-35 input:focus-visible, .fpsm-front-form.fpsm-template-35 textarea:focus-visible {
+    outline-offset: 0px;
+    outline: none;
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap label {
@@ -5240,12 +5247,12 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-size: 10px;
 }
 
-.fpsm-template-35 .fpsm-author-name .fpsm-field:before,
-.fpsm-template-35 .fpsm-author-email .fpsm-field:before,
-.fpsm-template-35 .fpsm-post-title .fpsm-field:before,
-.fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
-  left: 0px;
-  right: unset;
+.fpsm-template-35 .fpsm-author-name .fpsm-field:before, .fpsm-template-35 .fpsm-author-email .fpsm-field:before, .fpsm-template-35 .fpsm-post-title .fpsm-field:before, .fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    left: unset;
+    font-family: "Font Awesome\ 5 Free";
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox label {
