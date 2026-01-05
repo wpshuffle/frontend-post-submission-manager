@@ -59,6 +59,11 @@ if (!class_exists('FPSM_Shortcode')) {
             wp_enqueue_style('fpsm-custom-style', FPSM_URL . '/assets/css/fpsm-custom-style.css', array(), FPSM_VERSION);
             wp_enqueue_script('fpsm-script', FPSM_URL . '/assets/js/fpsm-frontend.js', $js_dependencies, FPSM_VERSION);
             wp_localize_script('fpsm-script', 'fpsm_js_obj', $js_obj);
+
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/NunitoSans/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/comingsoon/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/lobstertwo/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/playlist/stylesheet.css', array(), FPSM_VERSION);
         }
 
         function output_form_shortcode($atts) {
