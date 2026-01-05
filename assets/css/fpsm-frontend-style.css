@@ -4884,12 +4884,24 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
     font-size: 56px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
-    color: #687EDC;
-    padding: 20px 50px !important;
-    margin-bottom: 70px !important;
+    color: #fff;
+    padding: 20px 0px !important;
+    margin-bottom: 50px !important;
+    background: linear-gradient(90.73deg, #62B9BF -5.83%, #6AC7CE 114.11%);
+    margin-top: 40px !important;
 }
 .fpsm-template-33 .fspm-form-field-wrap {
     padding: 0px 50px;
+}
+.fpsm-front-form.fpsm-template-33 {
+    background-color: #fff;
+    padding: 0px;
+}
+.fpsm-front-form.fpsm-template-33 {
+    background-color: #fff;
+    padding: 0px;
+    border: 1px solid #797777;
+    border-radius: 10px;
 }
 
 .fpsm-front-form.fpsm-template-33 input[type="text"], 
