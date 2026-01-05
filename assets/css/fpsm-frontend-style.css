@@ -4849,18 +4849,19 @@ form.fpsm-front-form.fpsm-template-32:before {
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
   display: block;
 }
-form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-2 {
-  position: absolute;
-  background: url("../images/temp-32-bg-right.png");
-  min-width: 345px;
-  min-height: 327px;
-  max-height: 639px;
-  max-width: 500px;
-  height: -webkit-fill-available;
-  background-repeat: no-repeat;
-  bottom: 20%;
-  background-size: 100% 100%;
-  right: 0;
+.fpsm-template-33 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    padding: 20px 0px !important;
+    margin-bottom: 50px !important;
+    background: linear-gradient(90.73deg, #62B9BF -5.83%, #6AC7CE 114.11%);
+    margin-top: 40px !important;
+    width: 104%;
+    right: 2%;
+    position: relative;
 }
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
   background: url("../images/temp-32-bg-left.png");
@@ -4877,7 +4878,22 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
 }
 
 /* Template 33 */
-
+.fpsm-template-33 .fspm-title-wrap h2::before {
+    content: "";
+    position: absolute;
+    border-top: 19px solid #94DEE3;
+    border-right: 19px solid transparent;
+    right: 0;
+    top: 100%;
+}
+.fpsm-template-33 .fspm-title-wrap h2::after {
+    content: "";
+    position: absolute;
+    border-top: 19px solid #94DEE3;
+    border-left: 19px solid transparent;
+    left: 0;
+    top: 100%;
+}
 
 .fpsm-template-33 .fspm-title-wrap h2 {
     text-align: center;
@@ -4895,9 +4911,9 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
 }
 .fpsm-front-form.fpsm-template-33 {
     background-color: #fff;
-    padding: 0px;
+    padding: 40px;
 }
-.fpsm-front-form.fpsm-template-33 {
+.fpsm-front-form.fpsm-template-33 .fspm-form-wrapper {
     background-color: #fff;
     padding: 0px;
     border: 1px solid #797777;
@@ -5460,6 +5476,14 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 .fpsm-template-34 .fspm-form-field-wrap {
   padding: 20px 10px;
   border: 1px solid #000000;
+}
+.fpsm-template-33 .fspm-title-wrap h2::before {
+    border-top: 12px solid #94DEE3;
+    border-right: 8px solid transparent;
+}
+.fpsm-template-33 .fspm-title-wrap h2::after {
+    border-top: 12px solid #94DEE3;
+    border-left: 8px solid transparent;
 }
 }
 

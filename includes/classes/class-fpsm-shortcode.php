@@ -42,7 +42,9 @@ if (!class_exists('FPSM_Shortcode')) {
                 wp_enqueue_style('fpsm-login-style', FPSM_URL . '/assets/css/fpsm-login-form-style.css', array(), FPSM_VERSION);
             }
             wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/NunitoSans/stylesheet.css', array(), FPSM_VERSION);
-            wp_enqueue_style('fpsm-fonts', FPSM_URL . '/assets/font-face/comingsoon/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts-1', FPSM_URL . '/assets/font-face/comingsoon/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts-3', FPSM_URL . '/assets/font-face/lobstertwo/stylesheet.css', array(), FPSM_VERSION);
+            wp_enqueue_style('fpsm-fonts-4', FPSM_URL . '/assets/font-face/playlist/stylesheet.css', array(), FPSM_VERSION);
             if (empty($fpsm_settings['disable_jquery_ui_css'])) {
                 wp_enqueue_style('jquery-ui', FPSM_URL . '/assets/css/jquery-ui.min.css', array(), FPSM_VERSION);
             }
