@@ -4327,6 +4327,24 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
 .fpsm-front-form.fpsm-template-28 .fpsm-radio label:before {
     background-color: rgb(255 255 255 / 40%);
 }
+form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
+  background-color: #5E5B5B;
+  color: #fff;
+}
+.fpsm-front-form.fpsm-template-28 .fpsm-field-wrap .fpsm-checkbox-list-wrap label {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+}
+.fpsm-front-form.fpsm-template-28 .fpsm-checkbox-list-wrap.fpsm-checkbox-block {
+    margin-top: 8px;
+}
+.fpsm-front-form.fpsm-template-28 .fpsm-radio-inline .fpsm-radio{
+    margin-bottom: 0px;
+}
+.fpsm-front-form.fpsm-template-28 .fpsm-checkbox-list-wrap {
+    margin-top: 8px;
+}
 
 
 
@@ -4415,6 +4433,10 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
 .fpsm-front-form.fpsm-template-29 .fpsm-checkbox-inline{
   flex-direction: column;
 }
+form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
+    background-color: #9073FF;
+    color: #fff;
+  }
 
 .fpsm-front-form.fpsm-template-29 .fpsm-checkbox input[type="checkbox"]:checked + label:before,
 .fpsm-front-form.fpsm-template-29 .fpsm-radio input[type="radio"]:checked + label:before,
@@ -4528,6 +4550,10 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     line-height: 120%;
     transition: all 0.3s ease;
 }
+form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
+    background-color: #78BDFE;
+    color: #fff;
+  }
 
 .fpsm-template-30 .fpsm-field-wrap {
     margin-bottom: 24px;
@@ -4686,28 +4712,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 form.fpsm-front-form.fpsm-template-31{
   position: relative;
 }
-/* form.fpsm-front-form.fpsm-template-31:after {
-    content: '';
-    position: absolute;
-    height: 280px;
-    width: 234px;
-    background: url("../images/image-bottom-right.png");
-    background-repeat: no-repeat;
-    z-index: 999;
-    right: 0;
-    bottom: 0;
-}
-form.fpsm-front-form.fpsm-template-31:before {
-    content: '';
-    position: absolute;
-    height: 647px;
-    width: 211px;
-    background: url("../images/image-bottom-left.png");
-    background-repeat: no-repeat;
-    z-index:0;
-    left: 0;
-    bottom: 0;
-} */
+
 form.fpsm-front-form.fpsm-template-31 .fspm-form-field-wrap {
     position: relative;
     z-index: 99;
@@ -5329,7 +5334,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
     font-family: "Font Awesome\ 5 Free";
 }
 form.fpsm-front-form.fpsm-template-35 .fpsm-each-tag{
-  background-color: #9073FF;
+  background-color: #686DFF;
   color: #fff;
 }
 
