@@ -3874,7 +3874,7 @@ button.add_media {
 .fpsm-front-form.fpsm-template-23 .fpsm-field-wrap label,
 .fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label,
 .fpsm-front-form.fpsm-template-31 .fpsm-field-wrap label {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
     color: #888888;
@@ -3895,7 +3895,7 @@ button.add_media {
     color: inherit;
     opacity: 0.58;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
 }
 .fpsm-template-23.fpsm-front-form .fpsm-select-field select {
    -webkit-appearance: none; /* For Chrome, Safari, Opera */
@@ -4232,7 +4232,7 @@ button.add_media {
 .fpsm-front-form.fpsm-template-27 .fpsm-field-wrap label, 
 .fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label,
 .fpsm-front-form.fpsm-template-28 .fpsm-field-wrap label {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
     color: #383737;
@@ -4447,7 +4447,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     padding: 30px 50px 0px !important;
 }
 .fpsm-front-form.fpsm-template-30 .fpsm-field-wrap label {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
     color: #888888;
@@ -4469,7 +4469,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     color: inherit;
     opacity: 0.58;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
 }
 .fpsm-template-23.fpsm-front-form .fpsm-select-field select {
    -webkit-appearance: none; /* For Chrome, Safari, Opera */
@@ -4595,6 +4595,26 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
     color: #888888;
     display: block;
     margin-bottom: 4px;
+}
+.fpsm-template-31 .qq-uploader{
+  padding-left: 50px;
+  position: relative;
+}
+.fpsm-template-31 .qq-uploader:before {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    content: "\f1c5";
+    height: 40px;
+    width: 40px;
+    color: rgba(0, 0, 0, 0.28);
+    text-align: center;
+    line-height: 40px;
+    font-family: "Font Awesome\ 5 Free";
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.68);
+    border: solid 1px rgba(0, 0, 0, 0.18);
 }
 
 .fpsm-front-form.fpsm-template-31 .fpsm-checkbox label:before {
@@ -4849,11 +4869,20 @@ form.fpsm-front-form.fpsm-template-32:before {
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
   display: block;
 }
+.fpsm-template-32 .fpsm-author-name .fpsm-field:before,
+.fpsm-template-32 .fpsm-author-email .fpsm-field:before,
+.fpsm-template-32 .fpsm-post-title .fpsm-field:before,
+.fpsm-template-32 .fpsm-post-excerpt .fpsm-field:before{
+    position: absolute;
+    left: unset;
+    right: 13px;
+    bottom: 10px;
+}
 .fpsm-template-33 .fspm-title-wrap h2 {
     text-align: center;
     font-size: 56px;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     color: #fff;
     padding: 20px 0px !important;
     margin-bottom: 50px !important;
@@ -4875,6 +4904,29 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
   bottom: 0;
   background-size: 100% 100%;
   left: 0;
+}
+form.fpsm-front-form.fpsm-template-32 .fpsm-field {
+    position: relative;
+    font-family: "Font Awesome\ 5 Free";
+}
+form.fpsm-front-form.fpsm-template-23 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-24 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-25 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-26 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-27 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-29 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-31 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-33 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-34 .fpsm-each-tag,
+form.fpsm-front-form.fpsm-template-35 .fpsm-each-tag {
+    line-height: 4px;
+    padding: 7px 8px;
+}
+form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
+  background-color: #D5D0D0;
 }
 
 /* Template 33 */
@@ -4899,7 +4951,7 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
     text-align: center;
     font-size: 56px;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     color: #fff;
     padding: 20px 0px !important;
     margin-bottom: 50px !important;
@@ -4933,16 +4985,27 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
     border-bottom: 0.5px solid #333333;
     background: none;
     border-radius: 0px;
-    padding-left: 32px;
+    padding-left: 10px;
 }
 .fpsm-front-form.fpsm-template-33 .fpsm-field-wrap label {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
     color: #888888;
     display: block;
     margin-bottom: 4px;
 }
+.fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field select, 
+.fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-custom-field-select .fpsm-field .fpsm-select-field select{
+      border-bottom: 0.5px solid #333333;
+      background-color: transparent;
+}
+.fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
+.fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+    border-radius: 2px;
+    background-color: transparent;
+}
+
 
 .fpsm-front-form.fpsm-template-33 .fpsm-checkbox label:before {
     position: absolute;
@@ -4965,22 +5028,28 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
 .fpsm-template-33 .fpsm-author-email .fpsm-field:before,
 .fpsm-template-33 .fpsm-post-title .fpsm-field:before,
 .fpsm-template-33 .fpsm-post-excerpt .fpsm-field:before{
-    left: 0px;
-    right: unset;
+    position: absolute;
+    left: unset;
+    right: 13px;
+    bottom: 10px;
 }
 .fpsm-front-form.fpsm-template-33 .fpsm-field-wrap .fpsm-checkbox label {
     padding-left: 34px;
 }
+.fpsm-template-32 .fpsm-author-name .fpsm-field:before,
 .fpsm-template-33 .fpsm-author-name .fpsm-field:before {
      content: "\f007";
 }
+.fpsm-template-32 .fpsm-author-email .fpsm-field:before,
 .fpsm-template-33 .fpsm-author-email .fpsm-field:before {
     content: "\f0e0";
 }
+.fpsm-template-32 .fpsm-post-title .fpsm-field:before,
 .fpsm-template-33 .fpsm-post-title .fpsm-field:before {
     content: "\f303";
 }
-.fpsm-template-33 .fpsm-post-excerpt .fpsm-field:before {
+.fpsm-template-32 .fpsm-post-excerpt .fpsm-field:before,
+.fpsm-template-33 .fpsm-post-excerpt .fpsm-field:before  {
     content: "\f303";
 }
 .fpsm-template-24.fpsm-front-form .fpsm-select-field select {
@@ -5064,7 +5133,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 .fpsm-front-form.fpsm-template-34 .fpsm-field-wrap label,
 .fpsm-front-form.fpsm-template-26 .fpsm-field-wrap label,
 .fpsm-front-form.fpsm-template-31 .fpsm-field-wrap label {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 600;
   color: #888888;
@@ -5087,7 +5156,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   color: inherit;
   opacity: 0.58;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans';
 }
 
 .fpsm-template-34.fpsm-front-form .fpsm-select-field select {
@@ -5188,7 +5257,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   text-align: center;
   font-size: 56px;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans';
   color: #fff;
   padding: 20px 50px !important;
   margin-bottom: 70px !important;
@@ -5198,6 +5267,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   padding: 30px 50px;
   background: #fff;
 }
+.fpsm-template-33 .fpsm-field-wrap,
 .fpsm-template-35 .fpsm-field-wrap {
     position: relative;
 }
@@ -5213,15 +5283,16 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   border-bottom: 0.5px solid #333333;
   background: none;
   border-radius: 0px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
-.fpsm-front-form.fpsm-template-35 input:focus-visible, .fpsm-front-form.fpsm-template-35 textarea:focus-visible {
+.fpsm-front-form.fpsm-template-35 input:focus-visible, .fpsm-front-form.fpsm-template-35 textarea:focus-visible,
+.fpsm-front-form.fpsm-template-33 input:focus-visible, .fpsm-front-form.fpsm-template-33 textarea:focus-visible {
     outline-offset: 0px;
     outline: none;
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap label {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 600;
   color: #888888;
@@ -5246,6 +5317,9 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-weight: 900;
   font-size: 10px;
 }
+.fpsm-field:before{
+  font-family: "Font Awesome\ 5 Free";
+}
 
 .fpsm-template-35 .fpsm-author-name .fpsm-field:before, .fpsm-template-35 .fpsm-author-email .fpsm-field:before, .fpsm-template-35 .fpsm-post-title .fpsm-field:before, .fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
     position: absolute;
@@ -5253,6 +5327,10 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
     bottom: 10px;
     left: unset;
     font-family: "Font Awesome\ 5 Free";
+}
+form.fpsm-front-form.fpsm-template-35 .fpsm-each-tag{
+  background-color: #9073FF;
+  color: #fff;
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox label {
@@ -5275,7 +5353,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   content: "\f303";
 }
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox-list-wrap label {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans';
     font-size: 14px;
     font-weight: 500;
 }
