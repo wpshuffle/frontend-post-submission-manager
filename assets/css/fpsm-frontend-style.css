@@ -4849,18 +4849,19 @@ form.fpsm-front-form.fpsm-template-32:before {
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
   display: block;
 }
-form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-2 {
-  position: absolute;
-  background: url("../images/temp-32-bg-right.png");
-  min-width: 345px;
-  min-height: 327px;
-  max-height: 639px;
-  max-width: 500px;
-  height: -webkit-fill-available;
-  background-repeat: no-repeat;
-  bottom: 20%;
-  background-size: 100% 100%;
-  right: 0;
+.fpsm-template-33 .fspm-title-wrap h2 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    padding: 20px 0px !important;
+    margin-bottom: 50px !important;
+    background: linear-gradient(90.73deg, #62B9BF -5.83%, #6AC7CE 114.11%);
+    margin-top: 40px !important;
+    width: 104%;
+    right: 2%;
+    position: relative;
 }
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
   background: url("../images/temp-32-bg-left.png");
@@ -4877,20 +4878,49 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
 }
 
 /* Template 33 */
-
+.fpsm-template-33 .fspm-title-wrap h2::before {
+    content: "";
+    position: absolute;
+    border-top: 19px solid #94DEE3;
+    border-right: 19px solid transparent;
+    right: 0;
+    top: 100%;
+}
+.fpsm-template-33 .fspm-title-wrap h2::after {
+    content: "";
+    position: absolute;
+    border-top: 19px solid #94DEE3;
+    border-left: 19px solid transparent;
+    left: 0;
+    top: 100%;
+}
 
 .fpsm-template-33 .fspm-title-wrap h2 {
     text-align: center;
     font-size: 56px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
-    color: #687EDC;
-    padding: 20px 50px !important;
-    margin-bottom: 70px !important;
+    color: #fff;
+    padding: 20px 0px !important;
+    margin-bottom: 50px !important;
+    background: linear-gradient(90.73deg, #62B9BF -5.83%, #6AC7CE 114.11%);
+    margin-top: 40px !important;
 }
 .fpsm-template-33 .fspm-form-field-wrap {
     padding: 0px 50px;
 }
+.fpsm-front-form.fpsm-template-33 {
+    background-color: #fff;
+    padding: 40px;
+}
+.fpsm-front-form.fpsm-template-33 .fspm-form-wrapper {
+    background-color: #fff;
+    padding: 0px;
+    border: 1px solid #797777;
+    border-radius: 10px;
+}
+
+
 
 .fpsm-front-form.fpsm-template-33 input[type="text"], 
 .fpsm-front-form.fpsm-template-33 input[type="email"], 
@@ -5168,6 +5198,9 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   padding: 30px 50px;
   background: #fff;
 }
+.fpsm-template-35 .fpsm-field-wrap {
+    position: relative;
+}
 
 .fpsm-front-form.fpsm-template-35 input[type="text"],
 .fpsm-front-form.fpsm-template-35 input[type="email"],
@@ -5180,7 +5213,11 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   border-bottom: 0.5px solid #333333;
   background: none;
   border-radius: 0px;
-  padding-left: 32px;
+  padding-left: 20px;
+}
+.fpsm-front-form.fpsm-template-35 input:focus-visible, .fpsm-front-form.fpsm-template-35 textarea:focus-visible {
+    outline-offset: 0px;
+    outline: none;
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap label {
@@ -5210,12 +5247,12 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-size: 10px;
 }
 
-.fpsm-template-35 .fpsm-author-name .fpsm-field:before,
-.fpsm-template-35 .fpsm-author-email .fpsm-field:before,
-.fpsm-template-35 .fpsm-post-title .fpsm-field:before,
-.fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
-  left: 0px;
-  right: unset;
+.fpsm-template-35 .fpsm-author-name .fpsm-field:before, .fpsm-template-35 .fpsm-author-email .fpsm-field:before, .fpsm-template-35 .fpsm-post-title .fpsm-field:before, .fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    left: unset;
+    font-family: "Font Awesome\ 5 Free";
 }
 
 .fpsm-front-form.fpsm-template-35 .fpsm-field-wrap .fpsm-checkbox label {
@@ -5446,6 +5483,14 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 .fpsm-template-34 .fspm-form-field-wrap {
   padding: 20px 10px;
   border: 1px solid #000000;
+}
+.fpsm-template-33 .fspm-title-wrap h2::before {
+    border-top: 12px solid #94DEE3;
+    border-right: 8px solid transparent;
+}
+.fpsm-template-33 .fspm-title-wrap h2::after {
+    border-top: 12px solid #94DEE3;
+    border-left: 8px solid transparent;
 }
 }
 
