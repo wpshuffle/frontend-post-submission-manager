@@ -5925,3 +5925,13 @@ a.fpsm-edit-post-button {
     display: none;
   }
 }
+@media screen and (min-width: 500px) and (max-width: 768px){
+  .fpsm-template-33 .fspm-title-wrap h2::after {
+      border-top: 12px solid #94DEE3;
+      border-left: 12px solid transparent;
+    }
+        .fpsm-template-33 .fspm-title-wrap h2::before {
+          border-top: 12px solid #94DEE3;
+          border-right: 12px solid transparent;
+        }
+}
