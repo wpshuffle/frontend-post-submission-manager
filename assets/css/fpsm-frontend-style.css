@@ -4261,6 +4261,10 @@ button.add_media {
     backdrop-filter: blur(12px); /* Note: backdrop-filter has minimal browser support */ 
     border-radius: 20px;
 }
+form.fpsm-front-form.fpsm-template-27 .fpsm-each-tag {
+    background: #9296F9;
+    color: #fff;
+}
 
 
 
