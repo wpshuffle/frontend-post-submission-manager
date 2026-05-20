@@ -115,7 +115,8 @@ if (!empty($edit_post)) {
      * Captcha
      */
     if (!empty($form_details['security']['frontend_form_captcha'])) {
-        $site_key = (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
+        $captcha_provider = $fpsm_library_obj->get_captcha_provider($form_details);
+        $site_key = $fpsm_library_obj->get_captcha_site_key($form_details);
         if (!empty($site_key)) {
             ?>
 
@@ -123,9 +124,12 @@ if (!empty($edit_post)) {
                 <label><?php echo (!empty($form_details['security']['captcha_label'])) ? esc_attr($form_details['security']['captcha_label']) : ''; ?></label>
                 <div class="fpsm-field">
                     <div data-field-key="security">
-                        <script type="text/javascript" src="//www.google.com/recaptcha/api.js"></script>
-                        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>">
-                        </div>
+                        <script type="text/javascript" src="<?php echo esc_url($fpsm_library_obj->get_captcha_script_url($captcha_provider)); ?>" async defer></script>
+                        <?php if ($captcha_provider === 'turnstile') { ?>
+                            <div class="cf-turnstile" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                        <?php } else { ?>
+                            <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

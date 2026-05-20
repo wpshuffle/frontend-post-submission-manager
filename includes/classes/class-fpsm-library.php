@@ -696,6 +696,76 @@ Thank you', get_bloginfo('name')), 'frontend-post-submission-manager');
             return apply_filters('fpsm_post_statuses', $post_status_array);
         }
 
+        public function get_captcha_provider($form_details) {
+            $provider = (!empty($form_details['security']['captcha_provider'])) ? $form_details['security']['captcha_provider'] : 'recaptcha';
+            $allowed_providers = array('recaptcha', 'turnstile');
+
+            return in_array($provider, $allowed_providers, true) ? $provider : 'recaptcha';
+        }
+
+        public function get_captcha_site_key($form_details) {
+            $provider = $this->get_captcha_provider($form_details);
+
+            if ($provider === 'turnstile') {
+                return (!empty($form_details['security']['turnstile_site_key'])) ? $form_details['security']['turnstile_site_key'] : '';
+            }
+
+            return (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
+        }
+
+        public function get_captcha_secret_key($form_details) {
+            $provider = $this->get_captcha_provider($form_details);
+
+            if ($provider === 'turnstile') {
+                return (!empty($form_details['security']['turnstile_secret_key'])) ? $form_details['security']['turnstile_secret_key'] : '';
+            }
+
+            return (!empty($form_details['security']['secret_key'])) ? $form_details['security']['secret_key'] : '';
+        }
+
+        public function get_captcha_response_field($provider) {
+            return ($provider === 'turnstile') ? 'cf-turnstile-response' : 'g-recaptcha-response';
+        }
+
+        public function get_captcha_script_url($provider) {
+            return ($provider === 'turnstile') ? 'https://challenges.cloudflare.com/turnstile/v0/api.js' : '//www.google.com/recaptcha/api.js';
+        }
+
+        public function verify_captcha_response($provider, $captcha, $secret_key) {
+            if (empty($captcha) || empty($secret_key)) {
+                return false;
+            }
+
+            if ($provider === 'turnstile') {
+                $request_body = array(
+                    'secret' => $secret_key,
+                    'response' => $captcha
+                );
+                if (!empty($_SERVER['REMOTE_ADDR']) && filter_var(wp_unslash($_SERVER['REMOTE_ADDR']), FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+                    $request_body['remoteip'] = sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']));
+                }
+                $verify_response = wp_remote_post('https://challenges.cloudflare.com/turnstile/v0/siteverify', array(
+                    'body' => $request_body,
+                    'timeout' => 15
+                ));
+            } else {
+                $verify_response = wp_remote_get(add_query_arg(array(
+                    'secret' => $secret_key,
+                    'response' => $captcha
+                ), 'https://www.google.com/recaptcha/api/siteverify'), array(
+                    'timeout' => 15
+                ));
+            }
+
+            if (is_wp_error($verify_response)) {
+                return false;
+            }
+
+            $verify_body = json_decode(wp_remote_retrieve_body($verify_response));
+
+            return (!empty($verify_body->success));
+        }
+
         public function get_total_author_posts($post_author_id, $form_alias, $post_id = 0) {
             global $wpdb;
             if (empty($post_id)) {
