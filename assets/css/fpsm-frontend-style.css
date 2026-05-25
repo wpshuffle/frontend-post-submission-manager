@@ -4306,6 +4306,7 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
 .fpsm-front-form.fpsm-template-28 textarea {
     border: 0.5px solid #333333;
     background: #4C4C4C;
+        color: #d7d3d3;
 }
 .fpsm-template-28.fpsm-front-form .fpsm-select-field select {
     -webkit-appearance: none;
