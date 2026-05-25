@@ -4583,7 +4583,9 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
 form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
     background: #F5F5F5;
 }
-
+.fpsm-template-30.fpsm-front-form .qq-upload-button:hover{
+  background-color: #0e5ba1;
+}
 
 
 
@@ -5402,6 +5404,14 @@ form.fpsm-front-form.fpsm-template-35 {
   padding: 35px;
 }
 
+.fpsm-front-form select:focus,
+.fpsm-field input:focus,
+.fpsm-field textarea:focus{
+  outline: none;
+    outline-style: none;
+}
+
+
 
 
 
@@ -5588,6 +5598,10 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 }
 .fpsm-template-29 .fspm-form-field-wrap {
     padding: 0px 12px 32px;
+}
+.fpsm-template-30.fpsm-front-form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0 0 22px;
+    padding: 8px !important;
 }
 }
 
