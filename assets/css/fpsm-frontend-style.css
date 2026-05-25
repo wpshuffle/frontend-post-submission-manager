@@ -5273,7 +5273,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 }
 
 .fpsm-template-35 .fspm-form-field-wrap {
-  padding: 30px 50px;
+  padding: 24px 32px;
   background: #fff;
 }
 .fpsm-template-33 .fpsm-field-wrap,
@@ -5569,7 +5569,6 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 }
 .fpsm-template-34 .fspm-form-field-wrap {
   padding: 20px 10px;
-  border: 1px solid #000000;
 }
 .fpsm-template-33 .fspm-title-wrap h2::before {
     border-top: 12px solid #94DEE3;
@@ -5578,6 +5577,17 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 .fpsm-template-33 .fspm-title-wrap h2::after {
     border-top: 12px solid #94DEE3;
     border-left: 8px solid transparent;
+}
+.fpsm-template-35 .fspm-form-field-wrap {
+    padding: 12px 16px;
+}
+.fpsm-front-form.fpsm-template-29 {
+    /* box-shadow: none; */
+    padding: 0px !important;
+    border-radius: 30px 30px 0 0;
+}
+.fpsm-template-29 .fspm-form-field-wrap {
+    padding: 0px 12px 32px;
 }
 }
 
@@ -6021,4 +6031,14 @@ a.fpsm-edit-post-button {
           border-top: 12px solid #94DEE3;
           border-right: 12px solid transparent;
         }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .fpsm-front-form.fpsm-template-29 {
+    /* box-shadow: none; */
+    padding: 0px !important;
+    border-radius: 30px 30px 0 0;
+}
+.fpsm-template-29 .fspm-form-field-wrap {
+    padding: 0px 24px 32px;
+}
 }
