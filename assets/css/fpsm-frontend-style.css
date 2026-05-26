@@ -3858,11 +3858,14 @@ button.add_media {
 /* Template-23 */
 
 .fpsm-front-form.fpsm-template-23 {
-    padding: 0;
+    padding: 20px;
 }
 .fpsm-template-23 .fspm-form-field-wrap {
     padding: 50px;
     border: 1px solid #000000;
+}
+.fpsm-template-23{
+    color: #888888;
 }
 .fpsm-template-23 .fspm-title-wrap h2 {
     text-align: center;
@@ -3877,7 +3880,6 @@ button.add_media {
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
-    color: #888888;
     display: block;
     margin-bottom: 4px;
 }
@@ -3902,7 +3904,6 @@ button.add_media {
   -moz-appearance: none;    /* For Firefox */
   appearance: none;
     background: none;
-    border: 0.5px solid #333333;   
 }
 .fpsm-front-form.fpsm-template-23 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-template-23 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field,
@@ -3978,11 +3979,13 @@ button.add_media {
     border-radius: 0px;
     padding-left: 32px;
 }
+.fpsm-template-24{
+    color: #888888;
+}
 .fpsm-front-form.fpsm-template-24 .fpsm-field-wrap label {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: #888888;
     display: block;
     margin-bottom: 4px;
 }
@@ -4147,14 +4150,21 @@ button.add_media {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: #EFEFEF;
+    
+
+}
+.fpsm-template-26.fpsm-front-form .fpsm-select-field{
     border: 0.5px solid #BCBCBC;
     border-radius: 25px;
+    background: #EFEFEF;
+}
+.fpsm-template-26 {
+  color: #000000;
 }
 .fpsm-front-form.fpsm-template-26 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-template-26 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
-    border: none;
-    background: none;
+        background: #EFEFEF;
+    border-radius: 25px;
 }
 .fpsm-front-form.fpsm-template-26 .qq-upload-button{
   border-radius: 25px;
@@ -4181,7 +4191,6 @@ button.add_media {
 .fpsm-front-form.fpsm-template-26 h2.fpsm-form-title {
     font-family: "Roboto", sans-serif;
     font-size: 50px;
-    color: #000000;
     line-height: 120%;
     opacity: 53%;
 }
@@ -4191,6 +4200,11 @@ button.add_media {
 }
 
 /* Template 27 */
+.fpsm-template-27 {
+    background: linear-gradient(153.11deg, #9ADCFD -11.84%, #8F95FA 43.61%, #F4BAEB 98.96%);
+    padding: 35px;
+    color: #383737;
+}
 
 .fpsm-front-form.fpsm-template-27 input[type="text"], 
 .fpsm-front-form.fpsm-template-27 input[type="email"], 
@@ -4226,7 +4240,7 @@ button.add_media {
     line-height: 120%;
     transition: all 0.3s ease;
 }
-.fpsm-template-27.fpsm-front-form .qq-upload-button{
+.fpsm-template-27 .qq-upload-button{
   background-color: #616BFF;
 }
 .fpsm-front-form.fpsm-template-27 .fpsm-field-wrap label, 
@@ -4235,7 +4249,6 @@ button.add_media {
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
-    color: #383737;
     display: block;
     margin-bottom: 4px;
 }
@@ -4246,14 +4259,10 @@ button.add_media {
 .fpsm-front-form.fpsm-template-27 h2.fpsm-form-title {
     font-family: "Roboto", sans-serif;
     font-size: 50px;
-    color: #383737;
     line-height: 120%;
 }
 
-.fpsm-template-27.fpsm-front-form {
-    background: linear-gradient(153.11deg, #9ADCFD -11.84%, #8F95FA 43.61%, #F4BAEB 98.96%);
-    padding: 35px;
-}
+
 .fpsm-template-27 .fspm-form-wrapper {
     padding: 50px;
     background: rgba(255, 255, 255, 0.6); 
@@ -4268,11 +4277,9 @@ form.fpsm-front-form.fpsm-template-27 .fpsm-each-tag {
 
 
 
+
 /* Template 28 */
  
-.fpsm-front-form.fpsm-template-28 .fpsm-field-wrap label {
-    color: #fff;
-}
 
 .fpsm-template-28 .fspm-form-field-wrap {
     padding: 50px;
@@ -4284,18 +4291,18 @@ form.fpsm-front-form.fpsm-template-27 .fpsm-each-tag {
     font-weight: bold;
     font-family: 'Helvetica';
     padding: 30px 0 !important;
-    color: #fff;
+
 }
-form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
+.fpsm-template-28 {
     background-color: #1D1D1D;
+        color: #fff;
 }
 .fpsm-template-28 .fspm-form-field-wrap{
   padding: 0;
 }
 .fpsm-template-28 .fpsm-field-wrap {
-    background: #2f2f2f;
+    background: #a1a1a140;
     padding: 20px 50px;
-    color: #fff;
 }
 .fpsm-front-form.fpsm-template-28 input[type="text"], 
 .fpsm-front-form.fpsm-template-28 input[type="email"], 
@@ -4316,15 +4323,15 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-28 {
     border: 0.5px solid #333333;
 }
 
-.fpsm-template-28.fpsm-front-form .qq-upload-button{
+.fpsm-template-28 .qq-upload-button{
   background: #F8B300;
 }
-.fpsm-front-form.fpsm-template-28 .fpsm-field input[type="submit"] {
+.fpsm-template-28 .fpsm-field input[type="submit"] {
     background-color: #f8b300;
 }
-.fpsm-front-form.fpsm-template-28 .fpsm-checkbox input[type="checkbox"]:checked + label:before,
-.fpsm-front-form.fpsm-template-28 .fpsm-radio input[type="radio"]:checked + label:before,
-.fpsm-front-form.fpsm-template-28 .fpsm-radio input[type="radio"]:checked + label:before{
+.fpsm-template-28 .fpsm-checkbox input[type="checkbox"]:checked + label:before,
+.fpsm-template-28 .fpsm-radio input[type="radio"]:checked + label:before,
+.fpsm-template-28 .fpsm-radio input[type="radio"]:checked + label:before{
     background-color: #f8b300;
     color: white;
 }
@@ -4337,7 +4344,6 @@ form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
   color: #fff;
 }
 .fpsm-front-form.fpsm-template-28 .fpsm-field-wrap .fpsm-checkbox-list-wrap label {
-    color: #fff;
     font-size: 14px;
     font-weight: 300;
 }
@@ -4355,6 +4361,14 @@ form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
 
 /* template 29 */
 
+form.fpsm-front-form.fpsm-add-form.fpsm-template-29 {
+    padding: 0;
+    border-radius: 30px 30px 0 0;
+}
+.fpsm-template-29 .fspm-form-field-wrap {
+    padding: 0 35px 35px 35px;
+}
+
 .fpsm-template-29 .fpsm-field-wrap label {
     font-weight: 700;
     font-family: "Noto Sans", sans-serif;
@@ -4363,7 +4377,7 @@ form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
      font-family: "Noto Sans", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: rgb(136, 136, 136);
+    /* color: rgb(136, 136, 136); */
     display: block;
     margin-bottom: 4px;
 }
@@ -4407,7 +4421,6 @@ form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
 .fpsm-front-form.fpsm-template-29 input[type="tel"], 
 .fpsm-front-form.fpsm-template-29 input[type="url"],
  .fpsm-front-form.fpsm-template-29 textarea {
-    border: 1px solid #CCCCCC;
     background: none;
     border-radius: 8px;
 }
@@ -4416,7 +4429,6 @@ form.fpsm-front-form.fpsm-template-28 .fpsm-each-tag{
     -moz-appearance: none;
     appearance: none;
     background: none;
-    border: 1px solid #CCCCCC;
     border-radius: 8px;
 }
 .fpsm-front-form.fpsm-template-29 .qq-upload-button {
@@ -4451,8 +4463,7 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
 }
 .fpsm-front-form.fpsm-template-29 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-template-29 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
-    border-radius: 2px;
-    border: none;
+    border-radius: 8px;
     background: none;
 }
 
@@ -4477,7 +4488,6 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
-    color: #888888;
     display: block;
     margin-bottom: 4px;
 }
@@ -4503,8 +4513,10 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
   -moz-appearance: none;    /* For Firefox */
   appearance: none;
   background: none;
-  border: 0.5px solid #CDA5E2;
   border-radius: 10px;   
+}
+.fpsm-template-23.fpsm-front-form .fpsm-select-field{
+  border: 0.5px solid #CDA5E2;
 }
 .fpsm-front-form.fpsm-template-30 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-template-30 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field  {
@@ -4581,7 +4593,7 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
     padding: 0;
     background: none;
 }
-form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
+.fpsm-template-30 {
     background: #F5F5F5;
 }
 .fpsm-template-30.fpsm-front-form .qq-upload-button:hover{
@@ -4591,13 +4603,16 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 
 
 /* Template-31 */
+.fpsm-template-31{
+  color: #687EDC;
+}
+
 
 .fpsm-template-31 .fspm-title-wrap h2 {
     text-align: center;
     font-size: 56px;
     font-weight: bold;
     font-family: 'Helvetica';
-    color: #687EDC;
     padding: 30px 50px 0px !important;
     margin-bottom: 70px !important;
 }
@@ -4625,7 +4640,6 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: #888888;
     display: block;
     margin-bottom: 4px;
 }
@@ -4704,11 +4718,11 @@ form.fpsm-front-form.fpsm-add-form.fpsm-template-30 {
 .fpsm-front-form.fpsm-template-31 .fpsm-checkbox-inline .fpsm-checkbox {
     margin-bottom: 0px;
 }
-.fpsm-front-form.fpsm-template-31 .fpsm-field input[type="submit"] {
+.fpsm-template-31 .fpsm-field input[type="submit"] {
     background-color: #7085F9;
     border: none;
 }
-.fpsm-front-form.fpsm-template-31 .qq-upload-button {
+.fpsm-template-31 .qq-upload-button {
     background-color: #7085F9;
 }
 
@@ -4774,6 +4788,9 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 }
 
 /* template-32 */
+.fpsm-template-32{
+  color: #383737;
+}
 .fpsm-title-icon {
   display: none;
 }
@@ -4814,7 +4831,7 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
   line-height: 120%;
   transition: all 0.3s ease;
 }
-.fpsm-template-32.fpsm-front-form .qq-upload-button{
+.fpsm-template-32 .qq-upload-button{
   font-family: 'Playlist';
   background-color: #FF9B39;
 }
@@ -4822,7 +4839,6 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
     font-family: 'Lobster Two';
     font-size: 16px;
     font-weight: 600;
-    color: #383737;
     display: block;
     margin-bottom: 4px;
 }
@@ -4834,11 +4850,10 @@ form.fpsm-front-form.fpsm-template-31 .fpsm-bg-pattern .fpsm-bg-3 {
 .fpsm-front-form.fpsm-template-32 h2.fpsm-form-title {
     font-family: 'Playlist';
     font-size: 50px;
-    color: #383737;
     line-height: 120%;
 }
 
-.fpsm-template-32.fpsm-front-form {
+.fpsm-template-32{
     background: linear-gradient(162.19deg, #3A3937 14.25%, #FF9B39 156.83%);
     padding: 35px;
 }
@@ -4900,8 +4915,8 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
     margin-bottom: 50px !important;
     background: linear-gradient(90.73deg, #62B9BF -5.83%, #6AC7CE 114.11%);
     margin-top: 40px !important;
-    width: 104%;
-    right: 2%;
+    width: 106%;
+    right: 3%;
     position: relative;
 }
 form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern .fpsm-bg-1 {
@@ -5003,7 +5018,6 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;
-    color: #888888;
     display: block;
     margin-bottom: 4px;
 }
@@ -5015,7 +5029,6 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
     border-radius: 2px;
-    background-color: transparent;
 }
 
 
@@ -5043,7 +5056,7 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
     position: absolute;
     left: unset;
     right: 13px;
-    bottom: 10px;
+    bottom: 6px;
 }
 .fpsm-front-form.fpsm-template-33 .fpsm-field-wrap .fpsm-checkbox label {
     padding-left: 34px;
@@ -5079,11 +5092,11 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
 .fpsm-front-form.fpsm-template-33 .fpsm-checkbox-inline .fpsm-checkbox {
     margin-bottom: 0px;
 }
-.fpsm-front-form.fpsm-template-33 .fpsm-field input[type="submit"] {
+.fpsm-template-33 .fpsm-field input[type="submit"] {
     background-color: #54b4ba;
     border: none;
 }
-.fpsm-front-form.fpsm-template-33 .qq-upload-button {
+.fpsm-template-33 .qq-upload-button {
     background-color: #54b4ba;
 }
 
@@ -5122,8 +5135,9 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   border-color: #AFAFAF transparent transparent transparent;
 }
 
-.fpsm-front-form.fpsm-template-34 {
+.fpsm-template-34 {
   background-color: #08070C;
+  color: #d7d3d3;
 }
 .fpsm-front-form.fpsm-template-34 {
   padding: 0;
@@ -5131,7 +5145,6 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 
 .fpsm-template-34 .fspm-form-field-wrap {
   padding: 50px;
-  border: 1px solid #000000;
 }
 .fpsm-template-34 .fspm-title-wrap h2 {
   text-align: center;
@@ -5139,7 +5152,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-weight: bold;
   font-family: 'Helvetica';
   padding: 30px 0 0 !important;
-  color: rgba(255, 255, 255, 0.92);
+  /* color: rgba(255, 255, 255, 0.92); */
 }
 
 .fpsm-front-form.fpsm-template-34 .fpsm-field-wrap label,
@@ -5148,7 +5161,6 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 600;
-  color: #888888;
   display: block;
   margin-bottom: 4px;
 }
@@ -5166,7 +5178,6 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 }
 
 .fpsm-front-form.fpsm-template-34 .fpsm-field-note {
-  color:#d7d3d3;
   font-size: 14px;
   font-family: 'Open Sans';
 }
@@ -5178,7 +5189,6 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   /* For Firefox */
   appearance: none;
   background: none;
-  border: 0.5px solid #333333;
 }
 
 .fpsm-front-form.fpsm-template-34 .fpsm-custom-field-select .fpsm-field .fpsm-select-field,
@@ -5244,7 +5254,7 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   background-color: rgb(255 255 255 / 18%);
   color: rgba(0, 0, 0, 0.2);
 }
-.fpsm-front-form.fpsm-template-34 .qq-upload-button{
+.fpsm-template-34 .qq-upload-button{
   background-color: #e8e8e8;
     color: #3F3C3C;
 }
@@ -5307,7 +5317,6 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
   font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 600;
-  color: #888888;
   display: block;
   margin-bottom: 4px;
 }
@@ -5335,8 +5344,8 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 
 .fpsm-template-35 .fpsm-author-name .fpsm-field:before, .fpsm-template-35 .fpsm-author-email .fpsm-field:before, .fpsm-template-35 .fpsm-post-title .fpsm-field:before, .fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
     position: absolute;
-    right: 0px;
-    bottom: 10px;
+    right: 10px;
+    bottom: 6px;
     left: unset;
     font-family: "Font Awesome\ 5 Free";
 }
@@ -5390,17 +5399,17 @@ form.fpsm-front-form.fpsm-template-35 .fpsm-each-tag{
   margin-bottom: 0px;
 }
 
-.fpsm-front-form.fpsm-template-35 .fpsm-field input[type="submit"] {
+.fpsm-template-35 .fpsm-field input[type="submit"] {
   background-color: #7085F9;
   border: none;
 }
 
-.fpsm-front-form.fpsm-template-35 .qq-upload-button {
+.fpsm-template-35 .qq-upload-button {
   background-color: #7085F9;
 }
 
 
-form.fpsm-front-form.fpsm-template-35 {
+.fpsm-template-35 {
   background: linear-gradient(147.06deg, #EC8892 -10.71%, #F8D868 104.48%);
   padding: 35px;
 }
