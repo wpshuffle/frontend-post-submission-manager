@@ -4222,15 +4222,13 @@ button.add_media {
     -moz-appearance: none;
     appearance: none;
     background: none;
-    border: 0.5px solid #383737;
     border-radius: 10px;
 }
 
 .fpsm-front-form.fpsm-template-27 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-template-27 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
-    border-radius: 2px;
+    border-radius: 10px;
     background-color: transparent;
-    border: none;
 }
 .fpsm-template-27 .fpsm-field input[type="submit"] {
     background-color: #616BFF;
