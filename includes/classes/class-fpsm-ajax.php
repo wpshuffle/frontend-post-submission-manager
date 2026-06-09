@@ -34,12 +34,27 @@ if (!class_exists('FPSM_Ajax')) {
         function file_upload_action() {
             if ($this->admin_ajax_nonce_verify()) {
 
-                $form_alias = sanitize_text_field($_GET['form_alias']);
-                $field_name = sanitize_text_field($_GET['field_name']);
+                $form_alias = (!empty($_GET['form_alias'])) ? sanitize_text_field(wp_unslash($_GET['form_alias'])) : '';
+                $field_name = (!empty($_GET['field_name'])) ? sanitize_text_field(wp_unslash($_GET['field_name'])) : '';
+                if (empty($form_alias) || empty($field_name)) {
+                    $this->upload_error_response(esc_html__('Invalid upload request.', 'frontend-post-submission-manager'));
+                }
                 global $fpsm_library_obj;
                 $form_row = $fpsm_library_obj->get_form_row_by_alias($form_alias);
+                if (empty($form_row)) {
+                    $this->upload_error_response(esc_html__('Invalid upload request.', 'frontend-post-submission-manager'));
+                }
+                if ($form_row->form_type == 'login_require' && !is_user_logged_in()) {
+                    $this->upload_error_response(esc_html__('Unauthorized upload request.', 'frontend-post-submission-manager'));
+                }
                 $form_details = maybe_unserialize($form_row->form_details);
+                if (empty($form_details['form']['fields'][$field_name]) || empty($form_details['form']['fields'][$field_name]['show_on_form'])) {
+                    $this->upload_error_response(esc_html__('Invalid upload field.', 'frontend-post-submission-manager'));
+                }
                 $field_details = $form_details['form']['fields'][$field_name];
+                if (!$this->is_valid_upload_field($field_name, $field_details)) {
+                    $this->upload_error_response(esc_html__('Invalid upload field.', 'frontend-post-submission-manager'));
+                }
                 $default_allowed_extensions = array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'JPG', 'JPEG', 'PNG', 'BMP');
                 /**
                  * Filters allowed extensions for image field type
@@ -74,6 +89,30 @@ if (!class_exists('FPSM_Ajax')) {
             } else {
                 $this->permission_denied();
             }
+        }
+
+        function is_valid_upload_field($field_name, $field_details) {
+            global $fpsm_library_obj;
+            if ($field_name == 'post_image') {
+                $uploader_type = (!empty($field_details['uploader_type'])) ? $field_details['uploader_type'] : 'custom';
+                return ($uploader_type == 'custom');
+            }
+            if ($field_name == 'post_content') {
+                return !empty($field_details['custom_media_upload_button']);
+            }
+            if ($fpsm_library_obj->is_custom_field_key($field_name)) {
+                return (!empty($field_details['field_type']) && $field_details['field_type'] == 'file_uploader');
+            }
+            return false;
+        }
+
+        function upload_error_response($message, $status_code = 403) {
+            status_header($status_code);
+            echo wp_json_encode(array(
+                'success' => false,
+                'error' => $message
+            ));
+            die();
         }
 
         /**
