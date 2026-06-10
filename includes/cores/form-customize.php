@@ -32,6 +32,16 @@ if (!empty($form_details['customize']['form']['enable'])) {
         wp_add_inline_style('fpsm-custom-style', $text_color_css);
     }
     /**
+     * Body Title Color
+     */
+    if (!empty($form_details['customize']['form']['body_title_color'])) {
+        $body_title_color = esc_html($form_details['customize']['form']['body_title_color']);
+        $body_title_color_css = ".$form_alias_class.fpsm-front-form .fpsm-form-title,
+                                .$form_alias_class.fpsm-front-form .fspm-title-wrap h2,
+                                .$form_alias_class.fpsm-front-form .fpsm-title-wrap h2{color:$body_title_color !important;}";
+        wp_add_inline_style('fpsm-custom-style', $body_title_color_css);
+    }
+    /**
      * Button Text Color
      */
     if (!empty($form_details['customize']['form']['button_text_color'])) {

@@ -499,6 +499,11 @@ jQuery(document).ready(function ($) {
             $('.fpsm-label-background-ref').hide();
 
         }
+        if (template == 'template-29' || template == 'template-35') {
+            $('.fpsm-template-background-image-ref').removeClass('fpsm-display-none');
+        } else {
+            $('.fpsm-template-background-image-ref').addClass('fpsm-display-none');
+        }
     });
     $('body').on('change', '.fpsm-custom-field-template-trigger', function () {
         var template = $(this).val();
@@ -529,10 +534,12 @@ jQuery(document).ready(function ($) {
                 // console.log(uploaded_image);
                 var image_url = uploaded_image.toJSON().url;
                 var image_id = uploaded_image.toJSON().id;
+                var image_sizes = uploaded_image.toJSON().sizes;
+                var preview_url = (image_sizes && image_sizes.thumbnail) ? image_sizes.thumbnail.url : image_url;
                 // Let's assign the url value to the input field
                 selector.parent().find('input[type="text"]').val(image_url);
                 selector.parent().find('input[type="hidden"]').val(image_id);
-                selector.parent().find('.fpsm-media-preview').html('<img src="' + uploaded_image.toJSON().sizes.thumbnail.url + '"/>');
+                selector.parent().find('.fpsm-media-preview').html('<img src="' + preview_url + '"/>');
             });
     });
     /**

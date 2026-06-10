@@ -2,6 +2,16 @@
 defined('ABSPATH') or die('No script kiddies please!!');
 $form_template = (!empty($form_details['layout']['template'])) ? $form_details['layout']['template'] : 'template-1';
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
+$template_background_image = '';
+if (in_array($form_template, array('template-29', 'template-35')) && !empty($form_details['layout']['template_background_image'])) {
+    $template_background_image = esc_url($form_details['layout']['template_background_image']);
+    if (!empty($form_details['layout']['template_background_image_id'])) {
+        $template_background_image_src = wp_get_attachment_image_src($form_details['layout']['template_background_image_id'], 'full');
+        if (!empty($template_background_image_src[0])) {
+            $template_background_image = esc_url($template_background_image_src[0]);
+        }
+    }
+}
 if (!empty($edit_post)) {
     $post_status = get_post_status($edit_post->ID);
     $current_page_url = $fpsm_library_obj->get_current_page_url();
@@ -35,6 +45,24 @@ if (!empty($edit_post)) {
     }
 }
 ?>
+<?php if (!empty($template_background_image)) { ?>
+    <style>
+        <?php if ($form_template == 'template-29') { ?>
+            .<?php echo esc_attr($form_alias_class); ?>.fpsm-template-29 .fspm-title-wrap {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("<?php echo esc_url($template_background_image); ?>");
+                background-size: cover;
+                background-position: center;
+            }
+        <?php } else { ?>
+            .<?php echo esc_attr($form_alias_class); ?>.fpsm-template-35 .fspm-title-wrap {
+                background: url("<?php echo esc_url($template_background_image); ?>");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        <?php } ?>
+    </style>
+<?php } ?>
 <form method="post" class="fpsm-front-form <?php echo (!empty($post_edit_flag)) ? 'fpsm-edit-form' : 'fpsm-add-form'; ?> fpsm-<?php echo esc_attr($form_template); ?> <?php echo esc_attr($form_alias_class); ?>" data-alias="<?php echo esc_attr($form_row->form_alias); ?>">
     <div class="fpsm-bg-pattern">
         <div class="fpsm-bg-1"></div>

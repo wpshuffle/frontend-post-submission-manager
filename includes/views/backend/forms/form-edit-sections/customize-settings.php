@@ -36,7 +36,7 @@ $label_background_templates = array('template-7', 'template-12', 'template-18', 
                     <div class="fpsm-field-wrap">
                         <label><?php esc_html_e('Body Title Color', 'frontend-post-submission-manager'); ?></label>
                         <div class="fpsm-field">
-                            <input type="text" name="form_details[customize][form][text_color]" value="<?php echo (!empty($form_details['customize']['form']['text_color'])) ? esc_attr($form_details['customize']['form']['text_color']) : ''; ?>" class="fpsm-color-picker"/>
+                            <input type="text" name="form_details[customize][form][body_title_color]" value="<?php echo (!empty($form_details['customize']['form']['body_title_color'])) ? esc_attr($form_details['customize']['form']['body_title_color']) : ''; ?>" class="fpsm-color-picker"/>
                         </div>
                     </div>
                     <div class="fpsm-field-wrap">
