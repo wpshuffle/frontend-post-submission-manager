@@ -4959,7 +4959,7 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
     content: "";
     position: absolute;
     border-top: 19px solid #94DEE3;
-    border-right: 19px solid transparent;
+    border-right: 31px solid transparent;
     right: 0;
     top: 100%;
 }
@@ -4967,7 +4967,7 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
     content: "";
     position: absolute;
     border-top: 19px solid #94DEE3;
-    border-left: 19px solid transparent;
+    border-left: 31px solid transparent;
     left: 0;
     top: 100%;
 }
@@ -4986,16 +4986,13 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
 .fpsm-template-33 .fspm-form-field-wrap {
     padding: 0px 20px;
 }
-.fpsm-front-form.fpsm-template-33 {
-    background-color: #fff;
-    padding: 40px;
-}
-.fpsm-front-form.fpsm-template-33 .fspm-form-wrapper {
+.fpsm-template-33 {
     background-color: #fff;
     padding: 0px;
-    border: 1px solid #797777;
+        border: 1px solid #797777;
     border-radius: 10px;
 }
+
 
 
 
