@@ -3949,6 +3949,10 @@ button.add_media {
     font-weight: 900;
     color: rgba(0, 0, 0, 0.68);
 }
+.fpsm-template-24 .fpsm-taxonomy-textfield .fpsm-field:before {
+    content: "\f02b";
+
+}
 .fpsm-template-23 .fpsm-author-name .fpsm-field:before {
      content: "\f007";
 }
