@@ -3,6 +3,7 @@ defined('ABSPATH') or die('No script kiddies please!!');
 $form_template = (!empty($form_details['layout']['template'])) ? $form_details['layout']['template'] : 'template-1';
 $form_alias_class = 'fpsm-alias-' . $form_row->form_alias;
 $template_background_image = '';
+$template_title_wrap_style = '';
 if (in_array($form_template, array('template-29', 'template-35')) && !empty($form_details['layout']['template_background_image'])) {
     $template_background_image = esc_url($form_details['layout']['template_background_image']);
     if (!empty($form_details['layout']['template_background_image_id'])) {
@@ -10,6 +11,11 @@ if (in_array($form_template, array('template-29', 'template-35')) && !empty($for
         if (!empty($template_background_image_src[0])) {
             $template_background_image = esc_url($template_background_image_src[0]);
         }
+    }
+    if ($form_template == 'template-29') {
+        $template_title_wrap_style = 'background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(\'' . $template_background_image . '\') !important; background-size: cover; background-position: center;';
+    } else {
+        $template_title_wrap_style = 'background-image: url(\'' . $template_background_image . '\') !important; background-repeat: no-repeat; background-size: cover; background-position: center;';
     }
 }
 if (!empty($edit_post)) {
@@ -71,7 +77,7 @@ if (!empty($edit_post)) {
     </div>
     <div class="fspm-form-wrapper">
         <?php if (empty($form_details['customize']['hide_form_title'])) { ?>
-            <div class="fspm-title-wrap">
+            <div class="fspm-title-wrap" <?php echo (!empty($template_title_wrap_style)) ? 'style="' . esc_attr($template_title_wrap_style) . '"' : ''; ?>>
                 <div class="fpsm-title-icon">
                     <div class="fpsm-icon"></div>
                 </div>
