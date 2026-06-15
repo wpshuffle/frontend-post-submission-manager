@@ -4938,7 +4938,8 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-bg-pattern {
     position: absolute;
     left: unset;
     right: 13px;
-    bottom: 10px;
+    bottom: unset;
+    top: 10px;
 }
 .fpsm-template-33 .fspm-title-wrap h2 {
     text-align: center;
