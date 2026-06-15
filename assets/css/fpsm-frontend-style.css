@@ -3930,6 +3930,7 @@ button.add_media {
 .fpsm-front-form.fpsm-template-35 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field{
       border: none;
     border-bottom: 0.5px solid #333333;
+     background: transparent;
 }
 .fpsm-front-form.fpsm-template-35 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
     border: none;
