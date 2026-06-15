@@ -4689,13 +4689,12 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
     content: "\f1c5";
     height: 40px;
     width: 40px;
-    color: rgba(0, 0, 0, 0.28);
     text-align: center;
     line-height: 40px;
     font-family: "Font Awesome\ 5 Free";
     font-size: 14px;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.68);
+    color: #8b93ad;
     border: solid 1px rgba(0, 0, 0, 0.18);
 }
 
@@ -4722,6 +4721,7 @@ form.fpsm-front-form.fpsm-template-30 .fpsm-each-tag {
 .fpsm-template-31 .fpsm-post-excerpt .fpsm-field:before{
     left: 0px;
     right: unset;
+    color: #8b93ad;
 }
 .fpsm-front-form.fpsm-template-31 .fpsm-field-wrap .fpsm-checkbox label {
     padding-left: 34px;
@@ -5060,7 +5060,8 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
 }
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
-    border-radius: 2px;
+    border-radius: 0px;
+    background: transparent;
 }
 
 
@@ -5088,7 +5089,8 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
     position: absolute;
     left: unset;
     right: 13px;
-    bottom: 6px;
+    bottom: unset;
+    top: 36px;
 }
 .fpsm-front-form.fpsm-template-33 .fpsm-field-wrap .fpsm-checkbox label {
     padding-left: 34px;
@@ -5377,7 +5379,8 @@ form.fpsm-front-form.fpsm-template-34 .fpsm-select-field:before {
 .fpsm-template-35 .fpsm-author-name .fpsm-field:before, .fpsm-template-35 .fpsm-author-email .fpsm-field:before, .fpsm-template-35 .fpsm-post-title .fpsm-field:before, .fpsm-template-35 .fpsm-post-excerpt .fpsm-field:before {
     position: absolute;
     right: 10px;
-    bottom: 6px;
+    bottom: unset;
+    top: 36px;
     left: unset;
     font-family: "Font Awesome\ 5 Free";
 }
@@ -5422,9 +5425,7 @@ form.fpsm-front-form.fpsm-template-35 .fpsm-each-tag{
   border-bottom: 0.5px solid #333333;
 }
 
-.fpsm-front-form.fpsm-template-35 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
-  border: none;
-}
+
 
 .fpsm-front-form.fpsm-template-35 .fpsm-radio-inline .fpsm-radio,
 .fpsm-front-form.fpsm-template-35 .fpsm-checkbox-inline .fpsm-checkbox {
