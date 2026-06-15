@@ -5061,6 +5061,7 @@ form.fpsm-front-form.fpsm-template-32 .fpsm-each-tag{
 }
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-custom-field-select .fpsm-field .fpsm-select-field, 
 .fpsm-front-form.fpsm-front-form.fpsm-template-33 .fpsm-taxonomy-select .fpsm-field .fpsm-select-field {
+  border: none;
     border-radius: 0px;
     background: transparent;
 }
