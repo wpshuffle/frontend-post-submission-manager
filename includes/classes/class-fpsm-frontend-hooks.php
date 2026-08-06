@@ -29,6 +29,9 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
         }
 
         function append_custom_fields_before($content) {
+            if (!$this->should_append_content_extras($content, 'before_content')) {
+                return $content;
+            }
             $this->register_frontend_assets();
             $append_content = '';
             $display_position_check = 'before_content';
@@ -38,12 +41,28 @@ if (!class_exists('FPSM_Frontend_Hooks')) {
         }
 
         function append_custom_fields_after($content) {
+            if (!$this->should_append_content_extras($content, 'after_content')) {
+                return $content;
+            }
             $this->register_frontend_assets();
             $append_content = '';
             $display_position_check = 'after_content';
             include(FPSM_PATH . '/includes/cores/post-content-append.php');
             $content = $content . $append_content;
             return $content;
+        }
+
+        function should_append_content_extras($content, $display_position_check = '') {
+            if (is_admin() || !is_singular() || !in_the_loop() || !is_main_query()) {
+                return false;
+            }
+
+            $post_id = get_the_ID();
+            if (empty($post_id) || (int) $post_id !== (int) get_queried_object_id()) {
+                return false;
+            }
+
+            return apply_filters('fpsm_should_append_content_extras', true, $content, $post_id, $display_position_check);
         }
 
         function generate_form_preview() {
