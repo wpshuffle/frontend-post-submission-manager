@@ -216,6 +216,24 @@ if (!empty($edit_post)) {
             <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader" />
         </div>
     </div>
+    <?php
+    if (!empty($form_details['payment']['enable']) && !empty($form_details['payment']['amount']) && !empty($form_details['payment']['show_payment_note'])) {
+        $display_currency = (!empty($form_details['payment']['currency'])) ? $form_details['payment']['currency'] : esc_html__('(uses global currency)', 'frontend-post-submission-manager');
+        $payment_note = (!empty($form_details['payment']['payment_note'])) ? $form_details['payment']['payment_note'] : esc_html__('A payment is required after you submit.', 'frontend-post-submission-manager');
+        $payment_note = str_replace(
+            array('{amount}', '{currency}'),
+            array(esc_html($form_details['payment']['amount']), esc_html($display_currency)),
+            $payment_note
+        );
+    ?>
+        <div class="fpsm-payment-info">
+            <p><?php echo wp_kses_post($payment_note); ?></p>
+        </div>
+    <?php } ?>
+    <div class="fpsm-paypal-wrap fpsm-display-none">
+        <div class="fpsm-paypal-buttons"></div>
+        <div class="fpsm-paypal-message"></div>
+    </div>
     <div class="fpsm-form-message fpsm-display-none"></div>
     <?php if (!empty($form_details['form']['back_button_label']) && isset($_GET['action'], $_GET['post_id'])) { ?>
         <a class="fpsm-back-dashboard" href="<?php echo esc_url($fpsm_library_obj->get_current_page_url()); ?>"><?php echo esc_html($form_details['form']['back_button_label']); ?></a>

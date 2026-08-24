@@ -20,6 +20,7 @@ if (!class_exists('FPSM_Admin')) {
             add_submenu_page('fpsm', $page_title, esc_html__('All Forms', 'frontend-post-submission-manager'), 'manage_options', 'fpsm', array($this, 'form_lists'));
             add_submenu_page('fpsm', esc_html__('Add New Form', 'frontend-post-submission-manager'), esc_html__('Add New Form', 'frontend-post-submission-manager'), 'manage_options', 'fpsm-add-new-form', array($this, 'form_adder'));
             add_submenu_page('fpsm', esc_html__('Setting', 'frontend-post-submission-manager'), esc_html__('Settings', 'frontend-post-submission-manager'), 'manage_options', 'fpsm-settings', array($this, 'render_form_settings_page'));
+            add_submenu_page('fpsm', esc_html__('Payments', 'frontend-post-submission-manager'), esc_html__('Payments', 'frontend-post-submission-manager'), 'manage_options', 'fpsm-payments', array($this, 'render_payments_page'));
             add_submenu_page('fpsm', esc_html__('Help', 'frontend-post-submission-manager'), esc_html__('Help', 'frontend-post-submission-manager'), 'manage_options', 'fpsm-help', array($this, 'render_form_help_page'));
             add_submenu_page('fpsm', esc_html__('About', 'frontend-post-submission-manager'), esc_html__('About', 'frontend-post-submission-manager'), 'manage_options', 'fpsm-about', array($this, 'render_form_about_page'));
         }
@@ -51,6 +52,10 @@ if (!class_exists('FPSM_Admin')) {
 
         function render_form_about_page() {
             include(FPSM_PATH . '/includes/views/backend/about.php');
+        }
+
+        function render_payments_page() {
+            include(FPSM_PATH . '/includes/views/backend/payments.php');
         }
 
         function add_extra_html() {

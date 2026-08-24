@@ -445,6 +445,15 @@ if (!class_exists('FPSM_Library')) {
         public function get_default_form_details($post_type = 'post', $form_type = 'login_require') {
             $form_default_fields = $this->get_default_fields($post_type, $form_type);
             $form_details['form']['fields'] = $form_default_fields;
+            $form_details['payment'] = array(
+                'enable' => 0,
+                'amount' => '',
+                'currency' => '',
+                'pre_payment_status' => 'draft',
+                'post_payment_status' => 'publish',
+                'show_payment_note' => 1,
+                'payment_note' => esc_html__('A payment is required after you submit.', 'frontend-post-submission-manager')
+            );
             return $form_details;
         }
 

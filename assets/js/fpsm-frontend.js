@@ -6,6 +6,86 @@ jQuery(document).ready(function ($) {
      * @type object
      */
     var translation_strings = fpsm_js_obj.translation_strings;
+
+    function fpsm_load_paypal_sdk(clientId, currency, mode, callback, onError) {
+        if (window.paypal) {
+            callback();
+            return;
+        }
+        var script = document.createElement('script');
+        var base = (mode === 'live') ? 'https://www.paypal.com/sdk/js' : 'https://www.sandbox.paypal.com/sdk/js';
+        script.src = base + '?client-id=' + encodeURIComponent(clientId) + '&currency=' + encodeURIComponent(currency) + '&intent=capture';
+        script.onload = callback;
+        script.onerror = function () {
+            if (onError) {
+                onError();
+            }
+        };
+        document.body.appendChild(script);
+    }
+
+    function fpsm_render_paypal_buttons(form, payload) {
+        var paypalWrap = form.find('.fpsm-paypal-wrap');
+        var buttonHolder = paypalWrap.find('.fpsm-paypal-buttons');
+        var messageHolder = paypalWrap.find('.fpsm-paypal-message');
+        paypalWrap.removeClass('fpsm-display-none');
+        buttonHolder.html('');
+        messageHolder.html('');
+        fpsm_load_paypal_sdk(payload.client_id, payload.currency, payload.mode, function () {
+            paypal.Buttons({
+                createOrder: function () {
+                    return payload.order_id;
+                },
+                onApprove: function (data, actions) {
+                    messageHolder.html('');
+                    buttonHolder.addClass('fpsm-loading');
+                    return $.ajax({
+                        url: fpsm_js_obj.ajax_url,
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            action: 'fpsm_paypal_capture',
+                            _wpnonce: fpsm_js_obj.ajax_nonce,
+                            order_id: payload.order_id,
+                            post_id: payload.post_id
+                        },
+                        success: function (res) {
+                            buttonHolder.removeClass('fpsm-loading');
+                            if (res.status == 200) {
+                                form.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(res.message).slideDown('slow');
+                                // Clear and hide PayPal UI after a successful capture
+                                messageHolder.html('').slideUp();
+                                buttonHolder.html('');
+                                paypalWrap.addClass('fpsm-display-none');
+                                fpsm_reset_form(form);
+                                if (res.redirect_url) {
+                                    if (res.redirect_delay) {
+                                        setTimeout(function () {
+                                            window.location = res.redirect_url;
+                                        }, res.redirect_delay);
+                                    } else {
+                                        window.location = res.redirect_url;
+                                    }
+                                }
+                            } else {
+                                form.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(res.message).slideDown('slow');
+                                messageHolder.html(res.message);
+                            }
+                        },
+                        error: function () {
+                            buttonHolder.removeClass('fpsm-loading');
+                            form.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html('Payment failed. Please retry.').slideDown('slow');
+                        }
+                    });
+                },
+                onError: function (err) {
+                    messageHolder.html(translation_strings.paypal_error || 'Unable to start PayPal. Please try again.');
+                }
+            }).render(buttonHolder[0]);
+        }, function () {
+            messageHolder.html(translation_strings.paypal_error || 'Unable to load PayPal. Please try again.');
+        });
+    }
     function initialize_uploaders() {
         $('.fpsm-file-uploader').each(function () {
             var form_alias = $(this).closest('form').data('alias');
@@ -326,21 +406,25 @@ jQuery(document).ready(function ($) {
                 selector.data('auto-save', 'no');
                 data = $.parseJSON(data);
                 if (data.status == 200) {
-                    if (auto_save == 'no') {
+                    if (data.payment_required && data.payment) {
                         selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
-                    }
-                    if (!data.draft_post_id) {
-                        fpsm_reset_form(selector);
-                        if (data.redirect_url) {
-                            if (data.redirect_delay) {
-                                setTimeout(function () {
+                        fpsm_render_paypal_buttons(selector, data.payment);
+                    } else {
+                        if (auto_save == 'no') {
+                            selector.find('.fpsm-form-message').removeClass('fpsm-form-error').addClass('fpsm-form-success').html(data.message).slideDown('slow');
+                        }
+                        if (!data.draft_post_id) {
+                            fpsm_reset_form(selector);
+                            if (data.redirect_url) {
+                                if (data.redirect_delay) {
+                                    setTimeout(function () {
+                                        window.location = data.redirect_url;
+                                        exit;
+                                    }, data.redirect_delay);
+                                } else {
                                     window.location = data.redirect_url;
                                     exit;
-                                }, data.redirect_delay);
-                            } else {
-                                window.location = data.redirect_url;
-                                exit;
-                            }
+                                }
 
                         }
                     } else {
