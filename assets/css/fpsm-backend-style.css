@@ -64,6 +64,34 @@
   margin: 0;
 }
 
+.fpsm-payments-actions {
+  margin: 0 0 0 16px;
+  align-self: center;
+  order: 1;
+}
+
+.fpsm-payments-header > .notice {
+  order: 2;
+}
+
+.fpsm-payments-header .fpsm-payments-back-button {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 12px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.fpsm-payments-back-icon {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
 .fpsm-floatRight {
   font-size: 14px;
   display: inline-block;

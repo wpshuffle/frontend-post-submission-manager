@@ -5,9 +5,16 @@ $payment_table = $wpdb->prefix . 'fpsm_payments';
 $payments = $wpdb->get_results("SELECT * FROM $payment_table ORDER BY created_at DESC");
 ?>
 <div class="wrap fpsm-wrap">
-    <div class="fpsm-header fpsm-clearfix">
+    <div class="fpsm-header fpsm-payments-header fpsm-clearfix">
         <h1 class="fpsm-floatLeft"><?php esc_html_e('Payments', 'frontend-post-submission-manager'); ?></h1>
-        <a href="<?php echo admin_url('admin.php?page=fpsm'); ?>" class="fpsm-button-primary btn-cancel"><?php esc_html_e('Back to Forms', 'frontend-post-submission-manager'); ?></a>
+        <div class="fpsm-add-wrap fpsm-payments-actions">
+            <a href="<?php echo esc_url(admin_url('admin.php?page=fpsm')); ?>" class="button fpsm-payments-back-button">
+                <svg class="fpsm-payments-back-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <path d="M9.75 3.5 5.25 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <?php esc_html_e('Back to Forms', 'frontend-post-submission-manager'); ?>
+            </a>
+        </div>
     </div>
     <div class="fpsm-grid-wrap">
         <div class="fpsm-title-wrap">

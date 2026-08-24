@@ -71,8 +71,41 @@ $fpsm_settings = get_option('fpsm_settings');
             <div class="fpsm-field-wrap">
                 <label><?php esc_html_e('Default Currency', 'frontend-post-submission-manager'); ?></label>
                 <div class="fpsm-field">
-                    <input type="text" name="fpsm_settings[paypal_currency]" value="<?php echo (!empty($fpsm_settings['paypal_currency'])) ? esc_attr($fpsm_settings['paypal_currency']) : 'USD'; ?>" />
-                    <p class="description"><?php esc_html_e('ISO currency code, e.g. USD, EUR, GBP.', 'frontend-post-submission-manager'); ?></p>
+                    <?php
+                    $paypal_currencies = array(
+                        'AUD' => esc_html__('Australian Dollar (AUD)', 'frontend-post-submission-manager'),
+                        'BRL' => esc_html__('Brazilian Real (BRL)', 'frontend-post-submission-manager'),
+                        'CAD' => esc_html__('Canadian Dollar (CAD)', 'frontend-post-submission-manager'),
+                        'CNY' => esc_html__('Chinese Renminbi (CNY)', 'frontend-post-submission-manager'),
+                        'CZK' => esc_html__('Czech Koruna (CZK)', 'frontend-post-submission-manager'),
+                        'DKK' => esc_html__('Danish Krone (DKK)', 'frontend-post-submission-manager'),
+                        'EUR' => esc_html__('Euro (EUR)', 'frontend-post-submission-manager'),
+                        'HKD' => esc_html__('Hong Kong Dollar (HKD)', 'frontend-post-submission-manager'),
+                        'HUF' => esc_html__('Hungarian Forint (HUF)', 'frontend-post-submission-manager'),
+                        'ILS' => esc_html__('Israeli New Shekel (ILS)', 'frontend-post-submission-manager'),
+                        'JPY' => esc_html__('Japanese Yen (JPY)', 'frontend-post-submission-manager'),
+                        'MYR' => esc_html__('Malaysian Ringgit (MYR)', 'frontend-post-submission-manager'),
+                        'MXN' => esc_html__('Mexican Peso (MXN)', 'frontend-post-submission-manager'),
+                        'TWD' => esc_html__('New Taiwan Dollar (TWD)', 'frontend-post-submission-manager'),
+                        'NZD' => esc_html__('New Zealand Dollar (NZD)', 'frontend-post-submission-manager'),
+                        'NOK' => esc_html__('Norwegian Krone (NOK)', 'frontend-post-submission-manager'),
+                        'PHP' => esc_html__('Philippine Peso (PHP)', 'frontend-post-submission-manager'),
+                        'PLN' => esc_html__('Polish Zloty (PLN)', 'frontend-post-submission-manager'),
+                        'GBP' => esc_html__('Pound Sterling (GBP)', 'frontend-post-submission-manager'),
+                        'SGD' => esc_html__('Singapore Dollar (SGD)', 'frontend-post-submission-manager'),
+                        'SEK' => esc_html__('Swedish Krona (SEK)', 'frontend-post-submission-manager'),
+                        'CHF' => esc_html__('Swiss Franc (CHF)', 'frontend-post-submission-manager'),
+                        'THB' => esc_html__('Thai Baht (THB)', 'frontend-post-submission-manager'),
+                        'USD' => esc_html__('United States Dollar (USD)', 'frontend-post-submission-manager'),
+                    );
+                    $paypal_currency   = !empty($fpsm_settings['paypal_currency']) ? strtoupper($fpsm_settings['paypal_currency']) : 'USD';
+                    ?>
+                    <select name="fpsm_settings[paypal_currency]">
+                        <?php foreach ($paypal_currencies as $currency_code => $currency_label) { ?>
+                            <option value="<?php echo esc_attr($currency_code); ?>" <?php selected($paypal_currency, $currency_code); ?>><?php echo esc_html($currency_label); ?></option>
+                        <?php } ?>
+                    </select>
+                    <p class="description"><?php esc_html_e('Choose the currency used for PayPal payments by default.', 'frontend-post-submission-manager'); ?></p>
                 </div>
             </div>
         </div>
