@@ -8,10 +8,12 @@ The current product goal is to improve activation, usability, customer trust, an
 
 Canonical resources:
 
-- Product tracker: https://docs.google.com/spreadsheets/d/1Y5QvPMFX8epgil_G4xAo_eOh4-Xc8fFWg26QFs9JyTo/edit
-- Design workspace: https://www.figma.com/design/uGvCUN4cL6A3Y1xJrO9cyF
+- The CEO-approved product tracker is supplied to the agent through the connected Google workspace.
+- The canonical design workspace is supplied to the agent through the connected Figma workspace.
 - Product page: https://wpshuffle.com/wordpress-plugins/frontend-post-submission-manager/
 - CodeCanyon listing: https://codecanyon.net/item/frontend-post-submission-manager/20084181
+
+Do not publish private tracker, design, customer, or analytics URLs in this public repository without explicit approval.
 
 ## Operating model
 
@@ -63,7 +65,7 @@ Never perform market research, sales strategy, feature prioritization, or produc
 - Design desktop and responsive states.
 - Include empty, loading, success, error, disabled, and dismissed states when relevant.
 - Use verified product claims only.
-- The exact Figma frame or component URL must be included in the pull request.
+- Record the exact Figma frame or component in the private tracker. Add it to a public pull request only when the design file is approved for public disclosure.
 - Match the implementation to the Figma reference while preferring existing repository patterns over a parallel design system.
 
 ## Branch and pull-request policy
