@@ -105,22 +105,27 @@ jQuery(document).ready(function ($) {
             var uploader_label = $(this).data('upload-label');
             var upload_limit_message = $(this).data('multiple-upload-error-message');
             var field_name = $(this).data('field-name');
+            var upload_params = {
+                action: 'fpsm_file_upload_action',
+                _wpnonce: fpsm_js_obj.ajax_nonce,
+                form_alias: form_alias,
+                field_name: field_name,
+                post_id: 0,
+                source_index: 1
+            };
             file_uploader_fields[uploader_name] = new qq.FileUploader({
                 element: document.getElementById(attr_element_id),
                 action: fpsm_js_obj.ajax_url,
-                params: {
-                    action: 'fpsm_file_upload_action',
-                    _wpnonce: fpsm_js_obj.ajax_nonce,
-                    form_alias: form_alias,
-                    field_name: field_name
-                },
+                params: upload_params,
                 debug: false,
                 allowedExtensions: extensions_array,
                 sizeLimit: sizeLimit,
                 minSizeLimit: 50,
                 uploadButtonText: $(this).data('label'),
                 onSubmit: function (id, fileName) {
-
+                    upload_params.post_id = parseInt(selector.closest('form').find('.fpsm-edit-post-id').val(), 10) || 0;
+                    upload_params.source_index = parseInt(id, 10) + 1;
+                    file_uploader_fields[uploader_name].setParams(upload_params);
                     selector.closest('.fpsm-field-wrap').find('.fpsm-error').html('');
                     if (multiple_upload == true && upload_limit != -1) {
                         var upload_count = selector.parent().find('.fpsm-upload-count').val();

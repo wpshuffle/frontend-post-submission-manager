@@ -42,6 +42,8 @@ if (!class_exists('FPSM_Ajax')) {
 
                 $form_alias = (!empty($_GET['form_alias'])) ? sanitize_text_field(wp_unslash($_GET['form_alias'])) : '';
                 $field_name = (!empty($_GET['field_name'])) ? sanitize_text_field(wp_unslash($_GET['field_name'])) : '';
+                $post_id = (!empty($_GET['post_id'])) ? absint($_GET['post_id']) : 0;
+                $source_index = (!empty($_GET['source_index'])) ? max(1, absint($_GET['source_index'])) : 1;
                 if (empty($form_alias) || empty($field_name)) {
                     $this->upload_error_response(esc_html__('Invalid upload request.', 'frontend-post-submission-manager'));
                 }
@@ -83,12 +85,18 @@ if (!class_exists('FPSM_Ajax')) {
                 }
                 $upload_file_size_limit = (!empty($field_details['upload_file_size_limit'])) ? $field_details['upload_file_size_limit'] * 1000 * 1000 : 5 * 1000 * 1000;
                 $uploader = new FPSM_qqFileUploaders($allowed_extensions, $upload_file_size_limit);
+                $upload_context = array(
+                    'form_alias' => $form_alias,
+                    'field_name' => $field_name,
+                    'post_id' => $post_id,
+                    'source_index' => $source_index,
+                );
                 $upload_dir = wp_upload_dir();
 
                 $upload_path = $upload_dir['path'] . '/';
                 $upload_url = $upload_dir['url'];
 
-                $result = $uploader->handleUpload($upload_path, $replaceOldFile = false, $upload_url);
+                $result = $uploader->handleUpload($upload_path, $replaceOldFile = false, $upload_url, $upload_context);
 
                 echo json_encode($result);
                 die();

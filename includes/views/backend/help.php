@@ -482,6 +482,42 @@ $delete_flag = apply_filters('fpsm_delete_flag', $delete_flag);
 */
 $terms = get_terms($taxonomy, array('hide_empty' => 0, 'number' => apply_filters('fpsm_max_term_return', 200, $taxonomy_details)));
 </pre>
+<pre>
+/**
+* Filters an uploaded file's basename before it is written to disk.
+*
+* Return a basename without the extension. The uploader validates and appends
+* the original extension after this filter runs.
+*
+* @param string $filename Sanitized filename without extension.
+* @param string $original_filename Original filename supplied by the browser.
+* @param array $upload_context Upload context containing form_alias,
+* field_name, post_id, and source_index.
+*
+* @since 1.5.1
+*/
+$filename = apply_filters('fpsm_upload_filename', $filename, $original_filename, $upload_context);
+</pre>
+            <h3><?php esc_html_e('Custom Upload Filename Example', 'frontend-post-submission-manager'); ?></h3>
+            <p><?php esc_html_e('The following example uses the post ID and upload sequence when a draft or existing post ID is available. Return only the filename basename; the uploader retains the validated original extension.', 'frontend-post-submission-manager'); ?></p>
+<pre>
+add_filter('fpsm_upload_filename', 'my_fpsm_upload_filename', 10, 3);
+
+function my_fpsm_upload_filename($filename, $original_filename, $upload_context) {
+    $post_id = absint($upload_context['post_id']);
+    if (!$post_id) {
+        return $filename;
+    }
+
+    $source_index = max(1, absint($upload_context['source_index']));
+
+    return sprintf(
+        'product-%d-source-%02d',
+        $post_id,
+        $source_index
+    );
+}
+</pre>
             </div>
             <p><?php esc_html_e('If you think there are any missing action or filters then please let us know from below link.', 'frontend-post-submission-manager'); ?>
             </p>

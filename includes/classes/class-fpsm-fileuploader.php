@@ -144,7 +144,7 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
         /**
          * Returns array('success'=>true) or array('error'=>'error message')
          */
-        function handleUpload($uploadDirectory, $replaceOldFile, $upload_url) {
+        function handleUpload($uploadDirectory, $replaceOldFile, $upload_url, $upload_context = array()) {
             if (!is_writable($uploadDirectory)) {
                 return array('error' => esc_html__("Server error. Upload directory isn't writable.", 'frontend-post-submission-manager'));
             }
@@ -163,9 +163,29 @@ if (!class_exists('FPSM_qqUploadedFileXhr')) {
                 return array('error' => esc_html__('File is too large', 'frontend-post-submission-manager'));
             }
 
-            $pathinfo = pathinfo($this->file->getName());
+            $original_filename = $this->file->getName();
+            $pathinfo = pathinfo($original_filename);
             $filename = $pathinfo['filename'];
             $filename = sanitize_file_name($filename);
+
+            /**
+             * Filters an uploaded file's basename before it is written to disk.
+             *
+             * Return a basename without the extension. The original extension is
+             * validated and appended by the uploader after this filter runs.
+             *
+             * @param string $filename          Sanitized filename without extension.
+             * @param string $original_filename Original filename supplied by the browser.
+             * @param array  $upload_context    Upload context containing form_alias,
+             *                                  field_name, post_id, and source_index.
+             *
+             * @since 1.5.1
+             */
+            $filename = apply_filters('fpsm_upload_filename', $filename, $original_filename, $upload_context);
+            $filename = sanitize_file_name($filename);
+            if (empty($filename)) {
+                $filename = sanitize_file_name($pathinfo['filename']);
+            }
 
             $ext = @$pathinfo['extension'];  // hide notices if extension is empty
             if (!$this->allowedExtensions) {
