@@ -7,7 +7,61 @@ if (!class_exists('FPSM_Admin')) {
 
         function __construct() {
             add_action('admin_menu', array($this, 'add_admin_menus'));
+            add_action('admin_notices', array($this, 'render_quick_start_panel'));
+            add_action('admin_post_fpsm_dismiss_quick_start', array($this, 'dismiss_quick_start_panel'));
             add_action('admin_footer', array($this, 'add_extra_html'));
+        }
+
+        /**
+         * Render the onboarding panel for administrators who have not created a form.
+         *
+         * @since 1.5.2
+         */
+        function render_quick_start_panel() {
+            if (!current_user_can('manage_options') || empty($_GET['page'])) {
+                return;
+            }
+
+            $page = sanitize_key(wp_unslash($_GET['page']));
+            if ('fpsm' !== $page || !empty($_GET['action'])) {
+                return;
+            }
+
+            if (get_user_meta(get_current_user_id(), 'fpsm_quick_start_dismissed', true)) {
+                return;
+            }
+
+            global $wpdb;
+            $form_table = FPSM_FORM_TABLE;
+            // The table name is defined by the plugin and does not contain user input.
+            $form_count = (int) $wpdb->get_var("SELECT COUNT(*) FROM {$form_table}"); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+
+            if ($form_count > 0) {
+                return;
+            }
+
+            include(FPSM_PATH . '/includes/views/backend/quick-start.php');
+        }
+
+        /**
+         * Persist the Quick Start dismissal for the current administrator.
+         *
+         * @since 1.5.2
+         */
+        function dismiss_quick_start_panel() {
+            if (!current_user_can('manage_options')) {
+                wp_die(
+                    esc_html__('You are not allowed to dismiss this panel.', 'frontend-post-submission-manager'),
+                    '',
+                    array('response' => 403)
+                );
+            }
+
+            check_admin_referer('fpsm_dismiss_quick_start');
+            update_user_meta(get_current_user_id(), 'fpsm_quick_start_dismissed', 1);
+
+            wp_safe_redirect(admin_url('admin.php?page=fpsm'));
+            exit;
         }
 
         function add_admin_menus() {
