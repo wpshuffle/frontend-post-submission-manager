@@ -160,7 +160,8 @@ if (!empty($edit_post)) {
                  * Captcha
                  */
                 if (!empty($form_details['security']['frontend_form_captcha'])) {
-                    $site_key = (!empty($form_details['security']['site_key'])) ? $form_details['security']['site_key'] : '';
+                    $captcha_provider = $fpsm_library_obj->get_captcha_provider($form_details);
+                    $site_key = $fpsm_library_obj->get_captcha_site_key($form_details);
                     if (!empty($site_key)) {
                         ?>
 
@@ -168,9 +169,12 @@ if (!empty($edit_post)) {
                             <label><?php echo (!empty($form_details['security']['captcha_label'])) ? esc_attr($form_details['security']['captcha_label']) : ''; ?></label>
                             <div class="fpsm-field">
                                 <div data-field-key="security">
-                                    <script type="text/javascript" src="//www.google.com/recaptcha/api.js"></script>
-                                    <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>">
-                                    </div>
+                                    <script type="text/javascript" src="<?php echo esc_url($fpsm_library_obj->get_captcha_script_url($captcha_provider)); ?>" async defer></script>
+                                    <?php if ($captcha_provider === 'turnstile') { ?>
+                                        <div class="cf-turnstile" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                                    <?php } else { ?>
+                                        <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($site_key); ?>"></div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -256,6 +260,24 @@ if (!empty($edit_post)) {
                         <input type="hidden" name="dynamic_post_status" value="<?php echo esc_attr($default_post_status); ?>" class="fpsm-default-post-status" />
                         <img src="<?php echo FPSM_URL . '/assets/images/ajax-loader-front.gif'; ?>" class="fpsm-ajax-loader" />
                     </div>
+                </div>
+                <?php
+                if (!empty($form_details['payment']['enable']) && !empty($form_details['payment']['amount']) && !empty($form_details['payment']['show_payment_note'])) {
+                    $display_currency = (!empty($form_details['payment']['currency'])) ? $form_details['payment']['currency'] : esc_html__('(uses global currency)', 'frontend-post-submission-manager');
+                    $payment_note = (!empty($form_details['payment']['payment_note'])) ? $form_details['payment']['payment_note'] : esc_html__('A payment is required after you submit.', 'frontend-post-submission-manager');
+                    $payment_note = str_replace(
+                        array('{amount}', '{currency}'),
+                        array(esc_html($form_details['payment']['amount']), esc_html($display_currency)),
+                        $payment_note
+                    );
+                ?>
+                    <div class="fpsm-payment-info">
+                        <p><?php echo wp_kses_post($payment_note); ?></p>
+                    </div>
+                <?php } ?>
+                <div class="fpsm-paypal-wrap fpsm-display-none">
+                    <div class="fpsm-paypal-buttons"></div>
+                    <div class="fpsm-paypal-message"></div>
                 </div>
                 <div class="fpsm-form-message fpsm-display-none"></div>
                 <?php if (!empty($form_details['form']['back_button_label']) && isset($_GET['action'], $_GET['post_id'])) { ?>

@@ -442,6 +442,7 @@ jQuery(document).ready(function ($) {
                         }
                         fpsm_reset_captcha(selector);
                     }
+                    }
                 } else {
                     if (auto_save == 'no') {
                         selector.find('.fpsm-form-message').removeClass('fpsm-form-success').addClass('fpsm-form-error').html(data.message).slideDown('slow', function () {
