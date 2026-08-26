@@ -4,6 +4,7 @@ defined('ABSPATH') or die('No script kiddies please!!');
 $add_form_url = admin_url('admin.php?page=fpsm-add-new-form');
 $docs_url = 'https://wpshuffle.com/wordpress-documentations/frontend-post-submission-manager/';
 $demo_url = 'https://demo.wpshuffle.com/frontend-post-submission-manager/';
+$error_code = isset($_GET['fpsm_quick_start_error']) ? sanitize_key(wp_unslash($_GET['fpsm_quick_start_error'])) : '';
 ?>
 <section class="fpsm-quick-start" aria-labelledby="fpsm-quick-start-title">
     <form class="fpsm-quick-start__dismiss-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
@@ -14,6 +15,14 @@ $demo_url = 'https://demo.wpshuffle.com/frontend-post-submission-manager/';
             <span class="screen-reader-text"><?php esc_html_e('Dismiss Quick Start', 'frontend-post-submission-manager'); ?></span>
         </button>
     </form>
+
+    <?php if (in_array($error_code, array('nonce', 'save'), true)) { ?>
+        <div class="fpsm-quick-start__error" role="alert">
+            <strong><?php esc_html_e('Dismissal could not be saved', 'frontend-post-submission-manager'); ?></strong>
+            <p><?php esc_html_e('We could not dismiss Quick Start. Refresh the page and try again. Your forms and settings were not changed.', 'frontend-post-submission-manager'); ?></p>
+            <a class="button button-secondary" href="<?php echo esc_url(admin_url('admin.php?page=fpsm')); ?>"><?php esc_html_e('Try again', 'frontend-post-submission-manager'); ?></a>
+        </div>
+    <?php } ?>
 
     <div class="fpsm-quick-start__intro">
         <span class="fpsm-quick-start__eyebrow"><?php esc_html_e('Quick Start', 'frontend-post-submission-manager'); ?></span>
