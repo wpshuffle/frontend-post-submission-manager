@@ -6,8 +6,8 @@ This checklist validates the FPSM Quick Start onboarding panel without changing 
 
 | Check | Environment | Expected result | Recorded result |
 | --- | --- | --- | --- |
-| PHP syntax lint | PHP 7.4 | All PHP files parse without errors | Passed in GitHub Actions run 32805030148 |
-| PHP syntax lint | PHP 8.3 | All PHP files parse without errors | Passed in GitHub Actions run 32805030148 |
+| PHP syntax lint | PHP 7.4 | All PHP files parse without errors | Passed in GitHub Actions run 32926873523 |
+| PHP syntax lint | PHP 8.3 | All PHP files parse without errors | Passed in GitHub Actions run 32926873523 |
 | Scope/security review | Pull request diff | Capability, nonce, sanitization/escaping, translation, and user-meta isolation are present | Completed; runtime behavior still requires verification |
 
 ## Runtime prerequisites
