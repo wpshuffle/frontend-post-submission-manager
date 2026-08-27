@@ -6,9 +6,10 @@ This checklist validates the FPSM Quick Start onboarding panel without changing 
 
 | Check | Environment | Expected result | Recorded result |
 | --- | --- | --- | --- |
-| PHP syntax lint | PHP 7.4 | All PHP files parse without errors | Passed in GitHub Actions run 32926873523 |
-| PHP syntax lint | PHP 8.3 | All PHP files parse without errors | Passed in GitHub Actions run 32926873523 |
+| PHP syntax lint | PHP 7.4 | All PHP files parse without errors | Passed in GitHub Actions; see draft PR for the latest run |
+| PHP syntax lint | PHP 8.3 | All PHP files parse without errors | Passed in GitHub Actions; see draft PR for the latest run |
 | Scope/security review | Pull request diff | Capability, nonce, sanitization/escaping, translation, and user-meta isolation are present | Completed; runtime behavior still requires verification |
+| Asset scope review | Pull request diff | Urbanist is a local WOFF2 and Quick Start styles load only on FPSM Forms | Completed at commit 57711a8eec1e4887b996c599758be5784b5fcfa8; runtime loading remains covered by QS-11/12 |
 
 ## Runtime prerequisites
 
