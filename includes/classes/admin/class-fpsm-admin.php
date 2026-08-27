@@ -7,8 +7,28 @@ if (!class_exists('FPSM_Admin')) {
 
         function __construct() {
             add_action('admin_menu', array($this, 'add_admin_menus'));
+            add_action('admin_enqueue_scripts', array($this, 'enqueue_quick_start_assets'));
             add_action('admin_post_fpsm_dismiss_quick_start', array($this, 'dismiss_quick_start_panel'));
             add_action('admin_footer', array($this, 'add_extra_html'));
+        }
+
+        /**
+         * Load Quick Start styles only on the FPSM Forms screen.
+         *
+         * @param string $hook_suffix Current admin page hook.
+         * @since 1.5.2
+         */
+        function enqueue_quick_start_assets($hook_suffix) {
+            if ('toplevel_page_fpsm' !== $hook_suffix || !empty($_GET['action'])) {
+                return;
+            }
+
+            wp_enqueue_style(
+                'fpsm-quick-start',
+                FPSM_URL . '/assets/css/fpsm-quick-start.css',
+                array(),
+                '1.5.1'
+            );
         }
 
         /**
