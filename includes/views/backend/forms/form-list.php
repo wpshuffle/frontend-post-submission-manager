@@ -15,6 +15,8 @@ defined('ABSPATH') or die('No script kiddies please!!');
 
     </div>
 
+    <?php $this->render_quick_start_panel(); ?>
+
     <div class="fpsm-grid-wrap">
         <div class="fpsm-title-wrap">
             <h2><?php esc_html_e('Form Lists', 'frontend-post-submission-manager'); ?>
